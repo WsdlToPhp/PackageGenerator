@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\ServiceType;
+namespace ServiceType;
 
 use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
@@ -15,13 +15,13 @@ class ApiDo extends AbstractSoapClientBase
     /**
      * Sets the RequesterCredentials SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
-     * @param \Api\StructType\ApiCustomSecurityHeaderType $requesterCredentials
+     * @param \StructType\ApiCustomSecurityHeaderType $requesterCredentials
      * @param string $nameSpace
      * @param bool $mustUnderstand
      * @param string $actor
      * @return bool
      */
-    public function setSoapHeaderRequesterCredentials(\Api\StructType\ApiCustomSecurityHeaderType $requesterCredentials, $nameSpace = 'urn:ebay:api:PayPalAPI', $mustUnderstand = false, $actor = null)
+    public function setSoapHeaderRequesterCredentials(\StructType\ApiCustomSecurityHeaderType $requesterCredentials, $nameSpace = 'urn:ebay:api:PayPalAPI', $mustUnderstand = false, $actor = null)
     {
         return $this->setSoapHeader($nameSpace, 'RequesterCredentials', $requesterCredentials, $mustUnderstand, $actor);
     }
@@ -30,16 +30,16 @@ class ApiDo extends AbstractSoapClientBase
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
+     * - SOAPHeaderTypes: \StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders: required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDoMobileCheckoutPaymentReq $doMobileCheckoutPaymentRequest
-     * @return \Api\StructType\ApiDoMobileCheckoutPaymentResponseType|bool
+     * @param \StructType\ApiDoMobileCheckoutPaymentReq $doMobileCheckoutPaymentRequest
+     * @return \StructType\ApiDoMobileCheckoutPaymentResponseType|bool
      */
-    public function DoMobileCheckoutPayment(\Api\StructType\ApiDoMobileCheckoutPaymentReq $doMobileCheckoutPaymentRequest)
+    public function DoMobileCheckoutPayment(\StructType\ApiDoMobileCheckoutPaymentReq $doMobileCheckoutPaymentRequest)
     {
         try {
             $this->setResult($this->getSoapClient()->__soapCall('DoMobileCheckoutPayment', array(
@@ -56,16 +56,16 @@ class ApiDo extends AbstractSoapClientBase
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
+     * - SOAPHeaderTypes: \StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders: required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDoExpressCheckoutPaymentReq $doExpressCheckoutPaymentRequest
-     * @return \Api\StructType\ApiDoExpressCheckoutPaymentResponseType|bool
+     * @param \StructType\ApiDoExpressCheckoutPaymentReq $doExpressCheckoutPaymentRequest
+     * @return \StructType\ApiDoExpressCheckoutPaymentResponseType|bool
      */
-    public function DoExpressCheckoutPayment(\Api\StructType\ApiDoExpressCheckoutPaymentReq $doExpressCheckoutPaymentRequest)
+    public function DoExpressCheckoutPayment(\StructType\ApiDoExpressCheckoutPaymentReq $doExpressCheckoutPaymentRequest)
     {
         try {
             $this->setResult($this->getSoapClient()->__soapCall('DoExpressCheckoutPayment', array(
@@ -82,16 +82,16 @@ class ApiDo extends AbstractSoapClientBase
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
+     * - SOAPHeaderTypes: \StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders: required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDoUATPExpressCheckoutPaymentReq $doUATPExpressCheckoutPaymentRequest
-     * @return \Api\StructType\ApiDoUATPExpressCheckoutPaymentResponseType|bool
+     * @param \StructType\ApiDoUATPExpressCheckoutPaymentReq $doUATPExpressCheckoutPaymentRequest
+     * @return \StructType\ApiDoUATPExpressCheckoutPaymentResponseType|bool
      */
-    public function DoUATPExpressCheckoutPayment(\Api\StructType\ApiDoUATPExpressCheckoutPaymentReq $doUATPExpressCheckoutPaymentRequest)
+    public function DoUATPExpressCheckoutPayment(\StructType\ApiDoUATPExpressCheckoutPaymentReq $doUATPExpressCheckoutPaymentRequest)
     {
         try {
             $this->setResult($this->getSoapClient()->__soapCall('DoUATPExpressCheckoutPayment', array(
@@ -108,16 +108,16 @@ class ApiDo extends AbstractSoapClientBase
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
+     * - SOAPHeaderTypes: \StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders: required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDoDirectPaymentReq $doDirectPaymentRequest
-     * @return \Api\StructType\ApiDoDirectPaymentResponseType|bool
+     * @param \StructType\ApiDoDirectPaymentReq $doDirectPaymentRequest
+     * @return \StructType\ApiDoDirectPaymentResponseType|bool
      */
-    public function DoDirectPayment(\Api\StructType\ApiDoDirectPaymentReq $doDirectPaymentRequest)
+    public function DoDirectPayment(\StructType\ApiDoDirectPaymentReq $doDirectPaymentRequest)
     {
         try {
             $this->setResult($this->getSoapClient()->__soapCall('DoDirectPayment', array(
@@ -134,16 +134,16 @@ class ApiDo extends AbstractSoapClientBase
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
+     * - SOAPHeaderTypes: \StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders: required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDoCancelReq $doCancelRequest
-     * @return \Api\StructType\ApiDoCancelResponseType|bool
+     * @param \StructType\ApiDoCancelReq $doCancelRequest
+     * @return \StructType\ApiDoCancelResponseType|bool
      */
-    public function DoCancel(\Api\StructType\ApiDoCancelReq $doCancelRequest)
+    public function DoCancel(\StructType\ApiDoCancelReq $doCancelRequest)
     {
         try {
             $this->setResult($this->getSoapClient()->__soapCall('DoCancel', array(
@@ -160,16 +160,16 @@ class ApiDo extends AbstractSoapClientBase
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
+     * - SOAPHeaderTypes: \StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders: required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDoCaptureReq $doCaptureRequest
-     * @return \Api\StructType\ApiDoCaptureResponseType|bool
+     * @param \StructType\ApiDoCaptureReq $doCaptureRequest
+     * @return \StructType\ApiDoCaptureResponseType|bool
      */
-    public function DoCapture(\Api\StructType\ApiDoCaptureReq $doCaptureRequest)
+    public function DoCapture(\StructType\ApiDoCaptureReq $doCaptureRequest)
     {
         try {
             $this->setResult($this->getSoapClient()->__soapCall('DoCapture', array(
@@ -186,16 +186,16 @@ class ApiDo extends AbstractSoapClientBase
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
+     * - SOAPHeaderTypes: \StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders: required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDoReauthorizationReq $doReauthorizationRequest
-     * @return \Api\StructType\ApiDoReauthorizationResponseType|bool
+     * @param \StructType\ApiDoReauthorizationReq $doReauthorizationRequest
+     * @return \StructType\ApiDoReauthorizationResponseType|bool
      */
-    public function DoReauthorization(\Api\StructType\ApiDoReauthorizationReq $doReauthorizationRequest)
+    public function DoReauthorization(\StructType\ApiDoReauthorizationReq $doReauthorizationRequest)
     {
         try {
             $this->setResult($this->getSoapClient()->__soapCall('DoReauthorization', array(
@@ -212,16 +212,16 @@ class ApiDo extends AbstractSoapClientBase
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
+     * - SOAPHeaderTypes: \StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders: required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDoVoidReq $doVoidRequest
-     * @return \Api\StructType\ApiDoVoidResponseType|bool
+     * @param \StructType\ApiDoVoidReq $doVoidRequest
+     * @return \StructType\ApiDoVoidResponseType|bool
      */
-    public function DoVoid(\Api\StructType\ApiDoVoidReq $doVoidRequest)
+    public function DoVoid(\StructType\ApiDoVoidReq $doVoidRequest)
     {
         try {
             $this->setResult($this->getSoapClient()->__soapCall('DoVoid', array(
@@ -238,16 +238,16 @@ class ApiDo extends AbstractSoapClientBase
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
+     * - SOAPHeaderTypes: \StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders: required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDoAuthorizationReq $doAuthorizationRequest
-     * @return \Api\StructType\ApiDoAuthorizationResponseType|bool
+     * @param \StructType\ApiDoAuthorizationReq $doAuthorizationRequest
+     * @return \StructType\ApiDoAuthorizationResponseType|bool
      */
-    public function DoAuthorization(\Api\StructType\ApiDoAuthorizationReq $doAuthorizationRequest)
+    public function DoAuthorization(\StructType\ApiDoAuthorizationReq $doAuthorizationRequest)
     {
         try {
             $this->setResult($this->getSoapClient()->__soapCall('DoAuthorization', array(
@@ -264,16 +264,16 @@ class ApiDo extends AbstractSoapClientBase
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
+     * - SOAPHeaderTypes: \StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders: required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDoUATPAuthorizationReq $doUATPAuthorizationRequest
-     * @return \Api\StructType\ApiDoUATPAuthorizationResponseType|bool
+     * @param \StructType\ApiDoUATPAuthorizationReq $doUATPAuthorizationRequest
+     * @return \StructType\ApiDoUATPAuthorizationResponseType|bool
      */
-    public function DoUATPAuthorization(\Api\StructType\ApiDoUATPAuthorizationReq $doUATPAuthorizationRequest)
+    public function DoUATPAuthorization(\StructType\ApiDoUATPAuthorizationReq $doUATPAuthorizationRequest)
     {
         try {
             $this->setResult($this->getSoapClient()->__soapCall('DoUATPAuthorization', array(
@@ -290,16 +290,16 @@ class ApiDo extends AbstractSoapClientBase
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
+     * - SOAPHeaderTypes: \StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders: required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDoReferenceTransactionReq $doReferenceTransactionRequest
-     * @return \Api\StructType\ApiDoReferenceTransactionResponseType|bool
+     * @param \StructType\ApiDoReferenceTransactionReq $doReferenceTransactionRequest
+     * @return \StructType\ApiDoReferenceTransactionResponseType|bool
      */
-    public function DoReferenceTransaction(\Api\StructType\ApiDoReferenceTransactionReq $doReferenceTransactionRequest)
+    public function DoReferenceTransaction(\StructType\ApiDoReferenceTransactionReq $doReferenceTransactionRequest)
     {
         try {
             $this->setResult($this->getSoapClient()->__soapCall('DoReferenceTransaction', array(
@@ -316,16 +316,16 @@ class ApiDo extends AbstractSoapClientBase
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: RequesterCredentials
      * - SOAPHeaderNamespaces: urn:ebay:api:PayPalAPI
-     * - SOAPHeaderTypes: \Api\StructType\ApiCustomSecurityHeaderType
+     * - SOAPHeaderTypes: \StructType\ApiCustomSecurityHeaderType
      * - SOAPHeaders: required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDoNonReferencedCreditReq $doNonReferencedCreditRequest
-     * @return \Api\StructType\ApiDoNonReferencedCreditResponseType|bool
+     * @param \StructType\ApiDoNonReferencedCreditReq $doNonReferencedCreditRequest
+     * @return \StructType\ApiDoNonReferencedCreditResponseType|bool
      */
-    public function DoNonReferencedCredit(\Api\StructType\ApiDoNonReferencedCreditReq $doNonReferencedCreditRequest)
+    public function DoNonReferencedCredit(\StructType\ApiDoNonReferencedCreditReq $doNonReferencedCreditRequest)
     {
         try {
             $this->setResult($this->getSoapClient()->__soapCall('DoNonReferencedCredit', array(
@@ -340,7 +340,7 @@ class ApiDo extends AbstractSoapClientBase
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return \Api\StructType\ApiDoAuthorizationResponseType|\Api\StructType\ApiDoCancelResponseType|\Api\StructType\ApiDoCaptureResponseType|\Api\StructType\ApiDoDirectPaymentResponseType|\Api\StructType\ApiDoExpressCheckoutPaymentResponseType|\Api\StructType\ApiDoMobileCheckoutPaymentResponseType|\Api\StructType\ApiDoNonReferencedCreditResponseType|\Api\StructType\ApiDoReauthorizationResponseType|\Api\StructType\ApiDoReferenceTransactionResponseType|\Api\StructType\ApiDoUATPAuthorizationResponseType|\Api\StructType\ApiDoUATPExpressCheckoutPaymentResponseType|\Api\StructType\ApiDoVoidResponseType
+     * @return \StructType\ApiDoAuthorizationResponseType|\StructType\ApiDoCancelResponseType|\StructType\ApiDoCaptureResponseType|\StructType\ApiDoDirectPaymentResponseType|\StructType\ApiDoExpressCheckoutPaymentResponseType|\StructType\ApiDoMobileCheckoutPaymentResponseType|\StructType\ApiDoNonReferencedCreditResponseType|\StructType\ApiDoReauthorizationResponseType|\StructType\ApiDoReferenceTransactionResponseType|\StructType\ApiDoUATPAuthorizationResponseType|\StructType\ApiDoUATPExpressCheckoutPaymentResponseType|\StructType\ApiDoVoidResponseType
      */
     public function getResult()
     {

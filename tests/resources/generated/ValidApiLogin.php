@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\ServiceType;
+namespace ServiceType;
 
 use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
 

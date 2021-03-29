@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\ServiceType;
+namespace ServiceType;
 
 use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
@@ -15,26 +15,26 @@ class ApiDelete extends AbstractSoapClientBase
     /**
      * Sets the SessionHeader SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
-     * @param \Api\StructType\ApiSessionHeader $sessionHeader
+     * @param \StructType\ApiSessionHeader $sessionHeader
      * @param string $nameSpace
      * @param bool $mustUnderstand
      * @param string $actor
      * @return bool
      */
-    public function setSoapHeaderSessionHeader(\Api\StructType\ApiSessionHeader $sessionHeader, $nameSpace = 'urn:api.actonsoftware.com', $mustUnderstand = false, $actor = null)
+    public function setSoapHeaderSessionHeader(\StructType\ApiSessionHeader $sessionHeader, $nameSpace = 'urn:api.actonsoftware.com', $mustUnderstand = false, $actor = null)
     {
         return $this->setSoapHeader($nameSpace, 'SessionHeader', $sessionHeader, $mustUnderstand, $actor);
     }
     /**
      * Sets the ClusterHeader SoapHeader param
      * @uses AbstractSoapClientBase::setSoapHeader()
-     * @param \Api\StructType\ApiClusterHeader $clusterHeader
+     * @param \StructType\ApiClusterHeader $clusterHeader
      * @param string $nameSpace
      * @param bool $mustUnderstand
      * @param string $actor
      * @return bool
      */
-    public function setSoapHeaderClusterHeader(\Api\StructType\ApiClusterHeader $clusterHeader, $nameSpace = 'urn:api.actonsoftware.com', $mustUnderstand = false, $actor = null)
+    public function setSoapHeaderClusterHeader(\StructType\ApiClusterHeader $clusterHeader, $nameSpace = 'urn:api.actonsoftware.com', $mustUnderstand = false, $actor = null)
     {
         return $this->setSoapHeader($nameSpace, 'ClusterHeader', $clusterHeader, $mustUnderstand, $actor);
     }
@@ -43,16 +43,16 @@ class ApiDelete extends AbstractSoapClientBase
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: SessionHeader, ClusterHeader
      * - SOAPHeaderNamespaces: urn:api.actonsoftware.com, urn:api.actonsoftware.com
-     * - SOAPHeaderTypes: \Api\StructType\ApiSessionHeader, \Api\StructType\ApiClusterHeader
+     * - SOAPHeaderTypes: \StructType\ApiSessionHeader, \StructType\ApiClusterHeader
      * - SOAPHeaders: optional, required
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiDeleteList $parameter
+     * @param \StructType\ApiDeleteList $parameter
      * @return void|bool
      */
-    public function deleteList(\Api\StructType\ApiDeleteList $parameter)
+    public function deleteList(\StructType\ApiDeleteList $parameter)
     {
         try {
             $this->setResult($this->getSoapClient()->__soapCall('deleteList', array(

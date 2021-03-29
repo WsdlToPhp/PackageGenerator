@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\StructType;
+namespace StructType;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -63,7 +63,7 @@ class ApiQuery extends AbstractStructBase
     /**
      * Set SearchTerms value
      * @param string $searchTerms
-     * @return \Api\StructType\ApiQuery
+     * @return \StructType\ApiQuery
      */
     public function setSearchTerms($searchTerms = null)
     {
@@ -85,7 +85,7 @@ class ApiQuery extends AbstractStructBase
     /**
      * Set AlteredQuery value
      * @param string $alteredQuery
-     * @return \Api\StructType\ApiQuery
+     * @return \StructType\ApiQuery
      */
     public function setAlteredQuery($alteredQuery = null)
     {
@@ -107,7 +107,7 @@ class ApiQuery extends AbstractStructBase
     /**
      * Set AlterationOverrideQuery value
      * @param string $alterationOverrideQuery
-     * @return \Api\StructType\ApiQuery
+     * @return \StructType\ApiQuery
      */
     public function setAlterationOverrideQuery($alterationOverrideQuery = null)
     {

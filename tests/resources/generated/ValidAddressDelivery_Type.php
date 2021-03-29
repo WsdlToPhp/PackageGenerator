@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\StructType;
+namespace StructType;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -88,7 +88,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     /**
      * Set Street1 value
      * @param string $street1
-     * @return \Api\StructType\ApiAddressDelivery_Type
+     * @return \StructType\ApiAddressDelivery_Type
      */
     public function setStreet1($street1 = null)
     {
@@ -110,7 +110,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     /**
      * Set Street2 value
      * @param string $street2
-     * @return \Api\StructType\ApiAddressDelivery_Type
+     * @return \StructType\ApiAddressDelivery_Type
      */
     public function setStreet2($street2 = null)
     {
@@ -132,7 +132,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     /**
      * Set Street3 value
      * @param string $street3
-     * @return \Api\StructType\ApiAddressDelivery_Type
+     * @return \StructType\ApiAddressDelivery_Type
      */
     public function setStreet3($street3 = null)
     {
@@ -154,7 +154,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     /**
      * Set City value
      * @param string $city
-     * @return \Api\StructType\ApiAddressDelivery_Type
+     * @return \StructType\ApiAddressDelivery_Type
      */
     public function setCity($city = null)
     {
@@ -176,7 +176,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     /**
      * Set PostalCode value
      * @param string $postalCode
-     * @return \Api\StructType\ApiAddressDelivery_Type
+     * @return \StructType\ApiAddressDelivery_Type
      */
     public function setPostalCode($postalCode = null)
     {

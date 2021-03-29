@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\StructType;
+namespace StructType;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 

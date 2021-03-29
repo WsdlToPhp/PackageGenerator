@@ -1,6 +1,6 @@
 <?php
 
-namespace BingApi\ServiceType;
+namespace ServiceType;
 
 use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
@@ -18,10 +18,10 @@ class SearchBingApi extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \BingApi\StructType\SearchRequestBingApi $parameters
-     * @return \BingApi\StructType\SearchResponseBingApi|bool
+     * @param \StructType\SearchRequestBingApi $parameters
+     * @return \StructType\SearchResponseBingApi|bool
      */
-    public function Search(\BingApi\StructType\SearchRequestBingApi $parameters)
+    public function Search(\StructType\SearchRequestBingApi $parameters)
     {
         try {
             $this->setResult($this->getSoapClient()->__soapCall('Search', array(
@@ -36,7 +36,7 @@ class SearchBingApi extends AbstractSoapClientBase
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return \BingApi\StructType\SearchResponseBingApi
+     * @return \StructType\SearchResponseBingApi
      */
     public function getResult()
     {

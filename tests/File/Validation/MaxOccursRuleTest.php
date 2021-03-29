@@ -19,12 +19,12 @@ class MaxOccursRuleTest extends AbstractRuleTest
         $instance = self::getWhlTaxTypeInstance();
 
         $instance->setTaxDescription([
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
+            new \StructType\ApiParagraphType(),
+            new \StructType\ApiParagraphType(),
+            new \StructType\ApiParagraphType(),
+            new \StructType\ApiParagraphType(),
+            new \StructType\ApiParagraphType(),
+            new \StructType\ApiParagraphType(),
         ]);
     }
 
@@ -40,11 +40,11 @@ class MaxOccursRuleTest extends AbstractRuleTest
         $instance = self::getWhlTaxTypeInstance();
 
         $this->assertSame($instance, $instance->setTaxDescription([
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
+            new \StructType\ApiParagraphType(),
+            new \StructType\ApiParagraphType(),
+            new \StructType\ApiParagraphType(),
+            new \StructType\ApiParagraphType(),
+            new \StructType\ApiParagraphType(),
         ]));
     }
 
@@ -60,8 +60,8 @@ class MaxOccursRuleTest extends AbstractRuleTest
         $instance = self::getWhlTaxTypeInstance();
 
         $this->assertSame($instance, $instance->setTaxDescription([
-            new \Api\StructType\ApiParagraphType(),
-            new \Api\StructType\ApiParagraphType(),
+            new \StructType\ApiParagraphType(),
+            new \StructType\ApiParagraphType(),
         ]));
     }
 
@@ -80,13 +80,13 @@ class MaxOccursRuleTest extends AbstractRuleTest
         $instance = self::getWhlTaxTypeInstance(true);
 
         $instance
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType());
+            ->addToTaxDescription(new \StructType\ApiParagraphType())
+            ->addToTaxDescription(new \StructType\ApiParagraphType())
+            ->addToTaxDescription(new \StructType\ApiParagraphType())
+            ->addToTaxDescription(new \StructType\ApiParagraphType())
+            ->addToTaxDescription(new \StructType\ApiParagraphType())
+            ->addToTaxDescription(new \StructType\ApiParagraphType())
+            ->addToTaxDescription(new \StructType\ApiParagraphType());
     }
 
     /**
@@ -104,11 +104,11 @@ class MaxOccursRuleTest extends AbstractRuleTest
         $this->assertSame(
             $instance,
             $instance
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
+            ->addToTaxDescription(new \StructType\ApiParagraphType())
+            ->addToTaxDescription(new \StructType\ApiParagraphType())
+            ->addToTaxDescription(new \StructType\ApiParagraphType())
+            ->addToTaxDescription(new \StructType\ApiParagraphType())
+            ->addToTaxDescription(new \StructType\ApiParagraphType())
         );
     }
 
@@ -127,8 +127,8 @@ class MaxOccursRuleTest extends AbstractRuleTest
         $this->assertSame(
             $instance,
             $instance
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
-            ->addToTaxDescription(new \Api\StructType\ApiParagraphType())
+            ->addToTaxDescription(new \StructType\ApiParagraphType())
+            ->addToTaxDescription(new \StructType\ApiParagraphType())
         );
     }
 }

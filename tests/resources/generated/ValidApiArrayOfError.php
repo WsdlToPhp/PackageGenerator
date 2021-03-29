@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\ArrayType;
+namespace ArrayType;
 
 use \WsdlToPhp\PackageBase\AbstractStructArrayBase;
 
@@ -17,13 +17,13 @@ class ApiArrayOfError extends AbstractStructArrayBase
      * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var \Api\StructType\ApiError[]
+     * @var \StructType\ApiError[]
      */
     public $Error;
     /**
      * Constructor method for ArrayOfError
      * @uses ApiArrayOfError::setError()
-     * @param \Api\StructType\ApiError[] $error
+     * @param \StructType\ApiError[] $error
      */
     public function __construct(array $error = array())
     {
@@ -32,7 +32,7 @@ class ApiArrayOfError extends AbstractStructArrayBase
     }
     /**
      * Get Error value
-     * @return \Api\StructType\ApiError[]|null
+     * @return \StructType\ApiError[]|null
      */
     public function getError()
     {
@@ -50,12 +50,12 @@ class ApiArrayOfError extends AbstractStructArrayBase
         $invalidValues = [];
         foreach ($values as $arrayOfErrorErrorItem) {
             // validation for constraint: itemType
-            if (!$arrayOfErrorErrorItem instanceof \Api\StructType\ApiError) {
+            if (!$arrayOfErrorErrorItem instanceof \StructType\ApiError) {
                 $invalidValues[] = is_object($arrayOfErrorErrorItem) ? get_class($arrayOfErrorErrorItem) : sprintf('%s(%s)', gettype($arrayOfErrorErrorItem), var_export($arrayOfErrorErrorItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The Error property can only contain items of type \Api\StructType\ApiError, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The Error property can only contain items of type \StructType\ApiError, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         return $message;
@@ -63,8 +63,8 @@ class ApiArrayOfError extends AbstractStructArrayBase
     /**
      * Set Error value
      * @throws \InvalidArgumentException
-     * @param \Api\StructType\ApiError[] $error
-     * @return \Api\ArrayType\ApiArrayOfError
+     * @param \StructType\ApiError[] $error
+     * @return \ArrayType\ApiArrayOfError
      */
     public function setError(array $error = array())
     {
@@ -78,14 +78,14 @@ class ApiArrayOfError extends AbstractStructArrayBase
     /**
      * Add item to Error value
      * @throws \InvalidArgumentException
-     * @param \Api\StructType\ApiError $item
-     * @return \Api\ArrayType\ApiArrayOfError
+     * @param \StructType\ApiError $item
+     * @return \ArrayType\ApiArrayOfError
      */
-    public function addToError(\Api\StructType\ApiError $item)
+    public function addToError(\StructType\ApiError $item)
     {
         // validation for constraint: itemType
-        if (!$item instanceof \Api\StructType\ApiError) {
-            throw new \InvalidArgumentException(sprintf('The Error property can only contain items of type \Api\StructType\ApiError, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        if (!$item instanceof \StructType\ApiError) {
+            throw new \InvalidArgumentException(sprintf('The Error property can only contain items of type \StructType\ApiError, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Error[] = $item;
         return $this;
@@ -93,7 +93,7 @@ class ApiArrayOfError extends AbstractStructArrayBase
     /**
      * Returns the current element
      * @see AbstractStructArrayBase::current()
-     * @return \Api\StructType\ApiError|null
+     * @return \StructType\ApiError|null
      */
     public function current()
     {
@@ -103,7 +103,7 @@ class ApiArrayOfError extends AbstractStructArrayBase
      * Returns the indexed element
      * @see AbstractStructArrayBase::item()
      * @param int $index
-     * @return \Api\StructType\ApiError|null
+     * @return \StructType\ApiError|null
      */
     public function item($index)
     {
@@ -112,7 +112,7 @@ class ApiArrayOfError extends AbstractStructArrayBase
     /**
      * Returns the first element
      * @see AbstractStructArrayBase::first()
-     * @return \Api\StructType\ApiError|null
+     * @return \StructType\ApiError|null
      */
     public function first()
     {
@@ -121,7 +121,7 @@ class ApiArrayOfError extends AbstractStructArrayBase
     /**
      * Returns the last element
      * @see AbstractStructArrayBase::last()
-     * @return \Api\StructType\ApiError|null
+     * @return \StructType\ApiError|null
      */
     public function last()
     {
@@ -131,7 +131,7 @@ class ApiArrayOfError extends AbstractStructArrayBase
      * Returns the element at the offset
      * @see AbstractStructArrayBase::offsetGet()
      * @param int $offset
-     * @return \Api\StructType\ApiError|null
+     * @return \StructType\ApiError|null
      */
     public function offsetGet($offset)
     {

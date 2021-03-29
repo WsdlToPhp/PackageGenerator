@@ -19,18 +19,18 @@ require_once __DIR__ . '/vendor/autoload.php';
  */
 $options = array(
     \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => '__WSDL_URL__',
-    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \Api\ApiClassMap::get(),
+    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => ApiClassMap::get(),
 );
 /**
  * Samples for Service ServiceType
  */
-$service = new \Api\ServiceType\ApiService($options);
-$service->setSoapHeaderClusterHeader(new \Api\StructType\ApiClusterHeader());
-$service->setSoapHeaderSessionHeader(new \Api\StructType\ApiSessionHeader());
+$service = new \ServiceType\ApiService($options);
+$service->setSoapHeaderClusterHeader(new \StructType\ApiClusterHeader());
+$service->setSoapHeaderSessionHeader(new \StructType\ApiSessionHeader());
 /**
  * Sample call for login operation/method
  */
-if ($service->login(new \Api\StructType\ApiLogin()) !== false) {
+if ($service->login(new \StructType\ApiLogin()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -38,7 +38,7 @@ if ($service->login(new \Api\StructType\ApiLogin()) !== false) {
 /**
  * Sample call for sendEmail operation/method
  */
-if ($service->sendEmail(new \Api\StructType\ApiSendEmail()) !== false) {
+if ($service->sendEmail(new \StructType\ApiSendEmail()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -46,7 +46,7 @@ if ($service->sendEmail(new \Api\StructType\ApiSendEmail()) !== false) {
 /**
  * Sample call for _list operation/method
  */
-if ($service->_list(new \Api\StructType\ApiList()) !== false) {
+if ($service->_list(new \StructType\ApiList()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -54,7 +54,7 @@ if ($service->_list(new \Api\StructType\ApiList()) !== false) {
 /**
  * Sample call for uploadList operation/method
  */
-if ($service->uploadList(new \Api\StructType\ApiUploadList()) !== false) {
+if ($service->uploadList(new \StructType\ApiUploadList()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -62,7 +62,7 @@ if ($service->uploadList(new \Api\StructType\ApiUploadList()) !== false) {
 /**
  * Sample call for getUploadResult operation/method
  */
-if ($service->getUploadResult(new \Api\StructType\ApiGetUploadResultRequest()) !== false) {
+if ($service->getUploadResult(new \StructType\ApiGetUploadResultRequest()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -70,7 +70,7 @@ if ($service->getUploadResult(new \Api\StructType\ApiGetUploadResultRequest()) !
 /**
  * Sample call for downloadList operation/method
  */
-if ($service->downloadList(new \Api\StructType\ApiDownloadList()) !== false) {
+if ($service->downloadList(new \StructType\ApiDownloadList()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -78,7 +78,7 @@ if ($service->downloadList(new \Api\StructType\ApiDownloadList()) !== false) {
 /**
  * Sample call for messageReport operation/method
  */
-if ($service->messageReport(new \Api\StructType\ApiMessageReport()) !== false) {
+if ($service->messageReport(new \StructType\ApiMessageReport()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -86,7 +86,7 @@ if ($service->messageReport(new \Api\StructType\ApiMessageReport()) !== false) {
 /**
  * Sample call for deleteList operation/method
  */
-if ($service->deleteList(new \Api\StructType\ApiDeleteList()) !== false) {
+if ($service->deleteList(new \StructType\ApiDeleteList()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());

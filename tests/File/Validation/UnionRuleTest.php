@@ -13,8 +13,8 @@ class UnionRuleTest extends AbstractRuleTest
      * - union: PMS_ResStatusType | TransactionActionType | UpperCaseAlphaLength1to2
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage The value '1234567980' does not match any of the union rules: PMS_ResStatusType, TransactionActionType, UpperCaseAlphaLength1to2. See following errors:
-    - Invalid value(s) '1234567980', please use one of: Reserved, Requested, Request denied, No-show, Cancelled, In-house, Checked out, Waitlisted from enumeration class \Api\EnumType\ApiPMS_ResStatusType
-    - Invalid value(s) '1234567980', please use one of: Book, Quote, Hold, Initiate, Ignore, Modify, Commit, Cancel, CommitOverrideEdits, VerifyPrice, Ticket from enumeration class \Api\EnumType\ApiTransactionActionType
+    - Invalid value(s) '1234567980', please use one of: Reserved, Requested, Request denied, No-show, Cancelled, In-house, Checked out, Waitlisted from enumeration class \EnumType\ApiPMS_ResStatusType
+    - Invalid value(s) '1234567980', please use one of: Book, Quote, Hold, Initiate, Ignore, Modify, Commit, Cancel, CommitOverrideEdits, VerifyPrice, Ticket from enumeration class \EnumType\ApiTransactionActionType
     - Invalid value '1234567980', please provide a literal that is among the set of character sequences denoted by the regular expression [A-Z]{1,2}
      */
     public function testSetResStatusWithInvalidValueMustThrowAnException()
@@ -35,7 +35,7 @@ class UnionRuleTest extends AbstractRuleTest
     {
         $instance = self::getWhlHotelReservationTypeInstance(true);
 
-        $this->assertSame($instance, $instance->setResStatus(\Api\EnumType\ApiPMS_ResStatusType::VALUE_RESERVED));
+        $this->assertSame($instance, $instance->setResStatus(\EnumType\ApiPMS_ResStatusType::VALUE_RESERVED));
     }
 
     /**
@@ -49,7 +49,7 @@ class UnionRuleTest extends AbstractRuleTest
     {
         $instance = self::getWhlHotelReservationTypeInstance(true);
 
-        $this->assertSame($instance, $instance->setResStatus(\Api\EnumType\ApiTransactionActionType::VALUE_BOOK));
+        $this->assertSame($instance, $instance->setResStatus(\EnumType\ApiTransactionActionType::VALUE_BOOK));
     }
 
     /**

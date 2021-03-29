@@ -7,7 +7,7 @@ class ListRuleTest extends AbstractRuleTest
 
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Invalid value(s) string('Today'), please use one of: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Day, Weekday, WeekendDay from enumeration class \Api\EnumType\ApiDayOfWeekType
+     * @expectedExceptionMessage Invalid value(s) string('Today'), please use one of: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Day, Weekday, WeekendDay from enumeration class \EnumType\ApiDayOfWeekType
      */
     public function testSetDayOfWeekWithInvalidValueMustThrowAnException()
     {
@@ -26,7 +26,7 @@ class ListRuleTest extends AbstractRuleTest
         $instance = self::getEwsWorkingPeriodInstance();
 
         $this->assertSame($instance, $instance->setDayOfWeek([
-            \Api\EnumType\ApiDayOfWeekType::VALUE_MONDAY,
+            \EnumType\ApiDayOfWeekType::VALUE_MONDAY,
             'Tuesday',
             'Friday',
             'Sunday',

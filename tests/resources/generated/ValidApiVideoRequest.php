@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\StructType;
+namespace StructType;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -33,7 +33,7 @@ class ApiVideoRequest extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\ArrayType\ApiArrayOfString
+     * @var \ArrayType\ApiArrayOfString
      */
     public $Filters;
     /**
@@ -52,10 +52,10 @@ class ApiVideoRequest extends AbstractStructBase
      * @uses ApiVideoRequest::setSortBy()
      * @param int $offset
      * @param int $count
-     * @param \Api\ArrayType\ApiArrayOfString $filters
+     * @param \ArrayType\ApiArrayOfString $filters
      * @param string $sortBy
      */
-    public function __construct($offset = null, $count = null, \Api\ArrayType\ApiArrayOfString $filters = null, $sortBy = null)
+    public function __construct($offset = null, $count = null, \ArrayType\ApiArrayOfString $filters = null, $sortBy = null)
     {
         $this
             ->setOffset($offset)
@@ -74,7 +74,7 @@ class ApiVideoRequest extends AbstractStructBase
     /**
      * Set Offset value
      * @param int $offset
-     * @return \Api\StructType\ApiVideoRequest
+     * @return \StructType\ApiVideoRequest
      */
     public function setOffset($offset = null)
     {
@@ -96,7 +96,7 @@ class ApiVideoRequest extends AbstractStructBase
     /**
      * Set Count value
      * @param int $count
-     * @return \Api\StructType\ApiVideoRequest
+     * @return \StructType\ApiVideoRequest
      */
     public function setCount($count = null)
     {
@@ -109,7 +109,7 @@ class ApiVideoRequest extends AbstractStructBase
     }
     /**
      * Get Filters value
-     * @return \Api\ArrayType\ApiArrayOfString|null
+     * @return \ArrayType\ApiArrayOfString|null
      */
     public function getFilters()
     {
@@ -117,10 +117,10 @@ class ApiVideoRequest extends AbstractStructBase
     }
     /**
      * Set Filters value
-     * @param \Api\ArrayType\ApiArrayOfString $filters
-     * @return \Api\StructType\ApiVideoRequest
+     * @param \ArrayType\ApiArrayOfString $filters
+     * @return \StructType\ApiVideoRequest
      */
-    public function setFilters(\Api\ArrayType\ApiArrayOfString $filters = null)
+    public function setFilters(\ArrayType\ApiArrayOfString $filters = null)
     {
         $this->Filters = $filters;
         return $this;
@@ -135,17 +135,17 @@ class ApiVideoRequest extends AbstractStructBase
     }
     /**
      * Set SortBy value
-     * @uses \Api\EnumType\ApiVideoSortOption::valueIsValid()
-     * @uses \Api\EnumType\ApiVideoSortOption::getValidValues()
+     * @uses \EnumType\ApiVideoSortOption::valueIsValid()
+     * @uses \EnumType\ApiVideoSortOption::getValidValues()
      * @throws \InvalidArgumentException
      * @param string $sortBy
-     * @return \Api\StructType\ApiVideoRequest
+     * @return \StructType\ApiVideoRequest
      */
     public function setSortBy($sortBy = null)
     {
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiVideoSortOption::valueIsValid($sortBy)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiVideoSortOption', is_array($sortBy) ? implode(', ', $sortBy) : var_export($sortBy, true), implode(', ', \Api\EnumType\ApiVideoSortOption::getValidValues())), __LINE__);
+        if (!\EnumType\ApiVideoSortOption::valueIsValid($sortBy)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiVideoSortOption', is_array($sortBy) ? implode(', ', $sortBy) : var_export($sortBy, true), implode(', ', \EnumType\ApiVideoSortOption::getValidValues())), __LINE__);
         }
         $this->SortBy = $sortBy;
         return $this;

@@ -10,7 +10,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Api\\": "./src/"
+            "": "./src/"
         }
     },
     "config": {
