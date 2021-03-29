@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\StructType;
+namespace StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -31,17 +31,17 @@ class ApiOffer extends ApiOrder
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * - nillable: true
-     * @var \Api\StructType\ApiOffer|null
+     * @var \StructType\ApiOffer|null
      */
-    protected ?\Api\StructType\ApiOffer $offer = null;
+    protected ?\StructType\ApiOffer $offer = null;
     /**
      * Constructor method for offer
      * @uses ApiOffer::setOfferClassMember()
      * @uses ApiOffer::setOffer()
      * @param string $offerClassMember
-     * @param \Api\StructType\ApiOffer $offer
+     * @param \StructType\ApiOffer $offer
      */
-    public function __construct(?string $offerClassMember = null, ?\Api\StructType\ApiOffer $offer = null)
+    public function __construct(?string $offerClassMember = null, ?\StructType\ApiOffer $offer = null)
     {
         $this
             ->setOfferClassMember($offerClassMember)
@@ -63,7 +63,7 @@ class ApiOffer extends ApiOrder
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
      * @param string $offerClassMember
-     * @return \Api\StructType\ApiOffer
+     * @return \StructType\ApiOffer
      */
     public function setOfferClassMember(?string $offerClassMember = null): self
     {
@@ -84,9 +84,9 @@ class ApiOffer extends ApiOrder
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
-     * @return \Api\StructType\ApiOffer|null
+     * @return \StructType\ApiOffer|null
      */
-    public function getOffer(): ?\Api\StructType\ApiOffer
+    public function getOffer(): ?\StructType\ApiOffer
     {
         return isset($this->offer) ? $this->offer : null;
     }
@@ -94,10 +94,10 @@ class ApiOffer extends ApiOrder
      * Set offer value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
-     * @param \Api\StructType\ApiOffer $offer
-     * @return \Api\StructType\ApiOffer
+     * @param \StructType\ApiOffer $offer
+     * @return \StructType\ApiOffer
      */
-    public function setOffer(?\Api\StructType\ApiOffer $offer = null): self
+    public function setOffer(?\StructType\ApiOffer $offer = null): self
     {
         if (is_null($offer) || (is_array($offer) && empty($offer))) {
             unset($this->offer);

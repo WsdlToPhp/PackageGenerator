@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\StructType;
+namespace StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -45,9 +45,9 @@ class ApiUniqueID_Type extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - documentation: Identifies the company that is associated with the UniqueID.
      * - minOccurs: 0
-     * @var \Api\StructType\ApiCompanyNameType|null
+     * @var \StructType\ApiCompanyNameType|null
      */
-    protected ?\Api\StructType\ApiCompanyNameType $CompanyName = null;
+    protected ?\StructType\ApiCompanyNameType $CompanyName = null;
     /**
      * The URL
      * Meta information extracted from the WSDL
@@ -78,11 +78,11 @@ class ApiUniqueID_Type extends AbstractStructBase
      * @uses ApiUniqueID_Type::setID_Context()
      * @param string $type
      * @param string $iD
-     * @param \Api\StructType\ApiCompanyNameType $companyName
+     * @param \StructType\ApiCompanyNameType $companyName
      * @param string $uRL
      * @param string $iD_Context
      */
-    public function __construct(string $type, string $iD, ?\Api\StructType\ApiCompanyNameType $companyName = null, ?string $uRL = null, ?string $iD_Context = null)
+    public function __construct(string $type, string $iD, ?\StructType\ApiCompanyNameType $companyName = null, ?string $uRL = null, ?string $iD_Context = null)
     {
         $this
             ->setType($type)
@@ -102,7 +102,7 @@ class ApiUniqueID_Type extends AbstractStructBase
     /**
      * Set Type value
      * @param string $type
-     * @return \Api\StructType\ApiUniqueID_Type
+     * @return \StructType\ApiUniqueID_Type
      */
     public function setType(string $type): self
     {
@@ -129,7 +129,7 @@ class ApiUniqueID_Type extends AbstractStructBase
     /**
      * Set ID value
      * @param string $iD
-     * @return \Api\StructType\ApiUniqueID_Type
+     * @return \StructType\ApiUniqueID_Type
      */
     public function setID(string $iD): self
     {
@@ -151,18 +151,18 @@ class ApiUniqueID_Type extends AbstractStructBase
     }
     /**
      * Get CompanyName value
-     * @return \Api\StructType\ApiCompanyNameType|null
+     * @return \StructType\ApiCompanyNameType|null
      */
-    public function getCompanyName(): ?\Api\StructType\ApiCompanyNameType
+    public function getCompanyName(): ?\StructType\ApiCompanyNameType
     {
         return $this->CompanyName;
     }
     /**
      * Set CompanyName value
-     * @param \Api\StructType\ApiCompanyNameType $companyName
-     * @return \Api\StructType\ApiUniqueID_Type
+     * @param \StructType\ApiCompanyNameType $companyName
+     * @return \StructType\ApiUniqueID_Type
      */
-    public function setCompanyName(?\Api\StructType\ApiCompanyNameType $companyName = null): self
+    public function setCompanyName(?\StructType\ApiCompanyNameType $companyName = null): self
     {
         $this->CompanyName = $companyName;
         
@@ -179,7 +179,7 @@ class ApiUniqueID_Type extends AbstractStructBase
     /**
      * Set URL value
      * @param string $uRL
-     * @return \Api\StructType\ApiUniqueID_Type
+     * @return \StructType\ApiUniqueID_Type
      */
     public function setURL(?string $uRL = null): self
     {
@@ -202,7 +202,7 @@ class ApiUniqueID_Type extends AbstractStructBase
     /**
      * Set ID_Context value
      * @param string $iD_Context
-     * @return \Api\StructType\ApiUniqueID_Type
+     * @return \StructType\ApiUniqueID_Type
      */
     public function setID_Context(?string $iD_Context = null): self
     {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\StructType;
+namespace StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -22,25 +22,25 @@ class ApiHotelReservationType extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - documentation: Collection of room stays.
      * - minOccurs: 0
-     * @var \Api\StructType\ApiRoomStaysType|null
+     * @var \StructType\ApiRoomStaysType|null
      */
-    protected ?\Api\StructType\ApiRoomStaysType $RoomStays = null;
+    protected ?\StructType\ApiRoomStaysType $RoomStays = null;
     /**
      * The ResGuests
      * Meta information extracted from the WSDL
      * - documentation: Collection of guests associated with the reservation.
      * - minOccurs: 0
-     * @var \Api\StructType\ApiResGuestsType|null
+     * @var \StructType\ApiResGuestsType|null
      */
-    protected ?\Api\StructType\ApiResGuestsType $ResGuests = null;
+    protected ?\StructType\ApiResGuestsType $ResGuests = null;
     /**
      * The ResGlobalInfo
      * Meta information extracted from the WSDL
      * - documentation: ResGlobalInfo is a container for various information that affects the Reservation as a whole. These include global comments, counts, reservation IDs, loyalty programs, and payment methods.
      * - minOccurs: 0
-     * @var \Api\StructType\ApiResGlobalInfoType|null
+     * @var \StructType\ApiResGlobalInfoType|null
      */
-    protected ?\Api\StructType\ApiResGlobalInfoType $ResGlobalInfo = null;
+    protected ?\StructType\ApiResGlobalInfoType $ResGlobalInfo = null;
     /**
      * The RoomStayReservation
      * Meta information extracted from the WSDL
@@ -66,13 +66,13 @@ class ApiHotelReservationType extends AbstractStructBase
      * @uses ApiHotelReservationType::setResGlobalInfo()
      * @uses ApiHotelReservationType::setRoomStayReservation()
      * @uses ApiHotelReservationType::setResStatus()
-     * @param \Api\StructType\ApiRoomStaysType $roomStays
-     * @param \Api\StructType\ApiResGuestsType $resGuests
-     * @param \Api\StructType\ApiResGlobalInfoType $resGlobalInfo
+     * @param \StructType\ApiRoomStaysType $roomStays
+     * @param \StructType\ApiResGuestsType $resGuests
+     * @param \StructType\ApiResGlobalInfoType $resGlobalInfo
      * @param bool $roomStayReservation
      * @param string $resStatus
      */
-    public function __construct(?\Api\StructType\ApiRoomStaysType $roomStays = null, ?\Api\StructType\ApiResGuestsType $resGuests = null, ?\Api\StructType\ApiResGlobalInfoType $resGlobalInfo = null, ?bool $roomStayReservation = null, ?string $resStatus = null)
+    public function __construct(?\StructType\ApiRoomStaysType $roomStays = null, ?\StructType\ApiResGuestsType $resGuests = null, ?\StructType\ApiResGlobalInfoType $resGlobalInfo = null, ?bool $roomStayReservation = null, ?string $resStatus = null)
     {
         $this
             ->setRoomStays($roomStays)
@@ -83,18 +83,18 @@ class ApiHotelReservationType extends AbstractStructBase
     }
     /**
      * Get RoomStays value
-     * @return \Api\StructType\ApiRoomStaysType|null
+     * @return \StructType\ApiRoomStaysType|null
      */
-    public function getRoomStays(): ?\Api\StructType\ApiRoomStaysType
+    public function getRoomStays(): ?\StructType\ApiRoomStaysType
     {
         return $this->RoomStays;
     }
     /**
      * Set RoomStays value
-     * @param \Api\StructType\ApiRoomStaysType $roomStays
-     * @return \Api\StructType\ApiHotelReservationType
+     * @param \StructType\ApiRoomStaysType $roomStays
+     * @return \StructType\ApiHotelReservationType
      */
-    public function setRoomStays(?\Api\StructType\ApiRoomStaysType $roomStays = null): self
+    public function setRoomStays(?\StructType\ApiRoomStaysType $roomStays = null): self
     {
         $this->RoomStays = $roomStays;
         
@@ -102,18 +102,18 @@ class ApiHotelReservationType extends AbstractStructBase
     }
     /**
      * Get ResGuests value
-     * @return \Api\StructType\ApiResGuestsType|null
+     * @return \StructType\ApiResGuestsType|null
      */
-    public function getResGuests(): ?\Api\StructType\ApiResGuestsType
+    public function getResGuests(): ?\StructType\ApiResGuestsType
     {
         return $this->ResGuests;
     }
     /**
      * Set ResGuests value
-     * @param \Api\StructType\ApiResGuestsType $resGuests
-     * @return \Api\StructType\ApiHotelReservationType
+     * @param \StructType\ApiResGuestsType $resGuests
+     * @return \StructType\ApiHotelReservationType
      */
-    public function setResGuests(?\Api\StructType\ApiResGuestsType $resGuests = null): self
+    public function setResGuests(?\StructType\ApiResGuestsType $resGuests = null): self
     {
         $this->ResGuests = $resGuests;
         
@@ -121,18 +121,18 @@ class ApiHotelReservationType extends AbstractStructBase
     }
     /**
      * Get ResGlobalInfo value
-     * @return \Api\StructType\ApiResGlobalInfoType|null
+     * @return \StructType\ApiResGlobalInfoType|null
      */
-    public function getResGlobalInfo(): ?\Api\StructType\ApiResGlobalInfoType
+    public function getResGlobalInfo(): ?\StructType\ApiResGlobalInfoType
     {
         return $this->ResGlobalInfo;
     }
     /**
      * Set ResGlobalInfo value
-     * @param \Api\StructType\ApiResGlobalInfoType $resGlobalInfo
-     * @return \Api\StructType\ApiHotelReservationType
+     * @param \StructType\ApiResGlobalInfoType $resGlobalInfo
+     * @return \StructType\ApiHotelReservationType
      */
-    public function setResGlobalInfo(?\Api\StructType\ApiResGlobalInfoType $resGlobalInfo = null): self
+    public function setResGlobalInfo(?\StructType\ApiResGlobalInfoType $resGlobalInfo = null): self
     {
         $this->ResGlobalInfo = $resGlobalInfo;
         
@@ -149,7 +149,7 @@ class ApiHotelReservationType extends AbstractStructBase
     /**
      * Set RoomStayReservation value
      * @param bool $roomStayReservation
-     * @return \Api\StructType\ApiHotelReservationType
+     * @return \StructType\ApiHotelReservationType
      */
     public function setRoomStayReservation(?bool $roomStayReservation = null): self
     {
@@ -180,12 +180,12 @@ class ApiHotelReservationType extends AbstractStructBase
     {
         $message = '';
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiPMS_ResStatusType::valueIsValid($value)) {
-            $exception0 = new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiPMS_ResStatusType', is_array($value) ? implode(', ', $value) : var_export($value, true), implode(', ', \Api\EnumType\ApiPMS_ResStatusType::getValidValues())), __LINE__);
+        if (!\EnumType\ApiPMS_ResStatusType::valueIsValid($value)) {
+            $exception0 = new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiPMS_ResStatusType', is_array($value) ? implode(', ', $value) : var_export($value, true), implode(', ', \EnumType\ApiPMS_ResStatusType::getValidValues())), __LINE__);
         }
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiTransactionActionType::valueIsValid($value)) {
-            $exception1 = new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiTransactionActionType', is_array($value) ? implode(', ', $value) : var_export($value, true), implode(', ', \Api\EnumType\ApiTransactionActionType::getValidValues())), __LINE__);
+        if (!\EnumType\ApiTransactionActionType::valueIsValid($value)) {
+            $exception1 = new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiTransactionActionType', is_array($value) ? implode(', ', $value) : var_export($value, true), implode(', ', \EnumType\ApiTransactionActionType::getValidValues())), __LINE__);
         }
         // validation for constraint: pattern([A-Z]{1,2})
         if (!is_null($value) && !preg_match('/[A-Z]{1,2}/', $value)) {
@@ -201,7 +201,7 @@ class ApiHotelReservationType extends AbstractStructBase
     /**
      * Set ResStatus value
      * @param string $resStatus
-     * @return \Api\StructType\ApiHotelReservationType
+     * @return \StructType\ApiHotelReservationType
      */
     public function setResStatus(?string $resStatus = null): self
     {

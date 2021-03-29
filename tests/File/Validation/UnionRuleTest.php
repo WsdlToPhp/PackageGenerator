@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use Api\EnumType\ApiPMS_ResStatusType;
-use Api\EnumType\ApiTransactionActionType;
+use EnumType\ApiPMS_ResStatusType;
+use EnumType\ApiTransactionActionType;
 use InvalidArgumentException;
 
 /**
@@ -24,7 +24,7 @@ final class UnionRuleTest extends AbstractRuleTest
     public function testSetResStatusWithInvalidValueMustThrowAnException()
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage("The value '1234567980' does not match any of the union rules: PMS_ResStatusType, TransactionActionType, UpperCaseAlphaLength1to2. See following errors:\n - Invalid value(s) '1234567980', please use one of: Reserved, Requested, Request denied, No-show, Cancelled, In-house, Checked out, Waitlisted from enumeration class \\Api\\EnumType\\ApiPMS_ResStatusType\n - Invalid value(s) '1234567980', please use one of: Book, Quote, Hold, Initiate, Ignore, Modify, Commit, Cancel, CommitOverrideEdits, VerifyPrice, Ticket from enumeration class \\Api\\EnumType\\ApiTransactionActionType\n - Invalid value '1234567980', please provide a literal that is among the set of character sequences denoted by the regular expression /[A-Z]{1,2}/");
+        $this->expectExceptionMessage("The value '1234567980' does not match any of the union rules: PMS_ResStatusType, TransactionActionType, UpperCaseAlphaLength1to2. See following errors:\n - Invalid value(s) '1234567980', please use one of: Reserved, Requested, Request denied, No-show, Cancelled, In-house, Checked out, Waitlisted from enumeration class \\EnumType\\ApiPMS_ResStatusType\n - Invalid value(s) '1234567980', please use one of: Book, Quote, Hold, Initiate, Ignore, Modify, Commit, Cancel, CommitOverrideEdits, VerifyPrice, Ticket from enumeration class \\EnumType\\ApiTransactionActionType\n - Invalid value '1234567980', please provide a literal that is among the set of character sequences denoted by the regular expression /[A-Z]{1,2}/");
 
         $instance = self::getWhlHotelReservationTypeInstance(true);
 

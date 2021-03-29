@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\StructType;
+namespace StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -21,9 +21,9 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * - documentation: The total cost of the order to the customer. If shipping cost and tax charges are known, include them in OrderTotal; if not, OrderTotal should be the current sub-total of the order. You must set the currencyID attribute to one of the
      * three-character currency codes for any of the supported PayPal currencies. Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
      * - minOccurs: 0
-     * @var \Api\StructType\ApiBasicAmountType|null
+     * @var \StructType\ApiBasicAmountType|null
      */
-    protected ?\Api\StructType\ApiBasicAmountType $OrderTotal = null;
+    protected ?\StructType\ApiBasicAmountType $OrderTotal = null;
     /**
      * The ReturnURL
      * Meta information extracted from the WSDL
@@ -88,9 +88,9 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * - documentation: The expected maximum total amount of the complete order, including shipping cost and tax charges. Optional You must set the currencyID attribute to one of the three-character currency codes for any of the supported PayPal currencies.
      * Limitations: Must not exceed $10,000 USD in any currency. No currency symbol. Decimal separator must be a period (.), and the thousands separator must be a comma (,).
      * - minOccurs: 0
-     * @var \Api\StructType\ApiBasicAmountType|null
+     * @var \StructType\ApiBasicAmountType|null
      */
-    protected ?\Api\StructType\ApiBasicAmountType $MaxAmount = null;
+    protected ?\StructType\ApiBasicAmountType $MaxAmount = null;
     /**
      * The OrderDescription
      * Meta information extracted from the WSDL
@@ -138,9 +138,9 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - documentation: The billing address for the buyer. Optional If you include the BillingAddress element, the AddressType elements are required: Name Street1 CityName CountryCode Do not set set the CountryName element.
      * - minOccurs: 0
-     * @var \Api\StructType\ApiAddressType|null
+     * @var \StructType\ApiAddressType|null
      */
-    protected ?\Api\StructType\ApiAddressType $BillingAddress = null;
+    protected ?\StructType\ApiAddressType $BillingAddress = null;
     /**
      * The NoShipping
      * Meta information extracted from the WSDL
@@ -232,9 +232,9 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - documentation: Customer's shipping address. Optional If you include a shipping address and set the AddressOverride element on the request, PayPal returns this same address in GetExpressCheckoutDetailsResponse.
      * - minOccurs: 0
-     * @var \Api\StructType\ApiAddressType|null
+     * @var \StructType\ApiAddressType|null
      */
-    protected ?\Api\StructType\ApiAddressType $Address = null;
+    protected ?\StructType\ApiAddressType $Address = null;
     /**
      * The PaymentAction
      * Meta information extracted from the WSDL
@@ -282,7 +282,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var \Api\StructType\ApiBillingAgreementDetailsType[]
+     * @var \StructType\ApiBillingAgreementDetailsType[]
      */
     protected array $BillingAgreementDetails = [];
     /**
@@ -344,9 +344,9 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * - documentation: Funding source preferences.
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiFundingSourceDetailsType|null
+     * @var \StructType\ApiFundingSourceDetailsType|null
      */
-    protected ?\Api\StructType\ApiFundingSourceDetailsType $FundingSourceDetails = null;
+    protected ?\StructType\ApiFundingSourceDetailsType $FundingSourceDetails = null;
     /**
      * The BrandName
      * Meta information extracted from the WSDL
@@ -371,16 +371,16 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * - documentation: Enhanced data for different industry segments. Optional
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiEnhancedCheckoutDataType|null
+     * @var \StructType\ApiEnhancedCheckoutDataType|null
      */
-    protected ?\Api\StructType\ApiEnhancedCheckoutDataType $EnhancedCheckoutData = null;
+    protected ?\StructType\ApiEnhancedCheckoutDataType $EnhancedCheckoutData = null;
     /**
      * The OtherPaymentMethods
      * Meta information extracted from the WSDL
      * - documentation: List of other payment methods the user can pay with. Optional Refer to the OtherPaymentMethodDetailsType for more details.
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var \Api\StructType\ApiOtherPaymentMethodDetailsType[]
+     * @var \StructType\ApiOtherPaymentMethodDetailsType[]
      */
     protected array $OtherPaymentMethods = [];
     /**
@@ -389,16 +389,16 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * - documentation: Details about the buyer's account. Optional Refer to the BuyerDetailsType for more details.
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiBuyerDetailsType|null
+     * @var \StructType\ApiBuyerDetailsType|null
      */
-    protected ?\Api\StructType\ApiBuyerDetailsType $BuyerDetails = null;
+    protected ?\StructType\ApiBuyerDetailsType $BuyerDetails = null;
     /**
      * The PaymentDetails
      * Meta information extracted from the WSDL
      * - documentation: Information about the payment.
      * - maxOccurs: 10
      * - minOccurs: 0
-     * @var \Api\StructType\ApiPaymentDetailsType[]
+     * @var \StructType\ApiPaymentDetailsType[]
      */
     protected array $PaymentDetails = [];
     /**
@@ -407,7 +407,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * - documentation: List of Fall Back Shipping options provided by merchant.
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var \Api\StructType\ApiShippingOptionType[]
+     * @var \StructType\ApiShippingOptionType[]
      */
     protected array $FlatRateShippingOptions = [];
     /**
@@ -479,9 +479,9 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * - documentation: Information about the Gift Wrap amount.
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiBasicAmountType|null
+     * @var \StructType\ApiBasicAmountType|null
      */
-    protected ?\Api\StructType\ApiBasicAmountType $GiftWrapAmount = null;
+    protected ?\StructType\ApiBasicAmountType $GiftWrapAmount = null;
     /**
      * The BuyerEmailOptInEnable
      * Meta information extracted from the WSDL
@@ -540,7 +540,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * - documentation: Incentive Code Optional List of incentive codes supplied by ebay/merchant.
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var \Api\StructType\ApiIncentiveInfoType[]
+     * @var \StructType\ApiIncentiveInfoType[]
      */
     protected array $Incentives = [];
     /**
@@ -559,43 +559,43 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * ExternalRememberMeID is present.
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiExternalRememberMeOptInDetailsType|null
+     * @var \StructType\ApiExternalRememberMeOptInDetailsType|null
      */
-    protected ?\Api\StructType\ApiExternalRememberMeOptInDetailsType $ExternalRememberMeOptInDetails = null;
+    protected ?\StructType\ApiExternalRememberMeOptInDetailsType $ExternalRememberMeOptInDetails = null;
     /**
      * The FlowControlDetails
      * Meta information extracted from the WSDL
      * - documentation: An optional set of values related to flow-specific details.
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiFlowControlDetailsType|null
+     * @var \StructType\ApiFlowControlDetailsType|null
      */
-    protected ?\Api\StructType\ApiFlowControlDetailsType $FlowControlDetails = null;
+    protected ?\StructType\ApiFlowControlDetailsType $FlowControlDetails = null;
     /**
      * The DisplayControlDetails
      * Meta information extracted from the WSDL
      * - documentation: An optional set of values related to display-specific details.
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiDisplayControlDetailsType|null
+     * @var \StructType\ApiDisplayControlDetailsType|null
      */
-    protected ?\Api\StructType\ApiDisplayControlDetailsType $DisplayControlDetails = null;
+    protected ?\StructType\ApiDisplayControlDetailsType $DisplayControlDetails = null;
     /**
      * The ExternalPartnerTrackingDetails
      * Meta information extracted from the WSDL
      * - documentation: An optional set of values related to tracking for external partner.
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiExternalPartnerTrackingDetailsType|null
+     * @var \StructType\ApiExternalPartnerTrackingDetailsType|null
      */
-    protected ?\Api\StructType\ApiExternalPartnerTrackingDetailsType $ExternalPartnerTrackingDetails = null;
+    protected ?\StructType\ApiExternalPartnerTrackingDetailsType $ExternalPartnerTrackingDetails = null;
     /**
      * The CoupledBuckets
      * Meta information extracted from the WSDL
      * - documentation: Optional element that defines relationship between buckets
      * - maxOccurs: 5
      * - minOccurs: 0
-     * @var \Api\StructType\ApiCoupledBucketsType[]
+     * @var \StructType\ApiCoupledBucketsType[]
      */
     protected array $CoupledBuckets = [];
     /**
@@ -667,7 +667,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @uses ApiSetExpressCheckoutRequestDetailsType::setDisplayControlDetails()
      * @uses ApiSetExpressCheckoutRequestDetailsType::setExternalPartnerTrackingDetails()
      * @uses ApiSetExpressCheckoutRequestDetailsType::setCoupledBuckets()
-     * @param \Api\StructType\ApiBasicAmountType $orderTotal
+     * @param \StructType\ApiBasicAmountType $orderTotal
      * @param string $returnURL
      * @param string $cancelURL
      * @param string $trackingImageURL
@@ -675,13 +675,13 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param string $giropayCancelURL
      * @param string $banktxnPendingURL
      * @param string $token
-     * @param \Api\StructType\ApiBasicAmountType $maxAmount
+     * @param \StructType\ApiBasicAmountType $maxAmount
      * @param string $orderDescription
      * @param string $custom
      * @param string $invoiceID
      * @param string $reqConfirmShipping
      * @param string $reqBillingAddress
-     * @param \Api\StructType\ApiAddressType $billingAddress
+     * @param \StructType\ApiAddressType $billingAddress
      * @param string $noShipping
      * @param string $addressOverride
      * @param string $localeCode
@@ -692,27 +692,27 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param string $cpp_payflow_color
      * @param string $cpp_cart_border_color
      * @param string $cpp_logo_image
-     * @param \Api\StructType\ApiAddressType $address
+     * @param \StructType\ApiAddressType $address
      * @param string $paymentAction
      * @param string $solutionType
      * @param string $landingPage
      * @param string $buyerEmail
      * @param string $channelType
-     * @param \Api\StructType\ApiBillingAgreementDetailsType[] $billingAgreementDetails
+     * @param \StructType\ApiBillingAgreementDetailsType[] $billingAgreementDetails
      * @param string[] $promoCodes
      * @param string $payPalCheckOutBtnType
      * @param string $productCategory
      * @param string $shippingMethod
      * @param string $profileAddressChangeDate
      * @param string $allowNote
-     * @param \Api\StructType\ApiFundingSourceDetailsType $fundingSourceDetails
+     * @param \StructType\ApiFundingSourceDetailsType $fundingSourceDetails
      * @param string $brandName
      * @param string $callbackURL
-     * @param \Api\StructType\ApiEnhancedCheckoutDataType $enhancedCheckoutData
-     * @param \Api\StructType\ApiOtherPaymentMethodDetailsType[] $otherPaymentMethods
-     * @param \Api\StructType\ApiBuyerDetailsType $buyerDetails
-     * @param \Api\StructType\ApiPaymentDetailsType[] $paymentDetails
-     * @param \Api\StructType\ApiShippingOptionType[] $flatRateShippingOptions
+     * @param \StructType\ApiEnhancedCheckoutDataType $enhancedCheckoutData
+     * @param \StructType\ApiOtherPaymentMethodDetailsType[] $otherPaymentMethods
+     * @param \StructType\ApiBuyerDetailsType $buyerDetails
+     * @param \StructType\ApiPaymentDetailsType[] $paymentDetails
+     * @param \StructType\ApiShippingOptionType[] $flatRateShippingOptions
      * @param string $callbackTimeout
      * @param string $callbackVersion
      * @param string $customerServiceNumber
@@ -720,22 +720,22 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param string $giftReceiptEnable
      * @param string $giftWrapEnable
      * @param string $giftWrapName
-     * @param \Api\StructType\ApiBasicAmountType $giftWrapAmount
+     * @param \StructType\ApiBasicAmountType $giftWrapAmount
      * @param string $buyerEmailOptInEnable
      * @param string $surveyEnable
      * @param string $surveyQuestion
      * @param string[] $surveyChoice
      * @param string $totalType
      * @param string $noteToBuyer
-     * @param \Api\StructType\ApiIncentiveInfoType[] $incentives
+     * @param \StructType\ApiIncentiveInfoType[] $incentives
      * @param string $reqInstrumentDetails
-     * @param \Api\StructType\ApiExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails
-     * @param \Api\StructType\ApiFlowControlDetailsType $flowControlDetails
-     * @param \Api\StructType\ApiDisplayControlDetailsType $displayControlDetails
-     * @param \Api\StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails
-     * @param \Api\StructType\ApiCoupledBucketsType[] $coupledBuckets
+     * @param \StructType\ApiExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails
+     * @param \StructType\ApiFlowControlDetailsType $flowControlDetails
+     * @param \StructType\ApiDisplayControlDetailsType $displayControlDetails
+     * @param \StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails
+     * @param \StructType\ApiCoupledBucketsType[] $coupledBuckets
      */
-    public function __construct(?\Api\StructType\ApiBasicAmountType $orderTotal = null, ?string $returnURL = null, ?string $cancelURL = null, ?string $trackingImageURL = null, ?string $giropaySuccessURL = null, ?string $giropayCancelURL = null, ?string $banktxnPendingURL = null, ?string $token = null, ?\Api\StructType\ApiBasicAmountType $maxAmount = null, ?string $orderDescription = null, ?string $custom = null, ?string $invoiceID = null, ?string $reqConfirmShipping = null, ?string $reqBillingAddress = null, ?\Api\StructType\ApiAddressType $billingAddress = null, ?string $noShipping = null, ?string $addressOverride = null, ?string $localeCode = null, ?string $pageStyle = null, ?string $cpp_header_image = null, ?string $cpp_header_border_color = null, ?string $cpp_header_back_color = null, ?string $cpp_payflow_color = null, ?string $cpp_cart_border_color = null, ?string $cpp_logo_image = null, ?\Api\StructType\ApiAddressType $address = null, ?string $paymentAction = null, ?string $solutionType = null, ?string $landingPage = null, ?string $buyerEmail = null, ?string $channelType = null, array $billingAgreementDetails = [], array $promoCodes = [], ?string $payPalCheckOutBtnType = null, ?string $productCategory = null, ?string $shippingMethod = null, ?string $profileAddressChangeDate = null, ?string $allowNote = null, ?\Api\StructType\ApiFundingSourceDetailsType $fundingSourceDetails = null, ?string $brandName = null, ?string $callbackURL = null, ?\Api\StructType\ApiEnhancedCheckoutDataType $enhancedCheckoutData = null, array $otherPaymentMethods = [], ?\Api\StructType\ApiBuyerDetailsType $buyerDetails = null, array $paymentDetails = [], array $flatRateShippingOptions = [], ?string $callbackTimeout = null, ?string $callbackVersion = null, ?string $customerServiceNumber = null, ?string $giftMessageEnable = null, ?string $giftReceiptEnable = null, ?string $giftWrapEnable = null, ?string $giftWrapName = null, ?\Api\StructType\ApiBasicAmountType $giftWrapAmount = null, ?string $buyerEmailOptInEnable = null, ?string $surveyEnable = null, ?string $surveyQuestion = null, array $surveyChoice = [], ?string $totalType = null, ?string $noteToBuyer = null, array $incentives = [], ?string $reqInstrumentDetails = null, ?\Api\StructType\ApiExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails = null, ?\Api\StructType\ApiFlowControlDetailsType $flowControlDetails = null, ?\Api\StructType\ApiDisplayControlDetailsType $displayControlDetails = null, ?\Api\StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails = null, array $coupledBuckets = [])
+    public function __construct(?\StructType\ApiBasicAmountType $orderTotal = null, ?string $returnURL = null, ?string $cancelURL = null, ?string $trackingImageURL = null, ?string $giropaySuccessURL = null, ?string $giropayCancelURL = null, ?string $banktxnPendingURL = null, ?string $token = null, ?\StructType\ApiBasicAmountType $maxAmount = null, ?string $orderDescription = null, ?string $custom = null, ?string $invoiceID = null, ?string $reqConfirmShipping = null, ?string $reqBillingAddress = null, ?\StructType\ApiAddressType $billingAddress = null, ?string $noShipping = null, ?string $addressOverride = null, ?string $localeCode = null, ?string $pageStyle = null, ?string $cpp_header_image = null, ?string $cpp_header_border_color = null, ?string $cpp_header_back_color = null, ?string $cpp_payflow_color = null, ?string $cpp_cart_border_color = null, ?string $cpp_logo_image = null, ?\StructType\ApiAddressType $address = null, ?string $paymentAction = null, ?string $solutionType = null, ?string $landingPage = null, ?string $buyerEmail = null, ?string $channelType = null, array $billingAgreementDetails = [], array $promoCodes = [], ?string $payPalCheckOutBtnType = null, ?string $productCategory = null, ?string $shippingMethod = null, ?string $profileAddressChangeDate = null, ?string $allowNote = null, ?\StructType\ApiFundingSourceDetailsType $fundingSourceDetails = null, ?string $brandName = null, ?string $callbackURL = null, ?\StructType\ApiEnhancedCheckoutDataType $enhancedCheckoutData = null, array $otherPaymentMethods = [], ?\StructType\ApiBuyerDetailsType $buyerDetails = null, array $paymentDetails = [], array $flatRateShippingOptions = [], ?string $callbackTimeout = null, ?string $callbackVersion = null, ?string $customerServiceNumber = null, ?string $giftMessageEnable = null, ?string $giftReceiptEnable = null, ?string $giftWrapEnable = null, ?string $giftWrapName = null, ?\StructType\ApiBasicAmountType $giftWrapAmount = null, ?string $buyerEmailOptInEnable = null, ?string $surveyEnable = null, ?string $surveyQuestion = null, array $surveyChoice = [], ?string $totalType = null, ?string $noteToBuyer = null, array $incentives = [], ?string $reqInstrumentDetails = null, ?\StructType\ApiExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails = null, ?\StructType\ApiFlowControlDetailsType $flowControlDetails = null, ?\StructType\ApiDisplayControlDetailsType $displayControlDetails = null, ?\StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails = null, array $coupledBuckets = [])
     {
         $this
             ->setOrderTotal($orderTotal)
@@ -808,18 +808,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get OrderTotal value
-     * @return \Api\StructType\ApiBasicAmountType|null
+     * @return \StructType\ApiBasicAmountType|null
      */
-    public function getOrderTotal(): ?\Api\StructType\ApiBasicAmountType
+    public function getOrderTotal(): ?\StructType\ApiBasicAmountType
     {
         return $this->OrderTotal;
     }
     /**
      * Set OrderTotal value
-     * @param \Api\StructType\ApiBasicAmountType $orderTotal
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiBasicAmountType $orderTotal
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setOrderTotal(?\Api\StructType\ApiBasicAmountType $orderTotal = null): self
+    public function setOrderTotal(?\StructType\ApiBasicAmountType $orderTotal = null): self
     {
         $this->OrderTotal = $orderTotal;
         
@@ -836,7 +836,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set ReturnURL value
      * @param string $returnURL
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setReturnURL(?string $returnURL = null): self
     {
@@ -859,7 +859,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set CancelURL value
      * @param string $cancelURL
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setCancelURL(?string $cancelURL = null): self
     {
@@ -882,7 +882,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set TrackingImageURL value
      * @param string $trackingImageURL
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setTrackingImageURL(?string $trackingImageURL = null): self
     {
@@ -905,7 +905,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set giropaySuccessURL value
      * @param string $giropaySuccessURL
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setGiropaySuccessURL(?string $giropaySuccessURL = null): self
     {
@@ -928,7 +928,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set giropayCancelURL value
      * @param string $giropayCancelURL
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setGiropayCancelURL(?string $giropayCancelURL = null): self
     {
@@ -951,7 +951,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set BanktxnPendingURL value
      * @param string $banktxnPendingURL
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setBanktxnPendingURL(?string $banktxnPendingURL = null): self
     {
@@ -974,7 +974,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set Token value
      * @param string $token
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setToken(?string $token = null): self
     {
@@ -988,18 +988,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get MaxAmount value
-     * @return \Api\StructType\ApiBasicAmountType|null
+     * @return \StructType\ApiBasicAmountType|null
      */
-    public function getMaxAmount(): ?\Api\StructType\ApiBasicAmountType
+    public function getMaxAmount(): ?\StructType\ApiBasicAmountType
     {
         return $this->MaxAmount;
     }
     /**
      * Set MaxAmount value
-     * @param \Api\StructType\ApiBasicAmountType $maxAmount
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiBasicAmountType $maxAmount
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setMaxAmount(?\Api\StructType\ApiBasicAmountType $maxAmount = null): self
+    public function setMaxAmount(?\StructType\ApiBasicAmountType $maxAmount = null): self
     {
         $this->MaxAmount = $maxAmount;
         
@@ -1016,7 +1016,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set OrderDescription value
      * @param string $orderDescription
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setOrderDescription(?string $orderDescription = null): self
     {
@@ -1039,7 +1039,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set Custom value
      * @param string $custom
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setCustom(?string $custom = null): self
     {
@@ -1062,7 +1062,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set InvoiceID value
      * @param string $invoiceID
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setInvoiceID(?string $invoiceID = null): self
     {
@@ -1085,7 +1085,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set ReqConfirmShipping value
      * @param string $reqConfirmShipping
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setReqConfirmShipping(?string $reqConfirmShipping = null): self
     {
@@ -1108,7 +1108,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set ReqBillingAddress value
      * @param string $reqBillingAddress
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setReqBillingAddress(?string $reqBillingAddress = null): self
     {
@@ -1122,18 +1122,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get BillingAddress value
-     * @return \Api\StructType\ApiAddressType|null
+     * @return \StructType\ApiAddressType|null
      */
-    public function getBillingAddress(): ?\Api\StructType\ApiAddressType
+    public function getBillingAddress(): ?\StructType\ApiAddressType
     {
         return $this->BillingAddress;
     }
     /**
      * Set BillingAddress value
-     * @param \Api\StructType\ApiAddressType $billingAddress
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiAddressType $billingAddress
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setBillingAddress(?\Api\StructType\ApiAddressType $billingAddress = null): self
+    public function setBillingAddress(?\StructType\ApiAddressType $billingAddress = null): self
     {
         $this->BillingAddress = $billingAddress;
         
@@ -1150,7 +1150,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set NoShipping value
      * @param string $noShipping
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setNoShipping(?string $noShipping = null): self
     {
@@ -1173,7 +1173,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set AddressOverride value
      * @param string $addressOverride
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setAddressOverride(?string $addressOverride = null): self
     {
@@ -1196,7 +1196,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set LocaleCode value
      * @param string $localeCode
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setLocaleCode(?string $localeCode = null): self
     {
@@ -1219,7 +1219,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set PageStyle value
      * @param string $pageStyle
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setPageStyle(?string $pageStyle = null): self
     {
@@ -1242,7 +1242,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set cpp_header_image value
      * @param string $cpp_header_image
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setCpp_header_image(?string $cpp_header_image = null): self
     {
@@ -1265,7 +1265,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set cpp_header_border_color value
      * @param string $cpp_header_border_color
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setCpp_header_border_color(?string $cpp_header_border_color = null): self
     {
@@ -1288,7 +1288,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set cpp_header_back_color value
      * @param string $cpp_header_back_color
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setCpp_header_back_color(?string $cpp_header_back_color = null): self
     {
@@ -1311,7 +1311,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set cpp_payflow_color value
      * @param string $cpp_payflow_color
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setCpp_payflow_color(?string $cpp_payflow_color = null): self
     {
@@ -1334,7 +1334,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set cpp_cart_border_color value
      * @param string $cpp_cart_border_color
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setCpp_cart_border_color(?string $cpp_cart_border_color = null): self
     {
@@ -1357,7 +1357,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set cpp_logo_image value
      * @param string $cpp_logo_image
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setCpp_logo_image(?string $cpp_logo_image = null): self
     {
@@ -1371,18 +1371,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get Address value
-     * @return \Api\StructType\ApiAddressType|null
+     * @return \StructType\ApiAddressType|null
      */
-    public function getAddress(): ?\Api\StructType\ApiAddressType
+    public function getAddress(): ?\StructType\ApiAddressType
     {
         return $this->Address;
     }
     /**
      * Set Address value
-     * @param \Api\StructType\ApiAddressType $address
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiAddressType $address
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setAddress(?\Api\StructType\ApiAddressType $address = null): self
+    public function setAddress(?\StructType\ApiAddressType $address = null): self
     {
         $this->Address = $address;
         
@@ -1398,17 +1398,17 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set PaymentAction value
-     * @uses \Api\EnumType\ApiPaymentActionCodeType::valueIsValid()
-     * @uses \Api\EnumType\ApiPaymentActionCodeType::getValidValues()
+     * @uses \EnumType\ApiPaymentActionCodeType::valueIsValid()
+     * @uses \EnumType\ApiPaymentActionCodeType::getValidValues()
      * @throws InvalidArgumentException
      * @param string $paymentAction
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setPaymentAction(?string $paymentAction = null): self
     {
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiPaymentActionCodeType::valueIsValid($paymentAction)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiPaymentActionCodeType', is_array($paymentAction) ? implode(', ', $paymentAction) : var_export($paymentAction, true), implode(', ', \Api\EnumType\ApiPaymentActionCodeType::getValidValues())), __LINE__);
+        if (!\EnumType\ApiPaymentActionCodeType::valueIsValid($paymentAction)) {
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiPaymentActionCodeType', is_array($paymentAction) ? implode(', ', $paymentAction) : var_export($paymentAction, true), implode(', ', \EnumType\ApiPaymentActionCodeType::getValidValues())), __LINE__);
         }
         $this->PaymentAction = $paymentAction;
         
@@ -1424,17 +1424,17 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set SolutionType value
-     * @uses \Api\EnumType\ApiSolutionTypeType::valueIsValid()
-     * @uses \Api\EnumType\ApiSolutionTypeType::getValidValues()
+     * @uses \EnumType\ApiSolutionTypeType::valueIsValid()
+     * @uses \EnumType\ApiSolutionTypeType::getValidValues()
      * @throws InvalidArgumentException
      * @param string $solutionType
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setSolutionType(?string $solutionType = null): self
     {
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiSolutionTypeType::valueIsValid($solutionType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiSolutionTypeType', is_array($solutionType) ? implode(', ', $solutionType) : var_export($solutionType, true), implode(', ', \Api\EnumType\ApiSolutionTypeType::getValidValues())), __LINE__);
+        if (!\EnumType\ApiSolutionTypeType::valueIsValid($solutionType)) {
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiSolutionTypeType', is_array($solutionType) ? implode(', ', $solutionType) : var_export($solutionType, true), implode(', ', \EnumType\ApiSolutionTypeType::getValidValues())), __LINE__);
         }
         $this->SolutionType = $solutionType;
         
@@ -1450,17 +1450,17 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set LandingPage value
-     * @uses \Api\EnumType\ApiLandingPageType::valueIsValid()
-     * @uses \Api\EnumType\ApiLandingPageType::getValidValues()
+     * @uses \EnumType\ApiLandingPageType::valueIsValid()
+     * @uses \EnumType\ApiLandingPageType::getValidValues()
      * @throws InvalidArgumentException
      * @param string $landingPage
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setLandingPage(?string $landingPage = null): self
     {
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiLandingPageType::valueIsValid($landingPage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiLandingPageType', is_array($landingPage) ? implode(', ', $landingPage) : var_export($landingPage, true), implode(', ', \Api\EnumType\ApiLandingPageType::getValidValues())), __LINE__);
+        if (!\EnumType\ApiLandingPageType::valueIsValid($landingPage)) {
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiLandingPageType', is_array($landingPage) ? implode(', ', $landingPage) : var_export($landingPage, true), implode(', ', \EnumType\ApiLandingPageType::getValidValues())), __LINE__);
         }
         $this->LandingPage = $landingPage;
         
@@ -1477,7 +1477,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set BuyerEmail value
      * @param string $buyerEmail
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setBuyerEmail(?string $buyerEmail = null): self
     {
@@ -1499,17 +1499,17 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set ChannelType value
-     * @uses \Api\EnumType\ApiChannelType::valueIsValid()
-     * @uses \Api\EnumType\ApiChannelType::getValidValues()
+     * @uses \EnumType\ApiChannelType::valueIsValid()
+     * @uses \EnumType\ApiChannelType::getValidValues()
      * @throws InvalidArgumentException
      * @param string $channelType
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setChannelType(?string $channelType = null): self
     {
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiChannelType::valueIsValid($channelType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiChannelType', is_array($channelType) ? implode(', ', $channelType) : var_export($channelType, true), implode(', ', \Api\EnumType\ApiChannelType::getValidValues())), __LINE__);
+        if (!\EnumType\ApiChannelType::valueIsValid($channelType)) {
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiChannelType', is_array($channelType) ? implode(', ', $channelType) : var_export($channelType, true), implode(', ', \EnumType\ApiChannelType::getValidValues())), __LINE__);
         }
         $this->ChannelType = $channelType;
         
@@ -1517,7 +1517,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get BillingAgreementDetails value
-     * @return \Api\StructType\ApiBillingAgreementDetailsType[]
+     * @return \StructType\ApiBillingAgreementDetailsType[]
      */
     public function getBillingAgreementDetails(): array
     {
@@ -1535,12 +1535,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem) {
             // validation for constraint: itemType
-            if (!$setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem instanceof \Api\StructType\ApiBillingAgreementDetailsType) {
+            if (!$setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem instanceof \StructType\ApiBillingAgreementDetailsType) {
                 $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem) ? get_class($setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem) : sprintf('%s(%s)', gettype($setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem), var_export($setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The BillingAgreementDetails property can only contain items of type \Api\StructType\ApiBillingAgreementDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The BillingAgreementDetails property can only contain items of type \StructType\ApiBillingAgreementDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         
@@ -1549,8 +1549,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set BillingAgreementDetails value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiBillingAgreementDetailsType[] $billingAgreementDetails
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiBillingAgreementDetailsType[] $billingAgreementDetails
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setBillingAgreementDetails(array $billingAgreementDetails = []): self
     {
@@ -1565,14 +1565,14 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Add item to BillingAgreementDetails value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiBillingAgreementDetailsType $item
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiBillingAgreementDetailsType $item
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function addToBillingAgreementDetails(\Api\StructType\ApiBillingAgreementDetailsType $item): self
+    public function addToBillingAgreementDetails(\StructType\ApiBillingAgreementDetailsType $item): self
     {
         // validation for constraint: itemType
-        if (!$item instanceof \Api\StructType\ApiBillingAgreementDetailsType) {
-            throw new InvalidArgumentException(sprintf('The BillingAgreementDetails property can only contain items of type \Api\StructType\ApiBillingAgreementDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        if (!$item instanceof \StructType\ApiBillingAgreementDetailsType) {
+            throw new InvalidArgumentException(sprintf('The BillingAgreementDetails property can only contain items of type \StructType\ApiBillingAgreementDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->BillingAgreementDetails[] = $item;
         
@@ -1613,7 +1613,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Set PromoCodes value
      * @throws InvalidArgumentException
      * @param string[] $promoCodes
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setPromoCodes(array $promoCodes = []): self
     {
@@ -1629,7 +1629,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Add item to PromoCodes value
      * @throws InvalidArgumentException
      * @param string $item
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function addToPromoCodes(string $item): self
     {
@@ -1652,7 +1652,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set PayPalCheckOutBtnType value
      * @param string $payPalCheckOutBtnType
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setPayPalCheckOutBtnType(?string $payPalCheckOutBtnType = null): self
     {
@@ -1674,17 +1674,17 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set ProductCategory value
-     * @uses \Api\EnumType\ApiProductCategoryType::valueIsValid()
-     * @uses \Api\EnumType\ApiProductCategoryType::getValidValues()
+     * @uses \EnumType\ApiProductCategoryType::valueIsValid()
+     * @uses \EnumType\ApiProductCategoryType::getValidValues()
      * @throws InvalidArgumentException
      * @param string $productCategory
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setProductCategory(?string $productCategory = null): self
     {
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiProductCategoryType::valueIsValid($productCategory)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiProductCategoryType', is_array($productCategory) ? implode(', ', $productCategory) : var_export($productCategory, true), implode(', ', \Api\EnumType\ApiProductCategoryType::getValidValues())), __LINE__);
+        if (!\EnumType\ApiProductCategoryType::valueIsValid($productCategory)) {
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiProductCategoryType', is_array($productCategory) ? implode(', ', $productCategory) : var_export($productCategory, true), implode(', ', \EnumType\ApiProductCategoryType::getValidValues())), __LINE__);
         }
         $this->ProductCategory = $productCategory;
         
@@ -1700,17 +1700,17 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set ShippingMethod value
-     * @uses \Api\EnumType\ApiShippingServiceCodeType::valueIsValid()
-     * @uses \Api\EnumType\ApiShippingServiceCodeType::getValidValues()
+     * @uses \EnumType\ApiShippingServiceCodeType::valueIsValid()
+     * @uses \EnumType\ApiShippingServiceCodeType::getValidValues()
      * @throws InvalidArgumentException
      * @param string $shippingMethod
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setShippingMethod(?string $shippingMethod = null): self
     {
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiShippingServiceCodeType::valueIsValid($shippingMethod)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiShippingServiceCodeType', is_array($shippingMethod) ? implode(', ', $shippingMethod) : var_export($shippingMethod, true), implode(', ', \Api\EnumType\ApiShippingServiceCodeType::getValidValues())), __LINE__);
+        if (!\EnumType\ApiShippingServiceCodeType::valueIsValid($shippingMethod)) {
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiShippingServiceCodeType', is_array($shippingMethod) ? implode(', ', $shippingMethod) : var_export($shippingMethod, true), implode(', ', \EnumType\ApiShippingServiceCodeType::getValidValues())), __LINE__);
         }
         $this->ShippingMethod = $shippingMethod;
         
@@ -1727,7 +1727,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set ProfileAddressChangeDate value
      * @param string $profileAddressChangeDate
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setProfileAddressChangeDate(?string $profileAddressChangeDate = null): self
     {
@@ -1750,7 +1750,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set AllowNote value
      * @param string $allowNote
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setAllowNote(?string $allowNote = null): self
     {
@@ -1764,18 +1764,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get FundingSourceDetails value
-     * @return \Api\StructType\ApiFundingSourceDetailsType|null
+     * @return \StructType\ApiFundingSourceDetailsType|null
      */
-    public function getFundingSourceDetails(): ?\Api\StructType\ApiFundingSourceDetailsType
+    public function getFundingSourceDetails(): ?\StructType\ApiFundingSourceDetailsType
     {
         return $this->FundingSourceDetails;
     }
     /**
      * Set FundingSourceDetails value
-     * @param \Api\StructType\ApiFundingSourceDetailsType $fundingSourceDetails
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiFundingSourceDetailsType $fundingSourceDetails
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setFundingSourceDetails(?\Api\StructType\ApiFundingSourceDetailsType $fundingSourceDetails = null): self
+    public function setFundingSourceDetails(?\StructType\ApiFundingSourceDetailsType $fundingSourceDetails = null): self
     {
         $this->FundingSourceDetails = $fundingSourceDetails;
         
@@ -1792,7 +1792,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set BrandName value
      * @param string $brandName
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setBrandName(?string $brandName = null): self
     {
@@ -1815,7 +1815,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set CallbackURL value
      * @param string $callbackURL
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setCallbackURL(?string $callbackURL = null): self
     {
@@ -1829,18 +1829,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get EnhancedCheckoutData value
-     * @return \Api\StructType\ApiEnhancedCheckoutDataType|null
+     * @return \StructType\ApiEnhancedCheckoutDataType|null
      */
-    public function getEnhancedCheckoutData(): ?\Api\StructType\ApiEnhancedCheckoutDataType
+    public function getEnhancedCheckoutData(): ?\StructType\ApiEnhancedCheckoutDataType
     {
         return $this->EnhancedCheckoutData;
     }
     /**
      * Set EnhancedCheckoutData value
-     * @param \Api\StructType\ApiEnhancedCheckoutDataType $enhancedCheckoutData
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiEnhancedCheckoutDataType $enhancedCheckoutData
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setEnhancedCheckoutData(?\Api\StructType\ApiEnhancedCheckoutDataType $enhancedCheckoutData = null): self
+    public function setEnhancedCheckoutData(?\StructType\ApiEnhancedCheckoutDataType $enhancedCheckoutData = null): self
     {
         $this->EnhancedCheckoutData = $enhancedCheckoutData;
         
@@ -1848,7 +1848,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get OtherPaymentMethods value
-     * @return \Api\StructType\ApiOtherPaymentMethodDetailsType[]
+     * @return \StructType\ApiOtherPaymentMethodDetailsType[]
      */
     public function getOtherPaymentMethods(): array
     {
@@ -1866,12 +1866,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem) {
             // validation for constraint: itemType
-            if (!$setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem instanceof \Api\StructType\ApiOtherPaymentMethodDetailsType) {
+            if (!$setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem instanceof \StructType\ApiOtherPaymentMethodDetailsType) {
                 $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem) ? get_class($setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem) : sprintf('%s(%s)', gettype($setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem), var_export($setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The OtherPaymentMethods property can only contain items of type \Api\StructType\ApiOtherPaymentMethodDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The OtherPaymentMethods property can only contain items of type \StructType\ApiOtherPaymentMethodDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         
@@ -1880,8 +1880,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set OtherPaymentMethods value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiOtherPaymentMethodDetailsType[] $otherPaymentMethods
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiOtherPaymentMethodDetailsType[] $otherPaymentMethods
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setOtherPaymentMethods(array $otherPaymentMethods = []): self
     {
@@ -1896,14 +1896,14 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Add item to OtherPaymentMethods value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiOtherPaymentMethodDetailsType $item
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiOtherPaymentMethodDetailsType $item
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function addToOtherPaymentMethods(\Api\StructType\ApiOtherPaymentMethodDetailsType $item): self
+    public function addToOtherPaymentMethods(\StructType\ApiOtherPaymentMethodDetailsType $item): self
     {
         // validation for constraint: itemType
-        if (!$item instanceof \Api\StructType\ApiOtherPaymentMethodDetailsType) {
-            throw new InvalidArgumentException(sprintf('The OtherPaymentMethods property can only contain items of type \Api\StructType\ApiOtherPaymentMethodDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        if (!$item instanceof \StructType\ApiOtherPaymentMethodDetailsType) {
+            throw new InvalidArgumentException(sprintf('The OtherPaymentMethods property can only contain items of type \StructType\ApiOtherPaymentMethodDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->OtherPaymentMethods[] = $item;
         
@@ -1911,18 +1911,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get BuyerDetails value
-     * @return \Api\StructType\ApiBuyerDetailsType|null
+     * @return \StructType\ApiBuyerDetailsType|null
      */
-    public function getBuyerDetails(): ?\Api\StructType\ApiBuyerDetailsType
+    public function getBuyerDetails(): ?\StructType\ApiBuyerDetailsType
     {
         return $this->BuyerDetails;
     }
     /**
      * Set BuyerDetails value
-     * @param \Api\StructType\ApiBuyerDetailsType $buyerDetails
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiBuyerDetailsType $buyerDetails
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setBuyerDetails(?\Api\StructType\ApiBuyerDetailsType $buyerDetails = null): self
+    public function setBuyerDetails(?\StructType\ApiBuyerDetailsType $buyerDetails = null): self
     {
         $this->BuyerDetails = $buyerDetails;
         
@@ -1930,7 +1930,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get PaymentDetails value
-     * @return \Api\StructType\ApiPaymentDetailsType[]
+     * @return \StructType\ApiPaymentDetailsType[]
      */
     public function getPaymentDetails(): array
     {
@@ -1948,12 +1948,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypePaymentDetailsItem) {
             // validation for constraint: itemType
-            if (!$setExpressCheckoutRequestDetailsTypePaymentDetailsItem instanceof \Api\StructType\ApiPaymentDetailsType) {
+            if (!$setExpressCheckoutRequestDetailsTypePaymentDetailsItem instanceof \StructType\ApiPaymentDetailsType) {
                 $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypePaymentDetailsItem) ? get_class($setExpressCheckoutRequestDetailsTypePaymentDetailsItem) : sprintf('%s(%s)', gettype($setExpressCheckoutRequestDetailsTypePaymentDetailsItem), var_export($setExpressCheckoutRequestDetailsTypePaymentDetailsItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The PaymentDetails property can only contain items of type \Api\StructType\ApiPaymentDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The PaymentDetails property can only contain items of type \StructType\ApiPaymentDetailsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         
@@ -1962,8 +1962,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set PaymentDetails value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiPaymentDetailsType[] $paymentDetails
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiPaymentDetailsType[] $paymentDetails
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setPaymentDetails(array $paymentDetails = []): self
     {
@@ -1982,14 +1982,14 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Add item to PaymentDetails value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiPaymentDetailsType $item
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiPaymentDetailsType $item
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function addToPaymentDetails(\Api\StructType\ApiPaymentDetailsType $item): self
+    public function addToPaymentDetails(\StructType\ApiPaymentDetailsType $item): self
     {
         // validation for constraint: itemType
-        if (!$item instanceof \Api\StructType\ApiPaymentDetailsType) {
-            throw new InvalidArgumentException(sprintf('The PaymentDetails property can only contain items of type \Api\StructType\ApiPaymentDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        if (!$item instanceof \StructType\ApiPaymentDetailsType) {
+            throw new InvalidArgumentException(sprintf('The PaymentDetails property can only contain items of type \StructType\ApiPaymentDetailsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: maxOccurs(10)
         if (is_array($this->PaymentDetails) && count($this->PaymentDetails) >= 10) {
@@ -2001,7 +2001,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get FlatRateShippingOptions value
-     * @return \Api\StructType\ApiShippingOptionType[]
+     * @return \StructType\ApiShippingOptionType[]
      */
     public function getFlatRateShippingOptions(): array
     {
@@ -2019,12 +2019,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem) {
             // validation for constraint: itemType
-            if (!$setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem instanceof \Api\StructType\ApiShippingOptionType) {
+            if (!$setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem instanceof \StructType\ApiShippingOptionType) {
                 $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem) ? get_class($setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem) : sprintf('%s(%s)', gettype($setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem), var_export($setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The FlatRateShippingOptions property can only contain items of type \Api\StructType\ApiShippingOptionType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The FlatRateShippingOptions property can only contain items of type \StructType\ApiShippingOptionType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         
@@ -2033,8 +2033,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set FlatRateShippingOptions value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiShippingOptionType[] $flatRateShippingOptions
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiShippingOptionType[] $flatRateShippingOptions
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setFlatRateShippingOptions(array $flatRateShippingOptions = []): self
     {
@@ -2049,14 +2049,14 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Add item to FlatRateShippingOptions value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiShippingOptionType $item
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiShippingOptionType $item
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function addToFlatRateShippingOptions(\Api\StructType\ApiShippingOptionType $item): self
+    public function addToFlatRateShippingOptions(\StructType\ApiShippingOptionType $item): self
     {
         // validation for constraint: itemType
-        if (!$item instanceof \Api\StructType\ApiShippingOptionType) {
-            throw new InvalidArgumentException(sprintf('The FlatRateShippingOptions property can only contain items of type \Api\StructType\ApiShippingOptionType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        if (!$item instanceof \StructType\ApiShippingOptionType) {
+            throw new InvalidArgumentException(sprintf('The FlatRateShippingOptions property can only contain items of type \StructType\ApiShippingOptionType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->FlatRateShippingOptions[] = $item;
         
@@ -2073,7 +2073,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set CallbackTimeout value
      * @param string $callbackTimeout
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setCallbackTimeout(?string $callbackTimeout = null): self
     {
@@ -2096,7 +2096,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set CallbackVersion value
      * @param string $callbackVersion
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setCallbackVersion(?string $callbackVersion = null): self
     {
@@ -2119,7 +2119,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set CustomerServiceNumber value
      * @param string $customerServiceNumber
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setCustomerServiceNumber(?string $customerServiceNumber = null): self
     {
@@ -2142,7 +2142,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set GiftMessageEnable value
      * @param string $giftMessageEnable
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setGiftMessageEnable(?string $giftMessageEnable = null): self
     {
@@ -2165,7 +2165,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set GiftReceiptEnable value
      * @param string $giftReceiptEnable
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setGiftReceiptEnable(?string $giftReceiptEnable = null): self
     {
@@ -2188,7 +2188,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set GiftWrapEnable value
      * @param string $giftWrapEnable
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setGiftWrapEnable(?string $giftWrapEnable = null): self
     {
@@ -2211,7 +2211,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set GiftWrapName value
      * @param string $giftWrapName
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setGiftWrapName(?string $giftWrapName = null): self
     {
@@ -2225,18 +2225,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get GiftWrapAmount value
-     * @return \Api\StructType\ApiBasicAmountType|null
+     * @return \StructType\ApiBasicAmountType|null
      */
-    public function getGiftWrapAmount(): ?\Api\StructType\ApiBasicAmountType
+    public function getGiftWrapAmount(): ?\StructType\ApiBasicAmountType
     {
         return $this->GiftWrapAmount;
     }
     /**
      * Set GiftWrapAmount value
-     * @param \Api\StructType\ApiBasicAmountType $giftWrapAmount
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiBasicAmountType $giftWrapAmount
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setGiftWrapAmount(?\Api\StructType\ApiBasicAmountType $giftWrapAmount = null): self
+    public function setGiftWrapAmount(?\StructType\ApiBasicAmountType $giftWrapAmount = null): self
     {
         $this->GiftWrapAmount = $giftWrapAmount;
         
@@ -2253,7 +2253,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set BuyerEmailOptInEnable value
      * @param string $buyerEmailOptInEnable
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setBuyerEmailOptInEnable(?string $buyerEmailOptInEnable = null): self
     {
@@ -2276,7 +2276,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set SurveyEnable value
      * @param string $surveyEnable
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setSurveyEnable(?string $surveyEnable = null): self
     {
@@ -2299,7 +2299,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set SurveyQuestion value
      * @param string $surveyQuestion
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setSurveyQuestion(?string $surveyQuestion = null): self
     {
@@ -2346,7 +2346,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Set SurveyChoice value
      * @throws InvalidArgumentException
      * @param string[] $surveyChoice
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setSurveyChoice(array $surveyChoice = []): self
     {
@@ -2362,7 +2362,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Add item to SurveyChoice value
      * @throws InvalidArgumentException
      * @param string $item
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function addToSurveyChoice(string $item): self
     {
@@ -2384,17 +2384,17 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set TotalType value
-     * @uses \Api\EnumType\ApiTotalType::valueIsValid()
-     * @uses \Api\EnumType\ApiTotalType::getValidValues()
+     * @uses \EnumType\ApiTotalType::valueIsValid()
+     * @uses \EnumType\ApiTotalType::getValidValues()
      * @throws InvalidArgumentException
      * @param string $totalType
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setTotalType(?string $totalType = null): self
     {
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiTotalType::valueIsValid($totalType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiTotalType', is_array($totalType) ? implode(', ', $totalType) : var_export($totalType, true), implode(', ', \Api\EnumType\ApiTotalType::getValidValues())), __LINE__);
+        if (!\EnumType\ApiTotalType::valueIsValid($totalType)) {
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiTotalType', is_array($totalType) ? implode(', ', $totalType) : var_export($totalType, true), implode(', ', \EnumType\ApiTotalType::getValidValues())), __LINE__);
         }
         $this->TotalType = $totalType;
         
@@ -2411,7 +2411,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set NoteToBuyer value
      * @param string $noteToBuyer
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setNoteToBuyer(?string $noteToBuyer = null): self
     {
@@ -2425,7 +2425,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get Incentives value
-     * @return \Api\StructType\ApiIncentiveInfoType[]
+     * @return \StructType\ApiIncentiveInfoType[]
      */
     public function getIncentives(): array
     {
@@ -2443,12 +2443,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeIncentivesItem) {
             // validation for constraint: itemType
-            if (!$setExpressCheckoutRequestDetailsTypeIncentivesItem instanceof \Api\StructType\ApiIncentiveInfoType) {
+            if (!$setExpressCheckoutRequestDetailsTypeIncentivesItem instanceof \StructType\ApiIncentiveInfoType) {
                 $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeIncentivesItem) ? get_class($setExpressCheckoutRequestDetailsTypeIncentivesItem) : sprintf('%s(%s)', gettype($setExpressCheckoutRequestDetailsTypeIncentivesItem), var_export($setExpressCheckoutRequestDetailsTypeIncentivesItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The Incentives property can only contain items of type \Api\StructType\ApiIncentiveInfoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The Incentives property can only contain items of type \StructType\ApiIncentiveInfoType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         
@@ -2457,8 +2457,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set Incentives value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiIncentiveInfoType[] $incentives
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiIncentiveInfoType[] $incentives
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setIncentives(array $incentives = []): self
     {
@@ -2473,14 +2473,14 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Add item to Incentives value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiIncentiveInfoType $item
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiIncentiveInfoType $item
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function addToIncentives(\Api\StructType\ApiIncentiveInfoType $item): self
+    public function addToIncentives(\StructType\ApiIncentiveInfoType $item): self
     {
         // validation for constraint: itemType
-        if (!$item instanceof \Api\StructType\ApiIncentiveInfoType) {
-            throw new InvalidArgumentException(sprintf('The Incentives property can only contain items of type \Api\StructType\ApiIncentiveInfoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        if (!$item instanceof \StructType\ApiIncentiveInfoType) {
+            throw new InvalidArgumentException(sprintf('The Incentives property can only contain items of type \StructType\ApiIncentiveInfoType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Incentives[] = $item;
         
@@ -2497,7 +2497,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set ReqInstrumentDetails value
      * @param string $reqInstrumentDetails
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setReqInstrumentDetails(?string $reqInstrumentDetails = null): self
     {
@@ -2511,18 +2511,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get ExternalRememberMeOptInDetails value
-     * @return \Api\StructType\ApiExternalRememberMeOptInDetailsType|null
+     * @return \StructType\ApiExternalRememberMeOptInDetailsType|null
      */
-    public function getExternalRememberMeOptInDetails(): ?\Api\StructType\ApiExternalRememberMeOptInDetailsType
+    public function getExternalRememberMeOptInDetails(): ?\StructType\ApiExternalRememberMeOptInDetailsType
     {
         return $this->ExternalRememberMeOptInDetails;
     }
     /**
      * Set ExternalRememberMeOptInDetails value
-     * @param \Api\StructType\ApiExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setExternalRememberMeOptInDetails(?\Api\StructType\ApiExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails = null): self
+    public function setExternalRememberMeOptInDetails(?\StructType\ApiExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails = null): self
     {
         $this->ExternalRememberMeOptInDetails = $externalRememberMeOptInDetails;
         
@@ -2530,18 +2530,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get FlowControlDetails value
-     * @return \Api\StructType\ApiFlowControlDetailsType|null
+     * @return \StructType\ApiFlowControlDetailsType|null
      */
-    public function getFlowControlDetails(): ?\Api\StructType\ApiFlowControlDetailsType
+    public function getFlowControlDetails(): ?\StructType\ApiFlowControlDetailsType
     {
         return $this->FlowControlDetails;
     }
     /**
      * Set FlowControlDetails value
-     * @param \Api\StructType\ApiFlowControlDetailsType $flowControlDetails
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiFlowControlDetailsType $flowControlDetails
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setFlowControlDetails(?\Api\StructType\ApiFlowControlDetailsType $flowControlDetails = null): self
+    public function setFlowControlDetails(?\StructType\ApiFlowControlDetailsType $flowControlDetails = null): self
     {
         $this->FlowControlDetails = $flowControlDetails;
         
@@ -2549,18 +2549,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get DisplayControlDetails value
-     * @return \Api\StructType\ApiDisplayControlDetailsType|null
+     * @return \StructType\ApiDisplayControlDetailsType|null
      */
-    public function getDisplayControlDetails(): ?\Api\StructType\ApiDisplayControlDetailsType
+    public function getDisplayControlDetails(): ?\StructType\ApiDisplayControlDetailsType
     {
         return $this->DisplayControlDetails;
     }
     /**
      * Set DisplayControlDetails value
-     * @param \Api\StructType\ApiDisplayControlDetailsType $displayControlDetails
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiDisplayControlDetailsType $displayControlDetails
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setDisplayControlDetails(?\Api\StructType\ApiDisplayControlDetailsType $displayControlDetails = null): self
+    public function setDisplayControlDetails(?\StructType\ApiDisplayControlDetailsType $displayControlDetails = null): self
     {
         $this->DisplayControlDetails = $displayControlDetails;
         
@@ -2568,18 +2568,18 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get ExternalPartnerTrackingDetails value
-     * @return \Api\StructType\ApiExternalPartnerTrackingDetailsType|null
+     * @return \StructType\ApiExternalPartnerTrackingDetailsType|null
      */
-    public function getExternalPartnerTrackingDetails(): ?\Api\StructType\ApiExternalPartnerTrackingDetailsType
+    public function getExternalPartnerTrackingDetails(): ?\StructType\ApiExternalPartnerTrackingDetailsType
     {
         return $this->ExternalPartnerTrackingDetails;
     }
     /**
      * Set ExternalPartnerTrackingDetails value
-     * @param \Api\StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setExternalPartnerTrackingDetails(?\Api\StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails = null): self
+    public function setExternalPartnerTrackingDetails(?\StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails = null): self
     {
         $this->ExternalPartnerTrackingDetails = $externalPartnerTrackingDetails;
         
@@ -2587,7 +2587,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get CoupledBuckets value
-     * @return \Api\StructType\ApiCoupledBucketsType[]
+     * @return \StructType\ApiCoupledBucketsType[]
      */
     public function getCoupledBuckets(): array
     {
@@ -2605,12 +2605,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeCoupledBucketsItem) {
             // validation for constraint: itemType
-            if (!$setExpressCheckoutRequestDetailsTypeCoupledBucketsItem instanceof \Api\StructType\ApiCoupledBucketsType) {
+            if (!$setExpressCheckoutRequestDetailsTypeCoupledBucketsItem instanceof \StructType\ApiCoupledBucketsType) {
                 $invalidValues[] = is_object($setExpressCheckoutRequestDetailsTypeCoupledBucketsItem) ? get_class($setExpressCheckoutRequestDetailsTypeCoupledBucketsItem) : sprintf('%s(%s)', gettype($setExpressCheckoutRequestDetailsTypeCoupledBucketsItem), var_export($setExpressCheckoutRequestDetailsTypeCoupledBucketsItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The CoupledBuckets property can only contain items of type \Api\StructType\ApiCoupledBucketsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The CoupledBuckets property can only contain items of type \StructType\ApiCoupledBucketsType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         
@@ -2619,8 +2619,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Set CoupledBuckets value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiCoupledBucketsType[] $coupledBuckets
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiCoupledBucketsType[] $coupledBuckets
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setCoupledBuckets(array $coupledBuckets = []): self
     {
@@ -2639,14 +2639,14 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     /**
      * Add item to CoupledBuckets value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiCoupledBucketsType $item
-     * @return \Api\StructType\ApiSetExpressCheckoutRequestDetailsType
+     * @param \StructType\ApiCoupledBucketsType $item
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function addToCoupledBuckets(\Api\StructType\ApiCoupledBucketsType $item): self
+    public function addToCoupledBuckets(\StructType\ApiCoupledBucketsType $item): self
     {
         // validation for constraint: itemType
-        if (!$item instanceof \Api\StructType\ApiCoupledBucketsType) {
-            throw new InvalidArgumentException(sprintf('The CoupledBuckets property can only contain items of type \Api\StructType\ApiCoupledBucketsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        if (!$item instanceof \StructType\ApiCoupledBucketsType) {
+            throw new InvalidArgumentException(sprintf('The CoupledBuckets property can only contain items of type \StructType\ApiCoupledBucketsType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: maxOccurs(5)
         if (is_array($this->CoupledBuckets) && count($this->CoupledBuckets) >= 5) {

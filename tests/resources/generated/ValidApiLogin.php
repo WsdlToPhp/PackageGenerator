@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\ServiceType;
+namespace ServiceType;
 
 use SoapFault;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;

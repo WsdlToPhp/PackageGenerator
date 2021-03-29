@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\EnumType;
+namespace EnumType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructEnumBase;

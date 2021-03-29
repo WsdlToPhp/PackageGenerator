@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\StructType;
+namespace StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -74,7 +74,7 @@ class ApiQuery extends AbstractStructBase
     /**
      * Set SearchTerms value
      * @param string $searchTerms
-     * @return \Api\StructType\ApiQuery
+     * @return \StructType\ApiQuery
      */
     public function setSearchTerms(?string $searchTerms = null): self
     {
@@ -97,7 +97,7 @@ class ApiQuery extends AbstractStructBase
     /**
      * Set AlteredQuery value
      * @param string $alteredQuery
-     * @return \Api\StructType\ApiQuery
+     * @return \StructType\ApiQuery
      */
     public function setAlteredQuery(?string $alteredQuery = null): self
     {
@@ -120,7 +120,7 @@ class ApiQuery extends AbstractStructBase
     /**
      * Set AlterationOverrideQuery value
      * @param string $alterationOverrideQuery
-     * @return \Api\StructType\ApiQuery
+     * @return \StructType\ApiQuery
      */
     public function setAlterationOverrideQuery(?string $alterationOverrideQuery = null): self
     {
@@ -143,7 +143,7 @@ class ApiQuery extends AbstractStructBase
     /**
      * Set SearchTerms value
      * @param string $searchTerms
-     * @return \Api\StructType\ApiQuery
+     * @return \StructType\ApiQuery
      */
     public function setSearchTerms_1(?string $searchTerms_1 = null): self
     {

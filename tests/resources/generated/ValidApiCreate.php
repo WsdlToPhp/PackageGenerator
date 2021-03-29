@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\ServiceType;
+namespace ServiceType;
 
 use SoapFault;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
@@ -26,10 +26,10 @@ class ApiCreate extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiCreateQueue $body
-     * @return \Api\StructType\ApiCreateQueueResponse|bool
+     * @param \StructType\ApiCreateQueue $body
+     * @return \StructType\ApiCreateQueueResponse|bool
      */
-    public function CreateQueue(\Api\StructType\ApiCreateQueue $body)
+    public function CreateQueue(\StructType\ApiCreateQueue $body)
     {
         try {
             $this->setResult($resultCreateQueue = $this->getSoapClient()->__soapCall('CreateQueue', [
@@ -46,7 +46,7 @@ class ApiCreate extends AbstractSoapClientBase
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return \Api\StructType\ApiCreateQueueResponse
+     * @return \StructType\ApiCreateQueueResponse
      */
     public function getResult()
     {

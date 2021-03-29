@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\StructType;
+namespace StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -61,9 +61,9 @@ class ApiBannerInfo extends AbstractStructBase
      * The ContactInfo
      * Meta information extracted from the WSDL
      * - nillable: true
-     * @var \Api\StructType\ApiContactInfo|null
+     * @var \StructType\ApiContactInfo|null
      */
-    protected ?\Api\StructType\ApiContactInfo $ContactInfo = null;
+    protected ?\StructType\ApiContactInfo $ContactInfo = null;
     /**
      * The Geo
      * Meta information extracted from the WSDL
@@ -78,7 +78,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - base: soapenc:Array
      * - nillable: true
      * - ref: soapenc:arrayType
-     * @var \Api\StructType\ApiBannerPhraseInfo[]
+     * @var \StructType\ApiBannerPhraseInfo[]
      */
     protected array $Phrases = [];
     /**
@@ -154,7 +154,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - base: soapenc:Array
      * - nillable: true
      * - ref: soapenc:arrayType
-     * @var \Api\StructType\ApiSitelink[]
+     * @var \StructType\ApiSitelink[]
      */
     protected array $Sitelinks = [];
     /**
@@ -181,7 +181,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - base: soapenc:Array
      * - nillable: true
      * - ref: soapenc:arrayType
-     * @var \Api\StructType\ApiRejectReason[]
+     * @var \StructType\ApiRejectReason[]
      */
     protected array $ModerateRejectionReasons = [];
     /**
@@ -278,9 +278,9 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $text
      * @param string $href
      * @param string $domain
-     * @param \Api\StructType\ApiContactInfo $contactInfo
+     * @param \StructType\ApiContactInfo $contactInfo
      * @param string $geo
-     * @param \Api\StructType\ApiBannerPhraseInfo[] $phrases
+     * @param \StructType\ApiBannerPhraseInfo[] $phrases
      * @param string[] $minusKeywords
      * @param string $statusActivating
      * @param string $statusArchive
@@ -290,10 +290,10 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $statusShow
      * @param string $isActive
      * @param string $statusSitelinksModerate
-     * @param \Api\StructType\ApiSitelink[] $sitelinks
+     * @param \StructType\ApiSitelink[] $sitelinks
      * @param string[] $adWarnings
      * @param string $fixedOnModeration
-     * @param \Api\StructType\ApiRejectReason[] $moderateRejectionReasons
+     * @param \StructType\ApiRejectReason[] $moderateRejectionReasons
      * @param string $type
      * @param int $adGroupID
      * @param string $adGroupName
@@ -303,7 +303,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $statusAdImageModerate
      * @param int $adGroupMobileBidAdjustment
      */
-    public function __construct(?int $bannerID = null, ?int $campaignID = null, ?string $title = null, ?string $text = null, ?string $href = null, ?string $domain = null, ?\Api\StructType\ApiContactInfo $contactInfo = null, ?string $geo = null, array $phrases = [], array $minusKeywords = [], ?string $statusActivating = null, ?string $statusArchive = null, ?string $statusBannerModerate = null, ?string $statusPhrasesModerate = null, ?string $statusPhoneModerate = null, ?string $statusShow = null, ?string $isActive = null, ?string $statusSitelinksModerate = null, array $sitelinks = [], array $adWarnings = [], ?string $fixedOnModeration = null, array $moderateRejectionReasons = [], ?string $type = null, ?int $adGroupID = null, ?string $adGroupName = null, ?string $autoMinusWords = null, ?string $ageLabel = null, ?string $adImageHash = null, ?string $statusAdImageModerate = null, ?int $adGroupMobileBidAdjustment = null)
+    public function __construct(?int $bannerID = null, ?int $campaignID = null, ?string $title = null, ?string $text = null, ?string $href = null, ?string $domain = null, ?\StructType\ApiContactInfo $contactInfo = null, ?string $geo = null, array $phrases = [], array $minusKeywords = [], ?string $statusActivating = null, ?string $statusArchive = null, ?string $statusBannerModerate = null, ?string $statusPhrasesModerate = null, ?string $statusPhoneModerate = null, ?string $statusShow = null, ?string $isActive = null, ?string $statusSitelinksModerate = null, array $sitelinks = [], array $adWarnings = [], ?string $fixedOnModeration = null, array $moderateRejectionReasons = [], ?string $type = null, ?int $adGroupID = null, ?string $adGroupName = null, ?string $autoMinusWords = null, ?string $ageLabel = null, ?string $adImageHash = null, ?string $statusAdImageModerate = null, ?int $adGroupMobileBidAdjustment = null)
     {
         $this
             ->setBannerID($bannerID)
@@ -348,7 +348,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set BannerID value
      * @param int $bannerID
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setBannerID(?int $bannerID = null): self
     {
@@ -371,7 +371,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set CampaignID value
      * @param int $campaignID
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setCampaignID(?int $campaignID = null): self
     {
@@ -394,7 +394,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set Title value
      * @param string $title
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setTitle(?string $title = null): self
     {
@@ -417,7 +417,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set Text value
      * @param string $text
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setText(?string $text = null): self
     {
@@ -440,7 +440,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set Href value
      * @param string $href
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setHref(?string $href = null): self
     {
@@ -463,7 +463,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set Domain value
      * @param string $domain
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setDomain(?string $domain = null): self
     {
@@ -477,18 +477,18 @@ class ApiBannerInfo extends AbstractStructBase
     }
     /**
      * Get ContactInfo value
-     * @return \Api\StructType\ApiContactInfo|null
+     * @return \StructType\ApiContactInfo|null
      */
-    public function getContactInfo(): ?\Api\StructType\ApiContactInfo
+    public function getContactInfo(): ?\StructType\ApiContactInfo
     {
         return $this->ContactInfo;
     }
     /**
      * Set ContactInfo value
-     * @param \Api\StructType\ApiContactInfo $contactInfo
-     * @return \Api\StructType\ApiBannerInfo
+     * @param \StructType\ApiContactInfo $contactInfo
+     * @return \StructType\ApiBannerInfo
      */
-    public function setContactInfo(?\Api\StructType\ApiContactInfo $contactInfo = null): self
+    public function setContactInfo(?\StructType\ApiContactInfo $contactInfo = null): self
     {
         $this->ContactInfo = $contactInfo;
         
@@ -505,7 +505,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set Geo value
      * @param string $geo
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setGeo(?string $geo = null): self
     {
@@ -519,7 +519,7 @@ class ApiBannerInfo extends AbstractStructBase
     }
     /**
      * Get Phrases value
-     * @return \Api\StructType\ApiBannerPhraseInfo[]
+     * @return \StructType\ApiBannerPhraseInfo[]
      */
     public function getPhrases(): array
     {
@@ -537,12 +537,12 @@ class ApiBannerInfo extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $bannerInfoPhrasesItem) {
             // validation for constraint: itemType
-            if (!$bannerInfoPhrasesItem instanceof \Api\StructType\ApiBannerPhraseInfo) {
+            if (!$bannerInfoPhrasesItem instanceof \StructType\ApiBannerPhraseInfo) {
                 $invalidValues[] = is_object($bannerInfoPhrasesItem) ? get_class($bannerInfoPhrasesItem) : sprintf('%s(%s)', gettype($bannerInfoPhrasesItem), var_export($bannerInfoPhrasesItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The Phrases property can only contain items of type \Api\StructType\ApiBannerPhraseInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The Phrases property can only contain items of type \StructType\ApiBannerPhraseInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         
@@ -551,8 +551,8 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set Phrases value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiBannerPhraseInfo[] $phrases
-     * @return \Api\StructType\ApiBannerInfo
+     * @param \StructType\ApiBannerPhraseInfo[] $phrases
+     * @return \StructType\ApiBannerInfo
      */
     public function setPhrases(array $phrases = []): self
     {
@@ -567,14 +567,14 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Add item to Phrases value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiBannerPhraseInfo $item
-     * @return \Api\StructType\ApiBannerInfo
+     * @param \StructType\ApiBannerPhraseInfo $item
+     * @return \StructType\ApiBannerInfo
      */
-    public function addToPhrases(\Api\StructType\ApiBannerPhraseInfo $item): self
+    public function addToPhrases(\StructType\ApiBannerPhraseInfo $item): self
     {
         // validation for constraint: itemType
-        if (!$item instanceof \Api\StructType\ApiBannerPhraseInfo) {
-            throw new InvalidArgumentException(sprintf('The Phrases property can only contain items of type \Api\StructType\ApiBannerPhraseInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        if (!$item instanceof \StructType\ApiBannerPhraseInfo) {
+            throw new InvalidArgumentException(sprintf('The Phrases property can only contain items of type \StructType\ApiBannerPhraseInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Phrases[] = $item;
         
@@ -615,7 +615,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Set MinusKeywords value
      * @throws InvalidArgumentException
      * @param string[] $minusKeywords
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setMinusKeywords(array $minusKeywords = []): self
     {
@@ -631,7 +631,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Add item to MinusKeywords value
      * @throws InvalidArgumentException
      * @param string $item
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function addToMinusKeywords(string $item): self
     {
@@ -654,7 +654,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set StatusActivating value
      * @param string $statusActivating
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setStatusActivating(?string $statusActivating = null): self
     {
@@ -677,7 +677,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set StatusArchive value
      * @param string $statusArchive
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setStatusArchive(?string $statusArchive = null): self
     {
@@ -700,7 +700,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set StatusBannerModerate value
      * @param string $statusBannerModerate
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setStatusBannerModerate(?string $statusBannerModerate = null): self
     {
@@ -723,7 +723,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set StatusPhrasesModerate value
      * @param string $statusPhrasesModerate
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setStatusPhrasesModerate(?string $statusPhrasesModerate = null): self
     {
@@ -746,7 +746,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set StatusPhoneModerate value
      * @param string $statusPhoneModerate
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setStatusPhoneModerate(?string $statusPhoneModerate = null): self
     {
@@ -769,7 +769,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set StatusShow value
      * @param string $statusShow
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setStatusShow(?string $statusShow = null): self
     {
@@ -792,7 +792,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set IsActive value
      * @param string $isActive
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setIsActive(?string $isActive = null): self
     {
@@ -815,7 +815,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set StatusSitelinksModerate value
      * @param string $statusSitelinksModerate
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setStatusSitelinksModerate(?string $statusSitelinksModerate = null): self
     {
@@ -829,7 +829,7 @@ class ApiBannerInfo extends AbstractStructBase
     }
     /**
      * Get Sitelinks value
-     * @return \Api\StructType\ApiSitelink[]
+     * @return \StructType\ApiSitelink[]
      */
     public function getSitelinks(): array
     {
@@ -847,12 +847,12 @@ class ApiBannerInfo extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $bannerInfoSitelinksItem) {
             // validation for constraint: itemType
-            if (!$bannerInfoSitelinksItem instanceof \Api\StructType\ApiSitelink) {
+            if (!$bannerInfoSitelinksItem instanceof \StructType\ApiSitelink) {
                 $invalidValues[] = is_object($bannerInfoSitelinksItem) ? get_class($bannerInfoSitelinksItem) : sprintf('%s(%s)', gettype($bannerInfoSitelinksItem), var_export($bannerInfoSitelinksItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The Sitelinks property can only contain items of type \Api\StructType\ApiSitelink, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The Sitelinks property can only contain items of type \StructType\ApiSitelink, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         
@@ -861,8 +861,8 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set Sitelinks value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiSitelink[] $sitelinks
-     * @return \Api\StructType\ApiBannerInfo
+     * @param \StructType\ApiSitelink[] $sitelinks
+     * @return \StructType\ApiBannerInfo
      */
     public function setSitelinks(array $sitelinks = []): self
     {
@@ -877,14 +877,14 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Add item to Sitelinks value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiSitelink $item
-     * @return \Api\StructType\ApiBannerInfo
+     * @param \StructType\ApiSitelink $item
+     * @return \StructType\ApiBannerInfo
      */
-    public function addToSitelinks(\Api\StructType\ApiSitelink $item): self
+    public function addToSitelinks(\StructType\ApiSitelink $item): self
     {
         // validation for constraint: itemType
-        if (!$item instanceof \Api\StructType\ApiSitelink) {
-            throw new InvalidArgumentException(sprintf('The Sitelinks property can only contain items of type \Api\StructType\ApiSitelink, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        if (!$item instanceof \StructType\ApiSitelink) {
+            throw new InvalidArgumentException(sprintf('The Sitelinks property can only contain items of type \StructType\ApiSitelink, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->Sitelinks[] = $item;
         
@@ -925,7 +925,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Set AdWarnings value
      * @throws InvalidArgumentException
      * @param string[] $adWarnings
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setAdWarnings(array $adWarnings = []): self
     {
@@ -941,7 +941,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Add item to AdWarnings value
      * @throws InvalidArgumentException
      * @param string $item
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function addToAdWarnings(string $item): self
     {
@@ -964,7 +964,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set FixedOnModeration value
      * @param string $fixedOnModeration
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setFixedOnModeration(?string $fixedOnModeration = null): self
     {
@@ -978,7 +978,7 @@ class ApiBannerInfo extends AbstractStructBase
     }
     /**
      * Get ModerateRejectionReasons value
-     * @return \Api\StructType\ApiRejectReason[]
+     * @return \StructType\ApiRejectReason[]
      */
     public function getModerateRejectionReasons(): array
     {
@@ -996,12 +996,12 @@ class ApiBannerInfo extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $bannerInfoModerateRejectionReasonsItem) {
             // validation for constraint: itemType
-            if (!$bannerInfoModerateRejectionReasonsItem instanceof \Api\StructType\ApiRejectReason) {
+            if (!$bannerInfoModerateRejectionReasonsItem instanceof \StructType\ApiRejectReason) {
                 $invalidValues[] = is_object($bannerInfoModerateRejectionReasonsItem) ? get_class($bannerInfoModerateRejectionReasonsItem) : sprintf('%s(%s)', gettype($bannerInfoModerateRejectionReasonsItem), var_export($bannerInfoModerateRejectionReasonsItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The ModerateRejectionReasons property can only contain items of type \Api\StructType\ApiRejectReason, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The ModerateRejectionReasons property can only contain items of type \StructType\ApiRejectReason, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         
@@ -1010,8 +1010,8 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set ModerateRejectionReasons value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiRejectReason[] $moderateRejectionReasons
-     * @return \Api\StructType\ApiBannerInfo
+     * @param \StructType\ApiRejectReason[] $moderateRejectionReasons
+     * @return \StructType\ApiBannerInfo
      */
     public function setModerateRejectionReasons(array $moderateRejectionReasons = []): self
     {
@@ -1026,14 +1026,14 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Add item to ModerateRejectionReasons value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiRejectReason $item
-     * @return \Api\StructType\ApiBannerInfo
+     * @param \StructType\ApiRejectReason $item
+     * @return \StructType\ApiBannerInfo
      */
-    public function addToModerateRejectionReasons(\Api\StructType\ApiRejectReason $item): self
+    public function addToModerateRejectionReasons(\StructType\ApiRejectReason $item): self
     {
         // validation for constraint: itemType
-        if (!$item instanceof \Api\StructType\ApiRejectReason) {
-            throw new InvalidArgumentException(sprintf('The ModerateRejectionReasons property can only contain items of type \Api\StructType\ApiRejectReason, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        if (!$item instanceof \StructType\ApiRejectReason) {
+            throw new InvalidArgumentException(sprintf('The ModerateRejectionReasons property can only contain items of type \StructType\ApiRejectReason, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->ModerateRejectionReasons[] = $item;
         
@@ -1050,7 +1050,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set Type value
      * @param string $type
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setType(?string $type = null): self
     {
@@ -1073,7 +1073,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set AdGroupID value
      * @param int $adGroupID
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setAdGroupID(?int $adGroupID = null): self
     {
@@ -1096,7 +1096,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set AdGroupName value
      * @param string $adGroupName
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setAdGroupName(?string $adGroupName = null): self
     {
@@ -1119,7 +1119,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set AutoMinusWords value
      * @param string $autoMinusWords
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setAutoMinusWords(?string $autoMinusWords = null): self
     {
@@ -1142,7 +1142,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set AgeLabel value
      * @param string $ageLabel
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setAgeLabel(?string $ageLabel = null): self
     {
@@ -1165,7 +1165,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set AdImageHash value
      * @param string $adImageHash
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setAdImageHash(?string $adImageHash = null): self
     {
@@ -1188,7 +1188,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set StatusAdImageModerate value
      * @param string $statusAdImageModerate
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setStatusAdImageModerate(?string $statusAdImageModerate = null): self
     {
@@ -1211,7 +1211,7 @@ class ApiBannerInfo extends AbstractStructBase
     /**
      * Set AdGroupMobileBidAdjustment value
      * @param int $adGroupMobileBidAdjustment
-     * @return \Api\StructType\ApiBannerInfo
+     * @return \StructType\ApiBannerInfo
      */
     public function setAdGroupMobileBidAdjustment(?int $adGroupMobileBidAdjustment = null): self
     {

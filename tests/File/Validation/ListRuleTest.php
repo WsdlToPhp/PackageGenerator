@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use Api\EnumType\ApiDayOfWeekType;
+use EnumType\ApiDayOfWeekType;
 use InvalidArgumentException;
 
 /**
@@ -16,7 +16,7 @@ final class ListRuleTest extends AbstractRuleTest
     public function testSetDayOfWeekWithInvalidArrayValueMustThrowAnException()
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid value(s) string(\'Today\'), please use one of: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Day, Weekday, WeekendDay from enumeration class \Api\EnumType\ApiDayOfWeekType');
+        $this->expectExceptionMessage('Invalid value(s) string(\'Today\'), please use one of: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Day, Weekday, WeekendDay from enumeration class \EnumType\ApiDayOfWeekType');
 
         $instance = self::getEwsWorkingPeriodInstance();
 
@@ -28,7 +28,7 @@ final class ListRuleTest extends AbstractRuleTest
     public function testSetDayOfWeekWithInvalidStringValueMustThrowAnException()
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Invalid value(s) string(\'Today\'), please use one of: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Day, Weekday, WeekendDay from enumeration class \Api\EnumType\ApiDayOfWeekType');
+        $this->expectExceptionMessage('Invalid value(s) string(\'Today\'), please use one of: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Day, Weekday, WeekendDay from enumeration class \EnumType\ApiDayOfWeekType');
 
         $instance = self::getEwsWorkingPeriodInstance();
 

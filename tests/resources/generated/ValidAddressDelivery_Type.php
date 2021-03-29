@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\StructType;
+namespace StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -91,7 +91,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     /**
      * Set Street1 value
      * @param string $street1
-     * @return \Api\StructType\ApiAddressDelivery_Type
+     * @return \StructType\ApiAddressDelivery_Type
      */
     public function setStreet1(?string $street1 = null): self
     {
@@ -114,7 +114,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     /**
      * Set Street2 value
      * @param string $street2
-     * @return \Api\StructType\ApiAddressDelivery_Type
+     * @return \StructType\ApiAddressDelivery_Type
      */
     public function setStreet2(?string $street2 = null): self
     {
@@ -137,7 +137,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     /**
      * Set Street3 value
      * @param string $street3
-     * @return \Api\StructType\ApiAddressDelivery_Type
+     * @return \StructType\ApiAddressDelivery_Type
      */
     public function setStreet3(?string $street3 = null): self
     {
@@ -160,7 +160,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     /**
      * Set City value
      * @param string $city
-     * @return \Api\StructType\ApiAddressDelivery_Type
+     * @return \StructType\ApiAddressDelivery_Type
      */
     public function setCity(?string $city = null): self
     {
@@ -183,7 +183,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     /**
      * Set PostalCode value
      * @param string $postalCode
-     * @return \Api\StructType\ApiAddressDelivery_Type
+     * @return \StructType\ApiAddressDelivery_Type
      */
     public function setPostalCode(?string $postalCode = null): self
     {

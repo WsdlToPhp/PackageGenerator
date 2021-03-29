@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\StructType;
+namespace StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -67,17 +67,17 @@ class ApiItem extends AbstractStructBase
     }
     /**
      * Set itemType value
-     * @uses \Api\EnumType\ApiItemType::valueIsValid()
-     * @uses \Api\EnumType\ApiItemType::getValidValues()
+     * @uses \EnumType\ApiItemType::valueIsValid()
+     * @uses \EnumType\ApiItemType::getValidValues()
      * @throws InvalidArgumentException
      * @param string $itemType
-     * @return \Api\StructType\ApiItem
+     * @return \StructType\ApiItem
      */
     public function setItemType(?string $itemType = null): self
     {
         // validation for constraint: enumeration
-        if (!\Api\EnumType\ApiItemType::valueIsValid($itemType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiItemType', is_array($itemType) ? implode(', ', $itemType) : var_export($itemType, true), implode(', ', \Api\EnumType\ApiItemType::getValidValues())), __LINE__);
+        if (!\EnumType\ApiItemType::valueIsValid($itemType)) {
+            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiItemType', is_array($itemType) ? implode(', ', $itemType) : var_export($itemType, true), implode(', ', \EnumType\ApiItemType::getValidValues())), __LINE__);
         }
         $this->itemType = $itemType;
         
@@ -94,7 +94,7 @@ class ApiItem extends AbstractStructBase
     /**
      * Set id value
      * @param string $id
-     * @return \Api\StructType\ApiItem
+     * @return \StructType\ApiItem
      */
     public function setId(?string $id = null): self
     {
@@ -117,7 +117,7 @@ class ApiItem extends AbstractStructBase
     /**
      * Set displayName value
      * @param string $displayName
-     * @return \Api\StructType\ApiItem
+     * @return \StructType\ApiItem
      */
     public function setDisplayName(?string $displayName = null): self
     {
@@ -150,7 +150,7 @@ class ApiItem extends AbstractStructBase
      * @uses \DOMDocument::saveXML()
      * @uses \DOMNode::item()
      * @param \DOMDocument|string|null $any
-     * @return \Api\StructType\ApiItem
+     * @return \StructType\ApiItem
      */
     public function setAny($any = null): self
     {

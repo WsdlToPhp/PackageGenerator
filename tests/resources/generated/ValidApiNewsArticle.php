@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\StructType;
+namespace StructType;
 
 use InvalidArgumentException;
 use \Std\Opt\StructClass;
@@ -88,7 +88,7 @@ class ApiNewsArticle extends StructClass
     /**
      * Set Title value
      * @param string $title
-     * @return \Api\StructType\ApiNewsArticle
+     * @return \StructType\ApiNewsArticle
      */
     public function setTitle(?string $title = null): self
     {
@@ -111,7 +111,7 @@ class ApiNewsArticle extends StructClass
     /**
      * Set Url value
      * @param string $url
-     * @return \Api\StructType\ApiNewsArticle
+     * @return \StructType\ApiNewsArticle
      */
     public function setUrl(?string $url = null): self
     {
@@ -134,7 +134,7 @@ class ApiNewsArticle extends StructClass
     /**
      * Set Source value
      * @param string $source
-     * @return \Api\StructType\ApiNewsArticle
+     * @return \StructType\ApiNewsArticle
      */
     public function setSource(?string $source = null): self
     {
@@ -157,7 +157,7 @@ class ApiNewsArticle extends StructClass
     /**
      * Set Snippet value
      * @param string $snippet
-     * @return \Api\StructType\ApiNewsArticle
+     * @return \StructType\ApiNewsArticle
      */
     public function setSnippet(?string $snippet = null): self
     {
@@ -180,7 +180,7 @@ class ApiNewsArticle extends StructClass
     /**
      * Set Date value
      * @param string $date
-     * @return \Api\StructType\ApiNewsArticle
+     * @return \StructType\ApiNewsArticle
      */
     public function setDate(?string $date = null): self
     {

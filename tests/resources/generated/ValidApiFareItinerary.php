@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\StructType;
+namespace StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -20,9 +20,9 @@ class ApiFareItinerary extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
-     * @var \Api\StructType\ApiFareItineraryPrice
+     * @var \StructType\ApiFareItineraryPrice
      */
-    protected \Api\StructType\ApiFareItineraryPrice $price;
+    protected \StructType\ApiFareItineraryPrice $price;
     /**
      * The key
      * Meta information extracted from the WSDL
@@ -69,7 +69,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @uses ApiFareItinerary::setResident()
      * @uses ApiFareItinerary::setSecondSegmentsIds()
      * @uses ApiFareItinerary::setThirdSegmentsIds()
-     * @param \Api\StructType\ApiFareItineraryPrice $price
+     * @param \StructType\ApiFareItineraryPrice $price
      * @param string $key
      * @param int[] $firstSegmentsIds
      * @param string $clickoutURLParams
@@ -77,7 +77,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param int[] $secondSegmentsIds
      * @param int[] $thirdSegmentsIds
      */
-    public function __construct(\Api\StructType\ApiFareItineraryPrice $price, string $key, array $firstSegmentsIds, ?string $clickoutURLParams = null, ?bool $resident = null, array $secondSegmentsIds = [], array $thirdSegmentsIds = [])
+    public function __construct(\StructType\ApiFareItineraryPrice $price, string $key, array $firstSegmentsIds, ?string $clickoutURLParams = null, ?bool $resident = null, array $secondSegmentsIds = [], array $thirdSegmentsIds = [])
     {
         $this
             ->setPrice($price)
@@ -90,18 +90,18 @@ class ApiFareItinerary extends AbstractStructBase
     }
     /**
      * Get price value
-     * @return \Api\StructType\ApiFareItineraryPrice
+     * @return \StructType\ApiFareItineraryPrice
      */
-    public function getPrice(): \Api\StructType\ApiFareItineraryPrice
+    public function getPrice(): \StructType\ApiFareItineraryPrice
     {
         return $this->price;
     }
     /**
      * Set price value
-     * @param \Api\StructType\ApiFareItineraryPrice $price
-     * @return \Api\StructType\ApiFareItinerary
+     * @param \StructType\ApiFareItineraryPrice $price
+     * @return \StructType\ApiFareItinerary
      */
-    public function setPrice(\Api\StructType\ApiFareItineraryPrice $price): self
+    public function setPrice(\StructType\ApiFareItineraryPrice $price): self
     {
         $this->price = $price;
         
@@ -118,7 +118,7 @@ class ApiFareItinerary extends AbstractStructBase
     /**
      * Set key value
      * @param string $key
-     * @return \Api\StructType\ApiFareItinerary
+     * @return \StructType\ApiFareItinerary
      */
     public function setKey(string $key): self
     {
@@ -165,7 +165,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Set firstSegmentsIds value
      * @throws InvalidArgumentException
      * @param int[] $firstSegmentsIds
-     * @return \Api\StructType\ApiFareItinerary
+     * @return \StructType\ApiFareItinerary
      */
     public function setFirstSegmentsIds(array $firstSegmentsIds): self
     {
@@ -181,7 +181,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Add item to firstSegmentsIds value
      * @throws InvalidArgumentException
      * @param int $item
-     * @return \Api\StructType\ApiFareItinerary
+     * @return \StructType\ApiFareItinerary
      */
     public function addToFirstSegmentsIds(int $item): self
     {
@@ -204,7 +204,7 @@ class ApiFareItinerary extends AbstractStructBase
     /**
      * Set clickoutURLParams value
      * @param string $clickoutURLParams
-     * @return \Api\StructType\ApiFareItinerary
+     * @return \StructType\ApiFareItinerary
      */
     public function setClickoutURLParams(?string $clickoutURLParams = null): self
     {
@@ -227,7 +227,7 @@ class ApiFareItinerary extends AbstractStructBase
     /**
      * Set resident value
      * @param bool $resident
-     * @return \Api\StructType\ApiFareItinerary
+     * @return \StructType\ApiFareItinerary
      */
     public function setResident(?bool $resident = null): self
     {
@@ -274,7 +274,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Set secondSegmentsIds value
      * @throws InvalidArgumentException
      * @param int[] $secondSegmentsIds
-     * @return \Api\StructType\ApiFareItinerary
+     * @return \StructType\ApiFareItinerary
      */
     public function setSecondSegmentsIds(array $secondSegmentsIds = []): self
     {
@@ -290,7 +290,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Add item to secondSegmentsIds value
      * @throws InvalidArgumentException
      * @param int $item
-     * @return \Api\StructType\ApiFareItinerary
+     * @return \StructType\ApiFareItinerary
      */
     public function addToSecondSegmentsIds(int $item): self
     {
@@ -337,7 +337,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Set thirdSegmentsIds value
      * @throws InvalidArgumentException
      * @param int[] $thirdSegmentsIds
-     * @return \Api\StructType\ApiFareItinerary
+     * @return \StructType\ApiFareItinerary
      */
     public function setThirdSegmentsIds(array $thirdSegmentsIds = []): self
     {
@@ -353,7 +353,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Add item to thirdSegmentsIds value
      * @throws InvalidArgumentException
      * @param int $item
-     * @return \Api\StructType\ApiFareItinerary
+     * @return \StructType\ApiFareItinerary
      */
     public function addToThirdSegmentsIds(int $item): self
     {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use Api\StructType\ApiParagraphType;
+use StructType\ApiParagraphType;
 use TypeError;
 
 /**
