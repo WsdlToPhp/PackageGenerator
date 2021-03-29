@@ -253,13 +253,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
         $namespaces = [];
         $namespace = $this->getGenerator()->getOptionNamespacePrefix();
 
-        if (empty($namespace)) {
-            if (!empty($this->getGenerator()->getOptionPrefix())) {
-                $namespaces[] = $this->getGenerator()->getOptionPrefix();
-            } elseif (!empty($this->getGenerator()->getOptionSuffix())) {
-                $namespaces[] = $this->getGenerator()->getOptionSuffix();
-            }
-        } else {
+        if (!empty($namespace)) {
             $namespaces[] = $namespace;
         }
 
