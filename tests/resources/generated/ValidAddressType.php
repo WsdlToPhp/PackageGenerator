@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\StructType;
+namespace StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -21,9 +21,9 @@ class ApiAddressType extends AbstractStructBase
      * The StreetNmbr
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var \Api\StructType\ApiStreetNmbr|null
+     * @var \StructType\ApiStreetNmbr|null
      */
-    protected ?\Api\StructType\ApiStreetNmbr $StreetNmbr = null;
+    protected ?\StructType\ApiStreetNmbr $StreetNmbr = null;
     /**
      * The AddressLine
      * Meta information extracted from the WSDL
@@ -75,17 +75,17 @@ class ApiAddressType extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - documentation: State or Province name (e.g., Texas).
      * - minOccurs: 0
-     * @var \Api\StructType\ApiStateProvType|null
+     * @var \StructType\ApiStateProvType|null
      */
-    protected ?\Api\StructType\ApiStateProvType $StateProv = null;
+    protected ?\StructType\ApiStateProvType $StateProv = null;
     /**
      * The CountryName
      * Meta information extracted from the WSDL
      * - documentation: Country name (e.g., Ireland).
      * - minOccurs: 0
-     * @var \Api\StructType\ApiCountryNameType|null
+     * @var \StructType\ApiCountryNameType|null
      */
-    protected ?\Api\StructType\ApiCountryNameType $CountryName = null;
+    protected ?\StructType\ApiCountryNameType $CountryName = null;
     /**
      * The Type
      * Meta information extracted from the WSDL
@@ -141,20 +141,20 @@ class ApiAddressType extends AbstractStructBase
      * @uses ApiAddressType::setFormattedInd()
      * @uses ApiAddressType::setShareSynchInd()
      * @uses ApiAddressType::setShareMarketInd()
-     * @param \Api\StructType\ApiStreetNmbr $streetNmbr
+     * @param \StructType\ApiStreetNmbr $streetNmbr
      * @param string[] $addressLine
      * @param string $cityName
      * @param string $postalCode
      * @param string $county
-     * @param \Api\StructType\ApiStateProvType $stateProv
-     * @param \Api\StructType\ApiCountryNameType $countryName
+     * @param \StructType\ApiStateProvType $stateProv
+     * @param \StructType\ApiCountryNameType $countryName
      * @param string $type
      * @param string $remark
      * @param bool $formattedInd
      * @param string $shareSynchInd
      * @param string $shareMarketInd
      */
-    public function __construct(?\Api\StructType\ApiStreetNmbr $streetNmbr = null, array $addressLine = [], ?string $cityName = null, ?string $postalCode = null, ?string $county = null, ?\Api\StructType\ApiStateProvType $stateProv = null, ?\Api\StructType\ApiCountryNameType $countryName = null, ?string $type = null, ?string $remark = null, ?bool $formattedInd = null, ?string $shareSynchInd = null, ?string $shareMarketInd = null)
+    public function __construct(?\StructType\ApiStreetNmbr $streetNmbr = null, array $addressLine = [], ?string $cityName = null, ?string $postalCode = null, ?string $county = null, ?\StructType\ApiStateProvType $stateProv = null, ?\StructType\ApiCountryNameType $countryName = null, ?string $type = null, ?string $remark = null, ?bool $formattedInd = null, ?string $shareSynchInd = null, ?string $shareMarketInd = null)
     {
         $this
             ->setStreetNmbr($streetNmbr)
@@ -172,18 +172,18 @@ class ApiAddressType extends AbstractStructBase
     }
     /**
      * Get StreetNmbr value
-     * @return \Api\StructType\ApiStreetNmbr|null
+     * @return \StructType\ApiStreetNmbr|null
      */
-    public function getStreetNmbr(): ?\Api\StructType\ApiStreetNmbr
+    public function getStreetNmbr(): ?\StructType\ApiStreetNmbr
     {
         return $this->StreetNmbr;
     }
     /**
      * Set StreetNmbr value
-     * @param \Api\StructType\ApiStreetNmbr $streetNmbr
-     * @return \Api\StructType\ApiAddressType
+     * @param \StructType\ApiStreetNmbr $streetNmbr
+     * @return \StructType\ApiAddressType
      */
-    public function setStreetNmbr(?\Api\StructType\ApiStreetNmbr $streetNmbr = null): self
+    public function setStreetNmbr(?\StructType\ApiStreetNmbr $streetNmbr = null): self
     {
         $this->StreetNmbr = $streetNmbr;
         
@@ -272,7 +272,7 @@ class ApiAddressType extends AbstractStructBase
      * Set AddressLine value
      * @throws InvalidArgumentException
      * @param string[] $addressLine
-     * @return \Api\StructType\ApiAddressType
+     * @return \StructType\ApiAddressType
      */
     public function setAddressLine(array $addressLine = []): self
     {
@@ -300,7 +300,7 @@ class ApiAddressType extends AbstractStructBase
      * Add item to AddressLine value
      * @throws InvalidArgumentException
      * @param string $item
-     * @return \Api\StructType\ApiAddressType
+     * @return \StructType\ApiAddressType
      */
     public function addToAddressLine(string $item): self
     {
@@ -335,7 +335,7 @@ class ApiAddressType extends AbstractStructBase
     /**
      * Set CityName value
      * @param string $cityName
-     * @return \Api\StructType\ApiAddressType
+     * @return \StructType\ApiAddressType
      */
     public function setCityName(?string $cityName = null): self
     {
@@ -366,7 +366,7 @@ class ApiAddressType extends AbstractStructBase
     /**
      * Set PostalCode value
      * @param string $postalCode
-     * @return \Api\StructType\ApiAddressType
+     * @return \StructType\ApiAddressType
      */
     public function setPostalCode(?string $postalCode = null): self
     {
@@ -397,7 +397,7 @@ class ApiAddressType extends AbstractStructBase
     /**
      * Set County value
      * @param string $county
-     * @return \Api\StructType\ApiAddressType
+     * @return \StructType\ApiAddressType
      */
     public function setCounty(?string $county = null): self
     {
@@ -419,18 +419,18 @@ class ApiAddressType extends AbstractStructBase
     }
     /**
      * Get StateProv value
-     * @return \Api\StructType\ApiStateProvType|null
+     * @return \StructType\ApiStateProvType|null
      */
-    public function getStateProv(): ?\Api\StructType\ApiStateProvType
+    public function getStateProv(): ?\StructType\ApiStateProvType
     {
         return $this->StateProv;
     }
     /**
      * Set StateProv value
-     * @param \Api\StructType\ApiStateProvType $stateProv
-     * @return \Api\StructType\ApiAddressType
+     * @param \StructType\ApiStateProvType $stateProv
+     * @return \StructType\ApiAddressType
      */
-    public function setStateProv(?\Api\StructType\ApiStateProvType $stateProv = null): self
+    public function setStateProv(?\StructType\ApiStateProvType $stateProv = null): self
     {
         $this->StateProv = $stateProv;
         
@@ -438,18 +438,18 @@ class ApiAddressType extends AbstractStructBase
     }
     /**
      * Get CountryName value
-     * @return \Api\StructType\ApiCountryNameType|null
+     * @return \StructType\ApiCountryNameType|null
      */
-    public function getCountryName(): ?\Api\StructType\ApiCountryNameType
+    public function getCountryName(): ?\StructType\ApiCountryNameType
     {
         return $this->CountryName;
     }
     /**
      * Set CountryName value
-     * @param \Api\StructType\ApiCountryNameType $countryName
-     * @return \Api\StructType\ApiAddressType
+     * @param \StructType\ApiCountryNameType $countryName
+     * @return \StructType\ApiAddressType
      */
-    public function setCountryName(?\Api\StructType\ApiCountryNameType $countryName = null): self
+    public function setCountryName(?\StructType\ApiCountryNameType $countryName = null): self
     {
         $this->CountryName = $countryName;
         
@@ -466,7 +466,7 @@ class ApiAddressType extends AbstractStructBase
     /**
      * Set Type value
      * @param string $type
-     * @return \Api\StructType\ApiAddressType
+     * @return \StructType\ApiAddressType
      */
     public function setType(?string $type = null): self
     {
@@ -493,7 +493,7 @@ class ApiAddressType extends AbstractStructBase
     /**
      * Set Remark value
      * @param string $remark
-     * @return \Api\StructType\ApiAddressType
+     * @return \StructType\ApiAddressType
      */
     public function setRemark(?string $remark = null): self
     {
@@ -524,7 +524,7 @@ class ApiAddressType extends AbstractStructBase
     /**
      * Set FormattedInd value
      * @param bool $formattedInd
-     * @return \Api\StructType\ApiAddressType
+     * @return \StructType\ApiAddressType
      */
     public function setFormattedInd(?bool $formattedInd = null): self
     {
@@ -547,7 +547,7 @@ class ApiAddressType extends AbstractStructBase
     /**
      * Set ShareSynchInd value
      * @param string $shareSynchInd
-     * @return \Api\StructType\ApiAddressType
+     * @return \StructType\ApiAddressType
      */
     public function setShareSynchInd(?string $shareSynchInd = null): self
     {
@@ -570,7 +570,7 @@ class ApiAddressType extends AbstractStructBase
     /**
      * Set ShareMarketInd value
      * @param string $shareMarketInd
-     * @return \Api\StructType\ApiAddressType
+     * @return \StructType\ApiAddressType
      */
     public function setShareMarketInd(?string $shareMarketInd = null): self
     {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\StructType;
+namespace StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -26,9 +26,9 @@ class ApiАдресРФ extends ApiСостав
      * The СвРайМО
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var \Api\StructType\ApiСвРайМО|null
+     * @var \StructType\ApiСвРайМО|null
      */
-    protected ?\Api\StructType\ApiСвРайМО $СвРайМО = null;
+    protected ?\StructType\ApiСвРайМО $СвРайМО = null;
     /**
      * The Город
      * Meta information extracted from the WSDL
@@ -62,7 +62,7 @@ class ApiАдресРФ extends ApiСостав
      * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var \Api\StructType\ApiДопАдрЭл[]
+     * @var \StructType\ApiДопАдрЭл[]
      */
     protected array $ДопАдрЭл = [];
     /**
@@ -75,14 +75,14 @@ class ApiАдресРФ extends ApiСостав
      * @uses ApiАдресРФ::setУлица()
      * @uses ApiАдресРФ::setДопАдрЭл()
      * @param string $СубъектРФ
-     * @param \Api\StructType\ApiСвРайМО $СвРайМО
+     * @param \StructType\ApiСвРайМО $СвРайМО
      * @param string $Город
      * @param string $ВнутригРайон
      * @param string $НаселПункт
      * @param string $Улица
-     * @param \Api\StructType\ApiДопАдрЭл[] $ДопАдрЭл
+     * @param \StructType\ApiДопАдрЭл[] $ДопАдрЭл
      */
-    public function __construct(?string $СубъектРФ = null, ?\Api\StructType\ApiСвРайМО $СвРайМО = null, ?string $Город = null, ?string $ВнутригРайон = null, ?string $НаселПункт = null, ?string $Улица = null, array $ДопАдрЭл = [])
+    public function __construct(?string $СубъектРФ = null, ?\StructType\ApiСвРайМО $СвРайМО = null, ?string $Город = null, ?string $ВнутригРайон = null, ?string $НаселПункт = null, ?string $Улица = null, array $ДопАдрЭл = [])
     {
         $this
             ->setСубъектРФ($СубъектРФ)
@@ -104,7 +104,7 @@ class ApiАдресРФ extends ApiСостав
     /**
      * Set СубъектРФ value
      * @param string $СубъектРФ
-     * @return \Api\StructType\ApiАдресРФ
+     * @return \StructType\ApiАдресРФ
      */
     public function setСубъектРФ(?string $СубъектРФ = null): self
     {
@@ -118,18 +118,18 @@ class ApiАдресРФ extends ApiСостав
     }
     /**
      * Get СвРайМО value
-     * @return \Api\StructType\ApiСвРайМО|null
+     * @return \StructType\ApiСвРайМО|null
      */
-    public function getСвРайМО(): ?\Api\StructType\ApiСвРайМО
+    public function getСвРайМО(): ?\StructType\ApiСвРайМО
     {
         return $this->СвРайМО;
     }
     /**
      * Set СвРайМО value
-     * @param \Api\StructType\ApiСвРайМО $СвРайМО
-     * @return \Api\StructType\ApiАдресРФ
+     * @param \StructType\ApiСвРайМО $СвРайМО
+     * @return \StructType\ApiАдресРФ
      */
-    public function setСвРайМО(?\Api\StructType\ApiСвРайМО $СвРайМО = null): self
+    public function setСвРайМО(?\StructType\ApiСвРайМО $СвРайМО = null): self
     {
         $this->СвРайМО = $СвРайМО;
         
@@ -146,7 +146,7 @@ class ApiАдресРФ extends ApiСостав
     /**
      * Set Город value
      * @param string $Город
-     * @return \Api\StructType\ApiАдресРФ
+     * @return \StructType\ApiАдресРФ
      */
     public function setГород(?string $Город = null): self
     {
@@ -169,7 +169,7 @@ class ApiАдресРФ extends ApiСостав
     /**
      * Set ВнутригРайон value
      * @param string $ВнутригРайон
-     * @return \Api\StructType\ApiАдресРФ
+     * @return \StructType\ApiАдресРФ
      */
     public function setВнутригРайон(?string $ВнутригРайон = null): self
     {
@@ -192,7 +192,7 @@ class ApiАдресРФ extends ApiСостав
     /**
      * Set НаселПункт value
      * @param string $НаселПункт
-     * @return \Api\StructType\ApiАдресРФ
+     * @return \StructType\ApiАдресРФ
      */
     public function setНаселПункт(?string $НаселПункт = null): self
     {
@@ -215,7 +215,7 @@ class ApiАдресРФ extends ApiСостав
     /**
      * Set Улица value
      * @param string $Улица
-     * @return \Api\StructType\ApiАдресРФ
+     * @return \StructType\ApiАдресРФ
      */
     public function setУлица(?string $Улица = null): self
     {
@@ -229,7 +229,7 @@ class ApiАдресРФ extends ApiСостав
     }
     /**
      * Get ДопАдрЭл value
-     * @return \Api\StructType\ApiДопАдрЭл[]
+     * @return \StructType\ApiДопАдрЭл[]
      */
     public function getДопАдрЭл(): array
     {
@@ -247,12 +247,12 @@ class ApiАдресРФ extends ApiСостав
         $invalidValues = [];
         foreach ($values as $АдресРФДопАдрЭлItem) {
             // validation for constraint: itemType
-            if (!$АдресРФДопАдрЭлItem instanceof \Api\StructType\ApiДопАдрЭл) {
+            if (!$АдресРФДопАдрЭлItem instanceof \StructType\ApiДопАдрЭл) {
                 $invalidValues[] = is_object($АдресРФДопАдрЭлItem) ? get_class($АдресРФДопАдрЭлItem) : sprintf('%s(%s)', gettype($АдресРФДопАдрЭлItem), var_export($АдресРФДопАдрЭлItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The ДопАдрЭл property can only contain items of type \Api\StructType\ApiДопАдрЭл, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The ДопАдрЭл property can only contain items of type \StructType\ApiДопАдрЭл, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         
@@ -261,8 +261,8 @@ class ApiАдресРФ extends ApiСостав
     /**
      * Set ДопАдрЭл value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiДопАдрЭл[] $ДопАдрЭл
-     * @return \Api\StructType\ApiАдресРФ
+     * @param \StructType\ApiДопАдрЭл[] $ДопАдрЭл
+     * @return \StructType\ApiАдресРФ
      */
     public function setДопАдрЭл(array $ДопАдрЭл = []): self
     {
@@ -277,14 +277,14 @@ class ApiАдресРФ extends ApiСостав
     /**
      * Add item to ДопАдрЭл value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiДопАдрЭл $item
-     * @return \Api\StructType\ApiАдресРФ
+     * @param \StructType\ApiДопАдрЭл $item
+     * @return \StructType\ApiАдресРФ
      */
-    public function addToДопАдрЭл(\Api\StructType\ApiДопАдрЭл $item): self
+    public function addToДопАдрЭл(\StructType\ApiДопАдрЭл $item): self
     {
         // validation for constraint: itemType
-        if (!$item instanceof \Api\StructType\ApiДопАдрЭл) {
-            throw new InvalidArgumentException(sprintf('The ДопАдрЭл property can only contain items of type \Api\StructType\ApiДопАдрЭл, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        if (!$item instanceof \StructType\ApiДопАдрЭл) {
+            throw new InvalidArgumentException(sprintf('The ДопАдрЭл property can only contain items of type \StructType\ApiДопАдрЭл, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->ДопАдрЭл[] = $item;
         

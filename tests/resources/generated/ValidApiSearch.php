@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\ServiceType;
+namespace ServiceType;
 
 use SoapFault;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
@@ -20,10 +20,10 @@ class ApiSearch extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiSearchRequest $parameters
-     * @return \Api\StructType\ApiSearchResponse|bool
+     * @param \StructType\ApiSearchRequest $parameters
+     * @return \StructType\ApiSearchResponse|bool
      */
-    public function Search(\Api\StructType\ApiSearchRequest $parameters)
+    public function Search(\StructType\ApiSearchRequest $parameters)
     {
         try {
             $this->setResult($resultSearch = $this->getSoapClient()->__soapCall('Search', [
@@ -40,7 +40,7 @@ class ApiSearch extends AbstractSoapClientBase
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return \Api\StructType\ApiSearchResponse
+     * @return \StructType\ApiSearchResponse
      */
     public function getResult()
     {

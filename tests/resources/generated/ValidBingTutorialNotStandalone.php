@@ -21,16 +21,16 @@
  */
 $options = [
     WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => '__WSDL_URL__',
-    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \Api\ApiClassMap::get(),
+    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => ApiClassMap::get(),
 ];
 /**
  * Samples for Search ServiceType
  */
-$search = new \Api\ServiceType\ApiSearch($options);
+$search = new \ServiceType\ApiSearch($options);
 /**
  * Sample call for Search operation/method
  */
-if ($search->Search(new \Api\StructType\ApiSearchRequest()) !== false) {
+if ($search->Search(new \StructType\ApiSearchRequest()) !== false) {
     print_r($search->getResult());
 } else {
     print_r($search->getLastError());

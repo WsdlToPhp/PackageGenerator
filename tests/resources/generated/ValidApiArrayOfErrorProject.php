@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\ArrayType;
+namespace ArrayType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructArrayBase;
@@ -20,13 +20,13 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
      * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * @var \Api\StructType\ApiErrorProject[]
+     * @var \StructType\ApiErrorProject[]
      */
     protected array $Error = [];
     /**
      * Constructor method for ArrayOfError
      * @uses ApiArrayOfErrorProject::setError()
-     * @param \Api\StructType\ApiErrorProject[] $error
+     * @param \StructType\ApiErrorProject[] $error
      */
     public function __construct(array $error = [])
     {
@@ -35,7 +35,7 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
     }
     /**
      * Get Error value
-     * @return \Api\StructType\ApiErrorProject[]
+     * @return \StructType\ApiErrorProject[]
      */
     public function getError(): array
     {
@@ -53,12 +53,12 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
         $invalidValues = [];
         foreach ($values as $arrayOfErrorErrorItem) {
             // validation for constraint: itemType
-            if (!$arrayOfErrorErrorItem instanceof \Api\StructType\ApiErrorProject) {
+            if (!$arrayOfErrorErrorItem instanceof \StructType\ApiErrorProject) {
                 $invalidValues[] = is_object($arrayOfErrorErrorItem) ? get_class($arrayOfErrorErrorItem) : sprintf('%s(%s)', gettype($arrayOfErrorErrorItem), var_export($arrayOfErrorErrorItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('The Error property can only contain items of type \Api\StructType\ApiErrorProject, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
+            $message = sprintf('The Error property can only contain items of type \StructType\ApiErrorProject, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
         
@@ -67,8 +67,8 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
     /**
      * Set Error value
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiErrorProject[] $error
-     * @return \Api\ArrayType\ApiArrayOfErrorProject
+     * @param \StructType\ApiErrorProject[] $error
+     * @return \ArrayType\ApiArrayOfErrorProject
      */
     public function setError(array $error = []): self
     {
@@ -83,9 +83,9 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
     /**
      * Returns the current element
      * @see AbstractStructArrayBase::current()
-     * @return \Api\StructType\ApiErrorProject|null
+     * @return \StructType\ApiErrorProject|null
      */
-    public function current(): ?\Api\StructType\ApiErrorProject
+    public function current(): ?\StructType\ApiErrorProject
     {
         return parent::current();
     }
@@ -93,27 +93,27 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
      * Returns the indexed element
      * @see AbstractStructArrayBase::item()
      * @param int $index
-     * @return \Api\StructType\ApiErrorProject|null
+     * @return \StructType\ApiErrorProject|null
      */
-    public function item($index): ?\Api\StructType\ApiErrorProject
+    public function item($index): ?\StructType\ApiErrorProject
     {
         return parent::item($index);
     }
     /**
      * Returns the first element
      * @see AbstractStructArrayBase::first()
-     * @return \Api\StructType\ApiErrorProject|null
+     * @return \StructType\ApiErrorProject|null
      */
-    public function first(): ?\Api\StructType\ApiErrorProject
+    public function first(): ?\StructType\ApiErrorProject
     {
         return parent::first();
     }
     /**
      * Returns the last element
      * @see AbstractStructArrayBase::last()
-     * @return \Api\StructType\ApiErrorProject|null
+     * @return \StructType\ApiErrorProject|null
      */
-    public function last(): ?\Api\StructType\ApiErrorProject
+    public function last(): ?\StructType\ApiErrorProject
     {
         return parent::last();
     }
@@ -121,9 +121,9 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
      * Returns the element at the offset
      * @see AbstractStructArrayBase::offsetGet()
      * @param int $offset
-     * @return \Api\StructType\ApiErrorProject|null
+     * @return \StructType\ApiErrorProject|null
      */
-    public function offsetGet($offset): ?\Api\StructType\ApiErrorProject
+    public function offsetGet($offset): ?\StructType\ApiErrorProject
     {
         return parent::offsetGet($offset);
     }
@@ -131,10 +131,10 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
      * Add element to array
      * @see AbstractStructArrayBase::add()
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiErrorProject $item
-     * @return \Api\ArrayType\ApiArrayOfErrorProject
+     * @param \StructType\ApiErrorProject $item
+     * @return \ArrayType\ApiArrayOfErrorProject
      */
-    public function add(\Api\StructType\ApiErrorProject $item): self
+    public function add(\StructType\ApiErrorProject $item): self
     {
         return parent::add($item);
     }

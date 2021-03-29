@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\StructType;
+namespace StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -57,7 +57,7 @@ class ApiExpiryDate extends AbstractStructBase
     /**
      * Set month value
      * @param string $month
-     * @return \Api\StructType\ApiExpiryDate
+     * @return \StructType\ApiExpiryDate
      */
     public function setMonth(string $month): self
     {
@@ -84,7 +84,7 @@ class ApiExpiryDate extends AbstractStructBase
     /**
      * Set year value
      * @param string $year
-     * @return \Api\StructType\ApiExpiryDate
+     * @return \StructType\ApiExpiryDate
      */
     public function setYear(string $year): self
     {

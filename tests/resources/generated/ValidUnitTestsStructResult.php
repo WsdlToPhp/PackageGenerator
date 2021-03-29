@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\StructType;
+namespace StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -36,27 +36,27 @@ class ApiResult extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiErrors|null
+     * @var \StructType\ApiErrors|null
      */
-    protected ?\Api\StructType\ApiErrors $Errors = null;
+    protected ?\StructType\ApiErrors $Errors = null;
     /**
      * The Warnings
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * @var \Api\StructType\ApiWarnings|null
+     * @var \StructType\ApiWarnings|null
      */
-    protected ?\Api\StructType\ApiWarnings $Warnings = null;
+    protected ?\StructType\ApiWarnings $Warnings = null;
     /**
      * Constructor method for Result
      * @uses ApiResult::setSuccess()
      * @uses ApiResult::setErrors()
      * @uses ApiResult::setWarnings()
      * @param bool $success
-     * @param \Api\StructType\ApiErrors $errors
-     * @param \Api\StructType\ApiWarnings $warnings
+     * @param \StructType\ApiErrors $errors
+     * @param \StructType\ApiWarnings $warnings
      */
-    public function __construct(?bool $success = false, ?\Api\StructType\ApiErrors $errors = null, ?\Api\StructType\ApiWarnings $warnings = null)
+    public function __construct(?bool $success = false, ?\StructType\ApiErrors $errors = null, ?\StructType\ApiWarnings $warnings = null)
     {
         $this
             ->setSuccess($success)
@@ -106,7 +106,7 @@ class ApiResult extends AbstractStructBase
      * property is null, the property is removed from this object
      * @throws InvalidArgumentException
      * @param bool $success
-     * @return \Api\StructType\ApiResult
+     * @return \StructType\ApiResult
      */
     public function setSuccess(?bool $success = false): self
     {
@@ -128,9 +128,9 @@ class ApiResult extends AbstractStructBase
     }
     /**
      * Get Errors value
-     * @return \Api\StructType\ApiErrors|null
+     * @return \StructType\ApiErrors|null
      */
-    public function getErrors(): ?\Api\StructType\ApiErrors
+    public function getErrors(): ?\StructType\ApiErrors
     {
         return isset($this->Errors) ? $this->Errors : null;
     }
@@ -168,10 +168,10 @@ class ApiResult extends AbstractStructBase
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
      * @throws InvalidArgumentException
-     * @param \Api\StructType\ApiErrors $errors
-     * @return \Api\StructType\ApiResult
+     * @param \StructType\ApiErrors $errors
+     * @return \StructType\ApiResult
      */
-    public function setErrors(?\Api\StructType\ApiErrors $errors = null): self
+    public function setErrors(?\StructType\ApiErrors $errors = null): self
     {
         // validation for constraint: choice(Success, Errors)
         if ('' !== ($errorsChoiceErrorMessage = self::validateErrorsForChoiceConstraintsFromSetErrors($errors))) {
@@ -187,18 +187,18 @@ class ApiResult extends AbstractStructBase
     }
     /**
      * Get Warnings value
-     * @return \Api\StructType\ApiWarnings|null
+     * @return \StructType\ApiWarnings|null
      */
-    public function getWarnings(): ?\Api\StructType\ApiWarnings
+    public function getWarnings(): ?\StructType\ApiWarnings
     {
         return $this->Warnings;
     }
     /**
      * Set Warnings value
-     * @param \Api\StructType\ApiWarnings $warnings
-     * @return \Api\StructType\ApiResult
+     * @param \StructType\ApiWarnings $warnings
+     * @return \StructType\ApiResult
      */
-    public function setWarnings(?\Api\StructType\ApiWarnings $warnings = null): self
+    public function setWarnings(?\StructType\ApiWarnings $warnings = null): self
     {
         $this->Warnings = $warnings;
         

@@ -19,17 +19,17 @@ require_once __DIR__ . '/vendor/autoload.php';
  */
 $options = [
     WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => '__WSDL_URL__',
-    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \Api\ApiClassMap::get(),
+    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => ApiClassMap::get(),
 ];
 /**
  * Samples for Login ServiceType
  */
-$login = new \Api\ServiceType\ApiLogin($options);
-$login->setSoapHeaderClusterHeader(new \Api\StructType\ApiClusterHeader());
+$login = new \ServiceType\ApiLogin($options);
+$login->setSoapHeaderClusterHeader(new \StructType\ApiClusterHeader());
 /**
  * Sample call for login operation/method
  */
-if ($login->login(new \Api\StructType\ApiLogin()) !== false) {
+if ($login->login(new \StructType\ApiLogin()) !== false) {
     print_r($login->getResult());
 } else {
     print_r($login->getLastError());
@@ -37,13 +37,13 @@ if ($login->login(new \Api\StructType\ApiLogin()) !== false) {
 /**
  * Samples for Send ServiceType
  */
-$send = new \Api\ServiceType\ApiSend($options);
-$send->setSoapHeaderSessionHeader(new \Api\StructType\ApiSessionHeader());
-$send->setSoapHeaderClusterHeader(new \Api\StructType\ApiClusterHeader());
+$send = new \ServiceType\ApiSend($options);
+$send->setSoapHeaderSessionHeader(new \StructType\ApiSessionHeader());
+$send->setSoapHeaderClusterHeader(new \StructType\ApiClusterHeader());
 /**
  * Sample call for sendEmail operation/method
  */
-if ($send->sendEmail(new \Api\StructType\ApiSendEmail()) !== false) {
+if ($send->sendEmail(new \StructType\ApiSendEmail()) !== false) {
     print_r($send->getResult());
 } else {
     print_r($send->getLastError());
@@ -51,13 +51,13 @@ if ($send->sendEmail(new \Api\StructType\ApiSendEmail()) !== false) {
 /**
  * Samples for List ServiceType
  */
-$list = new \Api\ServiceType\ApiList($options);
-$list->setSoapHeaderSessionHeader(new \Api\StructType\ApiSessionHeader());
-$list->setSoapHeaderClusterHeader(new \Api\StructType\ApiClusterHeader());
+$list = new \ServiceType\ApiList($options);
+$list->setSoapHeaderSessionHeader(new \StructType\ApiSessionHeader());
+$list->setSoapHeaderClusterHeader(new \StructType\ApiClusterHeader());
 /**
  * Sample call for _list operation/method
  */
-if ($list->_list(new \Api\StructType\ApiList()) !== false) {
+if ($list->_list(new \StructType\ApiList()) !== false) {
     print_r($list->getResult());
 } else {
     print_r($list->getLastError());
@@ -65,13 +65,13 @@ if ($list->_list(new \Api\StructType\ApiList()) !== false) {
 /**
  * Samples for Upload ServiceType
  */
-$upload = new \Api\ServiceType\ApiUpload($options);
-$upload->setSoapHeaderSessionHeader(new \Api\StructType\ApiSessionHeader());
-$upload->setSoapHeaderClusterHeader(new \Api\StructType\ApiClusterHeader());
+$upload = new \ServiceType\ApiUpload($options);
+$upload->setSoapHeaderSessionHeader(new \StructType\ApiSessionHeader());
+$upload->setSoapHeaderClusterHeader(new \StructType\ApiClusterHeader());
 /**
  * Sample call for uploadList operation/method
  */
-if ($upload->uploadList(new \Api\StructType\ApiUploadList()) !== false) {
+if ($upload->uploadList(new \StructType\ApiUploadList()) !== false) {
     print_r($upload->getResult());
 } else {
     print_r($upload->getLastError());
@@ -79,13 +79,13 @@ if ($upload->uploadList(new \Api\StructType\ApiUploadList()) !== false) {
 /**
  * Samples for Get ServiceType
  */
-$get = new \Api\ServiceType\ApiGet($options);
-$get->setSoapHeaderSessionHeader(new \Api\StructType\ApiSessionHeader());
-$get->setSoapHeaderClusterHeader(new \Api\StructType\ApiClusterHeader());
+$get = new \ServiceType\ApiGet($options);
+$get->setSoapHeaderSessionHeader(new \StructType\ApiSessionHeader());
+$get->setSoapHeaderClusterHeader(new \StructType\ApiClusterHeader());
 /**
  * Sample call for getUploadResult operation/method
  */
-if ($get->getUploadResult(new \Api\StructType\ApiGetUploadResultRequest()) !== false) {
+if ($get->getUploadResult(new \StructType\ApiGetUploadResultRequest()) !== false) {
     print_r($get->getResult());
 } else {
     print_r($get->getLastError());
@@ -93,13 +93,13 @@ if ($get->getUploadResult(new \Api\StructType\ApiGetUploadResultRequest()) !== f
 /**
  * Samples for Download ServiceType
  */
-$download = new \Api\ServiceType\ApiDownload($options);
-$download->setSoapHeaderSessionHeader(new \Api\StructType\ApiSessionHeader());
-$download->setSoapHeaderClusterHeader(new \Api\StructType\ApiClusterHeader());
+$download = new \ServiceType\ApiDownload($options);
+$download->setSoapHeaderSessionHeader(new \StructType\ApiSessionHeader());
+$download->setSoapHeaderClusterHeader(new \StructType\ApiClusterHeader());
 /**
  * Sample call for downloadList operation/method
  */
-if ($download->downloadList(new \Api\StructType\ApiDownloadList()) !== false) {
+if ($download->downloadList(new \StructType\ApiDownloadList()) !== false) {
     print_r($download->getResult());
 } else {
     print_r($download->getLastError());
@@ -107,13 +107,13 @@ if ($download->downloadList(new \Api\StructType\ApiDownloadList()) !== false) {
 /**
  * Samples for Message ServiceType
  */
-$message = new \Api\ServiceType\ApiMessage($options);
-$message->setSoapHeaderSessionHeader(new \Api\StructType\ApiSessionHeader());
-$message->setSoapHeaderClusterHeader(new \Api\StructType\ApiClusterHeader());
+$message = new \ServiceType\ApiMessage($options);
+$message->setSoapHeaderSessionHeader(new \StructType\ApiSessionHeader());
+$message->setSoapHeaderClusterHeader(new \StructType\ApiClusterHeader());
 /**
  * Sample call for messageReport operation/method
  */
-if ($message->messageReport(new \Api\StructType\ApiMessageReport()) !== false) {
+if ($message->messageReport(new \StructType\ApiMessageReport()) !== false) {
     print_r($message->getResult());
 } else {
     print_r($message->getLastError());
@@ -121,13 +121,13 @@ if ($message->messageReport(new \Api\StructType\ApiMessageReport()) !== false) {
 /**
  * Samples for Delete ServiceType
  */
-$delete = new \Api\ServiceType\ApiDelete($options);
-$delete->setSoapHeaderSessionHeader(new \Api\StructType\ApiSessionHeader());
-$delete->setSoapHeaderClusterHeader(new \Api\StructType\ApiClusterHeader());
+$delete = new \ServiceType\ApiDelete($options);
+$delete->setSoapHeaderSessionHeader(new \StructType\ApiSessionHeader());
+$delete->setSoapHeaderClusterHeader(new \StructType\ApiClusterHeader());
 /**
  * Sample call for deleteList operation/method
  */
-if ($delete->deleteList(new \Api\StructType\ApiDeleteList()) !== false) {
+if ($delete->deleteList(new \StructType\ApiDeleteList()) !== false) {
     print_r($delete->getResult());
 } else {
     print_r($delete->getLastError());

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\ServiceType;
+namespace ServiceType;
 
 use SoapFault;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
@@ -52,7 +52,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $currency_code
      * @param string $rsid
      * @param string $secure
-     * @return \Api\StructType\ApiCode_item[]|bool
+     * @return \StructType\ApiCode_item[]|bool
      */
     public function CodeManager_GenerateCode($char_set, $code_type, $cookie_domain_periods, $currency_code, $rsid, $secure)
     {
@@ -83,7 +83,7 @@ class ApiService extends AbstractSoapClientBase
      * @param int[] $archive_id_list
      * @param string $binary_encoding
      * @param string $populate_code_items
-     * @return \Api\StructType\ApiCode_archive[]|bool
+     * @return \StructType\ApiCode_archive[]|bool
      */
     public function CodeManager_GetCodeArchives(array $archive_id_list, $binary_encoding, $populate_code_items)
     {
@@ -111,7 +111,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $archive_description
      * @param string $archive_id
      * @param string $archive_name
-     * @param \Api\StructType\ApiCode_item[] $code
+     * @param \StructType\ApiCode_item[] $code
      * @return int|bool
      */
     public function CodeManager_SaveCodeArchive($archive_description, $archive_id, $archive_name, array $code)
@@ -210,7 +210,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @return \Api\StructType\ApiQueue_item[]|bool
+     * @return \StructType\ApiQueue_item[]|bool
      */
     public function Company_GetQueue()
     {
@@ -233,7 +233,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rs_types
      * @param string $sp
-     * @return \Api\StructType\ApiSimple_report_suites_rval|bool
+     * @return \StructType\ApiSimple_report_suites_rval|bool
      */
     public function Company_GetReportSuites(array $rs_types, $sp)
     {
@@ -278,7 +278,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @return \Api\StructType\ApiToken_usage_container|bool
+     * @return \StructType\ApiToken_usage_container|bool
      */
     public function Company_GetTokenUsage()
     {
@@ -300,7 +300,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $rsid
-     * @return \Api\StructType\ApiTracking_server_data|bool
+     * @return \StructType\ApiTracking_server_data|bool
      */
     public function Company_GetTrackingServer($rsid)
     {
@@ -370,7 +370,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $dashboard_id
      * @param string $dashboard_type
-     * @return \Api\StructType\ApiDashboard_element|bool
+     * @return \StructType\ApiDashboard_element|bool
      */
     public function Dashboards_GetDashboardAPI($dashboard_id, $dashboard_type)
     {
@@ -395,7 +395,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $reportlet_id
-     * @return \Api\StructType\ApiReportlet|bool
+     * @return \StructType\ApiReportlet|bool
      */
     public function Dashboards_GetReportletDataAPI($reportlet_id)
     {
@@ -422,7 +422,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $dataSourceID
      * @param string $endOfBlock
      * @param string $reportSuiteID
-     * @param \Api\ArrayType\ApiColArray[] $rows
+     * @param \ArrayType\ApiColArray[] $rows
      * @return array|bool
      */
     public function DataSource_AppendDataBlock($blockID, $dataSourceID, $endOfBlock, $reportSuiteID, array $rows)
@@ -455,7 +455,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $dataSourceID
      * @param string $endOfBlock
      * @param string $reportSuiteID
-     * @param \Api\ArrayType\ApiColArray[] $rows
+     * @param \ArrayType\ApiColArray[] $rows
      * @return array|bool
      */
     public function DataSource_BeginDataBlock($blockName, array $columnNames, $dataSourceID, $endOfBlock, $reportSuiteID, array $rows)
@@ -486,7 +486,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $dataSourceID
      * @param string $reportSuiteID
-     * @return \Api\StructType\ApiStatus|bool
+     * @return \StructType\ApiStatus|bool
      */
     public function DataSource_Deactivate($dataSourceID, $reportSuiteID)
     {
@@ -513,7 +513,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $dataSourceID
      * @param string $filter
      * @param string $reportSuiteID
-     * @return \Api\StructType\ApiFileIDResult|bool
+     * @return \StructType\ApiFileIDResult|bool
      */
     public function DataSource_GetFileIDs($dataSourceID, $filter, $reportSuiteID)
     {
@@ -541,7 +541,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $dataSourceID
      * @param string $filter
      * @param string $reportSuiteID
-     * @return \Api\StructType\ApiDsFileStruct[]|bool
+     * @return \StructType\ApiDsFileStruct[]|bool
      */
     public function DataSource_GetFileInfo($dataSourceID, $filter, $reportSuiteID)
     {
@@ -568,7 +568,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $dataSourceFileID
      * @param string $reportSuiteID
-     * @return \Api\StructType\ApiFileStatusResult|bool
+     * @return \StructType\ApiFileStatusResult|bool
      */
     public function DataSource_GetFileStatus($dataSourceFileID, $reportSuiteID)
     {
@@ -593,7 +593,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $reportSuiteID
-     * @return \Api\StructType\ApiSimpleDataSource[]|bool
+     * @return \StructType\ApiSimpleDataSource[]|bool
      */
     public function DataSource_GetIDs($reportSuiteID)
     {
@@ -618,7 +618,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $filter
      * @param string $reportSuiteID
-     * @return \Api\StructType\ApiDataSourceInfo[]|bool
+     * @return \StructType\ApiDataSourceInfo[]|bool
      */
     public function DataSource_GetInfo($filter, $reportSuiteID)
     {
@@ -644,7 +644,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $dataSourceID
      * @param string $reportSuiteID
-     * @return \Api\StructType\ApiStatus|bool
+     * @return \StructType\ApiStatus|bool
      */
     public function DataSource_ProcessIncompleteVisits($dataSourceID, $reportSuiteID)
     {
@@ -670,7 +670,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $dataSourceID
      * @param string $reportSuiteID
-     * @return \Api\StructType\ApiStatus|bool
+     * @return \StructType\ApiStatus|bool
      */
     public function DataSource_Restart($dataSourceID, $reportSuiteID)
     {
@@ -695,11 +695,11 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $dataSourceID
-     * @param \Api\StructType\ApiDs_full_settings $dataSourceSettings
+     * @param \StructType\ApiDs_full_settings $dataSourceSettings
      * @param string $reportSuiteID
-     * @return \Api\StructType\ApiDs_setup_result|bool
+     * @return \StructType\ApiDs_setup_result|bool
      */
-    public function DataSource_SetupFull($dataSourceID, \Api\StructType\ApiDs_full_settings $dataSourceSettings, $reportSuiteID)
+    public function DataSource_SetupFull($dataSourceID, \StructType\ApiDs_full_settings $dataSourceSettings, $reportSuiteID)
     {
         try {
             $this->setResult($resultDataSource_SetupFull = $this->getSoapClient()->__soapCall('DataSource.SetupFull', [
@@ -723,12 +723,12 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $dataSourceID
-     * @param \Api\StructType\ApiDs_generic_settings $dataSourceSettings
+     * @param \StructType\ApiDs_generic_settings $dataSourceSettings
      * @param string $dataSourceType
      * @param string $reportSuiteID
-     * @return \Api\StructType\ApiDs_setup_result|bool
+     * @return \StructType\ApiDs_setup_result|bool
      */
-    public function DataSource_SetupGeneric($dataSourceID, \Api\StructType\ApiDs_generic_settings $dataSourceSettings, $dataSourceType, $reportSuiteID)
+    public function DataSource_SetupGeneric($dataSourceID, \StructType\ApiDs_generic_settings $dataSourceSettings, $dataSourceType, $reportSuiteID)
     {
         try {
             $this->setResult($resultDataSource_SetupGeneric = $this->getSoapClient()->__soapCall('DataSource.SetupGeneric', [
@@ -753,11 +753,11 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $dataSourceID
-     * @param \Api\StructType\ApiDs_traffic_settings $dataSourceSettings
+     * @param \StructType\ApiDs_traffic_settings $dataSourceSettings
      * @param string $reportSuiteID
-     * @return \Api\StructType\ApiDs_setup_result|bool
+     * @return \StructType\ApiDs_setup_result|bool
      */
-    public function DataSource_SetupTraffic($dataSourceID, \Api\StructType\ApiDs_traffic_settings $dataSourceSettings, $reportSuiteID)
+    public function DataSource_SetupTraffic($dataSourceID, \StructType\ApiDs_traffic_settings $dataSourceSettings, $reportSuiteID)
     {
         try {
             $this->setResult($resultDataSource_SetupTraffic = $this->getSoapClient()->__soapCall('DataSource.SetupTraffic', [
@@ -781,11 +781,11 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $dataSourceID
-     * @param \Api\StructType\ApiDs_weblog_settings $dataSourceSettings
+     * @param \StructType\ApiDs_weblog_settings $dataSourceSettings
      * @param string $reportSuiteID
-     * @return \Api\StructType\ApiDs_setup_result|bool
+     * @return \StructType\ApiDs_setup_result|bool
      */
-    public function DataSource_SetupWebLog($dataSourceID, \Api\StructType\ApiDs_weblog_settings $dataSourceSettings, $reportSuiteID)
+    public function DataSource_SetupWebLog($dataSourceID, \StructType\ApiDs_weblog_settings $dataSourceSettings, $reportSuiteID)
     {
         try {
             $this->setResult($resultDataSource_SetupWebLog = $this->getSoapClient()->__soapCall('DataSource.SetupWebLog', [
@@ -833,7 +833,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $request_Id
-     * @return \Api\StructType\ApiData_warehouse_request|bool
+     * @return \StructType\ApiData_warehouse_request|bool
      */
     public function DataWarehouse_CheckRequest($request_Id)
     {
@@ -858,10 +858,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $hidden
      * @param string $rsid
-     * @param \Api\StructType\ApiData_warehouse_segment $segment
+     * @param \StructType\ApiData_warehouse_segment $segment
      * @return int|bool
      */
-    public function DataWarehouse_CreateSegment($hidden, $rsid, \Api\StructType\ApiData_warehouse_segment $segment)
+    public function DataWarehouse_CreateSegment($hidden, $rsid, \StructType\ApiData_warehouse_segment $segment)
     {
         try {
             $this->setResult($resultDataWarehouse_CreateSegment = $this->getSoapClient()->__soapCall('DataWarehouse.CreateSegment', [
@@ -887,7 +887,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $request_Id
      * @param string $rsid
      * @param string $start_row
-     * @return \Api\StructType\ApiData_warehouse_report|bool
+     * @return \StructType\ApiData_warehouse_report|bool
      */
     public function DataWarehouse_GetReportData($request_Id, $rsid, $start_row)
     {
@@ -914,7 +914,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $rsid
      * @param string $segment
-     * @return \Api\StructType\ApiData_warehouse_segment|bool
+     * @return \StructType\ApiData_warehouse_segment|bool
      */
     public function DataWarehouse_GetSegment($rsid, $segment)
     {
@@ -939,7 +939,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $rsid
-     * @return \Api\StructType\ApiDwsegment[]|bool
+     * @return \StructType\ApiDwsegment[]|bool
      */
     public function DataWarehouse_GetSegments($rsid)
     {
@@ -964,10 +964,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $id
      * @param string $rsid
-     * @param \Api\StructType\ApiData_warehouse_segment $segment
+     * @param \StructType\ApiData_warehouse_segment $segment
      * @return int|bool
      */
-    public function DataWarehouse_ReplaceSegment($id, $rsid, \Api\StructType\ApiData_warehouse_segment $segment)
+    public function DataWarehouse_ReplaceSegment($id, $rsid, \StructType\ApiData_warehouse_segment $segment)
     {
         try {
             $this->setResult($resultDataWarehouse_ReplaceSegment = $this->getSoapClient()->__soapCall('DataWarehouse.ReplaceSegment', [
@@ -1054,10 +1054,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiData_warehouse_segment $segment
+     * @param \StructType\ApiData_warehouse_segment $segment
      * @return boolean|bool
      */
-    public function DataWarehouse_VerifySegment(\Api\StructType\ApiData_warehouse_segment $segment)
+    public function DataWarehouse_VerifySegment(\StructType\ApiData_warehouse_segment $segment)
     {
         try {
             $this->setResult($resultDataWarehouse_VerifySegment = $this->getSoapClient()->__soapCall('DataWarehouse.VerifySegment', [
@@ -1103,7 +1103,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $search_name
-     * @return \Api\StructType\ApiPublishingList[]|bool
+     * @return \StructType\ApiPublishingList[]|bool
      */
     public function DeliveryList_Get($search_name)
     {
@@ -1155,7 +1155,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $end_date
      * @param string $rsid
      * @param string $start_date
-     * @return \Api\StructType\ApiSegment_folder[]|bool
+     * @return \StructType\ApiSegment_folder[]|bool
      */
     public function Discover_GetSegments($end_date, $rsid, $start_date)
     {
@@ -1180,10 +1180,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiReportDescription $reportDescription
-     * @return \Api\StructType\ApiReportQueueResponse|bool
+     * @param \StructType\ApiReportDescription $reportDescription
+     * @return \StructType\ApiReportQueueResponse|bool
      */
-    public function Discover_QueueDiscoverOvertime(\Api\StructType\ApiReportDescription $reportDescription)
+    public function Discover_QueueDiscoverOvertime(\StructType\ApiReportDescription $reportDescription)
     {
         try {
             $this->setResult($resultDiscover_QueueDiscoverOvertime = $this->getSoapClient()->__soapCall('Discover.QueueDiscoverOvertime', [
@@ -1204,10 +1204,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiReportDescription $reportDescription
-     * @return \Api\StructType\ApiReportQueueResponse|bool
+     * @param \StructType\ApiReportDescription $reportDescription
+     * @return \StructType\ApiReportQueueResponse|bool
      */
-    public function Discover_QueueDiscoverRanked(\Api\StructType\ApiReportDescription $reportDescription)
+    public function Discover_QueueDiscoverRanked(\StructType\ApiReportDescription $reportDescription)
     {
         try {
             $this->setResult($resultDiscover_QueueDiscoverRanked = $this->getSoapClient()->__soapCall('Discover.QueueDiscoverRanked', [
@@ -1228,10 +1228,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiReportDescription $reportDescription
-     * @return \Api\StructType\ApiReportQueueResponse|bool
+     * @param \StructType\ApiReportDescription $reportDescription
+     * @return \StructType\ApiReportQueueResponse|bool
      */
-    public function Discover_QueueDiscoverTrended(\Api\StructType\ApiReportDescription $reportDescription)
+    public function Discover_QueueDiscoverTrended(\StructType\ApiReportDescription $reportDescription)
     {
         try {
             $this->setResult($resultDiscover_QueueDiscoverTrended = $this->getSoapClient()->__soapCall('Discover.QueueDiscoverTrended', [
@@ -1255,10 +1255,10 @@ class ApiService extends AbstractSoapClientBase
      * @param string $company
      * @param string $end_date
      * @param string $filter_rule
-     * @param \Api\StructType\ApiLog_filter[] $filters
+     * @param \StructType\ApiLog_filter[] $filters
      * @param string[] $rsid_list
      * @param string $start_date
-     * @return \Api\StructType\ApiLog_entry[]|bool
+     * @return \StructType\ApiLog_entry[]|bool
      */
     public function Logs_GetAdminConsoleCompanyLog($company, $end_date, $filter_rule, array $filters, array $rsid_list, $start_date)
     {
@@ -1289,10 +1289,10 @@ class ApiService extends AbstractSoapClientBase
      * @param string $company
      * @param string $end_date
      * @param string $filter_rule
-     * @param \Api\StructType\ApiLog_filter[] $filters
+     * @param \StructType\ApiLog_filter[] $filters
      * @param string[] $rsid_list
      * @param string $start_date
-     * @return \Api\StructType\ApiLog_entry[]|bool
+     * @return \StructType\ApiLog_entry[]|bool
      */
     public function Logs_GetAdminConsoleLog($company, $end_date, $filter_rule, array $filters, array $rsid_list, $start_date)
     {
@@ -1327,7 +1327,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $ip
      * @param string $login
      * @param string $report_suite
-     * @return \Api\StructType\ApiUsage_log_entry[]|bool
+     * @return \StructType\ApiUsage_log_entry[]|bool
      */
     public function Logs_GetUsageLog($date_from, $date_to, $event_details, $event_type, $ip, $login, $report_suite)
     {
@@ -1366,7 +1366,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $login
      * @param string $password
      * @param string $phone_number
-     * @param \Api\StructType\ApiPermission_group[] $selected_group_list
+     * @param \StructType\ApiPermission_group[] $selected_group_list
      * @param string $temp_login
      * @param string $temp_login_end
      * @param string $temp_login_start
@@ -1484,7 +1484,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $company
      * @param string $login
-     * @return \Api\StructType\ApiCrm_info|bool
+     * @return \StructType\ApiCrm_info|bool
      */
     public function Permissions_GetCRMInfo($company, $login)
     {
@@ -1510,7 +1510,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $categoryid
      * @param string $groupid
-     * @return \Api\StructType\ApiParent_category[]|bool
+     * @return \StructType\ApiParent_category[]|bool
      */
     public function Permissions_GetCategories($categoryid, $groupid)
     {
@@ -1536,7 +1536,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $group_type
      * @param string $groupid
-     * @return \Api\StructType\ApiGroup_data|bool
+     * @return \StructType\ApiGroup_data|bool
      */
     public function Permissions_GetGroup($group_type, $groupid)
     {
@@ -1562,7 +1562,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $field
      * @param string $search
-     * @return \Api\StructType\ApiPermission_group[]|bool
+     * @return \StructType\ApiPermission_group[]|bool
      */
     public function Permissions_GetGroups($field, $search)
     {
@@ -1587,7 +1587,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $login
-     * @return \Api\StructType\ApiLogin|bool
+     * @return \StructType\ApiLogin|bool
      */
     public function Permissions_GetLogin($login)
     {
@@ -1612,7 +1612,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $login_search_field
      * @param string $login_search_value
-     * @return \Api\StructType\ApiPerm_login[]|bool
+     * @return \StructType\ApiPerm_login[]|bool
      */
     public function Permissions_GetLogins($login_search_field, $login_search_value)
     {
@@ -1637,7 +1637,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $locale
-     * @return \Api\StructType\ApiReportBuilderLogin|bool
+     * @return \StructType\ApiReportBuilderLogin|bool
      */
     public function Permissions_GetReportBuilderLogin($locale)
     {
@@ -1663,7 +1663,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $search_field
      * @param string $search_val
-     * @return \Api\StructType\ApiPermissions_account[]|bool
+     * @return \StructType\ApiPermissions_account[]|bool
      */
     public function Permissions_GetReportSuiteGroupCount($search_field, $search_val)
     {
@@ -1688,7 +1688,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $rsid
-     * @return \Api\StructType\ApiPermissions_account_groups|bool
+     * @return \StructType\ApiPermissions_account_groups|bool
      */
     public function Permissions_GetReportSuiteGroups($rsid)
     {
@@ -1739,14 +1739,14 @@ class ApiService extends AbstractSoapClientBase
      * @param string $group_name
      * @param string $group_type
      * @param string $groupid
-     * @param \Api\StructType\ApiPerm_data[] $perm_info
-     * @param \Api\StructType\ApiReport_categories $report_access_list
+     * @param \StructType\ApiPerm_data[] $perm_info
+     * @param \StructType\ApiReport_categories $report_access_list
      * @param int[] $report_id_list
      * @param string[] $rsid_list
      * @param string[] $user_list
      * @return int|bool
      */
-    public function Permissions_SaveGroup($group_description, $group_name, $group_type, $groupid, array $perm_info, \Api\StructType\ApiReport_categories $report_access_list, array $report_id_list, array $rsid_list, array $user_list)
+    public function Permissions_SaveGroup($group_description, $group_name, $group_type, $groupid, array $perm_info, \StructType\ApiReport_categories $report_access_list, array $report_id_list, array $rsid_list, array $user_list)
     {
         try {
             $this->setResult($resultPermissions_SaveGroup = $this->getSoapClient()->__soapCall('Permissions.SaveGroup', [
@@ -1783,7 +1783,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $login
      * @param string $password
      * @param string $phone_number
-     * @param \Api\StructType\ApiPermission_group[] $selected_group_list
+     * @param \StructType\ApiPermission_group[] $selected_group_list
      * @param string $send_welcome_email
      * @param string $temp_end_date
      * @param string $temp_login
@@ -1875,10 +1875,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiReportDescription $reportDescription
-     * @return \Api\StructType\ApiReport_element_mapping[]|bool
+     * @param \StructType\ApiReportDescription $reportDescription
+     * @return \StructType\ApiReport_element_mapping[]|bool
      */
-    public function Report_GetElementNames(\Api\StructType\ApiReportDescription $reportDescription)
+    public function Report_GetElementNames(\StructType\ApiReportDescription $reportDescription)
     {
         try {
             $this->setResult($resultReport_GetElementNames = $this->getSoapClient()->__soapCall('Report.GetElementNames', [
@@ -1899,10 +1899,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiReportDescription $reportDescription
-     * @return \Api\StructType\ApiReportResponse|bool
+     * @param \StructType\ApiReportDescription $reportDescription
+     * @return \StructType\ApiReportResponse|bool
      */
-    public function Report_GetOvertimeReport(\Api\StructType\ApiReportDescription $reportDescription)
+    public function Report_GetOvertimeReport(\StructType\ApiReportDescription $reportDescription)
     {
         try {
             $this->setResult($resultReport_GetOvertimeReport = $this->getSoapClient()->__soapCall('Report.GetOvertimeReport', [
@@ -1923,10 +1923,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiReportDescription $reportDescription
-     * @return \Api\StructType\ApiReportResponse|bool
+     * @param \StructType\ApiReportDescription $reportDescription
+     * @return \StructType\ApiReportResponse|bool
      */
-    public function Report_GetRankedReport(\Api\StructType\ApiReportDescription $reportDescription)
+    public function Report_GetRankedReport(\StructType\ApiReportDescription $reportDescription)
     {
         try {
             $this->setResult($resultReport_GetRankedReport = $this->getSoapClient()->__soapCall('Report.GetRankedReport', [
@@ -1948,7 +1948,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $reportID
-     * @return \Api\StructType\ApiReportResponse|bool
+     * @return \StructType\ApiReportResponse|bool
      */
     public function Report_GetReport($reportID)
     {
@@ -1971,7 +1971,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @return \Api\StructType\ApiReport_queue_item[]|bool
+     * @return \StructType\ApiReport_queue_item[]|bool
      */
     public function Report_GetReportQueue()
     {
@@ -1993,7 +1993,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $reportID
-     * @return \Api\StructType\ApiReport_status|bool
+     * @return \StructType\ApiReport_status|bool
      */
     public function Report_GetStatus($reportID)
     {
@@ -2016,10 +2016,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiReportDescription $reportDescription
-     * @return \Api\StructType\ApiReportResponse|bool
+     * @param \StructType\ApiReportDescription $reportDescription
+     * @return \StructType\ApiReportResponse|bool
      */
-    public function Report_GetTrendedReport(\Api\StructType\ApiReportDescription $reportDescription)
+    public function Report_GetTrendedReport(\StructType\ApiReportDescription $reportDescription)
     {
         try {
             $this->setResult($resultReport_GetTrendedReport = $this->getSoapClient()->__soapCall('Report.GetTrendedReport', [
@@ -2040,10 +2040,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiReportDescription $reportDescription
-     * @return \Api\StructType\ApiReportQueueResponse|bool
+     * @param \StructType\ApiReportDescription $reportDescription
+     * @return \StructType\ApiReportQueueResponse|bool
      */
-    public function Report_QueueOvertime(\Api\StructType\ApiReportDescription $reportDescription)
+    public function Report_QueueOvertime(\StructType\ApiReportDescription $reportDescription)
     {
         try {
             $this->setResult($resultReport_QueueOvertime = $this->getSoapClient()->__soapCall('Report.QueueOvertime', [
@@ -2064,10 +2064,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiReportDescription $reportDescription
-     * @return \Api\StructType\ApiReportQueueResponse|bool
+     * @param \StructType\ApiReportDescription $reportDescription
+     * @return \StructType\ApiReportQueueResponse|bool
      */
-    public function Report_QueueRanked(\Api\StructType\ApiReportDescription $reportDescription)
+    public function Report_QueueRanked(\StructType\ApiReportDescription $reportDescription)
     {
         try {
             $this->setResult($resultReport_QueueRanked = $this->getSoapClient()->__soapCall('Report.QueueRanked', [
@@ -2088,10 +2088,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiSCM_reportDescription $reportDescription
-     * @return \Api\StructType\ApiReportQueueResponse|bool
+     * @param \StructType\ApiSCM_reportDescription $reportDescription
+     * @return \StructType\ApiReportQueueResponse|bool
      */
-    public function Report_QueueSCMRanked(\Api\StructType\ApiSCM_reportDescription $reportDescription)
+    public function Report_QueueSCMRanked(\StructType\ApiSCM_reportDescription $reportDescription)
     {
         try {
             $this->setResult($resultReport_QueueSCMRanked = $this->getSoapClient()->__soapCall('Report.QueueSCMRanked', [
@@ -2112,10 +2112,10 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiReportDescription $reportDescription
-     * @return \Api\StructType\ApiReportQueueResponse|bool
+     * @param \StructType\ApiReportDescription $reportDescription
+     * @return \StructType\ApiReportQueueResponse|bool
      */
-    public function Report_QueueTrended(\Api\StructType\ApiReportDescription $reportDescription)
+    public function Report_QueueTrended(\StructType\ApiReportDescription $reportDescription)
     {
         try {
             $this->setResult($resultReport_QueueTrended = $this->getSoapClient()->__soapCall('Report.QueueTrended', [
@@ -2216,8 +2216,8 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiSaved_filter[] $savedFilters
-     * @return \Api\StructType\ApiSaved_filter[]|bool
+     * @param \StructType\ApiSaved_filter[] $savedFilters
+     * @return \StructType\ApiSaved_filter[]|bool
      */
     public function ReportSuite_AddSavedFilters(array $savedFilters)
     {
@@ -2307,7 +2307,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiCalculated_metric[] $calculated_metrics
+     * @param \StructType\ApiCalculated_metric[] $calculated_metrics
      * @param string[] $rsid_list
      * @return int|bool
      */
@@ -2634,7 +2634,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_activation[]|bool
+     * @return \StructType\ApiReport_suite_activation[]|bool
      */
     public function ReportSuite_GetActivation(array $rsid_list)
     {
@@ -2659,7 +2659,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $return_datawarehouse_elements
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_elements[]|bool
+     * @return \StructType\ApiReport_suite_elements[]|bool
      */
     public function ReportSuite_GetAvailableElements($return_datawarehouse_elements, array $rsid_list)
     {
@@ -2685,7 +2685,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $return_datawarehouse_metrics
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_metrics[]|bool
+     * @return \StructType\ApiReport_suite_metrics[]|bool
      */
     public function ReportSuite_GetAvailableMetrics($return_datawarehouse_metrics, array $rsid_list)
     {
@@ -2710,7 +2710,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiRs_axle_start_date[]|bool
+     * @return \StructType\ApiRs_axle_start_date[]|bool
      */
     public function ReportSuite_GetAxleStartDate(array $rsid_list)
     {
@@ -2734,7 +2734,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_base_currency[]|bool
+     * @return \StructType\ApiReport_suite_base_currency[]|bool
      */
     public function ReportSuite_GetBaseCurrency(array $rsid_list)
     {
@@ -2758,7 +2758,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_base_url[]|bool
+     * @return \StructType\ApiReport_suite_base_url[]|bool
      */
     public function ReportSuite_GetBaseURL(array $rsid_list)
     {
@@ -2782,7 +2782,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_calculated_metric[]|bool
+     * @return \StructType\ApiReport_suite_calculated_metric[]|bool
      */
     public function ReportSuite_GetCalculatedMetrics(array $rsid_list)
     {
@@ -2809,7 +2809,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $c_view
      * @param string[] $rel_id
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_hierarchies[]|bool
+     * @return \StructType\ApiReport_suite_hierarchies[]|bool
      */
     public function ReportSuite_GetClassificationHierarchies($c_view, array $rel_id, array $rsid_list)
     {
@@ -2838,7 +2838,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string[] $rel_id
      * @param string[] $rsid_list
      * @param string $type
-     * @return \Api\StructType\ApiReport_suite_classification[]|bool
+     * @return \StructType\ApiReport_suite_classification[]|bool
      */
     public function ReportSuite_GetClassifications($c_view, array $rel_id, array $rsid_list, $type)
     {
@@ -2865,7 +2865,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_correlation[]|bool
+     * @return \StructType\ApiReport_suite_correlation[]|bool
      */
     public function ReportSuite_GetCorrelations(array $rsid_list)
     {
@@ -2889,7 +2889,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_custom_calendar[]|bool
+     * @return \StructType\ApiReport_suite_custom_calendar[]|bool
      */
     public function ReportSuite_GetCustomCalendar(array $rsid_list)
     {
@@ -2913,7 +2913,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_default_page[]|bool
+     * @return \StructType\ApiReport_suite_default_page[]|bool
      */
     public function ReportSuite_GetDefaultPage(array $rsid_list)
     {
@@ -2937,7 +2937,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_evar[]|bool
+     * @return \StructType\ApiReport_suite_evar[]|bool
      */
     public function ReportSuite_GetEVars(array $rsid_list)
     {
@@ -2961,7 +2961,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_ecommerce[]|bool
+     * @return \StructType\ApiReport_suite_ecommerce[]|bool
      */
     public function ReportSuite_GetEcommerce(array $rsid_list)
     {
@@ -2985,7 +2985,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_finding_method[]|bool
+     * @return \StructType\ApiReport_suite_finding_method[]|bool
      */
     public function ReportSuite_GetFindingMethods(array $rsid_list)
     {
@@ -3009,7 +3009,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_ip_exclusions[]|bool
+     * @return \StructType\ApiReport_suite_ip_exclusions[]|bool
      */
     public function ReportSuite_GetIPAddressExclusions(array $rsid_list)
     {
@@ -3033,7 +3033,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_ip_obfuscation[]|bool
+     * @return \StructType\ApiReport_suite_ip_obfuscation[]|bool
      */
     public function ReportSuite_GetIPObfuscation(array $rsid_list)
     {
@@ -3057,7 +3057,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_internal_url_filter[]|bool
+     * @return \StructType\ApiReport_suite_internal_url_filter[]|bool
      */
     public function ReportSuite_GetInternalURLFilters(array $rsid_list)
     {
@@ -3081,7 +3081,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_key_visitor[]|bool
+     * @return \StructType\ApiReport_suite_key_visitor[]|bool
      */
     public function ReportSuite_GetKeyVisitors(array $rsid_list)
     {
@@ -3105,7 +3105,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_localization[]|bool
+     * @return \StructType\ApiReport_suite_localization[]|bool
      */
     public function ReportSuite_GetLocalization(array $rsid_list)
     {
@@ -3130,7 +3130,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_costs[]|bool
+     * @return \StructType\ApiReport_suite_costs[]|bool
      */
     public function ReportSuite_GetMarketingChannelCost(array $rsid_list)
     {
@@ -3155,7 +3155,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiExpiration_event[]|bool
+     * @return \StructType\ApiExpiration_event[]|bool
      */
     public function ReportSuite_GetMarketingChannelExpiration(array $rsid_list)
     {
@@ -3180,7 +3180,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiRs_mchannel_rulesets[]|bool
+     * @return \StructType\ApiRs_mchannel_rulesets[]|bool
      */
     public function ReportSuite_GetMarketingChannelRules(array $rsid_list)
     {
@@ -3204,7 +3204,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiMchannels[]|bool
+     * @return \StructType\ApiMchannels[]|bool
      */
     public function ReportSuite_GetMarketingChannels(array $rsid_list)
     {
@@ -3230,7 +3230,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $rel_id
      * @param string $rsid
-     * @return \Api\StructType\ApiChannel_sub_relations_element|bool
+     * @return \StructType\ApiChannel_sub_relations_element|bool
      */
     public function ReportSuite_GetMarketingChannelsCustomSubRelations($rel_id, $rsid)
     {
@@ -3283,7 +3283,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string[] $rsid_list
      * @param string $sc_period
      * @param string $start_point
-     * @return \Api\StructType\ApiReport_suite_pages[]|bool
+     * @return \StructType\ApiReport_suite_pages[]|bool
      */
     public function ReportSuite_GetPages($limit, $page_search, array $rsid_list, $sc_period, $start_point)
     {
@@ -3311,7 +3311,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_paid_search[]|bool
+     * @return \StructType\ApiReport_suite_paid_search[]|bool
      */
     public function ReportSuite_GetPaidSearch(array $rsid_list)
     {
@@ -3335,7 +3335,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiPermanent_traffic[]|bool
+     * @return \StructType\ApiPermanent_traffic[]|bool
      */
     public function ReportSuite_GetPermanentTraffic(array $rsid_list)
     {
@@ -3359,7 +3359,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_processing_status[]|bool
+     * @return \StructType\ApiReport_suite_processing_status[]|bool
      */
     public function ReportSuite_GetProcessingStatus(array $rsid_list)
     {
@@ -3383,7 +3383,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_rollup_dates[]|bool
+     * @return \StructType\ApiReport_suite_rollup_dates[]|bool
      */
     public function ReportSuite_GetRollupDates(array $rsid_list)
     {
@@ -3406,7 +3406,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @return \Api\StructType\ApiRollup[]|bool
+     * @return \StructType\ApiRollup[]|bool
      */
     public function ReportSuite_GetRollups()
     {
@@ -3427,7 +3427,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @return \Api\StructType\ApiSaved_filter[]|bool
+     * @return \StructType\ApiSaved_filter[]|bool
      */
     public function ReportSuite_GetSavedFilters()
     {
@@ -3449,7 +3449,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiSchedule_spike[]|bool
+     * @return \StructType\ApiSchedule_spike[]|bool
      */
     public function ReportSuite_GetScheduledSpike(array $rsid_list)
     {
@@ -3473,7 +3473,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiRs_sc_segments[]|bool
+     * @return \StructType\ApiRs_sc_segments[]|bool
      */
     public function ReportSuite_GetSegments(array $rsid_list)
     {
@@ -3498,7 +3498,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $locale
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_settings[]|bool
+     * @return \StructType\ApiReport_suite_settings[]|bool
      */
     public function ReportSuite_GetSettings($locale, array $rsid_list)
     {
@@ -3523,7 +3523,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_site_title[]|bool
+     * @return \StructType\ApiReport_suite_site_title[]|bool
      */
     public function ReportSuite_GetSiteTitle(array $rsid_list)
     {
@@ -3547,7 +3547,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_event[]|bool
+     * @return \StructType\ApiReport_suite_event[]|bool
      */
     public function ReportSuite_GetSuccessEvents(array $rsid_list)
     {
@@ -3571,7 +3571,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_template[]|bool
+     * @return \StructType\ApiReport_suite_template[]|bool
      */
     public function ReportSuite_GetTemplate(array $rsid_list)
     {
@@ -3595,7 +3595,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_time_zone[]|bool
+     * @return \StructType\ApiReport_suite_time_zone[]|bool
      */
     public function ReportSuite_GetTimeZone(array $rsid_list)
     {
@@ -3619,7 +3619,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_traffic_var[]|bool
+     * @return \StructType\ApiReport_suite_traffic_var[]|bool
      */
     public function ReportSuite_GetTrafficVars(array $rsid_list)
     {
@@ -3643,7 +3643,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_ui_element[]|bool
+     * @return \StructType\ApiReport_suite_ui_element[]|bool
      */
     public function ReportSuite_GetUIVisibility(array $rsid_list)
     {
@@ -3668,7 +3668,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_unique_visitor_variable[]|bool
+     * @return \StructType\ApiReport_suite_unique_visitor_variable[]|bool
      */
     public function ReportSuite_GetUniqueVisitorVariable(array $rsid_list)
     {
@@ -3716,7 +3716,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiReport_suite_video_tracking[]|bool
+     * @return \StructType\ApiReport_suite_video_tracking[]|bool
      */
     public function ReportSuite_GetVideoTracking(array $rsid_list)
     {
@@ -3791,7 +3791,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiCalculated_metric[] $calculated_metrics
+     * @param \StructType\ApiCalculated_metric[] $calculated_metrics
      * @param string[] $rsid_list
      * @return int|bool
      */
@@ -3952,7 +3952,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiEvar[] $evars
+     * @param \StructType\ApiEvar[] $evars
      * @param string[] $rsid_list
      * @return int|bool
      */
@@ -4004,7 +4004,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiFinding_method[] $reports
+     * @param \StructType\ApiFinding_method[] $reports
      * @param string[] $rsid_list
      * @return int|bool
      */
@@ -4031,7 +4031,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiSave_ip_exclusion[] $ip_list
+     * @param \StructType\ApiSave_ip_exclusion[] $ip_list
      * @param string[] $rsid_list
      * @return int|bool
      */
@@ -4084,11 +4084,11 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiCost_item $cost_item
+     * @param \StructType\ApiCost_item $cost_item
      * @param string[] $rsid_list
      * @return int|bool
      */
-    public function ReportSuite_SaveMarketingChannelCost(\Api\StructType\ApiCost_item $cost_item, array $rsid_list)
+    public function ReportSuite_SaveMarketingChannelCost(\StructType\ApiCost_item $cost_item, array $rsid_list)
     {
         try {
             $this->setResult($resultReportSuite_SaveMarketingChannelCost = $this->getSoapClient()->__soapCall('ReportSuite.SaveMarketingChannelCost', [
@@ -4138,7 +4138,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiMchannel_ruleset[] $mchannel_rules
+     * @param \StructType\ApiMchannel_ruleset[] $mchannel_rules
      * @param string[] $rsid_list
      * @return int|bool
      */
@@ -4164,7 +4164,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiMchannel[] $channels
+     * @param \StructType\ApiMchannel[] $channels
      * @param string[] $rsid_list
      * @return int|bool
      */
@@ -4300,8 +4300,8 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiSaved_filter[] $savedFilters
-     * @return \Api\StructType\ApiSaved_filter[]|bool
+     * @param \StructType\ApiSaved_filter[] $savedFilters
+     * @return \StructType\ApiSaved_filter[]|bool
      */
     public function ReportSuite_SaveSavedFilters(array $savedFilters)
     {
@@ -4380,7 +4380,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiEvent[] $events
+     * @param \StructType\ApiEvent[] $events
      * @param string[] $rsid_list
      * @return int|bool
      */
@@ -4460,7 +4460,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @param \Api\StructType\ApiTraffic_var[] $property
+     * @param \StructType\ApiTraffic_var[] $property
      * @param string[] $rsid_list
      * @return int|bool
      */
@@ -4564,7 +4564,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $job_id
-     * @return \Api\StructType\ApiSaintresult[]|bool
+     * @return \StructType\ApiSaintresult[]|bool
      */
     public function Saint_CheckJobStatus($job_id)
     {
@@ -4593,7 +4593,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $overwrite
      * @param string $relation_id
      * @param string[] $rsid_list
-     * @return \Api\StructType\ApiSaint_ftp_info|bool
+     * @return \StructType\ApiSaint_ftp_info|bool
      */
     public function Saint_CreateFTP($description, $email, $export, $overwrite, $relation_id, array $rsid_list)
     {
@@ -4673,7 +4673,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $file_id
      * @param string $segment_id
-     * @return \Api\StructType\ApiPagedetail[]|bool
+     * @return \StructType\ApiPagedetail[]|bool
      */
     public function Saint_ExportGetFileSegment($file_id, $segment_id)
     {
@@ -4698,7 +4698,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string[] $report_suite_array
-     * @return \Api\StructType\ApiCompatability[]|bool
+     * @return \StructType\ApiCompatability[]|bool
      */
     public function Saint_GetCompatabiltyMetrics(array $report_suite_array)
     {
@@ -4723,7 +4723,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $relation_id
      * @param string[] $report_suite_array
-     * @return \Api\StructType\ApiExport_filter[]|bool
+     * @return \StructType\ApiExport_filter[]|bool
      */
     public function Saint_GetFilters($relation_id, array $report_suite_array)
     {
@@ -4843,7 +4843,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $job_id
      * @param string $page
-     * @param \Api\StructType\ApiRow[] $rows
+     * @param \StructType\ApiRow[] $rows
      * @return string|bool
      */
     public function Saint_ImportPopulateJob($job_id, $page, array $rows)
@@ -4869,7 +4869,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @return \Api\StructType\ApiSaint_ftp[]|bool
+     * @return \StructType\ApiSaint_ftp[]|bool
      */
     public function Saint_ListFTP()
     {
@@ -4892,11 +4892,11 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $location
      * @param string $product
-     * @param \Api\StructType\ApiScheduledReport $scheduledReport
+     * @param \StructType\ApiScheduledReport $scheduledReport
      * @param string $workbook
-     * @return \Api\StructType\ApiScheduledReport|bool
+     * @return \StructType\ApiScheduledReport|bool
      */
-    public function Scheduling_CreatePublishedReport($location, $product, \Api\StructType\ApiScheduledReport $scheduledReport, $workbook)
+    public function Scheduling_CreatePublishedReport($location, $product, \StructType\ApiScheduledReport $scheduledReport, $workbook)
     {
         try {
             $this->setResult($resultScheduling_CreatePublishedReport = $this->getSoapClient()->__soapCall('Scheduling.CreatePublishedReport', [
@@ -5008,7 +5008,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $product
      * @param string $username
-     * @return \Api\StructType\ApiScheduledReport[]|bool
+     * @return \StructType\ApiScheduledReport[]|bool
      */
     public function Scheduling_GetPublishedReports($product, $username)
     {
@@ -5036,7 +5036,7 @@ class ApiService extends AbstractSoapClientBase
      * @param string $offset
      * @param string $product
      * @param string $username
-     * @return \Api\StructType\ApiScheduleLog[]|bool
+     * @return \StructType\ApiScheduleLog[]|bool
      */
     public function Scheduling_GetReportsRunHistory($limit, $offset, $product, $username)
     {
@@ -5064,7 +5064,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $location
      * @param string $product
-     * @return \Api\StructType\ApiExcelWorkbook[]|bool
+     * @return \StructType\ApiExcelWorkbook[]|bool
      */
     public function Scheduling_GetWorkbookList($location, $product)
     {
@@ -5113,11 +5113,11 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $product
-     * @param \Api\StructType\ApiScheduledReport $scheduledReport
+     * @param \StructType\ApiScheduledReport $scheduledReport
      * @param string $workbook
-     * @return \Api\StructType\ApiScheduledReport|bool
+     * @return \StructType\ApiScheduledReport|bool
      */
-    public function Scheduling_UpdatePublishedReport($product, \Api\StructType\ApiScheduledReport $scheduledReport, $workbook)
+    public function Scheduling_UpdatePublishedReport($product, \StructType\ApiScheduledReport $scheduledReport, $workbook)
     {
         try {
             $this->setResult($resultScheduling_UpdatePublishedReport = $this->getSoapClient()->__soapCall('Scheduling.UpdatePublishedReport', [
@@ -5174,7 +5174,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $rsid
      * @param string $status_filter
-     * @return \Api\StructType\ApiSurvey_summary[]|bool
+     * @return \StructType\ApiSurvey_summary[]|bool
      */
     public function Survey_GetSummaryList($rsid, $status_filter)
     {
@@ -5199,7 +5199,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $limit
-     * @return \Api\StructType\ApiFormatted_folder[]|bool
+     * @return \StructType\ApiFormatted_folder[]|bool
      */
     public function User_GetBookmarkFolders($limit)
     {
@@ -5223,7 +5223,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
      * @param string $limit
-     * @return \Api\StructType\ApiDashboard_element[]|bool
+     * @return \StructType\ApiDashboard_element[]|bool
      */
     public function User_GetDashboardsAPI($limit)
     {
@@ -5246,7 +5246,7 @@ class ApiService extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     * @return \Api\StructType\ApiReport_suite_id|bool
+     * @return \StructType\ApiReport_suite_id|bool
      */
     public function User_GetLastUsedReportSuite()
     {
@@ -5287,7 +5287,7 @@ class ApiService extends AbstractSoapClientBase
     /**
      * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     * @return array|base64Binary|boolean|int|string|string[]|void|\Api\StructType\ApiChannel_sub_relations_element|\Api\StructType\ApiCode_archive[]|\Api\StructType\ApiCode_item[]|\Api\StructType\ApiCompatability[]|\Api\StructType\ApiCrm_info|\Api\StructType\ApiDashboard_element|\Api\StructType\ApiDashboard_element[]|\Api\StructType\ApiDataSourceInfo[]|\Api\StructType\ApiData_warehouse_report|\Api\StructType\ApiData_warehouse_request|\Api\StructType\ApiData_warehouse_segment|\Api\StructType\ApiDsFileStruct[]|\Api\StructType\ApiDs_setup_result|\Api\StructType\ApiDwsegment[]|\Api\StructType\ApiExcelWorkbook[]|\Api\StructType\ApiExpiration_event[]|\Api\StructType\ApiExport_filter[]|\Api\StructType\ApiFileIDResult|\Api\StructType\ApiFileStatusResult|\Api\StructType\ApiFormatted_folder[]|\Api\StructType\ApiGroup_data|\Api\StructType\ApiLogin|\Api\StructType\ApiLog_entry[]|\Api\StructType\ApiMchannels[]|\Api\StructType\ApiPagedetail[]|\Api\StructType\ApiParent_category[]|\Api\StructType\ApiPermanent_traffic[]|\Api\StructType\ApiPermissions_account[]|\Api\StructType\ApiPermissions_account_groups|\Api\StructType\ApiPermission_group[]|\Api\StructType\ApiPerm_login[]|\Api\StructType\ApiPublishingList[]|\Api\StructType\ApiQueue_item[]|\Api\StructType\ApiReportBuilderLogin|\Api\StructType\ApiReportlet|\Api\StructType\ApiReportQueueResponse|\Api\StructType\ApiReportResponse|\Api\StructType\ApiReport_element_mapping[]|\Api\StructType\ApiReport_queue_item[]|\Api\StructType\ApiReport_status|\Api\StructType\ApiReport_suite_activation[]|\Api\StructType\ApiReport_suite_base_currency[]|\Api\StructType\ApiReport_suite_base_url[]|\Api\StructType\ApiReport_suite_calculated_metric[]|\Api\StructType\ApiReport_suite_classification[]|\Api\StructType\ApiReport_suite_correlation[]|\Api\StructType\ApiReport_suite_costs[]|\Api\StructType\ApiReport_suite_custom_calendar[]|\Api\StructType\ApiReport_suite_default_page[]|\Api\StructType\ApiReport_suite_ecommerce[]|\Api\StructType\ApiReport_suite_elements[]|\Api\StructType\ApiReport_suite_evar[]|\Api\StructType\ApiReport_suite_event[]|\Api\StructType\ApiReport_suite_finding_method[]|\Api\StructType\ApiReport_suite_hierarchies[]|\Api\StructType\ApiReport_suite_id|\Api\StructType\ApiReport_suite_internal_url_filter[]|\Api\StructType\ApiReport_suite_ip_exclusions[]|\Api\StructType\ApiReport_suite_ip_obfuscation[]|\Api\StructType\ApiReport_suite_key_visitor[]|\Api\StructType\ApiReport_suite_localization[]|\Api\StructType\ApiReport_suite_metrics[]|\Api\StructType\ApiReport_suite_pages[]|\Api\StructType\ApiReport_suite_paid_search[]|\Api\StructType\ApiReport_suite_processing_status[]|\Api\StructType\ApiReport_suite_rollup_dates[]|\Api\StructType\ApiReport_suite_settings[]|\Api\StructType\ApiReport_suite_site_title[]|\Api\StructType\ApiReport_suite_template[]|\Api\StructType\ApiReport_suite_time_zone[]|\Api\StructType\ApiReport_suite_traffic_var[]|\Api\StructType\ApiReport_suite_ui_element[]|\Api\StructType\ApiReport_suite_unique_visitor_variable[]|\Api\StructType\ApiReport_suite_video_tracking[]|\Api\StructType\ApiRollup[]|\Api\StructType\ApiRs_axle_start_date[]|\Api\StructType\ApiRs_mchannel_rulesets[]|\Api\StructType\ApiRs_sc_segments[]|\Api\StructType\ApiSaintresult[]|\Api\StructType\ApiSaint_ftp[]|\Api\StructType\ApiSaint_ftp_info|\Api\StructType\ApiSaved_filter[]|\Api\StructType\ApiScheduledReport|\Api\StructType\ApiScheduledReport[]|\Api\StructType\ApiScheduleLog[]|\Api\StructType\ApiSchedule_spike[]|\Api\StructType\ApiSegment_folder[]|\Api\StructType\ApiSimpleDataSource[]|\Api\StructType\ApiSimple_report_suites_rval|\Api\StructType\ApiStatus|\Api\StructType\ApiSurvey_summary[]|\Api\StructType\ApiToken_usage_container|\Api\StructType\ApiTracking_server_data|\Api\StructType\ApiUsage_log_entry[]
+     * @return array|base64Binary|boolean|int|string|string[]|void|\StructType\ApiChannel_sub_relations_element|\StructType\ApiCode_archive[]|\StructType\ApiCode_item[]|\StructType\ApiCompatability[]|\StructType\ApiCrm_info|\StructType\ApiDashboard_element|\StructType\ApiDashboard_element[]|\StructType\ApiDataSourceInfo[]|\StructType\ApiData_warehouse_report|\StructType\ApiData_warehouse_request|\StructType\ApiData_warehouse_segment|\StructType\ApiDsFileStruct[]|\StructType\ApiDs_setup_result|\StructType\ApiDwsegment[]|\StructType\ApiExcelWorkbook[]|\StructType\ApiExpiration_event[]|\StructType\ApiExport_filter[]|\StructType\ApiFileIDResult|\StructType\ApiFileStatusResult|\StructType\ApiFormatted_folder[]|\StructType\ApiGroup_data|\StructType\ApiLogin|\StructType\ApiLog_entry[]|\StructType\ApiMchannels[]|\StructType\ApiPagedetail[]|\StructType\ApiParent_category[]|\StructType\ApiPermanent_traffic[]|\StructType\ApiPermissions_account[]|\StructType\ApiPermissions_account_groups|\StructType\ApiPermission_group[]|\StructType\ApiPerm_login[]|\StructType\ApiPublishingList[]|\StructType\ApiQueue_item[]|\StructType\ApiReportBuilderLogin|\StructType\ApiReportlet|\StructType\ApiReportQueueResponse|\StructType\ApiReportResponse|\StructType\ApiReport_element_mapping[]|\StructType\ApiReport_queue_item[]|\StructType\ApiReport_status|\StructType\ApiReport_suite_activation[]|\StructType\ApiReport_suite_base_currency[]|\StructType\ApiReport_suite_base_url[]|\StructType\ApiReport_suite_calculated_metric[]|\StructType\ApiReport_suite_classification[]|\StructType\ApiReport_suite_correlation[]|\StructType\ApiReport_suite_costs[]|\StructType\ApiReport_suite_custom_calendar[]|\StructType\ApiReport_suite_default_page[]|\StructType\ApiReport_suite_ecommerce[]|\StructType\ApiReport_suite_elements[]|\StructType\ApiReport_suite_evar[]|\StructType\ApiReport_suite_event[]|\StructType\ApiReport_suite_finding_method[]|\StructType\ApiReport_suite_hierarchies[]|\StructType\ApiReport_suite_id|\StructType\ApiReport_suite_internal_url_filter[]|\StructType\ApiReport_suite_ip_exclusions[]|\StructType\ApiReport_suite_ip_obfuscation[]|\StructType\ApiReport_suite_key_visitor[]|\StructType\ApiReport_suite_localization[]|\StructType\ApiReport_suite_metrics[]|\StructType\ApiReport_suite_pages[]|\StructType\ApiReport_suite_paid_search[]|\StructType\ApiReport_suite_processing_status[]|\StructType\ApiReport_suite_rollup_dates[]|\StructType\ApiReport_suite_settings[]|\StructType\ApiReport_suite_site_title[]|\StructType\ApiReport_suite_template[]|\StructType\ApiReport_suite_time_zone[]|\StructType\ApiReport_suite_traffic_var[]|\StructType\ApiReport_suite_ui_element[]|\StructType\ApiReport_suite_unique_visitor_variable[]|\StructType\ApiReport_suite_video_tracking[]|\StructType\ApiRollup[]|\StructType\ApiRs_axle_start_date[]|\StructType\ApiRs_mchannel_rulesets[]|\StructType\ApiRs_sc_segments[]|\StructType\ApiSaintresult[]|\StructType\ApiSaint_ftp[]|\StructType\ApiSaint_ftp_info|\StructType\ApiSaved_filter[]|\StructType\ApiScheduledReport|\StructType\ApiScheduledReport[]|\StructType\ApiScheduleLog[]|\StructType\ApiSchedule_spike[]|\StructType\ApiSegment_folder[]|\StructType\ApiSimpleDataSource[]|\StructType\ApiSimple_report_suites_rval|\StructType\ApiStatus|\StructType\ApiSurvey_summary[]|\StructType\ApiToken_usage_container|\StructType\ApiTracking_server_data|\StructType\ApiUsage_log_entry[]
      */
     public function getResult()
     {

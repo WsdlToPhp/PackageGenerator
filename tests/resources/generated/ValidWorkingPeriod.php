@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\StructType;
+namespace StructType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -75,12 +75,12 @@ class ApiWorkingPeriod extends AbstractStructBase
         $invalidValues = [];
         foreach ($values as $workingPeriodDayOfWeekItem) {
             // validation for constraint: enumeration
-            if (!\Api\EnumType\ApiDayOfWeekType::valueIsValid($workingPeriodDayOfWeekItem)) {
+            if (!\EnumType\ApiDayOfWeekType::valueIsValid($workingPeriodDayOfWeekItem)) {
                 $invalidValues[] = is_object($workingPeriodDayOfWeekItem) ? get_class($workingPeriodDayOfWeekItem) : sprintf('%s(%s)', gettype($workingPeriodDayOfWeekItem), var_export($workingPeriodDayOfWeekItem, true));
             }
         }
         if (!empty($invalidValues)) {
-            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Api\EnumType\ApiDayOfWeekType', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \Api\EnumType\ApiDayOfWeekType::getValidValues()));
+            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiDayOfWeekType', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \EnumType\ApiDayOfWeekType::getValidValues()));
         }
         unset($invalidValues);
         
@@ -88,11 +88,11 @@ class ApiWorkingPeriod extends AbstractStructBase
     }
     /**
      * Set DayOfWeek value
-     * @uses \Api\EnumType\ApiDayOfWeekType::valueIsValid()
-     * @uses \Api\EnumType\ApiDayOfWeekType::getValidValues()
+     * @uses \EnumType\ApiDayOfWeekType::valueIsValid()
+     * @uses \EnumType\ApiDayOfWeekType::getValidValues()
      * @throws InvalidArgumentException
      * @param array|string $dayOfWeek
-     * @return \Api\StructType\ApiWorkingPeriod
+     * @return \StructType\ApiWorkingPeriod
      */
     public function setDayOfWeek($dayOfWeek): self
     {
@@ -115,7 +115,7 @@ class ApiWorkingPeriod extends AbstractStructBase
     /**
      * Set StartTimeInMinutes value
      * @param int $startTimeInMinutes
-     * @return \Api\StructType\ApiWorkingPeriod
+     * @return \StructType\ApiWorkingPeriod
      */
     public function setStartTimeInMinutes(int $startTimeInMinutes): self
     {
@@ -138,7 +138,7 @@ class ApiWorkingPeriod extends AbstractStructBase
     /**
      * Set EndTimeInMinutes value
      * @param int $endTimeInMinutes
-     * @return \Api\StructType\ApiWorkingPeriod
+     * @return \StructType\ApiWorkingPeriod
      */
     public function setEndTimeInMinutes(int $endTimeInMinutes): self
     {

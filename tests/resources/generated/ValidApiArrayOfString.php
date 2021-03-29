@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Api\ArrayType;
+namespace ArrayType;
 
 use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructArrayBase;
@@ -68,7 +68,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * Set string value
      * @throws InvalidArgumentException
      * @param string[] $string
-     * @return \Api\ArrayType\ApiArrayOfString
+     * @return \ArrayType\ApiArrayOfString
      */
     public function setString(array $string = []): self
     {
