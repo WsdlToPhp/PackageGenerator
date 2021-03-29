@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 4.0.0-rc.2 - 2021-03-29
+- issue #243 - Prefix/Suffix option used in namespace should not be used in namespace
+
 ## 4.0.0-rc.1 - 2021-03-02
 - issue #124 - PHP >= 7.4 tasks
   - Code requires PHP >= 7.4
