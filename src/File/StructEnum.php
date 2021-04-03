@@ -35,6 +35,11 @@ final class StructEnum extends Struct
         }
     }
 
+    protected function defineUseStatements(): self
+    {
+        return AbstractModelFile::defineUseStatements();
+    }
+
     protected function getConstantAnnotationBlock(PhpConstant $constant): ?PhpAnnotationBlock
     {
         $block = new PhpAnnotationBlock([
