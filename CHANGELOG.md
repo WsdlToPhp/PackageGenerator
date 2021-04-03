@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 4.0.0 - 2021-04-03
+- issue #244 - Don't add use InvalidArgumentException; within EnumType files
+
 ## 4.0.0-rc.2 - 2021-03-29
 - issue #243 - Prefix/Suffix option used in namespace should not be used in namespace
 
