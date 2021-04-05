@@ -110,14 +110,19 @@ final class StructArray extends Struct
                 new PhpFunctionParameter(
                     'item',
                     PhpFunctionParameter::NO_VALUE,
-                    $this->getStructAttributeTypeAsPhpType($this->getStructAttribute(), false),
+                    null,
                     $this->getStructAttribute()
                 ),
             ], self::TYPE_SELF);
 
             if ($this->getGenerator()->getOptionValidation()) {
                 $rules = new Rules($this, $method, $this->getStructAttribute(), $this->methods);
-                $rules->getEnumerationRule()->applyRule('item', null);
+                $struct = $this->getRestrictionFromStructAttribute($this->getStructAttribute());
+                if ($struct && $struct->isRestriction()) {
+                    $rules->getEnumerationRule()->applyRule('item', null);
+                } else {
+                    $rules->getItemTypeRule()->applyRule('item', null);
+                }
             }
 
             $method->addChild('return parent::add($item);');
