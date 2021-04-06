@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.3.6 - 2021-04-06
+- issue #246 - Composer::getComposerFilePath() must be of the type string, bool returned
+
 ## 3.3.5 - 2021-03-29
 - issue #243 - Prefix/Suffix option used in namespace should not be used in namespace
 
