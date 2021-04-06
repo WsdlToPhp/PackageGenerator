@@ -134,8 +134,12 @@ class ApiArrayOfErrorProject extends AbstractStructArrayBase
      * @param \StructType\ApiErrorProject $item
      * @return \ArrayType\ApiArrayOfErrorProject
      */
-    public function add(\StructType\ApiErrorProject $item): self
+    public function add($item): self
     {
+        // validation for constraint: itemType
+        if (!$item instanceof \StructType\ApiErrorProject) {
+            throw new InvalidArgumentException(sprintf('The Error property can only contain items of type \StructType\ApiErrorProject, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
         return parent::add($item);
     }
     /**

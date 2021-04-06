@@ -143,6 +143,7 @@ final class Composer extends AbstractFile
 
     protected function getComposerFilePath(): string
     {
-        return realpath(sprintf('%s/composer.json', $this->getGenerator()->getOptionDestination()));
+        $path = realpath(sprintf('%s/composer.json', $this->getGenerator()->getOptionDestination()));
+        return false === $path ? '' : $path;
     }
 }

@@ -136,7 +136,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @param string $item
      * @return \ArrayType\ApiArrayOfWebSearchOption
      */
-    public function add(string $item): self
+    public function add($item): self
     {
         // validation for constraint: enumeration
         if (!\EnumType\ApiWebSearchOption::valueIsValid($item)) {

@@ -134,8 +134,12 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * @param \StructType\ApiNewsRelatedSearch $item
      * @return \ArrayType\ApiArrayOfNewsRelatedSearch
      */
-    public function add(\StructType\ApiNewsRelatedSearch $item): self
+    public function add($item): self
     {
+        // validation for constraint: itemType
+        if (!$item instanceof \StructType\ApiNewsRelatedSearch) {
+            throw new InvalidArgumentException(sprintf('The NewsRelatedSearch property can only contain items of type \StructType\ApiNewsRelatedSearch, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
         return parent::add($item);
     }
     /**

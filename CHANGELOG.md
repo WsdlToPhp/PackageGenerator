@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.0.1 - 2021-04-06
+- issue #245 - should be compatible with AbstractStructArrayBase::add($item)
+- issue #246 - Composer::getComposerFilePath() must be of the type string, bool returned
+
 ## 4.0.0 - 2021-04-03
 - issue #244 - Don't add use InvalidArgumentException; within EnumType files
 
