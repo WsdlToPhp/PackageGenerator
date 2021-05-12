@@ -67,11 +67,28 @@ abstract class AbstractTagOperationElement extends Tag
      */
     public function getPart($partName)
     {
+        if (empty($partName)) {
+            return null;
+        }
+
         $part = null;
         $message = $this->getMessage();
-        if ($message instanceof TagMessage && !empty($partName)) {
+        if ($message instanceof TagMessage) {
             $part = $message->getPart($partName);
         }
         return $part;
+    }
+    /**
+     * @param string $partName
+     * @return TagElement|null
+     */
+    public function getMatchingElement($partName)
+    {
+        $element = null;
+        $part = $this->getPart($partName);
+        if ($part instanceof TagPart) {
+            $element = $part->getMatchingElement();
+        }
+        return $element;
     }
 }

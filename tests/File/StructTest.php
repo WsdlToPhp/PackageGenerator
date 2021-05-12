@@ -462,7 +462,7 @@ class StructTest extends AbstractFile
      */
     public function testStructResultFromUnitTestsWithBooleanAttribute()
     {
-        $generator = self::unitTestsInstance();
+        $generator = self::unitTestsInstanceParser();
         if (($model = $generator->getStructByName('Result')) instanceof StructModel) {
             $struct = new StructFile($generator, $model->getName());
             $struct

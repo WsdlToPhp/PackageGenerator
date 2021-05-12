@@ -2,6 +2,8 @@
 
 namespace WsdlToPhp\PackageGenerator\WsdlHandler\Tag;
 
+use WsdlToPhp\PackageGenerator\WsdlHandler\Wsdl as WsdlDocument;
+
 class TagMessage extends Tag
 {
     /**
@@ -9,7 +11,7 @@ class TagMessage extends Tag
      */
     public function getPart($name)
     {
-        return $this->getChildByNameAndAttributes('part', [
+        return $this->getChildByNameAndAttributes(WsdlDocument::TAG_PART, [
             'name' => $name,
         ]);
     }

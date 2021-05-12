@@ -611,7 +611,7 @@ abstract class TestCase extends PHPUnitFrameworkTestCase
     /**
      * @return Generator
      */
-    public static function unitTestsInstance()
+    public static function unitTestsInstanceParser()
     {
         return self::getInstanceFromSerializedJson('unit_tests', 'start', self::wsdlUnitTestsPath());
     }

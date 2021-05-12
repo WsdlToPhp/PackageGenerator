@@ -39,7 +39,7 @@ class TagPart extends Tag
     protected function getAttributeMixedValue($attributeName, $returnValue = true)
     {
         $value = $this->getAttribute($attributeName);
-        if ($returnValue === true) {
+        if ($returnValue) {
             $value = $value instanceof AttributeHandler ? $value->getValue() : null;
         }
         return $value;
@@ -51,19 +51,28 @@ class TagPart extends Tag
     {
         $type = $this->getAttributeType();
         if (empty($type)) {
-            $elementName = $this->getAttributeElement();
-            if (!empty($elementName)) {
-                $element = $this->getDomDocumentHandler()->getElementByNameAndAttributes(WsdlDocument::TAG_ELEMENT, [
-                    'name' => $elementName,
-                ], true);
-                if ($element instanceof TagElement && $element->hasAttribute(self::ATTRIBUTE_TYPE)) {
-                    $type = $element->getAttribute(self::ATTRIBUTE_TYPE)->getValue();
-                } else {
-                    $type = $elementName;
-                }
+            $element = $this->getMatchingElement();
+            if ($element instanceof TagElement && $element->hasAttribute(self::ATTRIBUTE_TYPE)) {
+                $type = $element->getAttribute(self::ATTRIBUTE_TYPE)->getValue();
+            } else {
+                $type = $this->getAttributeElement();
             }
         }
         return $type;
+    }
+    /**
+     * @return TagElement|null
+     */
+    public function getMatchingElement()
+    {
+        $element = null;
+        $elementName = $this->getAttributeElement();
+        if (!empty($elementName)) {
+            $element = $this->getDomDocumentHandler()->getElementByNameAndAttributes(WsdlDocument::TAG_ELEMENT, [
+                'name' => $elementName,
+            ], true);
+        }
+        return $element;
     }
     /**
      * @return string

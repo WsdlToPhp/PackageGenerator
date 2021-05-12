@@ -7,32 +7,39 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
 class TagHeaderTest extends WsdlParser
 {
     /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
+     * @return TagHeader
      */
     public static function imageViewServiceInstanceParser()
     {
         return new TagHeader(self::generatorInstance(self::wsdlImageViewServicePath()));
     }
     /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
+     * @return TagHeader
      */
-    public static function paypalInstanceParserParser()
+    public static function actonInstanceParser()
     {
         return new TagHeader(self::generatorInstance(self::wsdlActonPath()));
     }
     /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
+     * @return TagHeader
      */
-    public static function paypalInstance()
+    public static function paypalInstanceParser()
     {
         return new TagHeader(self::generatorInstance(self::wsdlPayPalPath()));
     }
     /**
-     * @return \WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader
+     * @return TagHeader
      */
     public static function ewsInstanceParser()
     {
         return new TagHeader(self::generatorInstance(self::wsdlEwsPath(), true, false, false));
+    }
+    /**
+     * @return TagHeader
+     */
+    public static function unitTestsInstanceParser()
+    {
+        return new TagHeader(self::generatorInstance(self::wsdlUnitTestsPath()));
     }
     /**
      *
@@ -73,7 +80,7 @@ class TagHeaderTest extends WsdlParser
      */
     public function testParseActon()
     {
-        $tagHeaderParser = self::paypalInstanceParserParser();
+        $tagHeaderParser = self::actonInstanceParser();
 
         $tagHeaderParser->parse();
 
@@ -147,7 +154,7 @@ class TagHeaderTest extends WsdlParser
      */
     public function testParsePayPal()
     {
-        $tagHeaderParser = self::paypalInstance();
+        $tagHeaderParser = self::paypalInstanceParser();
 
         $tagHeaderParser->parse();
 
@@ -224,6 +231,38 @@ class TagHeaderTest extends WsdlParser
                         ], $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES));
                         $count++;
                     }
+                }
+            }
+        }
+        $this->assertSame(1, $count);
+    }
+    /**
+     *
+     */
+    public function testParseUnitTests()
+    {
+        $tagHeaderParser = self::unitTestsInstanceParser();
+
+        $tagHeaderParser->parse();
+
+        $count = 0;
+        $services = $tagHeaderParser->getGenerator()->getServices();
+        if ($services->count() > 0) {
+            foreach ($services as $service) {
+                foreach ($service->getMethods() as $method) {
+                    $this->assertSame([
+                        'auth',
+                    ], $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES));
+                    $this->assertSame([
+                        'http://schemas.com/GetResult',
+                    ], $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES));
+                    $this->assertSame([
+                        'AuthenticationType',
+                    ], $method->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES));
+                    $this->assertSame([
+                        'required',
+                    ], $method->getMetaValue(TagHeader::META_SOAP_HEADERS));
+                    $count++;
                 }
             }
         }

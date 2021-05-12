@@ -97,6 +97,13 @@ abstract class AbstractTag extends ElementHandler
         return $this->getAttribute(Attribute::ATTRIBUTE_REF) instanceof Attribute ? $this->getAttribute(Attribute::ATTRIBUTE_REF)->getValue() : '';
     }
     /**
+     * @return string
+     */
+    public function getAttributeTargetNamespace()
+    {
+        return $this->getAttribute('targetNamespace') instanceof Attribute ? $this->getAttribute('targetNamespace')->getValue(true) : '';
+    }
+    /**
      * @return boolean
      */
     public function hasAttributeValue()
@@ -128,5 +135,13 @@ abstract class AbstractTag extends ElementHandler
     public function getChildrenByName($name)
     {
         return parent::getChildrenByName($name);
+    }
+
+    /**
+     * @return TagSchema|null
+     */
+    public function getParentSchema()
+    {
+        return $this->getStrictParent(WsdlDocument::TAG_SCHEMA);
     }
 }

@@ -72,7 +72,7 @@ class StructAttributeTest extends TestCase
      */
     public function testStructAttributeTypeMustBeBool()
     {
-        $structAttribute = self::unitTestsInstance()->getStructByName('Result')->getAttribute('Success');
+        $structAttribute = self::unitTestsInstanceParser()->getStructByName('Result')->getAttribute('Success');
 
         $this->assertSame('boolean', $structAttribute->getType(true));
         $this->assertSame('Success', $structAttribute->getType());

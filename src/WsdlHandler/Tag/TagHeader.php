@@ -72,6 +72,12 @@ class TagHeader extends AbstractTagOperationElement
         if (empty($namespace)) {
             $namespace = $this->getHeaderNamespaceFromMessage();
         }
+        if (empty($namespace)) {
+            $namespace = $this->getHeaderNamespaceFromElement();
+        }
+        if (empty($namespace)) {
+            $namespace = $this->getHeaderNamespaceFromRootNode();
+        }
         return $namespace;
     }
     /**
@@ -100,6 +106,25 @@ class TagHeader extends AbstractTagOperationElement
             $namespace = $this->getDomDocumentHandler()->getNamespaceUri($messageNamespace);
         }
         return $namespace;
+    }
+    /**
+     * @return string
+     */
+    protected function getHeaderNamespaceFromElement()
+    {
+        $namespace = '';
+        $element = $this->getMatchingElement($this->getAttributePart());
+        if ($element instanceof TagElement && ($schema = $element->getParentSchema()) instanceof TagSchema) {
+            $namespace = $schema->getAttributeTargetNamespace();
+        }
+        return $namespace;
+    }
+    /**
+     * @return string
+     */
+    protected function getHeaderNamespaceFromRootNode()
+    {
+        return $this->getDomDocumentHandler()->getRootElement()->getAttributeValue('targetNamespace', true);
     }
     /**
      * @return string

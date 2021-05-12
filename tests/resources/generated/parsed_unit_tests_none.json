@@ -12,7 +12,20 @@
                         "returnType": "Result",
                         "inheritance": "",
                         "abstract": false,
-                        "meta": [],
+                        "meta": {
+                            "SOAPHeaderNames": [
+                                "auth"
+                            ],
+                            "SOAPHeaderNamespaces": [
+                                "http://schemas.com/GetResult"
+                            ],
+                            "SOAPHeaderTypes": [
+                                "AuthenticationType"
+                            ],
+                            "SOAPHeaders": [
+                                "required"
+                            ]
+                        },
                         "name": "GetResult",
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Method"
                     }
@@ -159,6 +172,74 @@
                 "abstract": false,
                 "meta": [],
                 "name": "Warnings",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "UserType",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "user",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "PasswordType",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "password",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": [],
+                "values": [],
+                "list": "",
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "AuthenticationType",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "list": "",
+                "inheritance": "string",
+                "abstract": false,
+                "meta": {
+                    "base": "xsd:string",
+                    "maxLength": "10",
+                    "minLength": "5"
+                },
+                "name": "PasswordType",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "list": "",
+                "inheritance": "string",
+                "abstract": false,
+                "meta": {
+                    "base": "xsd:string",
+                    "maxLength": "10",
+                    "minLength": "5"
+                },
+                "name": "UserType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             }
         ]
