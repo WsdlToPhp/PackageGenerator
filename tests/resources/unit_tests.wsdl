@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:tns="http://schemas.com/GetResult" targetNamespace="http://schemas.com/GetResult">
-	<wsdl:types>
-		<xsd:schema elementFormDefault="qualified" targetNamespace="http://schemas.com/GetResult">
-			<xsd:element name="Result">
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:tns="http://schemas.com/GetResult"
+                  targetNamespace="http://schemas.com/GetResult">
+    <wsdl:types>
+        <xsd:schema elementFormDefault="qualified" targetNamespace="http://schemas.com/GetResult">
+            <xsd:element name="Result">
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:choice minOccurs="1" maxOccurs="1">
@@ -29,39 +32,63 @@
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
-		</xsd:schema>
+            <xsd:element name="auth" type="AuthenticationType"/>
+            <xsd:complexType name="AuthenticationType">
+                <xsd:sequence>
+                    <xsd:element name="user" type="tns:UserType"/>
+                    <xsd:element name="password" type="tns:PasswordType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:simpleType name="PasswordType">
+                <xsd:restriction base="xsd:string">
+                    <xsd:minLength value="5"/>
+                    <xsd:maxLength value="10"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="UserType">
+                <xsd:restriction base="xsd:string">
+                    <xsd:minLength value="5"/>
+                    <xsd:maxLength value="10"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:schema>
         <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.xmlsoap.org/wsdl/">
             <xsd:element name="Error"></xsd:element>
             <xsd:element name="Warning"></xsd:element>
         </xsd:schema>
-	</wsdl:types>
-	<wsdl:message name="GetResultMessage">
-		<wsdl:part name="result" element="tns:Result" />
-	</wsdl:message>
-	<wsdl:message name="GetResultResponseMessage">
-		<wsdl:part name="result" element="tns:Result" />
-	</wsdl:message>
-	<wsdl:portType name="UnitTestsPortType">
-		<wsdl:operation name="GetResult">
-			<wsdl:input message="tns:GetResultMessage" wsa:Action="http://schemas.com/GetResultRequest" />
-			<wsdl:output message="tns:GetResultResponseMessage" wsa:Action="http://schemas.com/GetResultResponse" />
-		</wsdl:operation>
-	</wsdl:portType>
-	<wsdl:binding name="UnitTestsPortBinding" type="tns:UnitTestsPortType">
-		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
-		<wsdl:operation name="GetResult">
-			<soap:operation soapAction="http://schemas.com/GetResult" style="document" />
-			<wsdl:input>
-				<soap:body use="literal" />
-			</wsdl:input>
-			<wsdl:output>
-				<soap:body use="literal" />
-			</wsdl:output>
-		</wsdl:operation>
-	</wsdl:binding>
-	<wsdl:service name="UnitTestsService">
-		<wsdl:port name="UnitTestsPort" binding="tns:UnitTestsPortBinding">
-			<soap:address location="http://unit.tests.net:80/soap.asmx" />
-		</wsdl:port>
-	</wsdl:service>
+    </wsdl:types>
+    <wsdl:message name="GetResultMessage">
+        <wsdl:part name="result" element="tns:Result"/>
+    </wsdl:message>
+    <wsdl:message name="GetResultResponseMessage">
+        <wsdl:part name="result" element="tns:Result"/>
+    </wsdl:message>
+    <wsdl:message name="authenticationMsg">
+        <wsdl:part name="authentication" element="auth">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="UnitTestsPortType">
+        <wsdl:operation name="GetResult">
+            <wsdl:input message="tns:GetResultMessage" wsa:Action="http://schemas.com/GetResultRequest"/>
+            <wsdl:output message="tns:GetResultResponseMessage" wsa:Action="http://schemas.com/GetResultResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="UnitTestsPortBinding" type="tns:UnitTestsPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="GetResult">
+            <soap:operation soapAction="http://schemas.com/GetResult" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <soap:header message="authenticationMsg" part="authentication" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="UnitTestsService">
+        <wsdl:port name="UnitTestsPort" binding="tns:UnitTestsPortBinding">
+            <soap:address location="http://unit.tests.net:80/soap.asmx"/>
+        </wsdl:port>
+    </wsdl:service>
 </wsdl:definitions>
