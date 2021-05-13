@@ -167,6 +167,11 @@ final class StructAttribute extends AbstractModel
         ], 0);
     }
 
+    public function isNullable(): bool
+    {
+        return 'true' === $this->getMetaValue('nillable', 'false');
+    }
+
     public function getOwner(): Struct
     {
         return parent::getOwner();
