@@ -17,12 +17,12 @@ final class TagHeaderTest extends WsdlParser
         return new TagHeader(self::generatorInstance(self::wsdlImageViewServicePath()));
     }
 
-    public static function paypalInstanceParserParser(): TagHeader
+    public static function actonInstanceParser(): TagHeader
     {
         return new TagHeader(self::generatorInstance(self::wsdlActonPath()));
     }
 
-    public static function paypalInstance(): TagHeader
+    public static function paypalInstanceParser(): TagHeader
     {
         return new TagHeader(self::generatorInstance(self::wsdlPayPalPath()));
     }
@@ -30,6 +30,11 @@ final class TagHeaderTest extends WsdlParser
     public static function ewsInstanceParser(): TagHeader
     {
         return new TagHeader(self::generatorInstance(self::wsdlEwsPath(), true, false, false));
+    }
+
+    public static function unitTestInstanceParser(): TagHeader
+    {
+        return new TagHeader(self::generatorInstance(self::wsdlUnitTestsPath()));
     }
 
     public function testParseImageViewService()
@@ -66,7 +71,7 @@ final class TagHeaderTest extends WsdlParser
 
     public function testParseActon()
     {
-        $tagHeaderParser = self::paypalInstanceParserParser();
+        $tagHeaderParser = self::actonInstanceParser();
 
         $tagHeaderParser->parse();
 
@@ -138,7 +143,7 @@ final class TagHeaderTest extends WsdlParser
 
     public function testParsePayPal()
     {
-        $tagHeaderParser = self::paypalInstance();
+        $tagHeaderParser = self::paypalInstanceParser();
 
         $tagHeaderParser->parse();
 
@@ -218,5 +223,35 @@ final class TagHeaderTest extends WsdlParser
             }
         }
         $this->assertSame(1, $count);
+    }
+
+    public function testParseUnitTest()
+    {
+        $tagHeaderParser = self::unitTestInstanceParser();
+
+        $tagHeaderParser->parse();
+
+        $ok = false;
+        $services = $tagHeaderParser->getGenerator()->getServices();
+        if ($services->count() > 0) {
+            foreach ($services as $service) {
+                foreach ($service->getMethods() as $method) {
+                    $this->assertSame([
+                        'auth',
+                    ], $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMES));
+                    $this->assertSame([
+                        'http://schemas.com/GetResult',
+                    ], $method->getMetaValue(TagHeader::META_SOAP_HEADER_NAMESPACES));
+                    $this->assertSame([
+                        'AuthenticationType',
+                    ], $method->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES));
+                    $this->assertSame([
+                        'required',
+                    ], $method->getMetaValue(TagHeader::META_SOAP_HEADERS));
+                    $ok = true;
+                }
+            }
+        }
+        $this->assertTrue((bool) $ok);
     }
 }

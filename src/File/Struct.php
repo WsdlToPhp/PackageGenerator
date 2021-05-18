@@ -63,7 +63,7 @@ class Struct extends AbstractModelFile
                     break;
 
                 default:
-                    $type = ($attribute->isRequired() || $attribute->isArray() ? '' : '?').$this->getStructAttributeTypeAsPhpType($attribute);
+                    $type = (($attribute->isRequired() && !$attribute->isNullable()) || $attribute->isArray() ? '' : '?').$this->getStructAttributeTypeAsPhpType($attribute);
 
                     break;
             }
@@ -155,7 +155,7 @@ class Struct extends AbstractModelFile
                 break;
 
             default:
-                $type = ($attribute->isRequired() || $attribute->isArray() ? '' : '?').$this->getStructAttributeTypeAsPhpType($attribute);
+                $type = (($attribute->isRequired() && !$attribute->isNullable()) || $attribute->isArray() ? '' : '?').$this->getStructAttributeTypeAsPhpType($attribute);
 
                 break;
         }

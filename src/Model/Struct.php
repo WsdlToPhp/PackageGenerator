@@ -398,8 +398,10 @@ final class Struct extends AbstractModel
         $attributes = new StructAttributeContainer($this->getGenerator());
         $requiredAttributes = new StructAttributeContainer($this->getGenerator());
         $notRequiredAttributes = new StructAttributeContainer($this->getGenerator());
+
+        /** @var StructAttribute $attribute */
         foreach ($allAttributes as $attribute) {
-            if ($attribute->isRequired()) {
+            if ($attribute->isRequired() && !$attribute->isNullable()) {
                 $requiredAttributes->add($attribute);
             } else {
                 $notRequiredAttributes->add($attribute);

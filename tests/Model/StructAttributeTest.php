@@ -77,4 +77,18 @@ final class StructAttributeTest extends AbstractTestCase
         $this->assertSame('Success', $structAttribute->getType());
         $this->assertFalse($structAttribute->getDefaultValue());
     }
+
+    public function testIsNullableMustReturnFalse()
+    {
+        $structAttribute = self::unitTestsInstance()->getStructByName('Result')->getAttribute('Success');
+
+        $this->assertFalse($structAttribute->isNullable());
+    }
+
+    public function testIsNullableMustReturnTrue()
+    {
+        $structAttribute = self::vehicleSelectionPackGeneratorInstance()->getStructByName('Legends')->getAttribute('legends');
+
+        $this->assertTrue($structAttribute->isNullable());
+    }
 }
