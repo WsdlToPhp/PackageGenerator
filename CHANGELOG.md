@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.3.7 - 2021-05-18
+- issue #251 - Use targetNamespace from another location
+
 ## 3.3.6 - 2021-04-06
 - issue #246 - Composer::getComposerFilePath() must be of the type string, bool returned
 
