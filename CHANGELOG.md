@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.0.2 - 2021-08-18
+- issue #250 - Generator not respect nillable
+- issue #251 - Use targetNamespace from another location
+
 ## 4.0.1 - 2021-04-06
 - issue #245 - should be compatible with AbstractStructArrayBase::add($item)
 - issue #246 - Composer::getComposerFilePath() must be of the type string, bool returned
