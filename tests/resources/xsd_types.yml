@@ -2,7 +2,8 @@
 
 xsd_types:
     anonymous: "string"
-    anyType: "mixed"
+    anySimpleType: "string"
+    anyType: "string"
     anyURI: "string"
     base64Binary: "string"
     bool: "bool"
@@ -14,7 +15,10 @@ xsd_types:
     double: "float"
     duration: "string"
     DayOfWeekType: "string"
+    ENTITY: "string"
+    ENTITIES: "string"
     float: "float"
+    gDay: "string"
     gMonth: "string"
     gMonthDay: "int"
     gYear: "string"
@@ -35,6 +39,7 @@ xsd_types:
     NCName: "string"
     NMTOKEN: "string"
     NMTOKENS: "string"
+    NOTATION: "string"
     positiveInteger: "int"
     QName: "string"
     short: "int"
