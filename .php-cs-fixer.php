@@ -5,7 +5,7 @@ $finder = PhpCsFixer\Finder::create()
     ->exclude('tests/resources/generated')
     ->in(__DIR__);
 
-return PhpCsFixer\Config::create()
+return (new PhpCsFixer\Config())
     ->setUsingCache(false)
     ->setRules(array(
         '@PhpCsFixer' => true,
