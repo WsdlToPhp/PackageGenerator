@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 3.4.0 - 2021-07-13
+- issue #257 - choice tag is not fully handled properly
+- issue #258 - Add missing XML built-in dataTypes
+
 ## 3.3.7 - 2021-05-18
 - issue #251 - Use targetNamespace from another location
 
