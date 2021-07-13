@@ -7065,7 +7065,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AccountStateCodeType",
                         "inheritance": "",
@@ -7132,7 +7132,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "int",
                         "inheritance": "",
@@ -7167,7 +7167,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AmountType",
                         "inheritance": "",
@@ -7201,7 +7201,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
@@ -7236,7 +7236,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
@@ -7271,7 +7271,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
@@ -7306,7 +7306,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
@@ -7341,7 +7341,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
@@ -7376,7 +7376,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
@@ -7411,7 +7411,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AmountType",
                         "inheritance": "",
@@ -7444,7 +7444,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AmountType",
                         "inheritance": "",
@@ -7479,7 +7479,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AmountType",
                         "inheritance": "",
@@ -7514,7 +7514,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
@@ -7549,7 +7549,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "dateTime",
                         "inheritance": "",
@@ -7584,7 +7584,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "boolean",
                         "inheritance": "",
@@ -7619,7 +7619,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SellerPaymentMethodCodeType",
                         "inheritance": "",

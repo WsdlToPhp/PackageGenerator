@@ -17,7 +17,7 @@
                                 "auth"
                             ],
                             "SOAPHeaderNamespaces": [
-                                "http://schemas.com/GetResult"
+                                "http:\/\/schemas.com\/GetResult"
                             ],
                             "SOAPHeaderTypes": [
                                 "AuthenticationType"

@@ -64,27 +64,6 @@ jobs:
       - name: Display generated wsdltophp version
         run: php bin/wsdltophp.phar --version
 
-      - name: Create release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ env.GITHUB_REF_NAME }}
-          release_name: ${{ env.GITHUB_REF_NAME }} - PHP ${{ matrix.php-version }}
-          draft: true
-          body: TODO
-
-      - name: Upload phar to Github release
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.SECRET_GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./bin/wsdltophp.phar
-          asset_name: wsdltophp-${{ env.GITHUB_REF_NAME_SLUG }}-${{ matrix.php-version }}.phar
-          asset_content_type: application/octet-stream
-
       - name: Configure GPG key and sign phar
         run: |
           mkdir -p ~/.gnupg/
@@ -96,15 +75,20 @@ jobs:
           GPG_SIGNING_KEY: |
             ${{ secrets.GPG_SIGNING_KEY_893E7553C4D525279BC8C6D9B41E3A1E3748D61F }}
 
-      - name: Upload phar signature
-        uses: actions/upload-release-asset@v1
+      - name: Create release
+        id: create_release
+        uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./wsdltophp.phar.asc
-          asset_name: wsdltophp-${{ env.GITHUB_REF_NAME_SLUG }}-${{ matrix.php-version }}.phar.asc
-          asset_content_type: application/octet-stream
+          tag_name: ${{ env.GITHUB_REF_NAME }}
+          name: ${{ env.GITHUB_REF_NAME }} - PHP ${{ matrix.php-version }}
+          draft: true
+          prerelease: true
+          body: TODO
+          files: |
+            ./bin/wsdltophp.phar
+            ./wsdltophp.phar.asc
 
       - name: Setup Buildx
         if: startsWith(matrix.php-version, '7')

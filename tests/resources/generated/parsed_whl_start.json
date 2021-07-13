@@ -2997,7 +2997,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FormattedTextTextType",
                         "inheritance": "",
@@ -3019,7 +3019,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
@@ -3041,7 +3041,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "anyURI",
                         "inheritance": "",
@@ -3063,7 +3063,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ListItem",
                         "inheritance": "",
@@ -7435,7 +7435,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "RoomType",
                         "inheritance": "",
