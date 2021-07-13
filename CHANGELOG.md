@@ -1,6 +1,11 @@
 # CHANGELOG
 
-## 4.0.2 - 2021-08-18
+## 4.1.0 - 2021-07-13
+- issue #257 - choice tag is not fully handled properly
+- issue #258 - Add missing XML built-in dataTypes
+- Array-typed properties are now null by default
+
+## 4.0.2 - 2021-05-18
 - issue #250 - Generator not respect nillable
 - issue #251 - Use targetNamespace from another location
 
