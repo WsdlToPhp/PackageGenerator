@@ -6829,7 +6829,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailCalcCostShipping",
                         "inheritance": "",
@@ -6862,7 +6862,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailCashFlow",
                         "inheritance": "",
@@ -6895,7 +6895,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailClientPayment",
                         "inheritance": "",
@@ -6928,7 +6928,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailPostReturnRegistry",
                         "inheritance": "",
@@ -6961,7 +6961,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailRouteList",
                         "inheritance": "",
@@ -6994,7 +6994,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailTrackNumberPayment",
                         "inheritance": "",
@@ -7027,7 +7027,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailServiceRegistration",
                         "inheritance": "",
@@ -7060,7 +7060,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailAcceptanceRegistry",
                         "inheritance": "",
@@ -7093,7 +7093,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailAdditionalChargeFare",
                         "inheritance": "",
@@ -7126,7 +7126,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailOutgoingRequestToCarrier",
                         "inheritance": "",
@@ -7159,7 +7159,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailSMSInformation",
                         "inheritance": "",
@@ -7192,7 +7192,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailBuyerGoodsReturn",
                         "inheritance": "",
@@ -7225,7 +7225,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailProductsPackaging",
                         "inheritance": "",
@@ -7258,7 +7258,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailAdjustmentWriteRegisters",
                         "inheritance": "",
@@ -7291,7 +7291,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailSafeCustody",
                         "inheritance": "",
@@ -7324,7 +7324,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailSafeCustodyCalculation",
                         "inheritance": "",
@@ -7357,7 +7357,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailRegisterStorage",
                         "inheritance": "",
@@ -8305,7 +8305,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailRouteListOrder",
                         "inheritance": "",
@@ -8323,7 +8323,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "mutualSettlementDetailRouteListPickupRequest",
                         "inheritance": "",

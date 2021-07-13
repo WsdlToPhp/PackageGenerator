@@ -22,7 +22,7 @@ class ApiAddRequest extends AbstractStructBase
      * - minOccurs: 1
      * @var \StructType\ApiAdGroupAddItem[]
      */
-    protected array $AdGroups = [];
+    protected array $AdGroups;
     /**
      * Constructor method for AddRequest
      * @uses ApiAddRequest::setAdGroups()
@@ -47,8 +47,11 @@ class ApiAddRequest extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAdGroupsForArrayConstraintsFromSetAdGroups(array $values = []): string
+    public static function validateAdGroupsForArrayConstraintsFromSetAdGroups(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $addRequestAdGroupsItem) {

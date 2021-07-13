@@ -51,7 +51,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - minOccurs: 0
      * @var \StructType\ApiTelephone[]
      */
-    protected array $Telephone = [];
+    protected ?array $Telephone = null;
     /**
      * The Email
      * Meta information extracted from the WSDL
@@ -60,7 +60,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * - minOccurs: 0
      * @var \StructType\ApiEmailType[]
      */
-    protected array $Email = [];
+    protected ?array $Email = null;
     /**
      * The CardType
      * Meta information extracted from the WSDL
@@ -221,7 +221,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $effectiveDate
      * @param string $expireDate
      */
-    public function __construct(?string $cardHolderName = null, ?\StructType\ApiCardIssuerName $cardIssuerName = null, ?\StructType\ApiAddressType $address = null, array $telephone = [], array $email = [], ?string $cardType = null, ?string $cardCode = null, ?string $cardName = null, ?string $cardNumber = null, ?string $seriesCode = null, ?string $maskedCardNumber = null, ?string $cardHolderRPH = null, ?string $countryOfIssue = null, ?string $remark = null, ?string $shareSynchInd = null, ?string $shareMarketInd = null, ?string $effectiveDate = null, ?string $expireDate = null)
+    public function __construct(?string $cardHolderName = null, ?\StructType\ApiCardIssuerName $cardIssuerName = null, ?\StructType\ApiAddressType $address = null, ?array $telephone = null, ?array $email = null, ?string $cardType = null, ?string $cardCode = null, ?string $cardName = null, ?string $cardNumber = null, ?string $seriesCode = null, ?string $maskedCardNumber = null, ?string $cardHolderRPH = null, ?string $countryOfIssue = null, ?string $remark = null, ?string $shareSynchInd = null, ?string $shareMarketInd = null, ?string $effectiveDate = null, ?string $expireDate = null)
     {
         $this
             ->setCardHolderName($cardHolderName)
@@ -316,7 +316,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get Telephone value
      * @return \StructType\ApiTelephone[]
      */
-    public function getTelephone(): array
+    public function getTelephone(): ?array
     {
         return $this->Telephone;
     }
@@ -326,8 +326,11 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTelephoneForArrayConstraintsFromSetTelephone(array $values = []): string
+    public static function validateTelephoneForArrayConstraintsFromSetTelephone(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $paymentCardTypeTelephoneItem) {
@@ -349,7 +352,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param \StructType\ApiTelephone[] $telephone
      * @return \StructType\ApiPaymentCardType
      */
-    public function setTelephone(array $telephone = []): self
+    public function setTelephone(?array $telephone = null): self
     {
         // validation for constraint: array
         if ('' !== ($telephoneArrayErrorMessage = self::validateTelephoneForArrayConstraintsFromSetTelephone($telephone))) {
@@ -387,7 +390,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * Get Email value
      * @return \StructType\ApiEmailType[]
      */
-    public function getEmail(): array
+    public function getEmail(): ?array
     {
         return $this->Email;
     }
@@ -397,8 +400,11 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEmailForArrayConstraintsFromSetEmail(array $values = []): string
+    public static function validateEmailForArrayConstraintsFromSetEmail(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $paymentCardTypeEmailItem) {
@@ -420,7 +426,7 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param \StructType\ApiEmailType[] $email
      * @return \StructType\ApiPaymentCardType
      */
-    public function setEmail(array $email = []): self
+    public function setEmail(?array $email = null): self
     {
         // validation for constraint: array
         if ('' !== ($emailArrayErrorMessage = self::validateEmailForArrayConstraintsFromSetEmail($email))) {

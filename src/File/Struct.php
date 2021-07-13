@@ -63,7 +63,7 @@ class Struct extends AbstractModelFile
                     break;
 
                 default:
-                    $type = (($attribute->isRequired() && !$attribute->isNullable()) || $attribute->isArray() ? '' : '?').$this->getStructAttributeTypeAsPhpType($attribute);
+                    $type = (($attribute->isRequired() && !$attribute->isNullable()) ? '' : '?').$this->getStructAttributeTypeAsPhpType($attribute);
 
                     break;
             }
@@ -71,7 +71,7 @@ class Struct extends AbstractModelFile
             $properties->add(
                 new PhpProperty(
                     $attribute->getCleanName(),
-                    $attribute->isArray() ? [] : ($attribute->isRequired() ? PhpProperty::NO_VALUE : null),
+                    $attribute->isRequired() ? PhpProperty::NO_VALUE : null,
                     $this->getGenerator()->getOptionValidation() ? PhpProperty::ACCESS_PROTECTED : PhpProperty::ACCESS_PUBLIC,
                     $type
                 )
@@ -155,7 +155,7 @@ class Struct extends AbstractModelFile
                 break;
 
             default:
-                $type = (($attribute->isRequired() && !$attribute->isNullable()) || $attribute->isArray() ? '' : '?').$this->getStructAttributeTypeAsPhpType($attribute);
+                $type = (($attribute->isRequired() && !$attribute->isNullable()) ? '' : '?').$this->getStructAttributeTypeAsPhpType($attribute);
 
                 break;
         }
@@ -336,7 +336,7 @@ class Struct extends AbstractModelFile
                 break;
 
             default:
-                $returnType = (!$attribute->getRemovableFromRequest() && ($attribute->isRequired() || $attribute->isArray()) ? '' : '?').$this->getStructAttributeTypeAsPhpType($attribute);
+                $returnType = (!$attribute->getRemovableFromRequest() && $attribute->isRequired() ? '' : '?').$this->getStructAttributeTypeAsPhpType($attribute);
 
                 break;
         }

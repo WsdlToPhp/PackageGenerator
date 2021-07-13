@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
+use InvalidArgumentException;
 use StructType\ApiParagraphType;
 use StructType\ApiTaxType;
-use InvalidArgumentException;
 
 /**
  * @internal

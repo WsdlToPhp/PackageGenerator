@@ -5482,7 +5482,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "EmailAddressType",
                         "inheritance": "",
@@ -10053,7 +10053,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "BasePathToElementType",
                         "inheritance": "",
@@ -12421,7 +12421,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AppendToItemFieldType",
                         "inheritance": "",
@@ -12439,7 +12439,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SetItemFieldType",
                         "inheritance": "",
@@ -12457,7 +12457,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "DeleteItemFieldType",
                         "inheritance": "",
@@ -12489,7 +12489,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AppendToFolderFieldType",
                         "inheritance": "",
@@ -12507,7 +12507,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SetFolderFieldType",
                         "inheritance": "",
@@ -12525,7 +12525,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "DeleteFolderFieldType",
                         "inheritance": "",
@@ -12851,7 +12851,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "RequestAttachmentIdType",
                         "inheritance": "",
@@ -14028,7 +14028,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ItemAttachmentType",
                         "inheritance": "",
@@ -14046,7 +14046,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FileAttachmentType",
                         "inheritance": "",
@@ -14064,7 +14064,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ReferenceAttachmentType",
                         "inheritance": "",
@@ -14096,7 +14096,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ItemAttachmentType",
                         "inheritance": "",
@@ -14114,7 +14114,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FileAttachmentType",
                         "inheritance": "",
@@ -14132,7 +14132,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ReferenceAttachmentType",
                         "inheritance": "",
@@ -15188,7 +15188,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "DistinguishedFolderIdType",
                         "inheritance": "",
@@ -15218,7 +15218,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FolderIdType",
                         "inheritance": "",
@@ -15235,7 +15235,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "DistinguishedFolderIdType",
                         "inheritance": "",
@@ -16313,7 +16313,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FolderType",
                         "inheritance": "",
@@ -16333,7 +16333,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "CalendarFolderType",
                         "inheritance": "",
@@ -16353,7 +16353,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ContactsFolderType",
                         "inheritance": "",
@@ -16373,7 +16373,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SearchFolderType",
                         "inheritance": "",
@@ -16393,7 +16393,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "TasksFolderType",
                         "inheritance": "",
@@ -16427,7 +16427,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FolderType",
                         "inheritance": "",
@@ -16447,7 +16447,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "CalendarFolderType",
                         "inheritance": "",
@@ -16467,7 +16467,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ContactsFolderType",
                         "inheritance": "",
@@ -16487,7 +16487,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SearchFolderType",
                         "inheritance": "",
@@ -16507,7 +16507,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "TasksFolderType",
                         "inheritance": "",
@@ -16615,7 +16615,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ItemIdType",
                         "inheritance": "",
@@ -16634,7 +16634,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "OccurrenceItemIdType",
                         "inheritance": "",
@@ -16653,7 +16653,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "RecurringMasterItemIdType",
                         "inheritance": "",
@@ -16672,7 +16672,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "RecurringMasterItemIdRangesType",
                         "inheritance": "",
@@ -16705,7 +16705,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ItemIdType",
                         "inheritance": "",
@@ -16867,7 +16867,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AcceptItemType",
                         "inheritance": "",
@@ -16895,7 +16895,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "TentativelyAcceptItemType",
                         "inheritance": "",
@@ -16923,7 +16923,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "DeclineItemType",
                         "inheritance": "",
@@ -16951,7 +16951,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ReplyToItemType",
                         "inheritance": "",
@@ -16979,7 +16979,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ForwardItemType",
                         "inheritance": "",
@@ -17007,7 +17007,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ReplyAllToItemType",
                         "inheritance": "",
@@ -17035,7 +17035,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "CancelCalendarItemType",
                         "inheritance": "",
@@ -17063,7 +17063,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "RemoveItemType",
                         "inheritance": "",
@@ -17091,7 +17091,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SuppressReadReceiptType",
                         "inheritance": "",
@@ -17119,7 +17119,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "PostReplyItemType",
                         "inheritance": "",
@@ -17147,7 +17147,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AcceptSharingInvitationType",
                         "inheritance": "",
@@ -17175,7 +17175,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AddItemToMyCalendarType",
                         "inheritance": "",
@@ -17203,7 +17203,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ProposeNewTimeType",
                         "inheritance": "",
@@ -18634,7 +18634,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ItemClassType",
                         "inheritance": "",
@@ -21520,7 +21520,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ConversationType",
                         "inheritance": "",
@@ -21590,7 +21590,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ConversationRequestType",
                         "inheritance": "",
@@ -21673,7 +21673,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ConversationNodeType",
                         "inheritance": "",
@@ -24681,7 +24681,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "PersonType",
                         "inheritance": "",
@@ -26056,7 +26056,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "PersonaType",
                         "inheritance": "",
@@ -26679,7 +26679,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ItemType",
                         "inheritance": "",
@@ -26709,7 +26709,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "CalendarItemType",
                         "inheritance": "",
@@ -27092,7 +27092,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ItemType",
                         "inheritance": "",
@@ -27123,7 +27123,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "MessageType",
                         "inheritance": "",
@@ -27154,7 +27154,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "CalendarItemType",
                         "inheritance": "",
@@ -27185,7 +27185,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ContactItemType",
                         "inheritance": "",
@@ -27216,7 +27216,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "DistributionListType",
                         "inheritance": "",
@@ -27247,7 +27247,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "MeetingMessageType",
                         "inheritance": "",
@@ -27278,7 +27278,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "MeetingRequestMessageType",
                         "inheritance": "",
@@ -27309,7 +27309,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "MeetingResponseMessageType",
                         "inheritance": "",
@@ -27340,7 +27340,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "MeetingCancellationMessageType",
                         "inheritance": "",
@@ -27371,7 +27371,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "TaskType",
                         "inheritance": "",
@@ -27402,7 +27402,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "PostItemType",
                         "inheritance": "",
@@ -27433,7 +27433,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "RoleMemberItemType",
                         "inheritance": "",
@@ -27464,7 +27464,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "NetworkItemType",
                         "inheritance": "",
@@ -27495,7 +27495,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AbchPersonItemType",
                         "inheritance": "",
@@ -27526,7 +27526,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "BookingItemType",
                         "inheritance": "",
@@ -27557,7 +27557,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "XrmOrganizationItemType",
                         "inheritance": "",
@@ -27602,7 +27602,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ItemType",
                         "inheritance": "",
@@ -27644,7 +27644,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "MessageType",
                         "inheritance": "",
@@ -27686,7 +27686,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "CalendarItemType",
                         "inheritance": "",
@@ -27728,7 +27728,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ContactItemType",
                         "inheritance": "",
@@ -27770,7 +27770,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "DistributionListType",
                         "inheritance": "",
@@ -27812,7 +27812,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "MeetingMessageType",
                         "inheritance": "",
@@ -27854,7 +27854,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "MeetingRequestMessageType",
                         "inheritance": "",
@@ -27896,7 +27896,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "MeetingResponseMessageType",
                         "inheritance": "",
@@ -27938,7 +27938,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "MeetingCancellationMessageType",
                         "inheritance": "",
@@ -27980,7 +27980,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "TaskType",
                         "inheritance": "",
@@ -28022,7 +28022,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "PostItemType",
                         "inheritance": "",
@@ -28064,7 +28064,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ReplyToItemType",
                         "inheritance": "",
@@ -28106,7 +28106,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ForwardItemType",
                         "inheritance": "",
@@ -28148,7 +28148,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ReplyAllToItemType",
                         "inheritance": "",
@@ -28190,7 +28190,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AcceptItemType",
                         "inheritance": "",
@@ -28232,7 +28232,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "TentativelyAcceptItemType",
                         "inheritance": "",
@@ -28274,7 +28274,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "DeclineItemType",
                         "inheritance": "",
@@ -28316,7 +28316,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "CancelCalendarItemType",
                         "inheritance": "",
@@ -28358,7 +28358,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "RemoveItemType",
                         "inheritance": "",
@@ -28400,7 +28400,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SuppressReadReceiptType",
                         "inheritance": "",
@@ -28442,7 +28442,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "PostReplyItemType",
                         "inheritance": "",
@@ -28484,7 +28484,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AcceptSharingInvitationType",
                         "inheritance": "",
@@ -28526,7 +28526,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "RoleMemberItemType",
                         "inheritance": "",
@@ -28568,7 +28568,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "NetworkItemType",
                         "inheritance": "",
@@ -28610,7 +28610,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AbchPersonItemType",
                         "inheritance": "",
@@ -28652,7 +28652,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "BookingItemType",
                         "inheritance": "",
@@ -28694,7 +28694,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "XrmOrganizationItemType",
                         "inheritance": "",
@@ -39430,7 +39430,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "MovedCopiedEventType",
                         "inheritance": "",
@@ -39453,7 +39453,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "BaseObjectChangedEventType",
                         "inheritance": "",
@@ -39476,7 +39476,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "BaseObjectChangedEventType",
                         "inheritance": "",
@@ -39499,7 +39499,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ModifiedEventType",
                         "inheritance": "",
@@ -39522,7 +39522,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "MovedCopiedEventType",
                         "inheritance": "",
@@ -39545,7 +39545,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "BaseObjectChangedEventType",
                         "inheritance": "",
@@ -39568,7 +39568,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "BaseNotificationEventType",
                         "inheritance": "",
@@ -39591,7 +39591,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "BaseObjectChangedEventType",
                         "inheritance": "",
@@ -39698,7 +39698,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "NotificationEventTypeType",
                         "inheritance": "",
@@ -40072,7 +40072,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "UnifiedGroupUnseenChangedChannelSubscriptionType",
                         "inheritance": "",
@@ -40091,7 +40091,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "UnifiedGroupContentChangedChannelSubscriptionType",
                         "inheritance": "",
@@ -40110,7 +40110,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "UserMembershipChangedChannelSubscriptionType",
                         "inheritance": "",
@@ -40129,7 +40129,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "NewSocialActivityAddedSubscriptionType",
                         "inheritance": "",
@@ -40290,7 +40290,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ChannelStatusEventType",
                         "inheritance": "",
@@ -40313,7 +40313,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ChannelEventDroppedChannelEventType",
                         "inheritance": "",
@@ -40336,7 +40336,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SubscriptionEventDroppedChannelEventType",
                         "inheritance": "",
@@ -40359,7 +40359,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SubscriptionRenewFailedChannelEventType",
                         "inheritance": "",
@@ -40382,7 +40382,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "UnifiedGroupUnseenChangedChannelEventType",
                         "inheritance": "",
@@ -40405,7 +40405,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "UnifiedGroupContentChangedChannelEventType",
                         "inheritance": "",
@@ -40428,7 +40428,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "UserMembershipChangedChannelEventType",
                         "inheritance": "",
@@ -40451,7 +40451,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "NewSocialActivityAddedEventType",
                         "inheritance": "",
@@ -41090,7 +41090,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SyncFolderItemsCreateOrUpdateType",
                         "inheritance": "",
@@ -41109,7 +41109,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SyncFolderItemsCreateOrUpdateType",
                         "inheritance": "",
@@ -41128,7 +41128,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SyncFolderItemsDeleteType",
                         "inheritance": "",
@@ -41147,7 +41147,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SyncFolderItemsReadFlagType",
                         "inheritance": "",
@@ -41318,7 +41318,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SyncFolderHierarchyCreateOrUpdateType",
                         "inheritance": "",
@@ -41336,7 +41336,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SyncFolderHierarchyCreateOrUpdateType",
                         "inheritance": "",
@@ -41354,7 +41354,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SyncFolderHierarchyDeleteType",
                         "inheritance": "",
@@ -42552,7 +42552,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "UnknownAttendeeConflictData",
                         "inheritance": "",
@@ -42574,7 +42574,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "IndividualAttendeeConflictData",
                         "inheritance": "",
@@ -42596,7 +42596,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "TooBigGroupAttendeeConflictData",
                         "inheritance": "",
@@ -42618,7 +42618,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GroupAttendeeConflictData",
                         "inheritance": "",
@@ -43681,7 +43681,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AlternateIdType",
                         "inheritance": "",
@@ -43699,7 +43699,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AlternatePublicFolderIdType",
                         "inheritance": "",
@@ -43717,7 +43717,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AlternatePublicFolderItemIdType",
                         "inheritance": "",
@@ -43862,7 +43862,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "PermissionType",
                         "inheritance": "",
@@ -43892,7 +43892,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "CalendarPermissionType",
                         "inheritance": "",
@@ -43922,7 +43922,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",
@@ -45636,7 +45636,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "NonEmptyStringType",
                         "inheritance": "",
@@ -45666,7 +45666,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "EncryptedSharedFolderDataType",
                         "inheritance": "",
@@ -45754,7 +45754,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "InvalidRecipientType",
                         "inheritance": "",
@@ -46843,7 +46843,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ProtectionRuleAllInternalType",
                         "inheritance": "",
@@ -46863,7 +46863,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ProtectionRuleAndType",
                         "inheritance": "",
@@ -46883,7 +46883,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ProtectionRuleRecipientIsType",
                         "inheritance": "",
@@ -46903,7 +46903,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ProtectionRuleSenderDepartmentsType",
                         "inheritance": "",
@@ -46923,7 +46923,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ProtectionRuleTrueType",
                         "inheritance": "",
@@ -47185,7 +47185,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FolderIdType",
                         "inheritance": "",
@@ -47373,7 +47373,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FindMessageTrackingSearchResultType",
                         "inheritance": "",
@@ -47715,7 +47715,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "TrackingPropertyType",
                         "inheritance": "",
@@ -47745,7 +47745,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ArrayOfTrackingPropertiesType",
                         "inheritance": "",
@@ -47775,7 +47775,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "RecipientTrackingEventType",
                         "inheritance": "",
@@ -49878,7 +49878,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "CreateRuleOperationType",
                         "inheritance": "",
@@ -49896,7 +49896,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SetRuleOperationType",
                         "inheritance": "",
@@ -49914,7 +49914,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "DeleteRuleOperationType",
                         "inheritance": "",
@@ -50996,7 +50996,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "PathToExtendedFieldType",
                         "inheritance": "",
@@ -54127,7 +54127,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ImGroupType",
                         "inheritance": "",
@@ -54199,7 +54199,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "PathToExtendedFieldType",
                         "inheritance": "",
@@ -67630,7 +67630,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ItemInfoResponseMessageType",
                         "inheritance": "",
@@ -67724,7 +67724,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "DeleteItemResponseMessageType",
                         "inheritance": "",
@@ -67818,7 +67818,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ItemInfoResponseMessageType",
                         "inheritance": "",
@@ -67912,7 +67912,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "UpdateItemResponseMessageType",
                         "inheritance": "",
@@ -68006,7 +68006,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "UpdateItemInRecoverableItemsResponseMessageType",
                         "inheritance": "",
@@ -68100,7 +68100,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -68194,7 +68194,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -68288,7 +68288,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -68382,7 +68382,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FolderInfoResponseMessageType",
                         "inheritance": "",
@@ -68476,7 +68476,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FolderInfoResponseMessageType",
                         "inheritance": "",
@@ -68570,7 +68570,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FindFolderResponseMessageType",
                         "inheritance": "",
@@ -68664,7 +68664,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FolderInfoResponseMessageType",
                         "inheritance": "",
@@ -68758,7 +68758,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FolderInfoResponseMessageType",
                         "inheritance": "",
@@ -68852,7 +68852,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FolderInfoResponseMessageType",
                         "inheritance": "",
@@ -68946,7 +68946,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FolderInfoResponseMessageType",
                         "inheritance": "",
@@ -69040,7 +69040,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AttachmentInfoResponseMessageType",
                         "inheritance": "",
@@ -69134,7 +69134,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "DeleteAttachmentResponseMessageType",
                         "inheritance": "",
@@ -69228,7 +69228,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "AttachmentInfoResponseMessageType",
                         "inheritance": "",
@@ -69322,7 +69322,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "UploadItemsResponseMessageType",
                         "inheritance": "",
@@ -69416,7 +69416,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ExportItemsResponseMessageType",
                         "inheritance": "",
@@ -69510,7 +69510,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -69604,7 +69604,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetClientAccessTokenResponseMessageType",
                         "inheritance": "",
@@ -69698,7 +69698,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -69792,7 +69792,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -69886,7 +69886,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -69980,7 +69980,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -70074,7 +70074,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -70168,7 +70168,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -70262,7 +70262,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -70356,7 +70356,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FindItemResponseMessageType",
                         "inheritance": "",
@@ -70450,7 +70450,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ItemInfoResponseMessageType",
                         "inheritance": "",
@@ -70544,7 +70544,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ItemInfoResponseMessageType",
                         "inheritance": "",
@@ -70638,7 +70638,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ItemInfoResponseMessageType",
                         "inheritance": "",
@@ -70732,7 +70732,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResolveNamesResponseMessageType",
                         "inheritance": "",
@@ -70826,7 +70826,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ExpandDLResponseMessageType",
                         "inheritance": "",
@@ -70920,7 +70920,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetServerTimeZonesResponseMessageType",
                         "inheritance": "",
@@ -71014,7 +71014,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetEventsResponseMessageType",
                         "inheritance": "",
@@ -71108,7 +71108,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetStreamingEventsResponseMessageType",
                         "inheritance": "",
@@ -71202,7 +71202,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SubscribeResponseMessageType",
                         "inheritance": "",
@@ -71296,7 +71296,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -71390,7 +71390,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetChannelEventsResponseMessageType",
                         "inheritance": "",
@@ -71484,7 +71484,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ChannelSubscribeResponseMessageType",
                         "inheritance": "",
@@ -71578,7 +71578,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -71672,7 +71672,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SendNotificationResponseMessageType",
                         "inheritance": "",
@@ -71766,7 +71766,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SyncFolderHierarchyResponseMessageType",
                         "inheritance": "",
@@ -71860,7 +71860,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SyncFolderItemsResponseMessageType",
                         "inheritance": "",
@@ -71954,7 +71954,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FolderInfoResponseMessageType",
                         "inheritance": "",
@@ -72048,7 +72048,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ConvertIdResponseMessageType",
                         "inheritance": "",
@@ -72142,7 +72142,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetSharingMetadataResponseMessageType",
                         "inheritance": "",
@@ -72236,7 +72236,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "RefreshSharingFolderResponseMessageType",
                         "inheritance": "",
@@ -72330,7 +72330,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetSharingFolderResponseMessageType",
                         "inheritance": "",
@@ -72424,7 +72424,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -72518,7 +72518,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -72612,7 +72612,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetUserConfigurationResponseMessageType",
                         "inheritance": "",
@@ -72706,7 +72706,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -72800,7 +72800,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetRoomListsResponseMessageType",
                         "inheritance": "",
@@ -72894,7 +72894,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetRoomsResponseMessageType",
                         "inheritance": "",
@@ -72988,7 +72988,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetRemindersResponseMessageType",
                         "inheritance": "",
@@ -73082,7 +73082,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "PerformReminderActionResponseMessageType",
                         "inheritance": "",
@@ -73176,7 +73176,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ApplyConversationActionResponseMessageType",
                         "inheritance": "",
@@ -73270,7 +73270,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FindMailboxStatisticsByKeywordsResponseMessageType",
                         "inheritance": "",
@@ -73364,7 +73364,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetSearchableMailboxesResponseMessageType",
                         "inheritance": "",
@@ -73458,7 +73458,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SearchMailboxesResponseMessageType",
                         "inheritance": "",
@@ -73552,7 +73552,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetDiscoverySearchConfigurationResponseMessageType",
                         "inheritance": "",
@@ -73646,7 +73646,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetHoldOnMailboxesResponseMessageType",
                         "inheritance": "",
@@ -73740,7 +73740,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "SetHoldOnMailboxesResponseMessageType",
                         "inheritance": "",
@@ -73834,7 +73834,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetNonIndexableItemStatisticsResponseMessageType",
                         "inheritance": "",
@@ -73928,7 +73928,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetNonIndexableItemDetailsResponseMessageType",
                         "inheritance": "",
@@ -74022,7 +74022,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "FindPeopleResponseMessageType",
                         "inheritance": "",
@@ -74116,7 +74116,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetPasswordExpirationDateResponseMessageType",
                         "inheritance": "",
@@ -74210,7 +74210,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetPersonaResponseMessageType",
                         "inheritance": "",
@@ -74304,7 +74304,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetConversationItemsResponseMessageType",
                         "inheritance": "",
@@ -74398,7 +74398,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetUserRetentionPolicyTagsResponseMessageType",
                         "inheritance": "",
@@ -74492,7 +74492,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetUserPhotoResponseMessageType",
                         "inheritance": "",
@@ -74586,7 +74586,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "MarkAsJunkResponseMessageType",
                         "inheritance": "",
@@ -74680,7 +74680,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -74774,7 +74774,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -74868,7 +74868,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ResponseMessageType",
                         "inheritance": "",
@@ -74962,7 +74962,7 @@
                         "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
                     },
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "GetUnifiedGroupUnseenDataResponseMessageType",
                         "inheritance": "",
@@ -82236,7 +82236,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "ServiceConfigurationType",
                         "inheritance": "",
@@ -88717,7 +88717,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "CultureInfoDataType",
                         "inheritance": "",
@@ -88771,7 +88771,7 @@
             {
                 "attributes": [
                     {
-                        "containsElements": false,
+                        "containsElements": true,
                         "removableFromRequest": false,
                         "type": "string",
                         "inheritance": "",

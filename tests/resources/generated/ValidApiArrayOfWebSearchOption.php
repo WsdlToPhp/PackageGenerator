@@ -22,13 +22,13 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected array $WebSearchOption = [];
+    protected ?array $WebSearchOption = null;
     /**
      * Constructor method for ArrayOfWebSearchOption
      * @uses ApiArrayOfWebSearchOption::setWebSearchOption()
      * @param string[] $webSearchOption
      */
-    public function __construct(array $webSearchOption = [])
+    public function __construct(?array $webSearchOption = null)
     {
         $this
             ->setWebSearchOption($webSearchOption);
@@ -37,7 +37,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * Get WebSearchOption value
      * @return string[]
      */
-    public function getWebSearchOption(): array
+    public function getWebSearchOption(): ?array
     {
         return $this->WebSearchOption;
     }
@@ -47,8 +47,11 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateWebSearchOptionForArrayConstraintsFromSetWebSearchOption(array $values = []): string
+    public static function validateWebSearchOptionForArrayConstraintsFromSetWebSearchOption(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $arrayOfWebSearchOptionWebSearchOptionItem) {
@@ -72,7 +75,7 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
      * @param string[] $webSearchOption
      * @return \ArrayType\ApiArrayOfWebSearchOption
      */
-    public function setWebSearchOption(array $webSearchOption = []): self
+    public function setWebSearchOption(?array $webSearchOption = null): self
     {
         // validation for constraint: array
         if ('' !== ($webSearchOptionArrayErrorMessage = self::validateWebSearchOptionForArrayConstraintsFromSetWebSearchOption($webSearchOption))) {

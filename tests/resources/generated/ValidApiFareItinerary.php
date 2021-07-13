@@ -36,7 +36,7 @@ class ApiFareItinerary extends AbstractStructBase
      * - use: required
      * @var int[]
      */
-    protected array $firstSegmentsIds = [];
+    protected array $firstSegmentsIds;
     /**
      * The clickoutURLParams
      * Meta information extracted from the WSDL
@@ -54,12 +54,12 @@ class ApiFareItinerary extends AbstractStructBase
      * The secondSegmentsIds
      * @var int[]
      */
-    protected array $secondSegmentsIds = [];
+    protected ?array $secondSegmentsIds = null;
     /**
      * The thirdSegmentsIds
      * @var int[]
      */
-    protected array $thirdSegmentsIds = [];
+    protected ?array $thirdSegmentsIds = null;
     /**
      * Constructor method for fareItinerary
      * @uses ApiFareItinerary::setPrice()
@@ -77,7 +77,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param int[] $secondSegmentsIds
      * @param int[] $thirdSegmentsIds
      */
-    public function __construct(\StructType\ApiFareItineraryPrice $price, string $key, array $firstSegmentsIds, ?string $clickoutURLParams = null, ?bool $resident = null, array $secondSegmentsIds = [], array $thirdSegmentsIds = [])
+    public function __construct(\StructType\ApiFareItineraryPrice $price, string $key, array $firstSegmentsIds, ?string $clickoutURLParams = null, ?bool $resident = null, ?array $secondSegmentsIds = null, ?array $thirdSegmentsIds = null)
     {
         $this
             ->setPrice($price)
@@ -144,8 +144,11 @@ class ApiFareItinerary extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFirstSegmentsIdsForArrayConstraintsFromSetFirstSegmentsIds(array $values = []): string
+    public static function validateFirstSegmentsIdsForArrayConstraintsFromSetFirstSegmentsIds(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $fareItineraryFirstSegmentsIdsItem) {
@@ -243,7 +246,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Get secondSegmentsIds value
      * @return int[]
      */
-    public function getSecondSegmentsIds(): array
+    public function getSecondSegmentsIds(): ?array
     {
         return $this->secondSegmentsIds;
     }
@@ -253,8 +256,11 @@ class ApiFareItinerary extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSecondSegmentsIdsForArrayConstraintsFromSetSecondSegmentsIds(array $values = []): string
+    public static function validateSecondSegmentsIdsForArrayConstraintsFromSetSecondSegmentsIds(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $fareItinerarySecondSegmentsIdsItem) {
@@ -276,7 +282,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param int[] $secondSegmentsIds
      * @return \StructType\ApiFareItinerary
      */
-    public function setSecondSegmentsIds(array $secondSegmentsIds = []): self
+    public function setSecondSegmentsIds(?array $secondSegmentsIds = null): self
     {
         // validation for constraint: array
         if ('' !== ($secondSegmentsIdsArrayErrorMessage = self::validateSecondSegmentsIdsForArrayConstraintsFromSetSecondSegmentsIds($secondSegmentsIds))) {
@@ -306,7 +312,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Get thirdSegmentsIds value
      * @return int[]
      */
-    public function getThirdSegmentsIds(): array
+    public function getThirdSegmentsIds(): ?array
     {
         return $this->thirdSegmentsIds;
     }
@@ -316,8 +322,11 @@ class ApiFareItinerary extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateThirdSegmentsIdsForArrayConstraintsFromSetThirdSegmentsIds(array $values = []): string
+    public static function validateThirdSegmentsIdsForArrayConstraintsFromSetThirdSegmentsIds(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $fareItineraryThirdSegmentsIdsItem) {
@@ -339,7 +348,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param int[] $thirdSegmentsIds
      * @return \StructType\ApiFareItinerary
      */
-    public function setThirdSegmentsIds(array $thirdSegmentsIds = []): self
+    public function setThirdSegmentsIds(?array $thirdSegmentsIds = null): self
     {
         // validation for constraint: array
         if ('' !== ($thirdSegmentsIdsArrayErrorMessage = self::validateThirdSegmentsIdsForArrayConstraintsFromSetThirdSegmentsIds($thirdSegmentsIds))) {

@@ -9,7 +9,7 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
  * This class is intended to show that this cas has not been forgotten. It simply isn't used as the minimum occurrences count can't be checked.
  * Checking the minimum occurrences count would be meaningful just before the request is sent which is not done currently.
  */
-final class MinOccursRule extends AbstractMinMaxRule
+class MinOccursRule extends AbstractMinMaxRule
 {
     public function name(): string
     {
