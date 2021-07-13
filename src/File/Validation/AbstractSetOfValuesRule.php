@@ -45,7 +45,7 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
     protected function addValidationMethod(string $parameterName, $value)
     {
         $method = new PhpMethod($this->getValidationMethodName($parameterName), [
-            new PhpFunctionParameter('values', [], 'array'),
+            new PhpFunctionParameter('values', [], '?array'),
         ], AbstractModelFile::TYPE_STRING, PhpMethod::ACCESS_PUBLIC, false, true);
         $model = $this->getFile()->getRestrictionFromStructAttribute($this->getAttribute());
         $itemName = sprintf('%s%sItem', lcfirst($this->getFile()->getModel()->getCleanName(false)), ucfirst($this->getAttribute()->getCleanName()));
@@ -58,6 +58,9 @@ abstract class AbstractSetOfValuesRule extends AbstractRule
         }
 
         $method
+            ->addChild('if (!is_array($values)) {')
+            ->addChild($method->getIndentedString('return \'\';', 1))
+            ->addChild('}')
             ->addChild('$message = \'\';')
             ->addChild('$invalidValues = [];')
             ->addChild(sprintf('foreach ($values as $%s) {', $itemName))
