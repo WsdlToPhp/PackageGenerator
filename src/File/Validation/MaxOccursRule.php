@@ -28,7 +28,7 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
  *   - 3.3 Each sub-sequence in the ·partition· is ·valid· with respect to that model group as defined in Element Sequence Valid (§3.8.4).
  * Note: Clauses clause 1 and clause 2.3.3 do not interact: an element information item validatable by a declaration with a substitution group head in a different namespace is not validatable by a wildcard which accepts the head's namespace but not its own.
  */
-final class MaxOccursRule extends AbstractMinMaxRule
+class MaxOccursRule extends AbstractMinMaxRule
 {
     public function name(): string
     {

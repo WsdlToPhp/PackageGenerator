@@ -4,10 +4,7 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 class ChoiceMinOccursRule extends MinOccursRule
 {
-    /**
-     * @return string
-     */
-    public function name()
+    public function name(): string
     {
         return 'choiceMinOccurs';
     }

@@ -4,10 +4,7 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 
 class ChoiceMaxOccursRule extends MaxOccursRule
 {
-    /**
-     * @return string
-     */
-    public function name()
+    public function name(): string
     {
         return 'choiceMaxOccurs';
     }
