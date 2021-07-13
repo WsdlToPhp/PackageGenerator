@@ -140,10 +140,6 @@ final class StructAttribute extends AbstractModel
      */
     public function getDefaultValue()
     {
-        if ($this->isArray() || $this->isList()) {
-            return [];
-        }
-
         if (($struct = $this->getTypeStruct()) && $struct->isStruct()) {
             return null;
         }
