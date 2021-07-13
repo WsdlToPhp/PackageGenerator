@@ -80,7 +80,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - ref: soapenc:arrayType
      * @var \StructType\ApiBannerPhraseInfo[]
      */
-    protected array $Phrases = [];
+    protected ?array $Phrases = null;
     /**
      * The MinusKeywords
      * Meta information extracted from the WSDL
@@ -90,7 +90,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - ref: soapenc:arrayType
      * @var string[]
      */
-    protected array $MinusKeywords = [];
+    protected ?array $MinusKeywords = null;
     /**
      * The StatusActivating
      * Meta information extracted from the WSDL
@@ -156,7 +156,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - ref: soapenc:arrayType
      * @var \StructType\ApiSitelink[]
      */
-    protected array $Sitelinks = [];
+    protected ?array $Sitelinks = null;
     /**
      * The AdWarnings
      * Meta information extracted from the WSDL
@@ -166,7 +166,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - ref: soapenc:arrayType
      * @var string[]
      */
-    protected array $AdWarnings = [];
+    protected ?array $AdWarnings = null;
     /**
      * The FixedOnModeration
      * Meta information extracted from the WSDL
@@ -183,7 +183,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - ref: soapenc:arrayType
      * @var \StructType\ApiRejectReason[]
      */
-    protected array $ModerateRejectionReasons = [];
+    protected ?array $ModerateRejectionReasons = null;
     /**
      * The Type
      * Meta information extracted from the WSDL
@@ -303,7 +303,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string $statusAdImageModerate
      * @param int $adGroupMobileBidAdjustment
      */
-    public function __construct(?int $bannerID = null, ?int $campaignID = null, ?string $title = null, ?string $text = null, ?string $href = null, ?string $domain = null, ?\StructType\ApiContactInfo $contactInfo = null, ?string $geo = null, array $phrases = [], array $minusKeywords = [], ?string $statusActivating = null, ?string $statusArchive = null, ?string $statusBannerModerate = null, ?string $statusPhrasesModerate = null, ?string $statusPhoneModerate = null, ?string $statusShow = null, ?string $isActive = null, ?string $statusSitelinksModerate = null, array $sitelinks = [], array $adWarnings = [], ?string $fixedOnModeration = null, array $moderateRejectionReasons = [], ?string $type = null, ?int $adGroupID = null, ?string $adGroupName = null, ?string $autoMinusWords = null, ?string $ageLabel = null, ?string $adImageHash = null, ?string $statusAdImageModerate = null, ?int $adGroupMobileBidAdjustment = null)
+    public function __construct(?int $bannerID = null, ?int $campaignID = null, ?string $title = null, ?string $text = null, ?string $href = null, ?string $domain = null, ?\StructType\ApiContactInfo $contactInfo = null, ?string $geo = null, ?array $phrases = null, ?array $minusKeywords = null, ?string $statusActivating = null, ?string $statusArchive = null, ?string $statusBannerModerate = null, ?string $statusPhrasesModerate = null, ?string $statusPhoneModerate = null, ?string $statusShow = null, ?string $isActive = null, ?string $statusSitelinksModerate = null, ?array $sitelinks = null, ?array $adWarnings = null, ?string $fixedOnModeration = null, ?array $moderateRejectionReasons = null, ?string $type = null, ?int $adGroupID = null, ?string $adGroupName = null, ?string $autoMinusWords = null, ?string $ageLabel = null, ?string $adImageHash = null, ?string $statusAdImageModerate = null, ?int $adGroupMobileBidAdjustment = null)
     {
         $this
             ->setBannerID($bannerID)
@@ -521,7 +521,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get Phrases value
      * @return \StructType\ApiBannerPhraseInfo[]
      */
-    public function getPhrases(): array
+    public function getPhrases(): ?array
     {
         return $this->Phrases;
     }
@@ -531,8 +531,11 @@ class ApiBannerInfo extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePhrasesForArrayConstraintsFromSetPhrases(array $values = []): string
+    public static function validatePhrasesForArrayConstraintsFromSetPhrases(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $bannerInfoPhrasesItem) {
@@ -554,7 +557,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param \StructType\ApiBannerPhraseInfo[] $phrases
      * @return \StructType\ApiBannerInfo
      */
-    public function setPhrases(array $phrases = []): self
+    public function setPhrases(?array $phrases = null): self
     {
         // validation for constraint: array
         if ('' !== ($phrasesArrayErrorMessage = self::validatePhrasesForArrayConstraintsFromSetPhrases($phrases))) {
@@ -584,7 +587,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get MinusKeywords value
      * @return string[]
      */
-    public function getMinusKeywords(): array
+    public function getMinusKeywords(): ?array
     {
         return $this->MinusKeywords;
     }
@@ -594,8 +597,11 @@ class ApiBannerInfo extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMinusKeywordsForArrayConstraintsFromSetMinusKeywords(array $values = []): string
+    public static function validateMinusKeywordsForArrayConstraintsFromSetMinusKeywords(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $bannerInfoMinusKeywordsItem) {
@@ -617,7 +623,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string[] $minusKeywords
      * @return \StructType\ApiBannerInfo
      */
-    public function setMinusKeywords(array $minusKeywords = []): self
+    public function setMinusKeywords(?array $minusKeywords = null): self
     {
         // validation for constraint: array
         if ('' !== ($minusKeywordsArrayErrorMessage = self::validateMinusKeywordsForArrayConstraintsFromSetMinusKeywords($minusKeywords))) {
@@ -831,7 +837,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get Sitelinks value
      * @return \StructType\ApiSitelink[]
      */
-    public function getSitelinks(): array
+    public function getSitelinks(): ?array
     {
         return $this->Sitelinks;
     }
@@ -841,8 +847,11 @@ class ApiBannerInfo extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSitelinksForArrayConstraintsFromSetSitelinks(array $values = []): string
+    public static function validateSitelinksForArrayConstraintsFromSetSitelinks(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $bannerInfoSitelinksItem) {
@@ -864,7 +873,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param \StructType\ApiSitelink[] $sitelinks
      * @return \StructType\ApiBannerInfo
      */
-    public function setSitelinks(array $sitelinks = []): self
+    public function setSitelinks(?array $sitelinks = null): self
     {
         // validation for constraint: array
         if ('' !== ($sitelinksArrayErrorMessage = self::validateSitelinksForArrayConstraintsFromSetSitelinks($sitelinks))) {
@@ -894,7 +903,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get AdWarnings value
      * @return string[]
      */
-    public function getAdWarnings(): array
+    public function getAdWarnings(): ?array
     {
         return $this->AdWarnings;
     }
@@ -904,8 +913,11 @@ class ApiBannerInfo extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAdWarningsForArrayConstraintsFromSetAdWarnings(array $values = []): string
+    public static function validateAdWarningsForArrayConstraintsFromSetAdWarnings(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $bannerInfoAdWarningsItem) {
@@ -927,7 +939,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param string[] $adWarnings
      * @return \StructType\ApiBannerInfo
      */
-    public function setAdWarnings(array $adWarnings = []): self
+    public function setAdWarnings(?array $adWarnings = null): self
     {
         // validation for constraint: array
         if ('' !== ($adWarningsArrayErrorMessage = self::validateAdWarningsForArrayConstraintsFromSetAdWarnings($adWarnings))) {
@@ -980,7 +992,7 @@ class ApiBannerInfo extends AbstractStructBase
      * Get ModerateRejectionReasons value
      * @return \StructType\ApiRejectReason[]
      */
-    public function getModerateRejectionReasons(): array
+    public function getModerateRejectionReasons(): ?array
     {
         return $this->ModerateRejectionReasons;
     }
@@ -990,8 +1002,11 @@ class ApiBannerInfo extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateModerateRejectionReasonsForArrayConstraintsFromSetModerateRejectionReasons(array $values = []): string
+    public static function validateModerateRejectionReasonsForArrayConstraintsFromSetModerateRejectionReasons(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $bannerInfoModerateRejectionReasonsItem) {
@@ -1013,7 +1028,7 @@ class ApiBannerInfo extends AbstractStructBase
      * @param \StructType\ApiRejectReason[] $moderateRejectionReasons
      * @return \StructType\ApiBannerInfo
      */
-    public function setModerateRejectionReasons(array $moderateRejectionReasons = []): self
+    public function setModerateRejectionReasons(?array $moderateRejectionReasons = null): self
     {
         // validation for constraint: array
         if ('' !== ($moderateRejectionReasonsArrayErrorMessage = self::validateModerateRejectionReasonsForArrayConstraintsFromSetModerateRejectionReasons($moderateRejectionReasons))) {

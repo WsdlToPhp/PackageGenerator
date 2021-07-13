@@ -36,7 +36,7 @@ class ApiAddressType extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected array $AddressLine = [];
+    protected ?array $AddressLine = null;
     /**
      * The CityName
      * Meta information extracted from the WSDL
@@ -154,7 +154,7 @@ class ApiAddressType extends AbstractStructBase
      * @param string $shareSynchInd
      * @param string $shareMarketInd
      */
-    public function __construct(?\StructType\ApiStreetNmbr $streetNmbr = null, array $addressLine = [], ?string $cityName = null, ?string $postalCode = null, ?string $county = null, ?\StructType\ApiStateProvType $stateProv = null, ?\StructType\ApiCountryNameType $countryName = null, ?string $type = null, ?string $remark = null, ?bool $formattedInd = null, ?string $shareSynchInd = null, ?string $shareMarketInd = null)
+    public function __construct(?\StructType\ApiStreetNmbr $streetNmbr = null, ?array $addressLine = null, ?string $cityName = null, ?string $postalCode = null, ?string $county = null, ?\StructType\ApiStateProvType $stateProv = null, ?\StructType\ApiCountryNameType $countryName = null, ?string $type = null, ?string $remark = null, ?bool $formattedInd = null, ?string $shareSynchInd = null, ?string $shareMarketInd = null)
     {
         $this
             ->setStreetNmbr($streetNmbr)
@@ -193,7 +193,7 @@ class ApiAddressType extends AbstractStructBase
      * Get AddressLine value
      * @return string[]
      */
-    public function getAddressLine(): array
+    public function getAddressLine(): ?array
     {
         return $this->AddressLine;
     }
@@ -203,8 +203,11 @@ class ApiAddressType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAddressLineForArrayConstraintsFromSetAddressLine(array $values = []): string
+    public static function validateAddressLineForArrayConstraintsFromSetAddressLine(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $addressTypeAddressLineItem) {
@@ -274,7 +277,7 @@ class ApiAddressType extends AbstractStructBase
      * @param string[] $addressLine
      * @return \StructType\ApiAddressType
      */
-    public function setAddressLine(array $addressLine = []): self
+    public function setAddressLine(?array $addressLine = null): self
     {
         // validation for constraint: array
         if ('' !== ($addressLineArrayErrorMessage = self::validateAddressLineForArrayConstraintsFromSetAddressLine($addressLine))) {

@@ -22,13 +22,13 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected array $string = [];
+    protected ?array $string = null;
     /**
      * Constructor method for ArrayOfString
      * @uses ApiArrayOfString::setString()
      * @param string[] $string
      */
-    public function __construct(array $string = [])
+    public function __construct(?array $string = null)
     {
         $this
             ->setString($string);
@@ -37,7 +37,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * Get string value
      * @return string[]
      */
-    public function getString(): array
+    public function getString(): ?array
     {
         return $this->string;
     }
@@ -47,8 +47,11 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateStringForArrayConstraintsFromSetString(array $values = []): string
+    public static function validateStringForArrayConstraintsFromSetString(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $arrayOfStringStringItem) {
@@ -70,7 +73,7 @@ class ApiArrayOfString extends AbstractStructArrayBase
      * @param string[] $string
      * @return \ArrayType\ApiArrayOfString
      */
-    public function setString(array $string = []): self
+    public function setString(?array $string = null): self
     {
         // validation for constraint: array
         if ('' !== ($stringArrayErrorMessage = self::validateStringForArrayConstraintsFromSetString($string))) {

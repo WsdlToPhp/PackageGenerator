@@ -284,7 +284,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * - minOccurs: 0
      * @var \StructType\ApiBillingAgreementDetailsType[]
      */
-    protected array $BillingAgreementDetails = [];
+    protected ?array $BillingAgreementDetails = null;
     /**
      * The PromoCodes
      * Meta information extracted from the WSDL
@@ -293,7 +293,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected array $PromoCodes = [];
+    protected ?array $PromoCodes = null;
     /**
      * The PayPalCheckOutBtnType
      * Meta information extracted from the WSDL
@@ -382,7 +382,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * - minOccurs: 0
      * @var \StructType\ApiOtherPaymentMethodDetailsType[]
      */
-    protected array $OtherPaymentMethods = [];
+    protected ?array $OtherPaymentMethods = null;
     /**
      * The BuyerDetails
      * Meta information extracted from the WSDL
@@ -400,7 +400,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * - minOccurs: 0
      * @var \StructType\ApiPaymentDetailsType[]
      */
-    protected array $PaymentDetails = [];
+    protected ?array $PaymentDetails = null;
     /**
      * The FlatRateShippingOptions
      * Meta information extracted from the WSDL
@@ -409,7 +409,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * - minOccurs: 0
      * @var \StructType\ApiShippingOptionType[]
      */
-    protected array $FlatRateShippingOptions = [];
+    protected ?array $FlatRateShippingOptions = null;
     /**
      * The CallbackTimeout
      * Meta information extracted from the WSDL
@@ -517,7 +517,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected array $SurveyChoice = [];
+    protected ?array $SurveyChoice = null;
     /**
      * The TotalType
      * Meta information extracted from the WSDL
@@ -542,7 +542,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * - minOccurs: 0
      * @var \StructType\ApiIncentiveInfoType[]
      */
-    protected array $Incentives = [];
+    protected ?array $Incentives = null;
     /**
      * The ReqInstrumentDetails
      * Meta information extracted from the WSDL
@@ -597,7 +597,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * - minOccurs: 0
      * @var \StructType\ApiCoupledBucketsType[]
      */
-    protected array $CoupledBuckets = [];
+    protected ?array $CoupledBuckets = null;
     /**
      * Constructor method for SetExpressCheckoutRequestDetailsType
      * @uses ApiSetExpressCheckoutRequestDetailsType::setOrderTotal()
@@ -735,7 +735,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param \StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails
      * @param \StructType\ApiCoupledBucketsType[] $coupledBuckets
      */
-    public function __construct(?\StructType\ApiBasicAmountType $orderTotal = null, ?string $returnURL = null, ?string $cancelURL = null, ?string $trackingImageURL = null, ?string $giropaySuccessURL = null, ?string $giropayCancelURL = null, ?string $banktxnPendingURL = null, ?string $token = null, ?\StructType\ApiBasicAmountType $maxAmount = null, ?string $orderDescription = null, ?string $custom = null, ?string $invoiceID = null, ?string $reqConfirmShipping = null, ?string $reqBillingAddress = null, ?\StructType\ApiAddressType $billingAddress = null, ?string $noShipping = null, ?string $addressOverride = null, ?string $localeCode = null, ?string $pageStyle = null, ?string $cpp_header_image = null, ?string $cpp_header_border_color = null, ?string $cpp_header_back_color = null, ?string $cpp_payflow_color = null, ?string $cpp_cart_border_color = null, ?string $cpp_logo_image = null, ?\StructType\ApiAddressType $address = null, ?string $paymentAction = null, ?string $solutionType = null, ?string $landingPage = null, ?string $buyerEmail = null, ?string $channelType = null, array $billingAgreementDetails = [], array $promoCodes = [], ?string $payPalCheckOutBtnType = null, ?string $productCategory = null, ?string $shippingMethod = null, ?string $profileAddressChangeDate = null, ?string $allowNote = null, ?\StructType\ApiFundingSourceDetailsType $fundingSourceDetails = null, ?string $brandName = null, ?string $callbackURL = null, ?\StructType\ApiEnhancedCheckoutDataType $enhancedCheckoutData = null, array $otherPaymentMethods = [], ?\StructType\ApiBuyerDetailsType $buyerDetails = null, array $paymentDetails = [], array $flatRateShippingOptions = [], ?string $callbackTimeout = null, ?string $callbackVersion = null, ?string $customerServiceNumber = null, ?string $giftMessageEnable = null, ?string $giftReceiptEnable = null, ?string $giftWrapEnable = null, ?string $giftWrapName = null, ?\StructType\ApiBasicAmountType $giftWrapAmount = null, ?string $buyerEmailOptInEnable = null, ?string $surveyEnable = null, ?string $surveyQuestion = null, array $surveyChoice = [], ?string $totalType = null, ?string $noteToBuyer = null, array $incentives = [], ?string $reqInstrumentDetails = null, ?\StructType\ApiExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails = null, ?\StructType\ApiFlowControlDetailsType $flowControlDetails = null, ?\StructType\ApiDisplayControlDetailsType $displayControlDetails = null, ?\StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails = null, array $coupledBuckets = [])
+    public function __construct(?\StructType\ApiBasicAmountType $orderTotal = null, ?string $returnURL = null, ?string $cancelURL = null, ?string $trackingImageURL = null, ?string $giropaySuccessURL = null, ?string $giropayCancelURL = null, ?string $banktxnPendingURL = null, ?string $token = null, ?\StructType\ApiBasicAmountType $maxAmount = null, ?string $orderDescription = null, ?string $custom = null, ?string $invoiceID = null, ?string $reqConfirmShipping = null, ?string $reqBillingAddress = null, ?\StructType\ApiAddressType $billingAddress = null, ?string $noShipping = null, ?string $addressOverride = null, ?string $localeCode = null, ?string $pageStyle = null, ?string $cpp_header_image = null, ?string $cpp_header_border_color = null, ?string $cpp_header_back_color = null, ?string $cpp_payflow_color = null, ?string $cpp_cart_border_color = null, ?string $cpp_logo_image = null, ?\StructType\ApiAddressType $address = null, ?string $paymentAction = null, ?string $solutionType = null, ?string $landingPage = null, ?string $buyerEmail = null, ?string $channelType = null, ?array $billingAgreementDetails = null, ?array $promoCodes = null, ?string $payPalCheckOutBtnType = null, ?string $productCategory = null, ?string $shippingMethod = null, ?string $profileAddressChangeDate = null, ?string $allowNote = null, ?\StructType\ApiFundingSourceDetailsType $fundingSourceDetails = null, ?string $brandName = null, ?string $callbackURL = null, ?\StructType\ApiEnhancedCheckoutDataType $enhancedCheckoutData = null, ?array $otherPaymentMethods = null, ?\StructType\ApiBuyerDetailsType $buyerDetails = null, ?array $paymentDetails = null, ?array $flatRateShippingOptions = null, ?string $callbackTimeout = null, ?string $callbackVersion = null, ?string $customerServiceNumber = null, ?string $giftMessageEnable = null, ?string $giftReceiptEnable = null, ?string $giftWrapEnable = null, ?string $giftWrapName = null, ?\StructType\ApiBasicAmountType $giftWrapAmount = null, ?string $buyerEmailOptInEnable = null, ?string $surveyEnable = null, ?string $surveyQuestion = null, ?array $surveyChoice = null, ?string $totalType = null, ?string $noteToBuyer = null, ?array $incentives = null, ?string $reqInstrumentDetails = null, ?\StructType\ApiExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails = null, ?\StructType\ApiFlowControlDetailsType $flowControlDetails = null, ?\StructType\ApiDisplayControlDetailsType $displayControlDetails = null, ?\StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails = null, ?array $coupledBuckets = null)
     {
         $this
             ->setOrderTotal($orderTotal)
@@ -1519,7 +1519,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Get BillingAgreementDetails value
      * @return \StructType\ApiBillingAgreementDetailsType[]
      */
-    public function getBillingAgreementDetails(): array
+    public function getBillingAgreementDetails(): ?array
     {
         return $this->BillingAgreementDetails;
     }
@@ -1529,8 +1529,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBillingAgreementDetailsForArrayConstraintsFromSetBillingAgreementDetails(array $values = []): string
+    public static function validateBillingAgreementDetailsForArrayConstraintsFromSetBillingAgreementDetails(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeBillingAgreementDetailsItem) {
@@ -1552,7 +1555,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param \StructType\ApiBillingAgreementDetailsType[] $billingAgreementDetails
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setBillingAgreementDetails(array $billingAgreementDetails = []): self
+    public function setBillingAgreementDetails(?array $billingAgreementDetails = null): self
     {
         // validation for constraint: array
         if ('' !== ($billingAgreementDetailsArrayErrorMessage = self::validateBillingAgreementDetailsForArrayConstraintsFromSetBillingAgreementDetails($billingAgreementDetails))) {
@@ -1582,7 +1585,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Get PromoCodes value
      * @return string[]
      */
-    public function getPromoCodes(): array
+    public function getPromoCodes(): ?array
     {
         return $this->PromoCodes;
     }
@@ -1592,8 +1595,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePromoCodesForArrayConstraintsFromSetPromoCodes(array $values = []): string
+    public static function validatePromoCodesForArrayConstraintsFromSetPromoCodes(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypePromoCodesItem) {
@@ -1615,7 +1621,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param string[] $promoCodes
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setPromoCodes(array $promoCodes = []): self
+    public function setPromoCodes(?array $promoCodes = null): self
     {
         // validation for constraint: array
         if ('' !== ($promoCodesArrayErrorMessage = self::validatePromoCodesForArrayConstraintsFromSetPromoCodes($promoCodes))) {
@@ -1850,7 +1856,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Get OtherPaymentMethods value
      * @return \StructType\ApiOtherPaymentMethodDetailsType[]
      */
-    public function getOtherPaymentMethods(): array
+    public function getOtherPaymentMethods(): ?array
     {
         return $this->OtherPaymentMethods;
     }
@@ -1860,8 +1866,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateOtherPaymentMethodsForArrayConstraintsFromSetOtherPaymentMethods(array $values = []): string
+    public static function validateOtherPaymentMethodsForArrayConstraintsFromSetOtherPaymentMethods(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeOtherPaymentMethodsItem) {
@@ -1883,7 +1892,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param \StructType\ApiOtherPaymentMethodDetailsType[] $otherPaymentMethods
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setOtherPaymentMethods(array $otherPaymentMethods = []): self
+    public function setOtherPaymentMethods(?array $otherPaymentMethods = null): self
     {
         // validation for constraint: array
         if ('' !== ($otherPaymentMethodsArrayErrorMessage = self::validateOtherPaymentMethodsForArrayConstraintsFromSetOtherPaymentMethods($otherPaymentMethods))) {
@@ -1932,7 +1941,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Get PaymentDetails value
      * @return \StructType\ApiPaymentDetailsType[]
      */
-    public function getPaymentDetails(): array
+    public function getPaymentDetails(): ?array
     {
         return $this->PaymentDetails;
     }
@@ -1942,8 +1951,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePaymentDetailsForArrayConstraintsFromSetPaymentDetails(array $values = []): string
+    public static function validatePaymentDetailsForArrayConstraintsFromSetPaymentDetails(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypePaymentDetailsItem) {
@@ -1965,7 +1977,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param \StructType\ApiPaymentDetailsType[] $paymentDetails
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setPaymentDetails(array $paymentDetails = []): self
+    public function setPaymentDetails(?array $paymentDetails = null): self
     {
         // validation for constraint: array
         if ('' !== ($paymentDetailsArrayErrorMessage = self::validatePaymentDetailsForArrayConstraintsFromSetPaymentDetails($paymentDetails))) {
@@ -2003,7 +2015,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Get FlatRateShippingOptions value
      * @return \StructType\ApiShippingOptionType[]
      */
-    public function getFlatRateShippingOptions(): array
+    public function getFlatRateShippingOptions(): ?array
     {
         return $this->FlatRateShippingOptions;
     }
@@ -2013,8 +2025,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFlatRateShippingOptionsForArrayConstraintsFromSetFlatRateShippingOptions(array $values = []): string
+    public static function validateFlatRateShippingOptionsForArrayConstraintsFromSetFlatRateShippingOptions(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeFlatRateShippingOptionsItem) {
@@ -2036,7 +2051,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param \StructType\ApiShippingOptionType[] $flatRateShippingOptions
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setFlatRateShippingOptions(array $flatRateShippingOptions = []): self
+    public function setFlatRateShippingOptions(?array $flatRateShippingOptions = null): self
     {
         // validation for constraint: array
         if ('' !== ($flatRateShippingOptionsArrayErrorMessage = self::validateFlatRateShippingOptionsForArrayConstraintsFromSetFlatRateShippingOptions($flatRateShippingOptions))) {
@@ -2315,7 +2330,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Get SurveyChoice value
      * @return string[]
      */
-    public function getSurveyChoice(): array
+    public function getSurveyChoice(): ?array
     {
         return $this->SurveyChoice;
     }
@@ -2325,8 +2340,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSurveyChoiceForArrayConstraintsFromSetSurveyChoice(array $values = []): string
+    public static function validateSurveyChoiceForArrayConstraintsFromSetSurveyChoice(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeSurveyChoiceItem) {
@@ -2348,7 +2366,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param string[] $surveyChoice
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setSurveyChoice(array $surveyChoice = []): self
+    public function setSurveyChoice(?array $surveyChoice = null): self
     {
         // validation for constraint: array
         if ('' !== ($surveyChoiceArrayErrorMessage = self::validateSurveyChoiceForArrayConstraintsFromSetSurveyChoice($surveyChoice))) {
@@ -2427,7 +2445,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Get Incentives value
      * @return \StructType\ApiIncentiveInfoType[]
      */
-    public function getIncentives(): array
+    public function getIncentives(): ?array
     {
         return $this->Incentives;
     }
@@ -2437,8 +2455,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateIncentivesForArrayConstraintsFromSetIncentives(array $values = []): string
+    public static function validateIncentivesForArrayConstraintsFromSetIncentives(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeIncentivesItem) {
@@ -2460,7 +2481,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param \StructType\ApiIncentiveInfoType[] $incentives
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setIncentives(array $incentives = []): self
+    public function setIncentives(?array $incentives = null): self
     {
         // validation for constraint: array
         if ('' !== ($incentivesArrayErrorMessage = self::validateIncentivesForArrayConstraintsFromSetIncentives($incentives))) {
@@ -2589,7 +2610,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * Get CoupledBuckets value
      * @return \StructType\ApiCoupledBucketsType[]
      */
-    public function getCoupledBuckets(): array
+    public function getCoupledBuckets(): ?array
     {
         return $this->CoupledBuckets;
     }
@@ -2599,8 +2620,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCoupledBucketsForArrayConstraintsFromSetCoupledBuckets(array $values = []): string
+    public static function validateCoupledBucketsForArrayConstraintsFromSetCoupledBuckets(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $setExpressCheckoutRequestDetailsTypeCoupledBucketsItem) {
@@ -2622,7 +2646,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param \StructType\ApiCoupledBucketsType[] $coupledBuckets
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
-    public function setCoupledBuckets(array $coupledBuckets = []): self
+    public function setCoupledBuckets(?array $coupledBuckets = null): self
     {
         // validation for constraint: array
         if ('' !== ($coupledBucketsArrayErrorMessage = self::validateCoupledBucketsForArrayConstraintsFromSetCoupledBuckets($coupledBuckets))) {

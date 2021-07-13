@@ -27,7 +27,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailCalcCostShipping
      * @var \StructType\ApiMutualSettlementDetailCalcCostShipping[]
      */
-    protected array $mutualSettlementDetailCalcCostShipping = [];
+    protected ?array $mutualSettlementDetailCalcCostShipping = null;
     /**
      * The mutualSettlementDetailCashFlow
      * Meta information extracted from the WSDL
@@ -40,7 +40,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailCashFlow
      * @var \StructType\ApiMutualSettlementDetailCashFlow[]
      */
-    protected array $mutualSettlementDetailCashFlow = [];
+    protected ?array $mutualSettlementDetailCashFlow = null;
     /**
      * The mutualSettlementDetailClientPayment
      * Meta information extracted from the WSDL
@@ -53,7 +53,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailClientPayment
      * @var \StructType\ApiMutualSettlementDetailClientPayment[]
      */
-    protected array $mutualSettlementDetailClientPayment = [];
+    protected ?array $mutualSettlementDetailClientPayment = null;
     /**
      * The mutualSettlementDetailPostReturnRegistry
      * Meta information extracted from the WSDL
@@ -66,7 +66,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailPostReturnRegistry
      * @var \StructType\ApiMutualSettlementDetailPostReturnRegistry[]
      */
-    protected array $mutualSettlementDetailPostReturnRegistry = [];
+    protected ?array $mutualSettlementDetailPostReturnRegistry = null;
     /**
      * The mutualSettlementDetailRouteList
      * Meta information extracted from the WSDL
@@ -79,7 +79,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailRouteList
      * @var \StructType\ApiMutualSettlementDetailRouteList[]
      */
-    protected array $mutualSettlementDetailRouteList = [];
+    protected ?array $mutualSettlementDetailRouteList = null;
     /**
      * The mutualSettlementDetailTrackNumberPayment
      * Meta information extracted from the WSDL
@@ -92,7 +92,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailTrackNumberPayment
      * @var \StructType\ApiMutualSettlementDetailTrackNumberPayment[]
      */
-    protected array $mutualSettlementDetailTrackNumberPayment = [];
+    protected ?array $mutualSettlementDetailTrackNumberPayment = null;
     /**
      * The mutualSettlementDetailServiceRegistration
      * Meta information extracted from the WSDL
@@ -105,7 +105,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailServiceRegistration
      * @var \StructType\ApiMutualSettlementDetailServiceRegistration[]
      */
-    protected array $mutualSettlementDetailServiceRegistration = [];
+    protected ?array $mutualSettlementDetailServiceRegistration = null;
     /**
      * The mutualSettlementDetailAcceptanceRegistry
      * Meta information extracted from the WSDL
@@ -118,7 +118,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailAcceptanceRegistry
      * @var \StructType\ApiMutualSettlementDetailAcceptanceRegistry[]
      */
-    protected array $mutualSettlementDetailAcceptanceRegistry = [];
+    protected ?array $mutualSettlementDetailAcceptanceRegistry = null;
     /**
      * The mutualSettlementDetailAdditionalChargeFare
      * Meta information extracted from the WSDL
@@ -131,7 +131,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailAdditionalChargeFare
      * @var \StructType\ApiMutualSettlementDetailAdditionalChargeFare[]
      */
-    protected array $mutualSettlementDetailAdditionalChargeFare = [];
+    protected ?array $mutualSettlementDetailAdditionalChargeFare = null;
     /**
      * The mutualSettlementDetailOutgoingRequestToCarrier
      * Meta information extracted from the WSDL
@@ -144,7 +144,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailOutgoingRequestToCarrier
      * @var \StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier[]
      */
-    protected array $mutualSettlementDetailOutgoingRequestToCarrier = [];
+    protected ?array $mutualSettlementDetailOutgoingRequestToCarrier = null;
     /**
      * The mutualSettlementDetailSMSInformation
      * Meta information extracted from the WSDL
@@ -157,7 +157,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailSMSInformation
      * @var \StructType\ApiMutualSettlementDetailSMSInformation[]
      */
-    protected array $mutualSettlementDetailSMSInformation = [];
+    protected ?array $mutualSettlementDetailSMSInformation = null;
     /**
      * The mutualSettlementDetailBuyerGoodsReturn
      * Meta information extracted from the WSDL
@@ -170,7 +170,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailBuyerGoodsReturn
      * @var \StructType\ApiMutualSettlementDetailBuyerGoodsReturn[]
      */
-    protected array $mutualSettlementDetailBuyerGoodsReturn = [];
+    protected ?array $mutualSettlementDetailBuyerGoodsReturn = null;
     /**
      * The mutualSettlementDetailProductsPackaging
      * Meta information extracted from the WSDL
@@ -183,7 +183,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailProductsPackaging
      * @var \StructType\ApiMutualSettlementDetailProductsPackaging[]
      */
-    protected array $mutualSettlementDetailProductsPackaging = [];
+    protected ?array $mutualSettlementDetailProductsPackaging = null;
     /**
      * The mutualSettlementDetailAdjustmentWriteRegisters
      * Meta information extracted from the WSDL
@@ -196,7 +196,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailAdjustmentWriteRegisters
      * @var \StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters[]
      */
-    protected array $mutualSettlementDetailAdjustmentWriteRegisters = [];
+    protected ?array $mutualSettlementDetailAdjustmentWriteRegisters = null;
     /**
      * The mutualSettlementDetailSafeCustody
      * Meta information extracted from the WSDL
@@ -209,7 +209,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailSafeCustody
      * @var \StructType\ApiMutualSettlementDetailSafeCustody[]
      */
-    protected array $mutualSettlementDetailSafeCustody = [];
+    protected ?array $mutualSettlementDetailSafeCustody = null;
     /**
      * The mutualSettlementDetailSafeCustodyCalculation
      * Meta information extracted from the WSDL
@@ -222,7 +222,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailSafeCustodyCalculation
      * @var \StructType\ApiMutualSettlementDetailSafeCustodyCalculation[]
      */
-    protected array $mutualSettlementDetailSafeCustodyCalculation = [];
+    protected ?array $mutualSettlementDetailSafeCustodyCalculation = null;
     /**
      * The mutualSettlementDetailRegisterStorage
      * Meta information extracted from the WSDL
@@ -235,7 +235,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailRegisterStorage
      * @var \StructType\ApiMutualSettlementDetailRegisterStorage[]
      */
-    protected array $mutualSettlementDetailRegisterStorage = [];
+    protected ?array $mutualSettlementDetailRegisterStorage = null;
     /**
      * Constructor method for details
      * @uses ApiDetails::setMutualSettlementDetailCalcCostShipping()
@@ -273,7 +273,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailSafeCustodyCalculation[] $mutualSettlementDetailSafeCustodyCalculation
      * @param \StructType\ApiMutualSettlementDetailRegisterStorage[] $mutualSettlementDetailRegisterStorage
      */
-    public function __construct(array $mutualSettlementDetailCalcCostShipping = [], array $mutualSettlementDetailCashFlow = [], array $mutualSettlementDetailClientPayment = [], array $mutualSettlementDetailPostReturnRegistry = [], array $mutualSettlementDetailRouteList = [], array $mutualSettlementDetailTrackNumberPayment = [], array $mutualSettlementDetailServiceRegistration = [], array $mutualSettlementDetailAcceptanceRegistry = [], array $mutualSettlementDetailAdditionalChargeFare = [], array $mutualSettlementDetailOutgoingRequestToCarrier = [], array $mutualSettlementDetailSMSInformation = [], array $mutualSettlementDetailBuyerGoodsReturn = [], array $mutualSettlementDetailProductsPackaging = [], array $mutualSettlementDetailAdjustmentWriteRegisters = [], array $mutualSettlementDetailSafeCustody = [], array $mutualSettlementDetailSafeCustodyCalculation = [], array $mutualSettlementDetailRegisterStorage = [])
+    public function __construct(?array $mutualSettlementDetailCalcCostShipping = null, ?array $mutualSettlementDetailCashFlow = null, ?array $mutualSettlementDetailClientPayment = null, ?array $mutualSettlementDetailPostReturnRegistry = null, ?array $mutualSettlementDetailRouteList = null, ?array $mutualSettlementDetailTrackNumberPayment = null, ?array $mutualSettlementDetailServiceRegistration = null, ?array $mutualSettlementDetailAcceptanceRegistry = null, ?array $mutualSettlementDetailAdditionalChargeFare = null, ?array $mutualSettlementDetailOutgoingRequestToCarrier = null, ?array $mutualSettlementDetailSMSInformation = null, ?array $mutualSettlementDetailBuyerGoodsReturn = null, ?array $mutualSettlementDetailProductsPackaging = null, ?array $mutualSettlementDetailAdjustmentWriteRegisters = null, ?array $mutualSettlementDetailSafeCustody = null, ?array $mutualSettlementDetailSafeCustodyCalculation = null, ?array $mutualSettlementDetailRegisterStorage = null)
     {
         $this
             ->setMutualSettlementDetailCalcCostShipping($mutualSettlementDetailCalcCostShipping)
@@ -298,7 +298,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailCalcCostShipping value
      * @return \StructType\ApiMutualSettlementDetailCalcCostShipping[]
      */
-    public function getMutualSettlementDetailCalcCostShipping(): array
+    public function getMutualSettlementDetailCalcCostShipping(): ?array
     {
         return isset($this->mutualSettlementDetailCalcCostShipping) ? $this->mutualSettlementDetailCalcCostShipping : null;
     }
@@ -308,8 +308,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailCalcCostShippingForArrayConstraintsFromSetMutualSettlementDetailCalcCostShipping(array $values = []): string
+    public static function validateMutualSettlementDetailCalcCostShippingForArrayConstraintsFromSetMutualSettlementDetailCalcCostShipping(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailCalcCostShippingItem) {
@@ -378,7 +381,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailCalcCostShipping[] $mutualSettlementDetailCalcCostShipping
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailCalcCostShipping(array $mutualSettlementDetailCalcCostShipping = []): self
+    public function setMutualSettlementDetailCalcCostShipping(?array $mutualSettlementDetailCalcCostShipping = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailCalcCostShippingArrayErrorMessage = self::validateMutualSettlementDetailCalcCostShippingForArrayConstraintsFromSetMutualSettlementDetailCalcCostShipping($mutualSettlementDetailCalcCostShipping))) {
@@ -463,7 +466,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailCashFlow value
      * @return \StructType\ApiMutualSettlementDetailCashFlow[]
      */
-    public function getMutualSettlementDetailCashFlow(): array
+    public function getMutualSettlementDetailCashFlow(): ?array
     {
         return isset($this->mutualSettlementDetailCashFlow) ? $this->mutualSettlementDetailCashFlow : null;
     }
@@ -473,8 +476,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailCashFlowForArrayConstraintsFromSetMutualSettlementDetailCashFlow(array $values = []): string
+    public static function validateMutualSettlementDetailCashFlowForArrayConstraintsFromSetMutualSettlementDetailCashFlow(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailCashFlowItem) {
@@ -543,7 +549,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailCashFlow[] $mutualSettlementDetailCashFlow
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailCashFlow(array $mutualSettlementDetailCashFlow = []): self
+    public function setMutualSettlementDetailCashFlow(?array $mutualSettlementDetailCashFlow = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailCashFlowArrayErrorMessage = self::validateMutualSettlementDetailCashFlowForArrayConstraintsFromSetMutualSettlementDetailCashFlow($mutualSettlementDetailCashFlow))) {
@@ -628,7 +634,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailClientPayment value
      * @return \StructType\ApiMutualSettlementDetailClientPayment[]
      */
-    public function getMutualSettlementDetailClientPayment(): array
+    public function getMutualSettlementDetailClientPayment(): ?array
     {
         return isset($this->mutualSettlementDetailClientPayment) ? $this->mutualSettlementDetailClientPayment : null;
     }
@@ -638,8 +644,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailClientPaymentForArrayConstraintsFromSetMutualSettlementDetailClientPayment(array $values = []): string
+    public static function validateMutualSettlementDetailClientPaymentForArrayConstraintsFromSetMutualSettlementDetailClientPayment(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailClientPaymentItem) {
@@ -708,7 +717,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailClientPayment[] $mutualSettlementDetailClientPayment
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailClientPayment(array $mutualSettlementDetailClientPayment = []): self
+    public function setMutualSettlementDetailClientPayment(?array $mutualSettlementDetailClientPayment = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailClientPaymentArrayErrorMessage = self::validateMutualSettlementDetailClientPaymentForArrayConstraintsFromSetMutualSettlementDetailClientPayment($mutualSettlementDetailClientPayment))) {
@@ -793,7 +802,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailPostReturnRegistry value
      * @return \StructType\ApiMutualSettlementDetailPostReturnRegistry[]
      */
-    public function getMutualSettlementDetailPostReturnRegistry(): array
+    public function getMutualSettlementDetailPostReturnRegistry(): ?array
     {
         return isset($this->mutualSettlementDetailPostReturnRegistry) ? $this->mutualSettlementDetailPostReturnRegistry : null;
     }
@@ -803,8 +812,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailPostReturnRegistryForArrayConstraintsFromSetMutualSettlementDetailPostReturnRegistry(array $values = []): string
+    public static function validateMutualSettlementDetailPostReturnRegistryForArrayConstraintsFromSetMutualSettlementDetailPostReturnRegistry(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailPostReturnRegistryItem) {
@@ -873,7 +885,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailPostReturnRegistry[] $mutualSettlementDetailPostReturnRegistry
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailPostReturnRegistry(array $mutualSettlementDetailPostReturnRegistry = []): self
+    public function setMutualSettlementDetailPostReturnRegistry(?array $mutualSettlementDetailPostReturnRegistry = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailPostReturnRegistryArrayErrorMessage = self::validateMutualSettlementDetailPostReturnRegistryForArrayConstraintsFromSetMutualSettlementDetailPostReturnRegistry($mutualSettlementDetailPostReturnRegistry))) {
@@ -958,7 +970,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailRouteList value
      * @return \StructType\ApiMutualSettlementDetailRouteList[]
      */
-    public function getMutualSettlementDetailRouteList(): array
+    public function getMutualSettlementDetailRouteList(): ?array
     {
         return isset($this->mutualSettlementDetailRouteList) ? $this->mutualSettlementDetailRouteList : null;
     }
@@ -968,8 +980,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailRouteListForArrayConstraintsFromSetMutualSettlementDetailRouteList(array $values = []): string
+    public static function validateMutualSettlementDetailRouteListForArrayConstraintsFromSetMutualSettlementDetailRouteList(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailRouteListItem) {
@@ -1038,7 +1053,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailRouteList[] $mutualSettlementDetailRouteList
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailRouteList(array $mutualSettlementDetailRouteList = []): self
+    public function setMutualSettlementDetailRouteList(?array $mutualSettlementDetailRouteList = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailRouteListArrayErrorMessage = self::validateMutualSettlementDetailRouteListForArrayConstraintsFromSetMutualSettlementDetailRouteList($mutualSettlementDetailRouteList))) {
@@ -1123,7 +1138,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailTrackNumberPayment value
      * @return \StructType\ApiMutualSettlementDetailTrackNumberPayment[]
      */
-    public function getMutualSettlementDetailTrackNumberPayment(): array
+    public function getMutualSettlementDetailTrackNumberPayment(): ?array
     {
         return isset($this->mutualSettlementDetailTrackNumberPayment) ? $this->mutualSettlementDetailTrackNumberPayment : null;
     }
@@ -1133,8 +1148,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailTrackNumberPaymentForArrayConstraintsFromSetMutualSettlementDetailTrackNumberPayment(array $values = []): string
+    public static function validateMutualSettlementDetailTrackNumberPaymentForArrayConstraintsFromSetMutualSettlementDetailTrackNumberPayment(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailTrackNumberPaymentItem) {
@@ -1203,7 +1221,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailTrackNumberPayment[] $mutualSettlementDetailTrackNumberPayment
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailTrackNumberPayment(array $mutualSettlementDetailTrackNumberPayment = []): self
+    public function setMutualSettlementDetailTrackNumberPayment(?array $mutualSettlementDetailTrackNumberPayment = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailTrackNumberPaymentArrayErrorMessage = self::validateMutualSettlementDetailTrackNumberPaymentForArrayConstraintsFromSetMutualSettlementDetailTrackNumberPayment($mutualSettlementDetailTrackNumberPayment))) {
@@ -1288,7 +1306,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailServiceRegistration value
      * @return \StructType\ApiMutualSettlementDetailServiceRegistration[]
      */
-    public function getMutualSettlementDetailServiceRegistration(): array
+    public function getMutualSettlementDetailServiceRegistration(): ?array
     {
         return isset($this->mutualSettlementDetailServiceRegistration) ? $this->mutualSettlementDetailServiceRegistration : null;
     }
@@ -1298,8 +1316,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailServiceRegistrationForArrayConstraintsFromSetMutualSettlementDetailServiceRegistration(array $values = []): string
+    public static function validateMutualSettlementDetailServiceRegistrationForArrayConstraintsFromSetMutualSettlementDetailServiceRegistration(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailServiceRegistrationItem) {
@@ -1368,7 +1389,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailServiceRegistration[] $mutualSettlementDetailServiceRegistration
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailServiceRegistration(array $mutualSettlementDetailServiceRegistration = []): self
+    public function setMutualSettlementDetailServiceRegistration(?array $mutualSettlementDetailServiceRegistration = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailServiceRegistrationArrayErrorMessage = self::validateMutualSettlementDetailServiceRegistrationForArrayConstraintsFromSetMutualSettlementDetailServiceRegistration($mutualSettlementDetailServiceRegistration))) {
@@ -1453,7 +1474,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailAcceptanceRegistry value
      * @return \StructType\ApiMutualSettlementDetailAcceptanceRegistry[]
      */
-    public function getMutualSettlementDetailAcceptanceRegistry(): array
+    public function getMutualSettlementDetailAcceptanceRegistry(): ?array
     {
         return isset($this->mutualSettlementDetailAcceptanceRegistry) ? $this->mutualSettlementDetailAcceptanceRegistry : null;
     }
@@ -1463,8 +1484,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailAcceptanceRegistryForArrayConstraintsFromSetMutualSettlementDetailAcceptanceRegistry(array $values = []): string
+    public static function validateMutualSettlementDetailAcceptanceRegistryForArrayConstraintsFromSetMutualSettlementDetailAcceptanceRegistry(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailAcceptanceRegistryItem) {
@@ -1533,7 +1557,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailAcceptanceRegistry[] $mutualSettlementDetailAcceptanceRegistry
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailAcceptanceRegistry(array $mutualSettlementDetailAcceptanceRegistry = []): self
+    public function setMutualSettlementDetailAcceptanceRegistry(?array $mutualSettlementDetailAcceptanceRegistry = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailAcceptanceRegistryArrayErrorMessage = self::validateMutualSettlementDetailAcceptanceRegistryForArrayConstraintsFromSetMutualSettlementDetailAcceptanceRegistry($mutualSettlementDetailAcceptanceRegistry))) {
@@ -1618,7 +1642,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailAdditionalChargeFare value
      * @return \StructType\ApiMutualSettlementDetailAdditionalChargeFare[]
      */
-    public function getMutualSettlementDetailAdditionalChargeFare(): array
+    public function getMutualSettlementDetailAdditionalChargeFare(): ?array
     {
         return isset($this->mutualSettlementDetailAdditionalChargeFare) ? $this->mutualSettlementDetailAdditionalChargeFare : null;
     }
@@ -1628,8 +1652,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailAdditionalChargeFareForArrayConstraintsFromSetMutualSettlementDetailAdditionalChargeFare(array $values = []): string
+    public static function validateMutualSettlementDetailAdditionalChargeFareForArrayConstraintsFromSetMutualSettlementDetailAdditionalChargeFare(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailAdditionalChargeFareItem) {
@@ -1698,7 +1725,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailAdditionalChargeFare[] $mutualSettlementDetailAdditionalChargeFare
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailAdditionalChargeFare(array $mutualSettlementDetailAdditionalChargeFare = []): self
+    public function setMutualSettlementDetailAdditionalChargeFare(?array $mutualSettlementDetailAdditionalChargeFare = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailAdditionalChargeFareArrayErrorMessage = self::validateMutualSettlementDetailAdditionalChargeFareForArrayConstraintsFromSetMutualSettlementDetailAdditionalChargeFare($mutualSettlementDetailAdditionalChargeFare))) {
@@ -1783,7 +1810,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailOutgoingRequestToCarrier value
      * @return \StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier[]
      */
-    public function getMutualSettlementDetailOutgoingRequestToCarrier(): array
+    public function getMutualSettlementDetailOutgoingRequestToCarrier(): ?array
     {
         return isset($this->mutualSettlementDetailOutgoingRequestToCarrier) ? $this->mutualSettlementDetailOutgoingRequestToCarrier : null;
     }
@@ -1793,8 +1820,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailOutgoingRequestToCarrierForArrayConstraintsFromSetMutualSettlementDetailOutgoingRequestToCarrier(array $values = []): string
+    public static function validateMutualSettlementDetailOutgoingRequestToCarrierForArrayConstraintsFromSetMutualSettlementDetailOutgoingRequestToCarrier(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailOutgoingRequestToCarrierItem) {
@@ -1863,7 +1893,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier[] $mutualSettlementDetailOutgoingRequestToCarrier
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailOutgoingRequestToCarrier(array $mutualSettlementDetailOutgoingRequestToCarrier = []): self
+    public function setMutualSettlementDetailOutgoingRequestToCarrier(?array $mutualSettlementDetailOutgoingRequestToCarrier = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailOutgoingRequestToCarrierArrayErrorMessage = self::validateMutualSettlementDetailOutgoingRequestToCarrierForArrayConstraintsFromSetMutualSettlementDetailOutgoingRequestToCarrier($mutualSettlementDetailOutgoingRequestToCarrier))) {
@@ -1948,7 +1978,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailSMSInformation value
      * @return \StructType\ApiMutualSettlementDetailSMSInformation[]
      */
-    public function getMutualSettlementDetailSMSInformation(): array
+    public function getMutualSettlementDetailSMSInformation(): ?array
     {
         return isset($this->mutualSettlementDetailSMSInformation) ? $this->mutualSettlementDetailSMSInformation : null;
     }
@@ -1958,8 +1988,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailSMSInformationForArrayConstraintsFromSetMutualSettlementDetailSMSInformation(array $values = []): string
+    public static function validateMutualSettlementDetailSMSInformationForArrayConstraintsFromSetMutualSettlementDetailSMSInformation(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailSMSInformationItem) {
@@ -2028,7 +2061,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailSMSInformation[] $mutualSettlementDetailSMSInformation
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailSMSInformation(array $mutualSettlementDetailSMSInformation = []): self
+    public function setMutualSettlementDetailSMSInformation(?array $mutualSettlementDetailSMSInformation = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailSMSInformationArrayErrorMessage = self::validateMutualSettlementDetailSMSInformationForArrayConstraintsFromSetMutualSettlementDetailSMSInformation($mutualSettlementDetailSMSInformation))) {
@@ -2113,7 +2146,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailBuyerGoodsReturn value
      * @return \StructType\ApiMutualSettlementDetailBuyerGoodsReturn[]
      */
-    public function getMutualSettlementDetailBuyerGoodsReturn(): array
+    public function getMutualSettlementDetailBuyerGoodsReturn(): ?array
     {
         return isset($this->mutualSettlementDetailBuyerGoodsReturn) ? $this->mutualSettlementDetailBuyerGoodsReturn : null;
     }
@@ -2123,8 +2156,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailBuyerGoodsReturnForArrayConstraintsFromSetMutualSettlementDetailBuyerGoodsReturn(array $values = []): string
+    public static function validateMutualSettlementDetailBuyerGoodsReturnForArrayConstraintsFromSetMutualSettlementDetailBuyerGoodsReturn(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailBuyerGoodsReturnItem) {
@@ -2193,7 +2229,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailBuyerGoodsReturn[] $mutualSettlementDetailBuyerGoodsReturn
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailBuyerGoodsReturn(array $mutualSettlementDetailBuyerGoodsReturn = []): self
+    public function setMutualSettlementDetailBuyerGoodsReturn(?array $mutualSettlementDetailBuyerGoodsReturn = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailBuyerGoodsReturnArrayErrorMessage = self::validateMutualSettlementDetailBuyerGoodsReturnForArrayConstraintsFromSetMutualSettlementDetailBuyerGoodsReturn($mutualSettlementDetailBuyerGoodsReturn))) {
@@ -2278,7 +2314,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailProductsPackaging value
      * @return \StructType\ApiMutualSettlementDetailProductsPackaging[]
      */
-    public function getMutualSettlementDetailProductsPackaging(): array
+    public function getMutualSettlementDetailProductsPackaging(): ?array
     {
         return isset($this->mutualSettlementDetailProductsPackaging) ? $this->mutualSettlementDetailProductsPackaging : null;
     }
@@ -2288,8 +2324,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailProductsPackagingForArrayConstraintsFromSetMutualSettlementDetailProductsPackaging(array $values = []): string
+    public static function validateMutualSettlementDetailProductsPackagingForArrayConstraintsFromSetMutualSettlementDetailProductsPackaging(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailProductsPackagingItem) {
@@ -2358,7 +2397,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailProductsPackaging[] $mutualSettlementDetailProductsPackaging
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailProductsPackaging(array $mutualSettlementDetailProductsPackaging = []): self
+    public function setMutualSettlementDetailProductsPackaging(?array $mutualSettlementDetailProductsPackaging = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailProductsPackagingArrayErrorMessage = self::validateMutualSettlementDetailProductsPackagingForArrayConstraintsFromSetMutualSettlementDetailProductsPackaging($mutualSettlementDetailProductsPackaging))) {
@@ -2443,7 +2482,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailAdjustmentWriteRegisters value
      * @return \StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters[]
      */
-    public function getMutualSettlementDetailAdjustmentWriteRegisters(): array
+    public function getMutualSettlementDetailAdjustmentWriteRegisters(): ?array
     {
         return isset($this->mutualSettlementDetailAdjustmentWriteRegisters) ? $this->mutualSettlementDetailAdjustmentWriteRegisters : null;
     }
@@ -2453,8 +2492,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailAdjustmentWriteRegistersForArrayConstraintsFromSetMutualSettlementDetailAdjustmentWriteRegisters(array $values = []): string
+    public static function validateMutualSettlementDetailAdjustmentWriteRegistersForArrayConstraintsFromSetMutualSettlementDetailAdjustmentWriteRegisters(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailAdjustmentWriteRegistersItem) {
@@ -2523,7 +2565,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters[] $mutualSettlementDetailAdjustmentWriteRegisters
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailAdjustmentWriteRegisters(array $mutualSettlementDetailAdjustmentWriteRegisters = []): self
+    public function setMutualSettlementDetailAdjustmentWriteRegisters(?array $mutualSettlementDetailAdjustmentWriteRegisters = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailAdjustmentWriteRegistersArrayErrorMessage = self::validateMutualSettlementDetailAdjustmentWriteRegistersForArrayConstraintsFromSetMutualSettlementDetailAdjustmentWriteRegisters($mutualSettlementDetailAdjustmentWriteRegisters))) {
@@ -2608,7 +2650,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailSafeCustody value
      * @return \StructType\ApiMutualSettlementDetailSafeCustody[]
      */
-    public function getMutualSettlementDetailSafeCustody(): array
+    public function getMutualSettlementDetailSafeCustody(): ?array
     {
         return isset($this->mutualSettlementDetailSafeCustody) ? $this->mutualSettlementDetailSafeCustody : null;
     }
@@ -2618,8 +2660,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailSafeCustodyForArrayConstraintsFromSetMutualSettlementDetailSafeCustody(array $values = []): string
+    public static function validateMutualSettlementDetailSafeCustodyForArrayConstraintsFromSetMutualSettlementDetailSafeCustody(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailSafeCustodyItem) {
@@ -2688,7 +2733,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailSafeCustody[] $mutualSettlementDetailSafeCustody
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailSafeCustody(array $mutualSettlementDetailSafeCustody = []): self
+    public function setMutualSettlementDetailSafeCustody(?array $mutualSettlementDetailSafeCustody = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailSafeCustodyArrayErrorMessage = self::validateMutualSettlementDetailSafeCustodyForArrayConstraintsFromSetMutualSettlementDetailSafeCustody($mutualSettlementDetailSafeCustody))) {
@@ -2773,7 +2818,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailSafeCustodyCalculation value
      * @return \StructType\ApiMutualSettlementDetailSafeCustodyCalculation[]
      */
-    public function getMutualSettlementDetailSafeCustodyCalculation(): array
+    public function getMutualSettlementDetailSafeCustodyCalculation(): ?array
     {
         return isset($this->mutualSettlementDetailSafeCustodyCalculation) ? $this->mutualSettlementDetailSafeCustodyCalculation : null;
     }
@@ -2783,8 +2828,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailSafeCustodyCalculationForArrayConstraintsFromSetMutualSettlementDetailSafeCustodyCalculation(array $values = []): string
+    public static function validateMutualSettlementDetailSafeCustodyCalculationForArrayConstraintsFromSetMutualSettlementDetailSafeCustodyCalculation(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailSafeCustodyCalculationItem) {
@@ -2853,7 +2901,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailSafeCustodyCalculation[] $mutualSettlementDetailSafeCustodyCalculation
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailSafeCustodyCalculation(array $mutualSettlementDetailSafeCustodyCalculation = []): self
+    public function setMutualSettlementDetailSafeCustodyCalculation(?array $mutualSettlementDetailSafeCustodyCalculation = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailSafeCustodyCalculationArrayErrorMessage = self::validateMutualSettlementDetailSafeCustodyCalculationForArrayConstraintsFromSetMutualSettlementDetailSafeCustodyCalculation($mutualSettlementDetailSafeCustodyCalculation))) {
@@ -2938,7 +2986,7 @@ class ApiDetails extends AbstractStructBase
      * Get mutualSettlementDetailRegisterStorage value
      * @return \StructType\ApiMutualSettlementDetailRegisterStorage[]
      */
-    public function getMutualSettlementDetailRegisterStorage(): array
+    public function getMutualSettlementDetailRegisterStorage(): ?array
     {
         return isset($this->mutualSettlementDetailRegisterStorage) ? $this->mutualSettlementDetailRegisterStorage : null;
     }
@@ -2948,8 +2996,11 @@ class ApiDetails extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailRegisterStorageForArrayConstraintsFromSetMutualSettlementDetailRegisterStorage(array $values = []): string
+    public static function validateMutualSettlementDetailRegisterStorageForArrayConstraintsFromSetMutualSettlementDetailRegisterStorage(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $detailsMutualSettlementDetailRegisterStorageItem) {
@@ -3018,7 +3069,7 @@ class ApiDetails extends AbstractStructBase
      * @param \StructType\ApiMutualSettlementDetailRegisterStorage[] $mutualSettlementDetailRegisterStorage
      * @return \StructType\ApiDetails
      */
-    public function setMutualSettlementDetailRegisterStorage(array $mutualSettlementDetailRegisterStorage = []): self
+    public function setMutualSettlementDetailRegisterStorage(?array $mutualSettlementDetailRegisterStorage = null): self
     {
         // validation for constraint: array
         if ('' !== ($mutualSettlementDetailRegisterStorageArrayErrorMessage = self::validateMutualSettlementDetailRegisterStorageForArrayConstraintsFromSetMutualSettlementDetailRegisterStorage($mutualSettlementDetailRegisterStorage))) {

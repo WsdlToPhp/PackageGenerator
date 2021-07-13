@@ -22,7 +22,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var int[]
      */
-    protected array $CampaignIds = [];
+    protected ?array $CampaignIds = null;
     /**
      * The Ids
      * Meta information extracted from the WSDL
@@ -30,7 +30,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var int[]
      */
-    protected array $Ids = [];
+    protected ?array $Ids = null;
     /**
      * The Types
      * Meta information extracted from the WSDL
@@ -38,7 +38,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected array $Types = [];
+    protected ?array $Types = null;
     /**
      * The Statuses
      * Meta information extracted from the WSDL
@@ -46,7 +46,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected array $Statuses = [];
+    protected ?array $Statuses = null;
     /**
      * The TagIds
      * Meta information extracted from the WSDL
@@ -54,7 +54,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var int[]
      */
-    protected array $TagIds = [];
+    protected ?array $TagIds = null;
     /**
      * The Tags
      * Meta information extracted from the WSDL
@@ -62,7 +62,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected array $Tags = [];
+    protected ?array $Tags = null;
     /**
      * The AppIconStatuses
      * Meta information extracted from the WSDL
@@ -70,7 +70,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected array $AppIconStatuses = [];
+    protected ?array $AppIconStatuses = null;
     /**
      * Constructor method for AdGroupsSelectionCriteria
      * @uses ApiAdGroupsSelectionCriteria::setCampaignIds()
@@ -88,7 +88,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param string[] $tags
      * @param string[] $appIconStatuses
      */
-    public function __construct(array $campaignIds = [], array $ids = [], array $types = [], array $statuses = [], array $tagIds = [], array $tags = [], array $appIconStatuses = [])
+    public function __construct(?array $campaignIds = null, ?array $ids = null, ?array $types = null, ?array $statuses = null, ?array $tagIds = null, ?array $tags = null, ?array $appIconStatuses = null)
     {
         $this
             ->setCampaignIds($campaignIds)
@@ -103,7 +103,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Get CampaignIds value
      * @return int[]
      */
-    public function getCampaignIds(): array
+    public function getCampaignIds(): ?array
     {
         return $this->CampaignIds;
     }
@@ -113,8 +113,11 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCampaignIdsForArrayConstraintsFromSetCampaignIds(array $values = []): string
+    public static function validateCampaignIdsForArrayConstraintsFromSetCampaignIds(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaCampaignIdsItem) {
@@ -136,7 +139,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param int[] $campaignIds
      * @return \StructType\ApiAdGroupsSelectionCriteria
      */
-    public function setCampaignIds(array $campaignIds = []): self
+    public function setCampaignIds(?array $campaignIds = null): self
     {
         // validation for constraint: array
         if ('' !== ($campaignIdsArrayErrorMessage = self::validateCampaignIdsForArrayConstraintsFromSetCampaignIds($campaignIds))) {
@@ -166,7 +169,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Get Ids value
      * @return int[]
      */
-    public function getIds(): array
+    public function getIds(): ?array
     {
         return $this->Ids;
     }
@@ -176,8 +179,11 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateIdsForArrayConstraintsFromSetIds(array $values = []): string
+    public static function validateIdsForArrayConstraintsFromSetIds(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaIdsItem) {
@@ -199,7 +205,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param int[] $ids
      * @return \StructType\ApiAdGroupsSelectionCriteria
      */
-    public function setIds(array $ids = []): self
+    public function setIds(?array $ids = null): self
     {
         // validation for constraint: array
         if ('' !== ($idsArrayErrorMessage = self::validateIdsForArrayConstraintsFromSetIds($ids))) {
@@ -229,7 +235,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Get Types value
      * @return string[]
      */
-    public function getTypes(): array
+    public function getTypes(): ?array
     {
         return $this->Types;
     }
@@ -239,8 +245,11 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTypesForArrayConstraintsFromSetTypes(array $values = []): string
+    public static function validateTypesForArrayConstraintsFromSetTypes(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaTypesItem) {
@@ -264,7 +273,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param string[] $types
      * @return \StructType\ApiAdGroupsSelectionCriteria
      */
-    public function setTypes(array $types = []): self
+    public function setTypes(?array $types = null): self
     {
         // validation for constraint: array
         if ('' !== ($typesArrayErrorMessage = self::validateTypesForArrayConstraintsFromSetTypes($types))) {
@@ -296,7 +305,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Get Statuses value
      * @return string[]
      */
-    public function getStatuses(): array
+    public function getStatuses(): ?array
     {
         return $this->Statuses;
     }
@@ -306,8 +315,11 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateStatusesForArrayConstraintsFromSetStatuses(array $values = []): string
+    public static function validateStatusesForArrayConstraintsFromSetStatuses(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaStatusesItem) {
@@ -331,7 +343,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param string[] $statuses
      * @return \StructType\ApiAdGroupsSelectionCriteria
      */
-    public function setStatuses(array $statuses = []): self
+    public function setStatuses(?array $statuses = null): self
     {
         // validation for constraint: array
         if ('' !== ($statusesArrayErrorMessage = self::validateStatusesForArrayConstraintsFromSetStatuses($statuses))) {
@@ -363,7 +375,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Get TagIds value
      * @return int[]
      */
-    public function getTagIds(): array
+    public function getTagIds(): ?array
     {
         return $this->TagIds;
     }
@@ -373,8 +385,11 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTagIdsForArrayConstraintsFromSetTagIds(array $values = []): string
+    public static function validateTagIdsForArrayConstraintsFromSetTagIds(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaTagIdsItem) {
@@ -396,7 +411,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param int[] $tagIds
      * @return \StructType\ApiAdGroupsSelectionCriteria
      */
-    public function setTagIds(array $tagIds = []): self
+    public function setTagIds(?array $tagIds = null): self
     {
         // validation for constraint: array
         if ('' !== ($tagIdsArrayErrorMessage = self::validateTagIdsForArrayConstraintsFromSetTagIds($tagIds))) {
@@ -426,7 +441,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Get Tags value
      * @return string[]
      */
-    public function getTags(): array
+    public function getTags(): ?array
     {
         return $this->Tags;
     }
@@ -436,8 +451,11 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTagsForArrayConstraintsFromSetTags(array $values = []): string
+    public static function validateTagsForArrayConstraintsFromSetTags(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaTagsItem) {
@@ -459,7 +477,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param string[] $tags
      * @return \StructType\ApiAdGroupsSelectionCriteria
      */
-    public function setTags(array $tags = []): self
+    public function setTags(?array $tags = null): self
     {
         // validation for constraint: array
         if ('' !== ($tagsArrayErrorMessage = self::validateTagsForArrayConstraintsFromSetTags($tags))) {
@@ -489,7 +507,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * Get AppIconStatuses value
      * @return string[]
      */
-    public function getAppIconStatuses(): array
+    public function getAppIconStatuses(): ?array
     {
         return $this->AppIconStatuses;
     }
@@ -499,8 +517,11 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAppIconStatusesForArrayConstraintsFromSetAppIconStatuses(array $values = []): string
+    public static function validateAppIconStatusesForArrayConstraintsFromSetAppIconStatuses(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $adGroupsSelectionCriteriaAppIconStatusesItem) {
@@ -524,7 +545,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
      * @param string[] $appIconStatuses
      * @return \StructType\ApiAdGroupsSelectionCriteria
      */
-    public function setAppIconStatuses(array $appIconStatuses = []): self
+    public function setAppIconStatuses(?array $appIconStatuses = null): self
     {
         // validation for constraint: array
         if ('' !== ($appIconStatusesArrayErrorMessage = self::validateAppIconStatusesForArrayConstraintsFromSetAppIconStatuses($appIconStatuses))) {

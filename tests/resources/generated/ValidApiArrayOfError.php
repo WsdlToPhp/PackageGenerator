@@ -22,13 +22,13 @@ class ApiArrayOfError extends AbstractStructArrayBase
      * - minOccurs: 0
      * @var \StructType\ApiError[]
      */
-    protected array $Error = [];
+    protected ?array $Error = null;
     /**
      * Constructor method for ArrayOfError
      * @uses ApiArrayOfError::setError()
      * @param \StructType\ApiError[] $error
      */
-    public function __construct(array $error = [])
+    public function __construct(?array $error = null)
     {
         $this
             ->setError($error);
@@ -37,7 +37,7 @@ class ApiArrayOfError extends AbstractStructArrayBase
      * Get Error value
      * @return \StructType\ApiError[]
      */
-    public function getError(): array
+    public function getError(): ?array
     {
         return $this->Error;
     }
@@ -47,8 +47,11 @@ class ApiArrayOfError extends AbstractStructArrayBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateErrorForArrayConstraintsFromSetError(array $values = []): string
+    public static function validateErrorForArrayConstraintsFromSetError(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $arrayOfErrorErrorItem) {
@@ -70,7 +73,7 @@ class ApiArrayOfError extends AbstractStructArrayBase
      * @param \StructType\ApiError[] $error
      * @return \ArrayType\ApiArrayOfError
      */
-    public function setError(array $error = []): self
+    public function setError(?array $error = null): self
     {
         // validation for constraint: array
         if ('' !== ($errorArrayErrorMessage = self::validateErrorForArrayConstraintsFromSetError($error))) {

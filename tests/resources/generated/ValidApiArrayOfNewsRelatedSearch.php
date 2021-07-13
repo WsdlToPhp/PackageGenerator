@@ -22,13 +22,13 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * - minOccurs: 0
      * @var \StructType\ApiNewsRelatedSearch[]
      */
-    protected array $NewsRelatedSearch = [];
+    protected ?array $NewsRelatedSearch = null;
     /**
      * Constructor method for ArrayOfNewsRelatedSearch
      * @uses ApiArrayOfNewsRelatedSearch::setNewsRelatedSearch()
      * @param \StructType\ApiNewsRelatedSearch[] $newsRelatedSearch
      */
-    public function __construct(array $newsRelatedSearch = [])
+    public function __construct(?array $newsRelatedSearch = null)
     {
         $this
             ->setNewsRelatedSearch($newsRelatedSearch);
@@ -37,7 +37,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * Get NewsRelatedSearch value
      * @return \StructType\ApiNewsRelatedSearch[]
      */
-    public function getNewsRelatedSearch(): array
+    public function getNewsRelatedSearch(): ?array
     {
         return $this->NewsRelatedSearch;
     }
@@ -47,8 +47,11 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateNewsRelatedSearchForArrayConstraintsFromSetNewsRelatedSearch(array $values = []): string
+    public static function validateNewsRelatedSearchForArrayConstraintsFromSetNewsRelatedSearch(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $arrayOfNewsRelatedSearchNewsRelatedSearchItem) {
@@ -70,7 +73,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
      * @param \StructType\ApiNewsRelatedSearch[] $newsRelatedSearch
      * @return \ArrayType\ApiArrayOfNewsRelatedSearch
      */
-    public function setNewsRelatedSearch(array $newsRelatedSearch = []): self
+    public function setNewsRelatedSearch(?array $newsRelatedSearch = null): self
     {
         // validation for constraint: array
         if ('' !== ($newsRelatedSearchArrayErrorMessage = self::validateNewsRelatedSearchForArrayConstraintsFromSetNewsRelatedSearch($newsRelatedSearch))) {

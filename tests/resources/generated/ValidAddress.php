@@ -64,7 +64,7 @@ class ApiАдресРФ extends ApiСостав
      * - minOccurs: 0
      * @var \StructType\ApiДопАдрЭл[]
      */
-    protected array $ДопАдрЭл = [];
+    protected ?array $ДопАдрЭл = null;
     /**
      * Constructor method for АдресРФ
      * @uses ApiАдресРФ::setСубъектРФ()
@@ -82,7 +82,7 @@ class ApiАдресРФ extends ApiСостав
      * @param string $Улица
      * @param \StructType\ApiДопАдрЭл[] $ДопАдрЭл
      */
-    public function __construct(?string $СубъектРФ = null, ?\StructType\ApiСвРайМО $СвРайМО = null, ?string $Город = null, ?string $ВнутригРайон = null, ?string $НаселПункт = null, ?string $Улица = null, array $ДопАдрЭл = [])
+    public function __construct(?string $СубъектРФ = null, ?\StructType\ApiСвРайМО $СвРайМО = null, ?string $Город = null, ?string $ВнутригРайон = null, ?string $НаселПункт = null, ?string $Улица = null, ?array $ДопАдрЭл = null)
     {
         $this
             ->setСубъектРФ($СубъектРФ)
@@ -231,7 +231,7 @@ class ApiАдресРФ extends ApiСостав
      * Get ДопАдрЭл value
      * @return \StructType\ApiДопАдрЭл[]
      */
-    public function getДопАдрЭл(): array
+    public function getДопАдрЭл(): ?array
     {
         return $this->ДопАдрЭл;
     }
@@ -241,8 +241,11 @@ class ApiАдресРФ extends ApiСостав
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateДопАдрЭлForArrayConstraintsFromSetДопАдрЭл(array $values = []): string
+    public static function validateДопАдрЭлForArrayConstraintsFromSetДопАдрЭл(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $АдресРФДопАдрЭлItem) {
@@ -264,7 +267,7 @@ class ApiАдресРФ extends ApiСостав
      * @param \StructType\ApiДопАдрЭл[] $ДопАдрЭл
      * @return \StructType\ApiАдресРФ
      */
-    public function setДопАдрЭл(array $ДопАдрЭл = []): self
+    public function setДопАдрЭл(?array $ДопАдрЭл = null): self
     {
         // validation for constraint: array
         if ('' !== ($ДопАдрЭлArrayErrorMessage = self::validateДопАдрЭлForArrayConstraintsFromSetДопАдрЭл($ДопАдрЭл))) {

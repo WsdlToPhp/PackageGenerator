@@ -25,7 +25,7 @@ class ApiTaxType extends AbstractStructBase
      * - minOccurs: 0
      * @var \StructType\ApiParagraphType[]
      */
-    protected array $TaxDescription = [];
+    protected ?array $TaxDescription = null;
     /**
      * The Type
      * Meta information extracted from the WSDL
@@ -107,7 +107,7 @@ class ApiTaxType extends AbstractStructBase
      * @param string $currencyCode
      * @param int $decimalPlaces
      */
-    public function __construct(array $taxDescription = [], ?string $type = null, ?string $code = null, ?float $percent = null, ?float $amount = null, ?string $currencyCode = null, ?int $decimalPlaces = null)
+    public function __construct(?array $taxDescription = null, ?string $type = null, ?string $code = null, ?float $percent = null, ?float $amount = null, ?string $currencyCode = null, ?int $decimalPlaces = null)
     {
         $this
             ->setTaxDescription($taxDescription)
@@ -122,7 +122,7 @@ class ApiTaxType extends AbstractStructBase
      * Get TaxDescription value
      * @return \StructType\ApiParagraphType[]
      */
-    public function getTaxDescription(): array
+    public function getTaxDescription(): ?array
     {
         return $this->TaxDescription;
     }
@@ -132,8 +132,11 @@ class ApiTaxType extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTaxDescriptionForArrayConstraintsFromSetTaxDescription(array $values = []): string
+    public static function validateTaxDescriptionForArrayConstraintsFromSetTaxDescription(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $taxTypeTaxDescriptionItem) {
@@ -155,7 +158,7 @@ class ApiTaxType extends AbstractStructBase
      * @param \StructType\ApiParagraphType[] $taxDescription
      * @return \StructType\ApiTaxType
      */
-    public function setTaxDescription(array $taxDescription = []): self
+    public function setTaxDescription(?array $taxDescription = null): self
     {
         // validation for constraint: array
         if ('' !== ($taxDescriptionArrayErrorMessage = self::validateTaxDescriptionForArrayConstraintsFromSetTaxDescription($taxDescription))) {

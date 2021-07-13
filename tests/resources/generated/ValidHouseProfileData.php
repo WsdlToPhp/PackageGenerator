@@ -373,7 +373,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * - ref: soap-enc:arrayType
      * @var \StructType\ApiLift[]
      */
-    protected array $lifts = [];
+    protected ?array $lifts = null;
     /**
      * The management_contract
      * Meta information extracted from the WSDL
@@ -539,7 +539,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \StructType\ApiProvider $drainage_provider
      * @param \StructType\ApiFinance $finance
      */
-    public function __construct(?float $area_total = null, ?float $area_residential = null, ?float $area_non_residential = null, ?string $cadastral_number = null, ?string $project_type = null, ?string $location_description = null, ?string $individual_name = null, ?string $house_type = null, ?string $exploitation_start_year = null, ?string $wall_material = null, ?string $floor_type = null, ?int $storeys_count = null, ?int $entrance_count = null, ?int $elevators_count = null, ?float $area_private = null, ?float $area_municipal = null, ?float $area_national = null, ?float $area_land = null, ?float $area_territory = null, ?string $inventory_number = null, ?int $flats_count = null, ?int $residents_count = null, ?int $accounts_count = null, ?string $construction_features = null, ?float $thermal_actual_expense = null, ?float $thermal_normative_expense = null, ?string $energy_efficiency = null, ?string $energy_audit_date = null, ?string $privatization_start_date = null, ?float $deterioration_total = null, ?float $deterioration_foundation = null, ?float $deterioration_bearing_walls = null, ?float $deterioration_floor = null, ?\StructType\ApiFacade $facade = null, ?\StructType\ApiRoof $roof = null, ?\StructType\ApiBasement $basement = null, ?\StructType\ApiCommonSpace $common_space = null, ?\StructType\ApiChute $chute = null, ?\StructType\ApiHeatingSystem $heating_system = null, ?\StructType\ApiHotWaterSystem $hot_water_system = null, ?\StructType\ApiColdWaterSystem $cold_water_system = null, ?\StructType\ApiSewerageSystem $sewerage_system = null, ?\StructType\ApiElectricitySystem $electricity_system = null, ?\StructType\ApiGasSystem $gas_system = null, array $lifts = [], ?\StructType\ApiManagementContract $management_contract = null, ?\StructType\ApiProvider $heating_provider = null, ?\StructType\ApiProvider $electricity_provider = null, ?\StructType\ApiProvider $gas_provider = null, ?\StructType\ApiProvider $hot_water_provider = null, ?\StructType\ApiProvider $cold_water_provider = null, ?\StructType\ApiProvider $drainage_provider = null, ?\StructType\ApiFinance $finance = null)
+    public function __construct(?float $area_total = null, ?float $area_residential = null, ?float $area_non_residential = null, ?string $cadastral_number = null, ?string $project_type = null, ?string $location_description = null, ?string $individual_name = null, ?string $house_type = null, ?string $exploitation_start_year = null, ?string $wall_material = null, ?string $floor_type = null, ?int $storeys_count = null, ?int $entrance_count = null, ?int $elevators_count = null, ?float $area_private = null, ?float $area_municipal = null, ?float $area_national = null, ?float $area_land = null, ?float $area_territory = null, ?string $inventory_number = null, ?int $flats_count = null, ?int $residents_count = null, ?int $accounts_count = null, ?string $construction_features = null, ?float $thermal_actual_expense = null, ?float $thermal_normative_expense = null, ?string $energy_efficiency = null, ?string $energy_audit_date = null, ?string $privatization_start_date = null, ?float $deterioration_total = null, ?float $deterioration_foundation = null, ?float $deterioration_bearing_walls = null, ?float $deterioration_floor = null, ?\StructType\ApiFacade $facade = null, ?\StructType\ApiRoof $roof = null, ?\StructType\ApiBasement $basement = null, ?\StructType\ApiCommonSpace $common_space = null, ?\StructType\ApiChute $chute = null, ?\StructType\ApiHeatingSystem $heating_system = null, ?\StructType\ApiHotWaterSystem $hot_water_system = null, ?\StructType\ApiColdWaterSystem $cold_water_system = null, ?\StructType\ApiSewerageSystem $sewerage_system = null, ?\StructType\ApiElectricitySystem $electricity_system = null, ?\StructType\ApiGasSystem $gas_system = null, ?array $lifts = null, ?\StructType\ApiManagementContract $management_contract = null, ?\StructType\ApiProvider $heating_provider = null, ?\StructType\ApiProvider $electricity_provider = null, ?\StructType\ApiProvider $gas_provider = null, ?\StructType\ApiProvider $hot_water_provider = null, ?\StructType\ApiProvider $cold_water_provider = null, ?\StructType\ApiProvider $drainage_provider = null, ?\StructType\ApiFinance $finance = null)
     {
         $this
             ->setArea_total($area_total)
@@ -1692,7 +1692,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * Get lifts value
      * @return \StructType\ApiLift[]
      */
-    public function getLifts(): array
+    public function getLifts(): ?array
     {
         return $this->lifts;
     }
@@ -1702,8 +1702,11 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLiftsForArrayConstraintsFromSetLifts(array $values = []): string
+    public static function validateLiftsForArrayConstraintsFromSetLifts(?array $values = []): string
     {
+        if (!is_array($values)) {
+            return '';
+        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $houseProfileDataLiftsItem) {
@@ -1725,7 +1728,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \StructType\ApiLift[] $lifts
      * @return \StructType\ApiHouseProfileData
      */
-    public function setLifts(array $lifts = []): self
+    public function setLifts(?array $lifts = null): self
     {
         // validation for constraint: array
         if ('' !== ($liftsArrayErrorMessage = self::validateLiftsForArrayConstraintsFromSetLifts($lifts))) {
