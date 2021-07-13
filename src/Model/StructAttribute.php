@@ -117,7 +117,7 @@ final class StructAttribute extends AbstractModel
     /**
      * If this attribute contains elements then it's an array
      * only if its parent, the Struct, is not itself an array,
-     * if the parent is an array, then it is certainly not an array too.
+     * if the parent is an array, then it is certainly an array too.
      */
     public function isArray(): bool
     {

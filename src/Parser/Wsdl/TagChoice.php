@@ -54,6 +54,7 @@ final class TagChoice extends AbstractTagParser
 
         if (($structAttribute = $struct->getAttribute($attributeName)) instanceof StructAttribute) {
             $structAttribute
+                ->setContainsElements($choice->canOccurSeveralTimes())
                 ->addMeta('choice', $choiceNames)
                 ->addMeta('choiceMaxOccurs', $choice->getMaxOccurs())
                 ->addMeta('choiceMinOccurs', $choice->getMinOccurs())
