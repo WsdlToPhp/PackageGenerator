@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use ReflectionClass;
+use InvalidArgumentException;
 use StructType\ApiParagraphType;
 use StructType\ApiTaxType;
-use InvalidArgumentException;
 
 /**
  * @internal
@@ -92,7 +91,7 @@ final class ArrayRuleTest extends AbstractRuleTest
             $instance,
             $instance->setTaxDescription([
                 new ApiTaxType(),
-                (new ReflectionClass(ApiParagraphType::class))->newInstanceWithoutConstructor(),
+                new ApiParagraphType(),
             ])
         );
     }
@@ -104,8 +103,8 @@ final class ArrayRuleTest extends AbstractRuleTest
         $this->assertSame(
             $instance,
             $instance->setTaxDescription([
-                (new ReflectionClass(ApiParagraphType::class))->newInstanceWithoutConstructor(),
-                (new ReflectionClass(ApiParagraphType::class))->newInstanceWithoutConstructor(),
+                new ApiParagraphType(),
+                new ApiParagraphType(),
             ])
         );
     }
