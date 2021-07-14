@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.1.1 - 2021-07-14
+- issue #257 - choice tag is not fully handled properly
+    - Improvement for choice tag handling
+
 ## 4.1.0 - 2021-07-13
 - issue #257 - choice tag is not fully handled properly
 - issue #258 - Add missing XML built-in dataTypes
