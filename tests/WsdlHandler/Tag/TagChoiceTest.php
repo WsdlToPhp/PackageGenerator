@@ -23,6 +23,7 @@ class TagChoiceTest extends TestCase
     {
         $this->assertSame([
             'complexType',
+            'sequence',
         ], TagChoice::getForbiddenParentTags());
     }
 
@@ -182,11 +183,8 @@ class TagChoiceTest extends TestCase
 
         $children = $choice->getChildrenElements();
 
-        $this->assertCount(4, $children);
-        $this->assertSame('Success', $children[0]->getAttributeName());
-        $this->assertSame('Warnings', $children[1]->getAttributeName());
-        $this->assertSame('HotelDescriptiveContents', $children[2]->getAttributeName());
-        $this->assertSame('Errors', $children[3]->getAttributeName());
+        $this->assertCount(1, $children);
+        $this->assertSame('Errors', $children[0]->getAttributeName());
     }
 
     /**
@@ -258,11 +256,8 @@ class TagChoiceTest extends TestCase
 
         $children = $choice->getChildrenElements();
 
-        $this->assertCount(4, $children);
-        $this->assertSame('Success', $children[0]->getAttributeName());
-        $this->assertSame('Warnings', $children[1]->getAttributeName());
-        $this->assertSame('RoomStays', $children[2]->getAttributeName());
-        $this->assertSame('Errors', $children[3]->getAttributeName());
+        $this->assertCount(1, $children);
+        $this->assertSame('Errors', $children[0]->getAttributeName());
     }
 
     /**

@@ -139,8 +139,6 @@ class TagChoiceTest extends WsdlParser
                         $this->assertSame(1, $struct->getAttribute('Errors')->getMetaValue('choiceMaxOccurs'));
                         $this->assertSame(1, $struct->getAttribute('Errors')->getMetaValue('choiceMinOccurs'));
                         $this->assertSame([
-                            'Success',
-                            'Warnings',
                             'Errors',
                         ], $struct->getAttribute('Errors')->getMetaValue('choice'));
                         $count++;

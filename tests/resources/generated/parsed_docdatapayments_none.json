@@ -3645,15 +3645,6 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choice": [
-                                "cardHolderName",
-                                "cardNumber",
-                                "expiryDate",
-                                "securityCode",
-                                "encryptedData"
-                            ],
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3667,15 +3658,6 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choice": [
-                                "cardHolderName",
-                                "cardNumber",
-                                "expiryDate",
-                                "securityCode",
-                                "encryptedData"
-                            ],
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3689,15 +3671,6 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choice": [
-                                "cardHolderName",
-                                "cardNumber",
-                                "expiryDate",
-                                "securityCode",
-                                "encryptedData"
-                            ],
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "1"
                         },
@@ -3711,15 +3684,6 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choice": [
-                                "cardHolderName",
-                                "cardNumber",
-                                "expiryDate",
-                                "securityCode",
-                                "encryptedData"
-                            ],
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "0"
                         },
@@ -3734,10 +3698,6 @@
                         "abstract": false,
                         "meta": {
                             "choice": [
-                                "cardHolderName",
-                                "cardNumber",
-                                "expiryDate",
-                                "securityCode",
                                 "encryptedData"
                             ],
                             "choiceMaxOccurs": 1,
@@ -8054,12 +8014,7 @@
                         "abstract": false,
                         "meta": {
                             "choice": [
-                                "recurringPaymentRequest",
-                                "payment",
-                                "token",
-                                "returnUrl",
-                                "shopperInfo",
-                                ""
+                                "recurringPaymentRequest"
                             ],
                             "choiceMaxOccurs": 1,
                             "choiceMinOccurs": 1,
@@ -8080,12 +8035,6 @@
                         "abstract": false,
                         "meta": {
                             "choice": [
-                                "recurringPaymentRequest",
-                                "payment",
-                                "token",
-                                "returnUrl",
-                                "shopperInfo",
-                                "",
                                 "payment",
                                 "token"
                             ],
@@ -8108,12 +8057,6 @@
                         "abstract": false,
                         "meta": {
                             "choice": [
-                                "recurringPaymentRequest",
-                                "payment",
-                                "token",
-                                "returnUrl",
-                                "shopperInfo",
-                                "",
                                 "payment",
                                 "token"
                             ],
@@ -8135,16 +8078,6 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choice": [
-                                "recurringPaymentRequest",
-                                "payment",
-                                "token",
-                                "returnUrl",
-                                "shopperInfo",
-                                ""
-                            ],
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
                             "documentation": [
                                 "Optional return url to be used. If left empty, no return url will be used. (Limit is set by Internet Explorer of 2083 characters)"
                             ],
@@ -8161,16 +8094,6 @@
                         "inheritance": "",
                         "abstract": false,
                         "meta": {
-                            "choice": [
-                                "recurringPaymentRequest",
-                                "payment",
-                                "token",
-                                "returnUrl",
-                                "shopperInfo",
-                                ""
-                            ],
-                            "choiceMaxOccurs": 1,
-                            "choiceMinOccurs": 1,
                             "maxOccurs": "1",
                             "minOccurs": "0"
                         },

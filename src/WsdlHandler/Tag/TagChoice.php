@@ -68,6 +68,7 @@ class TagChoice extends Tag
     {
         return [
             AbstractDocument::TAG_COMPLEX_TYPE,
+            AbstractDocument::TAG_SEQUENCE,
         ];
     }
 }
