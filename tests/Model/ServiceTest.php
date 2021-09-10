@@ -17,7 +17,7 @@ final class ServiceTest extends AbstractTestCase
 {
     public static function instance(string $name): Service
     {
-        return new Service(self::getBingGeneratorInstance(), $name);
+        return new Service(self::getBingGeneratorInstance(true), $name);
     }
 
     public function testGetMethod()
@@ -36,5 +36,11 @@ final class ServiceTest extends AbstractTestCase
     public function testGetReservedMethodsInstance()
     {
         $this->assertInstanceOf(ServiceReservedMethod::class, self::instance('foo')->getReservedMethodsInstance());
+    }
+
+    public function testGetNamespaceWithCustomDirectoryStructureMustReturnTheDirectoryWithinTheNamespace()
+    {
+        ($model = self::instance('foo'))->getGenerator()->setOptionServicesFolder('Domain/Services');
+        $this->assertSame('Domain\Services', $model->getNamespace());
     }
 }

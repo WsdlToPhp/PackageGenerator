@@ -258,7 +258,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
         }
 
         if (!empty($this->getSubDirectory())) {
-            $namespaces[] = $this->getSubDirectory();
+            $namespaces[] = str_replace('/', '\\', $this->getSubDirectory());
         }
 
         return implode('\\', $namespaces);

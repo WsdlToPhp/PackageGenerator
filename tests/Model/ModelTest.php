@@ -18,7 +18,7 @@ final class ModelTest extends AbstractTestCase
 {
     public static function instance(string $name): EmptyModel
     {
-        return new EmptyModel(self::getBingGeneratorInstance(), $name);
+        return new EmptyModel(self::getBingGeneratorInstance(true), $name);
     }
 
     public function testGetCleanName()
@@ -131,5 +131,16 @@ final class ModelTest extends AbstractTestCase
         ], true)));
 
         EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(), $array);
+    }
+
+    public function testGetNamespaceWithDefaultDirectoryStructuresMustReturnAnEmptyNamespace()
+    {
+        $this->assertEmpty(self::instance('foo')->getNamespace());
+    }
+
+    public function testGetNamespaceWithCustomNamespaceMustReturnTheNamespace()
+    {
+        ($model = self::instance('foo'))->getGenerator()->setOptionNamespacePrefix('My\Namespace');
+        $this->assertSame('My\Namespace', $model->getNamespace());
     }
 }
