@@ -393,7 +393,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
             $namespaces[] = $namespace;
         }
         if ($this->getSubDirectory() !== '') {
-            $namespaces[] = $this->getSubDirectory();
+            $namespaces[] = str_replace('/', '\\', $this->getSubDirectory());
         }
         return implode('\\', $namespaces);
     }

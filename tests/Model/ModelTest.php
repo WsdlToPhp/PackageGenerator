@@ -13,7 +13,7 @@ class ModelTest extends TestCase
      */
     public static function instance($name)
     {
-        return new EmptyModel(self::getBingGeneratorInstance(), $name);
+        return new EmptyModel(self::getBingGeneratorInstance(true), $name);
     }
     /**
      *
@@ -150,5 +150,16 @@ class ModelTest extends TestCase
             'meta' => [],
             '__CLASS__' => 'WsdlToPhp\PackageGenerator\Model\EmptyModel',
         ]);
+    }
+
+    public function testGetNamespaceWithDefaultDirectoryStructuresMustReturnAnEmptyNamespace()
+    {
+        $this->assertEmpty(self::instance('foo')->getNamespace());
+    }
+
+    public function testGetNamespaceWithCustomNamespaceMustReturnTheNamespace()
+    {
+        ($model = self::instance('foo'))->getGenerator()->setOptionNamespacePrefix('My\Namespace');
+        $this->assertSame('My\Namespace', $model->getNamespace());
     }
 }
