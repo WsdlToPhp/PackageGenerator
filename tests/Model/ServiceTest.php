@@ -37,7 +37,8 @@ class ServiceTest extends TestCase
 
     public function testGetNamespaceWithCustomDirectoryStructureMustReturnTheDirectoryWithinTheNamespace()
     {
-        ($model = self::instance('foo'))->getGenerator()->setOptionServicesFolder('Domain/Services');
+        $model = self::instance('foo');
+        $model->getGenerator()->setOptionServicesFolder('Domain/Services');
         $this->assertSame('Domain\Services', $model->getNamespace());
     }
 }

@@ -159,7 +159,8 @@ class ModelTest extends TestCase
 
     public function testGetNamespaceWithCustomNamespaceMustReturnTheNamespace()
     {
-        ($model = self::instance('foo'))->getGenerator()->setOptionNamespacePrefix('My\Namespace');
+        $model = self::instance('foo');
+        $model->getGenerator()->setOptionNamespacePrefix('My\Namespace');
         $this->assertSame('My\Namespace', $model->getNamespace());
     }
 }

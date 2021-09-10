@@ -195,7 +195,8 @@ class StructTest extends TestCase
 
     public function testGetNamespaceWithCustomDirectoryStructureMustReturnTheDirectoryWithinTheNamespace()
     {
-        ($model = self::instance('foo', true))->getGenerator()->setOptionStructsFolder('Domain/Entities');
+        $model = self::instance('foo', true);
+        $model->getGenerator()->setOptionStructsFolder('Domain/Entities');
         $this->assertSame('Domain\Entities', $model->getNamespace());
     }
 }
