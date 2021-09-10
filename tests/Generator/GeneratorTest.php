@@ -525,21 +525,6 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertNotNull($content);
     }
 
-    public function testExceptionOntInitDirectory()
-    {
-        $this->expectException(InvalidArgumentException::class);
-
-        Utils::createDirectory($destination = self::getTestDirectory().'notwritable', 0444);
-
-        $generator = self::getBingGeneratorInstance();
-        $generator
-            ->setOptionComposerName('wsdltophp/invalid')
-            ->setOptionDestination($destination)
-        ;
-
-        $generator->generatePackage();
-    }
-
     public function testGetEmptySoapClientStreamContextOptions()
     {
         $instance = self::getBingGeneratorInstance();
