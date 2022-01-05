@@ -1,0 +1,117 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Property WsdlToPhp\\\\PackageGenerator\\\\Command\\\\GeneratePackageCommand\\:\\:\\$generatorOptions \\(WsdlToPhp\\\\PackageGenerator\\\\ConfigurationReader\\\\GeneratorOptions\\) does not accept WsdlToPhp\\\\PackageGenerator\\\\ConfigurationReader\\\\AbstractYamlReader\\.$#"
+			count: 1
+			path: src/Command/GeneratePackageCommand.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\File\\\\Service\\:\\:setModel\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\File\\\\Service but returns WsdlToPhp\\\\PackageGenerator\\\\File\\\\AbstractModelFile\\.$#"
+			count: 1
+			path: src/File/Service.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\File\\\\Struct\\:\\:defineUseStatements\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\File\\\\Struct but returns WsdlToPhp\\\\PackageGenerator\\\\File\\\\AbstractModelFile\\.$#"
+			count: 1
+			path: src/File/Struct.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\File\\\\Struct\\:\\:setModel\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\File\\\\Struct but returns WsdlToPhp\\\\PackageGenerator\\\\File\\\\AbstractModelFile\\.$#"
+			count: 1
+			path: src/File/Struct.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\File\\\\StructArray\\:\\:setModel\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\File\\\\StructArray but returns WsdlToPhp\\\\PackageGenerator\\\\File\\\\Struct\\.$#"
+			count: 1
+			path: src/File/StructArray.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\File\\\\StructEnum\\:\\:defineUseStatements\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\File\\\\StructEnum but returns WsdlToPhp\\\\PackageGenerator\\\\File\\\\AbstractModelFile\\.$#"
+			count: 1
+			path: src/File/StructEnum.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\File\\\\StructEnum\\:\\:setModel\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\File\\\\StructEnum but returns WsdlToPhp\\\\PackageGenerator\\\\File\\\\Struct\\.$#"
+			count: 1
+			path: src/File/StructEnum.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\File\\\\Validation\\\\Rules\\:\\:getArrayRule\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\File\\\\Validation\\\\ArrayRule but returns WsdlToPhp\\\\PackageGenerator\\\\File\\\\Validation\\\\AbstractRule\\|null\\.$#"
+			count: 1
+			path: src/File/Validation/Rules.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\File\\\\Validation\\\\Rules\\:\\:getEnumerationRule\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\File\\\\Validation\\\\EnumerationRule but returns WsdlToPhp\\\\PackageGenerator\\\\File\\\\Validation\\\\AbstractRule\\|null\\.$#"
+			count: 1
+			path: src/File/Validation/Rules.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\File\\\\Validation\\\\Rules\\:\\:getItemTypeRule\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\File\\\\Validation\\\\ItemTypeRule but returns WsdlToPhp\\\\PackageGenerator\\\\File\\\\Validation\\\\AbstractRule\\|null\\.$#"
+			count: 1
+			path: src/File/Validation/Rules.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\File\\\\Validation\\\\Rules\\:\\:getListRule\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\File\\\\Validation\\\\ListRule but returns WsdlToPhp\\\\PackageGenerator\\\\File\\\\Validation\\\\AbstractRule\\|null\\.$#"
+			count: 1
+			path: src/File/Validation/Rules.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\File\\\\Validation\\\\Rules\\:\\:getXmlRule\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\File\\\\Validation\\\\XmlRule but returns WsdlToPhp\\\\PackageGenerator\\\\File\\\\Validation\\\\AbstractRule\\|null\\.$#"
+			count: 1
+			path: src/File/Validation/Rules.php
+
+		-
+			message: "#^Array \\(array\\<string\\>\\) does not accept array\\.$#"
+			count: 1
+			path: src/Model/AbstractModel.php
+
+		-
+			message: "#^Array \\(array\\<string\\>\\) does not accept array\\<int, array\\|bool\\|float\\|int\\|string\\>\\.$#"
+			count: 1
+			path: src/Model/AbstractModel.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\Model\\\\Method\\:\\:getOwner\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\Model\\\\Service but returns WsdlToPhp\\\\PackageGenerator\\\\Model\\\\AbstractModel\\|null\\.$#"
+			count: 1
+			path: src/Model/Method.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\Model\\\\Method\\:\\:getReservedMethodsInstance\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\ConfigurationReader\\\\ServiceReservedMethod but returns WsdlToPhp\\\\PackageGenerator\\\\ConfigurationReader\\\\AbstractYamlReader\\.$#"
+			count: 1
+			path: src/Model/Method.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\Model\\\\Service\\:\\:getReservedMethodsInstance\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\ConfigurationReader\\\\ServiceReservedMethod but returns WsdlToPhp\\\\PackageGenerator\\\\ConfigurationReader\\\\AbstractYamlReader\\.$#"
+			count: 1
+			path: src/Model/Service.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\Model\\\\Struct\\:\\:getReservedMethodsInstance\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\ConfigurationReader\\\\AbstractReservedWord but returns WsdlToPhp\\\\PackageGenerator\\\\ConfigurationReader\\\\AbstractYamlReader\\.$#"
+			count: 1
+			path: src/Model/Struct.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\Model\\\\StructAttribute\\:\\:getDefaultValue\\(\\) should return array\\|bool\\|float\\|int\\|string but returns null\\.$#"
+			count: 1
+			path: src/Model/StructAttribute.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\Model\\\\StructAttribute\\:\\:getOwner\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\Model\\\\Struct but returns WsdlToPhp\\\\PackageGenerator\\\\Model\\\\AbstractModel\\|null\\.$#"
+			count: 1
+			path: src/Model/StructAttribute.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\Model\\\\StructValue\\:\\:getOwner\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\Model\\\\Struct but returns WsdlToPhp\\\\PackageGenerator\\\\Model\\\\AbstractModel\\|null\\.$#"
+			count: 1
+			path: src/Model/StructValue.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\Model\\\\Wsdl\\:\\:getContent\\(\\) should return WsdlToPhp\\\\WsdlHandler\\\\Wsdl but returns WsdlToPhp\\\\WsdlHandler\\\\AbstractDocument\\.$#"
+			count: 1
+			path: src/Model/Wsdl.php
+
+		-
+			message: "#^Method WsdlToPhp\\\\PackageGenerator\\\\Parser\\\\Wsdl\\\\AbstractTagImportParser\\:\\:getTagParser\\(\\) should return WsdlToPhp\\\\PackageGenerator\\\\Parser\\\\Wsdl\\\\AbstractTagImportParser\\|null but returns WsdlToPhp\\\\PackageGenerator\\\\Parser\\\\AbstractParser\\|null\\.$#"
+			count: 1
+			path: src/Parser/Wsdl/AbstractTagImportParser.php
+

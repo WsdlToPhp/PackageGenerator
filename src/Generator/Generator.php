@@ -29,7 +29,7 @@ class Generator implements JsonSerializable
 
     protected GeneratorContainers $containers;
 
-    protected GeneratorSoapClient $soapClient;
+    protected ?GeneratorSoapClient $soapClient = null;
 
     public function __construct(GeneratorOptions $options)
     {
@@ -985,7 +985,7 @@ class Generator implements JsonSerializable
                 $options->setOptionValue($name, $value);
             }
             // create generator instance with options
-            $instance = new static($options);
+            $instance = new self($options);
             // load services
             foreach ($decodedJson['containers']['services'] as $service) {
                 $instance->getContainers()->getServices()->add(self::getModelInstanceFromJsonArrayEntry($instance, $service));

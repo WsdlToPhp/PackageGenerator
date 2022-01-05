@@ -9,6 +9,7 @@ use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 use WsdlToPhp\PackageBase\AbstractStructArrayBase;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 use WsdlToPhp\PackageBase\AbstractStructEnumBase;
+use WsdlToPhp\PackageBase\SoapClientInterface;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
@@ -529,7 +530,7 @@ final class GeneratorTest extends AbstractTestCase
     {
         $instance = self::getBingGeneratorInstance();
 
-        if (PHP_VERSION_ID < 70015) {
+        if (PHP_VERSION_ID < 70015 || PHP_VERSION_ID >= 80100) {
             $this->assertSame([], $instance->getSoapClient()->getSoapClientStreamContextOptions());
         } else {
             $this->assertSame([
@@ -550,7 +551,7 @@ final class GeneratorTest extends AbstractTestCase
             ->setOrigin(self::onlineWsdlBingPath())
             ->setDestination(self::getTestDirectory())
             ->setSoapOptions([
-                AbstractSoapClientBase::WSDL_STREAM_CONTEXT => stream_context_create([
+                SoapClientInterface::WSDL_STREAM_CONTEXT => stream_context_create([
                     'https' => [
                         'X-Header' => 'X-Value',
                     ],

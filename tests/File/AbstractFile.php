@@ -63,7 +63,7 @@ abstract class AbstractFile extends AbstractTestCase
         unlink($file->getFileName());
     }
 
-    private static function applyParsers(Generator $generator): Generator
+    private static function applyParsers(Generator $generator): void
     {
         $parsers = [
             new FunctionsParser($generator),

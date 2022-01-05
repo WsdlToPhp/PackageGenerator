@@ -45,6 +45,7 @@ class Struct extends AbstractModelFile
 
     protected function getConstantAnnotationBlock(PhpConstant $constant): ?PhpAnnotationBlock
     {
+        return null;
     }
 
     protected function getModelAttributes(): StructAttributeContainer
@@ -212,7 +213,7 @@ class Struct extends AbstractModelFile
         if ($attribute->nameIsClean()) {
             $assignment = sprintf('$this->%s[] = $item;', $attribute->getCleanName());
         } else {
-            $assignment = sprintf('$this->%s[] = $this->{\'%s\'}[] = $item;', $attribute->getCleanName(), addslashes($attribute->getName()), $attribute->getCleanName());
+            $assignment = sprintf('$this->%s[] = $this->{\'%s\'}[] = $item;', $attribute->getCleanName(), addslashes($attribute->getName()));
         }
 
         $method
@@ -601,6 +602,7 @@ class Struct extends AbstractModelFile
     protected function getStructMethodsAddToAnnotationBlock(PhpMethod $method): PhpAnnotationBlock
     {
         $methodParameters = $method->getParameters();
+        /** @var PhpFunctionParameter $firstParameter */
         $firstParameter = array_shift($methodParameters);
         $attribute = $this->getModel()->getAttribute($firstParameter->getModel()->getName());
         $annotationBlock = new PhpAnnotationBlock();

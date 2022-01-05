@@ -112,8 +112,6 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     /**
      * This method is called before the object has been stored.
      *
-     * @param mixed $object
-     *
      * @throws InvalidArgumentException
      */
     protected function beforeObjectIsStored(object $object): void
