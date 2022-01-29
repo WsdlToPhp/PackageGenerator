@@ -60,13 +60,6 @@ class GeneratorSoapClient extends AbstractGeneratorAware
 
     public function getSoapClientStreamContextOptions(): array
     {
-        $options = [];
-        $soapClient = $this->getSoapClient();
-
-        if ($soapClient instanceof SoapClient) {
-            $options = $soapClient->getStreamContextOptions();
-        }
-
-        return $options;
+        return $this->getSoapClient()->getStreamContextOptions();
     }
 }

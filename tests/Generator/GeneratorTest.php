@@ -551,7 +551,7 @@ final class GeneratorTest extends AbstractTestCase
             ->setOrigin(self::onlineWsdlBingPath())
             ->setDestination(self::getTestDirectory())
             ->setSoapOptions([
-                SoapClientInterface::WSDL_STREAM_CONTEXT => stream_context_create([
+                SoapClientInterface::WSDL_STREAM_CONTEXT => stream_context_create($headers = [
                     'https' => [
                         'X-Header' => 'X-Value',
                     ],
@@ -574,15 +574,7 @@ final class GeneratorTest extends AbstractTestCase
             }
         }
 
-        $this->assertSame([
-            'https' => [
-                'X-Header' => 'X-Value',
-            ],
-            'ssl' => [
-                'ca_file' => basename(__FILE__),
-                'ca_path' => __DIR__,
-            ],
-        ], $contextOptions);
+        $this->assertSame($headers, $contextOptions);
     }
 
     public function testJsonSerialize()
