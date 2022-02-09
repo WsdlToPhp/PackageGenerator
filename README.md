@@ -157,6 +157,7 @@ Developers who helped on this project are listed in the [composer.json](composer
 - [Andreas Kintzinger](https://github.com/Phobetor)
 - [Hendrik Luup](https://github.com/hluup)
 - [Jacob Dreesen](https://github.com/jdreesen)
+- [Clifford Vickrey](https://github.com/cliffordvickrey)
 
 ## FAQ
 
