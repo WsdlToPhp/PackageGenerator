@@ -574,7 +574,11 @@ final class GeneratorTest extends AbstractTestCase
             }
         }
 
-        $this->assertSame($headers, $contextOptions);
+        if (PHP_VERSION_ID >= 80100) {
+            $this->assertSame([], $contextOptions);
+        } else {
+            $this->assertSame($headers, $contextOptions);
+        }
     }
 
     public function testJsonSerialize()
