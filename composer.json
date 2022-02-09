@@ -101,7 +101,8 @@
     "scripts": {
         "test": "vendor/bin/phpunit",
         "lint": "vendor/bin/php-cs-fixer fix --ansi --diff --verbose",
-        "build": "box build --verbose"
+        "build": "box build --verbose",
+        "phpstan": "vendor/bin/phpstan analyze src --level=2"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
