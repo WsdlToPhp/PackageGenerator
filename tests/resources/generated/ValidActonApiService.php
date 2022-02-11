@@ -21,7 +21,7 @@ class ApiService extends AbstractSoapClientBase
      * @param \StructType\ApiClusterHeader $clusterHeader
      * @param string $namespace
      * @param bool $mustUnderstand
-     * @param string $actor
+     * @param string|null $actor
      * @return \ServiceType\ApiService
      */
     public function setSoapHeaderClusterHeader(\StructType\ApiClusterHeader $clusterHeader, string $namespace = 'urn:api.actonsoftware.com', bool $mustUnderstand = false, ?string $actor = null): self
@@ -34,7 +34,7 @@ class ApiService extends AbstractSoapClientBase
      * @param \StructType\ApiSessionHeader $sessionHeader
      * @param string $namespace
      * @param bool $mustUnderstand
-     * @param string $actor
+     * @param string|null $actor
      * @return \ServiceType\ApiService
      */
     public function setSoapHeaderSessionHeader(\StructType\ApiSessionHeader $sessionHeader, string $namespace = 'urn:api.actonsoftware.com', bool $mustUnderstand = false, ?string $actor = null): self

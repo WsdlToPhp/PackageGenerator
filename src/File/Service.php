@@ -13,6 +13,7 @@ use WsdlToPhp\PackageGenerator\File\Element\PhpFunctionParameter;
 use WsdlToPhp\PackageGenerator\File\Validation\Rules;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
+use WsdlToPhp\PackageGenerator\Model\Method;
 use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
 use WsdlToPhp\PackageGenerator\Model\Service as ServiceModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
@@ -94,6 +95,27 @@ final class Service extends AbstractModelFile
     protected function defineUseStatements(): AbstractModelFile
     {
         $this->getFile()->addUse(SoapFault::class);
+
+        /** @var Method $method */
+        foreach ($this->getModel()->getMethods() as $method) {
+            $soapHeaderTypes = $method->getMetaValue(TagHeader::META_SOAP_HEADER_TYPES, []);
+            if (!is_array($soapHeaderTypes)) {
+                continue;
+            }
+            foreach ($soapHeaderTypes as $soapHeaderType) {
+                $model = $this->getModelByName($soapHeaderType);
+                if (!$model instanceof StructModel) {
+                    continue;
+                }
+                if (!$model->isRestriction()) {
+                    continue;
+                }
+
+                $this->getFile()->addUse(InvalidArgumentException::class);
+
+                break 2;
+            }
+        }
 
         return parent::defineUseStatements();
     }
@@ -242,7 +264,7 @@ final class Service extends AbstractModelFile
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $firstParameterType, $firstParameter->getName())))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', self::TYPE_STRING, self::PARAM_SET_HEADER_NAMESPACE)))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', self::TYPE_BOOL, self::PARAM_SET_HEADER_MUSTUNDERSTAND)))
-                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', self::TYPE_STRING, self::PARAM_SET_HEADER_ACTOR)))
+                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s|null $%s', self::TYPE_STRING, self::PARAM_SET_HEADER_ACTOR)))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModel()->getPackagedName(true)))
             ;
         }
