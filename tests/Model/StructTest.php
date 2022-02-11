@@ -14,7 +14,7 @@ class StructTest extends TestCase
      */
     public static function instance($name, $isStruct)
     {
-        return new Struct(self::getBingGeneratorInstance(), $name, $isStruct);
+        return new Struct(self::getBingGeneratorInstance(true), $name, $isStruct);
     }
 
     public function testGetContextualPartEnum()
@@ -191,5 +191,12 @@ class StructTest extends TestCase
         } else {
             $this->fail('Struct fieldString1000 not found');
         }
+    }
+
+    public function testGetNamespaceWithCustomDirectoryStructureMustReturnTheDirectoryWithinTheNamespace()
+    {
+        $model = self::instance('foo', true);
+        $model->getGenerator()->setOptionStructsFolder('Domain/Entities');
+        $this->assertSame('Domain\Entities', $model->getNamespace());
     }
 }

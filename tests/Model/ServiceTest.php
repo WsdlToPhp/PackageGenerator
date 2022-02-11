@@ -8,12 +8,12 @@ use WsdlToPhp\PackageGenerator\Model\Service;
 class ServiceTest extends TestCase
 {
     /**
-     * @param sring $name
+     * @param string $name
      * @return Service
      */
     public static function instance($name)
     {
-        return new Service(self::getBingGeneratorInstance(), $name);
+        return new Service(self::getBingGeneratorInstance(true), $name);
     }
     /**
      *
@@ -33,5 +33,12 @@ class ServiceTest extends TestCase
     public function testGetReservedMethodsInstance()
     {
         $this->assertInstanceOf('\WsdlToPhp\PackageGenerator\ConfigurationReader\ServiceReservedMethod', self::instance('foo')->getReservedMethodsInstance());
+    }
+
+    public function testGetNamespaceWithCustomDirectoryStructureMustReturnTheDirectoryWithinTheNamespace()
+    {
+        $model = self::instance('foo');
+        $model->getGenerator()->setOptionServicesFolder('Domain/Services');
+        $this->assertSame('Domain\Services', $model->getNamespace());
     }
 }
