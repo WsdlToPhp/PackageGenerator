@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 4.1.4 - 2022-02-12
+- issue #265 - Use statement for InvalidArgumentException is missing when needed in ServiceType class
+
 ## 4.1.3 - 2022-02-11
 - issue #264 - Wrong PHPDoc @param name and description
 

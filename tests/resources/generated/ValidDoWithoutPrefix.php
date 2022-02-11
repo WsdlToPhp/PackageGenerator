@@ -20,7 +20,7 @@ class _Do extends AbstractSoapClientBase
      * @param \StructType\CustomSecurityHeaderType $requesterCredentials
      * @param string $namespace
      * @param bool $mustUnderstand
-     * @param string $actor
+     * @param string|null $actor
      * @return \ServiceType\_Do
      */
     public function setSoapHeaderRequesterCredentials(\StructType\CustomSecurityHeaderType $requesterCredentials, string $namespace = 'urn:ebay:api:PayPalAPI', bool $mustUnderstand = false, ?string $actor = null): self
