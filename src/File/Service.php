@@ -79,6 +79,7 @@ final class Service extends AbstractModelFile
 
     protected function getConstantAnnotationBlock(PhpConstant $constant): ?PhpAnnotationBlock
     {
+        return null;
     }
 
     protected function fillClassProperties(PropertyContainer $properties): void
@@ -87,6 +88,7 @@ final class Service extends AbstractModelFile
 
     protected function getPropertyAnnotationBlock(PhpProperty $property): ?PhpAnnotationBlock
     {
+        return null;
     }
 
     protected function defineUseStatements(): AbstractModelFile

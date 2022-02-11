@@ -76,7 +76,7 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
             $isKnown = !empty($knownType) && self::UNKNOWN !== mb_strtolower($knownType);
         } elseif (is_array($knownType)) {
             foreach ($knownType as $knownValue) {
-                $isKnown &= !empty($knownType) && self::UNKNOWN !== mb_strtolower($knownValue);
+                $isKnown &= self::UNKNOWN !== mb_strtolower($knownValue);
             }
         }
 

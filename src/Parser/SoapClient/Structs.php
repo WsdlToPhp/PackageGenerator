@@ -39,7 +39,7 @@ final class Structs extends AbstractParser
         $cleanType = self::cleanType($type);
         $typeDef = explode(' ', $cleanType);
 
-        if (array_key_exists(1, $typeDef) && !empty($typeDef)) {
+        if (array_key_exists(1, $typeDef)) {
             $structName = $typeDef[1];
             if (self::UNION_DECLARATION === $typeDef[0]) {
                 $this->parseUnionStruct($typeDef);

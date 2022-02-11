@@ -40,7 +40,7 @@ final class ListRuleTest extends AbstractRuleTest
         $instance = self::getEwsWorkingPeriodInstance();
 
         $instance->setDayOfWeek($values = [
-            ApiDayOfWeekType::VALUE_MONDAY,
+            ApiDayOfWeekType::VALUE_MONDAY, // @phpstan-ignore-line
             'Tuesday',
             'Friday',
             'Sunday',
@@ -54,7 +54,7 @@ final class ListRuleTest extends AbstractRuleTest
         $instance = self::getEwsWorkingPeriodInstance();
 
         $instance->setDayOfWeek($value = implode(' ', [
-            ApiDayOfWeekType::VALUE_MONDAY,
+            ApiDayOfWeekType::VALUE_MONDAY, // @phpstan-ignore-line
             'Tuesday',
             'Friday',
             'Sunday',

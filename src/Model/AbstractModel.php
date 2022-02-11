@@ -258,7 +258,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
         }
 
         if (!empty($this->getSubDirectory())) {
-            $namespaces[] = $this->getSubDirectory();
+            $namespaces[] = str_replace('/', '\\', $this->getSubDirectory());
         }
 
         return implode('\\', $namespaces);
@@ -310,7 +310,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
 
     public function getReservedMethodsInstance(): AbstractReservedWord
     {
-        throw new InvalidArgumentException(sprintf('The method %s should be defined in the class %s', __FUNCTION__, get_called_class(), __LINE__));
+        throw new InvalidArgumentException(sprintf('The method %s should be defined in the class %s', __FUNCTION__, get_called_class()));
     }
 
     public function replaceReservedMethod(string $methodName, ?string $context = null): string

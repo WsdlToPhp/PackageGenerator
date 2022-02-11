@@ -4,7 +4,7 @@
 
 [![License](https://poser.pugx.org/wsdltophp/packagegenerator/license)](https://packagist.org/packages/wsdltophp/packagegenerator)
 [![Latest Stable Version](https://poser.pugx.org/wsdltophp/packagegenerator/version.png)](https://packagist.org/packages/wsdltophp/packagegenerator)
-[![Build Status](https://travis-ci.com/WsdlToPhp/PackageGenerator.svg)](https://travis-ci.com/github/WsdlToPhp/PackageGenerator)
+[![TeamCity build status](https://teamcity.mikael-delsol.fr/app/rest/builds/buildType:id:PackageGenerator_Build/statusIcon.svg)](https://github.com/WsdlToPhp/PackageGenerator)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/badges/quality-score.png)](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/)
 [![Code Coverage](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/badges/coverage.png)](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/)
 [![Total Downloads](https://poser.pugx.org/wsdltophp/packagegenerator/downloads)](https://packagist.org/packages/wsdltophp/packagegenerator)
@@ -157,6 +157,7 @@ Developers who helped on this project are listed in the [composer.json](composer
 - [Andreas Kintzinger](https://github.com/Phobetor)
 - [Hendrik Luup](https://github.com/hluup)
 - [Jacob Dreesen](https://github.com/jdreesen)
+- [Clifford Vickrey](https://github.com/cliffordvickrey)
 
 ## FAQ
 

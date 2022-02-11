@@ -7,7 +7,7 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Model\Schema;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
-use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
+use WsdlToPhp\WsdlHandler\AbstractDocument;
 
 abstract class AbstractTagImportParser extends AbstractTagParser
 {
@@ -46,13 +46,13 @@ abstract class AbstractTagImportParser extends AbstractTagParser
         $tagName = null;
 
         switch ($this->parsingTag()) {
-            case WsdlDocument::TAG_IMPORT:
-                $tagName = WsdlDocument::TAG_INCLUDE;
+            case AbstractDocument::TAG_IMPORT:
+                $tagName = AbstractDocument::TAG_INCLUDE;
 
                 break;
 
-            case WsdlDocument::TAG_INCLUDE:
-                $tagName = WsdlDocument::TAG_IMPORT;
+            case AbstractDocument::TAG_INCLUDE:
+                $tagName = AbstractDocument::TAG_IMPORT;
 
                 break;
         }

@@ -91,7 +91,7 @@ final class ArrayRuleTest extends AbstractRuleTest
             $instance,
             $instance->setTaxDescription([
                 new ApiTaxType(),
-                new ApiParagraphType(),
+                new ApiParagraphType(), // @phpstan-ignore-line
             ])
         );
     }
@@ -103,8 +103,8 @@ final class ArrayRuleTest extends AbstractRuleTest
         $this->assertSame(
             $instance,
             $instance->setTaxDescription([
-                new ApiParagraphType(),
-                new ApiParagraphType(),
+                new ApiParagraphType(), // @phpstan-ignore-line
+                new ApiParagraphType(), // @phpstan-ignore-line
             ])
         );
     }

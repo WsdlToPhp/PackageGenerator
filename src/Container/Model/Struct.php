@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Container\Model;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Model\Struct as Model;
 
 final class Struct extends AbstractModel
@@ -61,10 +60,6 @@ final class Struct extends AbstractModel
 
     public function getVirtual(string $value): ?Model
     {
-        if (!is_scalar($value)) {
-            throw new InvalidArgumentException(sprintf('Value "%s" can\'t be used to get an object from "%s"', is_object($value) ? get_class($value) : var_export($value, true), __CLASS__), __LINE__);
-        }
-
         $key = $this->getVirtualKey($value);
 
         return array_key_exists($key, $this->virtualObjects) ? $this->virtualObjects[$key] : null;

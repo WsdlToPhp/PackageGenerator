@@ -9,6 +9,7 @@ use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 use WsdlToPhp\PackageBase\AbstractStructArrayBase;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 use WsdlToPhp\PackageBase\AbstractStructEnumBase;
+use WsdlToPhp\PackageBase\SoapClientInterface;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
@@ -525,26 +526,11 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertNotNull($content);
     }
 
-    public function testExceptionOntInitDirectory()
-    {
-        $this->expectException(InvalidArgumentException::class);
-
-        Utils::createDirectory($destination = self::getTestDirectory().'notwritable', 0444);
-
-        $generator = self::getBingGeneratorInstance();
-        $generator
-            ->setOptionComposerName('wsdltophp/invalid')
-            ->setOptionDestination($destination)
-        ;
-
-        $generator->generatePackage();
-    }
-
     public function testGetEmptySoapClientStreamContextOptions()
     {
         $instance = self::getBingGeneratorInstance();
 
-        if (PHP_VERSION_ID < 70015) {
+        if (PHP_VERSION_ID < 70015 || PHP_VERSION_ID >= 80100) {
             $this->assertSame([], $instance->getSoapClient()->getSoapClientStreamContextOptions());
         } else {
             $this->assertSame([
@@ -565,7 +551,7 @@ final class GeneratorTest extends AbstractTestCase
             ->setOrigin(self::onlineWsdlBingPath())
             ->setDestination(self::getTestDirectory())
             ->setSoapOptions([
-                AbstractSoapClientBase::WSDL_STREAM_CONTEXT => stream_context_create([
+                SoapClientInterface::WSDL_STREAM_CONTEXT => stream_context_create($headers = [
                     'https' => [
                         'X-Header' => 'X-Value',
                     ],
@@ -588,15 +574,11 @@ final class GeneratorTest extends AbstractTestCase
             }
         }
 
-        $this->assertSame([
-            'https' => [
-                'X-Header' => 'X-Value',
-            ],
-            'ssl' => [
-                'ca_file' => basename(__FILE__),
-                'ca_path' => __DIR__,
-            ],
-        ], $contextOptions);
+        if (PHP_VERSION_ID >= 80100) {
+            $this->assertSame([], $contextOptions);
+        } else {
+            $this->assertSame($headers, $contextOptions);
+        }
     }
 
     public function testJsonSerialize()

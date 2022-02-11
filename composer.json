@@ -74,6 +74,11 @@
             "name": "Jacob Dreesen",
             "email": "jacob.dreesen@gmail.com",
             "role": "Contributor"
+        },
+        {
+            "name": "Clifford Vickrey",
+            "email": "clifforddavidvickrey@gmail.com",
+            "role": "Contributor"
         }
     ],
     "support" : {
@@ -87,8 +92,8 @@
         "ext-mbstring": "*",
         "ext-soap": "*",
         "composer/composer": "^2.0",
-        "symfony/console": "^4.0|^5.0",
-        "symfony/yaml": "^4.0|^5.0",
+        "symfony/console": "^4.0|^5.0|^6.0",
+        "symfony/yaml": "^4.0|^5.0|^6.0",
         "wsdltophp/packagebase": "^5.0",
         "wsdltophp/phpgenerator": "^4.0",
         "wsdltophp/wsdlhandler": "^1.0"
@@ -96,10 +101,12 @@
     "scripts": {
         "test": "vendor/bin/phpunit",
         "lint": "vendor/bin/php-cs-fixer fix --ansi --diff --verbose",
-        "build": "box build --verbose"
+        "build": "box build --verbose",
+        "phpstan": "vendor/bin/phpstan analyze src --level=2"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.0",
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpstan/phpstan": "^1.3",
         "phpunit/phpunit": "^9"
     },
     "autoload": {

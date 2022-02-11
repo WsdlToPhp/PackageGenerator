@@ -26,6 +26,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         return !empty($element);
     }
 
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         $element = array_slice($this->objects, $offset, 1);
@@ -33,11 +34,13 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         return $this->offsetExists($offset) ? array_shift($element) : null;
     }
 
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         throw new InvalidArgumentException('This method can\'t be used as object are stored with a string as array index', __LINE__);
     }
 
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         if ($this->offsetExists($offset)) {
@@ -45,6 +48,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         }
     }
 
+    #[\ReturnTypeWillChange]
     public function current()
     {
         $current = array_slice($this->objects, $this->offset, 1);
@@ -52,11 +56,13 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         return array_shift($current);
     }
 
+    #[\ReturnTypeWillChange]
     public function next()
     {
         ++$this->offset;
     }
 
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->offset;
@@ -67,11 +73,13 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         return 0 < count(array_slice($this->objects, $this->offset, 1));
     }
 
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->offset = 0;
     }
 
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->objects);
@@ -111,8 +119,6 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
 
     /**
      * This method is called before the object has been stored.
-     *
-     * @param mixed $object
      *
      * @throws InvalidArgumentException
      */

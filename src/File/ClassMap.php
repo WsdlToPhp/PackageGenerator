@@ -23,6 +23,7 @@ final class ClassMap extends AbstractModelFile
 
     protected function getConstantAnnotationBlock(PhpConstant $constant): ?PhpAnnotationBlock
     {
+        return null;
     }
 
     protected function fillClassProperties(PropertyContainer $properties): void
@@ -31,6 +32,7 @@ final class ClassMap extends AbstractModelFile
 
     protected function getPropertyAnnotationBlock(PhpProperty $property): ?PhpAnnotationBlock
     {
+        return null;
     }
 
     protected function fillClassMethods(): void

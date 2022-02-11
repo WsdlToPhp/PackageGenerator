@@ -36,7 +36,7 @@ final class ItemTypeRuleTest extends AbstractRuleTest
         // true to avoid the maxoccurs error to occur
         $instance = self::getWhlTaxTypeInstance(true);
 
-        $this->assertSame($instance, $instance->addToTaxDescription(new ApiParagraphType()));
+        $this->assertSame($instance, $instance->addToTaxDescription(new ApiParagraphType())); // @phpstan-ignore-line
     }
 
     public function testAddToFirstSegmentsIdsValueWithStringValueMustThrowAnException()
