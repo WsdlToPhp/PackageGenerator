@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ServiceType;
 
 use SoapFault;
+use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
