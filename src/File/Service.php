@@ -264,7 +264,7 @@ final class Service extends AbstractModelFile
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', $firstParameterType, $firstParameter->getName())))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', self::TYPE_STRING, self::PARAM_SET_HEADER_NAMESPACE)))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', self::TYPE_BOOL, self::PARAM_SET_HEADER_MUSTUNDERSTAND)))
-                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $%s', self::TYPE_STRING, self::PARAM_SET_HEADER_ACTOR)))
+                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s|null $%s', self::TYPE_STRING, self::PARAM_SET_HEADER_ACTOR)))
                 ->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, $this->getModel()->getPackagedName(true)))
             ;
         }

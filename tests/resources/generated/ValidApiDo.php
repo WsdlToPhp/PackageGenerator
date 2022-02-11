@@ -21,7 +21,7 @@ class ApiDo extends AbstractSoapClientBase
      * @param \StructType\ApiCustomSecurityHeaderType $requesterCredentials
      * @param string $namespace
      * @param bool $mustUnderstand
-     * @param string $actor
+     * @param string|null $actor
      * @return \ServiceType\ApiDo
      */
     public function setSoapHeaderRequesterCredentials(\StructType\ApiCustomSecurityHeaderType $requesterCredentials, string $namespace = 'urn:ebay:api:PayPalAPI', bool $mustUnderstand = false, ?string $actor = null): self

@@ -22,7 +22,7 @@ class ApiFind extends AbstractSoapClientBase
      * @param \StructType\ApiExchangeImpersonationType $exchangeImpersonation
      * @param string $namespace
      * @param bool $mustUnderstand
-     * @param string $actor
+     * @param string|null $actor
      * @return \ServiceType\ApiFind
      */
     public function setSoapHeaderExchangeImpersonation(\StructType\ApiExchangeImpersonationType $exchangeImpersonation, string $namespace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
@@ -35,7 +35,7 @@ class ApiFind extends AbstractSoapClientBase
      * @param \StructType\ApiMailboxCultureType $mailboxCulture
      * @param string $namespace
      * @param bool $mustUnderstand
-     * @param string $actor
+     * @param string|null $actor
      * @return \ServiceType\ApiFind
      */
     public function setSoapHeaderMailboxCulture(\StructType\ApiMailboxCultureType $mailboxCulture, string $namespace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
@@ -48,7 +48,7 @@ class ApiFind extends AbstractSoapClientBase
      * @param \StructType\ApiRequestServerVersion $requestServerVersion
      * @param string $namespace
      * @param bool $mustUnderstand
-     * @param string $actor
+     * @param string|null $actor
      * @return \ServiceType\ApiFind
      */
     public function setSoapHeaderRequestServerVersion(\StructType\ApiRequestServerVersion $requestServerVersion, string $namespace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
@@ -61,7 +61,7 @@ class ApiFind extends AbstractSoapClientBase
      * @param \StructType\ApiTimeZoneContextType $timeZoneContext
      * @param string $namespace
      * @param bool $mustUnderstand
-     * @param string $actor
+     * @param string|null $actor
      * @return \ServiceType\ApiFind
      */
     public function setSoapHeaderTimeZoneContext(\StructType\ApiTimeZoneContextType $timeZoneContext, string $namespace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
@@ -74,7 +74,7 @@ class ApiFind extends AbstractSoapClientBase
      * @param \StructType\ApiManagementRoleType $managementRole
      * @param string $namespace
      * @param bool $mustUnderstand
-     * @param string $actor
+     * @param string|null $actor
      * @return \ServiceType\ApiFind
      */
     public function setSoapHeaderManagementRole(\StructType\ApiManagementRoleType $managementRole, string $namespace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
@@ -90,7 +90,7 @@ class ApiFind extends AbstractSoapClientBase
      * @param string $dateTimePrecision
      * @param string $namespace
      * @param bool $mustUnderstand
-     * @param string $actor
+     * @param string|null $actor
      * @return \ServiceType\ApiFind
      */
     public function setSoapHeaderDateTimePrecision(string $dateTimePrecision, string $namespace = 'http://schemas.microsoft.com/exchange/services/2006/types', bool $mustUnderstand = false, ?string $actor = null): self
