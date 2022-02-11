@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 4.1.3 - 2022-02-11
+- issue #264 - Wrong PHPDoc @param name and description
+
 ## 4.1.2 - 2022-02-11
 - issue #256 - subdirectory not converted in namespaces
 - pr #259 - add ReturnTypeWillChange attributes for PHP 8.1
