@@ -73,7 +73,7 @@ jobs:
           gpg -u wsdltophp@mikael-delsol.fr --detach-sign --output wsdltophp.phar.asc ./bin/wsdltophp.phar
         env:
           GPG_SIGNING_KEY: |
-            ${{ secrets.GPG_SIGNING_KEY_893E7553C4D525279BC8C6D9B41E3A1E3748D61F }}
+            ${{ secrets.GPG_SIGNING_KEY }}
 
       - name: Create release
         id: create_release
