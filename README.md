@@ -9,7 +9,7 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/badges/coverage.png)](https://scrutinizer-ci.com/g/WsdlToPhp/PackageGenerator/)
 [![Total Downloads](https://poser.pugx.org/wsdltophp/packagegenerator/downloads)](https://packagist.org/packages/wsdltophp/packagegenerator)
 [![StyleCI](https://styleci.io/repos/35660532/shield)](https://styleci.io/repos/35660532)
-[![SensioLabsInsight](https://insight.symfony.com/projects/661a53c4-3f4a-4a17-a4b2-051282019c87/mini.png)](https://insight.symfony.com/projects/661a53c4-3f4a-4a17-a4b2-051282019c87)
+[![SymfonyInsight](https://insight.symfony.com/projects/73ec7ea6-a771-487a-8ebe-71f6b2e8fd4a/mini.svg)](https://insight.symfony.com/projects/73ec7ea6-a771-487a-8ebe-71f6b2e8fd4a)
 
 Package Generator generates a PHP SDK from any WSDL so you can easily consume any SOAP Web Service without wondering how SOAP is used under the hood.
 
