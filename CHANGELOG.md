@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 3.4.2 - 2022-02-11
+issue #256 - subdirectory not converted in namespaces
+
 ## 3.4.1 - 2021-07-14
 - issue #257 - choice tag is not fully handled properly
     - Improvement for choice tag handling
