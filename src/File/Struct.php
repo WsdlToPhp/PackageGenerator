@@ -566,7 +566,7 @@ class Struct extends AbstractModelFile
         if ($attribute->isXml()) {
             $annotationBlock
                 ->addChild(new PhpAnnotation(self::ANNOTATION_USES, '\DOMDocument::loadXML()'))
-                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, 'bool $asString true: returns XML string, false: returns \DOMDocument'))
+                ->addChild(new PhpAnnotation(self::ANNOTATION_PARAM, 'bool $asDomDocument true: returns \DOMDocument, false: returns XML string'))
             ;
         }
 
