@@ -77,7 +77,7 @@ final class GeneratorOptionsTest extends AbstractTestCase
     public function testSetSrcDirname()
     {
         $instance = self::optionsInstance();
-        $instance->setSrcDirName('');
+        $instance->setSrcDirname('');
 
         $this->assertSame('', $instance->getSrcDirname());
     }
@@ -226,15 +226,15 @@ final class GeneratorOptionsTest extends AbstractTestCase
 
     public function testGetGenericConstantsName()
     {
-        $this->assertFalse(self::optionsInstance()->getGenericConstantsName());
+        $this->assertFalse(self::optionsInstance()->getGenericConstantsNames());
     }
 
     public function testSetGenericConstantsName()
     {
         $instance = self::optionsInstance();
-        $instance->setGenericConstantsName(GeneratorOptions::VALUE_TRUE);
+        $instance->setGenericConstantsNames(GeneratorOptions::VALUE_TRUE);
 
-        $this->assertTrue($instance->getGenericConstantsName());
+        $this->assertTrue($instance->getGenericConstantsNames());
     }
 
     public function testGetGenerateTutorialFile()
