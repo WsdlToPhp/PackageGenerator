@@ -125,43 +125,6 @@ final class GeneratorOptions extends AbstractYamlReader implements JsonSerializa
     public const SCHEMAS_FOLDER = 'schemas_folder';
     public const XSD_TYPES_PATH = 'xsd_types_path';
 
-    public const OPTIONS = [
-        self::ADD_COMMENTS,
-        self::ARRAYS_FOLDER,
-        self::BASIC_LOGIN,
-        self::BASIC_PASSWORD,
-        self::CATEGORY,
-        self::COMPOSER_NAME,
-        self::COMPOSER_SETTINGS,
-        self::DESTINATION,
-        self::ENUMS_FOLDER,
-        self::GATHER_METHODS,
-        self::GENERATE_TUTORIAL_FILE,
-        self::GENERIC_CONSTANTS_NAME,
-        self::NAMESPACE_PREFIX,
-        self::NAMESPACE_DICTATES_DIRECTORIES,
-        self::ORIGIN,
-        self::PREFIX,
-        self::PROXY_HOST,
-        self::PROXY_LOGIN,
-        self::PROXY_PASSWORD,
-        self::PROXY_PORT,
-        self::SERVICES_FOLDER,
-        self::SOAP_CLIENT_CLASS,
-        self::SOAP_OPTIONS,
-        self::SRC_DIRNAME,
-        self::STANDALONE,
-        self::STRUCT_ARRAY_CLASS,
-        self::STRUCT_ENUM_CLASS,
-        self::STRUCT_CLASS,
-        self::STRUCTS_FOLDER,
-        self::SUFFIX,
-        self::VALIDATION,
-        self::SCHEMAS_SAVE,
-        self::SCHEMAS_FOLDER,
-        self::XSD_TYPES_PATH,
-    ];
-
     protected array $options;
 
     protected function __construct(string $filename)
