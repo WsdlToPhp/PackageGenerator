@@ -20,6 +20,9 @@ add_comments:
 namespace_prefix:
     default: ''
     values: ''
+namespace_dictates_directories:
+    default: true
+    values: [ true, false ]
 standalone:
     default: true
     values: [ true, false ]

@@ -305,6 +305,19 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('\My\Project', $instance->getNamespace());
     }
 
+    public function testGetNamespaceDictatesDirectories()
+    {
+        $this->assertSame(true, self::optionsInstance()->getNamespaceDictatesDirectories());
+    }
+
+    public function testSetNamespaceDictatesDirectories()
+    {
+        $instance = self::optionsInstance();
+        $instance->setNamespaceDictatesDirectories(false);
+
+        $this->assertSame(false, $instance->getNamespaceDictatesDirectories());
+    }
+
     public function testGetStandalone()
     {
         $this->assertTrue(self::optionsInstance()->getStandalone());
@@ -549,6 +562,7 @@ final class GeneratorOptionsTest extends AbstractTestCase
             'generate_tutorial_file' => true,
             'add_comments' => [],
             'namespace_prefix' => '',
+            'namespace_dictates_directories' => true,
             'standalone' => true,
             'validation' => true,
             'struct_class' => AbstractStructBase::class,
@@ -588,6 +602,7 @@ final class GeneratorOptionsTest extends AbstractTestCase
             'generate_tutorial_file' => true,
             'add_comments' => [],
             'namespace_prefix' => '',
+            'namespace_dictates_directories' => true,
             'standalone' => true,
             'validation' => true,
             'struct_class' => AbstractStructBase::class,

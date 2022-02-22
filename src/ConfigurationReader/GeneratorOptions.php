@@ -17,6 +17,8 @@ use WsdlToPhp\PackageGenerator\Model\StructValue;
  * @method self   setGenerateTutorialFile(bool $generateTutorialFile)
  * @method bool   getGenericConstantsNames()
  * @method self   setGenericConstantsNames(bool $genericConstantsNames)
+ * @method bool   getNamespaceDictatesDirectories()
+ * @method self   setNamespaceDictatesDirectories(bool $namespaceDictatesDirectories)
  * @method bool   getStandalone()
  * @method self   setStandalone(bool $standalone)
  * @method bool   getValidation()
@@ -101,6 +103,7 @@ final class GeneratorOptions extends AbstractYamlReader implements JsonSerializa
     public const GENERATE_TUTORIAL_FILE = 'generate_tutorial_file';
     public const GENERIC_CONSTANTS_NAME = 'generic_constants_names';
     public const NAMESPACE_PREFIX = 'namespace_prefix';
+    public const NAMESPACE_DICTATES_DIRECTORIES = 'namespace_dictates_directories';
     public const ORIGIN = 'origin';
     public const PREFIX = 'prefix';
     public const PROXY_HOST = 'proxy_host';
@@ -136,6 +139,7 @@ final class GeneratorOptions extends AbstractYamlReader implements JsonSerializa
         self::GENERATE_TUTORIAL_FILE,
         self::GENERIC_CONSTANTS_NAME,
         self::NAMESPACE_PREFIX,
+        self::NAMESPACE_DICTATES_DIRECTORIES,
         self::ORIGIN,
         self::PREFIX,
         self::PROXY_HOST,

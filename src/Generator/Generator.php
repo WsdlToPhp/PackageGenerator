@@ -28,6 +28,8 @@ use WsdlToPhp\PackageGenerator\Model\Wsdl;
  * @method self   setOptionGenerateTutorialFile(bool $generateTutorialFile)
  * @method string getOptionNamespace()
  * @method self   setOptionNamespace(string $namespace)
+ * @method bool   getOptionNamespaceDictatesDirectories()
+ * @method self   setOptionNamespaceDictatesDirectories(bool $namespaceDictatesDirectories)
  * @method array  getOptionAddComments()
  * @method self   setOptionAddComments(array $addComments)
  * @method bool   getOptionStandalone()

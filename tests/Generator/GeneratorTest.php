@@ -265,6 +265,19 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('My\Project', $instance->getOptionNamespacePrefix());
     }
 
+    public function testGetOptionNamespaceDictatesDirectories()
+    {
+        $this->assertTrue(self::localInstance()->getOptionNamespaceDictatesDirectories());
+    }
+
+    public function testSetOptionNamespaceDictatesDirectories()
+    {
+        $instance = self::getBingGeneratorInstance();
+        $instance->setOptionNamespaceDictatesDirectories(false);
+
+        $this->assertSame(false, $instance->getOptionNamespaceDictatesDirectories());
+    }
+
     public function testGetOptionSoapClientClass()
     {
         $this->assertSame(AbstractSoapClientBase::class, self::localInstance()->getOptionSoapClientClass());
@@ -642,13 +655,14 @@ final class GeneratorTest extends AbstractTestCase
     {
         Utils::createDirectory($destination = self::getTestDirectory().$dir);
 
+        /** @var GeneratorOptions $options */
         $options = GeneratorOptions::instance();
         $options
             ->setGenerateTutorialFile(false)
             ->setAddComments([])
             ->setArraysFolder('ArrayType')
-            ->setBasicLogin(null)
-            ->setBasicPassword(null)
+            ->setBasicLogin('')
+            ->setBasicPassword('')
             ->setCategory(GeneratorOptions::VALUE_CAT)
             ->setComposerName($standalone ? 'wsdltophp/'.$dir : '')
             ->setComposerSettings($standalone ? [
@@ -659,14 +673,15 @@ final class GeneratorTest extends AbstractTestCase
             ->setEnumsFolder('EnumType')
             ->setGatherMethods(GeneratorOptions::VALUE_START)
             ->setGenerateTutorialFile(true)
-            ->setGenericConstantsName(false)
+            ->setGenericConstantsNames(false)
             ->setNamespace('')
+            ->setNamespaceDictatesDirectories(true)
             ->setOrigin($wsdl)
             ->setPrefix('')
-            ->setProxyHost(null)
-            ->setProxyLogin(null)
-            ->setProxyPassword(null)
-            ->setProxyPort(null)
+            ->setProxyHost('')
+            ->setProxyLogin('')
+            ->setProxyPassword('')
+            ->setProxyPort('')
             ->setServicesFolder('ServiceType')
             ->setSchemasSave(false)
             ->setSchemasFolder('wsdl')

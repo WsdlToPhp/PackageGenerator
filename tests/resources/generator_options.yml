@@ -1,6 +1,7 @@
 # The generator options are defined once in this file.
 # Each option can be overridden when using the command line tool.
-# Each option option can be overridden using your own config file too.
+# Each option can be overridden using your own config file too.
+
 category:
     default: 'cat'
     values: [ 'none', 'cat' ]
@@ -19,6 +20,9 @@ add_comments:
 namespace_prefix:
     default: ''
     values: ''
+namespace_dictates_directories:
+    default: true
+    values: [ true, false ]
 standalone:
     default: true
     values: [ true, false ]
@@ -78,7 +82,7 @@ composer_name:
     values: ''
 composer_settings:
     default: []
-    values: null
+    values: ''
 structs_folder:
     default: 'StructType'
     values: ''

@@ -145,6 +145,12 @@ final class GeneratePackageCommand extends AbstractCommand
                 'Package classes\' namespace'
             )
             ->addOption(
+                'namespace-directories',
+                null,
+                InputOption::VALUE_OPTIONAL,
+                'Should the directories match the namespace path or not? True by default'
+            )
+            ->addOption(
                 'category',
                 null,
                 InputOption::VALUE_OPTIONAL,
@@ -302,6 +308,7 @@ final class GeneratePackageCommand extends AbstractCommand
             'gentutorial' => GeneratorOptions::GENERATE_TUTORIAL_FILE,
             'login' => GeneratorOptions::BASIC_LOGIN,
             'namespace' => GeneratorOptions::NAMESPACE_PREFIX,
+            'namespace-directories' => GeneratorOptions::NAMESPACE_DICTATES_DIRECTORIES,
             'password' => GeneratorOptions::BASIC_PASSWORD,
             'prefix' => GeneratorOptions::PREFIX,
             'proxy-host' => GeneratorOptions::PROXY_HOST,
@@ -339,7 +346,7 @@ final class GeneratePackageCommand extends AbstractCommand
         return $this;
     }
 
-    protected function formatOptionValue($optionValue): bool
+    protected function formatOptionValue($optionValue)
     {
         if ('true' === $optionValue || (is_numeric($optionValue) && 1 === (int) $optionValue)) {
             return true;
