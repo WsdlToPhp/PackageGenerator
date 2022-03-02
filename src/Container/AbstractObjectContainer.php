@@ -27,7 +27,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     /**
-     * @return string|int|float|bool|null|array|object|callable|resource
+     * @return mixed
      */
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
@@ -38,7 +38,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     /**
-     * @return string|int|float|bool|null|array|object|callable|resource
+     * @return mixed
      */
     #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
@@ -55,7 +55,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     /**
-     * @return string|int|float|bool|null|array|object|callable|resource
+     * @return mixed
      */
     #[\ReturnTypeWillChange]
     public function current()
