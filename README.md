@@ -158,6 +158,7 @@ Developers who helped on this project are listed in the [composer.json](composer
 - [Hendrik Luup](https://github.com/hluup)
 - [Jacob Dreesen](https://github.com/jdreesen)
 - [Clifford Vickrey](https://github.com/cliffordvickrey)
+- [Arnaud POINTET](https://github.com/Oipnet)
 
 ## FAQ
 
