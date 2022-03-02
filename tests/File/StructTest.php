@@ -42,6 +42,35 @@ final class StructTest extends AbstractFile
         $this->assertSame(sprintf('%s%s%s/%s.php', self::getTestDirectory(), $model->getGenerator()->getOptionSrcDirname().DIRECTORY_SEPARATOR, $model->getContextualPart(), $model->getPackagedName(false)), $file->getFileName());
     }
 
+    public function testGetDestinationFolderMatchesNamespace()
+    {
+        $generator = self::bingGeneratorInstance()->setOptionNamespacePrefix($ns = 'Bing\Sdk');
+        $model = new StructModel($generator, 'Foo');
+        $file = new StructFile($generator, 'foo');
+        $file->setModel($model);
+
+        $this->assertSame(sprintf(
+            '%s%s%s',
+            self::getTestDirectory(),
+            $model->getGenerator()->getOptionSrcDirname().DIRECTORY_SEPARATOR,
+            str_replace('\\', DIRECTORY_SEPARATOR, $ns).DIRECTORY_SEPARATOR
+        ), $file->getDestinationFolder(true));
+    }
+
+    public function testGetDestinationFolderDoesNotMatchNamespace()
+    {
+        $generator = self::bingGeneratorInstance()->setOptionNamespacePrefix('Bing\Sdk')->setOptionNamespaceDictatesDirectories(false);
+        $model = new StructModel($generator, 'Foo');
+        $file = new StructFile($generator, 'foo');
+        $file->setModel($model);
+
+        $this->assertSame(sprintf(
+            '%s%s',
+            self::getTestDirectory(),
+            $model->getGenerator()->getOptionSrcDirname().DIRECTORY_SEPARATOR,
+        ), $file->getDestinationFolder(true));
+    }
+
     public function testWriteBingSearchStructQuery()
     {
         $generator = self::bingGeneratorInstance();

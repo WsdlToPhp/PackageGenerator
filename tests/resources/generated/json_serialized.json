@@ -3347,6 +3347,7 @@
         "generate_tutorial_file": true,
         "add_comments": [],
         "namespace_prefix": "",
+        "namespace_dictates_directories": true,
         "standalone": false,
         "validation": true,
         "struct_class": "WsdlToPhp\\PackageBase\\AbstractStructBase",

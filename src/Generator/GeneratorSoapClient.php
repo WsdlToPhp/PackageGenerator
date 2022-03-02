@@ -6,6 +6,7 @@ namespace WsdlToPhp\PackageGenerator\Generator;
 
 use InvalidArgumentException;
 use SoapFault;
+use WsdlToPhp\PackageBase\SoapClientInterface;
 
 class GeneratorSoapClient extends AbstractGeneratorAware
 {
@@ -35,14 +36,14 @@ class GeneratorSoapClient extends AbstractGeneratorAware
     public function getSoapClientOptions(int $soapVersion): array
     {
         return array_merge([
-            SoapClient::WSDL_SOAP_VERSION => $soapVersion,
-            SoapClient::WSDL_URL => $this->getGenerator()->getOptionOrigin(),
-            SoapClient::WSDL_LOGIN => $this->getGenerator()->getOptionBasicLogin(),
-            SoapClient::WSDL_PROXY_HOST => $this->getGenerator()->getOptionProxyHost(),
-            SoapClient::WSDL_PROXY_PORT => $this->getGenerator()->getOptionProxyPort(),
-            SoapClient::WSDL_PASSWORD => $this->getGenerator()->getOptionBasicPassword(),
-            SoapClient::WSDL_PROXY_LOGIN => $this->getGenerator()->getOptionProxyLogin(),
-            SoapClient::WSDL_PROXY_PASSWORD => $this->getGenerator()->getOptionProxyPassword(),
+            SoapClientInterface::WSDL_SOAP_VERSION => $soapVersion,
+            SoapClientInterface::WSDL_URL => $this->getGenerator()->getOptionOrigin(),
+            SoapClientInterface::WSDL_LOGIN => $this->getGenerator()->getOptionBasicLogin(),
+            SoapClientInterface::WSDL_PROXY_HOST => $this->getGenerator()->getOptionProxyHost(),
+            SoapClientInterface::WSDL_PROXY_PORT => $this->getGenerator()->getOptionProxyPort(),
+            SoapClientInterface::WSDL_PASSWORD => $this->getGenerator()->getOptionBasicPassword(),
+            SoapClientInterface::WSDL_PROXY_LOGIN => $this->getGenerator()->getOptionProxyLogin(),
+            SoapClientInterface::WSDL_PROXY_PASSWORD => $this->getGenerator()->getOptionProxyPassword(),
         ], $this->getGenerator()->getOptionSoapOptions());
     }
 

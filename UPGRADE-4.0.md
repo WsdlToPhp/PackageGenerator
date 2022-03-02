@@ -11,7 +11,10 @@
    - **The directive** `declare(strict_types=1)` is placed at top of each file ensuring that the class is well-defined and behaves as declared.
    - **Method** `get{PropertyName}(bool $asString = true)` becomes `get{PropertyName}(bool $asDomDocument = false)` when the property is supposed to be an XML string (`any`). Be sure to pass `true` instead of `false` if you still need to get the **[DOMDocument](https://www.php.net/manual/en/class.domdocument.php)** as returned value.
    - Classes **directory** is now based on the defined namespace. If the namespace was `SoapApi`:
-     - **Before**: the `Request` Struct class was located at `src/StructType/Request.php`
-     - **Now**: the `Request` Struct class is located at `src/SoapApi/StructType/Request.php`. So on for the `EnumType`, `ArrayType`, `ServiceType` and the `ClassMap` classes.
+     - **Before**:
+       - the `Request` Struct class was located at `src/StructType/Request.php`
+     - **Now**:
+       - the `Request` Struct class is located at `src/SoapApi/StructType/Request.php`. So on for the `EnumType`, `ArrayType`, `ServiceType` and the `ClassMap` classes.
+     - **If this new behaviour is problematic for your current usage, the command line option [`namespace-directories`](https://github.com/WsdlToPhp/PackageGenerator/wiki/Options#namespace-directories) can be set to `false` to keep the previous behaviour**.
 3. **WsdlHandler** classes: they have been exported to an independent project at **[WsdlTophp/Wsdlhandler](https://github.com/WsdlToPhp/Wsdlhandler)**. It's now loaded as a composer dependency.
 4. The [PackageBase](https://github.com/WsdlToPhp/PackageBase) version is now >= 5.0.
