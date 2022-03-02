@@ -127,7 +127,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     abstract protected function objectClass(): string;
 
     /**
-     * Must return the object class name that this container is made to contain.
+     * Must return the object's property name that this container is using to store the object.
      */
     abstract protected function objectProperty(): string;
 
