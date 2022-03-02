@@ -27,7 +27,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         $element = array_slice($this->objects, $offset, 1);
 
@@ -35,13 +35,13 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): mixed
     {
         throw new InvalidArgumentException('This method can\'t be used as object are stored with a string as array index', __LINE__);
     }
 
     #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         if ($this->offsetExists($offset)) {
             unset($this->objects[$this->getObjectKey($this->offsetGet($offset))]);
@@ -49,7 +49,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     #[\ReturnTypeWillChange]
-    public function current()
+    public function current(): mixed
     {
         $current = array_slice($this->objects, $this->offset, 1);
 
@@ -57,13 +57,13 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     #[\ReturnTypeWillChange]
-    public function next()
+    public function next(): void
     {
         ++$this->offset;
     }
 
     #[\ReturnTypeWillChange]
-    public function key()
+    public function key(): mixed
     {
         return $this->offset;
     }
@@ -74,13 +74,13 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     #[\ReturnTypeWillChange]
-    public function rewind()
+    public function rewind(): void
     {
         $this->offset = 0;
     }
 
     #[\ReturnTypeWillChange]
-    public function count()
+    public function count(): int
     {
         return count($this->objects);
     }
