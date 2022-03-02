@@ -27,6 +27,8 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     /**
+     * @param mixed $offset
+     *
      * @return mixed
      */
     #[\ReturnTypeWillChange]
@@ -38,6 +40,9 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     /**
+     * @param mixed $offset
+     * @param mixed $value
+     *
      * @return mixed
      */
     #[\ReturnTypeWillChange]
@@ -72,7 +77,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     #[\ReturnTypeWillChange]
-    public function key(): mixed
+    public function key(): int
     {
         return $this->offset;
     }
