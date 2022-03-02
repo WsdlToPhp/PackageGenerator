@@ -26,6 +26,9 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         return !empty($element);
     }
 
+    /**
+     * @return mixed
+     */
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
@@ -34,6 +37,9 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         return $this->offsetExists($offset) ? array_shift($element) : null;
     }
 
+    /**
+     * @return mixed
+     */
     #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
@@ -41,13 +47,16 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         if ($this->offsetExists($offset)) {
             unset($this->objects[$this->getObjectKey($this->offsetGet($offset))]);
         }
     }
 
+    /**
+     * @return mixed
+     */
     #[\ReturnTypeWillChange]
     public function current()
     {
@@ -57,13 +66,13 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     #[\ReturnTypeWillChange]
-    public function next()
+    public function next(): void
     {
         ++$this->offset;
     }
 
     #[\ReturnTypeWillChange]
-    public function key()
+    public function key(): mixed
     {
         return $this->offset;
     }
@@ -74,13 +83,13 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     #[\ReturnTypeWillChange]
-    public function rewind()
+    public function rewind(): void
     {
         $this->offset = 0;
     }
 
     #[\ReturnTypeWillChange]
-    public function count()
+    public function count(): int
     {
         return count($this->objects);
     }
