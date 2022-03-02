@@ -26,16 +26,22 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         return !empty($element);
     }
 
+    /**
+     * @return string|int|float|bool|null|array|object|callable|resource
+     */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         $element = array_slice($this->objects, $offset, 1);
 
         return $this->offsetExists($offset) ? array_shift($element) : null;
     }
 
+    /**
+     * @return string|int|float|bool|null|array|object|callable|resource
+     */
     #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value): mixed
+    public function offsetSet($offset, $value)
     {
         throw new InvalidArgumentException('This method can\'t be used as object are stored with a string as array index', __LINE__);
     }
@@ -48,8 +54,11 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         }
     }
 
+    /**
+     * @return string|int|float|bool|null|array|object|callable|resource
+     */
     #[\ReturnTypeWillChange]
-    public function current(): mixed
+    public function current()
     {
         $current = array_slice($this->objects, $this->offset, 1);
 
