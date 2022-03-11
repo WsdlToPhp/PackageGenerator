@@ -145,6 +145,12 @@ final class GeneratePackageCommand extends AbstractCommand
                 'Package classes\' namespace'
             )
             ->addOption(
+                'namespace-directories',
+                null,
+                InputOption::VALUE_OPTIONAL,
+                'Should the directories match the namespace path or not? True by default'
+            )
+            ->addOption(
                 'category',
                 null,
                 InputOption::VALUE_OPTIONAL,
@@ -290,53 +296,50 @@ final class GeneratePackageCommand extends AbstractCommand
     protected function getPackageGenerationCommandLineOptions(): array
     {
         return [
-            'addcomments' => 'AddComments',
-            'arrays-folder' => 'ArraysFolder',
-            'composer-name' => 'ComposerName',
-            'composer-settings' => 'ComposerSettings',
-            'category' => 'Category',
-            'destination' => 'Destination',
-            'enums-folder' => 'EnumsFolder',
-            'gathermethods' => 'GatherMethods',
-            'genericconstants' => 'GenericConstantsName',
-            'gentutorial' => 'GenerateTutorialFile',
-            'login' => 'BasicLogin',
-            'namespace' => 'Namespace',
-            'password' => 'BasicPassword',
-            'prefix' => 'Prefix',
-            'proxy-host' => 'ProxyHost',
-            'proxy-login' => 'ProxyLogin',
-            'proxy-password' => 'ProxyPassword',
-            'proxy-port' => 'ProxyPort',
-            'services-folder' => 'ServicesFolder',
-            'src-dirname' => 'SrcDirname',
-            'structarray' => 'StructArrayClass',
-            'structenum' => 'StructEnumClass',
-            'structs-folder' => 'StructsFolder',
-            'soapclient' => 'SoapClientClass',
-            'struct' => 'StructClass',
-            'standalone' => 'Standalone',
-            'suffix' => 'Suffix',
-            'urlorpath' => 'Origin',
-            'validation' => 'Validation',
-            'xsd-types-path' => 'XsdTypesPath',
+            'addcomments' => GeneratorOptions::ADD_COMMENTS,
+            'arrays-folder' => GeneratorOptions::ARRAYS_FOLDER,
+            'composer-name' => GeneratorOptions::COMPOSER_NAME,
+            'composer-settings' => GeneratorOptions::COMPOSER_SETTINGS,
+            'category' => GeneratorOptions::CATEGORY,
+            'destination' => GeneratorOptions::DESTINATION,
+            'enums-folder' => GeneratorOptions::ENUMS_FOLDER,
+            'gathermethods' => GeneratorOptions::GATHER_METHODS,
+            'genericconstants' => GeneratorOptions::GENERIC_CONSTANTS_NAME,
+            'gentutorial' => GeneratorOptions::GENERATE_TUTORIAL_FILE,
+            'login' => GeneratorOptions::BASIC_LOGIN,
+            'namespace' => GeneratorOptions::NAMESPACE_PREFIX,
+            'namespace-directories' => GeneratorOptions::NAMESPACE_DICTATES_DIRECTORIES,
+            'password' => GeneratorOptions::BASIC_PASSWORD,
+            'prefix' => GeneratorOptions::PREFIX,
+            'proxy-host' => GeneratorOptions::PROXY_HOST,
+            'proxy-login' => GeneratorOptions::PROXY_LOGIN,
+            'proxy-password' => GeneratorOptions::PROXY_PASSWORD,
+            'proxy-port' => GeneratorOptions::PROXY_PORT,
+            'services-folder' => GeneratorOptions::SERVICES_FOLDER,
+            'src-dirname' => GeneratorOptions::SRC_DIRNAME,
+            'structarray' => GeneratorOptions::STRUCT_ARRAY_CLASS,
+            'structenum' => GeneratorOptions::STRUCT_ENUM_CLASS,
+            'structs-folder' => GeneratorOptions::STRUCTS_FOLDER,
+            'soapclient' => GeneratorOptions::SOAP_CLIENT_CLASS,
+            'struct' => GeneratorOptions::STRUCT_CLASS,
+            'standalone' => GeneratorOptions::STANDALONE,
+            'suffix' => GeneratorOptions::SUFFIX,
+            'urlorpath' => GeneratorOptions::ORIGIN,
+            'validation' => GeneratorOptions::VALIDATION,
+            'xsd-types-path' => GeneratorOptions::XSD_TYPES_PATH,
         ];
     }
 
     protected function initGeneratorOptions(): self
     {
+        /** @var GeneratorOptions $generatorOptions */
         $generatorOptions = GeneratorOptions::instance($this->resolveGeneratorOptionsConfigPath());
 
-        foreach ($this->getPackageGenerationCommandLineOptions() as $optionName => $optionMethod) {
-            $optionValue = $this->formatOptionValue($this->input->getOption($optionName));
-            if (null !== $optionValue) {
-                call_user_func_array([
-                    $generatorOptions,
-                    sprintf('set%s', $optionMethod),
-                ], [
-                    $optionValue,
-                ]);
+        foreach ($this->getPackageGenerationCommandLineOptions() as $optionName => $generatorOptionName) {
+            if (is_null($optionValue = $this->formatOptionValue($this->input->getOption($optionName)))) {
+                continue;
             }
+            $generatorOptions->setOptionValue($generatorOptionName, $optionValue);
         }
         $this->generatorOptions = $generatorOptions;
 

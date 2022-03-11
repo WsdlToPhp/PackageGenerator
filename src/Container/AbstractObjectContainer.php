@@ -26,6 +26,11 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         return !empty($element);
     }
 
+    /**
+     * @param mixed $offset
+     *
+     * @return mixed
+     */
     #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
@@ -34,6 +39,12 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         return $this->offsetExists($offset) ? array_shift($element) : null;
     }
 
+    /**
+     * @param mixed $offset
+     * @param mixed $value
+     *
+     * @return mixed
+     */
     #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
@@ -41,13 +52,16 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         if ($this->offsetExists($offset)) {
             unset($this->objects[$this->getObjectKey($this->offsetGet($offset))]);
         }
     }
 
+    /**
+     * @return mixed
+     */
     #[\ReturnTypeWillChange]
     public function current()
     {
@@ -57,13 +71,13 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     #[\ReturnTypeWillChange]
-    public function next()
+    public function next(): void
     {
         ++$this->offset;
     }
 
     #[\ReturnTypeWillChange]
-    public function key()
+    public function key(): int
     {
         return $this->offset;
     }
@@ -74,13 +88,13 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     #[\ReturnTypeWillChange]
-    public function rewind()
+    public function rewind(): void
     {
         $this->offset = 0;
     }
 
     #[\ReturnTypeWillChange]
-    public function count()
+    public function count(): int
     {
         return count($this->objects);
     }
@@ -113,7 +127,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     abstract protected function objectClass(): string;
 
     /**
-     * Must return the object class name that this container is made to contain.
+     * Must return the object's property name that this container is using to store the object.
      */
     abstract protected function objectProperty(): string;
 

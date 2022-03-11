@@ -92579,6 +92579,7 @@
             "release": "1.1.0"
         },
         "namespace_prefix": "",
+        "namespace_dictates_directories": true,
         "standalone": true,
         "validation": true,
         "struct_class": "WsdlToPhp\\PackageBase\\AbstractStructBase",

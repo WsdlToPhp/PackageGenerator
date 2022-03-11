@@ -61,9 +61,9 @@ abstract class AbstractModelFile extends AbstractFile
         return sprintf(
             '%s%s%s%s',
             $this->getGenerator()->getOptionDestination(),
-            (bool) $withSrc && !empty($src) ? $src.DIRECTORY_SEPARATOR : '',
-            str_replace('\\', DIRECTORY_SEPARATOR, $this->getGenerator()->getOptionNamespacePrefix()),
-            $this->getGenerator()->getOptionNamespacePrefix() ? DIRECTORY_SEPARATOR : ''
+            $withSrc && !empty($src) ? $src.DIRECTORY_SEPARATOR : '',
+            $this->getGenerator()->getOptionNamespaceDictatesDirectories() ? str_replace('\\', DIRECTORY_SEPARATOR, $this->getGenerator()->getOptionNamespacePrefix()) : '',
+            $this->getGenerator()->getOptionNamespacePrefix() && $this->getGenerator()->getOptionNamespaceDictatesDirectories() ? DIRECTORY_SEPARATOR : ''
         );
     }
 
@@ -134,7 +134,7 @@ abstract class AbstractModelFile extends AbstractFile
         $attribute = $this->getStructAttribute($attribute);
 
         if (!$attribute instanceof StructAttributeModel) {
-            throw new InvalidArgumentException(sprintf('Couldn\'t not find any valid StructAttribute'));
+            throw new InvalidArgumentException('Could not find any valid StructAttribute');
         }
 
         if ($returnArrayType && ($attribute->isArray())) {
@@ -174,7 +174,7 @@ abstract class AbstractModelFile extends AbstractFile
         $attribute = $this->getStructAttribute($fromAttribute);
 
         if (!$attribute instanceof StructAttributeModel) {
-            throw new InvalidArgumentException(sprintf('Couldn\'t not find any valid StructAttribute'));
+            throw new InvalidArgumentException('Could not find any valid StructAttribute');
         }
 
         $attributeType = $this->getStructAttributeType($attribute, true, $returnArrayType);
@@ -420,12 +420,5 @@ abstract class AbstractModelFile extends AbstractFile
     protected function useBrackets(StructAttributeModel $attribute, bool $returnArrayType = true): bool
     {
         return $returnArrayType && $attribute->isArray();
-    }
-
-    protected function getStructAttributeTypeHint(StructAttributeModel $attribute = null, bool $returnArrayType = true): string
-    {
-        $attribute = $this->getStructAttribute($attribute);
-
-        return ($returnArrayType && ($attribute->isArray() || $attribute->isList())) ? self::TYPE_ARRAY : $this->getStructAttributeType($attribute, true);
     }
 }
