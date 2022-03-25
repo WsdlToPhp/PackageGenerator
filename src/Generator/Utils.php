@@ -79,29 +79,26 @@ final class Utils
 
     public static function getStreamContextOptions(?string $basicAuthLogin = null, ?string $basicAuthPassword = null, ?string $proxyHost = null, $proxyPort = null, ?string $proxyLogin = null, ?string $proxyPassword = null, array $contextOptions = []): array
     {
-        $proxyOptions = $basicAuthOptions = [];
+        $applyHttpHeader = function (array $contextOptions, string $header): array {
+            if (!isset($contextOptions['http']['header']) || !in_array($header, $contextOptions['http']['header'])) {
+                $contextOptions['http']['header'][] = $header;
+            }
+
+            return $contextOptions;
+        };
+
         if (!empty($basicAuthLogin) && !empty($basicAuthPassword)) {
-            $basicAuthOptions = [
-                'http' => [
-                    'header' => [
-                        sprintf('Authorization: Basic %s', base64_encode(sprintf('%s:%s', $basicAuthLogin, $basicAuthPassword))),
-                    ],
-                ],
-            ];
+            $authorizationHeader = sprintf('Authorization: Basic %s', base64_encode(sprintf('%s:%s', $basicAuthLogin, $basicAuthPassword)));
+            $contextOptions = $applyHttpHeader($contextOptions, $authorizationHeader);
         }
 
         if (!empty($proxyHost)) {
-            $proxyOptions = [
-                'http' => [
-                    'proxy' => sprintf('tcp://%s%s', $proxyHost, empty($proxyPort) ? '' : sprintf(':%s', $proxyPort)),
-                    'header' => [
-                        sprintf('Proxy-Authorization: Basic %s', base64_encode(sprintf('%s:%s', $proxyLogin, $proxyPassword))),
-                    ],
-                ],
-            ];
+            $contextOptions['http']['proxy'] = sprintf('tcp://%s%s', $proxyHost, empty($proxyPort) ? '' : sprintf(':%s', $proxyPort));
+            $proxyAuthorizationHeader = sprintf('Proxy-Authorization: Basic %s', base64_encode(sprintf('%s:%s', $proxyLogin, $proxyPassword)));
+            $contextOptions = $applyHttpHeader($contextOptions, $proxyAuthorizationHeader);
         }
 
-        return array_merge_recursive($contextOptions, $proxyOptions, $basicAuthOptions);
+        return $contextOptions;
     }
 
     public static function getValueWithinItsType($value, ?string $knownType = null)

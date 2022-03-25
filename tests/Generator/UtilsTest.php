@@ -60,9 +60,14 @@ final class UtilsTest extends AbstractTestCase
         $this->assertEmpty(Utils::cleanComment(new stdClass()));
     }
 
+    public function testGetContentFromUrlContextOptionsEmpty()
+    {
+        $this->assertEquals([], Utils::getStreamContextOptions());
+    }
+
     public function testGetContentFromUrlContextOptionsBasicAuth()
     {
-        $this->assertSame([
+        $this->assertEqualsCanonicalizing([
             'http' => [
                 'header' => [
                     sprintf('Authorization: Basic %s', base64_encode('foo:bar')),
@@ -73,7 +78,7 @@ final class UtilsTest extends AbstractTestCase
 
     public function testGetContentFromUrlContextOptionsProxy()
     {
-        $this->assertSame([
+        $this->assertEqualsCanonicalizing([
             'http' => [
                 'proxy' => 'tcp://dns.proxy.com:4545',
                 'header' => [
@@ -85,7 +90,7 @@ final class UtilsTest extends AbstractTestCase
 
     public function testGetContentFromUrlContextOptionsBasicAuthProxy()
     {
-        $this->assertSame([
+        $this->assertEqualsCanonicalizing([
             'http' => [
                 'proxy' => 'tcp://dns.proxy.com:4545',
                 'header' => [
@@ -98,7 +103,7 @@ final class UtilsTest extends AbstractTestCase
 
     public function testGetContentFromUrlContextOptions()
     {
-        $this->assertSame([
+        $this->assertEqualsCanonicalizing([
             'ssl' => [
                 'verify_peer' => true,
                 'ca_file' => basename(__FILE__),
@@ -116,6 +121,27 @@ final class UtilsTest extends AbstractTestCase
                 'verify_peer' => true,
                 'ca_file' => basename(__FILE__),
                 'ca_path' => __DIR__,
+            ],
+        ]));
+    }
+
+    public function testGetContentFromUrlContextOptionsWithSameSoapContext()
+    {
+        $this->assertEqualsCanonicalizing([
+            'http' => [
+                'proxy' => 'tcp://dns.proxy.com:4545',
+                'header' => [
+                    sprintf('Proxy-Authorization: Basic %s', base64_encode('foo:bar')),
+                    sprintf('Authorization: Basic %s', base64_encode('foo:bar')),
+                ],
+            ],
+        ], Utils::getStreamContextOptions('foo', 'bar', 'dns.proxy.com', 4545, 'foo', 'bar', [
+            'http' => [
+                'proxy' => 'tcp://dns.proxy.com:4545',
+                'header' => [
+                    sprintf('Proxy-Authorization: Basic %s', base64_encode('foo:bar')),
+                    sprintf('Authorization: Basic %s', base64_encode('foo:bar')),
+                ],
             ],
         ]));
     }
