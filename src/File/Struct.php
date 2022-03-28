@@ -30,6 +30,11 @@ class Struct extends AbstractModelFile
         return parent::setModel($model);
     }
 
+    public function getModel(): ?StructModel
+    {
+        return parent::getModel();
+    }
+
     protected function defineUseStatements(): self
     {
         if ($this->getGenerator()->getOptionValidation()) {
@@ -469,7 +474,7 @@ class Struct extends AbstractModelFile
         if ($attribute instanceof StructAttributeModel) {
             $annotationBlock->addChild(sprintf($setValueAnnotation, ucfirst($setOrGet), $parameterName));
             $this->addStructMethodsSetAndGetAnnotationBlockFromStructAttribute($setOrGet, $annotationBlock, $attribute);
-        } elseif (empty($attribute)) {
+        } elseif (!$attribute) {
             $annotationBlock->addChild(sprintf($setValueAnnotation, ucfirst($setOrGet), lcfirst($parameterName)));
             $this->addStructMethodsSetAndGetAnnotationBlockFromScalar($setOrGet, $annotationBlock, $parameterName);
         }

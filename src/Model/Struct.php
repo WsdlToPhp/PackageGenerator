@@ -242,10 +242,9 @@ final class Struct extends AbstractModel
             // then we need to create the enumeration struct in order to deduplicate the two structs
             // this is why enumerations has to be parsed before any other elements by the WSDL parsers
             if (0 < $this->countOwnAttributes()) {
-                $enum = new static($this->getGenerator(), $this->getName(), true, true);
-                $enum
-                    ->setInheritance(self::DEFAULT_ENUM_TYPE)
-                    ->getValues()->add(new StructValue($enum->getGenerator(), $value, $enum->getValues()->count(), $enum));
+                $enum = new Struct($this->getGenerator(), $this->getName(), true, true);
+                $enum->setInheritance(self::DEFAULT_ENUM_TYPE);
+                $enum->getValues()->add(new StructValue($enum->getGenerator(), $value, $enum->getValues()->count(), $enum));
                 $this->getGenerator()->getStructs()->add($enum);
 
                 return $enum;

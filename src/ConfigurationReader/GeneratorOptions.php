@@ -133,6 +133,11 @@ final class GeneratorOptions extends AbstractYamlReader implements JsonSerializa
         $this->parseOptions($filename);
     }
 
+    public static function instance(?string $filename = null): self
+    {
+        return parent::instance($filename);
+    }
+
     public function __call($name, $arguments)
     {
         if ('set' === substr($name, 0, 3) && 1 === count($arguments)) {

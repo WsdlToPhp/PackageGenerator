@@ -74,6 +74,11 @@ final class Service extends AbstractModelFile
         return parent::setModel($model);
     }
 
+    public function getModel(): ?ServiceModel
+    {
+        return parent::getModel();
+    }
+
     protected function fillClassConstants(ConstantContainer $constants): void
     {
     }

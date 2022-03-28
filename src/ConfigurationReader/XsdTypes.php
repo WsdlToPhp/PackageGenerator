@@ -22,6 +22,11 @@ final class XsdTypes extends AbstractYamlReader
         $this->parseXsdTypes($filename);
     }
 
+    public static function instance(?string $filename = null): self
+    {
+        return parent::instance($filename);
+    }
+
     public static function getDefaultConfigurationPath(): string
     {
         return __DIR__.'/../resources/config/xsd_types.yml';

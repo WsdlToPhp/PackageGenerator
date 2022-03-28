@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
+use WsdlToPhp\DomHandler\AbstractAttributeHandler;
 use WsdlToPhp\DomHandler\AttributeHandler;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Method;
@@ -75,6 +76,7 @@ abstract class AbstractTagParser extends AbstractParser
             return;
         }
 
+        /** @var AbstractAttributeHandler $attribute */
         foreach ($tag->getAttributes() as $attribute) {
             $methodToCall = $this->getParseTagAttributeMethod($attribute->getName());
             if (is_array($methodToCall)) {

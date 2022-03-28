@@ -88,12 +88,13 @@ final class StructArray extends Struct
 
     protected function addArrayMethodGetAttributeName(): self
     {
+        /** @var StructModel $model */
+        $model = $this->getModel();
         return $this->addArrayMethodGenericMethod(
             self::METHOD_GET_ATTRIBUTE_NAME,
             sprintf(
                 'return \'%s\';',
-                $this
-                    ->getModel()
+                $model
                     ->getAttributes()
                     ->offsetGet(0)
                     ->getName()
@@ -143,10 +144,12 @@ final class StructArray extends Struct
 
     protected function getArrayMethodGetAttributeNameAnnotationBlock(): PhpAnnotationBlock
     {
+        /** @var StructModel $model */
+        $model = $this->getModel();
         return new PhpAnnotationBlock([
             'Returns the attribute name',
-            new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::%s()', $this->getModel()->getExtends(true), self::METHOD_GET_ATTRIBUTE_NAME)),
-            new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('string %s', $this->getModel()->getAttributes()->offsetGet(0)->getName())),
+            new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::%s()', $model->getExtends(true), self::METHOD_GET_ATTRIBUTE_NAME)),
+            new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('string %s', $model->getAttributes()->offsetGet(0)->getName())),
         ]);
     }
 

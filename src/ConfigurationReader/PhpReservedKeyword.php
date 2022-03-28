@@ -10,4 +10,9 @@ final class PhpReservedKeyword extends AbstractReservedWord
     {
         return __DIR__.'/../resources/config/php_reserved_keywords.yml';
     }
+
+    public static function instance(?string $filename = null): self
+    {
+        return parent::instance($filename);
+    }
 }
