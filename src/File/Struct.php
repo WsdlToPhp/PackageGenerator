@@ -454,6 +454,7 @@ class Struct extends AbstractModelFile
         } else {
             $parameterName = mb_substr($method->getName(), 3);
         }
+
         /**
          * Since properties can be duplicated with different case, we assume that _\d+ is replaceable by an empty string as methods are "duplicated" with this suffix.
          */
@@ -607,6 +608,7 @@ class Struct extends AbstractModelFile
     protected function getStructMethodsAddToAnnotationBlock(PhpMethod $method): PhpAnnotationBlock
     {
         $methodParameters = $method->getParameters();
+
         /** @var PhpFunctionParameter $firstParameter */
         $firstParameter = array_shift($methodParameters);
         $attribute = $this->getModel()->getAttribute($firstParameter->getModel()->getName());

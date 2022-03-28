@@ -481,6 +481,21 @@ final class StructTest extends AbstractFile
         }
     }
 
+    public function testStructValueListTypeFromUnitTests()
+    {
+        $generator = self::unitTestsInstance();
+        if (($model = $generator->getStructByName('ValueListType')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write()
+            ;
+            $this->assertSameFileContent('ValidUnitTestsValueListType', $struct);
+        } else {
+            $this->fail('Unable to find ValueListType struct for file generation');
+        }
+    }
+
     public function testWriteDeliveryDetails()
     {
         $generator = self::deliveryServiceInstance();

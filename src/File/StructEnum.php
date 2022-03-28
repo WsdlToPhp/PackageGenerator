@@ -47,6 +47,7 @@ final class StructEnum extends Struct
         $block = new PhpAnnotationBlock([
             sprintf('Constant for value \'%s\'', $constant->getValue()),
         ]);
+
         /** @var StructModel $model */
         $model = $this->getModel();
         if (($value = $model->getValue($constant->getValue())) instanceof StructValueModel) {
@@ -92,6 +93,7 @@ final class StructEnum extends Struct
     protected function getEnumMethodValues(): array
     {
         $values = [];
+
         /** @var StructModel $model */
         $model = $this->getModel();
         foreach ($model->getValues() as $value) {

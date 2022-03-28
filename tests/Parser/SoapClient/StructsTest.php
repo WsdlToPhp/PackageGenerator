@@ -75,6 +75,7 @@ final class StructsTest extends SoapClientParser
 
         $count = 0;
         $index = 0;
+
         /** @var Struct $struct */
         foreach ($generator->getStructs() as $struct) {
             $count += $struct->isUnion() ? 1 : 0;
