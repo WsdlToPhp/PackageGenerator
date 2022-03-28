@@ -167,4 +167,19 @@ final class StructEnumTest extends AbstractFile
             $this->fail('Unable to find TransactionActionType enumeration for file generation');
         }
     }
+
+    public function testWriteEwsEnumPhoneNumberKeyType()
+    {
+        $generator = self::ewsInstance();
+        if (($model = $generator->getStructByName('PhoneNumberKeyType')) instanceof StructModel) {
+            $struct = new EnumFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write()
+            ;
+            $this->assertSameFileContent('ValidApiPhoneNumberKeyType', $struct);
+        } else {
+            $this->fail('Unable to find PhoneNumberKeyType enumeration for file generation');
+        }
+    }
 }
