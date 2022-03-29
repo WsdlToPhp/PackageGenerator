@@ -419,7 +419,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function getSourceId(): ?int
     {
-        return isset($this->SourceId) ? $this->SourceId : null;
+        return $this->SourceId ?? null;
     }
     /**
      * Set SourceId value
@@ -523,7 +523,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function getDailyBudget(): ?\StructType\ApiDailyBudget
     {
-        return isset($this->DailyBudget) ? $this->DailyBudget : null;
+        return $this->DailyBudget ?? null;
     }
     /**
      * Set DailyBudget value
@@ -551,7 +551,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function getEndDate(): ?string
     {
-        return isset($this->EndDate) ? $this->EndDate : null;
+        return $this->EndDate ?? null;
     }
     /**
      * Set EndDate value
@@ -579,7 +579,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function getNegativeKeywords(): ?\ArrayType\ApiArrayOfString
     {
-        return isset($this->NegativeKeywords) ? $this->NegativeKeywords : null;
+        return $this->NegativeKeywords ?? null;
     }
     /**
      * Set NegativeKeywords value
@@ -607,7 +607,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function getBlockedIps(): ?\ArrayType\ApiArrayOfString
     {
-        return isset($this->BlockedIps) ? $this->BlockedIps : null;
+        return $this->BlockedIps ?? null;
     }
     /**
      * Set BlockedIps value
@@ -635,7 +635,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public function getExcludedSites(): ?\ArrayType\ApiArrayOfString
     {
-        return isset($this->ExcludedSites) ? $this->ExcludedSites : null;
+        return $this->ExcludedSites ?? null;
     }
     /**
      * Set ExcludedSites value

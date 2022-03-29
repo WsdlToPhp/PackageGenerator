@@ -136,7 +136,7 @@ final class StructAttribute extends AbstractModel
     }
 
     /**
-     * @return array|bool|float|int|string
+     * @return array|bool|float|int|string|null
      */
     public function getDefaultValue()
     {
