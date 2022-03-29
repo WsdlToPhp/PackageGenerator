@@ -69,7 +69,7 @@ class ApiResult extends AbstractStructBase
      */
     public function getSuccess(): ?bool
     {
-        return isset($this->Success) ? $this->Success : null;
+        return $this->Success ?? null;
     }
     /**
      * This method is responsible for validating the value passed to the setSuccess method
@@ -132,7 +132,7 @@ class ApiResult extends AbstractStructBase
      */
     public function getErrors(): ?\StructType\ApiErrors
     {
-        return isset($this->Errors) ? $this->Errors : null;
+        return $this->Errors ?? null;
     }
     /**
      * This method is responsible for validating the value passed to the setErrors method

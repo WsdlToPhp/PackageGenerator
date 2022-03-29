@@ -296,11 +296,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailCalcCostShipping value
-     * @return \StructType\ApiMutualSettlementDetailCalcCostShipping[]
+     * @return \StructType\ApiMutualSettlementDetailCalcCostShipping[]|null
      */
     public function getMutualSettlementDetailCalcCostShipping(): ?array
     {
-        return isset($this->mutualSettlementDetailCalcCostShipping) ? $this->mutualSettlementDetailCalcCostShipping : null;
+        return $this->mutualSettlementDetailCalcCostShipping ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailCalcCostShipping method
@@ -464,11 +464,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailCashFlow value
-     * @return \StructType\ApiMutualSettlementDetailCashFlow[]
+     * @return \StructType\ApiMutualSettlementDetailCashFlow[]|null
      */
     public function getMutualSettlementDetailCashFlow(): ?array
     {
-        return isset($this->mutualSettlementDetailCashFlow) ? $this->mutualSettlementDetailCashFlow : null;
+        return $this->mutualSettlementDetailCashFlow ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailCashFlow method
@@ -632,11 +632,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailClientPayment value
-     * @return \StructType\ApiMutualSettlementDetailClientPayment[]
+     * @return \StructType\ApiMutualSettlementDetailClientPayment[]|null
      */
     public function getMutualSettlementDetailClientPayment(): ?array
     {
-        return isset($this->mutualSettlementDetailClientPayment) ? $this->mutualSettlementDetailClientPayment : null;
+        return $this->mutualSettlementDetailClientPayment ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailClientPayment method
@@ -800,11 +800,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailPostReturnRegistry value
-     * @return \StructType\ApiMutualSettlementDetailPostReturnRegistry[]
+     * @return \StructType\ApiMutualSettlementDetailPostReturnRegistry[]|null
      */
     public function getMutualSettlementDetailPostReturnRegistry(): ?array
     {
-        return isset($this->mutualSettlementDetailPostReturnRegistry) ? $this->mutualSettlementDetailPostReturnRegistry : null;
+        return $this->mutualSettlementDetailPostReturnRegistry ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailPostReturnRegistry method
@@ -968,11 +968,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailRouteList value
-     * @return \StructType\ApiMutualSettlementDetailRouteList[]
+     * @return \StructType\ApiMutualSettlementDetailRouteList[]|null
      */
     public function getMutualSettlementDetailRouteList(): ?array
     {
-        return isset($this->mutualSettlementDetailRouteList) ? $this->mutualSettlementDetailRouteList : null;
+        return $this->mutualSettlementDetailRouteList ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailRouteList method
@@ -1136,11 +1136,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailTrackNumberPayment value
-     * @return \StructType\ApiMutualSettlementDetailTrackNumberPayment[]
+     * @return \StructType\ApiMutualSettlementDetailTrackNumberPayment[]|null
      */
     public function getMutualSettlementDetailTrackNumberPayment(): ?array
     {
-        return isset($this->mutualSettlementDetailTrackNumberPayment) ? $this->mutualSettlementDetailTrackNumberPayment : null;
+        return $this->mutualSettlementDetailTrackNumberPayment ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailTrackNumberPayment method
@@ -1304,11 +1304,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailServiceRegistration value
-     * @return \StructType\ApiMutualSettlementDetailServiceRegistration[]
+     * @return \StructType\ApiMutualSettlementDetailServiceRegistration[]|null
      */
     public function getMutualSettlementDetailServiceRegistration(): ?array
     {
-        return isset($this->mutualSettlementDetailServiceRegistration) ? $this->mutualSettlementDetailServiceRegistration : null;
+        return $this->mutualSettlementDetailServiceRegistration ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailServiceRegistration method
@@ -1472,11 +1472,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailAcceptanceRegistry value
-     * @return \StructType\ApiMutualSettlementDetailAcceptanceRegistry[]
+     * @return \StructType\ApiMutualSettlementDetailAcceptanceRegistry[]|null
      */
     public function getMutualSettlementDetailAcceptanceRegistry(): ?array
     {
-        return isset($this->mutualSettlementDetailAcceptanceRegistry) ? $this->mutualSettlementDetailAcceptanceRegistry : null;
+        return $this->mutualSettlementDetailAcceptanceRegistry ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailAcceptanceRegistry method
@@ -1640,11 +1640,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailAdditionalChargeFare value
-     * @return \StructType\ApiMutualSettlementDetailAdditionalChargeFare[]
+     * @return \StructType\ApiMutualSettlementDetailAdditionalChargeFare[]|null
      */
     public function getMutualSettlementDetailAdditionalChargeFare(): ?array
     {
-        return isset($this->mutualSettlementDetailAdditionalChargeFare) ? $this->mutualSettlementDetailAdditionalChargeFare : null;
+        return $this->mutualSettlementDetailAdditionalChargeFare ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailAdditionalChargeFare method
@@ -1808,11 +1808,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailOutgoingRequestToCarrier value
-     * @return \StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier[]
+     * @return \StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier[]|null
      */
     public function getMutualSettlementDetailOutgoingRequestToCarrier(): ?array
     {
-        return isset($this->mutualSettlementDetailOutgoingRequestToCarrier) ? $this->mutualSettlementDetailOutgoingRequestToCarrier : null;
+        return $this->mutualSettlementDetailOutgoingRequestToCarrier ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailOutgoingRequestToCarrier method
@@ -1976,11 +1976,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailSMSInformation value
-     * @return \StructType\ApiMutualSettlementDetailSMSInformation[]
+     * @return \StructType\ApiMutualSettlementDetailSMSInformation[]|null
      */
     public function getMutualSettlementDetailSMSInformation(): ?array
     {
-        return isset($this->mutualSettlementDetailSMSInformation) ? $this->mutualSettlementDetailSMSInformation : null;
+        return $this->mutualSettlementDetailSMSInformation ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailSMSInformation method
@@ -2144,11 +2144,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailBuyerGoodsReturn value
-     * @return \StructType\ApiMutualSettlementDetailBuyerGoodsReturn[]
+     * @return \StructType\ApiMutualSettlementDetailBuyerGoodsReturn[]|null
      */
     public function getMutualSettlementDetailBuyerGoodsReturn(): ?array
     {
-        return isset($this->mutualSettlementDetailBuyerGoodsReturn) ? $this->mutualSettlementDetailBuyerGoodsReturn : null;
+        return $this->mutualSettlementDetailBuyerGoodsReturn ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailBuyerGoodsReturn method
@@ -2312,11 +2312,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailProductsPackaging value
-     * @return \StructType\ApiMutualSettlementDetailProductsPackaging[]
+     * @return \StructType\ApiMutualSettlementDetailProductsPackaging[]|null
      */
     public function getMutualSettlementDetailProductsPackaging(): ?array
     {
-        return isset($this->mutualSettlementDetailProductsPackaging) ? $this->mutualSettlementDetailProductsPackaging : null;
+        return $this->mutualSettlementDetailProductsPackaging ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailProductsPackaging method
@@ -2480,11 +2480,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailAdjustmentWriteRegisters value
-     * @return \StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters[]
+     * @return \StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters[]|null
      */
     public function getMutualSettlementDetailAdjustmentWriteRegisters(): ?array
     {
-        return isset($this->mutualSettlementDetailAdjustmentWriteRegisters) ? $this->mutualSettlementDetailAdjustmentWriteRegisters : null;
+        return $this->mutualSettlementDetailAdjustmentWriteRegisters ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailAdjustmentWriteRegisters method
@@ -2648,11 +2648,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailSafeCustody value
-     * @return \StructType\ApiMutualSettlementDetailSafeCustody[]
+     * @return \StructType\ApiMutualSettlementDetailSafeCustody[]|null
      */
     public function getMutualSettlementDetailSafeCustody(): ?array
     {
-        return isset($this->mutualSettlementDetailSafeCustody) ? $this->mutualSettlementDetailSafeCustody : null;
+        return $this->mutualSettlementDetailSafeCustody ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailSafeCustody method
@@ -2816,11 +2816,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailSafeCustodyCalculation value
-     * @return \StructType\ApiMutualSettlementDetailSafeCustodyCalculation[]
+     * @return \StructType\ApiMutualSettlementDetailSafeCustodyCalculation[]|null
      */
     public function getMutualSettlementDetailSafeCustodyCalculation(): ?array
     {
-        return isset($this->mutualSettlementDetailSafeCustodyCalculation) ? $this->mutualSettlementDetailSafeCustodyCalculation : null;
+        return $this->mutualSettlementDetailSafeCustodyCalculation ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailSafeCustodyCalculation method
@@ -2984,11 +2984,11 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailRegisterStorage value
-     * @return \StructType\ApiMutualSettlementDetailRegisterStorage[]
+     * @return \StructType\ApiMutualSettlementDetailRegisterStorage[]|null
      */
     public function getMutualSettlementDetailRegisterStorage(): ?array
     {
-        return isset($this->mutualSettlementDetailRegisterStorage) ? $this->mutualSettlementDetailRegisterStorage : null;
+        return $this->mutualSettlementDetailRegisterStorage ?? null;
     }
     /**
      * This method is responsible for validating the values passed to the setMutualSettlementDetailRegisterStorage method

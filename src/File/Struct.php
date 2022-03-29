@@ -13,6 +13,8 @@ use WsdlToPhp\PackageGenerator\File\Validation\Rules;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
+use WsdlToPhp\PhpGenerator\Element\AccessRestrictedElementInterface;
+use WsdlToPhp\PhpGenerator\Element\AssignedValueElementInterface;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 use WsdlToPhp\PhpGenerator\Element\PhpConstant;
@@ -77,8 +79,8 @@ class Struct extends AbstractModelFile
             $properties->add(
                 new PhpProperty(
                     $attribute->getCleanName(),
-                    $attribute->isRequired() ? PhpProperty::NO_VALUE : null,
-                    $this->getGenerator()->getOptionValidation() ? PhpProperty::ACCESS_PROTECTED : PhpProperty::ACCESS_PUBLIC,
+                    $attribute->isRequired() ? AssignedValueElementInterface::NO_VALUE : null,
+                    $this->getGenerator()->getOptionValidation() ? AccessRestrictedElementInterface::ACCESS_PROTECTED : AccessRestrictedElementInterface::ACCESS_PUBLIC,
                     $type
                 )
             );
@@ -167,9 +169,11 @@ class Struct extends AbstractModelFile
         }
 
         try {
+            $defaultValue = $attribute->getDefaultValue();
+
             return new PhpFunctionParameter(
                 lcfirst($attribute->getUniqueString($attribute->getCleanName(), 'method')),
-                $attribute->isRequired() ? PhpFunctionParameter::NO_VALUE : $attribute->getDefaultValue(),
+                $attribute->isRequired() && !$attribute->isAChoice() ? AssignedValueElementInterface::NO_VALUE : (str_contains($type ?? '', '?') ? $defaultValue ?? null : $defaultValue),
                 $type,
                 $attribute
             );
@@ -197,7 +201,7 @@ class Struct extends AbstractModelFile
             $method = new PhpMethod(sprintf('addTo%s', ucfirst($attribute->getCleanName())), [
                 new PhpFunctionParameter(
                     'item',
-                    PhpFunctionParameter::NO_VALUE,
+                    AssignedValueElementInterface::NO_VALUE,
                     $this->getStructAttributeTypeAsPhpType($attribute, false),
                     $attribute
                 ),
@@ -325,7 +329,7 @@ class Struct extends AbstractModelFile
                 $return = sprintf('return $asDomDocument ? $domDocument : $this->%1$s;', $thisAccess);
             }
         } elseif ($attribute->getRemovableFromRequest() || $attribute->isAChoice()) {
-            $return = sprintf('return isset($this->%1$s) ? $this->%1$s : null;', $thisAccess);
+            $return = sprintf('return $this->%s ?? null;', $thisAccess);
         }
         $method->addChild($return);
 
@@ -342,7 +346,7 @@ class Struct extends AbstractModelFile
                 break;
 
             default:
-                $returnType = (!$attribute->getRemovableFromRequest() && $attribute->isRequired() ? '' : '?').$this->getStructAttributeTypeAsPhpType($attribute);
+                $returnType = (!$attribute->getRemovableFromRequest() && !$attribute->isAChoice() && $attribute->isRequired() ? '' : '?').$this->getStructAttributeTypeAsPhpType($attribute);
 
                 break;
         }
@@ -524,7 +528,7 @@ class Struct extends AbstractModelFile
                 }
                 $this
                     ->addStructMethodsGetAnnotationBlockFromXmlAttribute($annotationBlock, $attribute)
-                    ->addStructMethodsGetAnnotationBlock($annotationBlock, $this->getStructAttributeTypeGetAnnotation($attribute))
+                    ->addStructMethodsGetAnnotationBlock($annotationBlock, $this->getStructAttributeTypeGetAnnotation($attribute, true, $attribute->isAChoice()))
                 ;
 
                 break;
