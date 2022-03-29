@@ -80,6 +80,7 @@ final class TagRestriction extends AbstractTagParser
         if ($restriction->hasAttributes()) {
             // ensure inheritance of model is well-defined, SoapClient parser is based on SoapClient::__getTypes which can be false in some case
             $model->setInheritance($restriction->getAttributeBase());
+
             /** @var AbstractAttributeHandler $attribute */
             foreach ($restriction->getAttributes() as $attribute) {
                 $model->addMeta($attribute->getName(), $attribute->getValue(true));

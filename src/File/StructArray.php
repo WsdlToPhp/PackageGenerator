@@ -90,6 +90,7 @@ final class StructArray extends Struct
     {
         /** @var StructModel $model */
         $model = $this->getModel();
+
         return $this->addArrayMethodGenericMethod(
             self::METHOD_GET_ATTRIBUTE_NAME,
             sprintf(
@@ -146,6 +147,7 @@ final class StructArray extends Struct
     {
         /** @var StructModel $model */
         $model = $this->getModel();
+
         return new PhpAnnotationBlock([
             'Returns the attribute name',
             new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::%s()', $model->getExtends(true), self::METHOD_GET_ATTRIBUTE_NAME)),

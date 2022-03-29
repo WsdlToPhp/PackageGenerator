@@ -57,6 +57,7 @@ final class StructAttributeTest extends AbstractTestCase
         $service = new Service(self::getBingGeneratorInstance(), 'Query');
         $service->addMethod('query', '', '');
         $service->getMethod('query')->getMethodName();
+
         /**
          * current context.
          */

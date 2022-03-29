@@ -8,6 +8,7 @@ final class XsdTypes extends AbstractYamlReader
 {
     public const MAIN_KEY = 'xsd_types';
     public const ANONYMOUS_KEY = 'anonymous';
+
     /**
      * This type is returned by the \SoapClient class when
      * it does not succeed to define the type of a struct or an attribute.

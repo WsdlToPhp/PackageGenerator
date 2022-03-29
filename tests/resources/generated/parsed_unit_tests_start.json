@@ -226,6 +226,48 @@
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "LongName",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "ref": "tns:Value"
+                        },
+                        "name": "Value",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": [],
+                "values": [],
+                "list": "",
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ValueListType",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "list": "",
+                "inheritance": "string",
+                "abstract": false,
+                "meta": {
+                    "base": "xsd:string",
+                    "maxLength": "256"
+                },
+                "name": "LongName",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
                 "attributes": [],
                 "restriction": false,
                 "struct": false,

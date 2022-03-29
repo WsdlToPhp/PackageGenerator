@@ -45,6 +45,17 @@
                     <xsd:maxLength value="10"/>
                 </xsd:restriction>
             </xsd:simpleType>
+            <xsd:complexType name="ValueListType">
+                <xsd:sequence minOccurs="0" maxOccurs="unbounded">
+                    <xsd:element ref="tns:Value"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="Value" type="tns:LongName"/>
+            <xsd:simpleType name="LongName">
+                <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="256"/>
+                </xsd:restriction>
+            </xsd:simpleType>
             <xsd:simpleType name="UserType">
                 <xsd:restriction base="xsd:string">
                     <xsd:minLength value="5"/>
