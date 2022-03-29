@@ -22,6 +22,13 @@ final class StructValue extends AbstractModel
 
     protected int $index = 0;
 
+    /**
+     * Cleaned name of the element stored in order to avoid multiple call that would generate incremental name.
+     *
+     * @var string|null
+     */
+    private ?string $cleanedName = null;
+
     public function __construct(Generator $generator, $name, int $index = 0, ?Struct $struct = null)
     {
         parent::__construct($generator, $name);
@@ -33,6 +40,10 @@ final class StructValue extends AbstractModel
 
     public function getCleanName(bool $keepMultipleUnderscores = false): string
     {
+        if ($this->cleanedName) {
+            return $this->cleanedName;
+        }
+
         if ($this->getGenerator()->getOptionGenericConstantsNames()) {
             return self::GENERIC_NAME_PREFIX.$this->getIndex();
         }
@@ -40,7 +51,7 @@ final class StructValue extends AbstractModel
         $nameWithSeparatedWords = $this->getNameWithSeparatedWords($keepMultipleUnderscores);
         $key = self::constantSuffix($this->getOwner()->getName(), $nameWithSeparatedWords, $this->getIndex());
 
-        return self::VALUE_NAME_PREFIX.mb_strtoupper($nameWithSeparatedWords.($key ? '_'.$key : ''));
+        return $this->cleanedName = self::VALUE_NAME_PREFIX.mb_strtoupper($nameWithSeparatedWords.($key ? '_'.$key : ''));
     }
 
     public function getNameWithSeparatedWords(bool $keepMultipleUnderscores = false): string

@@ -21,7 +21,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
     public const META_DOCUMENTATION = 'documentation';
 
     /**
-     * Original name od the element.
+     * Original name of the element.
      *
      * @var mixed
      */
