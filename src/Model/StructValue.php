@@ -24,8 +24,6 @@ final class StructValue extends AbstractModel
 
     /**
      * Cleaned name of the element stored in order to avoid multiple call that would generate incremental name.
-     *
-     * @var string|null
      */
     private ?string $cleanedName = null;
 
