@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Container;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
 /**
@@ -15,7 +14,7 @@ final class ContainerTest extends AbstractTestCase
 {
     public function testAddWithException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $container = new ObjectContainerTest(self::getBingGeneratorInstance());
         $container->add(new FalseObjectTest());
@@ -23,7 +22,7 @@ final class ContainerTest extends AbstractTestCase
 
     public function testOffsetSetWithException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $container = new ObjectContainerTest(self::getBingGeneratorInstance());
         $container->offsetSet(1, new FalseObjectTest());
@@ -31,7 +30,7 @@ final class ContainerTest extends AbstractTestCase
 
     public function testInvalidPropertyName(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $container = new FalseObjectContainerTest(self::getBingGeneratorInstance());
         $container->add(new FalseObjectTest());

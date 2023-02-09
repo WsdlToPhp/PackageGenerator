@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Command;
 
-use DateTime;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -276,7 +275,7 @@ final class GeneratePackageCommand extends AbstractCommand
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         parent::execute($input, $output);
-        $start = new DateTime();
+        $start = new \DateTime();
         $this->writeLn(sprintf(' Start at %s', $start->format('Y-m-d H:i:s')));
         $this->initGeneratorOptions();
         if ($this->canExecute()) {
@@ -287,7 +286,7 @@ final class GeneratePackageCommand extends AbstractCommand
             $this->writeLn("  Used generator's options:");
             $this->writeLn('    '.implode(PHP_EOL.'    ', $this->formatArrayForConsole($this->generatorOptions->toArray())));
         }
-        $end = new DateTime();
+        $end = new \DateTime();
         $this->writeLn(sprintf(' End at %s, duration: %s', $end->format('Y-m-d H:i:s'), $start->diff($end)->format('%H:%I:%S')));
 
         return self::EXIT_OK;

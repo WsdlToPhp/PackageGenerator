@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContainer;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
@@ -22,7 +21,7 @@ final class StructEnum extends Struct
     public function setModel(AbstractModel $model): self
     {
         if ($model instanceof StructModel && !$model->isRestriction()) {
-            throw new InvalidArgumentException('Model must be a restriction containing values', __LINE__);
+            throw new \InvalidArgumentException('Model must be a restriction containing values', __LINE__);
         }
 
         return parent::setModel($model);

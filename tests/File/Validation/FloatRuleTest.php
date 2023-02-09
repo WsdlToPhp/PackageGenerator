@@ -4,17 +4,15 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use TypeError;
-
 /**
  * @internal
  * @coversDefaultClass
  */
-final class FloatRuleTest extends AbstractRuleTest
+final class FloatRuleTest extends AbstractRule
 {
     public function testSetPercentValueWithStringValueMustThrowAnException(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         $instance = self::getWhlTaxTypeInstance();
 

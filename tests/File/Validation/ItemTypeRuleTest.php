@@ -5,17 +5,16 @@ declare(strict_types=1);
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 use StructType\ApiParagraphType;
-use TypeError;
 
 /**
  * @internal
  * @coversDefaultClass
  */
-final class ItemTypeRuleTest extends AbstractRuleTest
+final class ItemTypeRuleTest extends AbstractRule
 {
     public function testAddToTaxDescriptionValueWithStringValueMustThrowATypeError(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         $instance = self::getWhlTaxTypeInstance();
 
@@ -24,7 +23,7 @@ final class ItemTypeRuleTest extends AbstractRuleTest
 
     public function testAddToTaxDescriptionValueWithNullValueMustThrowAnException(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         $instance = self::getWhlTaxTypeInstance();
 
@@ -41,7 +40,7 @@ final class ItemTypeRuleTest extends AbstractRuleTest
 
     public function testAddToFirstSegmentsIdsValueWithStringValueMustThrowAnException(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         // true to avoid the maxoccurs error to occur
         $instance = self::getOdigeoFareItineraryInstance(true);
@@ -51,7 +50,7 @@ final class ItemTypeRuleTest extends AbstractRuleTest
 
     public function testAddToFirstSegmentsIdsValueWithNullValueMustThrowAnException(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         // true to avoid the maxoccurs error to occur
         $instance = self::getOdigeoFareItineraryInstance(true);

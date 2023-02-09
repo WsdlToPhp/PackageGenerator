@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\StructArrayReservedMethod;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod;
 use WsdlToPhp\PackageGenerator\Model\Struct;
@@ -122,7 +121,7 @@ final class StructTest extends AbstractTestCase
 
     public function testAddEmptyAttributeNameWithException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $struct = self::instance('Foo', true);
         $struct->addAttribute('', 'string');
@@ -130,7 +129,7 @@ final class StructTest extends AbstractTestCase
 
     public function testAddEmptyAttributeTypeWithException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $struct = self::instance('Foo', true);
         $struct->addAttribute('bar', '');

@@ -4,19 +4,15 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use DOMDocument;
-use InvalidArgumentException;
-use stdClass;
-
 /**
  * @internal
  * @coversDefaultClass
  */
-final class XmlRuleTest extends AbstractRuleTest
+final class XmlRuleTest extends AbstractRule
 {
     public function testSetAnyWithEmptyStringMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $instance = self::getActonItemInstance();
 
@@ -25,7 +21,7 @@ final class XmlRuleTest extends AbstractRuleTest
 
     public function testSetAnyWithInvalidXmlStringMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $instance = self::getActonItemInstance();
 
@@ -43,7 +39,7 @@ final class XmlRuleTest extends AbstractRuleTest
 
     public function testSetAnyWithIntMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $instance = self::getActonItemInstance();
 
@@ -53,7 +49,7 @@ final class XmlRuleTest extends AbstractRuleTest
     public function testSetAnyWithDomDocumentMustPass(): void
     {
         $instance = self::getActonItemInstance();
-        $domDocument = new DOMDocument();
+        $domDocument = new \DOMDocument();
         $domDocument->appendChild($domDocument->createElement('element', '147'));
 
         $instance->setAny($domDocument);
@@ -63,16 +59,16 @@ final class XmlRuleTest extends AbstractRuleTest
 
     public function testSetAnyWithInvalidObjectMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $instance = self::getActonItemInstance();
 
-        $instance->setAny(new stdClass());
+        $instance->setAny(new \stdClass());
     }
 
     public function testSetAnyWithArrayMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $instance = self::getActonItemInstance();
 

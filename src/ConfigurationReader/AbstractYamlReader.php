@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
 
-use InvalidArgumentException;
 use Symfony\Component\Yaml\Parser;
 
 abstract class AbstractYamlReader
@@ -21,7 +20,7 @@ abstract class AbstractYamlReader
     {
         $loadFilename = empty($filename) ? static::getDefaultConfigurationPath() : $filename;
         if (empty($loadFilename) || !is_file($loadFilename)) {
-            throw new InvalidArgumentException(sprintf('Unable to locate file "%s"', $loadFilename), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Unable to locate file "%s"', $loadFilename), __LINE__);
         }
 
         $key = sprintf('%s_%s', get_called_class(), $loadFilename);
@@ -51,7 +50,7 @@ abstract class AbstractYamlReader
     {
         $values = $this->loadYaml($filename);
         if (!array_key_exists($mainKey, $values)) {
-            throw new InvalidArgumentException(sprintf('Unable to find section "%s" in "%s"', $mainKey, $filename), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Unable to find section "%s" in "%s"', $mainKey, $filename), __LINE__);
         }
 
         return $values[$mainKey];

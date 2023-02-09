@@ -86,6 +86,16 @@
 					<xsd:enumeration value="DisableQueryAlterations" />
 				</xsd:restriction>
 			</xsd:simpleType>
+			<xsd:simpleType name="guid">
+				<xsd:restriction base="xsd:string">
+					<xsd:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="ArrayOfGuid">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" maxOccurs="unbounded" name="string" type="tns:guid" />
+				</xsd:sequence>
+			</xsd:complexType>
 			<xsd:complexType name="ArrayOfString">
 				<xsd:sequence>
 					<xsd:element minOccurs="0" maxOccurs="unbounded" name="string" type="xsd:string" />

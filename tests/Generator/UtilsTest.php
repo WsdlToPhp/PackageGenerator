@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Generator;
 
-use stdClass;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
@@ -57,7 +56,7 @@ final class UtilsTest extends AbstractTestCase
     public function testCleanComment(): void
     {
         $this->assertEmpty(Utils::cleanComment(null));
-        $this->assertEmpty(Utils::cleanComment(new stdClass()));
+        $this->assertEmpty(Utils::cleanComment(new \stdClass()));
     }
 
     public function testGetContentFromUrlContextOptionsEmpty(): void

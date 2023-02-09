@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File;
 
-use InvalidArgumentException;
-use SoapFault;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContainer;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Property as PropertyContainer;
@@ -68,7 +66,7 @@ final class Service extends AbstractModelFile
     public function setModel(AbstractModel $model): self
     {
         if (!$model instanceof ServiceModel) {
-            throw new InvalidArgumentException('Model must be an instance of a Service', __LINE__);
+            throw new \InvalidArgumentException('Model must be an instance of a Service', __LINE__);
         }
 
         return parent::setModel($model);
@@ -99,7 +97,7 @@ final class Service extends AbstractModelFile
 
     protected function defineUseStatements(): AbstractModelFile
     {
-        $this->getFile()->addUse(SoapFault::class);
+        $this->getFile()->addUse(\SoapFault::class);
 
         /** @var Method $method */
         foreach ($this->getModel()->getMethods() as $method) {
@@ -116,7 +114,7 @@ final class Service extends AbstractModelFile
                     continue;
                 }
 
-                $this->getFile()->addUse(InvalidArgumentException::class);
+                $this->getFile()->addUse(\InvalidArgumentException::class);
 
                 break 2;
             }
@@ -184,8 +182,8 @@ final class Service extends AbstractModelFile
                 $firstParameter->setModel($model);
             }
             $method->addChild(sprintf('return $this->%s($%s, \'%s\', $%s, $%s, $%s);', self::METHOD_SET_HEADER_PREFIX, self::PARAM_SET_HEADER_NAMESPACE, $soapHeaderName, lcfirst($soapHeaderName), self::PARAM_SET_HEADER_MUSTUNDERSTAND, self::PARAM_SET_HEADER_ACTOR));
-        } catch (InvalidArgumentException $exception) {
-            throw new InvalidArgumentException(sprintf('Unable to create function parameter for service "%s" with type "%s"', $this->getModel()->getName(), var_export($this->getTypeFromName($soapHeaderName), true)), __LINE__, $exception);
+        } catch (\InvalidArgumentException $exception) {
+            throw new \InvalidArgumentException(sprintf('Unable to create function parameter for service "%s" with type "%s"', $this->getModel()->getName(), var_export($this->getTypeFromName($soapHeaderName), true)), __LINE__, $exception);
         }
 
         return $method;
@@ -260,7 +258,7 @@ final class Service extends AbstractModelFile
                     $annotationBlock
                         ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $firstParameter->getModel()->getPackagedName(true), StructEnum::METHOD_VALUE_IS_VALID)))
                         ->addChild(new PhpAnnotation(self::ANNOTATION_USES, sprintf('%s::%s()', $firstParameter->getModel()->getPackagedName(true), StructEnum::METHOD_GET_VALID_VALUES)))
-                        ->addChild(new PhpAnnotation(self::ANNOTATION_THROWS, InvalidArgumentException::class))
+                        ->addChild(new PhpAnnotation(self::ANNOTATION_THROWS, \InvalidArgumentException::class))
                     ;
                 }
             }

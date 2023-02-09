@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\ConfigurationReader;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\XsdTypes;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
@@ -21,14 +20,14 @@ final class XsdTypesTest extends AbstractTestCase
 
     public function testException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         XsdTypes::instance(__DIR__.'/../resources/bad_xsd_types.yml');
     }
 
     public function testExceptionForUnexistingFile(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         XsdTypes::instance(__DIR__.'/../resources/bad_xsd_types');
     }

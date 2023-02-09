@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Generator;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 use WsdlToPhp\PackageBase\AbstractStructArrayBase;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -484,7 +483,7 @@ final class GeneratorTest extends AbstractTestCase
 
     public function testExceptionOnInvalidDestination(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionDestination('');
@@ -494,7 +493,7 @@ final class GeneratorTest extends AbstractTestCase
 
     public function testExceptionOnInvalidComposerName(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionComposerName('');
@@ -640,7 +639,7 @@ final class GeneratorTest extends AbstractTestCase
 
     public function testInstanceFromSerializedJsonMustThrowAnError(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Json is invalid, please check error 4');
 
         Generator::instanceFromSerializedJson('{"the":\'key\'}');

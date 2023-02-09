@@ -32,11 +32,11 @@ final class Rules
 
     public function applyRules(string $parameterName, bool $itemType = false): void
     {
-        if ($this->attribute->isArray() && !$itemType) {
+        if (!$itemType && $this->attribute->isArray()) {
             $this->getArrayRule()->applyRule($parameterName, null, $itemType);
-        } elseif ($this->attribute->isXml() && !$itemType) {
+        } elseif (!$itemType && $this->attribute->isXml()) {
             $this->getXmlRule()->applyRule($parameterName, null, $itemType);
-        } elseif ($this->attribute->isList() && !$itemType) {
+        } elseif (!$itemType && $this->attribute->isList()) {
             $this->getListRule()->applyRule($parameterName, null, $itemType);
         } elseif ($this->getFile()->getRestrictionFromStructAttribute($this->attribute)) {
             $this->getEnumerationRule()->applyRule($parameterName, null);
@@ -45,6 +45,7 @@ final class Rules
         } elseif (($rule = $this->getRule($this->getFile()->getStructAttributeTypeAsPhpType($this->attribute))) instanceof AbstractRule) {
             $rule->applyRule($parameterName, null, $itemType);
         }
+
         $this->applyRulesFromAttribute($parameterName, $itemType);
     }
 

@@ -4,17 +4,15 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use TypeError;
-
 /**
  * @internal
  * @coversDefaultClass
  */
-final class IntRuleTest extends AbstractRuleTest
+final class IntRuleTest extends AbstractRule
 {
     public function testSetDecimalPlacesValueWithStringValueMustThrowAnException(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         $instance = self::getWhlTaxTypeInstance();
 
@@ -37,7 +35,7 @@ final class IntRuleTest extends AbstractRuleTest
 
     public function testSetDecimalPlacesValueWithFloatValueMustThrowAnException(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         $instance = self::getWhlTaxTypeInstance();
 
@@ -46,7 +44,7 @@ final class IntRuleTest extends AbstractRuleTest
 
     public function testSetDecimalPlacesValueWithStringFloatValueMustThrowAnException(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         $instance = self::getWhlTaxTypeInstance();
 

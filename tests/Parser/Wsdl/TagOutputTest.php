@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use SoapClient;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagOutput;
 
 /**
@@ -18,9 +17,9 @@ final class TagOutputTest extends WsdlParser
         return new TagOutput(self::generatorInstance(self::wsdlMyBoardPackPath()));
     }
 
-    public static function myBoardPackSoapClient(): SoapClient
+    public static function myBoardPackSoapClient(): \SoapClient
     {
-        return new SoapClient(self::wsdlMyBoardPackPath());
+        return new \SoapClient(self::wsdlMyBoardPackPath());
     }
 
     public function testParseMyBoardpack(): void

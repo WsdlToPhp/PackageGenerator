@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Generator;
 
-use InvalidArgumentException;
-use JsonSerializable;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\Container\Model\Service as ServiceContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\Struct as StructContainer;
@@ -80,7 +78,7 @@ use WsdlToPhp\PackageGenerator\Model\Wsdl;
  * @method string getOptionXsdTypesPath()
  * @method self   setOptionXsdTypesPath(string $xsdTypesPath)
  */
-class Generator implements JsonSerializable
+class Generator implements \JsonSerializable
 {
     protected Wsdl $wsdl;
 
@@ -242,7 +240,7 @@ class Generator implements JsonSerializable
         if (!empty($optionDestination)) {
             $this->options->setDestination(rtrim($optionDestination, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR);
         } else {
-            throw new InvalidArgumentException('Package\'s destination can\'t be empty', __LINE__);
+            throw new \InvalidArgumentException('Package\'s destination can\'t be empty', __LINE__);
         }
 
         return $this;
@@ -264,7 +262,7 @@ class Generator implements JsonSerializable
         if (!empty($optionComposerName)) {
             $this->options->setComposerName($optionComposerName);
         } else {
-            throw new InvalidArgumentException('Package\'s composer name can\'t be empty', __LINE__);
+            throw new \InvalidArgumentException('Package\'s composer name can\'t be empty', __LINE__);
         }
 
         return $this;
@@ -349,7 +347,7 @@ class Generator implements JsonSerializable
                 $instance->getContainers()->getStructs()->add(self::getModelInstanceFromJsonArrayEntry($instance, $struct));
             }
         } else {
-            throw new InvalidArgumentException(sprintf('Json is invalid, please check error %s', json_last_error()));
+            throw new \InvalidArgumentException(sprintf('Json is invalid, please check error %s', json_last_error()));
         }
 
         return $instance;
@@ -406,7 +404,7 @@ class Generator implements JsonSerializable
     {
         Utils::createDirectory($this->getOptions()->getDestination());
         if (!is_writable($this->getOptionDestination())) {
-            throw new InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists, its creation has been impossible or it\'s not writable', $this->getOptionDestination()), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Unable to use dir "%s" as dir does not exists, its creation has been impossible or it\'s not writable', $this->getOptionDestination()), __LINE__);
         }
 
         return $this;
@@ -423,12 +421,12 @@ class Generator implements JsonSerializable
     {
         $destination = $this->getOptionDestination();
         if (empty($destination)) {
-            throw new InvalidArgumentException('Package\'s destination must be defined', __LINE__);
+            throw new \InvalidArgumentException('Package\'s destination must be defined', __LINE__);
         }
 
         $composerName = $this->getOptionComposerName();
         if ($this->getOptionStandalone() && empty($composerName)) {
-            throw new InvalidArgumentException('Package\'s composer name must be defined', __LINE__);
+            throw new \InvalidArgumentException('Package\'s composer name must be defined', __LINE__);
         }
 
         return $this;

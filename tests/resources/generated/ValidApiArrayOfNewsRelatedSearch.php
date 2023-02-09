@@ -42,12 +42,13 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
         return $this->NewsRelatedSearch;
     }
     /**
-     * This method is responsible for validating the values passed to the setNewsRelatedSearch method
+     * This method is responsible for validating the value(s) passed to the setNewsRelatedSearch method
      * This method is willingly generated in order to preserve the one-line inline validation within the setNewsRelatedSearch method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateNewsRelatedSearchForArrayConstraintsFromSetNewsRelatedSearch(?array $values = []): string
+    public static function validateNewsRelatedSearchForArrayConstraintFromSetNewsRelatedSearch(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -76,7 +77,7 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     public function setNewsRelatedSearch(?array $newsRelatedSearch = null): self
     {
         // validation for constraint: array
-        if ('' !== ($newsRelatedSearchArrayErrorMessage = self::validateNewsRelatedSearchForArrayConstraintsFromSetNewsRelatedSearch($newsRelatedSearch))) {
+        if ('' !== ($newsRelatedSearchArrayErrorMessage = self::validateNewsRelatedSearchForArrayConstraintFromSetNewsRelatedSearch($newsRelatedSearch))) {
             throw new InvalidArgumentException($newsRelatedSearchArrayErrorMessage, __LINE__);
         }
         $this->NewsRelatedSearch = $newsRelatedSearch;

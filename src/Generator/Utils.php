@@ -222,7 +222,7 @@ final class Utils
      */
     public static function saveSchemas(string $destinationFolder, string $schemasFolder, string $schemasUrl, string $content): string
     {
-        if ((is_null($schemasFolder)) || empty($schemasFolder)) {
+        if (is_null($schemasFolder) || empty($schemasFolder)) {
             // if null or empty schemas folder was provided
             // default schemas folder will be wsdl
             $schemasFolder = 'wsdl';
@@ -231,7 +231,7 @@ final class Utils
 
         // Here we must cover all possible variants
         if ((false !== mb_strpos(mb_strtolower($schemasUrl), '.wsdl')) || (false !== mb_strpos(mb_strtolower($schemasUrl), '.xsd')) || (false !== mb_strpos(mb_strtolower($schemasUrl), '.xml')) || (false === mb_strpos(mb_strtolower($schemasUrl), '?'))) {
-            $filename = basename($schemasUrl) . (false === mb_strpos(basename($schemasUrl), '.') ? '.xsd' : '');
+            $filename = basename($schemasUrl).(false === mb_strpos(basename($schemasUrl), '.') ? '.xsd' : '');
         } else {
             // if $url is like http://example.com/index.php?WSDL default filename will be schema.wsdl
             $filename = 'schema.wsdl';

@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use InvalidArgumentException;
-
 /**
  * @internal
  * @coversDefaultClass
  */
-final class TotalDigitsRuleTest extends AbstractRuleTest
+final class TotalDigitsRuleTest extends AbstractRule
 {
     /**
      * The area_total
@@ -22,7 +20,7 @@ final class TotalDigitsRuleTest extends AbstractRuleTest
      */
     public function testSetAreaTotalWithFloatTooManyDigitsMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value 123456789101112.12, the value must at most contain 2 fraction digits, 17 given');
 
         // hack as precision can return false negative with 1.23457E+14,

@@ -102,8 +102,6 @@ final class Struct extends AbstractModel
      * By overriding this method, we ensure that each time a new object is stored, it is stored with our new key if the inheritance is defined.
      *
      * @param Model $object
-     *
-     * @return Struct
      */
     public function add(object $object): self
     {

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Model;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\AbstractReservedWord;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\StructArrayReservedMethod;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\StructReservedMethod;
@@ -169,7 +168,7 @@ final class Struct extends AbstractModel
     public function addAttribute(string $attributeName, string $attributeType): self
     {
         if (empty($attributeName) || empty($attributeType)) {
-            throw new InvalidArgumentException(sprintf('Attribute name "%s" and/or attribute type "%s" is invalid for Struct "%s"', $attributeName, $attributeType, $this->getName()), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Attribute name "%s" and/or attribute type "%s" is invalid for Struct "%s"', $attributeName, $attributeType, $this->getName()), __LINE__);
         }
         if (is_null($this->attributes->getStructAttributeByName($attributeName))) {
             $structAttribute = new StructAttribute($this->getGenerator(), $attributeName, $attributeType, $this);

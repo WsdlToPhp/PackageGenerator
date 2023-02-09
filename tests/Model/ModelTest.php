@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
-use InvalidArgumentException;
-use stdClass;
-use TypeError;
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
@@ -46,16 +43,16 @@ final class ModelTest extends AbstractTestCase
 
     public function testExceptionOnAddMetaName(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         self::instance('foo')->addMeta(null, 'bar');
     }
 
     public function testExceptionOnAddMetaValue(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
-        self::instance('foo')->addMeta('', new stdClass());
+        self::instance('foo')->addMeta('', new \stdClass());
     }
 
     public function testAddMeta(): void
@@ -77,7 +74,7 @@ final class ModelTest extends AbstractTestCase
 
     public function testGetReservedMethodsInstance(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         self::instance('foo')->getReservedMethodsInstance();
     }
@@ -95,7 +92,7 @@ final class ModelTest extends AbstractTestCase
 
     public function testInstanceFromSerializedJsonMustThrowAnExceptionForMissingClass(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(sprintf('__CLASS__ key is missing from "%s"', var_export($array = [
             'inheritance' => '',
             'abstract' => false,
@@ -108,7 +105,7 @@ final class ModelTest extends AbstractTestCase
 
     public function testInstanceFromSerializedJsonMustThrowAnExceptionForInexistingClass(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Class "WsdlToPhp\PackageGenerator\Model\EmptyFakeModel" is unknown');
 
         EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(), [
@@ -122,7 +119,7 @@ final class ModelTest extends AbstractTestCase
 
     public function testInstanceFromSerializedJsonMustThrowAnAxceptionForMissingName(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(sprintf('name key is missing from "%s"', var_export($array = [
             'inheritance' => '',
             'abstract' => false,

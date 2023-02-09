@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use InvalidArgumentException;
-
 /**
  * @internal
  * @coversDefaultClass
  */
-final class MaxInclusiveRuleTest extends AbstractRuleTest
+final class MaxInclusiveRuleTest extends AbstractRule
 {
     /**
      * The Percent
@@ -22,7 +20,7 @@ final class MaxInclusiveRuleTest extends AbstractRuleTest
      */
     public function testSetPercentWithHigherFloatValueMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value 100.01, the value must be numerically less than or equal to 100.00');
 
         $instance = self::getWhlTaxTypeInstance();
@@ -104,7 +102,7 @@ final class MaxInclusiveRuleTest extends AbstractRuleTest
 
     public function testApplyRuleWithDateIntervalMustBeFalseWthHigherInterval(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value \'P10675199DT2H49M6.4775807S\', the value must be chronologically less than or equal to P10675199DT2H49M5.4775807S');
 
         $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MaxInclusiveRule', 'P10675199DT2H49M5.4775807S');
