@@ -109,7 +109,7 @@ final class TagChoiceTest extends WsdlParser
      * </xs:attributeGroup>
      * </xs:complexType>
      */
-    public function testParseWhlMustAssignMetaOfChoice()
+    public function testParseWhlMustAssignMetaOfChoice(): void
     {
         $tagChoiceParser = self::whlInstanceParser();
 
@@ -193,7 +193,7 @@ final class TagChoiceTest extends WsdlParser
      * </xs:complexContent>
      * </xs:complexType>
      */
-    public function testParseEwsMustAssignMetaOfChoice()
+    public function testParseEwsMustAssignMetaOfChoice(): void
     {
         $tagChoiceParser = self::ewsInstanceParser();
 
@@ -262,7 +262,7 @@ final class TagChoiceTest extends WsdlParser
      * </xs:complexType>
      * </xs:element>.
      */
-    public function testParseDeliveryMustAssignMetaOfChoice()
+    public function testParseDeliveryMustAssignMetaOfChoice(): void
     {
         $tagChoiceParser = self::deliveryInstanceParser();
 

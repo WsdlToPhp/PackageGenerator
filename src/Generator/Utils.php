@@ -230,8 +230,8 @@ final class Utils
         $schemasPath = rtrim($destinationFolder, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR.rtrim($schemasFolder, DIRECTORY_SEPARATOR);
 
         // Here we must cover all possible variants
-        if ((false !== mb_strpos(mb_strtolower($schemasUrl), '.wsdl')) || (false !== mb_strpos(mb_strtolower($schemasUrl), '.xsd')) || (false !== mb_strpos(mb_strtolower($schemasUrl), '.xml'))) {
-            $filename = basename($schemasUrl);
+        if ((false !== mb_strpos(mb_strtolower($schemasUrl), '.wsdl')) || (false !== mb_strpos(mb_strtolower($schemasUrl), '.xsd')) || (false !== mb_strpos(mb_strtolower($schemasUrl), '.xml')) || (false === mb_strpos(mb_strtolower($schemasUrl), '?'))) {
+            $filename = basename($schemasUrl) . (false === mb_strpos(basename($schemasUrl), '.') ? '.xsd' : '');
         } else {
             // if $url is like http://example.com/index.php?WSDL default filename will be schema.wsdl
             $filename = 'schema.wsdl';

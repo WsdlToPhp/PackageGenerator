@@ -15,7 +15,7 @@ use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
  */
 class GeneratorSoapClientTest extends AbstractTestCase
 {
-    public function testExceptionOnWsdl()
+    public function testExceptionOnWsdl(): void
     {
         $options = GeneratorOptions::instance();
         $options

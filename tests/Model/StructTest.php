@@ -23,7 +23,7 @@ final class StructTest extends AbstractTestCase
         return new Struct(self::getBingGeneratorInstance(true), $name, $isStruct);
     }
 
-    public function testGetContextualPartEnum()
+    public function testGetContextualPartEnum(): void
     {
         $struct = self::instance('Foo', false);
         $struct->setRestriction(true);
@@ -34,7 +34,7 @@ final class StructTest extends AbstractTestCase
         $this->assertEquals('EnumType', $struct->getContextualPart());
     }
 
-    public function testGetDocSubPackagesEnum()
+    public function testGetDocSubPackagesEnum(): void
     {
         $struct = self::instance('Foo', false);
         $struct->setRestriction(true);
@@ -45,7 +45,7 @@ final class StructTest extends AbstractTestCase
         $this->assertContains(Struct::DOC_SUB_PACKAGE_ENUMERATIONS, $struct->getDocSubPackages());
     }
 
-    public function testGetContextualPartStruct()
+    public function testGetContextualPartStruct(): void
     {
         $struct = self::instance('Foo', false);
         $this->assertEquals('StructType', $struct->getContextualPart());
@@ -55,7 +55,7 @@ final class StructTest extends AbstractTestCase
         $this->assertEquals('StructType', $struct->getContextualPart());
     }
 
-    public function testGetDocSubPackagesStruct()
+    public function testGetDocSubPackagesStruct(): void
     {
         $struct = self::instance('Foo', false);
         $this->assertContains(Struct::DOC_SUB_PACKAGE_STRUCTS, $struct->getDocSubPackages());
@@ -63,7 +63,7 @@ final class StructTest extends AbstractTestCase
         $this->assertContains(Struct::DOC_SUB_PACKAGE_STRUCTS, $struct->getDocSubPackages());
     }
 
-    public function testGetCountAttributes()
+    public function testGetCountAttributes(): void
     {
         $struct = self::instance('Foo', false);
         $struct->addAttribute('bar', 'string');
@@ -72,27 +72,27 @@ final class StructTest extends AbstractTestCase
         $this->assertSame(2, $struct->getAttributes()->count());
     }
 
-    public function testIsArrayTrue()
+    public function testIsArrayTrue(): void
     {
         $struct = self::instance('ArrayFoo', false);
         $struct->addAttribute('ArrayOfId', 'array');
         $this->assertTrue($struct->isArray());
     }
 
-    public function testIsArrayForArrayTypeWihoutArrayInNameAsTrue()
+    public function testIsArrayForArrayTypeWihoutArrayInNameAsTrue(): void
     {
         $struct = self::omnitureGeneratorInstance()->getStructByName('rscollection_calculated_metric');
         $this->assertTrue($struct->isArray());
     }
 
-    public function testIsArrayFalseForName()
+    public function testIsArrayFalseForName(): void
     {
         $struct = self::instance('Foo', false);
         $struct->addAttribute('ArrayOfId', 'array');
         $this->assertFalse($struct->isArray());
     }
 
-    public function testIsArrayFalseForMultipleAttributes()
+    public function testIsArrayFalseForMultipleAttributes(): void
     {
         $struct = self::instance('ArrayFoo', false);
         $struct->addAttribute('ArrayOfId', 'array');
@@ -100,7 +100,7 @@ final class StructTest extends AbstractTestCase
         $this->assertFalse($struct->isArray());
     }
 
-    public function testGetValue()
+    public function testGetValue(): void
     {
         $struct = self::instance('Foo', true);
         $struct->addValue('id');
@@ -110,7 +110,7 @@ final class StructTest extends AbstractTestCase
         $this->assertNotInstanceOf(StructValue::class, $struct->getValue('_id'));
     }
 
-    public function testGetAttibute()
+    public function testGetAttibute(): void
     {
         $struct = self::instance('Foo', true);
         $struct->addAttribute('id', 'int');
@@ -120,7 +120,7 @@ final class StructTest extends AbstractTestCase
         $this->assertNotInstanceOf(StructAttribute::class, $struct->getAttribute('_id'));
     }
 
-    public function testAddEmptyAttributeNameWithException()
+    public function testAddEmptyAttributeNameWithException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -128,7 +128,7 @@ final class StructTest extends AbstractTestCase
         $struct->addAttribute('', 'string');
     }
 
-    public function testAddEmptyAttributeTypeWithException()
+    public function testAddEmptyAttributeTypeWithException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -136,25 +136,25 @@ final class StructTest extends AbstractTestCase
         $struct->addAttribute('bar', '');
     }
 
-    public function testGetReservedMethodsInstance()
+    public function testGetReservedMethodsInstance(): void
     {
         $this->assertInstanceOf(StructReservedMethod::class, self::instance('foo', true)->getReservedMethodsInstance());
     }
 
-    public function testGetReservedMethodsInstanceForArray()
+    public function testGetReservedMethodsInstanceForArray(): void
     {
         $instance = self::instance('array', true);
         $instance->addAttribute('bar', 'string');
         $this->assertInstanceOf(StructArrayReservedMethod::class, $instance->getReservedMethodsInstance());
     }
 
-    public function testSetListMustSetTheListProperty()
+    public function testSetListMustSetTheListProperty(): void
     {
         $instance = self::instance('Foo', true)->setList($list = 'string');
         $this->assertSame($list, $instance->getList());
     }
 
-    public function testGetProperAttributesMustReturnTheSearchRequestAttributes()
+    public function testGetProperAttributesMustReturnTheSearchRequestAttributes(): void
     {
         $bing = self::bingGeneratorInstance();
 
@@ -167,7 +167,7 @@ final class StructTest extends AbstractTestCase
         }
     }
 
-    public function testGetProperAttributesMustReturnTheAttendeeAttributes()
+    public function testGetProperAttributesMustReturnTheAttendeeAttributes(): void
     {
         $myBoard = self::myBoardPackGeneratorInstance();
 
@@ -182,7 +182,7 @@ final class StructTest extends AbstractTestCase
         }
     }
 
-    public function testGetProperAttributesMustReturnTheSenderIdTypeAttributes()
+    public function testGetProperAttributesMustReturnTheSenderIdTypeAttributes(): void
     {
         $vehicleSelection = self::vehicleSelectionPackGeneratorInstance();
 
@@ -197,7 +197,7 @@ final class StructTest extends AbstractTestCase
         }
     }
 
-    public function testGetNamespaceWithCustomDirectoryStructureMustReturnTheDirectoryWithinTheNamespace()
+    public function testGetNamespaceWithCustomDirectoryStructureMustReturnTheDirectoryWithinTheNamespace(): void
     {
         ($model = self::instance('foo', true))->getGenerator()->setOptionStructsFolder('Domain/Entities');
         $this->assertSame('Domain\Entities', $model->getNamespace());

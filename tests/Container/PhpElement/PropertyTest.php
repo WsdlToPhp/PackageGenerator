@@ -16,7 +16,7 @@ use WsdlToPhp\PhpGenerator\Element\PhpProperty;
  */
 final class PropertyTest extends AbstractTestCase
 {
-    public function testAdd()
+    public function testAdd(): void
     {
         $property = new Property(self::getBingGeneratorInstance());
 
@@ -26,7 +26,7 @@ final class PropertyTest extends AbstractTestCase
         $this->assertInstanceOf(PhpProperty::class, $property->get('foo'));
     }
 
-    public function testAddWithException()
+    public function testAddWithException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 

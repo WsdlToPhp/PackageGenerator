@@ -15,7 +15,7 @@ use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
  */
 final class StructTest extends AbstractFile
 {
-    public function testSetModelGoodNameTooManyAttributesWithException()
+    public function testSetModelGoodNameTooManyAttributesWithException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -24,7 +24,7 @@ final class StructTest extends AbstractFile
         $struct->setModel(new EmptyModel($instance, 'Foo'));
     }
 
-    public function testExceptionOnWrite()
+    public function testExceptionOnWrite(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -33,7 +33,7 @@ final class StructTest extends AbstractFile
         $file->write();
     }
 
-    public function testGetFileName()
+    public function testGetFileName(): void
     {
         $model = new StructModel(self::bingGeneratorInstance(), 'Foo');
         $file = new StructFile(self::bingGeneratorInstance(), 'foo');
@@ -42,7 +42,7 @@ final class StructTest extends AbstractFile
         $this->assertSame(sprintf('%s%s%s/%s.php', self::getTestDirectory(), $model->getGenerator()->getOptionSrcDirname().DIRECTORY_SEPARATOR, $model->getContextualPart(), $model->getPackagedName(false)), $file->getFileName());
     }
 
-    public function testGetDestinationFolderMatchesNamespace()
+    public function testGetDestinationFolderMatchesNamespace(): void
     {
         $generator = self::bingGeneratorInstance()->setOptionNamespacePrefix($ns = 'Bing\Sdk');
         $model = new StructModel($generator, 'Foo');
@@ -57,7 +57,7 @@ final class StructTest extends AbstractFile
         ), $file->getDestinationFolder(true));
     }
 
-    public function testGetDestinationFolderDoesNotMatchNamespace()
+    public function testGetDestinationFolderDoesNotMatchNamespace(): void
     {
         $generator = self::bingGeneratorInstance()->setOptionNamespacePrefix('Bing\Sdk')->setOptionNamespaceDictatesDirectories(false);
         $model = new StructModel($generator, 'Foo');
@@ -71,7 +71,7 @@ final class StructTest extends AbstractFile
         ), $file->getDestinationFolder(true));
     }
 
-    public function testWriteBingSearchStructQuery()
+    public function testWriteBingSearchStructQuery(): void
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStructByName('Query')) instanceof StructModel) {
@@ -86,7 +86,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteBingSearchStructVideoRequest()
+    public function testWriteBingSearchStructVideoRequest(): void
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStructByName('VideoRequest')) instanceof StructModel) {
@@ -101,7 +101,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteBingSearchStructSearchRequest()
+    public function testWriteBingSearchStructSearchRequest(): void
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStructByName('SearchRequest')) instanceof StructModel) {
@@ -116,7 +116,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteActonStructItem()
+    public function testWriteActonStructItem(): void
     {
         $generator = self::actonGeneratorInstance();
         if (($model = $generator->getStructByName('Item')) instanceof StructModel) {
@@ -131,7 +131,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteOdigeoStructFareItinerary()
+    public function testWriteOdigeoStructFareItinerary(): void
     {
         $generator = self::odigeoGeneratorInstance();
         if (($model = $generator->getStructByName('fareItinerary')) instanceof StructModel) {
@@ -146,7 +146,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteBingStructNewsArticle()
+    public function testWriteBingStructNewsArticle(): void
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStructByName('NewsArticle')) instanceof StructModel) {
@@ -162,7 +162,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteWcfStructOffer()
+    public function testWriteWcfStructOffer(): void
     {
         $generator = self::wcfGeneratorInstance();
         if (($model = $generator->getStructByName('offer')) instanceof StructModel) {
@@ -177,7 +177,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteYandexDirectApiStructAddRequest()
+    public function testWriteYandexDirectApiStructAddRequest(): void
     {
         $generator = self::yandexDirectApiAdGroupsGeneratorInstance();
         if (($model = $generator->getStructByName('AddRequest')) instanceof StructModel) {
@@ -192,7 +192,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteYandexDirectApiStructAddRequestWithRepeatedMetaValueMaxOccurs()
+    public function testWriteYandexDirectApiStructAddRequestWithRepeatedMetaValueMaxOccurs(): void
     {
         $generator = self::yandexDirectApiAdGroupsGeneratorInstance();
         if (($model = $generator->getStructByName('AddRequest')) instanceof StructModel) {
@@ -218,7 +218,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteYandexDirectApiStructAdGroupsSelectionCriteria()
+    public function testWriteYandexDirectApiStructAdGroupsSelectionCriteria(): void
     {
         $generator = self::yandexDirectApiAdGroupsGeneratorInstance();
         if (($model = $generator->getStructByName('AdGroupsSelectionCriteria')) instanceof StructModel) {
@@ -233,7 +233,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteDocDataPaymentsStructShopper()
+    public function testWriteDocDataPaymentsStructShopper(): void
     {
         $generator = self::docDataPaymentsGeneratorInstance(true);
         if (($model = $generator->getStructByName('shopper')) instanceof StructModel) {
@@ -248,7 +248,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteDocDataPaymentsStructExpiryDate()
+    public function testWriteDocDataPaymentsStructExpiryDate(): void
     {
         $generator = self::docDataPaymentsGeneratorInstance(true);
         if (($model = $generator->getStructByName('expiryDate')) instanceof StructModel) {
@@ -263,7 +263,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteDeliveryServiceStructExpiryDate()
+    public function testWriteDeliveryServiceStructExpiryDate(): void
     {
         $generator = self::deliveryServiceInstance();
         if (($model = $generator->getStructByName('АдресРФ')) instanceof StructModel) {
@@ -278,7 +278,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteReformaStructHouseProfileData()
+    public function testWriteReformaStructHouseProfileData(): void
     {
         $generator = self::reformaGeneratorInstance(true);
         if (($model = $generator->getStructByName('HouseProfileData')) instanceof StructModel) {
@@ -293,7 +293,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testOrderContractStructAddressDeliveryType()
+    public function testOrderContractStructAddressDeliveryType(): void
     {
         $generator = self::orderContractInstance(true);
         if (($model = $generator->getStructByName('AddressDelivery_Type')) instanceof StructModel) {
@@ -308,7 +308,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testDestination()
+    public function testDestination(): void
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStructByName('NewsArticle')) instanceof StructModel) {
@@ -322,7 +322,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteYandexDirectApiStructCampaignsCompaignGetItem()
+    public function testWriteYandexDirectApiStructCampaignsCompaignGetItem(): void
     {
         $generator = self::yandexDirectApiCampaignsGeneratorInstance(true);
         $generator->setOptionValidation(false);
@@ -338,7 +338,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteYandexDirectApiStructLiveBannerInfo()
+    public function testWriteYandexDirectApiStructLiveBannerInfo(): void
     {
         $generator = self::yandexDirectApiLiveGeneratorInstance(true);
         $generator->setOptionValidation(true);
@@ -354,7 +354,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWritePayPalApiStructSetExpressCheckoutRequestDetailsType()
+    public function testWritePayPalApiStructSetExpressCheckoutRequestDetailsType(): void
     {
         $generator = self::payPalGeneratorInstance(true);
         $generator->setOptionValidation(true);
@@ -370,7 +370,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteWhlHotelReservationType()
+    public function testWriteWhlHotelReservationType(): void
     {
         $generator = self::whlInstance(true);
         $generator->setOptionValidation(true);
@@ -386,7 +386,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteWhlTaxType()
+    public function testWriteWhlTaxType(): void
     {
         $generator = self::whlInstance();
         $generator->setOptionValidation(true);
@@ -402,7 +402,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteWhlPaymentCardType()
+    public function testWriteWhlPaymentCardType(): void
     {
         $generator = self::whlInstance();
         $generator->setOptionValidation(true);
@@ -418,7 +418,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteWhlAddressType()
+    public function testWriteWhlAddressType(): void
     {
         $generator = self::whlInstance();
         $generator->setOptionValidation(true);
@@ -434,7 +434,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteWhlUniqueIDType()
+    public function testWriteWhlUniqueIDType(): void
     {
         $generator = self::whlInstance();
         $generator->setOptionValidation(true);
@@ -450,7 +450,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testStructWithIdenticalPropertiesDifferentByCase()
+    public function testStructWithIdenticalPropertiesDifferentByCase(): void
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStructByName('Query')) instanceof StructModel) {
@@ -466,7 +466,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testStructResultFromUnitTestsWithBooleanAttribute()
+    public function testStructResultFromUnitTestsWithBooleanAttribute(): void
     {
         $generator = self::unitTestsInstance();
         if (($model = $generator->getStructByName('Result')) instanceof StructModel) {
@@ -481,7 +481,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testStructValueListTypeFromUnitTests()
+    public function testStructValueListTypeFromUnitTests(): void
     {
         $generator = self::unitTestsInstance();
         if (($model = $generator->getStructByName('ValueListType')) instanceof StructModel) {
@@ -496,7 +496,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteDeliveryDetails()
+    public function testWriteDeliveryDetails(): void
     {
         $generator = self::deliveryServiceInstance();
         $generator->setOptionValidation(true);
@@ -512,7 +512,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteEwsStructWorkingPeriod()
+    public function testWriteEwsStructWorkingPeriod(): void
     {
         $generator = self::ewsInstance();
         if (($model = $generator->getStructByName('WorkingPeriod')) instanceof StructModel) {
@@ -527,7 +527,7 @@ final class StructTest extends AbstractFile
         }
     }
 
-    public function testWriteEwsStructProposeNewTimeTypeWithNoConstructor()
+    public function testWriteEwsStructProposeNewTimeTypeWithNoConstructor(): void
     {
         $generator = self::ewsInstance();
         if (($model = $generator->getStructByName('ProposeNewTimeType')) instanceof StructModel) {

@@ -33,7 +33,7 @@ final class MethodContainerTest extends AbstractTestCase
         return $methodContainer;
     }
 
-    public function testGetMethodByName()
+    public function testGetMethodByName(): void
     {
         $methodContainer = self::instance();
 

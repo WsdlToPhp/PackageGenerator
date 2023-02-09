@@ -14,7 +14,7 @@ use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
  */
 final class StructAttributeTest extends AbstractTestCase
 {
-    public function testGetUniqueNameMustGenerateAUniqueNameAmongstTheSameStruct()
+    public function testGetUniqueNameMustGenerateAUniqueNameAmongstTheSameStruct(): void
     {
         $struct = StructTest::instance('Foo', true)
             ->addAttribute('id', 'int')
@@ -26,7 +26,7 @@ final class StructAttributeTest extends AbstractTestCase
         $this->assertSame('Name_1', $struct->getAttribute('Name')->getUniqueName());
     }
 
-    public function testGetUniqueNameMustGenerateOriginalNameBetweenTwoIndependentStructsSamelyCaseInsensitivelyNamed()
+    public function testGetUniqueNameMustGenerateOriginalNameBetweenTwoIndependentStructsSamelyCaseInsensitivelyNamed(): void
     {
         $Foo = StructTest::instance('Foo', true)
             ->addAttribute('id', 'int')
@@ -43,13 +43,13 @@ final class StructAttributeTest extends AbstractTestCase
         $this->assertSame('name', $foo->getAttribute('name')->getUniqueName());
     }
 
-    public function testGetReservedMethodsInstance()
+    public function testGetReservedMethodsInstance(): void
     {
         $struct = StructTest::instance('Foo', true)->addAttribute('id', 'int');
         $this->assertInstanceOf(StructReservedMethod::class, $struct->getAttribute('id')->getReservedMethodsInstance());
     }
 
-    public function testGetUniqueNameWithConflict()
+    public function testGetUniqueNameWithConflict(): void
     {
         /**
          * previous context.
@@ -70,7 +70,7 @@ final class StructAttributeTest extends AbstractTestCase
         $this->assertSame('setQuery', $structAttribute->getSetterName());
     }
 
-    public function testStructAttributeTypeMustBeBool()
+    public function testStructAttributeTypeMustBeBool(): void
     {
         $structAttribute = self::unitTestsInstance()->getStructByName('Result')->getAttribute('Success');
 
@@ -79,14 +79,14 @@ final class StructAttributeTest extends AbstractTestCase
         $this->assertFalse($structAttribute->getDefaultValue());
     }
 
-    public function testIsNullableMustReturnFalse()
+    public function testIsNullableMustReturnFalse(): void
     {
         $structAttribute = self::unitTestsInstance()->getStructByName('Result')->getAttribute('Success');
 
         $this->assertFalse($structAttribute->isNullable());
     }
 
-    public function testIsNullableMustReturnTrue()
+    public function testIsNullableMustReturnTrue(): void
     {
         $structAttribute = self::vehicleSelectionPackGeneratorInstance()->getStructByName('Legends')->getAttribute('legends');
 

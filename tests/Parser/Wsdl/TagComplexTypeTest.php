@@ -29,7 +29,7 @@ final class TagComplexTypeTest extends WsdlParser
         return new TagComplexType(self::generatorInstance(self::wsdlDocDataPaymentsPath()));
     }
 
-    public function testParseEbay()
+    public function testParseEbay(): void
     {
         $tagComplexTypeParser = self::ebayInstanceParser();
 
@@ -45,7 +45,7 @@ final class TagComplexTypeTest extends WsdlParser
         $this->assertTrue((bool) $ok);
     }
 
-    public function testParseOrderContract()
+    public function testParseOrderContract(): void
     {
         $tagComplexTypeParser = self::partnerInstanceParser();
 
@@ -61,7 +61,7 @@ final class TagComplexTypeTest extends WsdlParser
         $this->assertTrue((bool) $ok);
     }
 
-    public function testParseDocDataPaymnts()
+    public function testParseDocDataPaymnts(): void
     {
         $tagComplexTypeParser = self::docDataPaymentsInstanceParser();
         $tagRestriction = new TagRestriction($tagComplexTypeParser->getGenerator());

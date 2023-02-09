@@ -14,7 +14,7 @@ use stdClass;
  */
 final class XmlRuleTest extends AbstractRuleTest
 {
-    public function testSetAnyWithEmptyStringMustThrowAnException()
+    public function testSetAnyWithEmptyStringMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -23,7 +23,7 @@ final class XmlRuleTest extends AbstractRuleTest
         $instance->setAny('');
     }
 
-    public function testSetAnyWithInvalidXmlStringMustThrowAnException()
+    public function testSetAnyWithInvalidXmlStringMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -32,7 +32,7 @@ final class XmlRuleTest extends AbstractRuleTest
         @$instance->setAny('<attribute>1</attribute');
     }
 
-    public function testSetAnyWithValidXmlStringMustPass()
+    public function testSetAnyWithValidXmlStringMustPass(): void
     {
         $instance = self::getActonItemInstance();
 
@@ -41,7 +41,7 @@ final class XmlRuleTest extends AbstractRuleTest
         $this->assertSame($string, $instance->getAny());
     }
 
-    public function testSetAnyWithIntMustThrowAnException()
+    public function testSetAnyWithIntMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -50,7 +50,7 @@ final class XmlRuleTest extends AbstractRuleTest
         $instance->setAny(2);
     }
 
-    public function testSetAnyWithDomDocumentMustPass()
+    public function testSetAnyWithDomDocumentMustPass(): void
     {
         $instance = self::getActonItemInstance();
         $domDocument = new DOMDocument();
@@ -61,7 +61,7 @@ final class XmlRuleTest extends AbstractRuleTest
         $this->assertSame('<element>147</element>', $instance->getAny());
     }
 
-    public function testSetAnyWithInvalidObjectMustThrowAnException()
+    public function testSetAnyWithInvalidObjectMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -70,7 +70,7 @@ final class XmlRuleTest extends AbstractRuleTest
         $instance->setAny(new stdClass());
     }
 
-    public function testSetAnyWithArrayMustThrowAnException()
+    public function testSetAnyWithArrayMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 

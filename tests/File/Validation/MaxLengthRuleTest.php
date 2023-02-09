@@ -23,7 +23,7 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      * - pattern: [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)
      * - maxLength: 100.
      */
-    public function testSetEmailWithTooLongCharactersMustThrowAnException()
+    public function testSetEmailWithTooLongCharactersMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid length of 107, the number of characters/octets contained by the literal must be less than or equal to 100');
@@ -43,7 +43,7 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      * - pattern: [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)
      * - maxLength: 100.
      */
-    public function testSetEmailWithSameCharactersMustPass()
+    public function testSetEmailWithSameCharactersMustPass(): void
     {
         $instance = self::getDocDataPaymentsShoppperInstance();
 
@@ -60,7 +60,7 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      * - pattern: [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)
      * - maxLength: 100.
      */
-    public function testSetEmailWithLessCharactersMustPass()
+    public function testSetEmailWithLessCharactersMustPass(): void
     {
         $instance = self::getDocDataPaymentsShoppperInstance();
 
@@ -77,7 +77,7 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      * - pattern: [_a-zA-Z0-9\-\+\.]+@[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)*(\.[a-zA-Z]+)
      * - maxLength: 100.
      */
-    public function testSetEmailWithNullMustThrowAnException()
+    public function testSetEmailWithNullMustThrowAnException(): void
     {
         $this->expectException(TypeError::class);
 
@@ -99,7 +99,7 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      *
      * @var string[]
      */
-    public function testSetAddressLineWithTooManyCharactersPerItemMustThrowAnException()
+    public function testSetAddressLineWithTooManyCharactersPerItemMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid length for value(s) \'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\', \'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\', the number of characters/octets contained by the literal must be less than or equal to 255');
@@ -125,7 +125,7 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      *
      * @var string[]
      */
-    public function testSetAddressLineWithExactCharactersPerItemMustPass()
+    public function testSetAddressLineWithExactCharactersPerItemMustPass(): void
     {
         $instance = self::getWhlAddressTypeInstance();
 
@@ -151,7 +151,7 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      *
      * @var string[]
      */
-    public function testSetAddressLineWithLessCharactersPerItemMustPass()
+    public function testSetAddressLineWithLessCharactersPerItemMustPass(): void
     {
         $instance = self::getWhlAddressTypeInstance();
 

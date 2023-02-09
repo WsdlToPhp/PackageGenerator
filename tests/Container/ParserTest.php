@@ -14,7 +14,7 @@ use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
  */
 final class ParserTest extends AbstractTestCase
 {
-    public function testAddWithException()
+    public function testAddWithException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 

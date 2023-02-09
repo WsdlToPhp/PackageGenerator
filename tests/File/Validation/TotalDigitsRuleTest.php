@@ -20,7 +20,7 @@ final class TotalDigitsRuleTest extends AbstractRuleTest
      * - totalDigits: 15
      * - var: float.
      */
-    public function testSetAreaTotalWithFloatTooManyDigitsMustThrowAnException()
+    public function testSetAreaTotalWithFloatTooManyDigitsMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value 123456789101112.12, the value must at most contain 2 fraction digits, 17 given');
@@ -41,7 +41,7 @@ final class TotalDigitsRuleTest extends AbstractRuleTest
      * - totalDigits: 15
      * - var: float.
      */
-    public function testSetAreaTotalWithFloatExactDigitsMustThrowAnException()
+    public function testSetAreaTotalWithFloatExactDigitsMustThrowAnException(): void
     {
         $instance = self::getReformaHouseProfileDataInstance();
 
@@ -56,7 +56,7 @@ final class TotalDigitsRuleTest extends AbstractRuleTest
      * - totalDigits: 15
      * - var: float.
      */
-    public function testSetAreaTotalWithFloatLessDigitsMustThrowAnException()
+    public function testSetAreaTotalWithFloatLessDigitsMustThrowAnException(): void
     {
         $instance = self::getReformaHouseProfileDataInstance();
 

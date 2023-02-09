@@ -17,7 +17,7 @@ use WsdlToPhp\PhpGenerator\Element\PhpMethod;
  */
 final class InvalidRuleTest extends AbstractRuleTest
 {
-    public function testComparisonStringMustThrowAnException()
+    public function testComparisonStringMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value <> returned by symbol() method, can\'t determine comparison string');

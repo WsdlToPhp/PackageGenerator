@@ -19,46 +19,46 @@ final class XsdTypesTest extends AbstractTestCase
         return XsdTypes::instance(__DIR__.'/../resources/xsd_types.yml');
     }
 
-    public function testException()
+    public function testException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
         XsdTypes::instance(__DIR__.'/../resources/bad_xsd_types.yml');
     }
 
-    public function testExceptionForUnexistingFile()
+    public function testExceptionForUnexistingFile(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
         XsdTypes::instance(__DIR__.'/../resources/bad_xsd_types');
     }
 
-    public function testIsXsdTrue()
+    public function testIsXsdTrue(): void
     {
         $this->assertTrue(self::instance()->isXsd('duration'));
     }
 
-    public function testIsXsdFalse()
+    public function testIsXsdFalse(): void
     {
         $this->assertFalse(self::instance()->isXsd('Duration'));
     }
 
-    public function testPhpXsd()
+    public function testPhpXsd(): void
     {
         $this->assertSame('string', self::instance()->phpType('duration'));
     }
 
-    public function testPhpNonXsd()
+    public function testPhpNonXsd(): void
     {
         $this->assertSame('', self::instance()->phpType('Duration'));
     }
 
-    public function testIsAnonymous()
+    public function testIsAnonymous(): void
     {
         $this->assertTrue(self::instance()->isAnonymous('anonymous159'));
     }
 
-    public function testAnonymousPhpType()
+    public function testAnonymousPhpType(): void
     {
         $this->assertSame('string', self::instance()->phpType('anonymous159'));
     }

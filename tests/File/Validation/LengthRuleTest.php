@@ -18,7 +18,7 @@ final class LengthRuleTest extends AbstractRuleTest
      * - base: string
      * - length: 4.
      */
-    public function testAddToAddressLineWithTooManyCharactersLengthMustThrowAnException()
+    public function testAddToAddressLineWithTooManyCharactersLengthMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid length of 5, the number of characters/octets contained by the literal must be equal to 4');
@@ -34,7 +34,7 @@ final class LengthRuleTest extends AbstractRuleTest
      * - base: string
      * - length: 4.
      */
-    public function testAddToAddressLineWithTooLessCharactersLengthMustThrowAnException()
+    public function testAddToAddressLineWithTooLessCharactersLengthMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid length of 3, the number of characters/octets contained by the literal must be equal to 4');
@@ -50,7 +50,7 @@ final class LengthRuleTest extends AbstractRuleTest
      * - base: string
      * - length: 4.
      */
-    public function testAddToAddressLineWithSAmeCharactersLengthMustPass()
+    public function testAddToAddressLineWithSAmeCharactersLengthMustPass(): void
     {
         $instance = self::getOrderContractAddressDeliveryTypeInstance();
 

@@ -12,7 +12,7 @@ use TypeError;
  */
 final class IntRuleTest extends AbstractRuleTest
 {
-    public function testSetDecimalPlacesValueWithStringValueMustThrowAnException()
+    public function testSetDecimalPlacesValueWithStringValueMustThrowAnException(): void
     {
         $this->expectException(TypeError::class);
 
@@ -21,21 +21,21 @@ final class IntRuleTest extends AbstractRuleTest
         $instance->setDecimalPlaces('foo');
     }
 
-    public function testSetDecimalPlacesValueWithIntValueMustPass()
+    public function testSetDecimalPlacesValueWithIntValueMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 
         $this->assertSame($instance, $instance->setDecimalPlaces(18));
     }
 
-    public function testSetDecimalPlacesValueWithStringIntValueMustPass()
+    public function testSetDecimalPlacesValueWithStringIntValueMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 
         $this->assertSame($instance, $instance->setDecimalPlaces(18));
     }
 
-    public function testSetDecimalPlacesValueWithFloatValueMustThrowAnException()
+    public function testSetDecimalPlacesValueWithFloatValueMustThrowAnException(): void
     {
         $this->expectException(TypeError::class);
 
@@ -44,7 +44,7 @@ final class IntRuleTest extends AbstractRuleTest
         $instance->setDecimalPlaces(18.5);
     }
 
-    public function testSetDecimalPlacesValueWithStringFloatValueMustThrowAnException()
+    public function testSetDecimalPlacesValueWithStringFloatValueMustThrowAnException(): void
     {
         $this->expectException(TypeError::class);
 
@@ -53,7 +53,7 @@ final class IntRuleTest extends AbstractRuleTest
         $instance->setDecimalPlaces('18.5');
     }
 
-    public function testSetDecimalPlacesValueWithNullValueMustPass()
+    public function testSetDecimalPlacesValueWithNullValueMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 

@@ -22,7 +22,7 @@ final class ServiceContainerTest extends AbstractTestCase
         return $serviceContainer;
     }
 
-    public function testGetServiceByName()
+    public function testGetServiceByName(): void
     {
         $serviceContainer = self::instance();
 
@@ -30,7 +30,7 @@ final class ServiceContainerTest extends AbstractTestCase
         $this->assertNull($serviceContainer->getServiceByName('Bar'));
     }
 
-    public function testAddServiceNonUnique()
+    public function testAddServiceNonUnique(): void
     {
         $serviceContainer = self::instance();
 

@@ -33,7 +33,7 @@ final class TagInputTest extends WsdlParser
         return new SoapClient(self::wsdlLnpPath());
     }
 
-    public function testParseMyBoardpack()
+    public function testParseMyBoardpack(): void
     {
         $tagInputParser = self::myBoardPackInstanceParser();
         $soapClient = self::myBoardPackSoapClient();
@@ -53,7 +53,7 @@ final class TagInputTest extends WsdlParser
         $this->assertSame(128, $count);
     }
 
-    public function testParseLnp()
+    public function testParseLnp(): void
     {
         $tagInputParser = self::lnpInstanceParser();
         $soapClient = self::lnpSoapClient();

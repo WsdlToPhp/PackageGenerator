@@ -19,7 +19,7 @@ use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
  */
 final class GeneratePackageCommandTest extends AbstractTestCase
 {
-    public function testExceptionOnDestination()
+    public function testExceptionOnDestination(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -35,7 +35,7 @@ final class GeneratePackageCommandTest extends AbstractTestCase
         $command->run($input, $output);
     }
 
-    public function testExceptionOnComposerName()
+    public function testExceptionOnComposerName(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -52,7 +52,7 @@ final class GeneratePackageCommandTest extends AbstractTestCase
         $command->run($input, $output);
     }
 
-    public function testExceptionOnOrigin()
+    public function testExceptionOnOrigin(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -69,7 +69,7 @@ final class GeneratePackageCommandTest extends AbstractTestCase
         $command->run($input, $output);
     }
 
-    public function testDebugMode()
+    public function testDebugMode(): void
     {
         AbstractYamlReader::resetInstances();
         $command = new GeneratePackageCommand('WsdlToPhp');
@@ -88,7 +88,7 @@ final class GeneratePackageCommandTest extends AbstractTestCase
         $this->assertFalse(is_dir(self::getTestDirectory().'/debug/'));
     }
 
-    public function testSetSrcDirname()
+    public function testSetSrcDirname(): void
     {
         AbstractYamlReader::resetInstances();
         $command = new GeneratePackageCommand('WsdlToPhp');
@@ -109,7 +109,7 @@ final class GeneratePackageCommandTest extends AbstractTestCase
         $this->assertSame('', $command->getGenerator()->getOptionSrcDirname());
     }
 
-    public function testGetOptionValue()
+    public function testGetOptionValue(): void
     {
         $command = new GeneratePackageCommand('WsdlToPhp');
         $input = new ArrayInput([
@@ -127,7 +127,7 @@ final class GeneratePackageCommandTest extends AbstractTestCase
         $this->assertSame(__DIR__.'/../resources/generator_options.yml', $command->getGeneratorOptionsConfigOption());
     }
 
-    public function testResolveGeneratorOptionsConfigPathUsingOption()
+    public function testResolveGeneratorOptionsConfigPathUsingOption(): void
     {
         $command = new GeneratePackageCommand('WsdlToPhp');
         $input = new ArrayInput([
@@ -145,7 +145,7 @@ final class GeneratePackageCommandTest extends AbstractTestCase
         $this->assertSame(__DIR__.'/../resources/generator_options.yml', $command->resolveGeneratorOptionsConfigPath());
     }
 
-    public function testResolveGeneratorOptionsConfigPathUsingExistingProperUserConfig()
+    public function testResolveGeneratorOptionsConfigPathUsingExistingProperUserConfig(): void
     {
         $command = new GeneratePackageCommand('WsdlToPhp');
         $input = new ArrayInput([
@@ -163,7 +163,7 @@ final class GeneratePackageCommandTest extends AbstractTestCase
         $this->assertSame(realpath(self::getTestDirectory().'../existing_config/'.GeneratePackageCommand::PROPER_USER_CONFIGURATION), $command->resolveGeneratorOptionsConfigPath());
     }
 
-    public function testResolveGeneratorOptionsConfigPathUsingExistingDistributedConfig()
+    public function testResolveGeneratorOptionsConfigPathUsingExistingDistributedConfig(): void
     {
         $command = new GeneratePackageCommand('WsdlToPhp');
         $input = new ArrayInput([
@@ -181,7 +181,7 @@ final class GeneratePackageCommandTest extends AbstractTestCase
         $this->assertSame(realpath(self::getTestDirectory().'../../../'.GeneratePackageCommand::DEFAULT_CONFIGURATION_FILE), $command->resolveGeneratorOptionsConfigPath());
     }
 
-    public function testResolveGeneratorOptionsConfigPathUsingDefaultConfig()
+    public function testResolveGeneratorOptionsConfigPathUsingDefaultConfig(): void
     {
         $command = new GeneratePackageCommand('WsdlToPhp');
         $input = new ArrayInput([
