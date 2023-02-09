@@ -12,7 +12,7 @@ use TypeError;
  */
 final class FloatRuleTest extends AbstractRuleTest
 {
-    public function testSetPercentValueWithStringValueMustThrowAnException()
+    public function testSetPercentValueWithStringValueMustThrowAnException(): void
     {
         $this->expectException(TypeError::class);
 
@@ -21,21 +21,21 @@ final class FloatRuleTest extends AbstractRuleTest
         $instance->setPercent('foo');
     }
 
-    public function testSetPercentValueWithIntValueMustPass()
+    public function testSetPercentValueWithIntValueMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 
         $this->assertSame($instance, $instance->setPercent(85));
     }
 
-    public function testSetPercentValueWithFloatValueMustPass()
+    public function testSetPercentValueWithFloatValueMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 
         $this->assertSame($instance, $instance->setPercent(8.5));
     }
 
-    public function testSetPercentValueWithNullValueMustPass()
+    public function testSetPercentValueWithNullValueMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 

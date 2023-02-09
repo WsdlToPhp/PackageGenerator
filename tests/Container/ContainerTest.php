@@ -13,7 +13,7 @@ use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
  */
 final class ContainerTest extends AbstractTestCase
 {
-    public function testAddWithException()
+    public function testAddWithException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -21,7 +21,7 @@ final class ContainerTest extends AbstractTestCase
         $container->add(new FalseObjectTest());
     }
 
-    public function testOffsetSetWithException()
+    public function testOffsetSetWithException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -29,7 +29,7 @@ final class ContainerTest extends AbstractTestCase
         $container->offsetSet(1, new FalseObjectTest());
     }
 
-    public function testInvalidPropertyName()
+    public function testInvalidPropertyName(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -37,7 +37,7 @@ final class ContainerTest extends AbstractTestCase
         $container->add(new FalseObjectTest());
     }
 
-    public function testJsonSerialize()
+    public function testJsonSerialize(): void
     {
         $object = new ObjectTest();
         $container = new ObjectContainerTest(self::getBingGeneratorInstance());

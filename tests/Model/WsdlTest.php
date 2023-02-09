@@ -68,7 +68,7 @@ final class WsdlTest extends AbstractTestCase
         return self::getSchema(self::schemaImageViewServiceAvailableImagesRequestPath());
     }
 
-    public function testGetName()
+    public function testGetName(): void
     {
         $this->assertSame(self::wsdlBingPath(), self::wsdlBingInstance()->getName());
     }
@@ -113,7 +113,7 @@ final class WsdlTest extends AbstractTestCase
         return self::getSchema(self::schemaEwsMessagesPath());
     }
 
-    public function testException()
+    public function testException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -125,7 +125,7 @@ final class WsdlTest extends AbstractTestCase
         return self::getSchema(__DIR__.'/../resources/numeric_enumeration.xml');
     }
 
-    public function testJsonSerialize()
+    public function testJsonSerialize(): void
     {
         $this->assertSame([
             'inheritance' => '',

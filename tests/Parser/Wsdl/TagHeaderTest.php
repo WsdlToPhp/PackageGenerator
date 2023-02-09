@@ -37,7 +37,7 @@ final class TagHeaderTest extends WsdlParser
         return new TagHeader(self::generatorInstance(self::wsdlUnitTestsPath()));
     }
 
-    public function testParseImageViewService()
+    public function testParseImageViewService(): void
     {
         $tagHeaderParser = self::imageViewServiceInstanceParser();
 
@@ -69,7 +69,7 @@ final class TagHeaderTest extends WsdlParser
         $this->assertTrue((bool) $ok);
     }
 
-    public function testParseActon()
+    public function testParseActon(): void
     {
         $tagHeaderParser = self::actonInstanceParser();
 
@@ -141,7 +141,7 @@ final class TagHeaderTest extends WsdlParser
         $this->assertTrue((bool) $ok);
     }
 
-    public function testParsePayPal()
+    public function testParsePayPal(): void
     {
         $tagHeaderParser = self::paypalInstanceParser();
 
@@ -171,7 +171,7 @@ final class TagHeaderTest extends WsdlParser
         $this->assertSame(57, $count);
     }
 
-    public function testParseEws()
+    public function testParseEws(): void
     {
         $tagHeaderParser = self::ewsInstanceParser();
         // parsing the whole structs/functions is too long for only tests purpose!
@@ -225,7 +225,7 @@ final class TagHeaderTest extends WsdlParser
         $this->assertSame(1, $count);
     }
 
-    public function testParseUnitTest()
+    public function testParseUnitTest(): void
     {
         $tagHeaderParser = self::unitTestInstanceParser();
 

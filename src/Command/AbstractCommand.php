@@ -17,7 +17,7 @@ abstract class AbstractCommand extends Command
 
     protected OutputInterface $output;
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->addOption(
             'force',

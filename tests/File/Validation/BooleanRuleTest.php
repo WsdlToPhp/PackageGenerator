@@ -12,7 +12,7 @@ use TypeError;
  */
 final class BooleanRuleTest extends AbstractRuleTest
 {
-    public function testSetPrimaryWithStringValueMustThrowAnException()
+    public function testSetPrimaryWithStringValueMustThrowAnException(): void
     {
         $this->expectException(TypeError::class);
 
@@ -21,21 +21,21 @@ final class BooleanRuleTest extends AbstractRuleTest
         $instance->setPrimary('true');
     }
 
-    public function testSetPrimaryWithTrueValueMustPass()
+    public function testSetPrimaryWithTrueValueMustPass(): void
     {
         $instance = self::getWhlBookingChannelInstance();
 
         $this->assertSame($instance, $instance->setPrimary(true));
     }
 
-    public function testSetPrimaryWithFalseValueMustPass()
+    public function testSetPrimaryWithFalseValueMustPass(): void
     {
         $instance = self::getWhlBookingChannelInstance();
 
         $this->assertSame($instance, $instance->setPrimary(false));
     }
 
-    public function testSetPrimaryWithNullValueMustPass()
+    public function testSetPrimaryWithNullValueMustPass(): void
     {
         $instance = self::getWhlBookingChannelInstance();
 

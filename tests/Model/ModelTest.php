@@ -21,7 +21,7 @@ final class ModelTest extends AbstractTestCase
         return new EmptyModel(self::getBingGeneratorInstance(true), $name);
     }
 
-    public function testGetCleanName()
+    public function testGetCleanName(): void
     {
         $this->assertEquals('_foo_', self::instance('-foo-')->getCleanName());
         $this->assertEquals('_foo_', self::instance('-foo-----')->getCleanName(false));
@@ -30,7 +30,7 @@ final class ModelTest extends AbstractTestCase
         $this->assertEquals('_é_àç_çfoo_245', self::instance('___é%àç_çfoo----245')->getCleanName(false));
     }
 
-    public function testNameIsClean()
+    public function testNameIsClean(): void
     {
         $this->assertTrue(self::instance('foo_')->nameIsClean());
         $this->assertTrue(self::instance('foo_54')->nameIsClean());
@@ -39,26 +39,26 @@ final class ModelTest extends AbstractTestCase
         $this->asserttrue(self::instance('éfoo_')->nameIsClean());
     }
 
-    public function testGetDocSubPackages()
+    public function testGetDocSubPackages(): void
     {
         $this->assertEmpty(self::instance('Foo')->getDocSubPackages());
     }
 
-    public function testExceptionOnAddMetaName()
+    public function testExceptionOnAddMetaName(): void
     {
         $this->expectException(TypeError::class);
 
         self::instance('foo')->addMeta(null, 'bar');
     }
 
-    public function testExceptionOnAddMetaValue()
+    public function testExceptionOnAddMetaValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
         self::instance('foo')->addMeta('', new stdClass());
     }
 
-    public function testAddMeta()
+    public function testAddMeta(): void
     {
         $instance = self::instance('foo');
 
@@ -75,14 +75,14 @@ final class ModelTest extends AbstractTestCase
         ], $instance->getMeta());
     }
 
-    public function testGetReservedMethodsInstance()
+    public function testGetReservedMethodsInstance(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
         self::instance('foo')->getReservedMethodsInstance();
     }
 
-    public function testToJsonSerialize()
+    public function testToJsonSerialize(): void
     {
         $this->assertSame([
             'inheritance' => '',
@@ -93,7 +93,7 @@ final class ModelTest extends AbstractTestCase
         ], self::instance('foo_')->jsonSerialize());
     }
 
-    public function testInstanceFromSerializedJsonMustThrowAnExceptionForMissingClass()
+    public function testInstanceFromSerializedJsonMustThrowAnExceptionForMissingClass(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(sprintf('__CLASS__ key is missing from "%s"', var_export($array = [
@@ -106,7 +106,7 @@ final class ModelTest extends AbstractTestCase
         EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(), $array);
     }
 
-    public function testInstanceFromSerializedJsonMustThrowAnExceptionForInexistingClass()
+    public function testInstanceFromSerializedJsonMustThrowAnExceptionForInexistingClass(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Class "WsdlToPhp\PackageGenerator\Model\EmptyFakeModel" is unknown');
@@ -120,7 +120,7 @@ final class ModelTest extends AbstractTestCase
         ]);
     }
 
-    public function testInstanceFromSerializedJsonMustThrowAnAxceptionForMissingName()
+    public function testInstanceFromSerializedJsonMustThrowAnAxceptionForMissingName(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage(sprintf('name key is missing from "%s"', var_export($array = [
@@ -133,12 +133,12 @@ final class ModelTest extends AbstractTestCase
         EmptyModel::instanceFromSerializedJson(self::bingGeneratorInstance(), $array);
     }
 
-    public function testGetNamespaceWithDefaultDirectoryStructuresMustReturnAnEmptyNamespace()
+    public function testGetNamespaceWithDefaultDirectoryStructuresMustReturnAnEmptyNamespace(): void
     {
         $this->assertEmpty(self::instance('foo')->getNamespace());
     }
 
-    public function testGetNamespaceWithCustomNamespaceMustReturnTheNamespace()
+    public function testGetNamespaceWithCustomNamespaceMustReturnTheNamespace(): void
     {
         ($model = self::instance('foo'))->getGenerator()->setOptionNamespacePrefix('My\Namespace');
         $this->assertSame('My\Namespace', $model->getNamespace());

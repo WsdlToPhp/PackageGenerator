@@ -33,7 +33,7 @@ final class TagRestrictionTest extends WsdlParser
         return new TagRestriction(self::generatorInstance(self::wsdlWhlPath()));
     }
 
-    public function testParseImageViewService()
+    public function testParseImageViewService(): void
     {
         $tagRestrictionParser = self::imageViewInstanceParser();
 
@@ -63,7 +63,7 @@ final class TagRestrictionTest extends WsdlParser
         $this->assertEquals(2, $count);
     }
 
-    public function testParseActonService()
+    public function testParseActonService(): void
     {
         $tagRestrictionParser = self::actonInstanceParser();
 
@@ -81,7 +81,7 @@ final class TagRestrictionTest extends WsdlParser
         $this->assertTrue($ok);
     }
 
-    public function testParseDocDataPayments()
+    public function testParseDocDataPayments(): void
     {
         $tagRestrictionParser = self::docDataPaymentsViewInstanceParser();
 
@@ -116,7 +116,7 @@ final class TagRestrictionTest extends WsdlParser
         $this->assertEquals(2, $count);
     }
 
-    public function testParseWhlMustFetchAllRestrictionPatterns()
+    public function testParseWhlMustFetchAllRestrictionPatterns(): void
     {
         $tagRestrictionParser = self::whlInstanceParser();
 

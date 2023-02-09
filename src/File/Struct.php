@@ -215,9 +215,7 @@ class Struct extends AbstractModelFile
 
     protected function addStructMethodAddToBody(PhpMethod $method, StructAttributeModel $attribute): self
     {
-        if ($this->getGenerator()->getOptionValidation()) {
-            $this->applyRules($method, $attribute, 'item', true);
-        }
+        $this->applyRules($method, $attribute, 'item', true);
 
         if ($attribute->nameIsClean()) {
             $assignment = sprintf('$this->%s[] = $item;', $attribute->getCleanName());
@@ -250,11 +248,9 @@ class Struct extends AbstractModelFile
         $parameters = $method->getParameters();
         $parameter = array_shift($parameters);
         $parameterName = is_string($parameter) ? $parameter : $parameter->getName();
-        if ($this->getGenerator()->getOptionValidation()) {
-            $this->applyRules($method, $attribute, $parameterName);
-        }
 
         return $this
+            ->applyRules($method, $attribute, $parameterName)
             ->addStructMethodSetBodyAssignment($method, $attribute, $parameterName)
             ->addStructMethodSetBodyReturn($method)
         ;
@@ -688,11 +684,13 @@ class Struct extends AbstractModelFile
         ]);
     }
 
-    protected function applyRules(PhpMethod $method, StructAttributeModel $attribute, string $parameterName, bool $itemType = false): void
+    protected function applyRules(PhpMethod $method, StructAttributeModel $attribute, string $parameterName, bool $itemType = false): self
     {
         if ($this->getGenerator()->getOptionValidation()) {
             $rules = new Rules($this, $method, $attribute, $this->methods);
             $rules->applyRules($parameterName, $itemType);
         }
+
+        return $this;
     }
 }

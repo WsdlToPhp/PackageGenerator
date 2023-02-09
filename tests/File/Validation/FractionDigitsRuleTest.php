@@ -15,7 +15,7 @@ final class FractionDigitsRuleTest extends AbstractRuleTest
     /**
      * - fractionDigits: 3.
      */
-    public function testSetAmountValueWithTooManyFractionDigitsMustThrowAnException()
+    public function testSetAmountValueWithTooManyFractionDigitsMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value 2.12345, the value must at most contain 3 fraction digits, 5 given');
@@ -30,7 +30,7 @@ final class FractionDigitsRuleTest extends AbstractRuleTest
     /**
      * - fractionDigits: 0.
      */
-    public function testSetWeightValueWithIntegerMustPass()
+    public function testSetWeightValueWithIntegerMustPass(): void
     {
         $functionName = self::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 0);
 
@@ -40,7 +40,7 @@ final class FractionDigitsRuleTest extends AbstractRuleTest
     /**
      * - fractionDigits: 0.
      */
-    public function testSetWeightValueWithDecimalMustThrowAnException()
+    public function testSetWeightValueWithDecimalMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value 200.01, the value must at most contain 0 fraction digits, 2 given');
@@ -53,7 +53,7 @@ final class FractionDigitsRuleTest extends AbstractRuleTest
     /**
      * - fractionDigits: 3.
      */
-    public function testSetAmountValueWithSameFractionDigitsMustPass()
+    public function testSetAmountValueWithSameFractionDigitsMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 
@@ -63,7 +63,7 @@ final class FractionDigitsRuleTest extends AbstractRuleTest
     /**
      * - fractionDigits: 3.
      */
-    public function testSetAmountValueWithLessFractionDigitsMustPass()
+    public function testSetAmountValueWithLessFractionDigitsMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 
@@ -73,7 +73,7 @@ final class FractionDigitsRuleTest extends AbstractRuleTest
     /**
      * - fractionDigits: 3.
      */
-    public function testSetAmountValueWithNullValueMustPass()
+    public function testSetAmountValueWithNullValueMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 

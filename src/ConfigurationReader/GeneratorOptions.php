@@ -133,12 +133,12 @@ final class GeneratorOptions extends AbstractYamlReader implements JsonSerializa
         $this->parseOptions($filename);
     }
 
-    public function __call($name, $arguments)
+    public function __call(string $name, array $arguments)
     {
-        if ('set' === substr($name, 0, 3) && 1 === count($arguments)) {
+        if (0 === strpos($name, 'set') && 1 === count($arguments)) {
             return $this->setOptionValue(self::methodNameToOptionName($name), array_shift($arguments));
         }
-        if ('get' === substr($name, 0, 3) && empty($arguments)) {
+        if (empty($arguments) && 0 === strpos($name, 'get')) {
             return $this->getOptionValue(self::methodNameToOptionName($name));
         }
 
@@ -182,7 +182,7 @@ final class GeneratorOptions extends AbstractYamlReader implements JsonSerializa
 
     public static function methodNameToOptionName(string $name): string
     {
-        return trim(strtolower(preg_replace(StructValue::MATCH_PATTERN, StructValue::REPLACEMENT_PATTERN, substr($name, 3))), '_');
+        return strtolower(trim(preg_replace(StructValue::MATCH_PATTERN, StructValue::REPLACEMENT_PATTERN, substr($name, 3)), '_'));
     }
 
     public function setAddComments(array $addComments = []): self
@@ -264,7 +264,7 @@ final class GeneratorOptions extends AbstractYamlReader implements JsonSerializa
      *
      * @param mixed $value
      */
-    protected static function dotNotationToArray(string $string, $value, array &$array)
+    protected static function dotNotationToArray(string $string, $value, array &$array): void
     {
         $keys = explode('.', $string);
         foreach ($keys as $key) {

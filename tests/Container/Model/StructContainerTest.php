@@ -24,7 +24,7 @@ final class StructContainerTest extends AbstractTestCase
         return $structContainer;
     }
 
-    public function testGetStructByName()
+    public function testGetStructByName(): void
     {
         $structContainer = self::instance();
 
@@ -33,7 +33,7 @@ final class StructContainerTest extends AbstractTestCase
         $this->assertNull($structContainer->getStructByName('bar'));
     }
 
-    public function testAddStructWithSameAttributeName()
+    public function testAddStructWithSameAttributeName(): void
     {
         $structContainer = self::instance();
 
@@ -43,7 +43,7 @@ final class StructContainerTest extends AbstractTestCase
         $this->assertCount(1, $structContainer->getStructByName('Foo')->getAttributes());
     }
 
-    public function testOffsetUnset()
+    public function testOffsetUnset(): void
     {
         $instance = self::instance();
 
@@ -55,14 +55,14 @@ final class StructContainerTest extends AbstractTestCase
         $this->assertNull($instance->offsetGet(1));
     }
 
-    public function testGetStructByNameAndTypeMustFailAsTypeIsUnknown()
+    public function testGetStructByNameAndTypeMustFailAsTypeIsUnknown(): void
     {
         $structContainer = self::instance();
 
         $this->assertNull($structContainer->getStructByNameAndType('bar', 'string'));
     }
 
-    public function testGetStructByNameAndTypeMustReturnTheStruct()
+    public function testGetStructByNameAndTypeMustReturnTheStruct(): void
     {
         $structContainer = self::instance();
         $structContainer->add($fooStringFirst = StructTest::instance('FooString', true)->setInheritance('string')->setMeta($fooStringFirstMeta = [

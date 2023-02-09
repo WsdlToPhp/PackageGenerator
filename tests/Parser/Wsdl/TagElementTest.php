@@ -33,7 +33,7 @@ final class TagElementTest extends WsdlParser
         return new TagElement(self::generatorInstance(self::wsdlPayPalPath()));
     }
 
-    public function testParseBing()
+    public function testParseBing(): void
     {
         $tagElementParser = self::bingInstanceParser();
         $tagElementParser->parse();
@@ -65,7 +65,7 @@ final class TagElementTest extends WsdlParser
         $this->assertEquals(2, $count);
     }
 
-    public function testParseYandexAdGroups()
+    public function testParseYandexAdGroups(): void
     {
         $tagElementParser = self::yandexAdGroupsInstanceParser();
         $tagElementParser->parse();
@@ -87,7 +87,7 @@ final class TagElementTest extends WsdlParser
         $this->assertEquals(1, $count);
     }
 
-    public function testParseActon()
+    public function testParseActon(): void
     {
         $tagElementParser = self::actonInstanceParser();
         $tagElementParser->parse();
@@ -107,7 +107,7 @@ final class TagElementTest extends WsdlParser
         $this->assertEquals(1, $count);
     }
 
-    public function testParsePayPal()
+    public function testParsePayPal(): void
     {
         $tagElementParser = self::payPalInstanceParser();
         $tagElementParser->parse();

@@ -23,7 +23,7 @@ final class TagOutputTest extends WsdlParser
         return new SoapClient(self::wsdlMyBoardPackPath());
     }
 
-    public function testParseMyBoardpack()
+    public function testParseMyBoardpack(): void
     {
         $tagOutputParser = self::myBoardPackInstanceParser();
         $soapClient = self::myBoardPackSoapClient();

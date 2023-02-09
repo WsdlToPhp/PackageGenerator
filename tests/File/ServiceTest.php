@@ -17,7 +17,7 @@ use WsdlToPhp\PackageGenerator\Model\Service as ServiceModel;
  */
 final class ServiceTest extends AbstractFile
 {
-    public function testSetModelGoodNameTooManyAttributesWithException()
+    public function testSetModelGoodNameTooManyAttributesWithException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -26,7 +26,7 @@ final class ServiceTest extends AbstractFile
         $service->setModel(new EmptyModel($instance, 'Foo'));
     }
 
-    public function testWriteActonServiceDeleteService()
+    public function testWriteActonServiceDeleteService(): void
     {
         $generator = self::actonGeneratorInstance();
         if (($model = $generator->getService('Delete')) instanceof ServiceModel) {
@@ -41,7 +41,7 @@ final class ServiceTest extends AbstractFile
         }
     }
 
-    public function testWriteBingSearchSearchService()
+    public function testWriteBingSearchSearchService(): void
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getService('Search')) instanceof ServiceModel) {
@@ -56,7 +56,7 @@ final class ServiceTest extends AbstractFile
         }
     }
 
-    public function testWriteBingSearchSearchServiceMyProjectApiProject()
+    public function testWriteBingSearchSearchServiceMyProjectApiProject(): void
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getService('Search')) instanceof ServiceModel) {
@@ -76,7 +76,7 @@ final class ServiceTest extends AbstractFile
         }
     }
 
-    public function testWriteBingSearchSearchServiceBingApi()
+    public function testWriteBingSearchSearchServiceBingApi(): void
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getService('Search')) instanceof ServiceModel) {
@@ -95,7 +95,7 @@ final class ServiceTest extends AbstractFile
         }
     }
 
-    public function testWritePortalServiceAuthenticate()
+    public function testWritePortalServiceAuthenticate(): void
     {
         $generator = self::portalGeneratorInstance();
         if (($model = $generator->getService('Authenticate')) instanceof ServiceModel) {
@@ -110,7 +110,7 @@ final class ServiceTest extends AbstractFile
         }
     }
 
-    public function testWriteReformServiceLogin()
+    public function testWriteReformServiceLogin(): void
     {
         $generator = self::reformaGeneratorInstance();
         if (($model = $generator->getService('Login')) instanceof ServiceModel) {
@@ -125,7 +125,7 @@ final class ServiceTest extends AbstractFile
         }
     }
 
-    public function testWriteQueueServiceCreate()
+    public function testWriteQueueServiceCreate(): void
     {
         $generator = self::queueGeneratorInstance();
         if (($model = $generator->getService('Create')) instanceof ServiceModel) {
@@ -140,7 +140,7 @@ final class ServiceTest extends AbstractFile
         }
     }
 
-    public function testWriteOmnitureServiceSaint()
+    public function testWriteOmnitureServiceSaint(): void
     {
         $generator = self::omnitureGeneratorInstance();
         if (($model = $generator->getService('Saint')) instanceof ServiceModel) {
@@ -155,7 +155,7 @@ final class ServiceTest extends AbstractFile
         }
     }
 
-    public function testWritePayPalServiceDo()
+    public function testWritePayPalServiceDo(): void
     {
         $generator = self::payPalGeneratorInstance(false, GeneratorOptions::VALUE_START);
         if (($model = $generator->getService('Do')) instanceof ServiceModel) {
@@ -170,7 +170,7 @@ final class ServiceTest extends AbstractFile
         }
     }
 
-    public function testWritePayPalServiceDoWithoutPrefix()
+    public function testWritePayPalServiceDoWithoutPrefix(): void
     {
         $generator = self::payPalGeneratorInstance();
         $generator->setOptionPrefix('');
@@ -186,7 +186,7 @@ final class ServiceTest extends AbstractFile
         }
     }
 
-    public function testWriteDocDataPaymentsServiceListWithoutPrefix()
+    public function testWriteDocDataPaymentsServiceListWithoutPrefix(): void
     {
         $generator = self::docDataPaymentsGeneratorInstance();
         $generator->setOptionPrefix('');
@@ -202,7 +202,7 @@ final class ServiceTest extends AbstractFile
         }
     }
 
-    public function testWriteBingService()
+    public function testWriteBingService(): void
     {
         $generator = self::bingGeneratorInstance(false, GeneratorOptions::VALUE_NONE);
         if (($model = $generator->getServices()->offsetGet(0)) instanceof ServiceModel) {
@@ -218,7 +218,7 @@ final class ServiceTest extends AbstractFile
         }
     }
 
-    public function testWriteOmnitureService()
+    public function testWriteOmnitureService(): void
     {
         $generator = self::omnitureGeneratorInstance(false, GeneratorOptions::VALUE_NONE);
         $model = new ServiceModel($generator, ServiceModel::DEFAULT_SERVICE_CLASS_NAME);
@@ -235,7 +235,7 @@ final class ServiceTest extends AbstractFile
         $this->assertSameFileContent('ValidOmnitureApiService', $serviceFile);
     }
 
-    public function testWritePayPalService()
+    public function testWritePayPalService(): void
     {
         $generator = self::payPalGeneratorInstance(false, GeneratorOptions::VALUE_NONE);
         $model = new ServiceModel($generator, ServiceModel::DEFAULT_SERVICE_CLASS_NAME);
@@ -252,7 +252,7 @@ final class ServiceTest extends AbstractFile
         $this->assertSameFileContent('ValidPayPalApiService', $serviceFile);
     }
 
-    public function testWriteActonService()
+    public function testWriteActonService(): void
     {
         $generator = self::actonGeneratorInstance(false, GeneratorOptions::VALUE_NONE);
         $model = new ServiceModel($generator, ServiceModel::DEFAULT_SERVICE_CLASS_NAME);
@@ -269,7 +269,7 @@ final class ServiceTest extends AbstractFile
         $this->assertSameFileContent('ValidActonApiService', $serviceFile);
     }
 
-    public function testWriteYandexDirectApiLiveGetService()
+    public function testWriteYandexDirectApiLiveGetService(): void
     {
         $generator = self::yandexDirectApiLiveGeneratorInstance();
         $generator->setOptionPrefix('');
@@ -285,7 +285,7 @@ final class ServiceTest extends AbstractFile
         }
     }
 
-    public function testDestination()
+    public function testDestination(): void
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getService('Search')) instanceof ServiceModel) {
@@ -298,7 +298,7 @@ final class ServiceTest extends AbstractFile
         }
     }
 
-    public function testWriteEwsFindService()
+    public function testWriteEwsFindService(): void
     {
         $generator = self::ewsInstance();
         if (($model = $generator->getService('Find')) instanceof ServiceModel) {
@@ -313,7 +313,7 @@ final class ServiceTest extends AbstractFile
         }
     }
 
-    public function testGetOperationMethodReturnTypeWithNullReturnTypeMustReturnNull()
+    public function testGetOperationMethodReturnTypeWithNullReturnTypeMustReturnNull(): void
     {
         $generatorInstance = self::bingGeneratorInstance();
         $method = new MethodModel(

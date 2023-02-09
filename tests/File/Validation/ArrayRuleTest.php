@@ -25,7 +25,7 @@ final class ArrayRuleTest extends AbstractRuleTest
      * - maxLength: 255
      * - minLength: 1.
      */
-    public function testSetAddressLineWithNullOnOneItemMustThrowAnException()
+    public function testSetAddressLineWithNullOnOneItemMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('The AddressLine property can only contain items of type string, NULL(NULL) given');
@@ -54,7 +54,7 @@ final class ArrayRuleTest extends AbstractRuleTest
      *
      * @var string[]
      */
-    public function testSetAddressLineWithStringsMustPass()
+    public function testSetAddressLineWithStringsMustPass(): void
     {
         $instance = self::getWhlAddressTypeInstance();
 
@@ -67,7 +67,7 @@ final class ArrayRuleTest extends AbstractRuleTest
         );
     }
 
-    public function testSetTaxDescriptionValueWithStringValueMustThrowAnException()
+    public function testSetTaxDescriptionValueWithStringValueMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('The TaxDescription property can only contain items of type \StructType\ApiParagraphType, string(\'\'), integer(1) given');
@@ -80,7 +80,7 @@ final class ArrayRuleTest extends AbstractRuleTest
         ]);
     }
 
-    public function testSetTaxDescriptionValueWithInvalidObjectItemMustThrowAnException()
+    public function testSetTaxDescriptionValueWithInvalidObjectItemMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('The TaxDescription property can only contain items of type \StructType\ApiParagraphType, StructType\ApiTaxType given');
@@ -96,7 +96,7 @@ final class ArrayRuleTest extends AbstractRuleTest
         );
     }
 
-    public function testSetTaxDescriptionValueWithValidItemsMustPass()
+    public function testSetTaxDescriptionValueWithValidItemsMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 

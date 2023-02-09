@@ -13,7 +13,7 @@ use InvalidArgumentException;
  */
 final class ListRuleTest extends AbstractRuleTest
 {
-    public function testSetDayOfWeekWithInvalidArrayValueMustThrowAnException()
+    public function testSetDayOfWeekWithInvalidArrayValueMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value(s) string(\'Today\'), please use one of: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Day, Weekday, WeekendDay from enumeration class \EnumType\ApiDayOfWeekType');
@@ -25,7 +25,7 @@ final class ListRuleTest extends AbstractRuleTest
         ]);
     }
 
-    public function testSetDayOfWeekWithInvalidStringValueMustThrowAnException()
+    public function testSetDayOfWeekWithInvalidStringValueMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value(s) string(\'Today\'), please use one of: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Day, Weekday, WeekendDay from enumeration class \EnumType\ApiDayOfWeekType');
@@ -35,7 +35,7 @@ final class ListRuleTest extends AbstractRuleTest
         $instance->setDayOfWeek('Today');
     }
 
-    public function testSetDayOfWeekWithValidArrayValuesMustPass()
+    public function testSetDayOfWeekWithValidArrayValuesMustPass(): void
     {
         $instance = self::getEwsWorkingPeriodInstance();
 
@@ -49,7 +49,7 @@ final class ListRuleTest extends AbstractRuleTest
         $this->assertSame(implode(' ', $values), $instance->getDayOfWeek());
     }
 
-    public function testSetDayOfWeekWithValidStringValueMustPass()
+    public function testSetDayOfWeekWithValidStringValueMustPass(): void
     {
         $instance = self::getEwsWorkingPeriodInstance();
 
@@ -63,7 +63,7 @@ final class ListRuleTest extends AbstractRuleTest
         $this->assertSame($value, $instance->getDayOfWeek());
     }
 
-    public function testSetDayOfWeekWithNullValueMustPass()
+    public function testSetDayOfWeekWithNullValueMustPass(): void
     {
         $instance = self::getEwsWorkingPeriodInstance();
 

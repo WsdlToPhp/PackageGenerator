@@ -14,7 +14,7 @@ use WsdlToPhp\PackageGenerator\Parser\SoapClient\Structs;
  */
 final class StructsTest extends SoapClientParser
 {
-    public function testWcf()
+    public function testWcf(): void
     {
         $generator = self::getWcfInstance();
 
@@ -42,7 +42,7 @@ final class StructsTest extends SoapClientParser
         }
     }
 
-    public function testLnp()
+    public function testLnp(): void
     {
         $generator = self::getLnpInstance();
 
@@ -57,7 +57,7 @@ final class StructsTest extends SoapClientParser
         $this->assertEquals(0, $count);
     }
 
-    public function testWhl()
+    public function testWhl(): void
     {
         $generator = self::getWhlInstance(true);
 

@@ -29,7 +29,7 @@ final class TagListTest extends WsdlParser
         return new TagList(self::generatorInstance(self::wsdlEwsPath()));
     }
 
-    public function testParseOdigeo()
+    public function testParseOdigeo(): void
     {
         $tagListParser = self::odigeoInstanceParser();
 
@@ -68,7 +68,7 @@ final class TagListTest extends WsdlParser
         $this->assertSame(4, $count);
     }
 
-    public function testParseMyBoard()
+    public function testParseMyBoard(): void
     {
         $tagListParser = self::myBaordInstanceParser();
 
@@ -91,7 +91,7 @@ final class TagListTest extends WsdlParser
         $this->assertSame(1, $count);
     }
 
-    public function testParseEwsMustSetlistProperty()
+    public function testParseEwsMustSetlistProperty(): void
     {
         $tagListParser = self::ewsInstanceParser();
 

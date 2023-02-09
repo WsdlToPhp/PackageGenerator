@@ -22,14 +22,14 @@ final class ModelContainerTest extends AbstractTestCase
         return new ModelContainer(self::getBingGeneratorInstance());
     }
 
-    public function testAdd()
+    public function testAdd(): void
     {
         $modelContainer = self::instance();
         $modelContainer->add(new EmptyModel(self::getBingGeneratorInstance(), 'Foo'));
         $this->assertInstanceOf(EmptyModel::class, $modelContainer->get('Foo'));
     }
 
-    public function testExceptionOnObject()
+    public function testExceptionOnObject(): void
     {
         $this->expectException(TypeError::class);
 
@@ -37,7 +37,7 @@ final class ModelContainerTest extends AbstractTestCase
         $modelContainer->add([]);
     }
 
-    public function testGetExceptionOnValue()
+    public function testGetExceptionOnValue(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -48,7 +48,7 @@ final class ModelContainerTest extends AbstractTestCase
         $modelContainer->get(null);
     }
 
-    public function testExceptionOnModelClass()
+    public function testExceptionOnModelClass(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -56,7 +56,7 @@ final class ModelContainerTest extends AbstractTestCase
         $modelContainer->add(new Struct(self::getBingGeneratorInstance(), 'Foo'));
     }
 
-    public function testGet()
+    public function testGet(): void
     {
         $modelContainer = self::instance();
         $modelContainer->add(new EmptyModel(self::getBingGeneratorInstance(), 'Foo'));
@@ -65,7 +65,7 @@ final class ModelContainerTest extends AbstractTestCase
         $this->assertInstanceOf(EmptyModel::class, $modelContainer->get('Foo'));
     }
 
-    public function testForeach()
+    public function testForeach(): void
     {
         $models = self::instance();
         $models->add(new EmptyModel(self::getBingGeneratorInstance(), 'Foo'));
@@ -91,7 +91,7 @@ final class ModelContainerTest extends AbstractTestCase
         }
     }
 
-    public function testCount()
+    public function testCount(): void
     {
         $models = self::instance();
         $models->add(new EmptyModel(self::getBingGeneratorInstance(), 'Foo'));

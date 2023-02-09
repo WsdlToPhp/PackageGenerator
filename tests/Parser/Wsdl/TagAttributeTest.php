@@ -23,7 +23,7 @@ final class TagAttributeTest extends WsdlParser
         return new TagAttribute(self::generatorInstance(self::wsdlWhlPath()));
     }
 
-    public function testParseEbay()
+    public function testParseEbay(): void
     {
         $tagAttributeParser = self::ebayInstanceParser();
 
@@ -51,7 +51,7 @@ final class TagAttributeTest extends WsdlParser
         $this->assertTrue((bool) $ok);
     }
 
-    public function testParseWhl()
+    public function testParseWhl(): void
     {
         $tagAttributeParser = self::whlInstanceParser();
 

@@ -41,7 +41,9 @@ jobs:
         run: echo $GITHUB_REF_NAME_SLUG
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Get convenient Docker Meta
         id: docker_meta

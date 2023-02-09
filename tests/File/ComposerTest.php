@@ -12,7 +12,7 @@ use WsdlToPhp\PackageGenerator\File\Composer;
  */
 final class ComposerTest extends AbstractFile
 {
-    public function testBing()
+    public function testBing(): void
     {
         $instance = self::getBingGeneratorInstance(true);
         $instance
@@ -28,7 +28,7 @@ final class ComposerTest extends AbstractFile
         $this->assertSameFileContent('ValidBingComposer', $composerFile, 'json');
     }
 
-    public function testBingWithEmptyComposerNameAndFilledPrefix()
+    public function testBingWithEmptyComposerNameAndFilledPrefix(): void
     {
         $instance = self::getBingGeneratorInstance(true);
         $instance
@@ -46,7 +46,7 @@ final class ComposerTest extends AbstractFile
         $this->assertSameFileContent('ValidBingEmptyComposerNameComposer', $composerFile, 'json');
     }
 
-    public function testBingWithSettings()
+    public function testBingWithSettings(): void
     {
         $instance = self::getBingGeneratorInstance(true);
         $instance
@@ -66,7 +66,7 @@ final class ComposerTest extends AbstractFile
         $this->assertSameFileContent('ValidBingComposerSettings', $composerFile, 'json');
     }
 
-    public function testBingWithEmptySrcDirname()
+    public function testBingWithEmptySrcDirname(): void
     {
         $instance = self::getBingGeneratorInstance(true);
         $instance
@@ -83,7 +83,7 @@ final class ComposerTest extends AbstractFile
         $this->assertSameFileContent('ValidBingComposerEmptySrcDirname', $composerFile, 'json');
     }
 
-    public function testBingWithSlashSrcDirname()
+    public function testBingWithSlashSrcDirname(): void
     {
         $instance = self::getBingGeneratorInstance(true);
         $instance
@@ -100,7 +100,7 @@ final class ComposerTest extends AbstractFile
         $this->assertSameFileContent('ValidBingComposerSlashSrcDirname', $composerFile, 'json');
     }
 
-    public function testSetRunComposerUdpate()
+    public function testSetRunComposerUdpate(): void
     {
         $instance = self::getBingGeneratorInstance(true);
         $instance
@@ -112,7 +112,7 @@ final class ComposerTest extends AbstractFile
         $this->assertFalse($composerFile->getRunComposerUpdate());
     }
 
-    public function testGetFileName()
+    public function testGetFileName(): void
     {
         $instance = self::getBingGeneratorInstance(true);
         $instance->setOptionPrefix('Api');

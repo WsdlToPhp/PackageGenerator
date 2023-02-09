@@ -13,7 +13,7 @@ use TypeError;
  */
 final class ItemTypeRuleTest extends AbstractRuleTest
 {
-    public function testAddToTaxDescriptionValueWithStringValueMustThrowATypeError()
+    public function testAddToTaxDescriptionValueWithStringValueMustThrowATypeError(): void
     {
         $this->expectException(TypeError::class);
 
@@ -22,7 +22,7 @@ final class ItemTypeRuleTest extends AbstractRuleTest
         $instance->addToTaxDescription('foo');
     }
 
-    public function testAddToTaxDescriptionValueWithNullValueMustThrowAnException()
+    public function testAddToTaxDescriptionValueWithNullValueMustThrowAnException(): void
     {
         $this->expectException(TypeError::class);
 
@@ -31,7 +31,7 @@ final class ItemTypeRuleTest extends AbstractRuleTest
         $instance->addToTaxDescription(null);
     }
 
-    public function testAddToTaxDescriptionValueWithApiParagraphTypeInstanceMustPass()
+    public function testAddToTaxDescriptionValueWithApiParagraphTypeInstanceMustPass(): void
     {
         // true to avoid the maxoccurs error to occur
         $instance = self::getWhlTaxTypeInstance(true);
@@ -39,7 +39,7 @@ final class ItemTypeRuleTest extends AbstractRuleTest
         $this->assertSame($instance, $instance->addToTaxDescription(new ApiParagraphType())); // @phpstan-ignore-line
     }
 
-    public function testAddToFirstSegmentsIdsValueWithStringValueMustThrowAnException()
+    public function testAddToFirstSegmentsIdsValueWithStringValueMustThrowAnException(): void
     {
         $this->expectException(TypeError::class);
 
@@ -49,7 +49,7 @@ final class ItemTypeRuleTest extends AbstractRuleTest
         $instance->addToFirstSegmentsIds('foo');
     }
 
-    public function testAddToFirstSegmentsIdsValueWithNullValueMustThrowAnException()
+    public function testAddToFirstSegmentsIdsValueWithNullValueMustThrowAnException(): void
     {
         $this->expectException(TypeError::class);
 
@@ -59,7 +59,7 @@ final class ItemTypeRuleTest extends AbstractRuleTest
         $instance->addToFirstSegmentsIds(null);
     }
 
-    public function testAddToFirstSegmentsIdsValueWithIntValueMustPass()
+    public function testAddToFirstSegmentsIdsValueWithIntValueMustPass(): void
     {
         // true to avoid the maxoccurs error to occur
         $instance = self::getOdigeoFareItineraryInstance(true);
@@ -67,7 +67,7 @@ final class ItemTypeRuleTest extends AbstractRuleTest
         $this->assertSame($instance, $instance->addToFirstSegmentsIds(18));
     }
 
-    public function testAddToFirstSegmentsIdsValueWithStringIntValueMustPass()
+    public function testAddToFirstSegmentsIdsValueWithStringIntValueMustPass(): void
     {
         // true to avoid the maxoccurs error to occur
         $instance = self::getOdigeoFareItineraryInstance(true);

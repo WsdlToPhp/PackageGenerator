@@ -13,7 +13,7 @@ use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
  */
 final class GeneratorContainerTest extends AbstractTestCase
 {
-    public function testJsonSerialize()
+    public function testJsonSerialize(): void
     {
         $container = new GeneratorContainers(self::getBingGeneratorInstance());
 

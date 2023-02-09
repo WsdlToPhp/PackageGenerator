@@ -20,7 +20,7 @@ final class MinInclusiveRuleTest extends AbstractRuleTest
      * - maxInclusive: 100.00
      * - minInclusive: 0.00.
      */
-    public function testSetPercentWithLowerFloatValueMustThrowAnException()
+    public function testSetPercentWithLowerFloatValueMustThrowAnException(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value -0.01, the value must be numerically greater than or equal to 0.00');
@@ -38,7 +38,7 @@ final class MinInclusiveRuleTest extends AbstractRuleTest
      * - maxInclusive: 100.00
      * - minInclusive: 0.00.
      */
-    public function testSetPercentWithSameFloatValueMustPass()
+    public function testSetPercentWithSameFloatValueMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 
@@ -53,7 +53,7 @@ final class MinInclusiveRuleTest extends AbstractRuleTest
      * - maxInclusive: 100.00
      * - minInclusive: 0.00.
      */
-    public function testSetPercentWithSameIntValueMustPass()
+    public function testSetPercentWithSameIntValueMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 
@@ -68,7 +68,7 @@ final class MinInclusiveRuleTest extends AbstractRuleTest
      * - maxInclusive: 100.00
      * - minInclusive: 0.00.
      */
-    public function testSetPercentWithLowerIntValueMustPass()
+    public function testSetPercentWithLowerIntValueMustPass(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value -1.0, the value must be numerically greater than or equal to 0.00');
@@ -86,14 +86,14 @@ final class MinInclusiveRuleTest extends AbstractRuleTest
      * - maxInclusive: 100.00
      * - minInclusive: 0.00.
      */
-    public function testSetPercentWithNullValueMustPass()
+    public function testSetPercentWithNullValueMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 
         $this->assertSame($instance, $instance->setPercent(null));
     }
 
-    public function testApplyRuleWithDateIntervalMustBeFalseWithLowerInterval()
+    public function testApplyRuleWithDateIntervalMustBeFalseWithLowerInterval(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value \'-P10675199DT2H49M6.4775807S\', the value must be chronologically greater than or equal to -P10675199DT2H49M5.4775807S');
@@ -102,13 +102,13 @@ final class MinInclusiveRuleTest extends AbstractRuleTest
         $this->assertTrue(call_user_func($functionName, '-P10675199DT2H49M6.4775807S'));
     }
 
-    public function testApplyRuleWithDateIntervalMustBeTrueWithSameInterval()
+    public function testApplyRuleWithDateIntervalMustBeTrueWithSameInterval(): void
     {
         $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinInclusiveRule', $interval = '-P10675199DT2H49M5.4775807S');
         $this->assertTrue(call_user_func($functionName, $interval));
     }
 
-    public function testApplyRuleWithDateIntervalMustBeTrueWthHigherInterval()
+    public function testApplyRuleWithDateIntervalMustBeTrueWthHigherInterval(): void
     {
         $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinInclusiveRule', '-P10675199DT2H49M5.4775807S');
         $this->assertTrue(call_user_func($functionName, '-P10675199DT2H49M4.4775807S'));

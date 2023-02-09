@@ -14,7 +14,7 @@ use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
  */
 final class StructEnumTest extends AbstractFile
 {
-    public function testSetModelGoodNameTooManyAttributesWithException()
+    public function testSetModelGoodNameTooManyAttributesWithException(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -23,7 +23,7 @@ final class StructEnumTest extends AbstractFile
         $enum->setModel(new StructModel($instance, 'FooEnum'));
     }
 
-    public function testWriteBingSearchEnumAdultOption()
+    public function testWriteBingSearchEnumAdultOption(): void
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStructByName('AdultOption')) instanceof StructModel) {
@@ -38,7 +38,7 @@ final class StructEnumTest extends AbstractFile
         }
     }
 
-    public function testWriteBingSearchEnumSourceType()
+    public function testWriteBingSearchEnumSourceType(): void
     {
         $generator = self::bingGeneratorInstance();
         if (($model = $generator->getStructByName('SourceType')) instanceof StructModel) {
@@ -53,7 +53,7 @@ final class StructEnumTest extends AbstractFile
         }
     }
 
-    public function testWriteReformaHouseStageEnum()
+    public function testWriteReformaHouseStageEnum(): void
     {
         $generator = self::reformaGeneratorInstance();
         if (($model = $generator->getStructByName('HouseStageEnum')) instanceof StructModel) {
@@ -68,7 +68,7 @@ final class StructEnumTest extends AbstractFile
         }
     }
 
-    public function testWriteOmnitureDsWeblogFormats()
+    public function testWriteOmnitureDsWeblogFormats(): void
     {
         $generator = self::omnitureGeneratorInstance();
         if (($model = $generator->getStructByName('ds_weblog_formats')) instanceof StructModel) {
@@ -83,7 +83,7 @@ final class StructEnumTest extends AbstractFile
         }
     }
 
-    public function testWriteBingSearchEnumWebSearchOption()
+    public function testWriteBingSearchEnumWebSearchOption(): void
     {
         $generator = self::bingGeneratorInstance(true);
         if (($model = $generator->getStructByName('WebSearchOption')) instanceof StructModel) {
@@ -99,7 +99,7 @@ final class StructEnumTest extends AbstractFile
         }
     }
 
-    public function testWriteBingSearchEnumPhonebookSortOption()
+    public function testWriteBingSearchEnumPhonebookSortOption(): void
     {
         $generator = self::bingGeneratorInstance(true);
         if (($model = $generator->getStructByName('PhonebookSortOption')) instanceof StructModel) {
@@ -117,7 +117,7 @@ final class StructEnumTest extends AbstractFile
         }
     }
 
-    public function testWriteBingSearchEnumPhonebookSortOptionSuffixed()
+    public function testWriteBingSearchEnumPhonebookSortOptionSuffixed(): void
     {
         $generator = self::bingGeneratorInstance(true);
         if (($model = $generator->getStructByName('PhonebookSortOption')) instanceof StructModel) {
@@ -136,7 +136,7 @@ final class StructEnumTest extends AbstractFile
         }
     }
 
-    public function testDestination()
+    public function testDestination(): void
     {
         $generator = self::bingGeneratorInstance(true);
         if (($model = $generator->getStructByName('PhonebookSortOption')) instanceof StructModel) {
@@ -153,7 +153,7 @@ final class StructEnumTest extends AbstractFile
         }
     }
 
-    public function testWriteWhlEnumTransactionActionType()
+    public function testWriteWhlEnumTransactionActionType(): void
     {
         $generator = self::whlInstance();
         if (($model = $generator->getStructByName('TransactionActionType')) instanceof StructModel) {
@@ -168,7 +168,7 @@ final class StructEnumTest extends AbstractFile
         }
     }
 
-    public function testWriteEwsEnumPhoneNumberKeyType()
+    public function testWriteEwsEnumPhoneNumberKeyType(): void
     {
         $generator = self::ewsInstance();
         if (($model = $generator->getStructByName('PhoneNumberKeyType')) instanceof StructModel) {
