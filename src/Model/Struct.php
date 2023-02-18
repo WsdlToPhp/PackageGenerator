@@ -395,24 +395,26 @@ final class Struct extends AbstractModel
     protected function putRequiredAttributesFirst(StructAttributeContainer $allAttributes): StructAttributeContainer
     {
         $attributes = new StructAttributeContainer($this->getGenerator());
-        $requiredAttributes = new StructAttributeContainer($this->getGenerator());
-        $notRequiredAttributes = new StructAttributeContainer($this->getGenerator());
+        $requiredAttributes = [];
+        $notRequiredAttributes = [];
+        $nullableNotRequiredAttributes = [];
 
         /** @var StructAttribute $attribute */
         foreach ($allAttributes as $attribute) {
             if ($attribute->isRequired() && !$attribute->isNullable()) {
-                $requiredAttributes->add($attribute);
+                $requiredAttributes[] = $attribute;
+            } elseif (!$attribute->isNullable()) {
+                $notRequiredAttributes[] = $attribute;
             } else {
-                $notRequiredAttributes->add($attribute);
+                $nullableNotRequiredAttributes[] = $attribute;
             }
         }
-        foreach ($requiredAttributes as $attribute) {
-            $attributes->add($attribute);
-        }
-        foreach ($notRequiredAttributes as $attribute) {
-            $attributes->add($attribute);
-        }
-        unset($requiredAttributes, $notRequiredAttributes);
+
+        array_walk($requiredAttributes, [$attributes, 'add']);
+        array_walk($notRequiredAttributes, [$attributes, 'add']);
+        array_walk($nullableNotRequiredAttributes, [$attributes, 'add']);
+
+        unset($requiredAttributes, $notRequiredAttributes, $nullableNotRequiredAttributes);
 
         return $attributes;
     }
