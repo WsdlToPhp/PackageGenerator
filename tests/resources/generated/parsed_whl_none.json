@@ -939,6 +939,7 @@
                 "inheritance": "string",
                 "abstract": false,
                 "meta": {
+                    "base": "whlsoap:UpperCaseAlphaLength1to2",
                     "documentation": [
                         "The 2 digit code that identifies the credit card.",
                         "This is intended to be used when the above enumeration list does not meet your needs."

@@ -10566,9 +10566,11 @@
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:string",
                     "documentation": [
                         "This type represents the property tag (MINUS the type part). There are two options for representation: 1. Hex ==> 0x3fa4 2. Decimal ==> 0-65535"
                     ],
+                    "pattern": "(0x|0X)[0-9A-Fa-f]{1,4}",
                     "union": [
                         "unsignedShort",
                         "string"
@@ -18132,9 +18134,14 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "",
+                "inheritance": "ResponseObjectType",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "t:ResponseObjectType",
+                    "name": "ObjectName",
+                    "type": "xs:string",
+                    "use": "prohibited"
+                },
                 "name": "WellKnownResponseObjectType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -18266,9 +18273,14 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "",
+                "inheritance": "ResponseObjectType",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "t:ResponseObjectType",
+                    "name": "ObjectName",
+                    "type": "xs:string",
+                    "use": "prohibited"
+                },
                 "name": "SmartResponseBaseType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -18382,9 +18394,14 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "",
+                "inheritance": "ResponseObjectType",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "t:ResponseObjectType",
+                    "name": "ObjectName",
+                    "type": "xs:string",
+                    "use": "prohibited"
+                },
                 "name": "ReferenceItemResponseType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -29549,9 +29566,14 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "",
+                "inheritance": "ResponseObjectType",
                 "abstract": false,
-                "meta": [],
+                "meta": {
+                    "base": "t:ResponseObjectType",
+                    "name": "ObjectName",
+                    "type": "xs:string",
+                    "use": "prohibited"
+                },
                 "name": "PostReplyItemBaseType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
@@ -31204,6 +31226,15 @@
                 "inheritance": "",
                 "abstract": false,
                 "meta": {
+                    "base": "xs:int",
+                    "maxInclusive": [
+                        "2629800",
+                        "1525252321"
+                    ],
+                    "minInclusive": [
+                        "0",
+                        "1525252321"
+                    ],
                     "union": [
                         "int"
                     ]
@@ -92494,78 +92525,6 @@
                 "abstract": false,
                 "meta": [],
                 "name": "GetStaffAvailabilityResponseMessageType",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "ResponseObjectType",
-                "abstract": false,
-                "meta": {
-                    "base": "t:ResponseObjectType",
-                    "name": "ObjectName",
-                    "type": "xs:string",
-                    "use": "prohibited"
-                },
-                "name": "WellKnownResponseObjectType",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "ResponseObjectType",
-                "abstract": false,
-                "meta": {
-                    "base": "t:ResponseObjectType",
-                    "name": "ObjectName",
-                    "type": "xs:string",
-                    "use": "prohibited"
-                },
-                "name": "SmartResponseBaseType",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "ResponseObjectType",
-                "abstract": false,
-                "meta": {
-                    "base": "t:ResponseObjectType",
-                    "name": "ObjectName",
-                    "type": "xs:string",
-                    "use": "prohibited"
-                },
-                "name": "ReferenceItemResponseType",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "ResponseObjectType",
-                "abstract": false,
-                "meta": {
-                    "base": "t:ResponseObjectType",
-                    "name": "ObjectName",
-                    "type": "xs:string",
-                    "use": "prohibited"
-                },
-                "name": "PostReplyItemBaseType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             }
         ]
