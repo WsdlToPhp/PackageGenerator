@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 4.1.6 - 2023-02-20
+- issue #266, pr #270 - Usage of an undefined constant within a generate EnumType class #266
+- pr #267 - Remove deprecated message
+- issue #268, pr #271 - sequence Tag min/maxOccurs attribute is ignored
+- pr #269 - In method Utils::getStreamContextOptions function array_merge_recursive works not as expected
+- issue #272, pr #273 - Getter for a nullable-array-typed property is invalid
+- issue #274 - Improper validation of array #274
+
 ## 4.1.5 - 2022-03-11
 - issue #262 - Different destination dir when generating using 3.2.7 VS 4.1.1 ??
 
