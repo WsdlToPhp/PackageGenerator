@@ -23,7 +23,7 @@ final class TagUnionTest extends WsdlParser
         return new TagUnion(self::generatorInstance(self::wsdlEwsPath()));
     }
 
-    public function testParseOrderContract()
+    public function testParseOrderContract(): void
     {
         $tagUnionParser = self::orderContractInstanceParser();
 
@@ -51,7 +51,7 @@ final class TagUnionTest extends WsdlParser
         $this->assertSame(2, $count);
     }
 
-    public function testParseEws()
+    public function testParseEws(): void
     {
         $tagUnionParser = self::ewsInstanceParser();
 

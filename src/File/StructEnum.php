@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant as ConstantContainer;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
@@ -22,7 +21,7 @@ final class StructEnum extends Struct
     public function setModel(AbstractModel $model): self
     {
         if ($model instanceof StructModel && !$model->isRestriction()) {
-            throw new InvalidArgumentException('Model must be a restriction containing values', __LINE__);
+            throw new \InvalidArgumentException('Model must be a restriction containing values', __LINE__);
         }
 
         return parent::setModel($model);
@@ -30,7 +29,9 @@ final class StructEnum extends Struct
 
     protected function fillClassConstants(ConstantContainer $constants): void
     {
-        foreach ($this->getModel()->getValues() as $value) {
+        /** @var StructModel $model */
+        $model = $this->getModel();
+        foreach ($model->getValues() as $value) {
             $constants->add(new PhpConstant($value->getCleanName(), $value->getValue()));
         }
     }
@@ -45,7 +46,10 @@ final class StructEnum extends Struct
         $block = new PhpAnnotationBlock([
             sprintf('Constant for value \'%s\'', $constant->getValue()),
         ]);
-        if (($value = $this->getModel()->getValue($constant->getValue())) instanceof StructValueModel) {
+
+        /** @var StructModel $model */
+        $model = $this->getModel();
+        if (($value = $model->getValue($constant->getValue())) instanceof StructValueModel) {
             $this->defineModelAnnotationsFromWsdl($block, $value);
         }
         $block->addChild(new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('string \'%s\'', $constant->getValue())));
@@ -88,7 +92,10 @@ final class StructEnum extends Struct
     protected function getEnumMethodValues(): array
     {
         $values = [];
-        foreach ($this->getModel()->getValues() as $value) {
+
+        /** @var StructModel $model */
+        $model = $this->getModel();
+        foreach ($model->getValues() as $value) {
             $values[] = sprintf('self::%s', $value->getCleanName());
         }
 

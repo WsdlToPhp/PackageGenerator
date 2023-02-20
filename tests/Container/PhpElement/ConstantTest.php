@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Container\PhpElement;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PhpGenerator\Element\PhpConstant;
@@ -16,7 +15,7 @@ use WsdlToPhp\PhpGenerator\Element\PhpMethod;
  */
 final class ConstantTest extends AbstractTestCase
 {
-    public function testAdd()
+    public function testAdd(): void
     {
         $constant = new Constant(self::getBingGeneratorInstance());
 
@@ -26,9 +25,9 @@ final class ConstantTest extends AbstractTestCase
         $this->assertInstanceOf(PhpConstant::class, $constant->get('foo'));
     }
 
-    public function testAddWithException()
+    public function testAddWithException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $constant = new Constant(self::getBingGeneratorInstance());
 

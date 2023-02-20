@@ -526,12 +526,13 @@ class ApiBannerInfo extends AbstractStructBase
         return $this->Phrases;
     }
     /**
-     * This method is responsible for validating the values passed to the setPhrases method
+     * This method is responsible for validating the value(s) passed to the setPhrases method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPhrases method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePhrasesForArrayConstraintsFromSetPhrases(?array $values = []): string
+    public static function validatePhrasesForArrayConstraintFromSetPhrases(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -560,7 +561,7 @@ class ApiBannerInfo extends AbstractStructBase
     public function setPhrases(?array $phrases = null): self
     {
         // validation for constraint: array
-        if ('' !== ($phrasesArrayErrorMessage = self::validatePhrasesForArrayConstraintsFromSetPhrases($phrases))) {
+        if ('' !== ($phrasesArrayErrorMessage = self::validatePhrasesForArrayConstraintFromSetPhrases($phrases))) {
             throw new InvalidArgumentException($phrasesArrayErrorMessage, __LINE__);
         }
         $this->Phrases = $phrases;
@@ -592,12 +593,13 @@ class ApiBannerInfo extends AbstractStructBase
         return $this->MinusKeywords;
     }
     /**
-     * This method is responsible for validating the values passed to the setMinusKeywords method
+     * This method is responsible for validating the value(s) passed to the setMinusKeywords method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMinusKeywords method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMinusKeywordsForArrayConstraintsFromSetMinusKeywords(?array $values = []): string
+    public static function validateMinusKeywordsForArrayConstraintFromSetMinusKeywords(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -626,7 +628,7 @@ class ApiBannerInfo extends AbstractStructBase
     public function setMinusKeywords(?array $minusKeywords = null): self
     {
         // validation for constraint: array
-        if ('' !== ($minusKeywordsArrayErrorMessage = self::validateMinusKeywordsForArrayConstraintsFromSetMinusKeywords($minusKeywords))) {
+        if ('' !== ($minusKeywordsArrayErrorMessage = self::validateMinusKeywordsForArrayConstraintFromSetMinusKeywords($minusKeywords))) {
             throw new InvalidArgumentException($minusKeywordsArrayErrorMessage, __LINE__);
         }
         $this->MinusKeywords = $minusKeywords;
@@ -842,12 +844,13 @@ class ApiBannerInfo extends AbstractStructBase
         return $this->Sitelinks;
     }
     /**
-     * This method is responsible for validating the values passed to the setSitelinks method
+     * This method is responsible for validating the value(s) passed to the setSitelinks method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSitelinks method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSitelinksForArrayConstraintsFromSetSitelinks(?array $values = []): string
+    public static function validateSitelinksForArrayConstraintFromSetSitelinks(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -876,7 +879,7 @@ class ApiBannerInfo extends AbstractStructBase
     public function setSitelinks(?array $sitelinks = null): self
     {
         // validation for constraint: array
-        if ('' !== ($sitelinksArrayErrorMessage = self::validateSitelinksForArrayConstraintsFromSetSitelinks($sitelinks))) {
+        if ('' !== ($sitelinksArrayErrorMessage = self::validateSitelinksForArrayConstraintFromSetSitelinks($sitelinks))) {
             throw new InvalidArgumentException($sitelinksArrayErrorMessage, __LINE__);
         }
         $this->Sitelinks = $sitelinks;
@@ -908,12 +911,13 @@ class ApiBannerInfo extends AbstractStructBase
         return $this->AdWarnings;
     }
     /**
-     * This method is responsible for validating the values passed to the setAdWarnings method
+     * This method is responsible for validating the value(s) passed to the setAdWarnings method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAdWarnings method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAdWarningsForArrayConstraintsFromSetAdWarnings(?array $values = []): string
+    public static function validateAdWarningsForArrayConstraintFromSetAdWarnings(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -942,7 +946,7 @@ class ApiBannerInfo extends AbstractStructBase
     public function setAdWarnings(?array $adWarnings = null): self
     {
         // validation for constraint: array
-        if ('' !== ($adWarningsArrayErrorMessage = self::validateAdWarningsForArrayConstraintsFromSetAdWarnings($adWarnings))) {
+        if ('' !== ($adWarningsArrayErrorMessage = self::validateAdWarningsForArrayConstraintFromSetAdWarnings($adWarnings))) {
             throw new InvalidArgumentException($adWarningsArrayErrorMessage, __LINE__);
         }
         $this->AdWarnings = $adWarnings;
@@ -997,12 +1001,13 @@ class ApiBannerInfo extends AbstractStructBase
         return $this->ModerateRejectionReasons;
     }
     /**
-     * This method is responsible for validating the values passed to the setModerateRejectionReasons method
+     * This method is responsible for validating the value(s) passed to the setModerateRejectionReasons method
      * This method is willingly generated in order to preserve the one-line inline validation within the setModerateRejectionReasons method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateModerateRejectionReasonsForArrayConstraintsFromSetModerateRejectionReasons(?array $values = []): string
+    public static function validateModerateRejectionReasonsForArrayConstraintFromSetModerateRejectionReasons(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1031,7 +1036,7 @@ class ApiBannerInfo extends AbstractStructBase
     public function setModerateRejectionReasons(?array $moderateRejectionReasons = null): self
     {
         // validation for constraint: array
-        if ('' !== ($moderateRejectionReasonsArrayErrorMessage = self::validateModerateRejectionReasonsForArrayConstraintsFromSetModerateRejectionReasons($moderateRejectionReasons))) {
+        if ('' !== ($moderateRejectionReasonsArrayErrorMessage = self::validateModerateRejectionReasonsForArrayConstraintFromSetModerateRejectionReasons($moderateRejectionReasons))) {
             throw new InvalidArgumentException($moderateRejectionReasonsArrayErrorMessage, __LINE__);
         }
         $this->ModerateRejectionReasons = $moderateRejectionReasons;

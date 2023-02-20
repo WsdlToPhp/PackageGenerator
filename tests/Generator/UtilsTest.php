@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Generator;
 
-use stdClass;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
@@ -15,7 +14,7 @@ use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
  */
 final class UtilsTest extends AbstractTestCase
 {
-    public function testResolveCompleteUrl()
+    public function testResolveCompleteUrl(): void
     {
         $this->assertSame(sprintf('http://www.foo.com/my/folder/index.%d.xsd', __LINE__), Utils::resolveCompletePath('http://www.foo.com/my/xml.wsdl', sprintf('./folder/index.%d.xsd', __LINE__)));
         $this->assertSame(sprintf('http://www.foo.com/my/titi/index.%d.xsd', __LINE__), Utils::resolveCompletePath('http://www.foo.com/my/xml.wsdl', sprintf('folder/../titi/index.%d.xsd', __LINE__)));
@@ -23,7 +22,7 @@ final class UtilsTest extends AbstractTestCase
         $this->assertSame(sprintf('http://www.foo.com/my/titi/index.%d.xsd', __LINE__), Utils::resolveCompletePath('http://www.foo.com/my/xml.wsdl', sprintf('folder/toto/../../titi/index.%d.xsd', __LINE__)));
     }
 
-    public function testResolveCompletePath()
+    public function testResolveCompletePath(): void
     {
         $dirname = __DIR__;
         $this->assertSame(sprintf('%s/../resources/aukro.wsdl', $dirname), Utils::resolveCompletePath(sprintf('%s/../resources/ebaySvc.wsdl', $dirname), './folder/../aukro.wsdl'));
@@ -32,7 +31,7 @@ final class UtilsTest extends AbstractTestCase
         $this->assertSame(sprintf('%s/../resources/aukro.wsdl', $dirname), Utils::resolveCompletePath(sprintf('%s/../resources/ebaySvc.wsdl', $dirname), 'aukro.wsdl'));
     }
 
-    public function testGetValueWithinItsType()
+    public function testGetValueWithinItsType(): void
     {
         $this->assertSame('020', Utils::getValueWithinItsType('020', 'string'));
         $this->assertSame('01', Utils::getValueWithinItsType('01', 'string'));
@@ -41,28 +40,33 @@ final class UtilsTest extends AbstractTestCase
         $this->assertSame(false, Utils::getValueWithinItsType('false', 'bool'));
     }
 
-    public function testGetPartStart()
+    public function testGetPartStart(): void
     {
         $this->assertSame('events', Utils::getPart(GeneratorOptions::VALUE_START, 'eventsGet'));
         $this->assertSame('events', Utils::getPart(GeneratorOptions::VALUE_START, '_events'));
     }
 
-    public function testGetPartEnd()
+    public function testGetPartEnd(): void
     {
         $this->assertSame('Get', Utils::getPart(GeneratorOptions::VALUE_END, 'eventsGet'));
         $this->assertSame('Partition', Utils::getPart(GeneratorOptions::VALUE_END, 'eventsGetPartition'));
         $this->assertSame('events', Utils::getPart(GeneratorOptions::VALUE_END, '_events'));
     }
 
-    public function testCleanComment()
+    public function testCleanComment(): void
     {
         $this->assertEmpty(Utils::cleanComment(null));
-        $this->assertEmpty(Utils::cleanComment(new stdClass()));
+        $this->assertEmpty(Utils::cleanComment(new \stdClass()));
     }
 
-    public function testGetContentFromUrlContextOptionsBasicAuth()
+    public function testGetContentFromUrlContextOptionsEmpty(): void
     {
-        $this->assertSame([
+        $this->assertEquals([], Utils::getStreamContextOptions());
+    }
+
+    public function testGetContentFromUrlContextOptionsBasicAuth(): void
+    {
+        $this->assertEqualsCanonicalizing([
             'http' => [
                 'header' => [
                     sprintf('Authorization: Basic %s', base64_encode('foo:bar')),
@@ -71,9 +75,9 @@ final class UtilsTest extends AbstractTestCase
         ], Utils::getStreamContextOptions('foo', 'bar'));
     }
 
-    public function testGetContentFromUrlContextOptionsProxy()
+    public function testGetContentFromUrlContextOptionsProxy(): void
     {
-        $this->assertSame([
+        $this->assertEqualsCanonicalizing([
             'http' => [
                 'proxy' => 'tcp://dns.proxy.com:4545',
                 'header' => [
@@ -83,9 +87,9 @@ final class UtilsTest extends AbstractTestCase
         ], Utils::getStreamContextOptions(null, null, 'dns.proxy.com', 4545, 'foo', 'bar'));
     }
 
-    public function testGetContentFromUrlContextOptionsBasicAuthProxy()
+    public function testGetContentFromUrlContextOptionsBasicAuthProxy(): void
     {
-        $this->assertSame([
+        $this->assertEqualsCanonicalizing([
             'http' => [
                 'proxy' => 'tcp://dns.proxy.com:4545',
                 'header' => [
@@ -96,9 +100,9 @@ final class UtilsTest extends AbstractTestCase
         ], Utils::getStreamContextOptions('foo', 'bar', 'dns.proxy.com', 4545, 'foo', 'bar'));
     }
 
-    public function testGetContentFromUrlContextOptions()
+    public function testGetContentFromUrlContextOptions(): void
     {
-        $this->assertSame([
+        $this->assertEqualsCanonicalizing([
             'ssl' => [
                 'verify_peer' => true,
                 'ca_file' => basename(__FILE__),
@@ -120,32 +124,53 @@ final class UtilsTest extends AbstractTestCase
         ]));
     }
 
-    public function testGetPartStringBeginningWithInt()
+    public function testGetContentFromUrlContextOptionsWithSameSoapContext(): void
+    {
+        $this->assertEqualsCanonicalizing([
+            'http' => [
+                'proxy' => 'tcp://dns.proxy.com:4545',
+                'header' => [
+                    sprintf('Proxy-Authorization: Basic %s', base64_encode('foo:bar')),
+                    sprintf('Authorization: Basic %s', base64_encode('foo:bar')),
+                ],
+            ],
+        ], Utils::getStreamContextOptions('foo', 'bar', 'dns.proxy.com', 4545, 'foo', 'bar', [
+            'http' => [
+                'proxy' => 'tcp://dns.proxy.com:4545',
+                'header' => [
+                    sprintf('Proxy-Authorization: Basic %s', base64_encode('foo:bar')),
+                    sprintf('Authorization: Basic %s', base64_encode('foo:bar')),
+                ],
+            ],
+        ]));
+    }
+
+    public function testGetPartStringBeginningWithInt(): void
     {
         $this->assertSame('My', Utils::getPart(GeneratorOptions::VALUE_START, '0MyOperation'));
     }
 
-    public function testGetPartStringBeginningWithMultipleInt()
+    public function testGetPartStringBeginningWithMultipleInt(): void
     {
         $this->assertSame('My', Utils::getPart(GeneratorOptions::VALUE_START, '0123456789MyOperation'));
     }
 
-    public function testGetEndPartStringBeginningWithMultipleInt()
+    public function testGetEndPartStringBeginningWithMultipleInt(): void
     {
         $this->assertSame('Operation', Utils::getPart(GeneratorOptions::VALUE_END, '012345678MyOperation'));
     }
 
-    public function testGetEndPartStringBeginningWithMultipleIntAndOnlyCaps()
+    public function testGetEndPartStringBeginningWithMultipleIntAndOnlyCaps(): void
     {
         $this->assertSame('MO', Utils::getPart(GeneratorOptions::VALUE_END, '1234567890MO'));
     }
 
-    public function testGetEndPartStringEndingWithInt()
+    public function testGetEndPartStringEndingWithInt(): void
     {
         $this->assertSame('Operation', Utils::getPart(GeneratorOptions::VALUE_END, 'MyOperation0'));
     }
 
-    public function testCleanString()
+    public function testCleanString(): void
     {
         $this->assertSame('КонтактнаяИнформация', Utils::cleanString('КонтактнаяИнформация'));
         $this->assertSame('____________________', Utils::cleanString('-"\'{&~(|`\\^¨@)°]+=}£'));
@@ -154,7 +179,7 @@ final class UtilsTest extends AbstractTestCase
         $this->assertSame('θωερτψυιοπασδφγηςκλζχξωβνμάέήίϊΐόύϋΰώ', 'θωερτψυιοπασδφγηςκλζχξωβνμάέήίϊΐόύϋΰώ');
     }
 
-    public function testSaveSchemas()
+    public function testSaveSchemas(): void
     {
         $path = __DIR__.'/../resources/generated';
         $wsdlFolder = 'schema_save_folder';

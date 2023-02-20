@@ -64,12 +64,13 @@ class ApiWorkingPeriod extends AbstractStructBase
         return $this->DayOfWeek;
     }
     /**
-     * This method is responsible for validating the values passed to the setDayOfWeek method
+     * This method is responsible for validating the value(s) passed to the setDayOfWeek method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDayOfWeek method
+     * 
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDayOfWeekForArrayConstraintsFromSetDayOfWeek(?array $values = []): string
+    public static function validateDayOfWeekForListConstraintFromSetDayOfWeek(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -100,7 +101,7 @@ class ApiWorkingPeriod extends AbstractStructBase
     public function setDayOfWeek($dayOfWeek): self
     {
         // validation for constraint: list
-        if ('' !== ($dayOfWeekArrayErrorMessage = self::validateDayOfWeekForArrayConstraintsFromSetDayOfWeek(is_string($dayOfWeek) ? explode(' ', $dayOfWeek) : $dayOfWeek))) {
+        if ('' !== ($dayOfWeekArrayErrorMessage = self::validateDayOfWeekForListConstraintFromSetDayOfWeek(is_string($dayOfWeek) ? explode(' ', $dayOfWeek) : $dayOfWeek))) {
             throw new InvalidArgumentException($dayOfWeekArrayErrorMessage, __LINE__);
         }
         $this->DayOfWeek = is_array($dayOfWeek) ? implode(' ', $dayOfWeek) : $dayOfWeek;

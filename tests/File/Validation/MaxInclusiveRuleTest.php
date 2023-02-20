@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use InvalidArgumentException;
-
 /**
  * @internal
  * @coversDefaultClass
  */
-final class MaxInclusiveRuleTest extends AbstractRuleTest
+final class MaxInclusiveRuleTest extends AbstractRule
 {
     /**
      * The Percent
@@ -20,9 +18,9 @@ final class MaxInclusiveRuleTest extends AbstractRuleTest
      * - maxInclusive: 100.00
      * - minInclusive: 0.00.
      */
-    public function testSetPercentWithHigherFloatValueMustThrowAnException()
+    public function testSetPercentWithHigherFloatValueMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value 100.01, the value must be numerically less than or equal to 100.00');
 
         $instance = self::getWhlTaxTypeInstance();
@@ -38,7 +36,7 @@ final class MaxInclusiveRuleTest extends AbstractRuleTest
      * - maxInclusive: 100.00
      * - minInclusive: 0.00.
      */
-    public function testSetPercentWithSameFloatValueMustPass()
+    public function testSetPercentWithSameFloatValueMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 
@@ -53,7 +51,7 @@ final class MaxInclusiveRuleTest extends AbstractRuleTest
      * - maxInclusive: 100.00
      * - minInclusive: 0.00.
      */
-    public function testSetPercentWithSameIntValueMustPass()
+    public function testSetPercentWithSameIntValueMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 
@@ -68,7 +66,7 @@ final class MaxInclusiveRuleTest extends AbstractRuleTest
      * - maxInclusive: 100.00
      * - minInclusive: 0.00.
      */
-    public function testSetPercentWithLowerIntValueMustPass()
+    public function testSetPercentWithLowerIntValueMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 
@@ -83,28 +81,28 @@ final class MaxInclusiveRuleTest extends AbstractRuleTest
      * - maxInclusive: 100.00
      * - minInclusive: 0.00.
      */
-    public function testSetPercentWithNullValueMustPass()
+    public function testSetPercentWithNullValueMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 
         $this->assertSame($instance, $instance->setPercent(null));
     }
 
-    public function testApplyRuleWithDateIntervalMustBeTrueWithLowerInterval()
+    public function testApplyRuleWithDateIntervalMustBeTrueWithLowerInterval(): void
     {
         $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MaxInclusiveRule', 'P10675199DT2H49M5.4775807S');
         $this->assertTrue(call_user_func($functionName, 'P10675199DT2H49M4.4775807S'));
     }
 
-    public function testApplyRuleWithDateIntervalMustBeTrueWithSameInterval()
+    public function testApplyRuleWithDateIntervalMustBeTrueWithSameInterval(): void
     {
         $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MaxInclusiveRule', $interval = 'P10675199DT2H49M5.4775807S');
         $this->assertTrue(call_user_func($functionName, $interval));
     }
 
-    public function testApplyRuleWithDateIntervalMustBeFalseWthHigherInterval()
+    public function testApplyRuleWithDateIntervalMustBeFalseWthHigherInterval(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value \'P10675199DT2H49M6.4775807S\', the value must be chronologically less than or equal to P10675199DT2H49M5.4775807S');
 
         $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MaxInclusiveRule', 'P10675199DT2H49M5.4775807S');

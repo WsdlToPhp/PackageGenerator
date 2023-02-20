@@ -83,6 +83,10 @@
         {
             "name": "Arnaud POINTET",
             "role": "Contributor"
+        },
+        {
+            "name": "dypa",
+            "role": "Contributor"
         }
     ],
     "support" : {
@@ -103,10 +107,10 @@
         "wsdltophp/wsdlhandler": "^1.0"
     },
     "scripts": {
-        "test": "vendor/bin/phpunit",
-        "lint": "vendor/bin/php-cs-fixer fix --ansi --diff --verbose",
-        "build": "box build --verbose",
-        "phpstan": "vendor/bin/phpstan analyze src --level=2"
+        "test": "php-7.4 vendor/bin/phpunit",
+        "lint": "php-7.4 vendor/bin/php-cs-fixer fix --ansi --diff --verbose",
+        "build": "php-7.4 box build --verbose",
+        "phpstan": "php-7.4 vendor/bin/phpstan analyze src --level=2"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",

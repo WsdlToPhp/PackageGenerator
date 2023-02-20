@@ -13,7 +13,7 @@ final class IntRule extends AbstractRule
 
     public function testConditions(string $parameterName, $value, bool $itemType = false): string
     {
-        return sprintf(($itemType ? '' : '!is_null($%1$s) && ').'!(is_int($%1$s) || ctype_digit($%1$s))', $parameterName, $value);
+        return sprintf(($itemType ? '' : '!is_null($%1$s) && ').'!(is_int($%1$s) || ctype_digit($%1$s))', $parameterName);
     }
 
     public function exceptionMessageOnTestFailure(string $parameterName, $value, bool $itemType = false): string

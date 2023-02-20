@@ -1,0 +1,48 @@
+name: Sonars
+on:
+    push:
+        branches:
+            - develop
+            - feature/*
+            - feat/*
+            - release/*
+    pull_request:
+        types: [ opened, synchronize, reopened ]
+jobs:
+    sonarcloud:
+        name: Sonars
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@v3
+                with:
+                    fetch-depth: 0
+
+            -   name: Setup PHP with Xdebug
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: 7.4
+                    coverage: xdebug
+
+            -   name: Install dependencies with composer
+                run: composer update --no-ansi --no-interaction --no-progress
+
+            -   name: Generate coverage report with phpunit
+                run: vendor/bin/phpunit --coverage-clover coverage.xml --log-junit report.xml
+
+            -   name: Monitor coverage
+                uses: slavcodev/coverage-monitor-action@v1
+                with:
+                    github_token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+                    coverage_path: coverage.xml
+                    threshold_alert: 95
+                    threshold_warning: 90
+
+            -   name: Fix phpunit files paths
+                run: sed -i 's@'$GITHUB_WORKSPACE/'@''@g' coverage.xml report.xml
+
+            -   name: SonarCloud Scan
+                uses: SonarSource/sonarcloud-github-action@master
+                env:
+                    GITHUB_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+                    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

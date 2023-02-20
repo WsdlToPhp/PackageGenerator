@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 
+use WsdlToPhp\DomHandler\AbstractAttributeHandler;
 use WsdlToPhp\DomHandler\AttributeHandler;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\WsdlHandler\Tag\AbstractTag;
 use WsdlToPhp\WsdlHandler\Tag\AbstractTag as Tag;
 use WsdlToPhp\WsdlHandler\Tag\TagRestriction as Restriction;
 use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
@@ -17,11 +19,13 @@ final class TagRestriction extends AbstractTagParser
 {
     public function parseRestriction(Restriction $restriction): void
     {
+        /** @var AbstractTag $parent */
         $parent = $restriction->getSuitableParent();
         if (!$parent) {
             return;
         }
 
+        /** @var AbstractTag $parentParent */
         $parentParent = $parent->getSuitableParent();
         if ($parentParent) {
             $parentModel = $this->getModel($parentParent);
@@ -74,8 +78,10 @@ final class TagRestriction extends AbstractTagParser
     protected function parseRestrictionAttributes(AbstractModel $model, Restriction $restriction): self
     {
         if ($restriction->hasAttributes()) {
-            // ensure inheritance of model is well defined, SoapClient parser is based on SoapClient::__getTypes which can be false in some case
+            // ensure inheritance of model is well-defined, SoapClient parser is based on SoapClient::__getTypes which can be false in some case
             $model->setInheritance($restriction->getAttributeBase());
+
+            /** @var AbstractAttributeHandler $attribute */
             foreach ($restriction->getAttributes() as $attribute) {
                 $model->addMeta($attribute->getName(), $attribute->getValue(true));
             }

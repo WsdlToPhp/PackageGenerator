@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Generator;
 
-use JsonSerializable;
 use WsdlToPhp\PackageGenerator\Container\Model\Service as ServiceContainer;
 use WsdlToPhp\PackageGenerator\Container\Model\Struct as StructContainer;
 
-class GeneratorContainers extends AbstractGeneratorAware implements JsonSerializable
+class GeneratorContainers extends AbstractGeneratorAware implements \JsonSerializable
 {
     protected StructContainer $structs;
 

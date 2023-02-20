@@ -14,7 +14,7 @@ use WsdlToPhp\PackageGenerator\Parser\SoapClient\Functions;
  */
 final class FunctionsTest extends SoapClientParser
 {
-    public function testReforma()
+    public function testReforma(): void
     {
         $generator = self::getReformaInstance();
 
@@ -31,7 +31,7 @@ final class FunctionsTest extends SoapClientParser
         }
     }
 
-    public function testBullhornstaffing()
+    public function testBullhornstaffing(): void
     {
         $generator = self::getBullhornstaffingInstance();
 
@@ -42,7 +42,7 @@ final class FunctionsTest extends SoapClientParser
         $this->assertInstanceOf(Service::class, $generator->getService('Export'));
     }
 
-    public function testOmniture()
+    public function testOmniture(): void
     {
         $generator = self::getOmnitureInstance();
 
@@ -71,7 +71,7 @@ final class FunctionsTest extends SoapClientParser
         }
     }
 
-    public function testLnp()
+    public function testLnp(): void
     {
         $generator = self::getLnpInstance();
 

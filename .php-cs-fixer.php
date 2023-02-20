@@ -9,5 +9,6 @@ return (new PhpCsFixer\Config())
     ->setUsingCache(false)
     ->setRules(array(
         '@PhpCsFixer' => true,
+        'phpdoc_separation' => false,
     ))
     ->setFinder($finder);

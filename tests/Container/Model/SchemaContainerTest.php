@@ -26,7 +26,7 @@ final class SchemaContainerTest extends AbstractTestCase
         return $schemaContainer;
     }
 
-    public function testGetSchemaByName()
+    public function testGetSchemaByName(): void
     {
         $schemaContainer = self::instance();
 

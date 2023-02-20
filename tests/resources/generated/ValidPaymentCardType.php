@@ -321,12 +321,13 @@ class ApiPaymentCardType extends AbstractStructBase
         return $this->Telephone;
     }
     /**
-     * This method is responsible for validating the values passed to the setTelephone method
+     * This method is responsible for validating the value(s) passed to the setTelephone method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTelephone method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTelephoneForArrayConstraintsFromSetTelephone(?array $values = []): string
+    public static function validateTelephoneForArrayConstraintFromSetTelephone(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -355,7 +356,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public function setTelephone(?array $telephone = null): self
     {
         // validation for constraint: array
-        if ('' !== ($telephoneArrayErrorMessage = self::validateTelephoneForArrayConstraintsFromSetTelephone($telephone))) {
+        if ('' !== ($telephoneArrayErrorMessage = self::validateTelephoneForArrayConstraintFromSetTelephone($telephone))) {
             throw new InvalidArgumentException($telephoneArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(5)
@@ -395,12 +396,13 @@ class ApiPaymentCardType extends AbstractStructBase
         return $this->Email;
     }
     /**
-     * This method is responsible for validating the values passed to the setEmail method
+     * This method is responsible for validating the value(s) passed to the setEmail method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEmail method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEmailForArrayConstraintsFromSetEmail(?array $values = []): string
+    public static function validateEmailForArrayConstraintFromSetEmail(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -429,7 +431,7 @@ class ApiPaymentCardType extends AbstractStructBase
     public function setEmail(?array $email = null): self
     {
         // validation for constraint: array
-        if ('' !== ($emailArrayErrorMessage = self::validateEmailForArrayConstraintsFromSetEmail($email))) {
+        if ('' !== ($emailArrayErrorMessage = self::validateEmailForArrayConstraintFromSetEmail($email))) {
             throw new InvalidArgumentException($emailArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(3)

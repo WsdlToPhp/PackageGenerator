@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Model;
 
-use DOMDocument;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\AbstractReservedWord;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
@@ -136,7 +135,7 @@ final class StructAttribute extends AbstractModel
     }
 
     /**
-     * @return array|bool|float|int|string
+     * @return null|array|bool|float|int|string
      */
     public function getDefaultValue()
     {
@@ -175,7 +174,7 @@ final class StructAttribute extends AbstractModel
 
     public function isXml(): bool
     {
-        return DOMDocument::class === $this->getType();
+        return \DOMDocument::class === $this->getType();
     }
 
     public function getTypeStruct(): ?Struct

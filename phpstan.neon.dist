@@ -1,3 +1,0 @@
-parameters:
-	ignoreErrors:
-		- '#Call to an undefined method [a-zA-Z0-9\\_]+::[a-zA-Z0-9\\_]+\(\)#'

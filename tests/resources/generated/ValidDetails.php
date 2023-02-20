@@ -296,19 +296,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailCalcCostShipping value
-     * @return \StructType\ApiMutualSettlementDetailCalcCostShipping[]
+     * @return \StructType\ApiMutualSettlementDetailCalcCostShipping[]|null
      */
     public function getMutualSettlementDetailCalcCostShipping(): ?array
     {
-        return isset($this->mutualSettlementDetailCalcCostShipping) ? $this->mutualSettlementDetailCalcCostShipping : null;
+        return $this->mutualSettlementDetailCalcCostShipping ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailCalcCostShipping method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailCalcCostShipping method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailCalcCostShipping method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailCalcCostShippingForArrayConstraintsFromSetMutualSettlementDetailCalcCostShipping(?array $values = []): string
+    public static function validateMutualSettlementDetailCalcCostShippingForArrayConstraintFromSetMutualSettlementDetailCalcCostShipping(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -329,13 +330,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailCalcCostShipping method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailCalcCostShipping method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailCalcCostShipping method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailCalcCostShippingForChoiceConstraintsFromSetMutualSettlementDetailCalcCostShipping($value): string
+    public function validateMutualSettlementDetailCalcCostShippingForChoiceConstraintFromSetMutualSettlementDetailCalcCostShipping($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -384,11 +385,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailCalcCostShipping(?array $mutualSettlementDetailCalcCostShipping = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailCalcCostShippingArrayErrorMessage = self::validateMutualSettlementDetailCalcCostShippingForArrayConstraintsFromSetMutualSettlementDetailCalcCostShipping($mutualSettlementDetailCalcCostShipping))) {
+        if ('' !== ($mutualSettlementDetailCalcCostShippingArrayErrorMessage = self::validateMutualSettlementDetailCalcCostShippingForArrayConstraintFromSetMutualSettlementDetailCalcCostShipping($mutualSettlementDetailCalcCostShipping))) {
             throw new InvalidArgumentException($mutualSettlementDetailCalcCostShippingArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailCalcCostShippingChoiceErrorMessage = self::validateMutualSettlementDetailCalcCostShippingForChoiceConstraintsFromSetMutualSettlementDetailCalcCostShipping($mutualSettlementDetailCalcCostShipping))) {
+        if ('' !== ($mutualSettlementDetailCalcCostShippingChoiceErrorMessage = self::validateMutualSettlementDetailCalcCostShippingForChoiceConstraintFromSetMutualSettlementDetailCalcCostShipping($mutualSettlementDetailCalcCostShipping))) {
             throw new InvalidArgumentException($mutualSettlementDetailCalcCostShippingChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailCalcCostShipping) || (is_array($mutualSettlementDetailCalcCostShipping) && empty($mutualSettlementDetailCalcCostShipping))) {
@@ -400,13 +401,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailCalcCostShipping method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailCalcCostShipping method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailCalcCostShipping method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailCalcCostShipping($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailCalcCostShipping($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -455,7 +456,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailCalcCostShipping property can only contain items of type \StructType\ApiMutualSettlementDetailCalcCostShipping, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailCalcCostShipping($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailCalcCostShipping($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailCalcCostShipping[] = $item;
@@ -464,19 +465,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailCashFlow value
-     * @return \StructType\ApiMutualSettlementDetailCashFlow[]
+     * @return \StructType\ApiMutualSettlementDetailCashFlow[]|null
      */
     public function getMutualSettlementDetailCashFlow(): ?array
     {
-        return isset($this->mutualSettlementDetailCashFlow) ? $this->mutualSettlementDetailCashFlow : null;
+        return $this->mutualSettlementDetailCashFlow ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailCashFlow method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailCashFlow method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailCashFlow method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailCashFlowForArrayConstraintsFromSetMutualSettlementDetailCashFlow(?array $values = []): string
+    public static function validateMutualSettlementDetailCashFlowForArrayConstraintFromSetMutualSettlementDetailCashFlow(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -497,13 +499,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailCashFlow method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailCashFlow method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailCashFlow method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailCashFlowForChoiceConstraintsFromSetMutualSettlementDetailCashFlow($value): string
+    public function validateMutualSettlementDetailCashFlowForChoiceConstraintFromSetMutualSettlementDetailCashFlow($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -552,11 +554,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailCashFlow(?array $mutualSettlementDetailCashFlow = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailCashFlowArrayErrorMessage = self::validateMutualSettlementDetailCashFlowForArrayConstraintsFromSetMutualSettlementDetailCashFlow($mutualSettlementDetailCashFlow))) {
+        if ('' !== ($mutualSettlementDetailCashFlowArrayErrorMessage = self::validateMutualSettlementDetailCashFlowForArrayConstraintFromSetMutualSettlementDetailCashFlow($mutualSettlementDetailCashFlow))) {
             throw new InvalidArgumentException($mutualSettlementDetailCashFlowArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailCashFlowChoiceErrorMessage = self::validateMutualSettlementDetailCashFlowForChoiceConstraintsFromSetMutualSettlementDetailCashFlow($mutualSettlementDetailCashFlow))) {
+        if ('' !== ($mutualSettlementDetailCashFlowChoiceErrorMessage = self::validateMutualSettlementDetailCashFlowForChoiceConstraintFromSetMutualSettlementDetailCashFlow($mutualSettlementDetailCashFlow))) {
             throw new InvalidArgumentException($mutualSettlementDetailCashFlowChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailCashFlow) || (is_array($mutualSettlementDetailCashFlow) && empty($mutualSettlementDetailCashFlow))) {
@@ -568,13 +570,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailCashFlow method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailCashFlow method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailCashFlow method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailCashFlow($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailCashFlow($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -623,7 +625,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailCashFlow property can only contain items of type \StructType\ApiMutualSettlementDetailCashFlow, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailCashFlow($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailCashFlow($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailCashFlow[] = $item;
@@ -632,19 +634,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailClientPayment value
-     * @return \StructType\ApiMutualSettlementDetailClientPayment[]
+     * @return \StructType\ApiMutualSettlementDetailClientPayment[]|null
      */
     public function getMutualSettlementDetailClientPayment(): ?array
     {
-        return isset($this->mutualSettlementDetailClientPayment) ? $this->mutualSettlementDetailClientPayment : null;
+        return $this->mutualSettlementDetailClientPayment ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailClientPayment method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailClientPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailClientPayment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailClientPaymentForArrayConstraintsFromSetMutualSettlementDetailClientPayment(?array $values = []): string
+    public static function validateMutualSettlementDetailClientPaymentForArrayConstraintFromSetMutualSettlementDetailClientPayment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -665,13 +668,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailClientPayment method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailClientPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailClientPayment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailClientPaymentForChoiceConstraintsFromSetMutualSettlementDetailClientPayment($value): string
+    public function validateMutualSettlementDetailClientPaymentForChoiceConstraintFromSetMutualSettlementDetailClientPayment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -720,11 +723,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailClientPayment(?array $mutualSettlementDetailClientPayment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailClientPaymentArrayErrorMessage = self::validateMutualSettlementDetailClientPaymentForArrayConstraintsFromSetMutualSettlementDetailClientPayment($mutualSettlementDetailClientPayment))) {
+        if ('' !== ($mutualSettlementDetailClientPaymentArrayErrorMessage = self::validateMutualSettlementDetailClientPaymentForArrayConstraintFromSetMutualSettlementDetailClientPayment($mutualSettlementDetailClientPayment))) {
             throw new InvalidArgumentException($mutualSettlementDetailClientPaymentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailClientPaymentChoiceErrorMessage = self::validateMutualSettlementDetailClientPaymentForChoiceConstraintsFromSetMutualSettlementDetailClientPayment($mutualSettlementDetailClientPayment))) {
+        if ('' !== ($mutualSettlementDetailClientPaymentChoiceErrorMessage = self::validateMutualSettlementDetailClientPaymentForChoiceConstraintFromSetMutualSettlementDetailClientPayment($mutualSettlementDetailClientPayment))) {
             throw new InvalidArgumentException($mutualSettlementDetailClientPaymentChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailClientPayment) || (is_array($mutualSettlementDetailClientPayment) && empty($mutualSettlementDetailClientPayment))) {
@@ -736,13 +739,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailClientPayment method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailClientPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailClientPayment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailClientPayment($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailClientPayment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -791,7 +794,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailClientPayment property can only contain items of type \StructType\ApiMutualSettlementDetailClientPayment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailClientPayment($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailClientPayment($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailClientPayment[] = $item;
@@ -800,19 +803,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailPostReturnRegistry value
-     * @return \StructType\ApiMutualSettlementDetailPostReturnRegistry[]
+     * @return \StructType\ApiMutualSettlementDetailPostReturnRegistry[]|null
      */
     public function getMutualSettlementDetailPostReturnRegistry(): ?array
     {
-        return isset($this->mutualSettlementDetailPostReturnRegistry) ? $this->mutualSettlementDetailPostReturnRegistry : null;
+        return $this->mutualSettlementDetailPostReturnRegistry ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailPostReturnRegistry method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailPostReturnRegistry method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailPostReturnRegistry method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailPostReturnRegistryForArrayConstraintsFromSetMutualSettlementDetailPostReturnRegistry(?array $values = []): string
+    public static function validateMutualSettlementDetailPostReturnRegistryForArrayConstraintFromSetMutualSettlementDetailPostReturnRegistry(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -833,13 +837,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailPostReturnRegistry method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailPostReturnRegistry method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailPostReturnRegistry method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailPostReturnRegistryForChoiceConstraintsFromSetMutualSettlementDetailPostReturnRegistry($value): string
+    public function validateMutualSettlementDetailPostReturnRegistryForChoiceConstraintFromSetMutualSettlementDetailPostReturnRegistry($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -888,11 +892,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailPostReturnRegistry(?array $mutualSettlementDetailPostReturnRegistry = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailPostReturnRegistryArrayErrorMessage = self::validateMutualSettlementDetailPostReturnRegistryForArrayConstraintsFromSetMutualSettlementDetailPostReturnRegistry($mutualSettlementDetailPostReturnRegistry))) {
+        if ('' !== ($mutualSettlementDetailPostReturnRegistryArrayErrorMessage = self::validateMutualSettlementDetailPostReturnRegistryForArrayConstraintFromSetMutualSettlementDetailPostReturnRegistry($mutualSettlementDetailPostReturnRegistry))) {
             throw new InvalidArgumentException($mutualSettlementDetailPostReturnRegistryArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailPostReturnRegistryChoiceErrorMessage = self::validateMutualSettlementDetailPostReturnRegistryForChoiceConstraintsFromSetMutualSettlementDetailPostReturnRegistry($mutualSettlementDetailPostReturnRegistry))) {
+        if ('' !== ($mutualSettlementDetailPostReturnRegistryChoiceErrorMessage = self::validateMutualSettlementDetailPostReturnRegistryForChoiceConstraintFromSetMutualSettlementDetailPostReturnRegistry($mutualSettlementDetailPostReturnRegistry))) {
             throw new InvalidArgumentException($mutualSettlementDetailPostReturnRegistryChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailPostReturnRegistry) || (is_array($mutualSettlementDetailPostReturnRegistry) && empty($mutualSettlementDetailPostReturnRegistry))) {
@@ -904,13 +908,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailPostReturnRegistry method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailPostReturnRegistry method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailPostReturnRegistry method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailPostReturnRegistry($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailPostReturnRegistry($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -959,7 +963,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailPostReturnRegistry property can only contain items of type \StructType\ApiMutualSettlementDetailPostReturnRegistry, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailPostReturnRegistry($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailPostReturnRegistry($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailPostReturnRegistry[] = $item;
@@ -968,19 +972,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailRouteList value
-     * @return \StructType\ApiMutualSettlementDetailRouteList[]
+     * @return \StructType\ApiMutualSettlementDetailRouteList[]|null
      */
     public function getMutualSettlementDetailRouteList(): ?array
     {
-        return isset($this->mutualSettlementDetailRouteList) ? $this->mutualSettlementDetailRouteList : null;
+        return $this->mutualSettlementDetailRouteList ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailRouteList method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailRouteList method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailRouteList method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailRouteListForArrayConstraintsFromSetMutualSettlementDetailRouteList(?array $values = []): string
+    public static function validateMutualSettlementDetailRouteListForArrayConstraintFromSetMutualSettlementDetailRouteList(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1001,13 +1006,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailRouteList method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailRouteList method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailRouteList method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailRouteListForChoiceConstraintsFromSetMutualSettlementDetailRouteList($value): string
+    public function validateMutualSettlementDetailRouteListForChoiceConstraintFromSetMutualSettlementDetailRouteList($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1056,11 +1061,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailRouteList(?array $mutualSettlementDetailRouteList = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailRouteListArrayErrorMessage = self::validateMutualSettlementDetailRouteListForArrayConstraintsFromSetMutualSettlementDetailRouteList($mutualSettlementDetailRouteList))) {
+        if ('' !== ($mutualSettlementDetailRouteListArrayErrorMessage = self::validateMutualSettlementDetailRouteListForArrayConstraintFromSetMutualSettlementDetailRouteList($mutualSettlementDetailRouteList))) {
             throw new InvalidArgumentException($mutualSettlementDetailRouteListArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailRouteListChoiceErrorMessage = self::validateMutualSettlementDetailRouteListForChoiceConstraintsFromSetMutualSettlementDetailRouteList($mutualSettlementDetailRouteList))) {
+        if ('' !== ($mutualSettlementDetailRouteListChoiceErrorMessage = self::validateMutualSettlementDetailRouteListForChoiceConstraintFromSetMutualSettlementDetailRouteList($mutualSettlementDetailRouteList))) {
             throw new InvalidArgumentException($mutualSettlementDetailRouteListChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailRouteList) || (is_array($mutualSettlementDetailRouteList) && empty($mutualSettlementDetailRouteList))) {
@@ -1072,13 +1077,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailRouteList method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailRouteList method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailRouteList method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailRouteList($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailRouteList($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1127,7 +1132,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailRouteList property can only contain items of type \StructType\ApiMutualSettlementDetailRouteList, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailRouteList($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailRouteList($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailRouteList[] = $item;
@@ -1136,19 +1141,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailTrackNumberPayment value
-     * @return \StructType\ApiMutualSettlementDetailTrackNumberPayment[]
+     * @return \StructType\ApiMutualSettlementDetailTrackNumberPayment[]|null
      */
     public function getMutualSettlementDetailTrackNumberPayment(): ?array
     {
-        return isset($this->mutualSettlementDetailTrackNumberPayment) ? $this->mutualSettlementDetailTrackNumberPayment : null;
+        return $this->mutualSettlementDetailTrackNumberPayment ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailTrackNumberPayment method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailTrackNumberPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailTrackNumberPayment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailTrackNumberPaymentForArrayConstraintsFromSetMutualSettlementDetailTrackNumberPayment(?array $values = []): string
+    public static function validateMutualSettlementDetailTrackNumberPaymentForArrayConstraintFromSetMutualSettlementDetailTrackNumberPayment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1169,13 +1175,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailTrackNumberPayment method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailTrackNumberPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailTrackNumberPayment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailTrackNumberPaymentForChoiceConstraintsFromSetMutualSettlementDetailTrackNumberPayment($value): string
+    public function validateMutualSettlementDetailTrackNumberPaymentForChoiceConstraintFromSetMutualSettlementDetailTrackNumberPayment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1224,11 +1230,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailTrackNumberPayment(?array $mutualSettlementDetailTrackNumberPayment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailTrackNumberPaymentArrayErrorMessage = self::validateMutualSettlementDetailTrackNumberPaymentForArrayConstraintsFromSetMutualSettlementDetailTrackNumberPayment($mutualSettlementDetailTrackNumberPayment))) {
+        if ('' !== ($mutualSettlementDetailTrackNumberPaymentArrayErrorMessage = self::validateMutualSettlementDetailTrackNumberPaymentForArrayConstraintFromSetMutualSettlementDetailTrackNumberPayment($mutualSettlementDetailTrackNumberPayment))) {
             throw new InvalidArgumentException($mutualSettlementDetailTrackNumberPaymentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailTrackNumberPaymentChoiceErrorMessage = self::validateMutualSettlementDetailTrackNumberPaymentForChoiceConstraintsFromSetMutualSettlementDetailTrackNumberPayment($mutualSettlementDetailTrackNumberPayment))) {
+        if ('' !== ($mutualSettlementDetailTrackNumberPaymentChoiceErrorMessage = self::validateMutualSettlementDetailTrackNumberPaymentForChoiceConstraintFromSetMutualSettlementDetailTrackNumberPayment($mutualSettlementDetailTrackNumberPayment))) {
             throw new InvalidArgumentException($mutualSettlementDetailTrackNumberPaymentChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailTrackNumberPayment) || (is_array($mutualSettlementDetailTrackNumberPayment) && empty($mutualSettlementDetailTrackNumberPayment))) {
@@ -1240,13 +1246,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailTrackNumberPayment method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailTrackNumberPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailTrackNumberPayment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailTrackNumberPayment($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailTrackNumberPayment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1295,7 +1301,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailTrackNumberPayment property can only contain items of type \StructType\ApiMutualSettlementDetailTrackNumberPayment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailTrackNumberPayment($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailTrackNumberPayment($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailTrackNumberPayment[] = $item;
@@ -1304,19 +1310,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailServiceRegistration value
-     * @return \StructType\ApiMutualSettlementDetailServiceRegistration[]
+     * @return \StructType\ApiMutualSettlementDetailServiceRegistration[]|null
      */
     public function getMutualSettlementDetailServiceRegistration(): ?array
     {
-        return isset($this->mutualSettlementDetailServiceRegistration) ? $this->mutualSettlementDetailServiceRegistration : null;
+        return $this->mutualSettlementDetailServiceRegistration ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailServiceRegistration method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailServiceRegistration method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailServiceRegistration method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailServiceRegistrationForArrayConstraintsFromSetMutualSettlementDetailServiceRegistration(?array $values = []): string
+    public static function validateMutualSettlementDetailServiceRegistrationForArrayConstraintFromSetMutualSettlementDetailServiceRegistration(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1337,13 +1344,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailServiceRegistration method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailServiceRegistration method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailServiceRegistration method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailServiceRegistrationForChoiceConstraintsFromSetMutualSettlementDetailServiceRegistration($value): string
+    public function validateMutualSettlementDetailServiceRegistrationForChoiceConstraintFromSetMutualSettlementDetailServiceRegistration($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1392,11 +1399,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailServiceRegistration(?array $mutualSettlementDetailServiceRegistration = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailServiceRegistrationArrayErrorMessage = self::validateMutualSettlementDetailServiceRegistrationForArrayConstraintsFromSetMutualSettlementDetailServiceRegistration($mutualSettlementDetailServiceRegistration))) {
+        if ('' !== ($mutualSettlementDetailServiceRegistrationArrayErrorMessage = self::validateMutualSettlementDetailServiceRegistrationForArrayConstraintFromSetMutualSettlementDetailServiceRegistration($mutualSettlementDetailServiceRegistration))) {
             throw new InvalidArgumentException($mutualSettlementDetailServiceRegistrationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailServiceRegistrationChoiceErrorMessage = self::validateMutualSettlementDetailServiceRegistrationForChoiceConstraintsFromSetMutualSettlementDetailServiceRegistration($mutualSettlementDetailServiceRegistration))) {
+        if ('' !== ($mutualSettlementDetailServiceRegistrationChoiceErrorMessage = self::validateMutualSettlementDetailServiceRegistrationForChoiceConstraintFromSetMutualSettlementDetailServiceRegistration($mutualSettlementDetailServiceRegistration))) {
             throw new InvalidArgumentException($mutualSettlementDetailServiceRegistrationChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailServiceRegistration) || (is_array($mutualSettlementDetailServiceRegistration) && empty($mutualSettlementDetailServiceRegistration))) {
@@ -1408,13 +1415,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailServiceRegistration method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailServiceRegistration method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailServiceRegistration method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailServiceRegistration($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailServiceRegistration($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1463,7 +1470,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailServiceRegistration property can only contain items of type \StructType\ApiMutualSettlementDetailServiceRegistration, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailServiceRegistration($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailServiceRegistration($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailServiceRegistration[] = $item;
@@ -1472,19 +1479,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailAcceptanceRegistry value
-     * @return \StructType\ApiMutualSettlementDetailAcceptanceRegistry[]
+     * @return \StructType\ApiMutualSettlementDetailAcceptanceRegistry[]|null
      */
     public function getMutualSettlementDetailAcceptanceRegistry(): ?array
     {
-        return isset($this->mutualSettlementDetailAcceptanceRegistry) ? $this->mutualSettlementDetailAcceptanceRegistry : null;
+        return $this->mutualSettlementDetailAcceptanceRegistry ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailAcceptanceRegistry method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailAcceptanceRegistry method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailAcceptanceRegistry method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailAcceptanceRegistryForArrayConstraintsFromSetMutualSettlementDetailAcceptanceRegistry(?array $values = []): string
+    public static function validateMutualSettlementDetailAcceptanceRegistryForArrayConstraintFromSetMutualSettlementDetailAcceptanceRegistry(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1505,13 +1513,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailAcceptanceRegistry method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailAcceptanceRegistry method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailAcceptanceRegistry method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailAcceptanceRegistryForChoiceConstraintsFromSetMutualSettlementDetailAcceptanceRegistry($value): string
+    public function validateMutualSettlementDetailAcceptanceRegistryForChoiceConstraintFromSetMutualSettlementDetailAcceptanceRegistry($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1560,11 +1568,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailAcceptanceRegistry(?array $mutualSettlementDetailAcceptanceRegistry = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailAcceptanceRegistryArrayErrorMessage = self::validateMutualSettlementDetailAcceptanceRegistryForArrayConstraintsFromSetMutualSettlementDetailAcceptanceRegistry($mutualSettlementDetailAcceptanceRegistry))) {
+        if ('' !== ($mutualSettlementDetailAcceptanceRegistryArrayErrorMessage = self::validateMutualSettlementDetailAcceptanceRegistryForArrayConstraintFromSetMutualSettlementDetailAcceptanceRegistry($mutualSettlementDetailAcceptanceRegistry))) {
             throw new InvalidArgumentException($mutualSettlementDetailAcceptanceRegistryArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailAcceptanceRegistryChoiceErrorMessage = self::validateMutualSettlementDetailAcceptanceRegistryForChoiceConstraintsFromSetMutualSettlementDetailAcceptanceRegistry($mutualSettlementDetailAcceptanceRegistry))) {
+        if ('' !== ($mutualSettlementDetailAcceptanceRegistryChoiceErrorMessage = self::validateMutualSettlementDetailAcceptanceRegistryForChoiceConstraintFromSetMutualSettlementDetailAcceptanceRegistry($mutualSettlementDetailAcceptanceRegistry))) {
             throw new InvalidArgumentException($mutualSettlementDetailAcceptanceRegistryChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailAcceptanceRegistry) || (is_array($mutualSettlementDetailAcceptanceRegistry) && empty($mutualSettlementDetailAcceptanceRegistry))) {
@@ -1576,13 +1584,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailAcceptanceRegistry method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailAcceptanceRegistry method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailAcceptanceRegistry method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailAcceptanceRegistry($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailAcceptanceRegistry($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1631,7 +1639,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailAcceptanceRegistry property can only contain items of type \StructType\ApiMutualSettlementDetailAcceptanceRegistry, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailAcceptanceRegistry($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailAcceptanceRegistry($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailAcceptanceRegistry[] = $item;
@@ -1640,19 +1648,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailAdditionalChargeFare value
-     * @return \StructType\ApiMutualSettlementDetailAdditionalChargeFare[]
+     * @return \StructType\ApiMutualSettlementDetailAdditionalChargeFare[]|null
      */
     public function getMutualSettlementDetailAdditionalChargeFare(): ?array
     {
-        return isset($this->mutualSettlementDetailAdditionalChargeFare) ? $this->mutualSettlementDetailAdditionalChargeFare : null;
+        return $this->mutualSettlementDetailAdditionalChargeFare ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailAdditionalChargeFare method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailAdditionalChargeFare method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailAdditionalChargeFare method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailAdditionalChargeFareForArrayConstraintsFromSetMutualSettlementDetailAdditionalChargeFare(?array $values = []): string
+    public static function validateMutualSettlementDetailAdditionalChargeFareForArrayConstraintFromSetMutualSettlementDetailAdditionalChargeFare(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1673,13 +1682,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailAdditionalChargeFare method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailAdditionalChargeFare method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailAdditionalChargeFare method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailAdditionalChargeFareForChoiceConstraintsFromSetMutualSettlementDetailAdditionalChargeFare($value): string
+    public function validateMutualSettlementDetailAdditionalChargeFareForChoiceConstraintFromSetMutualSettlementDetailAdditionalChargeFare($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1728,11 +1737,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailAdditionalChargeFare(?array $mutualSettlementDetailAdditionalChargeFare = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailAdditionalChargeFareArrayErrorMessage = self::validateMutualSettlementDetailAdditionalChargeFareForArrayConstraintsFromSetMutualSettlementDetailAdditionalChargeFare($mutualSettlementDetailAdditionalChargeFare))) {
+        if ('' !== ($mutualSettlementDetailAdditionalChargeFareArrayErrorMessage = self::validateMutualSettlementDetailAdditionalChargeFareForArrayConstraintFromSetMutualSettlementDetailAdditionalChargeFare($mutualSettlementDetailAdditionalChargeFare))) {
             throw new InvalidArgumentException($mutualSettlementDetailAdditionalChargeFareArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailAdditionalChargeFareChoiceErrorMessage = self::validateMutualSettlementDetailAdditionalChargeFareForChoiceConstraintsFromSetMutualSettlementDetailAdditionalChargeFare($mutualSettlementDetailAdditionalChargeFare))) {
+        if ('' !== ($mutualSettlementDetailAdditionalChargeFareChoiceErrorMessage = self::validateMutualSettlementDetailAdditionalChargeFareForChoiceConstraintFromSetMutualSettlementDetailAdditionalChargeFare($mutualSettlementDetailAdditionalChargeFare))) {
             throw new InvalidArgumentException($mutualSettlementDetailAdditionalChargeFareChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailAdditionalChargeFare) || (is_array($mutualSettlementDetailAdditionalChargeFare) && empty($mutualSettlementDetailAdditionalChargeFare))) {
@@ -1744,13 +1753,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailAdditionalChargeFare method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailAdditionalChargeFare method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailAdditionalChargeFare method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailAdditionalChargeFare($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailAdditionalChargeFare($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1799,7 +1808,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailAdditionalChargeFare property can only contain items of type \StructType\ApiMutualSettlementDetailAdditionalChargeFare, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailAdditionalChargeFare($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailAdditionalChargeFare($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailAdditionalChargeFare[] = $item;
@@ -1808,19 +1817,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailOutgoingRequestToCarrier value
-     * @return \StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier[]
+     * @return \StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier[]|null
      */
     public function getMutualSettlementDetailOutgoingRequestToCarrier(): ?array
     {
-        return isset($this->mutualSettlementDetailOutgoingRequestToCarrier) ? $this->mutualSettlementDetailOutgoingRequestToCarrier : null;
+        return $this->mutualSettlementDetailOutgoingRequestToCarrier ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailOutgoingRequestToCarrier method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailOutgoingRequestToCarrier method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailOutgoingRequestToCarrier method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailOutgoingRequestToCarrierForArrayConstraintsFromSetMutualSettlementDetailOutgoingRequestToCarrier(?array $values = []): string
+    public static function validateMutualSettlementDetailOutgoingRequestToCarrierForArrayConstraintFromSetMutualSettlementDetailOutgoingRequestToCarrier(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1841,13 +1851,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailOutgoingRequestToCarrier method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailOutgoingRequestToCarrier method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailOutgoingRequestToCarrier method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailOutgoingRequestToCarrierForChoiceConstraintsFromSetMutualSettlementDetailOutgoingRequestToCarrier($value): string
+    public function validateMutualSettlementDetailOutgoingRequestToCarrierForChoiceConstraintFromSetMutualSettlementDetailOutgoingRequestToCarrier($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1896,11 +1906,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailOutgoingRequestToCarrier(?array $mutualSettlementDetailOutgoingRequestToCarrier = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailOutgoingRequestToCarrierArrayErrorMessage = self::validateMutualSettlementDetailOutgoingRequestToCarrierForArrayConstraintsFromSetMutualSettlementDetailOutgoingRequestToCarrier($mutualSettlementDetailOutgoingRequestToCarrier))) {
+        if ('' !== ($mutualSettlementDetailOutgoingRequestToCarrierArrayErrorMessage = self::validateMutualSettlementDetailOutgoingRequestToCarrierForArrayConstraintFromSetMutualSettlementDetailOutgoingRequestToCarrier($mutualSettlementDetailOutgoingRequestToCarrier))) {
             throw new InvalidArgumentException($mutualSettlementDetailOutgoingRequestToCarrierArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailOutgoingRequestToCarrierChoiceErrorMessage = self::validateMutualSettlementDetailOutgoingRequestToCarrierForChoiceConstraintsFromSetMutualSettlementDetailOutgoingRequestToCarrier($mutualSettlementDetailOutgoingRequestToCarrier))) {
+        if ('' !== ($mutualSettlementDetailOutgoingRequestToCarrierChoiceErrorMessage = self::validateMutualSettlementDetailOutgoingRequestToCarrierForChoiceConstraintFromSetMutualSettlementDetailOutgoingRequestToCarrier($mutualSettlementDetailOutgoingRequestToCarrier))) {
             throw new InvalidArgumentException($mutualSettlementDetailOutgoingRequestToCarrierChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailOutgoingRequestToCarrier) || (is_array($mutualSettlementDetailOutgoingRequestToCarrier) && empty($mutualSettlementDetailOutgoingRequestToCarrier))) {
@@ -1912,13 +1922,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailOutgoingRequestToCarrier method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailOutgoingRequestToCarrier method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailOutgoingRequestToCarrier method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailOutgoingRequestToCarrier($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailOutgoingRequestToCarrier($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1967,7 +1977,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailOutgoingRequestToCarrier property can only contain items of type \StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailOutgoingRequestToCarrier($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailOutgoingRequestToCarrier($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailOutgoingRequestToCarrier[] = $item;
@@ -1976,19 +1986,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailSMSInformation value
-     * @return \StructType\ApiMutualSettlementDetailSMSInformation[]
+     * @return \StructType\ApiMutualSettlementDetailSMSInformation[]|null
      */
     public function getMutualSettlementDetailSMSInformation(): ?array
     {
-        return isset($this->mutualSettlementDetailSMSInformation) ? $this->mutualSettlementDetailSMSInformation : null;
+        return $this->mutualSettlementDetailSMSInformation ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailSMSInformation method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailSMSInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailSMSInformation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailSMSInformationForArrayConstraintsFromSetMutualSettlementDetailSMSInformation(?array $values = []): string
+    public static function validateMutualSettlementDetailSMSInformationForArrayConstraintFromSetMutualSettlementDetailSMSInformation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2009,13 +2020,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailSMSInformation method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailSMSInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailSMSInformation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailSMSInformationForChoiceConstraintsFromSetMutualSettlementDetailSMSInformation($value): string
+    public function validateMutualSettlementDetailSMSInformationForChoiceConstraintFromSetMutualSettlementDetailSMSInformation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2064,11 +2075,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailSMSInformation(?array $mutualSettlementDetailSMSInformation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailSMSInformationArrayErrorMessage = self::validateMutualSettlementDetailSMSInformationForArrayConstraintsFromSetMutualSettlementDetailSMSInformation($mutualSettlementDetailSMSInformation))) {
+        if ('' !== ($mutualSettlementDetailSMSInformationArrayErrorMessage = self::validateMutualSettlementDetailSMSInformationForArrayConstraintFromSetMutualSettlementDetailSMSInformation($mutualSettlementDetailSMSInformation))) {
             throw new InvalidArgumentException($mutualSettlementDetailSMSInformationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailSMSInformationChoiceErrorMessage = self::validateMutualSettlementDetailSMSInformationForChoiceConstraintsFromSetMutualSettlementDetailSMSInformation($mutualSettlementDetailSMSInformation))) {
+        if ('' !== ($mutualSettlementDetailSMSInformationChoiceErrorMessage = self::validateMutualSettlementDetailSMSInformationForChoiceConstraintFromSetMutualSettlementDetailSMSInformation($mutualSettlementDetailSMSInformation))) {
             throw new InvalidArgumentException($mutualSettlementDetailSMSInformationChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailSMSInformation) || (is_array($mutualSettlementDetailSMSInformation) && empty($mutualSettlementDetailSMSInformation))) {
@@ -2080,13 +2091,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailSMSInformation method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailSMSInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailSMSInformation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailSMSInformation($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailSMSInformation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2135,7 +2146,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailSMSInformation property can only contain items of type \StructType\ApiMutualSettlementDetailSMSInformation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailSMSInformation($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailSMSInformation($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailSMSInformation[] = $item;
@@ -2144,19 +2155,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailBuyerGoodsReturn value
-     * @return \StructType\ApiMutualSettlementDetailBuyerGoodsReturn[]
+     * @return \StructType\ApiMutualSettlementDetailBuyerGoodsReturn[]|null
      */
     public function getMutualSettlementDetailBuyerGoodsReturn(): ?array
     {
-        return isset($this->mutualSettlementDetailBuyerGoodsReturn) ? $this->mutualSettlementDetailBuyerGoodsReturn : null;
+        return $this->mutualSettlementDetailBuyerGoodsReturn ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailBuyerGoodsReturn method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailBuyerGoodsReturn method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailBuyerGoodsReturn method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailBuyerGoodsReturnForArrayConstraintsFromSetMutualSettlementDetailBuyerGoodsReturn(?array $values = []): string
+    public static function validateMutualSettlementDetailBuyerGoodsReturnForArrayConstraintFromSetMutualSettlementDetailBuyerGoodsReturn(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2177,13 +2189,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailBuyerGoodsReturn method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailBuyerGoodsReturn method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailBuyerGoodsReturn method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailBuyerGoodsReturnForChoiceConstraintsFromSetMutualSettlementDetailBuyerGoodsReturn($value): string
+    public function validateMutualSettlementDetailBuyerGoodsReturnForChoiceConstraintFromSetMutualSettlementDetailBuyerGoodsReturn($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2232,11 +2244,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailBuyerGoodsReturn(?array $mutualSettlementDetailBuyerGoodsReturn = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailBuyerGoodsReturnArrayErrorMessage = self::validateMutualSettlementDetailBuyerGoodsReturnForArrayConstraintsFromSetMutualSettlementDetailBuyerGoodsReturn($mutualSettlementDetailBuyerGoodsReturn))) {
+        if ('' !== ($mutualSettlementDetailBuyerGoodsReturnArrayErrorMessage = self::validateMutualSettlementDetailBuyerGoodsReturnForArrayConstraintFromSetMutualSettlementDetailBuyerGoodsReturn($mutualSettlementDetailBuyerGoodsReturn))) {
             throw new InvalidArgumentException($mutualSettlementDetailBuyerGoodsReturnArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailBuyerGoodsReturnChoiceErrorMessage = self::validateMutualSettlementDetailBuyerGoodsReturnForChoiceConstraintsFromSetMutualSettlementDetailBuyerGoodsReturn($mutualSettlementDetailBuyerGoodsReturn))) {
+        if ('' !== ($mutualSettlementDetailBuyerGoodsReturnChoiceErrorMessage = self::validateMutualSettlementDetailBuyerGoodsReturnForChoiceConstraintFromSetMutualSettlementDetailBuyerGoodsReturn($mutualSettlementDetailBuyerGoodsReturn))) {
             throw new InvalidArgumentException($mutualSettlementDetailBuyerGoodsReturnChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailBuyerGoodsReturn) || (is_array($mutualSettlementDetailBuyerGoodsReturn) && empty($mutualSettlementDetailBuyerGoodsReturn))) {
@@ -2248,13 +2260,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailBuyerGoodsReturn method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailBuyerGoodsReturn method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailBuyerGoodsReturn method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailBuyerGoodsReturn($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailBuyerGoodsReturn($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2303,7 +2315,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailBuyerGoodsReturn property can only contain items of type \StructType\ApiMutualSettlementDetailBuyerGoodsReturn, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailBuyerGoodsReturn($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailBuyerGoodsReturn($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailBuyerGoodsReturn[] = $item;
@@ -2312,19 +2324,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailProductsPackaging value
-     * @return \StructType\ApiMutualSettlementDetailProductsPackaging[]
+     * @return \StructType\ApiMutualSettlementDetailProductsPackaging[]|null
      */
     public function getMutualSettlementDetailProductsPackaging(): ?array
     {
-        return isset($this->mutualSettlementDetailProductsPackaging) ? $this->mutualSettlementDetailProductsPackaging : null;
+        return $this->mutualSettlementDetailProductsPackaging ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailProductsPackaging method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailProductsPackaging method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailProductsPackaging method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailProductsPackagingForArrayConstraintsFromSetMutualSettlementDetailProductsPackaging(?array $values = []): string
+    public static function validateMutualSettlementDetailProductsPackagingForArrayConstraintFromSetMutualSettlementDetailProductsPackaging(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2345,13 +2358,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailProductsPackaging method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailProductsPackaging method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailProductsPackaging method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailProductsPackagingForChoiceConstraintsFromSetMutualSettlementDetailProductsPackaging($value): string
+    public function validateMutualSettlementDetailProductsPackagingForChoiceConstraintFromSetMutualSettlementDetailProductsPackaging($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2400,11 +2413,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailProductsPackaging(?array $mutualSettlementDetailProductsPackaging = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailProductsPackagingArrayErrorMessage = self::validateMutualSettlementDetailProductsPackagingForArrayConstraintsFromSetMutualSettlementDetailProductsPackaging($mutualSettlementDetailProductsPackaging))) {
+        if ('' !== ($mutualSettlementDetailProductsPackagingArrayErrorMessage = self::validateMutualSettlementDetailProductsPackagingForArrayConstraintFromSetMutualSettlementDetailProductsPackaging($mutualSettlementDetailProductsPackaging))) {
             throw new InvalidArgumentException($mutualSettlementDetailProductsPackagingArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailProductsPackagingChoiceErrorMessage = self::validateMutualSettlementDetailProductsPackagingForChoiceConstraintsFromSetMutualSettlementDetailProductsPackaging($mutualSettlementDetailProductsPackaging))) {
+        if ('' !== ($mutualSettlementDetailProductsPackagingChoiceErrorMessage = self::validateMutualSettlementDetailProductsPackagingForChoiceConstraintFromSetMutualSettlementDetailProductsPackaging($mutualSettlementDetailProductsPackaging))) {
             throw new InvalidArgumentException($mutualSettlementDetailProductsPackagingChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailProductsPackaging) || (is_array($mutualSettlementDetailProductsPackaging) && empty($mutualSettlementDetailProductsPackaging))) {
@@ -2416,13 +2429,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailProductsPackaging method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailProductsPackaging method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailProductsPackaging method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailProductsPackaging($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailProductsPackaging($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2471,7 +2484,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailProductsPackaging property can only contain items of type \StructType\ApiMutualSettlementDetailProductsPackaging, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailProductsPackaging($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailProductsPackaging($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailProductsPackaging[] = $item;
@@ -2480,19 +2493,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailAdjustmentWriteRegisters value
-     * @return \StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters[]
+     * @return \StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters[]|null
      */
     public function getMutualSettlementDetailAdjustmentWriteRegisters(): ?array
     {
-        return isset($this->mutualSettlementDetailAdjustmentWriteRegisters) ? $this->mutualSettlementDetailAdjustmentWriteRegisters : null;
+        return $this->mutualSettlementDetailAdjustmentWriteRegisters ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailAdjustmentWriteRegisters method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailAdjustmentWriteRegisters method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailAdjustmentWriteRegisters method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailAdjustmentWriteRegistersForArrayConstraintsFromSetMutualSettlementDetailAdjustmentWriteRegisters(?array $values = []): string
+    public static function validateMutualSettlementDetailAdjustmentWriteRegistersForArrayConstraintFromSetMutualSettlementDetailAdjustmentWriteRegisters(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2513,13 +2527,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailAdjustmentWriteRegisters method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailAdjustmentWriteRegisters method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailAdjustmentWriteRegisters method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailAdjustmentWriteRegistersForChoiceConstraintsFromSetMutualSettlementDetailAdjustmentWriteRegisters($value): string
+    public function validateMutualSettlementDetailAdjustmentWriteRegistersForChoiceConstraintFromSetMutualSettlementDetailAdjustmentWriteRegisters($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2568,11 +2582,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailAdjustmentWriteRegisters(?array $mutualSettlementDetailAdjustmentWriteRegisters = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailAdjustmentWriteRegistersArrayErrorMessage = self::validateMutualSettlementDetailAdjustmentWriteRegistersForArrayConstraintsFromSetMutualSettlementDetailAdjustmentWriteRegisters($mutualSettlementDetailAdjustmentWriteRegisters))) {
+        if ('' !== ($mutualSettlementDetailAdjustmentWriteRegistersArrayErrorMessage = self::validateMutualSettlementDetailAdjustmentWriteRegistersForArrayConstraintFromSetMutualSettlementDetailAdjustmentWriteRegisters($mutualSettlementDetailAdjustmentWriteRegisters))) {
             throw new InvalidArgumentException($mutualSettlementDetailAdjustmentWriteRegistersArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailAdjustmentWriteRegistersChoiceErrorMessage = self::validateMutualSettlementDetailAdjustmentWriteRegistersForChoiceConstraintsFromSetMutualSettlementDetailAdjustmentWriteRegisters($mutualSettlementDetailAdjustmentWriteRegisters))) {
+        if ('' !== ($mutualSettlementDetailAdjustmentWriteRegistersChoiceErrorMessage = self::validateMutualSettlementDetailAdjustmentWriteRegistersForChoiceConstraintFromSetMutualSettlementDetailAdjustmentWriteRegisters($mutualSettlementDetailAdjustmentWriteRegisters))) {
             throw new InvalidArgumentException($mutualSettlementDetailAdjustmentWriteRegistersChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailAdjustmentWriteRegisters) || (is_array($mutualSettlementDetailAdjustmentWriteRegisters) && empty($mutualSettlementDetailAdjustmentWriteRegisters))) {
@@ -2584,13 +2598,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailAdjustmentWriteRegisters method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailAdjustmentWriteRegisters method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailAdjustmentWriteRegisters method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailAdjustmentWriteRegisters($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailAdjustmentWriteRegisters($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2639,7 +2653,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailAdjustmentWriteRegisters property can only contain items of type \StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailAdjustmentWriteRegisters($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailAdjustmentWriteRegisters($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailAdjustmentWriteRegisters[] = $item;
@@ -2648,19 +2662,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailSafeCustody value
-     * @return \StructType\ApiMutualSettlementDetailSafeCustody[]
+     * @return \StructType\ApiMutualSettlementDetailSafeCustody[]|null
      */
     public function getMutualSettlementDetailSafeCustody(): ?array
     {
-        return isset($this->mutualSettlementDetailSafeCustody) ? $this->mutualSettlementDetailSafeCustody : null;
+        return $this->mutualSettlementDetailSafeCustody ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailSafeCustody method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailSafeCustody method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailSafeCustody method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailSafeCustodyForArrayConstraintsFromSetMutualSettlementDetailSafeCustody(?array $values = []): string
+    public static function validateMutualSettlementDetailSafeCustodyForArrayConstraintFromSetMutualSettlementDetailSafeCustody(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2681,13 +2696,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailSafeCustody method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailSafeCustody method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailSafeCustody method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailSafeCustodyForChoiceConstraintsFromSetMutualSettlementDetailSafeCustody($value): string
+    public function validateMutualSettlementDetailSafeCustodyForChoiceConstraintFromSetMutualSettlementDetailSafeCustody($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2736,11 +2751,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailSafeCustody(?array $mutualSettlementDetailSafeCustody = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailSafeCustodyArrayErrorMessage = self::validateMutualSettlementDetailSafeCustodyForArrayConstraintsFromSetMutualSettlementDetailSafeCustody($mutualSettlementDetailSafeCustody))) {
+        if ('' !== ($mutualSettlementDetailSafeCustodyArrayErrorMessage = self::validateMutualSettlementDetailSafeCustodyForArrayConstraintFromSetMutualSettlementDetailSafeCustody($mutualSettlementDetailSafeCustody))) {
             throw new InvalidArgumentException($mutualSettlementDetailSafeCustodyArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailSafeCustodyChoiceErrorMessage = self::validateMutualSettlementDetailSafeCustodyForChoiceConstraintsFromSetMutualSettlementDetailSafeCustody($mutualSettlementDetailSafeCustody))) {
+        if ('' !== ($mutualSettlementDetailSafeCustodyChoiceErrorMessage = self::validateMutualSettlementDetailSafeCustodyForChoiceConstraintFromSetMutualSettlementDetailSafeCustody($mutualSettlementDetailSafeCustody))) {
             throw new InvalidArgumentException($mutualSettlementDetailSafeCustodyChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailSafeCustody) || (is_array($mutualSettlementDetailSafeCustody) && empty($mutualSettlementDetailSafeCustody))) {
@@ -2752,13 +2767,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailSafeCustody method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailSafeCustody method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailSafeCustody method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailSafeCustody($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailSafeCustody($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2807,7 +2822,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailSafeCustody property can only contain items of type \StructType\ApiMutualSettlementDetailSafeCustody, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailSafeCustody($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailSafeCustody($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailSafeCustody[] = $item;
@@ -2816,19 +2831,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailSafeCustodyCalculation value
-     * @return \StructType\ApiMutualSettlementDetailSafeCustodyCalculation[]
+     * @return \StructType\ApiMutualSettlementDetailSafeCustodyCalculation[]|null
      */
     public function getMutualSettlementDetailSafeCustodyCalculation(): ?array
     {
-        return isset($this->mutualSettlementDetailSafeCustodyCalculation) ? $this->mutualSettlementDetailSafeCustodyCalculation : null;
+        return $this->mutualSettlementDetailSafeCustodyCalculation ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailSafeCustodyCalculation method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailSafeCustodyCalculation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailSafeCustodyCalculation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailSafeCustodyCalculationForArrayConstraintsFromSetMutualSettlementDetailSafeCustodyCalculation(?array $values = []): string
+    public static function validateMutualSettlementDetailSafeCustodyCalculationForArrayConstraintFromSetMutualSettlementDetailSafeCustodyCalculation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2849,13 +2865,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailSafeCustodyCalculation method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailSafeCustodyCalculation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailSafeCustodyCalculation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailSafeCustodyCalculationForChoiceConstraintsFromSetMutualSettlementDetailSafeCustodyCalculation($value): string
+    public function validateMutualSettlementDetailSafeCustodyCalculationForChoiceConstraintFromSetMutualSettlementDetailSafeCustodyCalculation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2904,11 +2920,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailSafeCustodyCalculation(?array $mutualSettlementDetailSafeCustodyCalculation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailSafeCustodyCalculationArrayErrorMessage = self::validateMutualSettlementDetailSafeCustodyCalculationForArrayConstraintsFromSetMutualSettlementDetailSafeCustodyCalculation($mutualSettlementDetailSafeCustodyCalculation))) {
+        if ('' !== ($mutualSettlementDetailSafeCustodyCalculationArrayErrorMessage = self::validateMutualSettlementDetailSafeCustodyCalculationForArrayConstraintFromSetMutualSettlementDetailSafeCustodyCalculation($mutualSettlementDetailSafeCustodyCalculation))) {
             throw new InvalidArgumentException($mutualSettlementDetailSafeCustodyCalculationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailSafeCustodyCalculationChoiceErrorMessage = self::validateMutualSettlementDetailSafeCustodyCalculationForChoiceConstraintsFromSetMutualSettlementDetailSafeCustodyCalculation($mutualSettlementDetailSafeCustodyCalculation))) {
+        if ('' !== ($mutualSettlementDetailSafeCustodyCalculationChoiceErrorMessage = self::validateMutualSettlementDetailSafeCustodyCalculationForChoiceConstraintFromSetMutualSettlementDetailSafeCustodyCalculation($mutualSettlementDetailSafeCustodyCalculation))) {
             throw new InvalidArgumentException($mutualSettlementDetailSafeCustodyCalculationChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailSafeCustodyCalculation) || (is_array($mutualSettlementDetailSafeCustodyCalculation) && empty($mutualSettlementDetailSafeCustodyCalculation))) {
@@ -2920,13 +2936,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailSafeCustodyCalculation method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailSafeCustodyCalculation method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailSafeCustodyCalculation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailSafeCustodyCalculation($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailSafeCustodyCalculation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2975,7 +2991,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailSafeCustodyCalculation property can only contain items of type \StructType\ApiMutualSettlementDetailSafeCustodyCalculation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailSafeCustodyCalculation($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailSafeCustodyCalculation($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailSafeCustodyCalculation[] = $item;
@@ -2984,19 +3000,20 @@ class ApiDetails extends AbstractStructBase
     }
     /**
      * Get mutualSettlementDetailRegisterStorage value
-     * @return \StructType\ApiMutualSettlementDetailRegisterStorage[]
+     * @return \StructType\ApiMutualSettlementDetailRegisterStorage[]|null
      */
     public function getMutualSettlementDetailRegisterStorage(): ?array
     {
-        return isset($this->mutualSettlementDetailRegisterStorage) ? $this->mutualSettlementDetailRegisterStorage : null;
+        return $this->mutualSettlementDetailRegisterStorage ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setMutualSettlementDetailRegisterStorage method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailRegisterStorage method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailRegisterStorage method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMutualSettlementDetailRegisterStorageForArrayConstraintsFromSetMutualSettlementDetailRegisterStorage(?array $values = []): string
+    public static function validateMutualSettlementDetailRegisterStorageForArrayConstraintFromSetMutualSettlementDetailRegisterStorage(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -3017,13 +3034,13 @@ class ApiDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setMutualSettlementDetailRegisterStorage method
+     * This method is responsible for validating the value(s) passed to the setMutualSettlementDetailRegisterStorage method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMutualSettlementDetailRegisterStorage method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMutualSettlementDetailRegisterStorageForChoiceConstraintsFromSetMutualSettlementDetailRegisterStorage($value): string
+    public function validateMutualSettlementDetailRegisterStorageForChoiceConstraintFromSetMutualSettlementDetailRegisterStorage($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -3072,11 +3089,11 @@ class ApiDetails extends AbstractStructBase
     public function setMutualSettlementDetailRegisterStorage(?array $mutualSettlementDetailRegisterStorage = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mutualSettlementDetailRegisterStorageArrayErrorMessage = self::validateMutualSettlementDetailRegisterStorageForArrayConstraintsFromSetMutualSettlementDetailRegisterStorage($mutualSettlementDetailRegisterStorage))) {
+        if ('' !== ($mutualSettlementDetailRegisterStorageArrayErrorMessage = self::validateMutualSettlementDetailRegisterStorageForArrayConstraintFromSetMutualSettlementDetailRegisterStorage($mutualSettlementDetailRegisterStorage))) {
             throw new InvalidArgumentException($mutualSettlementDetailRegisterStorageArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($mutualSettlementDetailRegisterStorageChoiceErrorMessage = self::validateMutualSettlementDetailRegisterStorageForChoiceConstraintsFromSetMutualSettlementDetailRegisterStorage($mutualSettlementDetailRegisterStorage))) {
+        if ('' !== ($mutualSettlementDetailRegisterStorageChoiceErrorMessage = self::validateMutualSettlementDetailRegisterStorageForChoiceConstraintFromSetMutualSettlementDetailRegisterStorage($mutualSettlementDetailRegisterStorage))) {
             throw new InvalidArgumentException($mutualSettlementDetailRegisterStorageChoiceErrorMessage, __LINE__);
         }
         if (is_null($mutualSettlementDetailRegisterStorage) || (is_array($mutualSettlementDetailRegisterStorage) && empty($mutualSettlementDetailRegisterStorage))) {
@@ -3088,13 +3105,13 @@ class ApiDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToMutualSettlementDetailRegisterStorage method
+     * This method is responsible for validating the value(s) passed to the addToMutualSettlementDetailRegisterStorage method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToMutualSettlementDetailRegisterStorage method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToMutualSettlementDetailRegisterStorage($value): string
+    public function validateItemForChoiceConstraintFromAddToMutualSettlementDetailRegisterStorage($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -3143,7 +3160,7 @@ class ApiDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The mutualSettlementDetailRegisterStorage property can only contain items of type \StructType\ApiMutualSettlementDetailRegisterStorage, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(mutualSettlementDetailCalcCostShipping, mutualSettlementDetailCashFlow, mutualSettlementDetailClientPayment, mutualSettlementDetailPostReturnRegistry, mutualSettlementDetailRouteList, mutualSettlementDetailTrackNumberPayment, mutualSettlementDetailServiceRegistration, mutualSettlementDetailAcceptanceRegistry, mutualSettlementDetailAdditionalChargeFare, mutualSettlementDetailOutgoingRequestToCarrier, mutualSettlementDetailSMSInformation, mutualSettlementDetailBuyerGoodsReturn, mutualSettlementDetailProductsPackaging, mutualSettlementDetailAdjustmentWriteRegisters, mutualSettlementDetailSafeCustody, mutualSettlementDetailSafeCustodyCalculation, mutualSettlementDetailRegisterStorage)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToMutualSettlementDetailRegisterStorage($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToMutualSettlementDetailRegisterStorage($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         $this->mutualSettlementDetailRegisterStorage[] = $item;

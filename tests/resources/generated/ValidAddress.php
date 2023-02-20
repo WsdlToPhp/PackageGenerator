@@ -236,12 +236,13 @@ class ApiАдресРФ extends ApiСостав
         return $this->ДопАдрЭл;
     }
     /**
-     * This method is responsible for validating the values passed to the setДопАдрЭл method
+     * This method is responsible for validating the value(s) passed to the setДопАдрЭл method
      * This method is willingly generated in order to preserve the one-line inline validation within the setДопАдрЭл method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateДопАдрЭлForArrayConstraintsFromSetДопАдрЭл(?array $values = []): string
+    public static function validateДопАдрЭлForArrayConstraintFromSetДопАдрЭл(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -270,7 +271,7 @@ class ApiАдресРФ extends ApiСостав
     public function setДопАдрЭл(?array $ДопАдрЭл = null): self
     {
         // validation for constraint: array
-        if ('' !== ($ДопАдрЭлArrayErrorMessage = self::validateДопАдрЭлForArrayConstraintsFromSetДопАдрЭл($ДопАдрЭл))) {
+        if ('' !== ($ДопАдрЭлArrayErrorMessage = self::validateДопАдрЭлForArrayConstraintFromSetДопАдрЭл($ДопАдрЭл))) {
             throw new InvalidArgumentException($ДопАдрЭлArrayErrorMessage, __LINE__);
         }
         $this->ДопАдрЭл = $ДопАдрЭл;

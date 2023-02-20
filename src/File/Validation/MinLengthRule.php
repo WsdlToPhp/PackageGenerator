@@ -18,9 +18,11 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
  */
 final class MinLengthRule extends AbstractLengthRule
 {
+    public const NAME = 'minLength';
+
     public function name(): string
     {
-        return 'minLength';
+        return self::NAME;
     }
 
     public function symbol(): string

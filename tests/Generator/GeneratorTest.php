@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Generator;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 use WsdlToPhp\PackageBase\AbstractStructArrayBase;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -39,12 +38,12 @@ final class GeneratorTest extends AbstractTestCase
         return self::$localInstance;
     }
 
-    public function testGetOptionPrefix()
+    public function testGetOptionPrefix(): void
     {
         $this->assertEmpty(self::localInstance()->getOptionPrefix());
     }
 
-    public function testSetOptionPrefix()
+    public function testSetOptionPrefix(): void
     {
         $instance = self::localInstance();
         $instance->setOptionPrefix('MyPrefix');
@@ -52,12 +51,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('MyPrefix', $instance->getOptionPrefix());
     }
 
-    public function testGetOptionSuffix()
+    public function testGetOptionSuffix(): void
     {
         $this->assertEmpty(self::localInstance()->getOptionSuffix());
     }
 
-    public function testSetOptionSuffix()
+    public function testSetOptionSuffix(): void
     {
         $instance = self::localInstance();
         $instance->setOptionSuffix('MySuffix');
@@ -65,12 +64,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('MySuffix', $instance->getOptionSuffix());
     }
 
-    public function testGetOptionDestination()
+    public function testGetOptionDestination(): void
     {
         $this->assertSame(self::getTestDirectory(), self::localInstance()->getOptionDestination());
     }
 
-    public function testSetOptionDestination()
+    public function testSetOptionDestination(): void
     {
         $instance = self::localInstance();
         $instance->setOptionDestination(self::getTestDirectory());
@@ -78,12 +77,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame(self::getTestDirectory(), $instance->getOptionDestination());
     }
 
-    public function testGetOptionSrcDirname()
+    public function testGetOptionSrcDirname(): void
     {
         $this->assertSame('src', self::localInstance()->getOptionSrcDirname());
     }
 
-    public function testSetOptionSrcDirname()
+    public function testSetOptionSrcDirname(): void
     {
         $instance = self::localInstance();
         $instance->setOptionSrcDirname('');
@@ -91,12 +90,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('', $instance->getOptionSrcDirname());
     }
 
-    public function testGetOptionOrigin()
+    public function testGetOptionOrigin(): void
     {
         $this->assertSame(self::wsdlBingPath(), self::localInstance()->getOptionOrigin());
     }
 
-    public function testSetOptionOrigin()
+    public function testSetOptionOrigin(): void
     {
         $instance = self::localInstance();
         $instance->setOptionOrigin(self::wsdlOdigeoPath());
@@ -104,12 +103,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame(self::wsdlOdigeoPath(), $instance->getOptionOrigin());
     }
 
-    public function testGetOptionBasicLogin()
+    public function testGetOptionBasicLogin(): void
     {
         $this->assertEmpty(self::localInstance()->getOptionBasicLogin());
     }
 
-    public function testSetOptionBasicLogin()
+    public function testSetOptionBasicLogin(): void
     {
         $instance = self::localInstance();
         $instance->setOptionBasicLogin('MyLogin');
@@ -117,12 +116,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('MyLogin', $instance->getOptionBasicLogin());
     }
 
-    public function testGetOptionBasicPassword()
+    public function testGetOptionBasicPassword(): void
     {
         $this->assertEmpty(self::localInstance()->getOptionBasicPassword());
     }
 
-    public function testSetOptionBasicPassword()
+    public function testSetOptionBasicPassword(): void
     {
         $instance = self::localInstance();
         $instance->setOptionBasicPassword('MyPassword');
@@ -130,12 +129,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('MyPassword', $instance->getOptionBasicPassword());
     }
 
-    public function testGetOptionProxyHost()
+    public function testGetOptionProxyHost(): void
     {
         $this->assertEmpty(self::localInstance()->getOptionProxyHost());
     }
 
-    public function testSetOptionProxyHost()
+    public function testSetOptionProxyHost(): void
     {
         $instance = self::localInstance();
         $instance->setOptionProxyHost('MyProxyHost');
@@ -143,12 +142,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('MyProxyHost', $instance->getOptionProxyHost());
     }
 
-    public function testGetOptionProxyPort()
+    public function testGetOptionProxyPort(): void
     {
         $this->assertEmpty(self::localInstance()->getOptionProxyPort());
     }
 
-    public function testSetOptionProxyPort()
+    public function testSetOptionProxyPort(): void
     {
         $instance = self::localInstance();
         $instance->setOptionProxyPort(3225);
@@ -156,12 +155,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame(3225, $instance->getOptionProxyPort());
     }
 
-    public function testGetOptionProxyLogin()
+    public function testGetOptionProxyLogin(): void
     {
         $this->assertEmpty(self::localInstance()->getOptionProxyLogin());
     }
 
-    public function testSetOptionProxyLogin()
+    public function testSetOptionProxyLogin(): void
     {
         $instance = self::localInstance();
         $instance->setOptionProxyLogin('MyProxyLogin');
@@ -169,12 +168,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('MyProxyLogin', $instance->getOptionProxyLogin());
     }
 
-    public function testGetOptionProxyPassword()
+    public function testGetOptionProxyPassword(): void
     {
         $this->assertEmpty(self::localInstance()->getOptionProxyPassword());
     }
 
-    public function testSetOptionProxyPassword()
+    public function testSetOptionProxyPassword(): void
     {
         $instance = self::localInstance();
         $instance->setOptionProxyPassword('MyProxyPassword');
@@ -182,12 +181,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('MyProxyPassword', $instance->getOptionProxyPassword());
     }
 
-    public function testGetOptionSoapOptions()
+    public function testGetOptionSoapOptions(): void
     {
         $this->assertEmpty(self::localInstance()->getOptionSoapOptions());
     }
 
-    public function testSetOptionSoapOptions()
+    public function testSetOptionSoapOptions(): void
     {
         $soapOptions = [
             'trace' => true,
@@ -200,12 +199,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame($soapOptions, $instance->getOptionSoapOptions());
     }
 
-    public function testGetOptionCategory()
+    public function testGetOptionCategory(): void
     {
         $this->assertSame(GeneratorOptions::VALUE_CAT, self::localInstance()->getOptionCategory());
     }
 
-    public function testSetOptionCategory()
+    public function testSetOptionCategory(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionCategory(GeneratorOptions::VALUE_NONE);
@@ -213,12 +212,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame(GeneratorOptions::VALUE_NONE, $instance->getOptionCategory());
     }
 
-    public function testGetOptionGatherMethods()
+    public function testGetOptionGatherMethods(): void
     {
         $this->assertSame(GeneratorOptions::VALUE_START, self::localInstance()->getOptionGatherMethods());
     }
 
-    public function testSetOptionGatherMethods()
+    public function testSetOptionGatherMethods(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionGatherMethods(GeneratorOptions::VALUE_END);
@@ -226,12 +225,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame(GeneratorOptions::VALUE_END, $instance->getOptionGatherMethods());
     }
 
-    public function testGetOptionGenerateTutorialFile()
+    public function testGetOptionGenerateTutorialFile(): void
     {
         $this->assertTrue(self::localInstance()->getOptionGenerateTutorialFile());
     }
 
-    public function testSetOptionGenerateTutorialFile()
+    public function testSetOptionGenerateTutorialFile(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionGenerateTutorialFile(GeneratorOptions::VALUE_FALSE);
@@ -239,12 +238,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertFalse($instance->getOptionGenerateTutorialFile());
     }
 
-    public function testGetOptionGenericConstantsNames()
+    public function testGetOptionGenericConstantsNames(): void
     {
         $this->assertFalse(self::localInstance()->getOptionGenericConstantsNames());
     }
 
-    public function testSetOptionGenericConstantsNames()
+    public function testSetOptionGenericConstantsNames(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionGenericConstantsNames(GeneratorOptions::VALUE_TRUE);
@@ -252,12 +251,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertTrue($instance->getOptionGenericConstantsNames());
     }
 
-    public function testGetOptionNamespacePrefix()
+    public function testGetOptionNamespacePrefix(): void
     {
         $this->assertEmpty(self::localInstance()->getOptionNamespacePrefix());
     }
 
-    public function testSetOptionNamespacePrefix()
+    public function testSetOptionNamespacePrefix(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionNamespacePrefix('My\Project');
@@ -265,12 +264,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('My\Project', $instance->getOptionNamespacePrefix());
     }
 
-    public function testGetOptionNamespaceDictatesDirectories()
+    public function testGetOptionNamespaceDictatesDirectories(): void
     {
         $this->assertTrue(self::localInstance()->getOptionNamespaceDictatesDirectories());
     }
 
-    public function testSetOptionNamespaceDictatesDirectories()
+    public function testSetOptionNamespaceDictatesDirectories(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionNamespaceDictatesDirectories(false);
@@ -278,12 +277,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame(false, $instance->getOptionNamespaceDictatesDirectories());
     }
 
-    public function testGetOptionSoapClientClass()
+    public function testGetOptionSoapClientClass(): void
     {
         $this->assertSame(AbstractSoapClientBase::class, self::localInstance()->getOptionSoapClientClass());
     }
 
-    public function testSetOptionSoapClientClass()
+    public function testSetOptionSoapClientClass(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionSoapClientClass('My\Project\SoapClientClass');
@@ -291,12 +290,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('My\Project\SoapClientClass', $instance->getOptionSoapClientClass());
     }
 
-    public function testGetOptionStructClass()
+    public function testGetOptionStructClass(): void
     {
         $this->assertSame(AbstractStructBase::class, self::localInstance()->getOptionStructClass());
     }
 
-    public function testSetOptionStructClass()
+    public function testSetOptionStructClass(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionStructClass('My\Project\StructClass');
@@ -304,12 +303,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('My\Project\StructClass', $instance->getOptionStructClass());
     }
 
-    public function testGetOptionStructArrayClass()
+    public function testGetOptionStructArrayClass(): void
     {
         $this->assertSame(AbstractStructArrayBase::class, self::localInstance()->getOptionStructArrayClass());
     }
 
-    public function testSetOptionStructArrayClass()
+    public function testSetOptionStructArrayClass(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionStructArrayClass('My\Project\StructArrayClass');
@@ -317,12 +316,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('My\Project\StructArrayClass', $instance->getOptionStructArrayClass());
     }
 
-    public function testGetOptionStructEnumClass()
+    public function testGetOptionStructEnumClass(): void
     {
         $this->assertSame(AbstractStructEnumBase::class, self::localInstance()->getOptionStructEnumClass());
     }
 
-    public function testSetOptionStructEnumClass()
+    public function testSetOptionStructEnumClass(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionStructEnumClass('My\Project\StructEnumClass');
@@ -330,12 +329,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('My\Project\StructEnumClass', $instance->getOptionStructEnumClass());
     }
 
-    public function testGetOptionStandalone()
+    public function testGetOptionStandalone(): void
     {
         $this->assertTrue(self::localInstance()->getOptionStandalone());
     }
 
-    public function testSetOptionStandalone()
+    public function testSetOptionStandalone(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionStandalone(GeneratorOptions::VALUE_FALSE);
@@ -343,12 +342,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertFalse($instance->getOptionStandalone());
     }
 
-    public function testGetOptionValidation()
+    public function testGetOptionValidation(): void
     {
         $this->assertTrue(self::localInstance()->getOptionValidation());
     }
 
-    public function testSetOptionValidation()
+    public function testSetOptionValidation(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionValidation(GeneratorOptions::VALUE_FALSE);
@@ -356,12 +355,12 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertFalse($instance->getOptionValidation());
     }
 
-    public function testGetOptionAddComments()
+    public function testGetOptionAddComments(): void
     {
         $this->assertEmpty(self::localInstance()->getOptionAddComments());
     }
 
-    public function testSetOptionAddComments()
+    public function testSetOptionAddComments(): void
     {
         $comments = [
             'date' => '2015-09-07',
@@ -373,7 +372,7 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame($comments, $instance->getOptionAddComments());
     }
 
-    public function testSetPackageName()
+    public function testSetPackageName(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionPrefix('samplePackageName');
@@ -381,7 +380,7 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('samplePackageName', $instance->getOptionPrefix(false));
     }
 
-    public function testSetOptionComposerName()
+    public function testSetOptionComposerName(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionComposerName('foo/bar');
@@ -389,7 +388,7 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('foo/bar', $instance->getOptionComposerName());
     }
 
-    public function testSetOptionComposerSettings()
+    public function testSetOptionComposerSettings(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionComposerSettings([
@@ -415,7 +414,7 @@ final class GeneratorTest extends AbstractTestCase
         ], $instance->getOptionComposerSettings());
     }
 
-    public function testSetStructsFolder()
+    public function testSetStructsFolder(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionStructsFolder('Structs');
@@ -423,7 +422,7 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('Structs', $instance->getOptionStructsFolder());
     }
 
-    public function testSetArraysFolder()
+    public function testSetArraysFolder(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionArraysFolder('Arrays');
@@ -431,7 +430,7 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('Arrays', $instance->getOptionArraysFolder());
     }
 
-    public function testSetEnumsFolder()
+    public function testSetEnumsFolder(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionEnumsFolder('Enums');
@@ -439,7 +438,7 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('Enums', $instance->getOptionEnumsFolder());
     }
 
-    public function testSetServicesFolder()
+    public function testSetServicesFolder(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionServicesFolder('Services');
@@ -447,7 +446,7 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('Services', $instance->getOptionServicesFolder());
     }
 
-    public function testSetSchemasSave()
+    public function testSetSchemasSave(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionSchemasSave(false);
@@ -455,7 +454,7 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame(false, $instance->getOptionSchemasSave());
     }
 
-    public function testSetSchemasFolder()
+    public function testSetSchemasFolder(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionSchemasFolder('wsdl');
@@ -463,7 +462,7 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('wsdl', $instance->getOptionSchemasFolder());
     }
 
-    public function testOptionXsdTypesPath()
+    public function testOptionXsdTypesPath(): void
     {
         $instance = self::localInstance();
 
@@ -474,7 +473,7 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('/some/path/file.yml', $instance->getOptionXsdTypesPath());
     }
 
-    public function testSetPackageNameUcFirst()
+    public function testSetPackageNameUcFirst(): void
     {
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionPrefix('samplePackageName');
@@ -482,9 +481,9 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame('SamplePackageName', $instance->getOptionPrefix(true));
     }
 
-    public function testExceptionOnInvalidDestination()
+    public function testExceptionOnInvalidDestination(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionDestination('');
@@ -492,9 +491,9 @@ final class GeneratorTest extends AbstractTestCase
         $instance->generatePackage();
     }
 
-    public function testExceptionOnInvalidComposerName()
+    public function testExceptionOnInvalidComposerName(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $instance = self::getBingGeneratorInstance();
         $instance->setOptionComposerName('');
@@ -502,32 +501,32 @@ final class GeneratorTest extends AbstractTestCase
         $instance->generatePackage();
     }
 
-    public function testGenerateBing()
+    public function testGenerateBing(): void
     {
         $this->generate('bing', self::wsdlBingPath());
     }
 
-    public function testGeneratePartner()
+    public function testGeneratePartner(): void
     {
         $this->generate('partner', self::wsdlPartnerPath());
     }
 
-    public function testGenerateMyBoard()
+    public function testGenerateMyBoard(): void
     {
         $this->generate('myboard', self::wsdlMyBoardPackPath());
     }
 
-    public function testGenerateOdigeo()
+    public function testGenerateOdigeo(): void
     {
         $this->generate('odigeo', self::wsdlOdigeoPath());
     }
 
-    public function testGenerateReforma()
+    public function testGenerateReforma(): void
     {
         $this->generate('reforma', self::wsdlReformaPath(), false);
     }
 
-    public function testGetUrlContent()
+    public function testGetUrlContent(): void
     {
         $generator = self::getBingGeneratorInstance();
         $content = $generator->getUrlContent('https://phar.wsdltophp.com/bingsearch.wsdl');
@@ -539,7 +538,7 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertNotNull($content);
     }
 
-    public function testGetEmptySoapClientStreamContextOptions()
+    public function testGetEmptySoapClientStreamContextOptions(): void
     {
         $instance = self::getBingGeneratorInstance();
 
@@ -557,7 +556,7 @@ final class GeneratorTest extends AbstractTestCase
         }
     }
 
-    public function testGetSoapClientStreamContextOptions()
+    public function testGetSoapClientStreamContextOptions(): void
     {
         $options = GeneratorOptionsTest::optionsInstance();
         $options
@@ -594,7 +593,7 @@ final class GeneratorTest extends AbstractTestCase
         }
     }
 
-    public function testJsonSerialize()
+    public function testJsonSerialize(): void
     {
         $generator = self::getBingGeneratorInstance(true);
         $generator->setOptionStandalone(false);
@@ -610,37 +609,37 @@ final class GeneratorTest extends AbstractTestCase
         $this->assertSame(trim($jsonContent), trim(json_encode($generator, JSON_PRETTY_PRINT)));
     }
 
-    public function testGetServices()
+    public function testGetServices(): void
     {
         $generator = self::actonGeneratorInstance();
         $this->assertCount(8, $generator->getServices());
         $this->assertCount(8, $generator->getServices()->getMethods());
     }
 
-    public function testGetServicesGathered()
+    public function testGetServicesGathered(): void
     {
         $generator = self::actonGeneratorInstance(true, GeneratorOptions::VALUE_NONE);
         $this->assertCount(1, $generator->getServices(true));
         $this->assertCount(8, $generator->getServices()->getMethods());
     }
 
-    public function testGetStructByNameAndTypeMustReturnAStruct()
+    public function testGetStructByNameAndTypeMustReturnAStruct(): void
     {
         $generator = self::getBingGeneratorInstance();
 
         $this->assertInstanceOf(Struct::class, $generator->getStructByNameAndType('AdultOption', 'string'));
     }
 
-    public function testGetUrlContentMustReturnNull()
+    public function testGetUrlContentMustReturnNull(): void
     {
         $generator = self::getBingGeneratorInstance();
 
         $this->assertNull($generator->getUrlContent('my-file.txt'));
     }
 
-    public function testInstanceFromSerializedJsonMustThrowAnError()
+    public function testInstanceFromSerializedJsonMustThrowAnError(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Json is invalid, please check error 4');
 
         Generator::instanceFromSerializedJson('{"the":\'key\'}');

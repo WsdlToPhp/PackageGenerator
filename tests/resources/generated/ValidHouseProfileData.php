@@ -1697,12 +1697,13 @@ class ApiHouseProfileData extends AbstractStructBase
         return $this->lifts;
     }
     /**
-     * This method is responsible for validating the values passed to the setLifts method
+     * This method is responsible for validating the value(s) passed to the setLifts method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLifts method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLiftsForArrayConstraintsFromSetLifts(?array $values = []): string
+    public static function validateLiftsForArrayConstraintFromSetLifts(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1731,7 +1732,7 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setLifts(?array $lifts = null): self
     {
         // validation for constraint: array
-        if ('' !== ($liftsArrayErrorMessage = self::validateLiftsForArrayConstraintsFromSetLifts($lifts))) {
+        if ('' !== ($liftsArrayErrorMessage = self::validateLiftsForArrayConstraintFromSetLifts($lifts))) {
             throw new InvalidArgumentException($liftsArrayErrorMessage, __LINE__);
         }
         $this->lifts = $lifts;

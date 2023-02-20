@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method;
 use WsdlToPhp\PackageGenerator\File\Struct;
 use WsdlToPhp\PackageGenerator\File\Validation\Rules;
@@ -15,11 +14,11 @@ use WsdlToPhp\PhpGenerator\Element\PhpMethod;
  * @internal
  * @coversDefaultClass
  */
-final class InvalidRuleTest extends AbstractRuleTest
+final class InvalidRuleTest extends AbstractRule
 {
-    public function testComparisonStringMustThrowAnException()
+    public function testComparisonStringMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value <> returned by symbol() method, can\'t determine comparison string');
 
         $instance = self::bingGeneratorInstance();

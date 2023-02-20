@@ -4,22 +4,20 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use InvalidArgumentException;
-
 /**
  * @internal
  * @coversDefaultClass
  */
-final class ChoiceRuleTest extends AbstractRuleTest
+final class ChoiceRuleTest extends AbstractRule
 {
     /**
      * - choice: StringValue | BinaryValue
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1.
      */
-    public function testSetStringValueAfterBinaryValueMustThrowAnException()
+    public function testSetStringValueAfterBinaryValueMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The property StringValue can\'t be set as the property BinaryValue is already set. Only one property must be set among these properties: StringValue, BinaryValue.');
 
         $instance = self::getQueueMessageAttributeValueInstance();
@@ -35,7 +33,7 @@ final class ChoiceRuleTest extends AbstractRuleTest
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1.
      */
-    public function testSetStringValueAloneMustPass()
+    public function testSetStringValueAloneMustPass(): void
     {
         $instance = self::getQueueMessageAttributeValueInstance(true);
 
@@ -47,7 +45,7 @@ final class ChoiceRuleTest extends AbstractRuleTest
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1.
      */
-    public function testSetStringValueAloneWithNullMustPass()
+    public function testSetStringValueAloneWithNullMustPass(): void
     {
         // true to avoid having the instance modified previously
         $instance = self::getQueueMessageAttributeValueInstance(true);

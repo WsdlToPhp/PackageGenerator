@@ -46,6 +46,7 @@ final class Functions extends AbstractParser
                     $infos = explode(' ', preg_replace('/(list\(.*\)\s)/i', '', $method));
                     array_unshift($infos, 'array');
                 }
+
                 /**
                  * Returns type is not defined in some case.
                  */

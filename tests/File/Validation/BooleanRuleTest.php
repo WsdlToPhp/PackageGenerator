@@ -4,38 +4,36 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use TypeError;
-
 /**
  * @internal
  * @coversDefaultClass
  */
-final class BooleanRuleTest extends AbstractRuleTest
+final class BooleanRuleTest extends AbstractRule
 {
-    public function testSetPrimaryWithStringValueMustThrowAnException()
+    public function testSetPrimaryWithStringValueMustThrowAnException(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         $instance = self::getWhlBookingChannelInstance();
 
         $instance->setPrimary('true');
     }
 
-    public function testSetPrimaryWithTrueValueMustPass()
+    public function testSetPrimaryWithTrueValueMustPass(): void
     {
         $instance = self::getWhlBookingChannelInstance();
 
         $this->assertSame($instance, $instance->setPrimary(true));
     }
 
-    public function testSetPrimaryWithFalseValueMustPass()
+    public function testSetPrimaryWithFalseValueMustPass(): void
     {
         $instance = self::getWhlBookingChannelInstance();
 
         $this->assertSame($instance, $instance->setPrimary(false));
     }
 
-    public function testSetPrimaryWithNullValueMustPass()
+    public function testSetPrimaryWithNullValueMustPass(): void
     {
         $instance = self::getWhlBookingChannelInstance();
 

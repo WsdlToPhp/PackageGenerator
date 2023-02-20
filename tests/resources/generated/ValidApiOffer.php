@@ -56,7 +56,7 @@ class ApiOffer extends ApiOrder
      */
     public function getOfferClassMember(): ?string
     {
-        return isset($this->offerClassMember) ? $this->offerClassMember : null;
+        return $this->offerClassMember ?? null;
     }
     /**
      * Set offerClassMember value
@@ -88,7 +88,7 @@ class ApiOffer extends ApiOrder
      */
     public function getOffer(): ?\StructType\ApiOffer
     {
-        return isset($this->offer) ? $this->offer : null;
+        return $this->offer ?? null;
     }
     /**
      * Set offer value

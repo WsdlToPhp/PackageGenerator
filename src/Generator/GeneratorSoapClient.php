@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Generator;
 
-use InvalidArgumentException;
-use SoapFault;
 use WsdlToPhp\PackageBase\SoapClientInterface;
 
 class GeneratorSoapClient extends AbstractGeneratorAware
@@ -22,11 +20,11 @@ class GeneratorSoapClient extends AbstractGeneratorAware
     {
         try {
             $soapClient = new SoapClient($this->getSoapClientOptions(SOAP_1_1));
-        } catch (SoapFault $fault) {
+        } catch (\SoapFault $fault) {
             try {
                 $soapClient = new SoapClient($this->getSoapClientOptions(SOAP_1_2));
-            } catch (SoapFault $fault) {
-                throw new InvalidArgumentException(sprintf('Unable to load WSDL at "%s"!', $this->getGenerator()->getOptionOrigin()), __LINE__, $fault);
+            } catch (\SoapFault $fault) {
+                throw new \InvalidArgumentException(sprintf('Unable to load WSDL at "%s"!', $this->getGenerator()->getOptionOrigin()), __LINE__, $fault);
             }
         }
 

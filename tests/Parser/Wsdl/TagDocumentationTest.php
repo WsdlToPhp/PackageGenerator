@@ -34,7 +34,7 @@ final class TagDocumentationTest extends WsdlParser
         return new TagDocumentation(self::generatorInstance(self::wsdlPayPalPath(), true));
     }
 
-    public function testParseImageViewService()
+    public function testParseImageViewService(): void
     {
         $tagDocumentationParser = self::imageViewInstanceParser();
         $tagDocumentationParser->parse();
@@ -82,7 +82,7 @@ final class TagDocumentationTest extends WsdlParser
         $this->assertTrue((bool) $ok);
     }
 
-    public function testParseWhlPaymentCardCodeType()
+    public function testParseWhlPaymentCardCodeType(): void
     {
         $tagDocumentationParser = self::whlInstanceParser();
         $tagEnumerationParser = new TagEnumeration($tagDocumentationParser->getGenerator());
@@ -115,7 +115,7 @@ final class TagDocumentationTest extends WsdlParser
         }
     }
 
-    public function testParseActon()
+    public function testParseActon(): void
     {
         $tagDocumentationParser = self::actonInstanceParser();
         $tagEnumerationParser = new TagEnumeration($tagDocumentationParser->getGenerator());
@@ -130,7 +130,7 @@ final class TagDocumentationTest extends WsdlParser
         }
     }
 
-    public function testParsePayPal()
+    public function testParsePayPal(): void
     {
         $tagDocumentationParser = self::payPalInstanceParser();
         $tagEnumerationParser = new TagEnumeration($tagDocumentationParser->getGenerator());
@@ -158,7 +158,7 @@ final class TagDocumentationTest extends WsdlParser
         $this->assertSame(count($attributes), $okCount);
     }
 
-    public function testParseWhlTransactionActionType()
+    public function testParseWhlTransactionActionType(): void
     {
         $tagDocumentationParser = self::whlInstanceParser();
         $tagEnumerationParser = new TagEnumeration($tagDocumentationParser->getGenerator());

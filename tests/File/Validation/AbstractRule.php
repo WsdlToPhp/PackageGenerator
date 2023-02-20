@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use ReflectionClass;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method as MethodContainer;
 use WsdlToPhp\PackageGenerator\File\Struct as StructFile;
 use WsdlToPhp\PackageGenerator\File\StructArray as StructArrayFile;
@@ -16,7 +15,7 @@ use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
-abstract class AbstractRuleTest extends AbstractTestCase
+abstract class AbstractRule extends AbstractTestCase
 {
     private static array $generators = [];
 
@@ -60,6 +59,11 @@ abstract class AbstractRuleTest extends AbstractTestCase
         self::getClassInstance('whlInstance', 'ParagraphType');
 
         return self::getClassInstance('whlInstance', 'TaxType', $reset);
+    }
+
+    public static function getArrayOfGuidInstance(bool $reset = false)
+    {
+        return self::getClassInstance('bingGeneratorInstance', 'ArrayOfGuid', $reset);
     }
 
     public static function getQueueMessageAttributeValueInstance(bool $reset = false)
@@ -183,7 +187,7 @@ abstract class AbstractRuleTest extends AbstractTestCase
 
         // instantiate class
         if ($reset || $fileCreated) {
-            $reflection = new ReflectionClass(($struct->getNamespace() ? $struct->getNamespace().'\\' : '').$struct->getPackagedName());
+            $reflection = new \ReflectionClass(($struct->getNamespace() ? $struct->getNamespace().'\\' : '').$struct->getPackagedName());
             self::$generators[$key] = $reflection->newInstanceWithoutConstructor();
         }
 

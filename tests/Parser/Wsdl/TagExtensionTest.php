@@ -23,7 +23,7 @@ final class TagExtensionTest extends WsdlParser
         return new TagExtension(self::generatorInstance(self::wsdlWcfPath()));
     }
 
-    public function testParseEbay()
+    public function testParseEbay(): void
     {
         $tagEnumerationParser = self::ebayInstanceParser();
 
@@ -44,7 +44,7 @@ final class TagExtensionTest extends WsdlParser
         $this->assertSame(2, $count);
     }
 
-    public function testParseWcf()
+    public function testParseWcf(): void
     {
         $tagEnumerationParser = self::wcfInstanceParser();
 

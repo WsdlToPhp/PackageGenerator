@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use InvalidArgumentException;
-
 /**
  * @internal
  * @coversDefaultClass
  */
-final class MinLengthRuleTest extends AbstractRuleTest
+final class MinLengthRuleTest extends AbstractRule
 {
     /**
      * The dateOfBirth
@@ -22,9 +20,9 @@ final class MinLengthRuleTest extends AbstractRuleTest
      * - maxLength: 10
      * - minLength: 10.
      */
-    public function testSetDateOfBirthWithTooShortCharactersMustThrowAnException()
+    public function testSetDateOfBirthWithTooShortCharactersMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid length of 9, the number of characters/octets contained by the literal must be greater than or equal to 10');
 
         $instance = self::getDocDataPaymentsShoppperInstance();
@@ -42,7 +40,7 @@ final class MinLengthRuleTest extends AbstractRuleTest
      * - maxLength: 10
      * - minLength: 10.
      */
-    public function testDateOfBirthWithSameCharactersMustPass()
+    public function testDateOfBirthWithSameCharactersMustPass(): void
     {
         $instance = self::getDocDataPaymentsShoppperInstance();
 
@@ -59,7 +57,7 @@ final class MinLengthRuleTest extends AbstractRuleTest
      * - maxLength: 10
      * - minLength: 10.
      */
-    public function testDateOfBirthWithHigherCharactersMustPass()
+    public function testDateOfBirthWithHigherCharactersMustPass(): void
     {
         $instance = self::getDocDataPaymentsShoppperInstance();
 
@@ -79,9 +77,9 @@ final class MinLengthRuleTest extends AbstractRuleTest
      *
      * @var string[]
      */
-    public function testSetAddressLineWithLessCharactersPerItemMustThrowAnException()
+    public function testSetAddressLineWithLessCharactersPerItemMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid length for value(s) \'\', \'\', the number of characters/octets contained by the literal must be greater than or equal to 1');
 
         $instance = self::getWhlAddressTypeInstance();
@@ -105,7 +103,7 @@ final class MinLengthRuleTest extends AbstractRuleTest
      *
      * @var string[]
      */
-    public function testSetAddressLineWithExactCharactersPerItemMustPass()
+    public function testSetAddressLineWithExactCharactersPerItemMustPass(): void
     {
         $instance = self::getWhlAddressTypeInstance();
 
@@ -131,7 +129,7 @@ final class MinLengthRuleTest extends AbstractRuleTest
      *
      * @var string[]
      */
-    public function testSetAddressLineWithMoreCharactersPerItemMustPass()
+    public function testSetAddressLineWithMoreCharactersPerItemMustPass(): void
     {
         $instance = self::getWhlAddressTypeInstance();
 

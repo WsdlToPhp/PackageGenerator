@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\ConfigurationReader;
 
-use InvalidArgumentException;
-use JsonSerializable;
 use WsdlToPhp\PackageGenerator\Model\StructValue;
 
 /**
@@ -75,7 +73,7 @@ use WsdlToPhp\PackageGenerator\Model\StructValue;
  * @method string getXsdTypesPath()
  * @method self   setXsdTypesPath(string $xsdTypesPath)
  */
-final class GeneratorOptions extends AbstractYamlReader implements JsonSerializable
+final class GeneratorOptions extends AbstractYamlReader implements \JsonSerializable
 {
     /**
      * Common values used as option's value.
@@ -133,22 +131,27 @@ final class GeneratorOptions extends AbstractYamlReader implements JsonSerializa
         $this->parseOptions($filename);
     }
 
-    public function __call($name, $arguments)
+    public function __call(string $name, array $arguments)
     {
-        if ('set' === substr($name, 0, 3) && 1 === count($arguments)) {
+        if (0 === strpos($name, 'set') && 1 === count($arguments)) {
             return $this->setOptionValue(self::methodNameToOptionName($name), array_shift($arguments));
         }
-        if ('get' === substr($name, 0, 3) && empty($arguments)) {
+        if (empty($arguments) && 0 === strpos($name, 'get')) {
             return $this->getOptionValue(self::methodNameToOptionName($name));
         }
 
         throw new \BadMethodCallException(sprintf('Method %s undefined', $name));
     }
 
+    public static function instance(?string $filename = null): self
+    {
+        return parent::instance($filename);
+    }
+
     public function getOptionValue(string $optionName)
     {
         if (!array_key_exists($optionName, $this->options)) {
-            throw new InvalidArgumentException(sprintf('Invalid option name "%s", possible options: %s', $optionName, implode(', ', array_keys($this->options))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid option name "%s", possible options: %s', $optionName, implode(', ', array_keys($this->options))), __LINE__);
         }
 
         return array_key_exists('value', $this->options[$optionName]) ? $this->options[$optionName]['value'] : $this->options[$optionName]['default'];
@@ -162,7 +165,7 @@ final class GeneratorOptions extends AbstractYamlReader implements JsonSerializa
                 'values' => $values,
             ];
         } elseif (!empty($this->options[$optionName]['values']) && !in_array($optionValue, $this->options[$optionName]['values'], true)) {
-            throw new InvalidArgumentException(sprintf('Invalid value "%s" for option "%s", possible values: %s', $optionValue, $optionName, implode(', ', $this->options[$optionName]['values'])), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value "%s" for option "%s", possible values: %s', $optionValue, $optionName, implode(', ', $this->options[$optionName]['values'])), __LINE__);
         } else {
             $this->options[$optionName]['value'] = $optionValue;
         }
@@ -177,7 +180,7 @@ final class GeneratorOptions extends AbstractYamlReader implements JsonSerializa
 
     public static function methodNameToOptionName(string $name): string
     {
-        return trim(strtolower(preg_replace(StructValue::MATCH_PATTERN, StructValue::REPLACEMENT_PATTERN, substr($name, 3))), '_');
+        return strtolower(trim(preg_replace(StructValue::MATCH_PATTERN, StructValue::REPLACEMENT_PATTERN, substr($name, 3)), '_'));
     }
 
     public function setAddComments(array $addComments = []): self
@@ -248,7 +251,7 @@ final class GeneratorOptions extends AbstractYamlReader implements JsonSerializa
         if (is_array($options)) {
             $this->options = $options;
         } else {
-            throw new InvalidArgumentException(sprintf('Settings contained by "%s" are not valid as the settings are not contained by an array: "%s"', $filename, gettype($options)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Settings contained by "%s" are not valid as the settings are not contained by an array: "%s"', $filename, gettype($options)), __LINE__);
         }
 
         return $this;
@@ -259,7 +262,7 @@ final class GeneratorOptions extends AbstractYamlReader implements JsonSerializa
      *
      * @param mixed $value
      */
-    protected static function dotNotationToArray(string $string, $value, array &$array)
+    protected static function dotNotationToArray(string $string, $value, array &$array): void
     {
         $keys = explode('.', $string);
         foreach ($keys as $key) {

@@ -69,16 +69,16 @@ class ApiResult extends AbstractStructBase
      */
     public function getSuccess(): ?bool
     {
-        return isset($this->Success) ? $this->Success : null;
+        return $this->Success ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setSuccess method
+     * This method is responsible for validating the value(s) passed to the setSuccess method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSuccess method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateSuccessForChoiceConstraintsFromSetSuccess($value): string
+    public function validateSuccessForChoiceConstraintFromSetSuccess($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -115,7 +115,7 @@ class ApiResult extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($success, true), gettype($success)), __LINE__);
         }
         // validation for constraint: choice(Success, Errors)
-        if ('' !== ($successChoiceErrorMessage = self::validateSuccessForChoiceConstraintsFromSetSuccess($success))) {
+        if ('' !== ($successChoiceErrorMessage = self::validateSuccessForChoiceConstraintFromSetSuccess($success))) {
             throw new InvalidArgumentException($successChoiceErrorMessage, __LINE__);
         }
         if (is_null($success) || (is_array($success) && empty($success))) {
@@ -132,16 +132,16 @@ class ApiResult extends AbstractStructBase
      */
     public function getErrors(): ?\StructType\ApiErrors
     {
-        return isset($this->Errors) ? $this->Errors : null;
+        return $this->Errors ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setErrors method
+     * This method is responsible for validating the value(s) passed to the setErrors method
      * This method is willingly generated in order to preserve the one-line inline validation within the setErrors method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateErrorsForChoiceConstraintsFromSetErrors($value): string
+    public function validateErrorsForChoiceConstraintFromSetErrors($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -174,7 +174,7 @@ class ApiResult extends AbstractStructBase
     public function setErrors(?\StructType\ApiErrors $errors = null): self
     {
         // validation for constraint: choice(Success, Errors)
-        if ('' !== ($errorsChoiceErrorMessage = self::validateErrorsForChoiceConstraintsFromSetErrors($errors))) {
+        if ('' !== ($errorsChoiceErrorMessage = self::validateErrorsForChoiceConstraintFromSetErrors($errors))) {
             throw new InvalidArgumentException($errorsChoiceErrorMessage, __LINE__);
         }
         if (is_null($errors) || (is_array($errors) && empty($errors))) {

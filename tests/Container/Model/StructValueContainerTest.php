@@ -29,7 +29,7 @@ final class StructValueContainerTest extends AbstractTestCase
         return $structValueContainer;
     }
 
-    public function testGetStructValueByName()
+    public function testGetStructValueByName(): void
     {
         $structValueContainer = self::instance();
 

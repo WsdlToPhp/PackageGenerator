@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Parser\Wsdl;
 
-use SoapClient;
 use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInput;
 
 /**
@@ -23,17 +22,17 @@ final class TagInputTest extends WsdlParser
         return new TagInput(self::generatorInstance(self::wsdlLnpPath()));
     }
 
-    public static function myBoardPackSoapClient(): SoapClient
+    public static function myBoardPackSoapClient(): \SoapClient
     {
-        return new SoapClient(self::wsdlMyBoardPackPath());
+        return new \SoapClient(self::wsdlMyBoardPackPath());
     }
 
-    public static function lnpSoapClient(): SoapClient
+    public static function lnpSoapClient(): \SoapClient
     {
-        return new SoapClient(self::wsdlLnpPath());
+        return new \SoapClient(self::wsdlLnpPath());
     }
 
-    public function testParseMyBoardpack()
+    public function testParseMyBoardpack(): void
     {
         $tagInputParser = self::myBoardPackInstanceParser();
         $soapClient = self::myBoardPackSoapClient();
@@ -53,7 +52,7 @@ final class TagInputTest extends WsdlParser
         $this->assertSame(128, $count);
     }
 
-    public function testParseLnp()
+    public function testParseLnp(): void
     {
         $tagInputParser = self::lnpInstanceParser();
         $soapClient = self::lnpSoapClient();

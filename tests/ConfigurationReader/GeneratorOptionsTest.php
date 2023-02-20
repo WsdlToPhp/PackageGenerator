@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\ConfigurationReader;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 use WsdlToPhp\PackageBase\AbstractStructArrayBase;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -23,19 +22,19 @@ final class GeneratorOptionsTest extends AbstractTestCase
         return clone GeneratorOptions::instance(__DIR__.'/../resources/generator_options.yml');
     }
 
-    public function testParseException()
+    public function testParseException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         GeneratorOptions::instance(__DIR__.'/../resources/bad_generator_options.yml');
     }
 
-    public function testGetPrefix()
+    public function testGetPrefix(): void
     {
         $this->assertEmpty(self::optionsInstance()->getPrefix());
     }
 
-    public function testSetPrefix()
+    public function testSetPrefix(): void
     {
         $instance = self::optionsInstance();
         $instance->setPrefix('MyPrefix');
@@ -43,12 +42,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('MyPrefix', $instance->getPrefix());
     }
 
-    public function testGetSuffix()
+    public function testGetSuffix(): void
     {
         $this->assertEmpty(self::optionsInstance()->getSuffix());
     }
 
-    public function testSetSuffix()
+    public function testSetSuffix(): void
     {
         $instance = self::optionsInstance();
         $instance->setSuffix('MySuffix');
@@ -56,12 +55,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('MySuffix', $instance->getSuffix());
     }
 
-    public function testGetDestination()
+    public function testGetDestination(): void
     {
         $this->assertEmpty(self::optionsInstance()->getDestination());
     }
 
-    public function testSetDestination()
+    public function testSetDestination(): void
     {
         $instance = self::optionsInstance();
         $instance->setDestination('/my/destination/');
@@ -69,12 +68,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('/my/destination/', $instance->getDestination());
     }
 
-    public function testGetSrcDirname()
+    public function testGetSrcDirname(): void
     {
         $this->assertSame('src', self::optionsInstance()->getSrcDirname());
     }
 
-    public function testSetSrcDirname()
+    public function testSetSrcDirname(): void
     {
         $instance = self::optionsInstance();
         $instance->setSrcDirname('');
@@ -82,12 +81,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('', $instance->getSrcDirname());
     }
 
-    public function testGetOrigin()
+    public function testGetOrigin(): void
     {
         $this->assertEmpty(self::optionsInstance()->getOrigin());
     }
 
-    public function testSetOrigin()
+    public function testSetOrigin(): void
     {
         $instance = self::optionsInstance();
         $instance->setOrigin('/my/path/to/the/wsdl/file.wsdl');
@@ -95,12 +94,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('/my/path/to/the/wsdl/file.wsdl', $instance->getOrigin());
     }
 
-    public function testGetBasicLogin()
+    public function testGetBasicLogin(): void
     {
         $this->assertNull(self::optionsInstance()->getBasicLogin());
     }
 
-    public function testSetBasicLogin()
+    public function testSetBasicLogin(): void
     {
         $instance = self::optionsInstance();
         $instance->setBasicLogin('MyLogin');
@@ -108,12 +107,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('MyLogin', $instance->getBasicLogin());
     }
 
-    public function testGetBasicPassword()
+    public function testGetBasicPassword(): void
     {
         $this->assertNull(self::optionsInstance()->getBasicPassword());
     }
 
-    public function testSetBasicPassword()
+    public function testSetBasicPassword(): void
     {
         $instance = self::optionsInstance();
         $instance->setBasicPassword('MyPassword');
@@ -121,12 +120,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('MyPassword', $instance->getBasicPassword());
     }
 
-    public function testGetProxyHost()
+    public function testGetProxyHost(): void
     {
         $this->assertNull(self::optionsInstance()->getProxyHost());
     }
 
-    public function testSetProxyHost()
+    public function testSetProxyHost(): void
     {
         $instance = self::optionsInstance();
         $instance->setProxyHost('MyProxyHost');
@@ -134,12 +133,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('MyProxyHost', $instance->getProxyHost());
     }
 
-    public function testGetProxyPort()
+    public function testGetProxyPort(): void
     {
         $this->assertNull(self::optionsInstance()->getProxyPort());
     }
 
-    public function testSetProxyPort()
+    public function testSetProxyPort(): void
     {
         $instance = self::optionsInstance();
         $instance->setProxyPort(3225);
@@ -147,12 +146,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame(3225, $instance->getProxyPort());
     }
 
-    public function testGetProxyLogin()
+    public function testGetProxyLogin(): void
     {
         $this->assertNull(self::optionsInstance()->getProxyLogin());
     }
 
-    public function testSetProxyLogin()
+    public function testSetProxyLogin(): void
     {
         $instance = self::optionsInstance();
         $instance->setProxyLogin('MyProxyLogin');
@@ -160,12 +159,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('MyProxyLogin', $instance->getProxyLogin());
     }
 
-    public function testGetProxyPassword()
+    public function testGetProxyPassword(): void
     {
         $this->assertNull(self::optionsInstance()->getProxyPassword());
     }
 
-    public function testSetProxyPassword()
+    public function testSetProxyPassword(): void
     {
         $instance = self::optionsInstance();
         $instance->setProxyPassword('MyProxyPassword');
@@ -173,12 +172,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('MyProxyPassword', $instance->getProxyPassword());
     }
 
-    public function testGetSoapOptions()
+    public function testGetSoapOptions(): void
     {
         $this->assertEmpty(self::optionsInstance()->getSoapOptions());
     }
 
-    public function testSetSoapOptions()
+    public function testSetSoapOptions(): void
     {
         $soapOptions = [
             'trace' => true,
@@ -190,12 +189,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame($soapOptions, $instance->getSoapOptions());
     }
 
-    public function testGetCategory()
+    public function testGetCategory(): void
     {
         $this->assertSame(GeneratorOptions::VALUE_CAT, self::optionsInstance()->getCategory());
     }
 
-    public function testSetCategory()
+    public function testSetCategory(): void
     {
         $instance = self::optionsInstance();
         $instance->setCategory(GeneratorOptions::VALUE_NONE);
@@ -203,12 +202,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame(GeneratorOptions::VALUE_NONE, $instance->getCategory());
     }
 
-    public function testGetGatherMethods()
+    public function testGetGatherMethods(): void
     {
         $this->assertSame(GeneratorOptions::VALUE_START, self::optionsInstance()->getGatherMethods());
     }
 
-    public function testSetGatherMethods()
+    public function testSetGatherMethods(): void
     {
         $instance = self::optionsInstance();
         $instance->setGatherMethods(GeneratorOptions::VALUE_END);
@@ -216,7 +215,7 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame(GeneratorOptions::VALUE_END, $instance->getGatherMethods());
     }
 
-    public function testSetGatherMethodsNone()
+    public function testSetGatherMethodsNone(): void
     {
         $instance = self::optionsInstance();
         $instance->setGatherMethods(GeneratorOptions::VALUE_NONE);
@@ -224,12 +223,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame(GeneratorOptions::VALUE_NONE, $instance->getGatherMethods());
     }
 
-    public function testGetGenericConstantsName()
+    public function testGetGenericConstantsName(): void
     {
         $this->assertFalse(self::optionsInstance()->getGenericConstantsNames());
     }
 
-    public function testSetGenericConstantsName()
+    public function testSetGenericConstantsName(): void
     {
         $instance = self::optionsInstance();
         $instance->setGenericConstantsNames(GeneratorOptions::VALUE_TRUE);
@@ -237,12 +236,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertTrue($instance->getGenericConstantsNames());
     }
 
-    public function testGetGenerateTutorialFile()
+    public function testGetGenerateTutorialFile(): void
     {
         $this->assertTrue(self::optionsInstance()->getGenerateTutorialFile());
     }
 
-    public function testSetGenerateTutorialFile()
+    public function testSetGenerateTutorialFile(): void
     {
         $instance = self::optionsInstance();
         $instance->setGenerateTutorialFile(GeneratorOptions::VALUE_FALSE);
@@ -250,7 +249,7 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertFalse($instance->getGenerateTutorialFile());
     }
 
-    public function testGetAddComments()
+    public function testGetAddComments(): void
     {
         $comments = [
             'release' => '1.0.2',
@@ -263,7 +262,7 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame($comments, $instance->getAddComments());
     }
 
-    public function testSetAddCommentsSimple()
+    public function testSetAddCommentsSimple(): void
     {
         $comments = [
             'release' => '1.0.2',
@@ -279,7 +278,7 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame($comments, $instance->getAddComments());
     }
 
-    public function testSetAddComments()
+    public function testSetAddComments(): void
     {
         $comments = [
             'release' => '1.0.2',
@@ -292,12 +291,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame($comments, $instance->getAddComments());
     }
 
-    public function testGetNamespace()
+    public function testGetNamespace(): void
     {
         $this->assertSame('', self::optionsInstance()->getNamespace());
     }
 
-    public function testSetNamespace()
+    public function testSetNamespace(): void
     {
         $instance = self::optionsInstance();
         $instance->setNamespace('\My\Project');
@@ -305,12 +304,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('\My\Project', $instance->getNamespace());
     }
 
-    public function testGetNamespaceDictatesDirectories()
+    public function testGetNamespaceDictatesDirectories(): void
     {
         $this->assertSame(true, self::optionsInstance()->getNamespaceDictatesDirectories());
     }
 
-    public function testSetNamespaceDictatesDirectories()
+    public function testSetNamespaceDictatesDirectories(): void
     {
         $instance = self::optionsInstance();
         $instance->setNamespaceDictatesDirectories(false);
@@ -318,12 +317,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame(false, $instance->getNamespaceDictatesDirectories());
     }
 
-    public function testGetStandalone()
+    public function testGetStandalone(): void
     {
         $this->assertTrue(self::optionsInstance()->getStandalone());
     }
 
-    public function testSetStandalone()
+    public function testSetStandalone(): void
     {
         $instance = self::optionsInstance();
         $instance->setStandalone(GeneratorOptions::VALUE_FALSE);
@@ -331,12 +330,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertFalse($instance->getStandalone());
     }
 
-    public function testGetValidation()
+    public function testGetValidation(): void
     {
         $this->assertTrue(self::optionsInstance()->getValidation());
     }
 
-    public function testSetValidation()
+    public function testSetValidation(): void
     {
         $instance = self::optionsInstance();
         $instance->setValidation(GeneratorOptions::VALUE_FALSE);
@@ -344,12 +343,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertFalse($instance->getValidation());
     }
 
-    public function testGetStructClass()
+    public function testGetStructClass(): void
     {
         $this->assertSame(AbstractStructBase::class, self::optionsInstance()->getStructClass());
     }
 
-    public function testSetStructClass()
+    public function testSetStructClass(): void
     {
         $instance = self::optionsInstance();
         $instance->setStructClass('\My\Project\StructClass');
@@ -357,12 +356,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('\My\Project\StructClass', $instance->getStructClass());
     }
 
-    public function testGetStructArrayClass()
+    public function testGetStructArrayClass(): void
     {
         $this->assertSame(AbstractStructArrayBase::class, self::optionsInstance()->getStructArrayClass());
     }
 
-    public function testSetStructArrayClass()
+    public function testSetStructArrayClass(): void
     {
         $instance = self::optionsInstance();
         $instance->setStructArrayClass('\My\Project\StructArrayClass');
@@ -370,12 +369,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('\My\Project\StructArrayClass', $instance->getStructArrayClass());
     }
 
-    public function testGetStructEnumClass()
+    public function testGetStructEnumClass(): void
     {
         $this->assertSame(AbstractStructEnumBase::class, self::optionsInstance()->getStructEnumClass());
     }
 
-    public function testSetStructEnumClass()
+    public function testSetStructEnumClass(): void
     {
         $instance = self::optionsInstance();
         $instance->setStructEnumClass('\My\Project\StructEnumClass');
@@ -383,12 +382,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('\My\Project\StructEnumClass', $instance->getStructEnumClass());
     }
 
-    public function testGetSoapClientClass()
+    public function testGetSoapClientClass(): void
     {
         $this->assertSame(AbstractSoapClientBase::class, self::optionsInstance()->getSoapClientClass());
     }
 
-    public function testSetSoapClientClass()
+    public function testSetSoapClientClass(): void
     {
         $instance = self::optionsInstance();
         $instance->setSoapClientClass('\My\Project\SoapClientClass');
@@ -396,12 +395,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('\My\Project\SoapClientClass', $instance->getSoapClientClass());
     }
 
-    public function testGetComposerName()
+    public function testGetComposerName(): void
     {
         $this->assertSame('', self::optionsInstance()->getComposerName());
     }
 
-    public function testSetComposerName()
+    public function testSetComposerName(): void
     {
         $instance = self::optionsInstance();
         $instance->setComposerName('foo/bar');
@@ -409,12 +408,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('foo/bar', $instance->getComposerName());
     }
 
-    public function testGetComposerSettings()
+    public function testGetComposerSettings(): void
     {
         $this->assertSame([], self::optionsInstance()->getComposerSettings());
     }
 
-    public function testSetComposerSettings()
+    public function testSetComposerSettings(): void
     {
         $instance = self::optionsInstance();
         $instance->setComposerSettings([
@@ -444,12 +443,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         ], $instance->getComposerSettings());
     }
 
-    public function testGetStructsFolder()
+    public function testGetStructsFolder(): void
     {
         $this->assertSame('StructType', self::optionsInstance()->getStructsFolder());
     }
 
-    public function testSetStructsFolder()
+    public function testSetStructsFolder(): void
     {
         $instance = self::optionsInstance();
         $instance->setStructsFolder('Structs');
@@ -457,12 +456,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('Structs', $instance->getStructsFolder());
     }
 
-    public function testGetEnumsFolder()
+    public function testGetEnumsFolder(): void
     {
         $this->assertSame('EnumType', self::optionsInstance()->getEnumsFolder());
     }
 
-    public function testSetEnumsFolder()
+    public function testSetEnumsFolder(): void
     {
         $instance = self::optionsInstance();
         $instance->setEnumsFolder('Enums');
@@ -470,12 +469,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('Enums', $instance->getEnumsFolder());
     }
 
-    public function testGetArraysFolder()
+    public function testGetArraysFolder(): void
     {
         $this->assertSame('ArrayType', self::optionsInstance()->getArraysFolder());
     }
 
-    public function testSetArraysFolder()
+    public function testSetArraysFolder(): void
     {
         $instance = self::optionsInstance();
         $instance->setArraysFolder('Arrays');
@@ -483,12 +482,12 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('Arrays', $instance->getArraysFolder());
     }
 
-    public function testGetServicesFolder()
+    public function testGetServicesFolder(): void
     {
         $this->assertSame('ServiceType', self::optionsInstance()->getServicesFolder());
     }
 
-    public function testSetServicesFolder()
+    public function testSetServicesFolder(): void
     {
         $instance = self::optionsInstance();
         $instance->setServicesFolder('Services');
@@ -496,7 +495,7 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('Services', $instance->getServicesFolder());
     }
 
-    public function testSetSchemasSave()
+    public function testSetSchemasSave(): void
     {
         $instance = self::optionsInstance();
         $instance->setSchemasSave(false);
@@ -504,7 +503,7 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame(false, $instance->getSchemasSave());
     }
 
-    public function testSetSchemasFolder()
+    public function testSetSchemasFolder(): void
     {
         $instance = self::optionsInstance();
         $instance->setSchemasFolder('wsdl');
@@ -512,7 +511,7 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertSame('wsdl', $instance->getSchemasFolder());
     }
 
-    public function testSetExistingOptionValue()
+    public function testSetExistingOptionValue(): void
     {
         $instance = self::optionsInstance();
         $instance->setOptionValue('category', 'cat');
@@ -521,15 +520,15 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertEquals('none', $instance->getOptionValue('category'));
     }
 
-    public function testSetExistingOptionValueWithInvalidValue()
+    public function testSetExistingOptionValueWithInvalidValue(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         self::optionsInstance()->setOptionValue('category', 'null');
         self::optionsInstance()->setCategory(null);
     }
 
-    public function testSetUnexistingOptionValue()
+    public function testSetUnexistingOptionValue(): void
     {
         $newOptionKey = 'new_option';
         $instance = self::optionsInstance();
@@ -539,21 +538,21 @@ final class GeneratorOptionsTest extends AbstractTestCase
         $this->assertEquals(1, $instance->getOptionValue($newOptionKey));
     }
 
-    public function testSetUnexistingOptionValueWithInvalidValue()
+    public function testSetUnexistingOptionValueWithInvalidValue(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         self::optionsInstance()->setGenerateTutorialFile('null');
     }
 
-    public function testGetUnexistingOptionValue()
+    public function testGetUnexistingOptionValue(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         self::optionsInstance()->getOptionValue('myOption');
     }
 
-    public function testToArray()
+    public function testToArray(): void
     {
         $this->assertSame([
             'category' => 'cat',
@@ -593,7 +592,7 @@ final class GeneratorOptionsTest extends AbstractTestCase
         ], self::optionsInstance()->toArray());
     }
 
-    public function testJsonSerialize()
+    public function testJsonSerialize(): void
     {
         $this->assertSame([
             'category' => 'cat',

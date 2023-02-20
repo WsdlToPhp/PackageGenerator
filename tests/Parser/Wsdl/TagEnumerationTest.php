@@ -25,7 +25,7 @@ final class TagEnumerationTest extends WsdlParser
         return new TagEnumeration(self::generatorInstance(self::wsdlReformaPath()));
     }
 
-    public function testBing()
+    public function testBing(): void
     {
         $tagEnumerationParser = self::bingInstanceParser();
 
@@ -57,7 +57,7 @@ final class TagEnumerationTest extends WsdlParser
         $this->assertSame(2, $count);
     }
 
-    public function testReforma()
+    public function testReforma(): void
     {
         $tagEnumerationParser = self::reformaInstanceParser();
 

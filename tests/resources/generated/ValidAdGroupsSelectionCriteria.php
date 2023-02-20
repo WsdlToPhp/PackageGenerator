@@ -108,12 +108,13 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this->CampaignIds;
     }
     /**
-     * This method is responsible for validating the values passed to the setCampaignIds method
+     * This method is responsible for validating the value(s) passed to the setCampaignIds method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCampaignIds method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCampaignIdsForArrayConstraintsFromSetCampaignIds(?array $values = []): string
+    public static function validateCampaignIdsForArrayConstraintFromSetCampaignIds(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -142,7 +143,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setCampaignIds(?array $campaignIds = null): self
     {
         // validation for constraint: array
-        if ('' !== ($campaignIdsArrayErrorMessage = self::validateCampaignIdsForArrayConstraintsFromSetCampaignIds($campaignIds))) {
+        if ('' !== ($campaignIdsArrayErrorMessage = self::validateCampaignIdsForArrayConstraintFromSetCampaignIds($campaignIds))) {
             throw new InvalidArgumentException($campaignIdsArrayErrorMessage, __LINE__);
         }
         $this->CampaignIds = $campaignIds;
@@ -174,12 +175,13 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this->Ids;
     }
     /**
-     * This method is responsible for validating the values passed to the setIds method
+     * This method is responsible for validating the value(s) passed to the setIds method
      * This method is willingly generated in order to preserve the one-line inline validation within the setIds method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateIdsForArrayConstraintsFromSetIds(?array $values = []): string
+    public static function validateIdsForArrayConstraintFromSetIds(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -208,7 +210,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setIds(?array $ids = null): self
     {
         // validation for constraint: array
-        if ('' !== ($idsArrayErrorMessage = self::validateIdsForArrayConstraintsFromSetIds($ids))) {
+        if ('' !== ($idsArrayErrorMessage = self::validateIdsForArrayConstraintFromSetIds($ids))) {
             throw new InvalidArgumentException($idsArrayErrorMessage, __LINE__);
         }
         $this->Ids = $ids;
@@ -240,12 +242,13 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this->Types;
     }
     /**
-     * This method is responsible for validating the values passed to the setTypes method
+     * This method is responsible for validating the value(s) passed to the setTypes method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTypes method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTypesForArrayConstraintsFromSetTypes(?array $values = []): string
+    public static function validateTypesForArrayConstraintFromSetTypes(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -276,7 +279,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setTypes(?array $types = null): self
     {
         // validation for constraint: array
-        if ('' !== ($typesArrayErrorMessage = self::validateTypesForArrayConstraintsFromSetTypes($types))) {
+        if ('' !== ($typesArrayErrorMessage = self::validateTypesForArrayConstraintFromSetTypes($types))) {
             throw new InvalidArgumentException($typesArrayErrorMessage, __LINE__);
         }
         $this->Types = $types;
@@ -310,12 +313,13 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this->Statuses;
     }
     /**
-     * This method is responsible for validating the values passed to the setStatuses method
+     * This method is responsible for validating the value(s) passed to the setStatuses method
      * This method is willingly generated in order to preserve the one-line inline validation within the setStatuses method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateStatusesForArrayConstraintsFromSetStatuses(?array $values = []): string
+    public static function validateStatusesForArrayConstraintFromSetStatuses(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -346,7 +350,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setStatuses(?array $statuses = null): self
     {
         // validation for constraint: array
-        if ('' !== ($statusesArrayErrorMessage = self::validateStatusesForArrayConstraintsFromSetStatuses($statuses))) {
+        if ('' !== ($statusesArrayErrorMessage = self::validateStatusesForArrayConstraintFromSetStatuses($statuses))) {
             throw new InvalidArgumentException($statusesArrayErrorMessage, __LINE__);
         }
         $this->Statuses = $statuses;
@@ -380,12 +384,13 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this->TagIds;
     }
     /**
-     * This method is responsible for validating the values passed to the setTagIds method
+     * This method is responsible for validating the value(s) passed to the setTagIds method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTagIds method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTagIdsForArrayConstraintsFromSetTagIds(?array $values = []): string
+    public static function validateTagIdsForArrayConstraintFromSetTagIds(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -414,7 +419,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setTagIds(?array $tagIds = null): self
     {
         // validation for constraint: array
-        if ('' !== ($tagIdsArrayErrorMessage = self::validateTagIdsForArrayConstraintsFromSetTagIds($tagIds))) {
+        if ('' !== ($tagIdsArrayErrorMessage = self::validateTagIdsForArrayConstraintFromSetTagIds($tagIds))) {
             throw new InvalidArgumentException($tagIdsArrayErrorMessage, __LINE__);
         }
         $this->TagIds = $tagIds;
@@ -446,12 +451,13 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this->Tags;
     }
     /**
-     * This method is responsible for validating the values passed to the setTags method
+     * This method is responsible for validating the value(s) passed to the setTags method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTags method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTagsForArrayConstraintsFromSetTags(?array $values = []): string
+    public static function validateTagsForArrayConstraintFromSetTags(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -480,7 +486,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setTags(?array $tags = null): self
     {
         // validation for constraint: array
-        if ('' !== ($tagsArrayErrorMessage = self::validateTagsForArrayConstraintsFromSetTags($tags))) {
+        if ('' !== ($tagsArrayErrorMessage = self::validateTagsForArrayConstraintFromSetTags($tags))) {
             throw new InvalidArgumentException($tagsArrayErrorMessage, __LINE__);
         }
         $this->Tags = $tags;
@@ -512,12 +518,13 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         return $this->AppIconStatuses;
     }
     /**
-     * This method is responsible for validating the values passed to the setAppIconStatuses method
+     * This method is responsible for validating the value(s) passed to the setAppIconStatuses method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAppIconStatuses method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAppIconStatusesForArrayConstraintsFromSetAppIconStatuses(?array $values = []): string
+    public static function validateAppIconStatusesForArrayConstraintFromSetAppIconStatuses(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -548,7 +555,7 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     public function setAppIconStatuses(?array $appIconStatuses = null): self
     {
         // validation for constraint: array
-        if ('' !== ($appIconStatusesArrayErrorMessage = self::validateAppIconStatusesForArrayConstraintsFromSetAppIconStatuses($appIconStatuses))) {
+        if ('' !== ($appIconStatusesArrayErrorMessage = self::validateAppIconStatusesForArrayConstraintFromSetAppIconStatuses($appIconStatuses))) {
             throw new InvalidArgumentException($appIconStatusesArrayErrorMessage, __LINE__);
         }
         $this->AppIconStatuses = $appIconStatuses;

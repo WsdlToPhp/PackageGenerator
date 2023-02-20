@@ -139,12 +139,13 @@ class ApiFareItinerary extends AbstractStructBase
         return $this->firstSegmentsIds;
     }
     /**
-     * This method is responsible for validating the values passed to the setFirstSegmentsIds method
+     * This method is responsible for validating the value(s) passed to the setFirstSegmentsIds method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFirstSegmentsIds method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFirstSegmentsIdsForArrayConstraintsFromSetFirstSegmentsIds(?array $values = []): string
+    public static function validateFirstSegmentsIdsForArrayConstraintFromSetFirstSegmentsIds(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -173,7 +174,7 @@ class ApiFareItinerary extends AbstractStructBase
     public function setFirstSegmentsIds(array $firstSegmentsIds): self
     {
         // validation for constraint: array
-        if ('' !== ($firstSegmentsIdsArrayErrorMessage = self::validateFirstSegmentsIdsForArrayConstraintsFromSetFirstSegmentsIds($firstSegmentsIds))) {
+        if ('' !== ($firstSegmentsIdsArrayErrorMessage = self::validateFirstSegmentsIdsForArrayConstraintFromSetFirstSegmentsIds($firstSegmentsIds))) {
             throw new InvalidArgumentException($firstSegmentsIdsArrayErrorMessage, __LINE__);
         }
         $this->firstSegmentsIds = $firstSegmentsIds;
@@ -251,12 +252,13 @@ class ApiFareItinerary extends AbstractStructBase
         return $this->secondSegmentsIds;
     }
     /**
-     * This method is responsible for validating the values passed to the setSecondSegmentsIds method
+     * This method is responsible for validating the value(s) passed to the setSecondSegmentsIds method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSecondSegmentsIds method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSecondSegmentsIdsForArrayConstraintsFromSetSecondSegmentsIds(?array $values = []): string
+    public static function validateSecondSegmentsIdsForArrayConstraintFromSetSecondSegmentsIds(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -285,7 +287,7 @@ class ApiFareItinerary extends AbstractStructBase
     public function setSecondSegmentsIds(?array $secondSegmentsIds = null): self
     {
         // validation for constraint: array
-        if ('' !== ($secondSegmentsIdsArrayErrorMessage = self::validateSecondSegmentsIdsForArrayConstraintsFromSetSecondSegmentsIds($secondSegmentsIds))) {
+        if ('' !== ($secondSegmentsIdsArrayErrorMessage = self::validateSecondSegmentsIdsForArrayConstraintFromSetSecondSegmentsIds($secondSegmentsIds))) {
             throw new InvalidArgumentException($secondSegmentsIdsArrayErrorMessage, __LINE__);
         }
         $this->secondSegmentsIds = $secondSegmentsIds;
@@ -317,12 +319,13 @@ class ApiFareItinerary extends AbstractStructBase
         return $this->thirdSegmentsIds;
     }
     /**
-     * This method is responsible for validating the values passed to the setThirdSegmentsIds method
+     * This method is responsible for validating the value(s) passed to the setThirdSegmentsIds method
      * This method is willingly generated in order to preserve the one-line inline validation within the setThirdSegmentsIds method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateThirdSegmentsIdsForArrayConstraintsFromSetThirdSegmentsIds(?array $values = []): string
+    public static function validateThirdSegmentsIdsForArrayConstraintFromSetThirdSegmentsIds(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -351,7 +354,7 @@ class ApiFareItinerary extends AbstractStructBase
     public function setThirdSegmentsIds(?array $thirdSegmentsIds = null): self
     {
         // validation for constraint: array
-        if ('' !== ($thirdSegmentsIdsArrayErrorMessage = self::validateThirdSegmentsIdsForArrayConstraintsFromSetThirdSegmentsIds($thirdSegmentsIds))) {
+        if ('' !== ($thirdSegmentsIdsArrayErrorMessage = self::validateThirdSegmentsIdsForArrayConstraintFromSetThirdSegmentsIds($thirdSegmentsIds))) {
             throw new InvalidArgumentException($thirdSegmentsIdsArrayErrorMessage, __LINE__);
         }
         $this->thirdSegmentsIds = $thirdSegmentsIds;

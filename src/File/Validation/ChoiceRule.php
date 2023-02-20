@@ -11,9 +11,11 @@ use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
 final class ChoiceRule extends AbstractRule
 {
+    public const NAME = 'choice';
+
     public function name(): string
     {
-        return 'choice';
+        return self::NAME;
     }
 
     public function testConditions(string $parameterName, $value, bool $itemType = false): string
@@ -80,10 +82,5 @@ final class ChoiceRule extends AbstractRule
         ;
 
         $this->getMethods()->add($method);
-    }
-
-    protected function getValidationMethodName(string $parameterName): string
-    {
-        return sprintf('validate%sForChoiceConstraintsFrom%s', ucfirst($parameterName), ucfirst($this->getMethod()->getName()));
     }
 }

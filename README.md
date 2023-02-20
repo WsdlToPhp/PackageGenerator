@@ -102,6 +102,8 @@ First released on 03 April 2021, maintained until version 6.0 is released. Pleas
 ### 3.0
 First released on 04 May 2018, maintained until version 5.0 is released. Please read the [UPGRADE-3.0](UPGRADE-3.0.md) note in order to acknowledge the main changes.
 
+**NOT MAINTAINED ANYMORE**: even if version 5 is not published nor is expected soon, maintaining 2 versions, especially for an old PHP version, is time consuming, sorry for the people who would be still using it which would encounter issues fixed in the latest version.
+
 ### 2.0
 **Not maintained since 03 April 2021.**
 
@@ -159,6 +161,7 @@ Developers who helped on this project are listed in the [composer.json](composer
 - [Jacob Dreesen](https://github.com/jdreesen)
 - [Clifford Vickrey](https://github.com/cliffordvickrey)
 - [Arnaud POINTET](https://github.com/Oipnet)
+- [dypa](https://github.com/dypa)
 
 ## FAQ
 

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\File\Element\PhpFunctionParameter;
 use WsdlToPhp\PackageGenerator\File\Validation\Rules;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute as StructAttributeModel;
+use WsdlToPhp\PhpGenerator\Element\AssignedValueElementInterface;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotation;
 use WsdlToPhp\PhpGenerator\Element\PhpAnnotationBlock;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
@@ -43,7 +43,7 @@ final class StructArray extends Struct
     public function setModel(AbstractModel $model): self
     {
         if ($model instanceof StructModel && !$model->isArray()) {
-            throw new InvalidArgumentException('The model is not a valid array struct (name must contain Array and the model must contain only one property', __LINE__);
+            throw new \InvalidArgumentException('The model is not a valid array struct (name must contain Array and the model must contain only one property', __LINE__);
         }
 
         return parent::setModel($model);
@@ -88,12 +88,14 @@ final class StructArray extends Struct
 
     protected function addArrayMethodGetAttributeName(): self
     {
+        /** @var StructModel $model */
+        $model = $this->getModel();
+
         return $this->addArrayMethodGenericMethod(
             self::METHOD_GET_ATTRIBUTE_NAME,
             sprintf(
                 'return \'%s\';',
-                $this
-                    ->getModel()
+                $model
                     ->getAttributes()
                     ->offsetGet(0)
                     ->getName()
@@ -109,7 +111,7 @@ final class StructArray extends Struct
             $method = new PhpMethod(self::METHOD_ADD, [
                 new PhpFunctionParameter(
                     'item',
-                    PhpFunctionParameter::NO_VALUE,
+                    AssignedValueElementInterface::NO_VALUE,
                     null,
                     $this->getStructAttribute()
                 ),
@@ -117,12 +119,7 @@ final class StructArray extends Struct
 
             if ($this->getGenerator()->getOptionValidation()) {
                 $rules = new Rules($this, $method, $this->getStructAttribute(), $this->methods);
-                $struct = $this->getRestrictionFromStructAttribute($this->getStructAttribute());
-                if ($struct && $struct->isRestriction()) {
-                    $rules->getEnumerationRule()->applyRule('item', null);
-                } else {
-                    $rules->getItemTypeRule()->applyRule('item', null);
-                }
+                $rules->applyRules('item', true);
             }
 
             $method->addChild('return parent::add($item);');
@@ -143,10 +140,13 @@ final class StructArray extends Struct
 
     protected function getArrayMethodGetAttributeNameAnnotationBlock(): PhpAnnotationBlock
     {
+        /** @var StructModel $model */
+        $model = $this->getModel();
+
         return new PhpAnnotationBlock([
             'Returns the attribute name',
-            new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::%s()', $this->getModel()->getExtends(true), self::METHOD_GET_ATTRIBUTE_NAME)),
-            new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('string %s', $this->getModel()->getAttributes()->offsetGet(0)->getName())),
+            new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::%s()', $model->getExtends(true), self::METHOD_GET_ATTRIBUTE_NAME)),
+            new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('string %s', $model->getAttributes()->offsetGet(0)->getName())),
         ]);
     }
 
@@ -180,7 +180,7 @@ final class StructArray extends Struct
         return new PhpAnnotationBlock([
             'Add element to array',
             new PhpAnnotation(self::ANNOTATION_SEE, sprintf('%s::add()', $this->getModel()->getExtends(true))),
-            new PhpAnnotation(self::ANNOTATION_THROWS, InvalidArgumentException::class),
+            new PhpAnnotation(self::ANNOTATION_THROWS, \InvalidArgumentException::class),
             new PhpAnnotation(self::ANNOTATION_PARAM, sprintf('%s $item', $this->getStructAttributeType(null, true, false))),
             new PhpAnnotation(self::ANNOTATION_RETURN, sprintf('%s', $this->getModel()->getPackagedName(true))),
         ]);

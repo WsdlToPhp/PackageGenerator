@@ -42,12 +42,13 @@ class ApiAddRequest extends AbstractStructBase
         return $this->AdGroups;
     }
     /**
-     * This method is responsible for validating the values passed to the setAdGroups method
+     * This method is responsible for validating the value(s) passed to the setAdGroups method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAdGroups method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAdGroupsForArrayConstraintsFromSetAdGroups(?array $values = []): string
+    public static function validateAdGroupsForArrayConstraintFromSetAdGroups(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -76,7 +77,7 @@ class ApiAddRequest extends AbstractStructBase
     public function setAdGroups(array $adGroups): self
     {
         // validation for constraint: array
-        if ('' !== ($adGroupsArrayErrorMessage = self::validateAdGroupsForArrayConstraintsFromSetAdGroups($adGroups))) {
+        if ('' !== ($adGroupsArrayErrorMessage = self::validateAdGroupsForArrayConstraintFromSetAdGroups($adGroups))) {
             throw new InvalidArgumentException($adGroupsArrayErrorMessage, __LINE__);
         }
         $this->AdGroups = $adGroups;

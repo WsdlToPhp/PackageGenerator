@@ -12,27 +12,72 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
  */
 final class PatternRule extends AbstractRule
 {
+    public const NAME = 'pattern';
+
     public function name(): string
     {
-        return 'pattern';
+        return self::NAME;
     }
 
     public function testConditions(string $parameterName, $value, bool $itemType = false): string
     {
-        return sprintf(($itemType ? '' : '!is_null($%1$s) && ').'!preg_match(\'/%2$s/\', $%1$s)', $parameterName, self::valueToRegularExpression($value));
+        if ($itemType || !$this->getAttribute()->isArray()) {
+            $test = sprintf(
+                ($itemType ? '' : '!is_null($%1$s) && ').'!preg_match(\'/%2$s/\', $%1$s)',
+                $parameterName,
+                self::valueToRegularExpression($value)
+            );
+        } else {
+            $this->addArrayValidationMethod($parameterName, $value);
+            $test = sprintf(
+                '\'\' !== (%s = self::%s($%s))',
+                $this->getArrayErrorMessageVariableName($parameterName),
+                $this->getValidationMethodName($parameterName),
+                $parameterName
+            );
+        }
+
+        return $test;
     }
 
     public function exceptionMessageOnTestFailure(string $parameterName, $value, bool $itemType = false): string
     {
-        return sprintf('sprintf(\'Invalid value %%s, please provide a literal that is among the set of character sequences denoted by the regular expression /%s/\', var_export($%s, true))', self::valueToRegularExpression($value), $parameterName);
+        if ($itemType || !$this->getAttribute()->isArray()) {
+            $message = sprintf(
+                'sprintf(\'Invalid value %%s, please provide a literal that is among the set of character sequences denoted by the regular expression /%s/\', var_export($%s, true))',
+                self::valueToRegularExpression($value),
+                $parameterName
+            );
+        } else {
+            $message = $this->getArrayErrorMessageVariableName($parameterName);
+        }
+
+        return $message;
     }
 
-    public static function valueToRegularExpression($value)
+    public static function valueToRegularExpression($value): string
     {
-        return implode('|', array_map(function ($value) {
-            return addcslashes($value, '\'\\/');
-        }, array_map(function ($value) {
-            return empty($value) ? '^$' : $value;
-        }, array_map('trim', is_array($value) ? $value : [$value]))));
+        return implode(
+            '|',
+            array_map(
+                static function ($value) {
+                    return addcslashes($value, '\'\\/');
+                },
+                array_map(
+                    static function ($value) {
+                        return empty($value) ? '^$' : $value;
+                    },
+                    array_map('trim', is_array($value) ? $value : [$value])
+                )
+            )
+        );
+    }
+
+    protected function getArrayExceptionMessageOnTestFailure($value): string
+    {
+        return sprintf(
+            'Invalid value(s) %%s, please provide literals that are among the set of character sequences denoted by the regular expression /%s/\'',
+            stripcslashes(self::valueToRegularExpression($value)),
+        );
     }
 }

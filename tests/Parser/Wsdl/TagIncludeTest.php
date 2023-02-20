@@ -25,7 +25,7 @@ final class TagIncludeTest extends WsdlParser
         return new TagInclude(self::generatorInstance(self::wsdlDocDataPaymentsPath()));
     }
 
-    public function testIsWsdlParsed()
+    public function testIsWsdlParsed(): void
     {
         $tagIncludeParser = self::partnerInstanceParser();
 
@@ -34,7 +34,7 @@ final class TagIncludeTest extends WsdlParser
         $this->assertTrue($tagIncludeParser->isWsdlParsed(new Wsdl($tagIncludeParser->getGenerator(), self::wsdlImageViewServicePath(), file_get_contents(self::wsdlImageViewServicePath()))));
     }
 
-    public function testGetExternalSchemas()
+    public function testGetExternalSchemas(): void
     {
         $tagIncludeParser = self::partnerInstanceParser();
 
@@ -57,7 +57,7 @@ final class TagIncludeTest extends WsdlParser
         $this->assertCount($schemaContainer->count(), $tagIncludeParser->getGenerator()->getWsdl()->getContent()->getExternalSchemas());
     }
 
-    public function testGetExternalSchemasScd()
+    public function testGetExternalSchemasScd(): void
     {
         // import tag must be parsed first
         $tagIncludeParser = self::partnerInstanceParserScd();

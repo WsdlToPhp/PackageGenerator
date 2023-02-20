@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use InvalidArgumentException;
 use StructType\ApiParagraphType;
 
 /**
  * @internal
  * @coversDefaultClass
  */
-final class MaxOccursRuleTest extends AbstractRuleTest
+final class MaxOccursRuleTest extends AbstractRule
 {
     /**
      * The TaxDescription
@@ -20,9 +19,9 @@ final class MaxOccursRuleTest extends AbstractRuleTest
      * - maxOccurs: 5
      * - minOccurs: 0.
      */
-    public function testSetTaxDescriptionWithTooManyItemsMustThrowAnException()
+    public function testSetTaxDescriptionWithTooManyItemsMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid count of 6, the number of elements contained by the property must be less than or equal to 5');
 
         $instance = self::getWhlTaxTypeInstance();
@@ -44,7 +43,7 @@ final class MaxOccursRuleTest extends AbstractRuleTest
      * - maxOccurs: 5
      * - minOccurs: 0.
      */
-    public function testSetTaxDescriptionWithSameItemsMustPass()
+    public function testSetTaxDescriptionWithSameItemsMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 
@@ -64,7 +63,7 @@ final class MaxOccursRuleTest extends AbstractRuleTest
      * - maxOccurs: 5
      * - minOccurs: 0.
      */
-    public function testSetTaxDescriptionWithLessItemsMustPass()
+    public function testSetTaxDescriptionWithLessItemsMustPass(): void
     {
         $instance = self::getWhlTaxTypeInstance();
 
@@ -81,9 +80,9 @@ final class MaxOccursRuleTest extends AbstractRuleTest
      * - maxOccurs: 5
      * - minOccurs: 0.
      */
-    public function testAddToTaxDescriptionWithTooManyItemsMustThrowAnException()
+    public function testAddToTaxDescriptionWithTooManyItemsMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('You can\'t add anymore element to this property that already contains 5 elements, the number of elements contained by the property must be less than or equal to 5');
 
         // true to ensure to start from zero for addTo calls
@@ -107,7 +106,7 @@ final class MaxOccursRuleTest extends AbstractRuleTest
      * - maxOccurs: 5
      * - minOccurs: 0.
      */
-    public function testAddToTaxDescriptionWithSameItemsMustPass()
+    public function testAddToTaxDescriptionWithSameItemsMustPass(): void
     {
         // true to ensure to start from zero for addTo calls
         $instance = self::getWhlTaxTypeInstance(true);
@@ -130,7 +129,7 @@ final class MaxOccursRuleTest extends AbstractRuleTest
      * - maxOccurs: 5
      * - minOccurs: 0.
      */
-    public function testAddToTaxDescriptionWithLessItemsMustPass()
+    public function testAddToTaxDescriptionWithLessItemsMustPass(): void
     {
         // true to ensure to start from zero for addTo calls
         $instance = self::getWhlTaxTypeInstance(true);

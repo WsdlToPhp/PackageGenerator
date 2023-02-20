@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File\Validation;
 
-use InvalidArgumentException;
-
 abstract class AbstractMinMaxRule extends AbstractRule
 {
     public const SYMBOL_MAX_INCLUSIVE = '>';
@@ -48,7 +46,7 @@ abstract class AbstractMinMaxRule extends AbstractRule
                 break;
 
             default:
-                throw new InvalidArgumentException(sprintf('Invalid value %s returned by symbol() method, can\'t determine comparison string', $this->symbol()));
+                throw new \InvalidArgumentException(sprintf('Invalid value %s returned by symbol() method, can\'t determine comparison string', $this->symbol()));
         }
 
         return $comparison;

@@ -16,9 +16,11 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
  */
 final class MaxLengthRule extends AbstractLengthRule
 {
+    public const NAME = 'maxLength';
+
     public function name(): string
     {
-        return 'maxLength';
+        return self::NAME;
     }
 
     public function symbol(): string

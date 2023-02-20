@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use TypeError;
-
 /**
  * @internal
  * @coversDefaultClass
  */
-final class StringRuleTest extends AbstractRuleTest
+final class StringRuleTest extends AbstractRule
 {
     /**
      * The CardNumber
@@ -20,9 +18,9 @@ final class StringRuleTest extends AbstractRuleTest
      * - base: xs:string
      * - pattern: [0-9]{1,19}.
      */
-    public function testSetCardNumberWithArrayValueMustThrowAnException()
+    public function testSetCardNumberWithArrayValueMustThrowAnException(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         $instance = self::getWhlPaymentCardTypeInstance();
 
@@ -37,9 +35,9 @@ final class StringRuleTest extends AbstractRuleTest
      * - base: xs:string
      * - pattern: [0-9]{1,19}.
      */
-    public function testSetCardNumberWithBoolValueMustThrowAnException()
+    public function testSetCardNumberWithBoolValueMustThrowAnException(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         $instance = self::getWhlPaymentCardTypeInstance();
 
@@ -54,9 +52,9 @@ final class StringRuleTest extends AbstractRuleTest
      * - base: xs:string
      * - pattern: [0-9]{1,19}.
      */
-    public function testSetCardNumberWithIntValueMustThrowAnException()
+    public function testSetCardNumberWithIntValueMustThrowAnException(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         $instance = self::getWhlPaymentCardTypeInstance();
 
@@ -71,9 +69,9 @@ final class StringRuleTest extends AbstractRuleTest
      * - base: xs:string
      * - pattern: [0-9]{1,19}.
      */
-    public function testSetCardNumberWithFloatValueMustThrowAnException()
+    public function testSetCardNumberWithFloatValueMustThrowAnException(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         $instance = self::getWhlPaymentCardTypeInstance();
 
@@ -88,7 +86,7 @@ final class StringRuleTest extends AbstractRuleTest
      * - base: xs:string
      * - pattern: [0-9]{1,19}.
      */
-    public function testSetCardNumberWithNullValueMustPass()
+    public function testSetCardNumberWithNullValueMustPass(): void
     {
         $instance = self::getWhlPaymentCardTypeInstance();
 
@@ -103,7 +101,7 @@ final class StringRuleTest extends AbstractRuleTest
      * - base: xs:string
      * - pattern: [0-9]{1,19}.
      */
-    public function testSetCardNumberWithStringValueMustPass()
+    public function testSetCardNumberWithStringValueMustPass(): void
     {
         $instance = self::getWhlPaymentCardTypeInstance();
 

@@ -14,9 +14,11 @@ use WsdlToPhp\PhpGenerator\Element\PhpMethod;
  */
 final class UnionRule extends AbstractRule
 {
+    public const NAME = 'union';
+
     public function name(): string
     {
-        return 'union';
+        return self::NAME;
     }
 
     public function testConditions(string $parameterName, $value, bool $itemType = false): string
@@ -111,10 +113,5 @@ final class UnionRule extends AbstractRule
             ->addChild('return $message;')
         ;
         $this->getMethods()->add($method);
-    }
-
-    protected function getValidationMethodName(string $parameterName): string
-    {
-        return sprintf('validate%sForUnionConstraintsFrom%s', ucfirst($parameterName), ucfirst($this->getMethod()->getName()));
     }
 }

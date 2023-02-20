@@ -27,7 +27,7 @@ final class StructAttributeContainerTest extends AbstractTestCase
         return $structAttributeContainer;
     }
 
-    public function testGetStructAttributeByName()
+    public function testGetStructAttributeByName(): void
     {
         $structAttributeContainer = self::instance();
 
