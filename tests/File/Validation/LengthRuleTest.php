@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use InvalidArgumentException;
-
 /**
  * @internal
  * @coversDefaultClass
  */
-final class LengthRuleTest extends AbstractRuleTest
+final class LengthRuleTest extends AbstractRule
 {
     /**
      * The PostalCode
@@ -20,7 +18,7 @@ final class LengthRuleTest extends AbstractRuleTest
      */
     public function testAddToAddressLineWithTooManyCharactersLengthMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid length of 5, the number of characters/octets contained by the literal must be equal to 4');
 
         $instance = self::getOrderContractAddressDeliveryTypeInstance();
@@ -36,7 +34,7 @@ final class LengthRuleTest extends AbstractRuleTest
      */
     public function testAddToAddressLineWithTooLessCharactersLengthMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid length of 3, the number of characters/octets contained by the literal must be equal to 4');
 
         $instance = self::getOrderContractAddressDeliveryTypeInstance();

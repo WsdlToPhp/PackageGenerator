@@ -4,17 +4,15 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use InvalidArgumentException;
-
 /**
  * @internal
  * @coversDefaultClass
  */
-final class MaxExclusiveRuleTest extends AbstractRuleTest
+final class MaxExclusiveRuleTest extends AbstractRule
 {
     public function testApplyRuleWithExactSameValue(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MaxExclusiveRule', 2);
         call_user_func($functionName, 2);
@@ -22,7 +20,7 @@ final class MaxExclusiveRuleTest extends AbstractRuleTest
 
     public function testApplyRuleWithGreaterValue(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MaxExclusiveRule', 2);
         call_user_func($functionName, 3);
@@ -48,7 +46,7 @@ final class MaxExclusiveRuleTest extends AbstractRuleTest
 
     public function testApplyRuleWithDateIntervalMustBeFalseWithSameInterval(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value \'P10675199DT2H49M5.4775807S\', the value must be chronologically less than P10675199DT2H49M5.4775807S');
 
         $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MaxExclusiveRule', $interval = 'P10675199DT2H49M5.4775807S');
@@ -57,7 +55,7 @@ final class MaxExclusiveRuleTest extends AbstractRuleTest
 
     public function testApplyRuleWithDateIntervalMustBeFalseWithHigherInterval(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value \'P10675199DT2H49M6.4775807S\', the value must be chronologically less than P10675199DT2H49M5.4775807S');
 
         $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MaxExclusiveRule', 'P10675199DT2H49M5.4775807S');

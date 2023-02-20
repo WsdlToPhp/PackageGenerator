@@ -170,13 +170,13 @@ class ApiHotelReservationType extends AbstractStructBase
         return $this->ResStatus;
     }
     /**
-     * This method is responsible for validating the value passed to the setResStatus method
+     * This method is responsible for validating the value(s) passed to the setResStatus method
      * This method is willingly generated in order to preserve the one-line inline validation within the setResStatus method
-     * This is a set of validation rules based on the union types associated to the property being set by the setResStatus method
+     * This is a set of validation rules based on the union types associated to the property ResStatus
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateResStatusForUnionConstraintsFromSetResStatus($value): string
+    public static function validateResStatusForUnionConstraintFromSetResStatus($value): string
     {
         $message = '';
         // validation for constraint: enumeration
@@ -210,7 +210,7 @@ class ApiHotelReservationType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($resStatus, true), gettype($resStatus)), __LINE__);
         }
         // validation for constraint: union(PMS_ResStatusType, TransactionActionType, UpperCaseAlphaLength1to2)
-        if ('' !== ($resStatusUnionErrorMessage = self::validateResStatusForUnionConstraintsFromSetResStatus($resStatus))) {
+        if ('' !== ($resStatusUnionErrorMessage = self::validateResStatusForUnionConstraintFromSetResStatus($resStatus))) {
             throw new InvalidArgumentException($resStatusUnionErrorMessage, __LINE__);
         }
         $this->ResStatus = $resStatus;

@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Model;
 
-use DOMDocument;
-use Exception;
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\WsdlHandler\AbstractDocument as AbstractDocumentHandler;
 
@@ -30,13 +27,13 @@ abstract class AbstractDocument extends AbstractModel
     protected function initContentFromContentString(string $content): AbstractDocument
     {
         $contentClass = $this->contentClass();
-        $domDocument = new DOMDocument('1.0', 'utf-8');
+        $domDocument = new \DOMDocument('1.0', 'utf-8');
 
         try {
             $domDocument->loadXML($content, LIBXML_NOERROR);
             $this->content = new $contentClass($domDocument, $this->generator);
-        } catch (Exception $exception) {
-            throw new InvalidArgumentException(sprintf('Unable to load document at "%s"', $this->getName()), __LINE__, $exception);
+        } catch (\Exception $exception) {
+            throw new \InvalidArgumentException(sprintf('Unable to load document at "%s"', $this->getName()), __LINE__, $exception);
         }
 
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Model;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Generator\Utils;
 
@@ -70,7 +69,7 @@ final class StructValue extends AbstractModel
     public function setIndex(int $index): StructValue
     {
         if (0 > $index) {
-            throw new InvalidArgumentException(sprintf('The value\'s index must be a positive integer, "%s" given', var_export($index, true)));
+            throw new \InvalidArgumentException(sprintf('The value\'s index must be a positive integer, "%s" given', var_export($index, true)));
         }
         $this->index = $index;
 

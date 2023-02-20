@@ -198,12 +198,13 @@ class ApiAddressType extends AbstractStructBase
         return $this->AddressLine;
     }
     /**
-     * This method is responsible for validating the values passed to the setAddressLine method
+     * This method is responsible for validating the value(s) passed to the setAddressLine method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAddressLine method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAddressLineForArrayConstraintsFromSetAddressLine(?array $values = []): string
+    public static function validateAddressLineForArrayConstraintFromSetAddressLine(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -224,17 +225,17 @@ class ApiAddressType extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAddressLine method
+     * This method is responsible for validating the value(s) passed to the setAddressLine method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAddressLine method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAddressLineForMaxLengthConstraintFromSetAddressLine($values): string
+    public static function validateAddressLineForMaxLengthConstraintFromSetAddressLine(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $addressTypeAddressLineItem) {
+        foreach (($values ?? []) as $addressTypeAddressLineItem) {
             // validation for constraint: maxLength(255)
             if (mb_strlen((string) $addressTypeAddressLineItem) > 255) {
                 $invalidValues[] = var_export($addressTypeAddressLineItem, true);
@@ -248,17 +249,17 @@ class ApiAddressType extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAddressLine method
+     * This method is responsible for validating the value(s) passed to the setAddressLine method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAddressLine method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAddressLineForMinLengthConstraintFromSetAddressLine($values): string
+    public static function validateAddressLineForMinLengthConstraintFromSetAddressLine(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $addressTypeAddressLineItem) {
+        foreach (($values ?? []) as $addressTypeAddressLineItem) {
             // validation for constraint: minLength(1)
             if (mb_strlen((string) $addressTypeAddressLineItem) < 1) {
                 $invalidValues[] = var_export($addressTypeAddressLineItem, true);
@@ -280,7 +281,7 @@ class ApiAddressType extends AbstractStructBase
     public function setAddressLine(?array $addressLine = null): self
     {
         // validation for constraint: array
-        if ('' !== ($addressLineArrayErrorMessage = self::validateAddressLineForArrayConstraintsFromSetAddressLine($addressLine))) {
+        if ('' !== ($addressLineArrayErrorMessage = self::validateAddressLineForArrayConstraintFromSetAddressLine($addressLine))) {
             throw new InvalidArgumentException($addressLineArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxLength(255)

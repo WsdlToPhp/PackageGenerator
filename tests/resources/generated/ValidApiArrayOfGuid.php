@@ -8,24 +8,26 @@ use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructArrayBase;
 
 /**
- * This class stands for ArrayOfString ArrayType
+ * This class stands for ArrayOfGuid ArrayType
  * @package Api
  * @subpackage Arrays
  * @release 1.1.0
  */
-class ApiArrayOfString extends AbstractStructArrayBase
+class ApiArrayOfGuid extends AbstractStructArrayBase
 {
     /**
      * The string
      * Meta information extracted from the WSDL
+     * - base: xsd:string
      * - maxOccurs: unbounded
      * - minOccurs: 0
+     * - pattern: [\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}
      * @var string[]
      */
     protected ?array $string = null;
     /**
-     * Constructor method for ArrayOfString
-     * @uses ApiArrayOfString::setString()
+     * Constructor method for ArrayOfGuid
+     * @uses ApiArrayOfGuid::setString()
      * @param string[] $string
      */
     public function __construct(?array $string = null)
@@ -55,10 +57,10 @@ class ApiArrayOfString extends AbstractStructArrayBase
         }
         $message = '';
         $invalidValues = [];
-        foreach ($values as $arrayOfStringStringItem) {
+        foreach ($values as $arrayOfGuidStringItem) {
             // validation for constraint: itemType
-            if (!is_string($arrayOfStringStringItem)) {
-                $invalidValues[] = is_object($arrayOfStringStringItem) ? get_class($arrayOfStringStringItem) : sprintf('%s(%s)', gettype($arrayOfStringStringItem), var_export($arrayOfStringStringItem, true));
+            if (!is_string($arrayOfGuidStringItem)) {
+                $invalidValues[] = is_object($arrayOfGuidStringItem) ? get_class($arrayOfGuidStringItem) : sprintf('%s(%s)', gettype($arrayOfGuidStringItem), var_export($arrayOfGuidStringItem, true));
             }
         }
         if (!empty($invalidValues)) {
@@ -69,16 +71,44 @@ class ApiArrayOfString extends AbstractStructArrayBase
         return $message;
     }
     /**
+     * This method is responsible for validating the value(s) passed to the setString method
+     * This method is willingly generated in order to preserve the one-line inline validation within the setString method
+     * This has to validate that the items contained by the array match the defined pattern
+     * @param array $values
+     * @return string A non-empty message if the values does not match the validation rules
+     */
+    public static function validateStringForPatternConstraintFromSetString(?array $values = null): string
+    {
+        $message = '';
+        $invalidValues = [];
+        foreach (($values ?? []) as $arrayOfGuidStringItem) {
+            // validation for constraint: pattern([\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12})
+            if (!preg_match('/[\\da-fA-F]{8}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{12}/', $arrayOfGuidStringItem)) {
+                $invalidValues[] = var_export($arrayOfGuidStringItem, true);
+            }
+        }
+        if (!empty($invalidValues)) {
+            $message = sprintf('Invalid value(s) %s, please provide literals that are among the set of character sequences denoted by the regular expression /[\\da-fA-F]{8}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{12}/\'', implode(', ', $invalidValues));
+        }
+        unset($invalidValues);
+        
+        return $message;
+    }
+    /**
      * Set string value
      * @throws InvalidArgumentException
      * @param string[] $string
-     * @return \ArrayType\ApiArrayOfString
+     * @return \ArrayType\ApiArrayOfGuid
      */
     public function setString(?array $string = null): self
     {
         // validation for constraint: array
         if ('' !== ($stringArrayErrorMessage = self::validateStringForArrayConstraintFromSetString($string))) {
             throw new InvalidArgumentException($stringArrayErrorMessage, __LINE__);
+        }
+        // validation for constraint: pattern([\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12})
+        if ('' !== ($stringPatternErrorMessage = self::validateStringForPatternConstraintFromSetString($string))) {
+            throw new InvalidArgumentException($stringPatternErrorMessage, __LINE__);
         }
         $this->string = $string;
         
@@ -130,6 +160,25 @@ class ApiArrayOfString extends AbstractStructArrayBase
     public function offsetGet($offset): ?string
     {
         return parent::offsetGet($offset);
+    }
+    /**
+     * Add element to array
+     * @see AbstractStructArrayBase::add()
+     * @throws InvalidArgumentException
+     * @param string $item
+     * @return \ArrayType\ApiArrayOfGuid
+     */
+    public function add($item): self
+    {
+        // validation for constraint: itemType
+        if (!is_string($item)) {
+            throw new InvalidArgumentException(sprintf('The string property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+        }
+        // validation for constraint: pattern([\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12})
+        if (!preg_match('/[\\da-fA-F]{8}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{12}/', $item)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[\\da-fA-F]{8}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{12}/', var_export($item, true)), __LINE__);
+        }
+        return parent::add($item);
     }
     /**
      * Returns the attribute name

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Model;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Model\StructValue;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
@@ -29,7 +28,7 @@ final class StructValueTest extends AbstractTestCase
 
     public function testInvalidIndexValue(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $struct = StructTest::instance('Foot', true);
         new StructValue($struct->getGenerator(), 'foo', -1, $struct);
@@ -38,7 +37,7 @@ final class StructValueTest extends AbstractTestCase
 
     public function testSetInvalidIndexValue(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $struct = StructTest::instance('Foot', true);
         $struct->addValue(1);

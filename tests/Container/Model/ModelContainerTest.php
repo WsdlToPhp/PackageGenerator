@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Container\Model;
 
-use InvalidArgumentException;
-use TypeError;
 use WsdlToPhp\PackageGenerator\Container\Model\EmptyModel as ModelContainer;
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 use WsdlToPhp\PackageGenerator\Model\Struct;
@@ -31,7 +29,7 @@ final class ModelContainerTest extends AbstractTestCase
 
     public function testExceptionOnObject(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         $modelContainer = self::instance();
         $modelContainer->add([]);
@@ -39,7 +37,7 @@ final class ModelContainerTest extends AbstractTestCase
 
     public function testGetExceptionOnValue(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $modelContainer = self::instance();
         $modelContainer->add(new EmptyModel(self::getBingGeneratorInstance(), 'Foo'));
@@ -50,7 +48,7 @@ final class ModelContainerTest extends AbstractTestCase
 
     public function testExceptionOnModelClass(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $modelContainer = self::instance();
         $modelContainer->add(new Struct(self::getBingGeneratorInstance(), 'Foo'));

@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Parser\SoapClient;
 
-use DOMDocument;
-
 final class Structs extends AbstractParser
 {
     public const STRUCT_DECLARATION = 'struct';
     public const UNION_DECLARATION = 'union';
     public const ANY_XML_DECLARATION = '<anyXML>';
-    public const ANY_XML_TYPE = DOMDocument::class;
+    public const ANY_XML_TYPE = \DOMDocument::class;
 
     protected array $definedStructs = [];
 

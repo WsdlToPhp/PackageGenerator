@@ -680,6 +680,49 @@
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "list": "",
+                "inheritance": "string",
+                "abstract": false,
+                "meta": {
+                    "base": "xsd:string",
+                    "pattern": "[\\da-fA-F]{8}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{4}-[\\da-fA-F]{12}"
+                },
+                "name": "guid",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "guid",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "maxOccurs": "unbounded",
+                            "minOccurs": "0"
+                        },
+                        "name": "string",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": [],
+                "values": [],
+                "list": "",
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ArrayOfGuid",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
                 "attributes": [
                     {
                         "containsElements": true,

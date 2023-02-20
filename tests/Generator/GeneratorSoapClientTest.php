@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Generator;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
@@ -24,7 +23,7 @@ class GeneratorSoapClientTest extends AbstractTestCase
             ->setOrigin(self::schemaPartnerPath())
         ;
 
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         new Generator($options);
     }

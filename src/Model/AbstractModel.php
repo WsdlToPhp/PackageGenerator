@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Model;
 
-use InvalidArgumentException;
-use JsonSerializable;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\AbstractReservedWord;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\PhpReservedKeyword;
@@ -16,7 +14,7 @@ use WsdlToPhp\PackageGenerator\Generator\Utils as GeneratorUtils;
 /**
  * Class AbstractModel defines the basic properties and methods to operations and structs extracted from the WSDL.
  */
-abstract class AbstractModel extends AbstractGeneratorAware implements JsonSerializable
+abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSerializable
 {
     public const META_DOCUMENTATION = 'documentation';
 
@@ -117,9 +115,9 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
     public function addMeta(string $metaName, $metaValue): self
     {
         if (!is_scalar($metaName) || (!is_scalar($metaValue) && !is_array($metaValue))) {
-            throw new InvalidArgumentException(sprintf('Invalid meta name "%s" or value "%s". Please provide scalar meta name and scalar or array meta value.', gettype($metaName), gettype($metaValue)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid meta name "%s" or value "%s". Please provide scalar meta name and scalar or array meta value.', gettype($metaName), gettype($metaValue)), __LINE__);
         }
-        $metaValue = is_scalar($metaValue) ? ((is_numeric($metaValue) || is_bool($metaValue) ? $metaValue : trim($metaValue))) : $metaValue;
+        $metaValue = is_scalar($metaValue) ? (is_numeric($metaValue) || is_bool($metaValue) ? $metaValue : trim($metaValue)) : $metaValue;
         if (is_scalar($metaValue) || is_array($metaValue)) {
             if (!array_key_exists($metaName, $this->meta)) {
                 $this->meta[$metaName] = $metaValue;
@@ -310,7 +308,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
 
     public function getReservedMethodsInstance(): AbstractReservedWord
     {
-        throw new InvalidArgumentException(sprintf('The method %s should be defined in the class %s', __FUNCTION__, get_called_class()));
+        throw new \InvalidArgumentException(sprintf('The method %s should be defined in the class %s', __FUNCTION__, get_called_class()));
     }
 
     public function replaceReservedMethod(string $methodName, ?string $context = null): string
@@ -459,15 +457,15 @@ abstract class AbstractModel extends AbstractGeneratorAware implements JsonSeria
     protected static function checkSerializedJson(array $args): void
     {
         if (!array_key_exists('__CLASS__', $args)) {
-            throw new InvalidArgumentException(sprintf('__CLASS__ key is missing from "%s"', var_export($args, true)));
+            throw new \InvalidArgumentException(sprintf('__CLASS__ key is missing from "%s"', var_export($args, true)));
         }
 
         if (!class_exists($args['__CLASS__'])) {
-            throw new InvalidArgumentException(sprintf('Class "%s" is unknown', $args['__CLASS__']));
+            throw new \InvalidArgumentException(sprintf('Class "%s" is unknown', $args['__CLASS__']));
         }
 
         if (!array_key_exists('name', $args)) {
-            throw new InvalidArgumentException(sprintf('name key is missing from "%s"', var_export($args, true)));
+            throw new \InvalidArgumentException(sprintf('name key is missing from "%s"', var_export($args, true)));
         }
     }
 }

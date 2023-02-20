@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\File\StructEnum as EnumFile;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 
@@ -16,7 +15,7 @@ final class StructEnumTest extends AbstractFile
 {
     public function testSetModelGoodNameTooManyAttributesWithException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $instance = self::bingGeneratorInstance();
         $enum = new EnumFile($instance, 'Foo');

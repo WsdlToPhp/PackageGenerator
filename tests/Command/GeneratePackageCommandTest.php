@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\Command;
 
-use InvalidArgumentException;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -21,7 +20,7 @@ final class GeneratePackageCommandTest extends AbstractTestCase
 {
     public function testExceptionOnDestination(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         AbstractYamlReader::resetInstances();
         $command = new GeneratePackageCommand('WsdlToPhp');
@@ -37,7 +36,7 @@ final class GeneratePackageCommandTest extends AbstractTestCase
 
     public function testExceptionOnComposerName(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         AbstractYamlReader::resetInstances();
         $command = new GeneratePackageCommand('WsdlToPhp');
@@ -54,7 +53,7 @@ final class GeneratePackageCommandTest extends AbstractTestCase
 
     public function testExceptionOnOrigin(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         AbstractYamlReader::resetInstances();
         $command = new GeneratePackageCommand('WsdlToPhp');

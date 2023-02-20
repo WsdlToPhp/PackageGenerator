@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use InvalidArgumentException;
 use StructType\ApiParagraphType;
 use StructType\ApiTaxType;
 
@@ -12,7 +11,7 @@ use StructType\ApiTaxType;
  * @internal
  * @coversDefaultClass
  */
-final class ArrayRuleTest extends AbstractRuleTest
+final class ArrayRuleTest extends AbstractRule
 {
     /**
      * The AddressLine
@@ -27,7 +26,7 @@ final class ArrayRuleTest extends AbstractRuleTest
      */
     public function testSetAddressLineWithNullOnOneItemMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The AddressLine property can only contain items of type string, NULL(NULL) given');
 
         $instance = self::getWhlAddressTypeInstance();
@@ -69,7 +68,7 @@ final class ArrayRuleTest extends AbstractRuleTest
 
     public function testSetTaxDescriptionValueWithStringValueMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The TaxDescription property can only contain items of type \StructType\ApiParagraphType, string(\'\'), integer(1) given');
 
         $instance = self::getWhlTaxTypeInstance();
@@ -82,7 +81,7 @@ final class ArrayRuleTest extends AbstractRuleTest
 
     public function testSetTaxDescriptionValueWithInvalidObjectItemMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('The TaxDescription property can only contain items of type \StructType\ApiParagraphType, StructType\ApiTaxType given');
 
         $instance = self::getWhlTaxTypeInstance();

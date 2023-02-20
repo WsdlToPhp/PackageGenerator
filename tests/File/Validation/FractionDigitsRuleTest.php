@@ -4,20 +4,18 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use InvalidArgumentException;
-
 /**
  * @internal
  * @coversDefaultClass
  */
-final class FractionDigitsRuleTest extends AbstractRuleTest
+final class FractionDigitsRuleTest extends AbstractRule
 {
     /**
      * - fractionDigits: 3.
      */
     public function testSetAmountValueWithTooManyFractionDigitsMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value 2.12345, the value must at most contain 3 fraction digits, 5 given');
 
         // hack as precision can return false negative with 2.1234500000000001
@@ -42,7 +40,7 @@ final class FractionDigitsRuleTest extends AbstractRuleTest
      */
     public function testSetWeightValueWithDecimalMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value 200.01, the value must at most contain 0 fraction digits, 2 given');
 
         $functionName = self::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 0);

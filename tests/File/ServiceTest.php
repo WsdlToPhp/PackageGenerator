@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\GeneratorOptions;
 use WsdlToPhp\PackageGenerator\File\Service as ServiceFile;
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
@@ -19,7 +18,7 @@ final class ServiceTest extends AbstractFile
 {
     public function testSetModelGoodNameTooManyAttributesWithException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $instance = self::bingGeneratorInstance();
         $service = new ServiceFile($instance, 'Foo');

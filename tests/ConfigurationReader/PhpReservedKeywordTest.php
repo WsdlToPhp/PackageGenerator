@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\ConfigurationReader;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\PhpReservedKeyword;
 use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
@@ -281,14 +280,14 @@ final class PhpReservedKeywordTest extends AbstractTestCase
 
     public function testException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         PhpReservedKeyword::instance(__DIR__.'/../resources/bad_php_reserved_keywords.yml');
     }
 
     public function testExceptionForUnexistingFile(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         PhpReservedKeyword::instance(__DIR__.'/../resources/bad_php_reserved_keywords');
     }

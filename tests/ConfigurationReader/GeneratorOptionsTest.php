@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\ConfigurationReader;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 use WsdlToPhp\PackageBase\AbstractStructArrayBase;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -25,7 +24,7 @@ final class GeneratorOptionsTest extends AbstractTestCase
 
     public function testParseException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         GeneratorOptions::instance(__DIR__.'/../resources/bad_generator_options.yml');
     }
@@ -523,7 +522,7 @@ final class GeneratorOptionsTest extends AbstractTestCase
 
     public function testSetExistingOptionValueWithInvalidValue(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         self::optionsInstance()->setOptionValue('category', 'null');
         self::optionsInstance()->setCategory(null);
@@ -541,14 +540,14 @@ final class GeneratorOptionsTest extends AbstractTestCase
 
     public function testSetUnexistingOptionValueWithInvalidValue(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         self::optionsInstance()->setGenerateTutorialFile('null');
     }
 
     public function testGetUnexistingOptionValue(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         self::optionsInstance()->getOptionValue('myOption');
     }

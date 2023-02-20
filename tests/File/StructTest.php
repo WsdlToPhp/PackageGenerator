@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\File\Struct as StructFile;
 use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
@@ -17,7 +16,7 @@ final class StructTest extends AbstractFile
 {
     public function testSetModelGoodNameTooManyAttributesWithException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $instance = self::bingGeneratorInstance();
         $struct = new StructFile($instance, 'Foo');
@@ -26,7 +25,7 @@ final class StructTest extends AbstractFile
 
     public function testExceptionOnWrite(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $file = new StructFile(self::bingGeneratorInstance(), 'foo');
 

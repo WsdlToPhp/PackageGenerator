@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\File\StructArray as ArrayFile;
 use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 
@@ -16,7 +15,7 @@ final class StructArrayTest extends AbstractFile
 {
     public function testSetModelGoodNameTooManyAttributesWithException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $struct = new StructModel(self::bingGeneratorInstance(), 'FooArray');
         $struct
@@ -29,7 +28,7 @@ final class StructArrayTest extends AbstractFile
 
     public function testSetModelBasNameOneAttributeWithException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         $struct = new StructModel(self::bingGeneratorInstance(), 'Foo');
         $struct->addAttribute('bar', 'string');
@@ -79,6 +78,21 @@ final class StructArrayTest extends AbstractFile
             $this->assertSameFileContent('ValidApiArrayOfString', $struct);
         } else {
             $this->fail('Unable to find ArrayOfString struct for file generation');
+        }
+    }
+
+    public function testWriteBingSearchArrayOfGuid(): void
+    {
+        $generator = self::bingGeneratorInstance();
+        if (($model = $generator->getStructByName('ArrayOfGuid')) instanceof StructModel) {
+            $struct = new ArrayFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write()
+            ;
+            $this->assertSameFileContent('ValidApiArrayOfGuid', $struct);
+        } else {
+            $this->fail('Unable to find ArrayOfGuid struct for file generation');
         }
     }
 

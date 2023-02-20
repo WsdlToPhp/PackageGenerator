@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\Generator\Generator;
 use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Method as MethodModel;
@@ -115,8 +114,8 @@ abstract class AbstractOperation
     {
         try {
             return new PhpFunctionParameter($name, PhpFunctionParameter::NO_VALUE, $type);
-        } catch (InvalidArgumentException $exception) {
-            throw new InvalidArgumentException(sprintf('Unable to create function parameter for method "%s" with type "%s" and name "%s"', $this->getMethod()->getName(), var_export($type, true), $name), __LINE__, $exception);
+        } catch (\InvalidArgumentException $exception) {
+            throw new \InvalidArgumentException(sprintf('Unable to create function parameter for method "%s" with type "%s" and name "%s"', $this->getMethod()->getName(), var_export($type, true), $name), __LINE__, $exception);
         }
     }
 

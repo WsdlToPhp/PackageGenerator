@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\File;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageGenerator\ConfigurationReader\XsdTypes;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Constant;
 use WsdlToPhp\PackageGenerator\Container\PhpElement\Method;
@@ -70,7 +69,7 @@ abstract class AbstractModelFile extends AbstractFile
     public function writeFile(bool $withSrc = true): void
     {
         if (!$this->getModel()) {
-            throw new InvalidArgumentException('You MUST define the model before being able to generate the file', __LINE__);
+            throw new \InvalidArgumentException('You MUST define the model before being able to generate the file', __LINE__);
         }
 
         GeneratorUtils::createDirectory($this->getFileDestination($withSrc));
@@ -134,10 +133,10 @@ abstract class AbstractModelFile extends AbstractFile
         $attribute = $this->getStructAttribute($attribute);
 
         if (!$attribute instanceof StructAttributeModel) {
-            throw new InvalidArgumentException('Could not find any valid StructAttribute');
+            throw new \InvalidArgumentException('Could not find any valid StructAttribute');
         }
 
-        if ($returnArrayType && ($attribute->isArray())) {
+        if ($returnArrayType && $attribute->isArray()) {
             return self::TYPE_ARRAY;
         }
 
@@ -174,7 +173,7 @@ abstract class AbstractModelFile extends AbstractFile
         $attribute = $this->getStructAttribute($fromAttribute);
 
         if (!$attribute instanceof StructAttributeModel) {
-            throw new InvalidArgumentException('Could not find any valid StructAttribute');
+            throw new \InvalidArgumentException('Could not find any valid StructAttribute');
         }
 
         $attributeType = $this->getStructAttributeType($attribute, true, $returnArrayType);

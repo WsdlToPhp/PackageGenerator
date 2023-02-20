@@ -4,14 +4,11 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use InvalidArgumentException;
-use TypeError;
-
 /**
  * @internal
  * @coversDefaultClass
  */
-final class MaxLengthRuleTest extends AbstractRuleTest
+final class MaxLengthRuleTest extends AbstractRule
 {
     /**
      * The email
@@ -25,7 +22,7 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      */
     public function testSetEmailWithTooLongCharactersMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid length of 107, the number of characters/octets contained by the literal must be less than or equal to 100');
 
         $instance = self::getDocDataPaymentsShoppperInstance();
@@ -79,7 +76,7 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      */
     public function testSetEmailWithNullMustThrowAnException(): void
     {
-        $this->expectException(TypeError::class);
+        $this->expectException(\TypeError::class);
 
         $instance = self::getDocDataPaymentsShoppperInstance();
 
@@ -101,7 +98,7 @@ final class MaxLengthRuleTest extends AbstractRuleTest
      */
     public function testSetAddressLineWithTooManyCharactersPerItemMustThrowAnException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid length for value(s) \'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\', \'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\', the number of characters/octets contained by the literal must be less than or equal to 255');
 
         $instance = self::getWhlAddressTypeInstance();

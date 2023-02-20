@@ -1524,12 +1524,13 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         return $this->BillingAgreementDetails;
     }
     /**
-     * This method is responsible for validating the values passed to the setBillingAgreementDetails method
+     * This method is responsible for validating the value(s) passed to the setBillingAgreementDetails method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBillingAgreementDetails method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBillingAgreementDetailsForArrayConstraintsFromSetBillingAgreementDetails(?array $values = []): string
+    public static function validateBillingAgreementDetailsForArrayConstraintFromSetBillingAgreementDetails(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1558,7 +1559,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setBillingAgreementDetails(?array $billingAgreementDetails = null): self
     {
         // validation for constraint: array
-        if ('' !== ($billingAgreementDetailsArrayErrorMessage = self::validateBillingAgreementDetailsForArrayConstraintsFromSetBillingAgreementDetails($billingAgreementDetails))) {
+        if ('' !== ($billingAgreementDetailsArrayErrorMessage = self::validateBillingAgreementDetailsForArrayConstraintFromSetBillingAgreementDetails($billingAgreementDetails))) {
             throw new InvalidArgumentException($billingAgreementDetailsArrayErrorMessage, __LINE__);
         }
         $this->BillingAgreementDetails = $billingAgreementDetails;
@@ -1590,12 +1591,13 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         return $this->PromoCodes;
     }
     /**
-     * This method is responsible for validating the values passed to the setPromoCodes method
+     * This method is responsible for validating the value(s) passed to the setPromoCodes method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPromoCodes method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePromoCodesForArrayConstraintsFromSetPromoCodes(?array $values = []): string
+    public static function validatePromoCodesForArrayConstraintFromSetPromoCodes(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1624,7 +1626,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setPromoCodes(?array $promoCodes = null): self
     {
         // validation for constraint: array
-        if ('' !== ($promoCodesArrayErrorMessage = self::validatePromoCodesForArrayConstraintsFromSetPromoCodes($promoCodes))) {
+        if ('' !== ($promoCodesArrayErrorMessage = self::validatePromoCodesForArrayConstraintFromSetPromoCodes($promoCodes))) {
             throw new InvalidArgumentException($promoCodesArrayErrorMessage, __LINE__);
         }
         $this->PromoCodes = $promoCodes;
@@ -1861,12 +1863,13 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         return $this->OtherPaymentMethods;
     }
     /**
-     * This method is responsible for validating the values passed to the setOtherPaymentMethods method
+     * This method is responsible for validating the value(s) passed to the setOtherPaymentMethods method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOtherPaymentMethods method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateOtherPaymentMethodsForArrayConstraintsFromSetOtherPaymentMethods(?array $values = []): string
+    public static function validateOtherPaymentMethodsForArrayConstraintFromSetOtherPaymentMethods(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1895,7 +1898,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setOtherPaymentMethods(?array $otherPaymentMethods = null): self
     {
         // validation for constraint: array
-        if ('' !== ($otherPaymentMethodsArrayErrorMessage = self::validateOtherPaymentMethodsForArrayConstraintsFromSetOtherPaymentMethods($otherPaymentMethods))) {
+        if ('' !== ($otherPaymentMethodsArrayErrorMessage = self::validateOtherPaymentMethodsForArrayConstraintFromSetOtherPaymentMethods($otherPaymentMethods))) {
             throw new InvalidArgumentException($otherPaymentMethodsArrayErrorMessage, __LINE__);
         }
         $this->OtherPaymentMethods = $otherPaymentMethods;
@@ -1946,12 +1949,13 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         return $this->PaymentDetails;
     }
     /**
-     * This method is responsible for validating the values passed to the setPaymentDetails method
+     * This method is responsible for validating the value(s) passed to the setPaymentDetails method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentDetails method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePaymentDetailsForArrayConstraintsFromSetPaymentDetails(?array $values = []): string
+    public static function validatePaymentDetailsForArrayConstraintFromSetPaymentDetails(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1980,7 +1984,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setPaymentDetails(?array $paymentDetails = null): self
     {
         // validation for constraint: array
-        if ('' !== ($paymentDetailsArrayErrorMessage = self::validatePaymentDetailsForArrayConstraintsFromSetPaymentDetails($paymentDetails))) {
+        if ('' !== ($paymentDetailsArrayErrorMessage = self::validatePaymentDetailsForArrayConstraintFromSetPaymentDetails($paymentDetails))) {
             throw new InvalidArgumentException($paymentDetailsArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(10)
@@ -2020,12 +2024,13 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         return $this->FlatRateShippingOptions;
     }
     /**
-     * This method is responsible for validating the values passed to the setFlatRateShippingOptions method
+     * This method is responsible for validating the value(s) passed to the setFlatRateShippingOptions method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFlatRateShippingOptions method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFlatRateShippingOptionsForArrayConstraintsFromSetFlatRateShippingOptions(?array $values = []): string
+    public static function validateFlatRateShippingOptionsForArrayConstraintFromSetFlatRateShippingOptions(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2054,7 +2059,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setFlatRateShippingOptions(?array $flatRateShippingOptions = null): self
     {
         // validation for constraint: array
-        if ('' !== ($flatRateShippingOptionsArrayErrorMessage = self::validateFlatRateShippingOptionsForArrayConstraintsFromSetFlatRateShippingOptions($flatRateShippingOptions))) {
+        if ('' !== ($flatRateShippingOptionsArrayErrorMessage = self::validateFlatRateShippingOptionsForArrayConstraintFromSetFlatRateShippingOptions($flatRateShippingOptions))) {
             throw new InvalidArgumentException($flatRateShippingOptionsArrayErrorMessage, __LINE__);
         }
         $this->FlatRateShippingOptions = $flatRateShippingOptions;
@@ -2335,12 +2340,13 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         return $this->SurveyChoice;
     }
     /**
-     * This method is responsible for validating the values passed to the setSurveyChoice method
+     * This method is responsible for validating the value(s) passed to the setSurveyChoice method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSurveyChoice method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSurveyChoiceForArrayConstraintsFromSetSurveyChoice(?array $values = []): string
+    public static function validateSurveyChoiceForArrayConstraintFromSetSurveyChoice(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2369,7 +2375,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setSurveyChoice(?array $surveyChoice = null): self
     {
         // validation for constraint: array
-        if ('' !== ($surveyChoiceArrayErrorMessage = self::validateSurveyChoiceForArrayConstraintsFromSetSurveyChoice($surveyChoice))) {
+        if ('' !== ($surveyChoiceArrayErrorMessage = self::validateSurveyChoiceForArrayConstraintFromSetSurveyChoice($surveyChoice))) {
             throw new InvalidArgumentException($surveyChoiceArrayErrorMessage, __LINE__);
         }
         $this->SurveyChoice = $surveyChoice;
@@ -2450,12 +2456,13 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         return $this->Incentives;
     }
     /**
-     * This method is responsible for validating the values passed to the setIncentives method
+     * This method is responsible for validating the value(s) passed to the setIncentives method
      * This method is willingly generated in order to preserve the one-line inline validation within the setIncentives method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateIncentivesForArrayConstraintsFromSetIncentives(?array $values = []): string
+    public static function validateIncentivesForArrayConstraintFromSetIncentives(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2484,7 +2491,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setIncentives(?array $incentives = null): self
     {
         // validation for constraint: array
-        if ('' !== ($incentivesArrayErrorMessage = self::validateIncentivesForArrayConstraintsFromSetIncentives($incentives))) {
+        if ('' !== ($incentivesArrayErrorMessage = self::validateIncentivesForArrayConstraintFromSetIncentives($incentives))) {
             throw new InvalidArgumentException($incentivesArrayErrorMessage, __LINE__);
         }
         $this->Incentives = $incentives;
@@ -2615,12 +2622,13 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         return $this->CoupledBuckets;
     }
     /**
-     * This method is responsible for validating the values passed to the setCoupledBuckets method
+     * This method is responsible for validating the value(s) passed to the setCoupledBuckets method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCoupledBuckets method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCoupledBucketsForArrayConstraintsFromSetCoupledBuckets(?array $values = []): string
+    public static function validateCoupledBucketsForArrayConstraintFromSetCoupledBuckets(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2649,7 +2657,7 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setCoupledBuckets(?array $coupledBuckets = null): self
     {
         // validation for constraint: array
-        if ('' !== ($coupledBucketsArrayErrorMessage = self::validateCoupledBucketsForArrayConstraintsFromSetCoupledBuckets($coupledBuckets))) {
+        if ('' !== ($coupledBucketsArrayErrorMessage = self::validateCoupledBucketsForArrayConstraintFromSetCoupledBuckets($coupledBuckets))) {
             throw new InvalidArgumentException($coupledBucketsArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(5)
