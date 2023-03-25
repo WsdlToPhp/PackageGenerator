@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
+use WsdlToPhp\PackageGenerator\File\Validation\MinInclusiveRule;
+
 /**
  * @internal
  * @coversDefaultClass
@@ -96,19 +98,19 @@ final class MinInclusiveRuleTest extends AbstractRule
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value \'-P10675199DT2H49M6.4775807S\', the value must be chronologically greater than or equal to -P10675199DT2H49M5.4775807S');
 
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinInclusiveRule', '-P10675199DT2H49M5.4775807S');
+        $functionName = parent::createRuleFunction(MinInclusiveRule::class, '-P10675199DT2H49M5.4775807S');
         $this->assertTrue(call_user_func($functionName, '-P10675199DT2H49M6.4775807S'));
     }
 
     public function testApplyRuleWithDateIntervalMustBeTrueWithSameInterval(): void
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinInclusiveRule', $interval = '-P10675199DT2H49M5.4775807S');
+        $functionName = parent::createRuleFunction(MinInclusiveRule::class, $interval = '-P10675199DT2H49M5.4775807S');
         $this->assertTrue(call_user_func($functionName, $interval));
     }
 
     public function testApplyRuleWithDateIntervalMustBeTrueWthHigherInterval(): void
     {
-        $functionName = parent::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\MinInclusiveRule', '-P10675199DT2H49M5.4775807S');
+        $functionName = parent::createRuleFunction(MinInclusiveRule::class, '-P10675199DT2H49M5.4775807S');
         $this->assertTrue(call_user_func($functionName, '-P10675199DT2H49M4.4775807S'));
     }
 }

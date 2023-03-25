@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
+use WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule;
+
 /**
  * @internal
  * @coversDefaultClass
@@ -30,7 +32,7 @@ final class FractionDigitsRuleTest extends AbstractRule
      */
     public function testSetWeightValueWithIntegerMustPass(): void
     {
-        $functionName = self::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 0);
+        $functionName = self::createRuleFunction(FractionDigitsRule::class, 0);
 
         $this->assertTrue(call_user_func($functionName, 200));
     }
@@ -43,7 +45,7 @@ final class FractionDigitsRuleTest extends AbstractRule
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value 200.01, the value must at most contain 0 fraction digits, 2 given');
 
-        $functionName = self::createRuleFunction('WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule', 0);
+        $functionName = self::createRuleFunction(FractionDigitsRule::class, 0);
 
         call_user_func($functionName, 200.010);
     }

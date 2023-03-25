@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
-use function PHPUnit\Framework\assertSame;
-
 /**
  * @internal
  * @coversDefaultClass
@@ -114,7 +112,7 @@ final class PatternRuleTest extends AbstractRule
      * - base: xsd:string
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * - pattern: [\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}
+     * - pattern: [\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}.
      */
     public function testSetStringWithInvalidValuesMustThrowAnException(): void
     {
@@ -132,7 +130,7 @@ final class PatternRuleTest extends AbstractRule
      * - base: xsd:string
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * - pattern: [\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}
+     * - pattern: [\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}.
      */
     public function testSetStringWithInvalidValuesMustPass(): void
     {

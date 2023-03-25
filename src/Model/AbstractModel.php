@@ -308,7 +308,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
 
     public function getReservedMethodsInstance(): AbstractReservedWord
     {
-        throw new \InvalidArgumentException(sprintf('The method %s should be defined in the class %s', __FUNCTION__, get_called_class()));
+        throw new \InvalidArgumentException(sprintf('The method %s should be defined in the class %s', __FUNCTION__, static::class));
     }
 
     public function replaceReservedMethod(string $methodName, ?string $context = null): string
@@ -354,7 +354,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
             'abstract' => $this->isAbstract,
             'meta' => $this->meta,
             'name' => $this->name,
-            '__CLASS__' => get_called_class(),
+            '__CLASS__' => static::class,
         ]);
     }
 

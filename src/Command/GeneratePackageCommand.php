@@ -363,7 +363,7 @@ final class GeneratePackageCommand extends AbstractCommand
     protected function formatArrayForConsole(array $array): array
     {
         array_walk($array, function (&$value, $index) {
-            $value = sprintf('%s: %s', $index, json_encode($value));
+            $value = sprintf('%s: %s', $index, json_encode($value, JSON_THROW_ON_ERROR));
         });
 
         return $array;
