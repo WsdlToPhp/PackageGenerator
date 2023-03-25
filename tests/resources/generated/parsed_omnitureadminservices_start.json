@@ -3758,10 +3758,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "simple_report_suite",
+                "inheritance": "simple_report_suite[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:simple_report_suite[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "simple_report_suite_array",
@@ -3798,10 +3799,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "string",
+                "inheritance": "string[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:string[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "string_array",
@@ -3814,10 +3816,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "int",
+                "inheritance": "int[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:int[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "int_array",
@@ -3934,10 +3937,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "calculated_metric",
+                "inheritance": "calculated_metric[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:calculated_metric[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "calculated_metrics",
@@ -3994,10 +3998,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_calculated_metric",
+                "inheritance": "report_suite_calculated_metric[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_calculated_metric[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_calculated_metric",
@@ -4114,10 +4119,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "video_tracking",
+                "inheritance": "video_tracking[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:video_tracking[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "video_trackings",
@@ -4174,10 +4180,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_video_tracking",
+                "inheritance": "report_suite_video_tracking[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_video_tracking[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_video_tracking",
@@ -4244,10 +4251,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "ui_element",
+                "inheritance": "ui_element[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:ui_element[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "ui_elements",
@@ -4304,10 +4312,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_ui_element",
+                "inheritance": "report_suite_ui_element[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_ui_element[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_ui_element",
@@ -4364,10 +4373,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "key_visitor",
+                "inheritance": "key_visitor[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:key_visitor[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "key_visitors",
@@ -4424,10 +4434,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_key_visitor",
+                "inheritance": "report_suite_key_visitor[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_key_visitor[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_key_visitor",
@@ -4484,10 +4495,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "unique_visitor_variable",
+                "inheritance": "unique_visitor_variable[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:unique_visitor_variable[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "unique_visitor_variables",
@@ -4544,10 +4556,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_unique_visitor_variable",
+                "inheritance": "report_suite_unique_visitor_variable[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_unique_visitor_variable[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_unique_visitor_variable",
@@ -4604,10 +4617,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "base_url",
+                "inheritance": "base_url[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:base_url[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "base_urls",
@@ -4664,10 +4678,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_base_url",
+                "inheritance": "report_suite_base_url[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_base_url[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_base_url",
@@ -4724,10 +4739,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "activation",
+                "inheritance": "activation[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:activation[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "activations",
@@ -4784,10 +4800,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_activation",
+                "inheritance": "report_suite_activation[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_activation[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_activation",
@@ -4844,10 +4861,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "localization",
+                "inheritance": "localization[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:localization[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "localizations",
@@ -4904,10 +4922,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_localization",
+                "inheritance": "report_suite_localization[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_localization[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_localization",
@@ -4974,10 +4993,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "base_currency",
+                "inheritance": "base_currency[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:base_currency[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "base_currencies",
@@ -5034,10 +5054,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_base_currency",
+                "inheritance": "report_suite_base_currency[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_base_currency[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_base_currency",
@@ -5084,10 +5105,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "correlation_rel_id",
+                "inheritance": "correlation_rel_id[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:correlation_rel_id[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "correlation_rel_id_array",
@@ -5164,10 +5186,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "correlation",
+                "inheritance": "correlation[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:correlation[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "correlations",
@@ -5224,10 +5247,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_correlation",
+                "inheritance": "report_suite_correlation[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_correlation[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_correlation",
@@ -5294,10 +5318,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "custom_calendar",
+                "inheritance": "custom_calendar[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:custom_calendar[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "custom_calendars",
@@ -5354,10 +5379,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_custom_calendar",
+                "inheritance": "report_suite_custom_calendar[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_custom_calendar[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_custom_calendar",
@@ -5414,10 +5440,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "default_page",
+                "inheritance": "default_page[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:default_page[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "default_pages",
@@ -5474,10 +5501,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_default_page",
+                "inheritance": "report_suite_default_page[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_default_page[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_default_page",
@@ -5638,10 +5666,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "evar",
+                "inheritance": "evar[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:evar[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "evars",
@@ -5698,10 +5727,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_evar",
+                "inheritance": "report_suite_evar[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_evar[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_evar",
@@ -5758,10 +5788,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "internal_url_filter",
+                "inheritance": "internal_url_filter[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:internal_url_filter[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "internal_url_filters",
@@ -5818,10 +5849,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_internal_url_filter",
+                "inheritance": "report_suite_internal_url_filter[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_internal_url_filter[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_internal_url_filter",
@@ -5908,10 +5940,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "finding_method",
+                "inheritance": "finding_method[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:finding_method[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "finding_methods",
@@ -5968,10 +6001,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_finding_method",
+                "inheritance": "report_suite_finding_method[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_finding_method[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_finding_method",
@@ -6088,10 +6122,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "event",
+                "inheritance": "event[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:event[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "events",
@@ -6158,10 +6193,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_event",
+                "inheritance": "report_suite_event[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_event[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_event",
@@ -6238,10 +6274,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "paid_search",
+                "inheritance": "paid_search[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:paid_search[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "paid_searches",
@@ -6298,10 +6335,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_paid_search",
+                "inheritance": "report_suite_paid_search[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_paid_search[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_paid_search",
@@ -6358,10 +6396,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "page",
+                "inheritance": "page[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:page[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "page_array",
@@ -6408,10 +6447,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_pages",
+                "inheritance": "report_suite_pages[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_pages[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "report_suite_pages_array",
@@ -6488,10 +6528,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "permanent_traffic",
+                "inheritance": "permanent_traffic[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:permanent_traffic[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "permanent_traffic_array",
@@ -6578,10 +6619,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "schedule_spike",
+                "inheritance": "schedule_spike[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:schedule_spike[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "schedule_spike_array",
@@ -6668,10 +6710,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "traffic_var",
+                "inheritance": "traffic_var[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:traffic_var[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "traffic_vars",
@@ -6728,10 +6771,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_traffic_var",
+                "inheritance": "report_suite_traffic_var[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_traffic_var[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_traffic_var",
@@ -6788,10 +6832,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "site_title",
+                "inheritance": "site_title[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:site_title[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "site_titles",
@@ -6848,10 +6893,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_site_title",
+                "inheritance": "report_suite_site_title[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_site_title[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_site_title",
@@ -6908,10 +6954,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "time_zone",
+                "inheritance": "time_zone[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:time_zone[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "time_zones",
@@ -6968,10 +7015,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_time_zone",
+                "inheritance": "report_suite_time_zone[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_time_zone[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_time_zone",
@@ -7038,10 +7086,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "ecommerce",
+                "inheritance": "ecommerce[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:ecommerce[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "ecommerces",
@@ -7098,10 +7147,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_ecommerce",
+                "inheritance": "report_suite_ecommerce[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_ecommerce[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_ecommerce",
@@ -7158,10 +7208,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "template",
+                "inheritance": "template[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:template[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "templates",
@@ -7218,10 +7269,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_template",
+                "inheritance": "report_suite_template[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_template[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_template",
@@ -7268,10 +7320,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "delivery_list_item",
+                "inheritance": "delivery_list_item[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:delivery_list_item[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "delivery_list",
@@ -7338,10 +7391,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "ip_obfuscation",
+                "inheritance": "ip_obfuscation[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:ip_obfuscation[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "ip_obfuscations",
@@ -7398,10 +7452,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_ip_obfuscation",
+                "inheritance": "report_suite_ip_obfuscation[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_ip_obfuscation[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_ip_obfuscation",
@@ -7468,10 +7523,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "rollup",
+                "inheritance": "rollup[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:rollup[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rollup_array",
@@ -7598,10 +7654,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "classification_node",
+                "inheritance": "classification_node[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:classification_node[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "classification_node_array",
@@ -7712,10 +7769,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "classification",
+                "inheritance": "classification[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:classification[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "classifications",
@@ -7772,10 +7830,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_classification",
+                "inheritance": "report_suite_classification[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_classification[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_classification",
@@ -7882,10 +7941,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "perm_login",
+                "inheritance": "perm_login[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:perm_login[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "perm_login_array",
@@ -7952,10 +8012,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "permission_group",
+                "inheritance": "permission_group[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:permission_group[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "permission_group_array",
@@ -8250,10 +8311,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "permissions_account",
+                "inheritance": "permissions_account[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:permissions_account[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "permissions_account_array",
@@ -8344,10 +8406,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "code_archive",
+                "inheritance": "code_archive[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:code_archive[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "code_archives",
@@ -8424,10 +8487,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "code_item",
+                "inheritance": "code_item[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:code_item[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "code_items",
@@ -8484,10 +8548,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "queue_item",
+                "inheritance": "queue_item[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:queue_item[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "queue_items",
@@ -8574,10 +8639,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "log_filter",
+                "inheritance": "log_filter[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:log_filter[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "log_filters",
@@ -8590,10 +8656,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "log_entry",
+                "inheritance": "log_entry[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:log_entry[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "log_entries",
@@ -8818,10 +8885,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "mchannel",
+                "inheritance": "mchannel[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:mchannel[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "mchannel_list",
@@ -8868,10 +8936,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "mchannels",
+                "inheritance": "mchannels[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:mchannels[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "mchannels_list",
@@ -8884,10 +8953,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "int",
+                "inheritance": "int[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:int[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "mchannel_id_list",
@@ -8900,10 +8970,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "rs_mchannel_rulesets",
+                "inheritance": "rs_mchannel_rulesets[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:rs_mchannel_rulesets[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "multi_rs_mchannel_rulesets",
@@ -8950,10 +9021,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "mchannel_ruleset",
+                "inheritance": "mchannel_ruleset[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:mchannel_ruleset[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "mchannel_rulesets",
@@ -9074,10 +9146,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "mchannel_rule",
+                "inheritance": "mchannel_rule[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:mchannel_rule[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "mchannel_rule_list",
@@ -9188,10 +9261,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "string",
+                "inheritance": "string[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:string[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "mchannel_rule_matches",
@@ -9204,10 +9278,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "expiration_event",
+                "inheritance": "expiration_event[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:expiration_event[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "expiration_event_list",
@@ -9308,10 +9383,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "key_value_pair",
+                "inheritance": "key_value_pair[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:key_value_pair[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "hash",
@@ -9478,10 +9554,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "user_token_usage",
+                "inheritance": "user_token_usage[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:user_token_usage[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "token_usage_array",
@@ -9528,10 +9605,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "int",
+                "inheritance": "int[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:int[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "reportlet_ids",
@@ -9686,10 +9764,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "reportletDataContentCell",
+                "inheritance": "reportletDataContentCell[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:reportletDataContentCell[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "reportletDataContentCells",
@@ -9702,10 +9781,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "reportletDataContentCells",
+                "inheritance": "reportletDataContentCells[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:reportletDataContentCells[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "reportletDataContentRows",
@@ -9916,10 +9996,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "string",
+                "inheritance": "string[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:string[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "colArray",
@@ -9932,10 +10013,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "colArray",
+                "inheritance": "colArray[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:colArray[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rowArray",
@@ -9982,10 +10064,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "int",
+                "inheritance": "int[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:int[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "intArray",
@@ -10146,10 +10229,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "string",
+                "inheritance": "string[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:string[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "warningList",
@@ -10162,10 +10246,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "string",
+                "inheritance": "string[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:string[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "errorList",
@@ -10178,10 +10263,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "dataSourceFileInfo",
+                "inheritance": "dataSourceFileInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:dataSourceFileInfo[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "dataSourceFiles",
@@ -10238,10 +10324,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "dsFileStruct",
+                "inheritance": "dsFileStruct[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:dsFileStruct[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "fileInfoResult",
@@ -10426,10 +10513,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "simpleDataSource",
+                "inheritance": "simpleDataSource[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:simpleDataSource[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "simpleDataSourceArray",
@@ -10566,10 +10654,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "dataSourceInfo",
+                "inheritance": "dataSourceInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:dataSourceInfo[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "infoResult",
@@ -10936,10 +11025,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "data_warehouse_segment_rule",
+                "inheritance": "data_warehouse_segment_rule[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:data_warehouse_segment_rule[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "data_warehouse_segment_rule_list",
@@ -11026,10 +11116,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "data_warehouse_segment_group",
+                "inheritance": "data_warehouse_segment_group[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:data_warehouse_segment_group[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "data_warehouse_segment_group_list",
@@ -11086,10 +11177,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "string",
+                "inheritance": "string[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:string[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "data_warehouse_report_row",
@@ -11102,10 +11194,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "data_warehouse_report_row",
+                "inheritance": "data_warehouse_report_row[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:data_warehouse_report_row[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "data_warehouse_report_row_list",
@@ -11118,10 +11211,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "string",
+                "inheritance": "string[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:string[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "data_warehouse_report_headings",
@@ -11232,10 +11326,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "dwsegment",
+                "inheritance": "dwsegment[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:dwsegment[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "dwsegments",
@@ -11282,10 +11377,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "publishingList",
+                "inheritance": "publishingList[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:publishingList[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "publishingLists_array",
@@ -11342,10 +11438,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "segment",
+                "inheritance": "segment[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:segment[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "segments",
@@ -11402,10 +11499,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "segment_folder",
+                "inheritance": "segment_folder[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:segment_folder[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "segment_folders",
@@ -11590,10 +11688,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "reportDefinitionMetric",
+                "inheritance": "reportDefinitionMetric[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:reportDefinitionMetric[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "reportDefinitionMetricList",
@@ -11654,10 +11753,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "reportDefinitionElement",
+                "inheritance": "reportDefinitionElement[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:reportDefinitionElement[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "reportDefinitionElementList",
@@ -11810,10 +11910,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "reportDefinitionSearch",
+                "inheritance": "reportDefinitionSearch[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:reportDefinitionSearch[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "reportDefinitionSearches",
@@ -11876,10 +11977,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "reportDefinitionSegment",
+                "inheritance": "reportDefinitionSegment[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:reportDefinitionSegment[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "reportDefinitionSegmentList",
@@ -12012,10 +12114,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "reportDefinitionSegmentCondition",
+                "inheritance": "reportDefinitionSegmentCondition[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:reportDefinitionSegmentCondition[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "reportDefinitionSegmentConditionList",
@@ -12084,10 +12187,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "reportDefinitionSegmentEvent",
+                "inheritance": "reportDefinitionSegmentEvent[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:reportDefinitionSegmentEvent[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "reportDefinitionSegmentEventList",
@@ -12218,10 +12322,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "usage_log_entry",
+                "inheritance": "usage_log_entry[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:usage_log_entry[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "usage_log_entries",
@@ -12234,10 +12339,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "parent_category",
+                "inheritance": "parent_category[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:parent_category[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "perm_categories",
@@ -12250,10 +12356,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "child_category",
+                "inheritance": "child_category[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:child_category[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "child_categories",
@@ -12364,10 +12471,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "group_sub_category",
+                "inheritance": "group_sub_category[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:group_sub_category[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "group_sub_categories",
@@ -12414,10 +12522,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "group_category",
+                "inheritance": "group_category[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:group_category[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "group_categories",
@@ -12786,10 +12895,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "perm_data",
+                "inheritance": "perm_data[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:perm_data[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "perm_info",
@@ -12900,10 +13010,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "element_mapping",
+                "inheritance": "element_mapping[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:element_mapping[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "element_mappings",
@@ -12950,10 +13061,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_element_mapping",
+                "inheritance": "report_element_mapping[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_element_mapping[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "report_element_mappings",
@@ -13128,10 +13240,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "reportElement",
+                "inheritance": "reportElement[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:reportElement[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "reportElementList",
@@ -13188,10 +13301,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "reportMetric",
+                "inheritance": "reportMetric[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:reportMetric[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "reportMetricList",
@@ -13248,10 +13362,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "reportData",
+                "inheritance": "reportData[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:reportData[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "reportDataList",
@@ -13368,10 +13483,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "double",
+                "inheritance": "double[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:double[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "reportCountList",
@@ -13438,10 +13554,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_queue_item",
+                "inheritance": "report_queue_item[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_queue_item[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "report_queue",
@@ -13644,10 +13761,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "SCM_reportDefinitionElement",
+                "inheritance": "SCM_reportDefinitionElement[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:SCM_reportDefinitionElement[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "SCM_reportDefinitionElementList",
@@ -13754,10 +13872,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "element",
+                "inheritance": "element[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:element[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "elements",
@@ -13814,10 +13933,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_elements",
+                "inheritance": "report_suite_elements[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_elements[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_elements",
@@ -13864,10 +13984,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "metric",
+                "inheritance": "metric[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:metric[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "metrics",
@@ -13924,10 +14045,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_metrics",
+                "inheritance": "report_suite_metrics[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_metrics[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_metrics",
@@ -13984,10 +14106,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "rs_axle_start_date",
+                "inheritance": "rs_axle_start_date[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:rs_axle_start_date[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_axle_start_date",
@@ -14054,10 +14177,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "hierarchy_node",
+                "inheritance": "hierarchy_node[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:hierarchy_node[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "hierarchy_node_array",
@@ -14124,10 +14248,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "hierarchy",
+                "inheritance": "hierarchy[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:hierarchy[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "hierarchies",
@@ -14184,10 +14309,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_hierarchies",
+                "inheritance": "report_suite_hierarchies[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_hierarchies[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_hierarchy",
@@ -14244,10 +14370,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "ip_exclusion",
+                "inheritance": "ip_exclusion[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:ip_exclusion[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "ip_exclusions",
@@ -14304,10 +14431,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_ip_exclusions",
+                "inheritance": "report_suite_ip_exclusions[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_ip_exclusions[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_ip_exclusions",
@@ -14434,10 +14562,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "cost_item",
+                "inheritance": "cost_item[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:cost_item[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "cost_items",
@@ -14484,10 +14613,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "cost",
+                "inheritance": "cost[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:cost[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "costs",
@@ -14544,10 +14674,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_costs",
+                "inheritance": "report_suite_costs[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_costs[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_costs",
@@ -14560,10 +14691,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "string",
+                "inheritance": "string[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:string[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "sub_relation_list",
@@ -14688,10 +14820,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_processing_status",
+                "inheritance": "report_suite_processing_status[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_processing_status[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_processing_status",
@@ -14758,10 +14891,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_rollup_dates",
+                "inheritance": "report_suite_rollup_dates[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_rollup_dates[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_rollup_dates",
@@ -14878,10 +15012,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "saved_filter",
+                "inheritance": "saved_filter[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:saved_filter[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "saved_filters_array",
@@ -14968,10 +15103,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "sc_segment",
+                "inheritance": "sc_segment[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:sc_segment[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "sc_segments",
@@ -15018,10 +15154,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "rs_sc_segments",
+                "inheritance": "rs_sc_segments[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:rs_sc_segments[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_sc_segments",
@@ -15272,10 +15409,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "channel_sub_relations_element",
+                "inheritance": "channel_sub_relations_element[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:channel_sub_relations_element[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "channel_sub_relations",
@@ -15288,10 +15426,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "report_suite_settings",
+                "inheritance": "report_suite_settings[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:report_suite_settings[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rscollection_settings",
@@ -15304,10 +15443,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "save_ip_exclusion",
+                "inheritance": "save_ip_exclusion[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:save_ip_exclusion[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "save_ip_exclusions",
@@ -15408,10 +15548,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "saintresult",
+                "inheritance": "saintresult[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:saintresult[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "saintresults",
@@ -15492,10 +15633,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "row",
+                "inheritance": "row[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:row[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "rows",
@@ -15552,10 +15694,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "pagedetail",
+                "inheritance": "pagedetail[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:pagedetail[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "pagedetails",
@@ -15632,10 +15775,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "compatability",
+                "inheritance": "compatability[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:compatability[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "compatabilitys",
@@ -15692,10 +15836,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "saintjob",
+                "inheritance": "saintjob[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:saintjob[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "saintjobs",
@@ -15834,10 +15979,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "date_received",
+                "inheritance": "date_received[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:date_received[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "date_received_array",
@@ -15850,10 +15996,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "column",
+                "inheritance": "column[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:column[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "columns",
@@ -15866,10 +16013,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "date_range",
+                "inheritance": "date_range[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:date_range[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "date_ranges",
@@ -15882,10 +16030,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "export_filter",
+                "inheritance": "export_filter[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:export_filter[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "export_filters",
@@ -16012,10 +16161,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "saint_ftp",
+                "inheritance": "saint_ftp[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:saint_ftp[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "saint_ftp_list",
@@ -16530,10 +16680,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "scheduledReport",
+                "inheritance": "scheduledReport[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:scheduledReport[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "scheduledReports_array",
@@ -16546,10 +16697,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "scheduleLog",
+                "inheritance": "scheduleLog[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:scheduleLog[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "scheduleLogs_array",
@@ -16562,10 +16714,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "excelWorkbook",
+                "inheritance": "excelWorkbook[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:excelWorkbook[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "excelWorkbooks_array",
@@ -16642,10 +16795,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "survey_summary",
+                "inheritance": "survey_summary[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:survey_summary[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "survey_summary_list",
@@ -16702,10 +16856,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "bookmark",
+                "inheritance": "bookmark[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:bookmark[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "bookmark_list",
@@ -16762,10 +16917,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "formatted_folder",
+                "inheritance": "formatted_folder[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:formatted_folder[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "folder_list",
@@ -16778,10 +16934,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "dashboard_element",
+                "inheritance": "dashboard_element[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:dashboard_element[]",
+                    "base": "SOAP-ENC:Array",
                     "ref": "SOAP-ENC:arrayType"
                 },
                 "name": "dashboard_list",
@@ -22419,2675 +22576,6 @@
                 "abstract": false,
                 "meta": [],
                 "name": "survey_status",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "simple_report_suite[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:simple_report_suite[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "simple_report_suite_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "string[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:string[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "string_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "int[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:int[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "int_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "calculated_metric[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:calculated_metric[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "calculated_metrics",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_calculated_metric[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_calculated_metric[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_calculated_metric",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "video_tracking[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:video_tracking[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "video_trackings",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_video_tracking[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_video_tracking[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_video_tracking",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "ui_element[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:ui_element[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "ui_elements",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_ui_element[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_ui_element[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_ui_element",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "key_visitor[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:key_visitor[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "key_visitors",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_key_visitor[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_key_visitor[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_key_visitor",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "unique_visitor_variable[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:unique_visitor_variable[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "unique_visitor_variables",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_unique_visitor_variable[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_unique_visitor_variable[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_unique_visitor_variable",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "base_url[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:base_url[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "base_urls",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_base_url[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_base_url[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_base_url",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "activation[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:activation[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "activations",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_activation[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_activation[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_activation",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "localization[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:localization[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "localizations",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_localization[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_localization[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_localization",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "base_currency[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:base_currency[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "base_currencies",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_base_currency[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_base_currency[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_base_currency",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "correlation_rel_id[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:correlation_rel_id[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "correlation_rel_id_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "correlation[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:correlation[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "correlations",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_correlation[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_correlation[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_correlation",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "custom_calendar[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:custom_calendar[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "custom_calendars",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_custom_calendar[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_custom_calendar[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_custom_calendar",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "default_page[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:default_page[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "default_pages",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_default_page[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_default_page[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_default_page",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "evar[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:evar[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "evars",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_evar[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_evar[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_evar",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "internal_url_filter[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:internal_url_filter[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "internal_url_filters",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_internal_url_filter[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_internal_url_filter[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_internal_url_filter",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "finding_method[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:finding_method[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "finding_methods",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_finding_method[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_finding_method[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_finding_method",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "event[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:event[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "events",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_event[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_event[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_event",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "paid_search[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:paid_search[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "paid_searches",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_paid_search[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_paid_search[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_paid_search",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "page[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:page[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "page_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_pages[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_pages[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "report_suite_pages_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "permanent_traffic[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:permanent_traffic[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "permanent_traffic_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "schedule_spike[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:schedule_spike[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "schedule_spike_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "traffic_var[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:traffic_var[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "traffic_vars",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_traffic_var[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_traffic_var[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_traffic_var",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "site_title[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:site_title[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "site_titles",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_site_title[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_site_title[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_site_title",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "time_zone[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:time_zone[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "time_zones",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_time_zone[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_time_zone[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_time_zone",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "ecommerce[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:ecommerce[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "ecommerces",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_ecommerce[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_ecommerce[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_ecommerce",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "template[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:template[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "templates",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_template[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_template[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_template",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "delivery_list_item[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:delivery_list_item[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "delivery_list",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "ip_obfuscation[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:ip_obfuscation[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "ip_obfuscations",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_ip_obfuscation[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_ip_obfuscation[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_ip_obfuscation",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "rollup[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:rollup[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rollup_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "classification_node[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:classification_node[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "classification_node_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "classification[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:classification[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "classifications",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_classification[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_classification[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_classification",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "perm_login[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:perm_login[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "perm_login_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "permission_group[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:permission_group[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "permission_group_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "permissions_account[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:permissions_account[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "permissions_account_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "code_archive[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:code_archive[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "code_archives",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "code_item[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:code_item[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "code_items",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "queue_item[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:queue_item[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "queue_items",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "log_filter[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:log_filter[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "log_filters",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "log_entry[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:log_entry[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "log_entries",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "mchannel[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:mchannel[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "mchannel_list",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "mchannels[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:mchannels[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "mchannels_list",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "int[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:int[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "mchannel_id_list",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "rs_mchannel_rulesets[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:rs_mchannel_rulesets[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "multi_rs_mchannel_rulesets",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "mchannel_ruleset[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:mchannel_ruleset[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "mchannel_rulesets",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "mchannel_rule[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:mchannel_rule[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "mchannel_rule_list",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "string[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:string[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "mchannel_rule_matches",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "expiration_event[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:expiration_event[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "expiration_event_list",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "key_value_pair[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:key_value_pair[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "hash",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "user_token_usage[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:user_token_usage[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "token_usage_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "int[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:int[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "reportlet_ids",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "reportletDataContentCell[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:reportletDataContentCell[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "reportletDataContentCells",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "reportletDataContentCells[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:reportletDataContentCells[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "reportletDataContentRows",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "string[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:string[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "colArray",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "colArray[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:colArray[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rowArray",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "int[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:int[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "intArray",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "string[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:string[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "warningList",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "string[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:string[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "errorList",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "dataSourceFileInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:dataSourceFileInfo[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "dataSourceFiles",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "dsFileStruct[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:dsFileStruct[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "fileInfoResult",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "simpleDataSource[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:simpleDataSource[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "simpleDataSourceArray",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "dataSourceInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:dataSourceInfo[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "infoResult",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "data_warehouse_segment_rule[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:data_warehouse_segment_rule[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "data_warehouse_segment_rule_list",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "data_warehouse_segment_group[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:data_warehouse_segment_group[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "data_warehouse_segment_group_list",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "string[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:string[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "data_warehouse_report_row",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "data_warehouse_report_row[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:data_warehouse_report_row[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "data_warehouse_report_row_list",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "string[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:string[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "data_warehouse_report_headings",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "dwsegment[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:dwsegment[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "dwsegments",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "publishingList[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:publishingList[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "publishingLists_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "segment[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:segment[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "segments",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "segment_folder[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:segment_folder[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "segment_folders",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "reportDefinitionMetric[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:reportDefinitionMetric[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "reportDefinitionMetricList",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "reportDefinitionElement[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:reportDefinitionElement[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "reportDefinitionElementList",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "reportDefinitionSearch[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:reportDefinitionSearch[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "reportDefinitionSearches",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "reportDefinitionSegment[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:reportDefinitionSegment[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "reportDefinitionSegmentList",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "reportDefinitionSegmentCondition[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:reportDefinitionSegmentCondition[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "reportDefinitionSegmentConditionList",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "reportDefinitionSegmentEvent[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:reportDefinitionSegmentEvent[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "reportDefinitionSegmentEventList",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "usage_log_entry[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:usage_log_entry[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "usage_log_entries",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "parent_category[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:parent_category[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "perm_categories",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "child_category[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:child_category[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "child_categories",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "group_sub_category[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:group_sub_category[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "group_sub_categories",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "group_category[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:group_category[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "group_categories",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "perm_data[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:perm_data[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "perm_info",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "element_mapping[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:element_mapping[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "element_mappings",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_element_mapping[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_element_mapping[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "report_element_mappings",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "reportElement[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:reportElement[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "reportElementList",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "reportMetric[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:reportMetric[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "reportMetricList",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "reportData[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:reportData[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "reportDataList",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "double[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:double[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "reportCountList",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_queue_item[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_queue_item[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "report_queue",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "SCM_reportDefinitionElement[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:SCM_reportDefinitionElement[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "SCM_reportDefinitionElementList",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "element[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:element[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "elements",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_elements[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_elements[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_elements",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "metric[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:metric[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "metrics",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_metrics[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_metrics[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_metrics",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "rs_axle_start_date[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:rs_axle_start_date[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_axle_start_date",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "hierarchy_node[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:hierarchy_node[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "hierarchy_node_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "hierarchy[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:hierarchy[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "hierarchies",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_hierarchies[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_hierarchies[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_hierarchy",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "ip_exclusion[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:ip_exclusion[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "ip_exclusions",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_ip_exclusions[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_ip_exclusions[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_ip_exclusions",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "cost_item[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:cost_item[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "cost_items",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "cost[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:cost[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "costs",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_costs[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_costs[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_costs",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "string[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:string[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "sub_relation_list",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_processing_status[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_processing_status[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_processing_status",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_rollup_dates[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_rollup_dates[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_rollup_dates",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "saved_filter[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:saved_filter[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "saved_filters_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "sc_segment[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:sc_segment[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "sc_segments",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "rs_sc_segments[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:rs_sc_segments[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_sc_segments",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "channel_sub_relations_element[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:channel_sub_relations_element[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "channel_sub_relations",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "report_suite_settings[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:report_suite_settings[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rscollection_settings",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "save_ip_exclusion[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:save_ip_exclusion[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "save_ip_exclusions",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "saintresult[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:saintresult[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "saintresults",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "row[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:row[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "rows",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "pagedetail[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:pagedetail[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "pagedetails",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "compatability[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:compatability[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "compatabilitys",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "saintjob[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:saintjob[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "saintjobs",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "date_received[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:date_received[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "date_received_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "column[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:column[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "columns",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "date_range[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:date_range[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "date_ranges",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "export_filter[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:export_filter[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "export_filters",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "saint_ftp[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:saint_ftp[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "saint_ftp_list",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "scheduledReport[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:scheduledReport[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "scheduledReports_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "scheduleLog[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:scheduleLog[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "scheduleLogs_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "excelWorkbook[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:excelWorkbook[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "excelWorkbooks_array",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "survey_summary[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:survey_summary[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "survey_summary_list",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "bookmark[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:bookmark[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "bookmark_list",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "formatted_folder[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:formatted_folder[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "folder_list",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "dashboard_element[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:dashboard_element[]",
-                    "base": "SOAP-ENC:Array",
-                    "ref": "SOAP-ENC:arrayType"
-                },
-                "name": "dashboard_list",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             }
         ]
