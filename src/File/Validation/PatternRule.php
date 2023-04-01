@@ -23,7 +23,7 @@ final class PatternRule extends AbstractRule
     {
         if ($itemType || !$this->getAttribute()->isArray()) {
             $test = sprintf(
-                ($itemType ? '' : '!is_null($%1$s) && ').'!preg_match(\'/%2$s/\', $%1$s)',
+                ($itemType ? '' : '!is_null($%1$s) && ').'!preg_match(\'/%2$s/\', (string) $%1$s)',
                 $parameterName,
                 self::valueToRegularExpression($value)
             );

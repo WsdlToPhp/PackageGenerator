@@ -188,7 +188,7 @@ class ApiHotelReservationType extends AbstractStructBase
             $exception1 = new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiTransactionActionType', is_array($value) ? implode(', ', $value) : var_export($value, true), implode(', ', \EnumType\ApiTransactionActionType::getValidValues())), __LINE__);
         }
         // validation for constraint: pattern([A-Z]{1,2})
-        if (!is_null($value) && !preg_match('/[A-Z]{1,2}/', $value)) {
+        if (!is_null($value) && !preg_match('/[A-Z]{1,2}/', (string) $value)) {
             $exception2 = new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[A-Z]{1,2}/', var_export($value, true)), __LINE__);
         }
         if (isset($exception0) && isset($exception1) && isset($exception2)) {
