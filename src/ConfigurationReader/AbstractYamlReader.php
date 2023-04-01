@@ -23,7 +23,7 @@ abstract class AbstractYamlReader
             throw new \InvalidArgumentException(sprintf('Unable to locate file "%s"', $loadFilename), __LINE__);
         }
 
-        $key = sprintf('%s_%s', get_called_class(), $loadFilename);
+        $key = sprintf('%s_%s', static::class, $loadFilename);
         if (!isset(self::$instances[$key])) {
             self::$instances[$key] = new static($loadFilename);
         }

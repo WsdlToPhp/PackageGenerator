@@ -73,9 +73,7 @@ final class Structs extends AbstractParser
         $typeDefCount = count($typeDef);
         if (3 === $typeDefCount) {
             $unionName = $typeDef[1];
-            $unionTypes = array_filter(explode(',', $typeDef[2]), function ($type) {
-                return !empty($type);
-            });
+            $unionTypes = array_filter(explode(',', $typeDef[2]), fn ($type) => !empty($type));
             sort($unionTypes);
             $this->getGenerator()->getStructs()->addUnionStruct($unionName, $unionTypes);
         }

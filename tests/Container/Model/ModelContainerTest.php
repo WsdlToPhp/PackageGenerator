@@ -98,6 +98,6 @@ final class ModelContainerTest extends AbstractTestCase
         $models->add(new EmptyModel(self::getBingGeneratorInstance(), 'BarFoo'));
 
         $this->assertSame(4, $models->count());
-        $this->assertSame(4, count($models));
+        $this->assertSame(4, is_countable($models) ? count($models) : 0);
     }
 }

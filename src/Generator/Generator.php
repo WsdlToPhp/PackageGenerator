@@ -107,7 +107,7 @@ class Generator implements \JsonSerializable
 
             return $this->options->{$getMethod}();
         }
-        if (($prefix = 'setOption') === substr($name, 0, $length = strlen($prefix)) && 1 === count($arguments)) {
+        if (($prefix = 'setOption') === substr($name, 0, $length = strlen($prefix)) && 1 === (is_countable($arguments) ? count($arguments) : 0)) {
             $setMethod = 'set'.substr($name, $length);
             $this->options->{$setMethod}(array_shift($arguments));
 

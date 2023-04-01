@@ -64,7 +64,7 @@ final class StructAttribute extends AbstractModel
             if ($typeStruct instanceof Struct) {
                 $type = $typeStruct->getTopInheritance();
 
-                return $type ? $type : $this->type;
+                return $type ?: $this->type;
             }
         }
 
@@ -181,7 +181,7 @@ final class StructAttribute extends AbstractModel
     {
         $struct = $this->getGenerator()->getStructByNameAndType($this->getType(), $this->getInheritance());
 
-        return $struct ? $struct : $this->getGenerator()->getStructByName($this->getType());
+        return $struct ?: $this->getGenerator()->getStructByName($this->getType());
     }
 
     public function getTypeStructMeta(): array

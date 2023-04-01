@@ -124,7 +124,7 @@ abstract class AbstractRule extends AbstractTestCase
     protected function createRuleFunction(string $ruleClassName, $value = null, bool $itemType = false, string $structAttributeType = 'string'): string
     {
         $generator = self::getBingGeneratorInstance();
-        $methodName = '_any_'.md5((string) rand(0, time()));
+        $methodName = '_any_'.md5((string) random_int(0, time()));
         $method = new PhpMethod($methodName, [
             'any',
         ]);

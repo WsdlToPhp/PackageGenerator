@@ -110,12 +110,14 @@
         "test": "php-7.4 vendor/bin/phpunit",
         "lint": "php-7.4 vendor/bin/php-cs-fixer fix --ansi --diff --verbose",
         "build": "php-7.4 box build --verbose",
-        "phpstan": "php-7.4 vendor/bin/phpstan analyze src --level=2"
+        "phpstan": "php-7.4 vendor/bin/phpstan analyze src --level=2",
+        "rector": "php-7.4 vendor/bin/rector process"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
         "phpstan/phpstan": "^1.3",
-        "phpunit/phpunit": "^9"
+        "phpunit/phpunit": "^9",
+        "rector/rector": "^0.15.17"
     },
     "autoload": {
         "psr-4": {

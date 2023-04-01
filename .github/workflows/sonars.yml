@@ -33,7 +33,7 @@ jobs:
             -   name: Monitor coverage
                 uses: slavcodev/coverage-monitor-action@v1
                 with:
-                    github_token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+                    github_token: ${{ secrets.GITHUB_TOKEN }}
                     coverage_path: coverage.xml
                     threshold_alert: 95
                     threshold_warning: 90
@@ -44,5 +44,5 @@ jobs:
             -   name: SonarCloud Scan
                 uses: SonarSource/sonarcloud-github-action@master
                 env:
-                    GITHUB_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

@@ -123,11 +123,10 @@ final class GeneratorOptions extends AbstractYamlReader implements \JsonSerializ
     public const SCHEMAS_FOLDER = 'schemas_folder';
     public const XSD_TYPES_PATH = 'xsd_types_path';
 
-    protected array $options;
+    protected array $options = [];
 
     protected function __construct(string $filename)
     {
-        $this->options = [];
         $this->parseOptions($filename);
     }
 
