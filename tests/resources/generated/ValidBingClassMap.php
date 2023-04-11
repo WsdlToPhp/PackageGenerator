@@ -21,6 +21,7 @@ class ApiClassMap
             'WebRequest' => '\\StructType\\ApiWebRequest',
             'ArrayOfWebSearchOption' => '\\ArrayType\\ApiArrayOfWebSearchOption',
             'ArrayOfGuid' => '\\ArrayType\\ApiArrayOfGuid',
+            'ControlsType' => '\\StructType\\ApiControlsType',
             'ArrayOfString' => '\\ArrayType\\ApiArrayOfString',
             'ImageRequest' => '\\StructType\\ApiImageRequest',
             'PhonebookRequest' => '\\StructType\\ApiPhonebookRequest',

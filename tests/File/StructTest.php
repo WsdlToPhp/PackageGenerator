@@ -115,6 +115,21 @@ final class StructTest extends AbstractFile
         }
     }
 
+    public function testWriteBingSearchControlsType(): void
+    {
+        $generator = self::bingGeneratorInstance();
+        if (($model = $generator->getStructByName('ControlsType')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write()
+            ;
+            $this->assertSameFileContent('ValidApiControlsType', $struct);
+        } else {
+            $this->fail('Unable to find ControlsType struct for file generation');
+        }
+    }
+
     public function testWriteActonStructItem(): void
     {
         $generator = self::actonGeneratorInstance();
