@@ -23,7 +23,7 @@ xsd_types:
     gMonth: "string"
     gMonthDay: "int"
     gYear: "string"
-    gYearMonth: "int"
+    gYearMonth: "string"
     hexBinary: "string"
     int: "int"
     integer: "int"
