@@ -21,7 +21,7 @@ xsd_types:
     float: "float"
     gDay: "string"
     gMonth: "string"
-    gMonthDay: "int"
+    gMonthDay: "string"
     gYear: "string"
     gYearMonth: "string"
     hexBinary: "string"
