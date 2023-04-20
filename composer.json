@@ -87,6 +87,11 @@
         {
             "name": "dypa",
             "role": "Contributor"
+        },
+        {
+            "name": "tbreuss",
+            "email": "thomasbreuss@gmx.ch",
+            "role": "Contributor"
         }
     ],
     "support" : {
