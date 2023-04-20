@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## 4.1.8 - 2023-04-20
+- issue #285, pr #288 - Type-Error when using regex pattern for decimal restriction
+- issue #292, pr #293 - Wrong type for gYearMonth and gMonthDay
+- pr #291 - Only cover src dir
+- pr #281 - Add Rector PHP to ease code improvement
+- issue #255, pr #283 - Class inheritance possibly misbehaving when having restriction tag
+- issue #280, pr #282 - Optional parameters before required ones in constructor
+
+## 4.1.7 - 2023-02-20
+- Fix Github release workflow
+- 
 ## 4.1.6 - 2023-02-20
 - issue #266, pr #270 - Usage of an undefined constant within a generate EnumType class #266
 - pr #267 - Remove deprecated message
