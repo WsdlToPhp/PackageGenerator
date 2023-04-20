@@ -239,7 +239,7 @@ class ApiTaxType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
         }
         // validation for constraint: pattern([0-9A-Z]{1,3}(\.[A-Z]{3}(\.X){0,1}){0,1}, 0AA.BBBX, )
-        if (!is_null($code) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}|0AA.BBBX|^$/', $code)) {
+        if (!is_null($code) && !preg_match('/[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}|0AA.BBBX|^$/', (string) $code)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[0-9A-Z]{1,3}(\\.[A-Z]{3}(\\.X){0,1}){0,1}|0AA.BBBX|^$/', var_export($code, true)), __LINE__);
         }
         $this->Code = $code;
@@ -324,7 +324,7 @@ class ApiTaxType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currencyCode, true), gettype($currencyCode)), __LINE__);
         }
         // validation for constraint: pattern([a-zA-Z]{3})
-        if (!is_null($currencyCode) && !preg_match('/[a-zA-Z]{3}/', $currencyCode)) {
+        if (!is_null($currencyCode) && !preg_match('/[a-zA-Z]{3}/', (string) $currencyCode)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[a-zA-Z]{3}/', var_export($currencyCode, true)), __LINE__);
         }
         $this->CurrencyCode = $currencyCode;

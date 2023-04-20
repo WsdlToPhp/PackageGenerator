@@ -96,6 +96,18 @@
 					<xsd:element minOccurs="0" maxOccurs="unbounded" name="string" type="tns:guid" />
 				</xsd:sequence>
 			</xsd:complexType>
+			<xsd:simpleType name="SimpleBooleanType">
+				<xsd:restriction base="xsd:boolean">
+					<xsd:pattern value="true"/>
+					<xsd:pattern value="false"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="ControlsType">
+				<xsd:sequence>
+					<xsd:element name="ProcessByDistributor" type="tns:SimpleBooleanType">
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
 			<xsd:complexType name="ArrayOfString">
 				<xsd:sequence>
 					<xsd:element minOccurs="0" maxOccurs="unbounded" name="string" type="xsd:string" />
