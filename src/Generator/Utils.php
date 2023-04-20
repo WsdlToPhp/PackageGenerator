@@ -25,7 +25,7 @@ final class Utils
         switch ($optionValue) {
             case GeneratorOptions::VALUE_END:
                 $parts = preg_split('/[A-Z]/', ucfirst($string));
-                $partsCount = count($parts);
+                $partsCount = is_countable($parts) ? count($parts) : 0;
                 if (!empty($parts[$partsCount - 1])) {
                     $elementType = mb_substr($string, mb_strrpos($string, implode('', array_slice($parts, -1))) - 1);
                 } else {
@@ -35,14 +35,14 @@ final class Utils
                             break;
                         }
                     }
-                    $elementType = mb_substr($string, ((count($parts) - 2 - $i) + 1) * -1);
+                    $elementType = mb_substr($string, (((is_countable($parts) ? count($parts) : 0) - 2 - $i) + 1) * -1);
                 }
 
                 break;
 
             case GeneratorOptions::VALUE_START:
                 $parts = preg_split('/[A-Z]/', ucfirst($string));
-                $partsCount = count($parts);
+                $partsCount = is_countable($parts) ? count($parts) : 0;
                 if (empty($parts[0]) && !empty($parts[1])) {
                     $elementType = mb_substr($string, 0, mb_strlen($parts[1]) + 1);
                 } else {

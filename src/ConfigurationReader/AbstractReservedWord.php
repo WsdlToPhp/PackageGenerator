@@ -10,11 +10,10 @@ abstract class AbstractReservedWord extends AbstractYamlReader
     public const CASE_SENSITIVE_KEY = 'case_sensitive';
     public const CASE_INSENSITIVE_KEY = 'case_insensitive';
 
-    protected array $keywords;
+    protected array $keywords = [];
 
     protected function __construct(string $filename)
     {
-        $this->keywords = [];
         $this->parseReservedKeywords($filename);
     }
 

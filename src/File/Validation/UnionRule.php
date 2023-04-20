@@ -59,8 +59,8 @@ final class UnionRule extends AbstractRule
             unset($attribute);
         }
 
-        // adapt content, remove duplicated rules
-        // duplicated rules is base don the fact that validation rules are composed by 4 lines so we check existing rule every 4-line block of text
+        // Adapt content, remove duplicated rules
+        // The duplicated rules are based on the fact that validation rules are composed by 4 lines so we check existing rule every 4-line block of text
         $exceptions = 0;
         $exceptionsTests = [];
         $exceptionsArray = [];
@@ -69,7 +69,7 @@ final class UnionRule extends AbstractRule
         $childrenCount = count($methodChildren);
         $existingValidationRules = [];
         for ($i = 0; $i < $childrenCount; $i += 4) {
-            $validationRules = array_slice($methodChildren, ((int) $i / 4) * 4, 4);
+            $validationRules = array_slice($methodChildren, ((int) ($i / 4)) * 4, 4);
             if (!in_array($validationRules, $existingValidationRules)) {
                 foreach ($validationRules as $validationRuleIndex => $validationRule) {
                     // avoid having a validation rule that has already been applied to the attribute within the method which is calling the validate method

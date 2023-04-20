@@ -28,7 +28,7 @@ final class TotalDigitsRuleTest extends AbstractRule
 
         $instance = self::getReformaHouseProfileDataInstance();
 
-        $instance->setArea_total(123456789101112.12);
+        $instance->setArea_total(123_456_789_101_112.12);
     }
 
     /**
@@ -43,7 +43,7 @@ final class TotalDigitsRuleTest extends AbstractRule
     {
         $instance = self::getReformaHouseProfileDataInstance();
 
-        $this->assertSame($instance, $instance->setArea_total(1234567891011.12));
+        $this->assertSame($instance, $instance->setArea_total(1_234_567_891_011.12));
     }
 
     /**

@@ -723,6 +723,49 @@
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {
+                "attributes": [],
+                "restriction": false,
+                "struct": false,
+                "types": [],
+                "values": [],
+                "list": "",
+                "inheritance": "boolean",
+                "abstract": false,
+                "meta": {
+                    "base": "xsd:boolean",
+                    "pattern": [
+                        "true",
+                        "false"
+                    ]
+                },
+                "name": "SimpleBooleanType",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": false,
+                        "removableFromRequest": false,
+                        "type": "SimpleBooleanType",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": [],
+                        "name": "ProcessByDistributor",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": [],
+                "values": [],
+                "list": "",
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ControlsType",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
                 "attributes": [
                     {
                         "containsElements": true,

@@ -603,8 +603,8 @@ final class GeneratorTest extends AbstractTestCase
             '"__ORIGIN__"',
             '"__DESTINATION__"',
         ], [
-            json_encode(self::wsdlBingPath()),
-            json_encode($generator->getOptionDestination()),
+            json_encode(self::wsdlBingPath(), JSON_THROW_ON_ERROR),
+            json_encode($generator->getOptionDestination(), JSON_THROW_ON_ERROR),
         ], $jsonContent);
         $this->assertSame(trim($jsonContent), trim(json_encode($generator, JSON_PRETTY_PRINT)));
     }
@@ -684,11 +684,11 @@ final class GeneratorTest extends AbstractTestCase
             ->setServicesFolder('ServiceType')
             ->setSchemasSave(false)
             ->setSchemasFolder('wsdl')
-            ->setSoapClientClass('WsdlToPhp\PackageBase\AbstractSoapClientBase')
+            ->setSoapClientClass(AbstractSoapClientBase::class)
             ->setSoapOptions([])
             ->setStandalone($standalone)
-            ->setStructArrayClass('WsdlToPhp\PackageBase\AbstractStructArrayBase')
-            ->setStructClass('WsdlToPhp\PackageBase\AbstractStructBase')
+            ->setStructArrayClass(AbstractStructArrayBase::class)
+            ->setStructClass(AbstractStructBase::class)
             ->setStructsFolder('StructType')
             ->setSuffix('')
         ;

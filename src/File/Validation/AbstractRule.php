@@ -42,7 +42,12 @@ abstract class AbstractRule
 
     final public function validationRuleComment($value): string
     {
-        return sprintf('// %s %s%s', self::VALIDATION_RULE_COMMENT_SENTENCE, $this->name(), is_array($value) ? sprintf('(%s)', implode(', ', array_unique($value))) : (empty($value) ? '' : sprintf('(%s)', $value)));
+        return sprintf(
+            '// %s %s%s',
+            self::VALIDATION_RULE_COMMENT_SENTENCE,
+            $this->name(),
+            is_array($value) ? sprintf('(%s)', implode(', ', array_unique($value))) : (empty($value) ? '' : sprintf('(%s)', $value))
+        );
     }
 
     abstract public function name(): string;

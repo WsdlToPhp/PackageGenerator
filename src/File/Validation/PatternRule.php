@@ -22,8 +22,13 @@ final class PatternRule extends AbstractRule
     public function testConditions(string $parameterName, $value, bool $itemType = false): string
     {
         if ($itemType || !$this->getAttribute()->isArray()) {
+            $valueToMatch = self::valueToRegularExpression($value);
+            if (empty($valueToMatch)) {
+                return '';
+            }
+
             $test = sprintf(
-                ($itemType ? '' : '!is_null($%1$s) && ').'!preg_match(\'/%2$s/\', $%1$s)',
+                ($itemType ? '' : '!is_null($%1$s) && ').'!preg_match(\'/%2$s/\', (string) $%1$s)',
                 $parameterName,
                 self::valueToRegularExpression($value)
             );
@@ -60,14 +65,16 @@ final class PatternRule extends AbstractRule
         return implode(
             '|',
             array_map(
-                static function ($value) {
-                    return addcslashes($value, '\'\\/');
-                },
+                static fn ($value) => addcslashes($value, '\'\\/'),
                 array_map(
-                    static function ($value) {
-                        return empty($value) ? '^$' : $value;
-                    },
-                    array_map('trim', is_array($value) ? $value : [$value])
+                    static fn ($value) => empty($value) ? '^$' : $value,
+                    array_map(
+                        'trim',
+                        array_filter(
+                            is_array($value) ? $value : [$value],
+                            static fn ($value) => !in_array($value, ['true', 'false', true, false], true)
+                        )
+                    )
                 )
             )
         );

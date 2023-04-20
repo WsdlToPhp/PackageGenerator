@@ -1121,10 +1121,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "string",
+                "inheritance": "string[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:string[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfString",
@@ -1137,10 +1138,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "int",
+                "inheritance": "int[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:int[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfInteger",
@@ -1153,10 +1155,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "long",
+                "inheritance": "long[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:long[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfLong",
@@ -1671,10 +1674,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "OfflineReportInfo",
+                "inheritance": "OfflineReportInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:OfflineReportInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfOfflineReportInfo",
@@ -1687,10 +1691,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "CampaignInfo",
+                "inheritance": "CampaignInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:CampaignInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfCampaignInfo",
@@ -1703,10 +1708,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "ShortCampaignInfo",
+                "inheritance": "ShortCampaignInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:ShortCampaignInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfShortCampaignInfo",
@@ -1719,10 +1725,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "RubricInfo",
+                "inheritance": "RubricInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:RubricInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfRubricInfo",
@@ -1735,10 +1742,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "TimeZoneInfo",
+                "inheritance": "TimeZoneInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:TimeZoneInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfTimeZoneInfo",
@@ -1795,10 +1803,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "CampaignBalanceInfo",
+                "inheritance": "CampaignBalanceInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:CampaignBalanceInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfCampaignBalanceInfo",
@@ -1921,10 +1930,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "int",
+                "inheritance": "int[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:int[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfCampaignIDInfo",
@@ -3401,10 +3411,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "ClientsUnitInfo",
+                "inheritance": "ClientsUnitInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:ClientsUnitInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfClientsUnitInfo",
@@ -3525,10 +3536,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "ForecastStatusInfo",
+                "inheritance": "ForecastStatusInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:ForecastStatusInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfForecastStatusInfo",
@@ -3619,10 +3631,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "ReportInfo",
+                "inheritance": "ReportInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:ReportInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfReportInfo",
@@ -3715,10 +3728,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "StatItem",
+                "inheritance": "StatItem[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:StatItem[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfStatItem",
@@ -4279,10 +4293,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "PhrasePriceInfo",
+                "inheritance": "PhrasePriceInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:PhrasePriceInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfPhrasePriceInfo",
@@ -4295,10 +4310,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "BannerPhraseInfo",
+                "inheritance": "BannerPhraseInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:BannerPhraseInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfBannerPhraseInfo",
@@ -4311,10 +4327,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "CoverageInfo",
+                "inheritance": "CoverageInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:CoverageInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfCoverageInfo",
@@ -4327,10 +4344,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "PingAPI_XInfo",
+                "inheritance": "PingAPI_XInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:PingAPI_XInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfPingAPI_XInfo",
@@ -4343,10 +4361,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "PingAPI_XStructInfo",
+                "inheritance": "PingAPI_XStructInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:PingAPI_XStructInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfPingAPI_XStructInfo",
@@ -4551,10 +4570,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "TimeTargetItem",
+                "inheritance": "TimeTargetItem[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:TimeTargetItem[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfTimeTargetItem",
@@ -5309,10 +5329,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "PhraseAuctionBids",
+                "inheritance": "PhraseAuctionBids[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:PhraseAuctionBids[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfPhraseAuctionBids",
@@ -5409,10 +5430,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "PayCampElement",
+                "inheritance": "PayCampElement[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:PayCampElement[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfPayCampElement",
@@ -5609,10 +5631,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "float",
+                "inheritance": "float[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:float[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfFloat",
@@ -5625,10 +5648,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "RegionInfo",
+                "inheritance": "RegionInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:RegionInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfRegionInfo",
@@ -5641,10 +5665,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "BannerInfo",
+                "inheritance": "BannerInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:BannerInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfBannerInfo",
@@ -6031,10 +6056,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "Sitelink",
+                "inheritance": "Sitelink[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:Sitelink[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfSitelink",
@@ -6081,10 +6107,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "RejectReason",
+                "inheritance": "RejectReason[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:RejectReason[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfRejectReason",
@@ -6821,10 +6848,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "WordstatReportStatusInfo",
+                "inheritance": "WordstatReportStatusInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:WordstatReportStatusInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfWordstatReportStatusInfo",
@@ -6871,10 +6899,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "WordstatReportInfo",
+                "inheritance": "WordstatReportInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:WordstatReportInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfWordstatReportInfo",
@@ -6941,10 +6970,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "WordstatItem",
+                "inheritance": "WordstatItem[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:WordstatItem[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfWordstatItem",
@@ -7077,10 +7107,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "StatGoalInfo",
+                "inheritance": "StatGoalInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:StatGoalInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfStatGoalInfo",
@@ -7093,10 +7124,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "ShortClientInfo",
+                "inheritance": "ShortClientInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:ShortClientInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfShortClientInfo",
@@ -7109,10 +7141,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "ClientInfo",
+                "inheritance": "ClientInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:ClientInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfClientInfo",
@@ -7787,10 +7820,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "ClientRight",
+                "inheritance": "ClientRight[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:ClientRight[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfClientRight",
@@ -7895,10 +7929,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "VersionDesc",
+                "inheritance": "VersionDesc[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:VersionDesc[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfVersionDesc",
@@ -8129,10 +8164,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "EventsLogItem",
+                "inheritance": "EventsLogItem[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:EventsLogItem[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfEventsLogItem",
@@ -8419,10 +8455,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "CampaignTagsInfo",
+                "inheritance": "CampaignTagsInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:CampaignTagsInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfCampaignTagsInfo",
@@ -8469,10 +8506,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "TagInfo",
+                "inheritance": "TagInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:TagInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfTagInfo",
@@ -8559,10 +8597,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "BannerTagsInfo",
+                "inheritance": "BannerTagsInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:BannerTagsInfo[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfBannerTagsInfo",
@@ -8853,10 +8892,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "BannersStatItem",
+                "inheritance": "BannersStatItem[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:BannersStatItem[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfBannersStatItem",
@@ -9183,10 +9223,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "CampaignStatChangeItem",
+                "inheritance": "CampaignStatChangeItem[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:CampaignStatChangeItem[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfCampaignStatChangeItem",
@@ -9403,10 +9444,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "CreditLimitsItem",
+                "inheritance": "CreditLimitsItem[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:CreditLimitsItem[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfCreditLimitsItem",
@@ -9509,10 +9551,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "Error",
+                "inheritance": "Error[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:Error[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfError",
@@ -9571,10 +9614,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "Warning",
+                "inheritance": "Warning[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:Warning[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfWarning",
@@ -9613,10 +9657,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "RetargetingGoal",
+                "inheritance": "RetargetingGoal[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:RetargetingGoal[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfRetargetingGoal",
@@ -9741,10 +9786,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "RetargetingCondition",
+                "inheritance": "RetargetingCondition[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:RetargetingCondition[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfRetargetingCondition",
@@ -9855,10 +9901,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "RetargetingConditionItem",
+                "inheritance": "RetargetingConditionItem[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:RetargetingConditionItem[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfRetargetingConditionItem",
@@ -9905,10 +9952,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "RetargetingConditionGoalItem",
+                "inheritance": "RetargetingConditionGoalItem[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:RetargetingConditionGoalItem[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfRetargetingConditionGoalItem",
@@ -10043,10 +10091,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "RetargetingConditionActionResult",
+                "inheritance": "RetargetingConditionActionResult[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:RetargetingConditionActionResult[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfRetargetingConditionActionResult",
@@ -10195,10 +10244,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "Retargeting",
+                "inheritance": "Retargeting[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:Retargeting[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfRetargeting",
@@ -10433,10 +10483,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "RetargetingActionResult",
+                "inheritance": "RetargetingActionResult[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:RetargetingActionResult[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfRetargetingActionResult",
@@ -10679,10 +10730,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "AdImageRaw",
+                "inheritance": "AdImageRaw[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:AdImageRaw[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfAdImageRaw",
@@ -10741,10 +10793,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "AdImageURL",
+                "inheritance": "AdImageURL[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:AdImageURL[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfAdImageURL",
@@ -10973,10 +11026,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "KeywordActionResult",
+                "inheritance": "KeywordActionResult[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:KeywordActionResult[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfKeywordActionResult",
@@ -11059,10 +11113,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "AdImageLimit",
+                "inheritance": "AdImageLimit[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:AdImageLimit[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfAdImageLimit",
@@ -11141,10 +11196,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "AdImage",
+                "inheritance": "AdImage[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:AdImage[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfAdImage",
@@ -11259,10 +11315,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "AdImageUpload",
+                "inheritance": "AdImageUpload[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:AdImageUpload[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfAdImageUpload",
@@ -11337,10 +11394,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "AdImageActionResult",
+                "inheritance": "AdImageActionResult[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:AdImageActionResult[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfAdImageActionResult",
@@ -11583,10 +11641,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "AdImageAssociation",
+                "inheritance": "AdImageAssociation[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:AdImageAssociation[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfAdImageAssociation",
@@ -11699,10 +11758,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "AdImageAssociationActionResult",
+                "inheritance": "AdImageAssociationActionResult[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:AdImageAssociationActionResult[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfAdImageAssociationActionResult",
@@ -11993,10 +12053,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "Payment",
+                "inheritance": "Payment[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:Payment[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfPayment",
@@ -12065,10 +12126,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "Transfer",
+                "inheritance": "Transfer[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:Transfer[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfTransfer",
@@ -12201,10 +12263,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "Account",
+                "inheritance": "Account[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "namesp1:Account[]",
+                    "base": "soapenc:Array",
                     "ref": "soapenc:arrayType"
                 },
                 "name": "ArrayOfAccount",
@@ -12332,1093 +12395,6 @@
                 "abstract": false,
                 "meta": [],
                 "name": "AccountActionResult",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "AccountActionResult",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:AccountActionResult[]",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfAccountActionResult",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "string[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:string[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfString",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "int[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:int[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfInteger",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "long[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:long[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfLong",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "OfflineReportInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:OfflineReportInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfOfflineReportInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "CampaignInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:CampaignInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfCampaignInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "ShortCampaignInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:ShortCampaignInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfShortCampaignInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "RubricInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:RubricInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfRubricInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "TimeZoneInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:TimeZoneInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfTimeZoneInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "CampaignBalanceInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:CampaignBalanceInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfCampaignBalanceInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "int[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:int[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfCampaignIDInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "ClientsUnitInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:ClientsUnitInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfClientsUnitInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "ForecastStatusInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:ForecastStatusInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfForecastStatusInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "ReportInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:ReportInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfReportInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "StatItem[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:StatItem[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfStatItem",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "PhrasePriceInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:PhrasePriceInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfPhrasePriceInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "BannerPhraseInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:BannerPhraseInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfBannerPhraseInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "CoverageInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:CoverageInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfCoverageInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "PingAPI_XInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:PingAPI_XInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfPingAPI_XInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "PingAPI_XStructInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:PingAPI_XStructInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfPingAPI_XStructInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "TimeTargetItem[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:TimeTargetItem[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfTimeTargetItem",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "PhraseAuctionBids[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:PhraseAuctionBids[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfPhraseAuctionBids",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "PayCampElement[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:PayCampElement[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfPayCampElement",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "float[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:float[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfFloat",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "RegionInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:RegionInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfRegionInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "BannerInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:BannerInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfBannerInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "Sitelink[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:Sitelink[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfSitelink",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "RejectReason[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:RejectReason[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfRejectReason",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "WordstatReportStatusInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:WordstatReportStatusInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfWordstatReportStatusInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "WordstatReportInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:WordstatReportInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfWordstatReportInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "WordstatItem[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:WordstatItem[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfWordstatItem",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "StatGoalInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:StatGoalInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfStatGoalInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "ShortClientInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:ShortClientInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfShortClientInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "ClientInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:ClientInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfClientInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "ClientRight[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:ClientRight[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfClientRight",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "VersionDesc[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:VersionDesc[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfVersionDesc",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "EventsLogItem[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:EventsLogItem[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfEventsLogItem",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "CampaignTagsInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:CampaignTagsInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfCampaignTagsInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "TagInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:TagInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfTagInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "BannerTagsInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:BannerTagsInfo[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfBannerTagsInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "BannersStatItem[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:BannersStatItem[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfBannersStatItem",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "CampaignStatChangeItem[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:CampaignStatChangeItem[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfCampaignStatChangeItem",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "CreditLimitsItem[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:CreditLimitsItem[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfCreditLimitsItem",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "Error[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:Error[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfError",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "Warning[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:Warning[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfWarning",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "RetargetingGoal[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:RetargetingGoal[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfRetargetingGoal",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "RetargetingCondition[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:RetargetingCondition[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfRetargetingCondition",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "RetargetingConditionItem[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:RetargetingConditionItem[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfRetargetingConditionItem",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "RetargetingConditionGoalItem[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:RetargetingConditionGoalItem[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfRetargetingConditionGoalItem",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "RetargetingConditionActionResult[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:RetargetingConditionActionResult[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfRetargetingConditionActionResult",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "Retargeting[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:Retargeting[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfRetargeting",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "RetargetingActionResult[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:RetargetingActionResult[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfRetargetingActionResult",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "AdImageRaw[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:AdImageRaw[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfAdImageRaw",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "AdImageURL[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:AdImageURL[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfAdImageURL",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "KeywordActionResult[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:KeywordActionResult[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfKeywordActionResult",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "AdImageLimit[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:AdImageLimit[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfAdImageLimit",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "AdImage[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:AdImage[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfAdImage",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "AdImageUpload[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:AdImageUpload[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfAdImageUpload",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "AdImageActionResult[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:AdImageActionResult[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfAdImageActionResult",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "AdImageAssociation[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:AdImageAssociation[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfAdImageAssociation",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "AdImageAssociationActionResult[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:AdImageAssociationActionResult[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfAdImageAssociationActionResult",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "Payment[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:Payment[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfPayment",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "Transfer[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:Transfer[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfTransfer",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "Account[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "namesp1:Account[]",
-                    "base": "soapenc:Array",
-                    "ref": "soapenc:arrayType"
-                },
-                "name": "ArrayOfAccount",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             },
             {

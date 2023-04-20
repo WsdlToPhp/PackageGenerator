@@ -15,11 +15,10 @@ final class XsdTypes extends AbstractYamlReader
      */
     public const ANONYMOUS_TYPE = '/anonymous\d+/';
 
-    protected array $types;
+    protected array $types = [];
 
     protected function __construct(string $filename)
     {
-        $this->types = [];
         $this->parseXsdTypes($filename);
     }
 
@@ -45,7 +44,7 @@ final class XsdTypes extends AbstractYamlReader
 
     public function phpType(string $xsdType): string
     {
-        return $this->isAnonymous($xsdType) ? $this->types[self::ANONYMOUS_KEY] : ($this->isXsd($xsdType) ? $this->types[$xsdType] : '');
+        return self::isAnonymous($xsdType) ? $this->types[self::ANONYMOUS_KEY] : ($this->isXsd($xsdType) ? $this->types[$xsdType] : '');
     }
 
     protected function parseXsdTypes(string $filename): self

@@ -79,15 +79,6 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public ?string $StatusClarification = null;
     /**
-     * The SourceId
-     * Meta information extracted from the WSDL
-     * - maxOccurs: 1
-     * - minOccurs: 0
-     * - nillable: true
-     * @var int|null
-     */
-    public ?int $SourceId = null;
-    /**
      * The Statistics
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
@@ -119,6 +110,39 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * @var \StructType\ApiCampaignAssistant|null
      */
     public ?\StructType\ApiCampaignAssistant $RepresentedBy = null;
+    /**
+     * The TextCampaign
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 1
+     * - minOccurs: 0
+     * @var \StructType\ApiTextCampaignGetItem|null
+     */
+    public ?\StructType\ApiTextCampaignGetItem $TextCampaign = null;
+    /**
+     * The MobileAppCampaign
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 1
+     * - minOccurs: 0
+     * @var \StructType\ApiMobileAppCampaignGetItem|null
+     */
+    public ?\StructType\ApiMobileAppCampaignGetItem $MobileAppCampaign = null;
+    /**
+     * The DynamicTextCampaign
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 1
+     * - minOccurs: 0
+     * @var \StructType\ApiDynamicTextCampaignGetItem|null
+     */
+    public ?\StructType\ApiDynamicTextCampaignGetItem $DynamicTextCampaign = null;
+    /**
+     * The SourceId
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 1
+     * - minOccurs: 0
+     * - nillable: true
+     * @var int|null
+     */
+    public ?int $SourceId = null;
     /**
      * The DailyBudget
      * Meta information extracted from the WSDL
@@ -165,30 +189,6 @@ class ApiCampaignGetItem extends ApiCampaignBase
      */
     public ?\ArrayType\ApiArrayOfString $ExcludedSites = null;
     /**
-     * The TextCampaign
-     * Meta information extracted from the WSDL
-     * - maxOccurs: 1
-     * - minOccurs: 0
-     * @var \StructType\ApiTextCampaignGetItem|null
-     */
-    public ?\StructType\ApiTextCampaignGetItem $TextCampaign = null;
-    /**
-     * The MobileAppCampaign
-     * Meta information extracted from the WSDL
-     * - maxOccurs: 1
-     * - minOccurs: 0
-     * @var \StructType\ApiMobileAppCampaignGetItem|null
-     */
-    public ?\StructType\ApiMobileAppCampaignGetItem $MobileAppCampaign = null;
-    /**
-     * The DynamicTextCampaign
-     * Meta information extracted from the WSDL
-     * - maxOccurs: 1
-     * - minOccurs: 0
-     * @var \StructType\ApiDynamicTextCampaignGetItem|null
-     */
-    public ?\StructType\ApiDynamicTextCampaignGetItem $DynamicTextCampaign = null;
-    /**
      * Constructor method for CampaignGetItem
      * @uses ApiCampaignGetItem::setId()
      * @uses ApiCampaignGetItem::setName()
@@ -198,19 +198,19 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * @uses ApiCampaignGetItem::setState()
      * @uses ApiCampaignGetItem::setStatusPayment()
      * @uses ApiCampaignGetItem::setStatusClarification()
-     * @uses ApiCampaignGetItem::setSourceId()
      * @uses ApiCampaignGetItem::setStatistics()
      * @uses ApiCampaignGetItem::setCurrency()
      * @uses ApiCampaignGetItem::setFunds()
      * @uses ApiCampaignGetItem::setRepresentedBy()
+     * @uses ApiCampaignGetItem::setTextCampaign()
+     * @uses ApiCampaignGetItem::setMobileAppCampaign()
+     * @uses ApiCampaignGetItem::setDynamicTextCampaign()
+     * @uses ApiCampaignGetItem::setSourceId()
      * @uses ApiCampaignGetItem::setDailyBudget()
      * @uses ApiCampaignGetItem::setEndDate()
      * @uses ApiCampaignGetItem::setNegativeKeywords()
      * @uses ApiCampaignGetItem::setBlockedIps()
      * @uses ApiCampaignGetItem::setExcludedSites()
-     * @uses ApiCampaignGetItem::setTextCampaign()
-     * @uses ApiCampaignGetItem::setMobileAppCampaign()
-     * @uses ApiCampaignGetItem::setDynamicTextCampaign()
      * @param int $id
      * @param string $name
      * @param string $startDate
@@ -219,21 +219,21 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * @param string $state
      * @param string $statusPayment
      * @param string $statusClarification
-     * @param int $sourceId
      * @param \StructType\ApiStatistics $statistics
      * @param string $currency
      * @param \StructType\ApiFundsParam $funds
      * @param \StructType\ApiCampaignAssistant $representedBy
+     * @param \StructType\ApiTextCampaignGetItem $textCampaign
+     * @param \StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign
+     * @param \StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign
+     * @param int $sourceId
      * @param \StructType\ApiDailyBudget $dailyBudget
      * @param string $endDate
      * @param \ArrayType\ApiArrayOfString $negativeKeywords
      * @param \ArrayType\ApiArrayOfString $blockedIps
      * @param \ArrayType\ApiArrayOfString $excludedSites
-     * @param \StructType\ApiTextCampaignGetItem $textCampaign
-     * @param \StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign
-     * @param \StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign
      */
-    public function __construct(?int $id = null, ?string $name = null, ?string $startDate = null, ?string $type = null, ?string $status = null, ?string $state = null, ?string $statusPayment = null, ?string $statusClarification = null, ?int $sourceId = null, ?\StructType\ApiStatistics $statistics = null, ?string $currency = null, ?\StructType\ApiFundsParam $funds = null, ?\StructType\ApiCampaignAssistant $representedBy = null, ?\StructType\ApiDailyBudget $dailyBudget = null, ?string $endDate = null, ?\ArrayType\ApiArrayOfString $negativeKeywords = null, ?\ArrayType\ApiArrayOfString $blockedIps = null, ?\ArrayType\ApiArrayOfString $excludedSites = null, ?\StructType\ApiTextCampaignGetItem $textCampaign = null, ?\StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign = null, ?\StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign = null)
+    public function __construct(?int $id = null, ?string $name = null, ?string $startDate = null, ?string $type = null, ?string $status = null, ?string $state = null, ?string $statusPayment = null, ?string $statusClarification = null, ?\StructType\ApiStatistics $statistics = null, ?string $currency = null, ?\StructType\ApiFundsParam $funds = null, ?\StructType\ApiCampaignAssistant $representedBy = null, ?\StructType\ApiTextCampaignGetItem $textCampaign = null, ?\StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign = null, ?\StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign = null, ?int $sourceId = null, ?\StructType\ApiDailyBudget $dailyBudget = null, ?string $endDate = null, ?\ArrayType\ApiArrayOfString $negativeKeywords = null, ?\ArrayType\ApiArrayOfString $blockedIps = null, ?\ArrayType\ApiArrayOfString $excludedSites = null)
     {
         $this
             ->setId($id)
@@ -244,19 +244,19 @@ class ApiCampaignGetItem extends ApiCampaignBase
             ->setState($state)
             ->setStatusPayment($statusPayment)
             ->setStatusClarification($statusClarification)
-            ->setSourceId($sourceId)
             ->setStatistics($statistics)
             ->setCurrency($currency)
             ->setFunds($funds)
             ->setRepresentedBy($representedBy)
+            ->setTextCampaign($textCampaign)
+            ->setMobileAppCampaign($mobileAppCampaign)
+            ->setDynamicTextCampaign($dynamicTextCampaign)
+            ->setSourceId($sourceId)
             ->setDailyBudget($dailyBudget)
             ->setEndDate($endDate)
             ->setNegativeKeywords($negativeKeywords)
             ->setBlockedIps($blockedIps)
-            ->setExcludedSites($excludedSites)
-            ->setTextCampaign($textCampaign)
-            ->setMobileAppCampaign($mobileAppCampaign)
-            ->setDynamicTextCampaign($dynamicTextCampaign);
+            ->setExcludedSites($excludedSites);
     }
     /**
      * Get Id value
@@ -411,34 +411,6 @@ class ApiCampaignGetItem extends ApiCampaignBase
         return $this;
     }
     /**
-     * Get SourceId value
-     * An additional test has been added (isset) before returning the property value as
-     * this property may have been unset before, due to the fact that this property is
-     * removable from the request (nillable=true+minOccurs=0)
-     * @return int|null
-     */
-    public function getSourceId(): ?int
-    {
-        return $this->SourceId ?? null;
-    }
-    /**
-     * Set SourceId value
-     * This property is removable from request (nillable=true+minOccurs=0), therefore
-     * if the value assigned to this property is null, it is removed from this object
-     * @param int $sourceId
-     * @return \StructType\ApiCampaignGetItem
-     */
-    public function setSourceId(?int $sourceId = null): self
-    {
-        if (is_null($sourceId) || (is_array($sourceId) && empty($sourceId))) {
-            unset($this->SourceId);
-        } else {
-            $this->SourceId = $sourceId;
-        }
-        
-        return $this;
-    }
-    /**
      * Get Statistics value
      * @return \StructType\ApiStatistics|null
      */
@@ -511,6 +483,91 @@ class ApiCampaignGetItem extends ApiCampaignBase
     public function setRepresentedBy(?\StructType\ApiCampaignAssistant $representedBy = null): self
     {
         $this->RepresentedBy = $representedBy;
+        
+        return $this;
+    }
+    /**
+     * Get TextCampaign value
+     * @return \StructType\ApiTextCampaignGetItem|null
+     */
+    public function getTextCampaign(): ?\StructType\ApiTextCampaignGetItem
+    {
+        return $this->TextCampaign;
+    }
+    /**
+     * Set TextCampaign value
+     * @param \StructType\ApiTextCampaignGetItem $textCampaign
+     * @return \StructType\ApiCampaignGetItem
+     */
+    public function setTextCampaign(?\StructType\ApiTextCampaignGetItem $textCampaign = null): self
+    {
+        $this->TextCampaign = $textCampaign;
+        
+        return $this;
+    }
+    /**
+     * Get MobileAppCampaign value
+     * @return \StructType\ApiMobileAppCampaignGetItem|null
+     */
+    public function getMobileAppCampaign(): ?\StructType\ApiMobileAppCampaignGetItem
+    {
+        return $this->MobileAppCampaign;
+    }
+    /**
+     * Set MobileAppCampaign value
+     * @param \StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign
+     * @return \StructType\ApiCampaignGetItem
+     */
+    public function setMobileAppCampaign(?\StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign = null): self
+    {
+        $this->MobileAppCampaign = $mobileAppCampaign;
+        
+        return $this;
+    }
+    /**
+     * Get DynamicTextCampaign value
+     * @return \StructType\ApiDynamicTextCampaignGetItem|null
+     */
+    public function getDynamicTextCampaign(): ?\StructType\ApiDynamicTextCampaignGetItem
+    {
+        return $this->DynamicTextCampaign;
+    }
+    /**
+     * Set DynamicTextCampaign value
+     * @param \StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign
+     * @return \StructType\ApiCampaignGetItem
+     */
+    public function setDynamicTextCampaign(?\StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign = null): self
+    {
+        $this->DynamicTextCampaign = $dynamicTextCampaign;
+        
+        return $this;
+    }
+    /**
+     * Get SourceId value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (nillable=true+minOccurs=0)
+     * @return int|null
+     */
+    public function getSourceId(): ?int
+    {
+        return $this->SourceId ?? null;
+    }
+    /**
+     * Set SourceId value
+     * This property is removable from request (nillable=true+minOccurs=0), therefore
+     * if the value assigned to this property is null, it is removed from this object
+     * @param int $sourceId
+     * @return \StructType\ApiCampaignGetItem
+     */
+    public function setSourceId(?int $sourceId = null): self
+    {
+        if (is_null($sourceId) || (is_array($sourceId) && empty($sourceId))) {
+            unset($this->SourceId);
+        } else {
+            $this->SourceId = $sourceId;
+        }
         
         return $this;
     }
@@ -651,63 +708,6 @@ class ApiCampaignGetItem extends ApiCampaignBase
         } else {
             $this->ExcludedSites = $excludedSites;
         }
-        
-        return $this;
-    }
-    /**
-     * Get TextCampaign value
-     * @return \StructType\ApiTextCampaignGetItem|null
-     */
-    public function getTextCampaign(): ?\StructType\ApiTextCampaignGetItem
-    {
-        return $this->TextCampaign;
-    }
-    /**
-     * Set TextCampaign value
-     * @param \StructType\ApiTextCampaignGetItem $textCampaign
-     * @return \StructType\ApiCampaignGetItem
-     */
-    public function setTextCampaign(?\StructType\ApiTextCampaignGetItem $textCampaign = null): self
-    {
-        $this->TextCampaign = $textCampaign;
-        
-        return $this;
-    }
-    /**
-     * Get MobileAppCampaign value
-     * @return \StructType\ApiMobileAppCampaignGetItem|null
-     */
-    public function getMobileAppCampaign(): ?\StructType\ApiMobileAppCampaignGetItem
-    {
-        return $this->MobileAppCampaign;
-    }
-    /**
-     * Set MobileAppCampaign value
-     * @param \StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign
-     * @return \StructType\ApiCampaignGetItem
-     */
-    public function setMobileAppCampaign(?\StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign = null): self
-    {
-        $this->MobileAppCampaign = $mobileAppCampaign;
-        
-        return $this;
-    }
-    /**
-     * Get DynamicTextCampaign value
-     * @return \StructType\ApiDynamicTextCampaignGetItem|null
-     */
-    public function getDynamicTextCampaign(): ?\StructType\ApiDynamicTextCampaignGetItem
-    {
-        return $this->DynamicTextCampaign;
-    }
-    /**
-     * Set DynamicTextCampaign value
-     * @param \StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign
-     * @return \StructType\ApiCampaignGetItem
-     */
-    public function setDynamicTextCampaign(?\StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign = null): self
-    {
-        $this->DynamicTextCampaign = $dynamicTextCampaign;
         
         return $this;
     }

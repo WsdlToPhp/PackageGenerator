@@ -2,13 +2,8 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" backupGlobals="false" colors="true" bootstrap="vendor/autoload.php">
   <coverage>
     <include>
-      <directory>./</directory>
+      <directory>src</directory>
     </include>
-    <exclude>
-      <directory>./src/resources</directory>
-      <directory>./tests</directory>
-      <directory>./vendor</directory>
-    </exclude>
   </coverage>
   <php>
     <ini name="error_reporting" value="-1"/>

@@ -162,6 +162,7 @@ Developers who helped on this project are listed in the [composer.json](composer
 - [Clifford Vickrey](https://github.com/cliffordvickrey)
 - [Arnaud POINTET](https://github.com/Oipnet)
 - [dypa](https://github.com/dypa)
+- [tbreuss](https://github.com/tbreuss)
 
 ## FAQ
 

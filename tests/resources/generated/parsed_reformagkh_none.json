@@ -741,10 +741,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "RequestState",
+                "inheritance": "RequestState[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:RequestState[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfRequestState",
@@ -757,10 +758,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "string",
+                "inheritance": "string[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:string[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfString",
@@ -865,10 +867,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "SetRequestForSubmitInnStatus",
+                "inheritance": "SetRequestForSubmitInnStatus[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:SetRequestForSubmitInnStatus[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfSetRequestForSubmitInnStatus",
@@ -1524,10 +1527,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "HouseInfo",
+                "inheritance": "HouseInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseInfo[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfHouseInfo",
@@ -3395,10 +3399,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "Lift",
+                "inheritance": "Lift[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:Lift[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfLift",
@@ -3495,10 +3500,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "int",
+                "inheritance": "int[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "xsd:int[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfInt",
@@ -5023,10 +5029,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "FileInfo",
+                "inheritance": "FileInfo[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:FileInfo[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfFileInfo",
@@ -6107,10 +6114,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "HouseCadastralNumber",
+                "inheritance": "HouseCadastralNumber[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseCadastralNumber[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfHouseCadastralNumber",
@@ -6245,10 +6253,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "HouseFacade",
+                "inheritance": "HouseFacade[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseFacade[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfHouseFacade",
@@ -6429,10 +6438,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "HouseRoof",
+                "inheritance": "HouseRoof[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseRoof[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfHouseRoof",
@@ -6495,10 +6505,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "HouseAdditionalEquipment",
+                "inheritance": "HouseAdditionalEquipment[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseAdditionalEquipment[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfHouseAdditionalEquipment",
@@ -7277,10 +7288,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "HouseMeteringDevice",
+                "inheritance": "HouseMeteringDevice[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseMeteringDevice[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfHouseMeteringDevice",
@@ -7399,10 +7411,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "HouseLift",
+                "inheritance": "HouseLift[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseLift[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfHouseLift",
@@ -8079,10 +8092,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "HouseServiceReportVolume",
+                "inheritance": "HouseServiceReportVolume[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseServiceReportVolume[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfHouseServiceReportVolume",
@@ -8243,10 +8257,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "HouseService",
+                "inheritance": "HouseService[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseService[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfHouseService",
@@ -8426,10 +8441,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "HouseCommunalServiceCost",
+                "inheritance": "HouseCommunalServiceCost[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseCommunalServiceCost[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfHouseCommunalServiceCost",
@@ -8521,10 +8537,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "HouseCommunalServiceNormativeAct",
+                "inheritance": "HouseCommunalServiceNormativeAct[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseCommunalServiceNormativeAct[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfHouseCommunalServiceNormativeAct",
@@ -8997,10 +9014,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "HouseCommunalService",
+                "inheritance": "HouseCommunalService[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseCommunalService[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfHouseCommunalService",
@@ -9161,10 +9179,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "HouseCommonMeeting",
+                "inheritance": "HouseCommonMeeting[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseCommonMeeting[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfHouseCommonMeeting",
@@ -9361,10 +9380,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "HouseCommonProperty",
+                "inheritance": "HouseCommonProperty[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseCommonProperty[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfHouseCommonProperty",
@@ -10929,10 +10949,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "GetHouseProfileResponse",
+                "inheritance": "GetHouseProfileResponse[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:GetHouseProfileResponse[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfGetHouseProfileResponse",
@@ -10989,10 +11010,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "GetHouseProfile988Response",
+                "inheritance": "GetHouseProfile988Response[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:GetHouseProfile988Response[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfGetHouseProfile988Response",
@@ -11083,10 +11105,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "HouseData",
+                "inheritance": "HouseData[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:HouseData[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfHouseData",
@@ -14935,10 +14958,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "Disturbance",
+                "inheritance": "Disturbance[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:Disturbance[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfDisturbance",
@@ -15025,10 +15049,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "License",
+                "inheritance": "License[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:License[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfLicense",
@@ -15635,10 +15660,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "GetCompanyProfileResponse",
+                "inheritance": "GetCompanyProfileResponse[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:GetCompanyProfileResponse[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfGetCompanyProfileResponse",
@@ -15695,10 +15721,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "GetCompanyProfile988Response",
+                "inheritance": "GetCompanyProfile988Response[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:GetCompanyProfile988Response[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfGetCompanyProfile988Response",
@@ -15865,10 +15892,11 @@
                 "types": [],
                 "values": [],
                 "list": "",
-                "inheritance": "ReportingPeriod",
+                "inheritance": "ReportingPeriod[]",
                 "abstract": false,
                 "meta": {
                     "arrayType": "tns:ReportingPeriod[]",
+                    "base": "soap-enc:Array",
                     "ref": "soap-enc:arrayType"
                 },
                 "name": "ArrayOfReportingPeriod",
@@ -15958,482 +15986,6 @@
                 "abstract": false,
                 "meta": [],
                 "name": "ErrorDetails",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "RequestState[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:RequestState[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfRequestState",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "string[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:string[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfString",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "SetRequestForSubmitInnStatus[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:SetRequestForSubmitInnStatus[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfSetRequestForSubmitInnStatus",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "HouseInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:HouseInfo[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfHouseInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "Lift[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:Lift[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfLift",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "int[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "xsd:int[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfInt",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "FileInfo[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:FileInfo[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfFileInfo",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "HouseCadastralNumber[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:HouseCadastralNumber[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfHouseCadastralNumber",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "HouseFacade[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:HouseFacade[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfHouseFacade",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "HouseRoof[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:HouseRoof[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfHouseRoof",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "HouseAdditionalEquipment[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:HouseAdditionalEquipment[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfHouseAdditionalEquipment",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "HouseMeteringDevice[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:HouseMeteringDevice[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfHouseMeteringDevice",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "HouseLift[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:HouseLift[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfHouseLift",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "HouseServiceReportVolume[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:HouseServiceReportVolume[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfHouseServiceReportVolume",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "HouseService[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:HouseService[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfHouseService",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "HouseCommunalServiceCost[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:HouseCommunalServiceCost[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfHouseCommunalServiceCost",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "HouseCommunalServiceNormativeAct[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:HouseCommunalServiceNormativeAct[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfHouseCommunalServiceNormativeAct",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "HouseCommunalService[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:HouseCommunalService[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfHouseCommunalService",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "HouseCommonMeeting[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:HouseCommonMeeting[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfHouseCommonMeeting",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "HouseCommonProperty[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:HouseCommonProperty[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfHouseCommonProperty",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "GetHouseProfileResponse[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:GetHouseProfileResponse[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfGetHouseProfileResponse",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "GetHouseProfile988Response[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:GetHouseProfile988Response[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfGetHouseProfile988Response",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "HouseData[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:HouseData[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfHouseData",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "Disturbance[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:Disturbance[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfDisturbance",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "License[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:License[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfLicense",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "GetCompanyProfileResponse[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:GetCompanyProfileResponse[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfGetCompanyProfileResponse",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "GetCompanyProfile988Response[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:GetCompanyProfile988Response[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfGetCompanyProfile988Response",
-                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
-            },
-            {
-                "attributes": [],
-                "restriction": false,
-                "struct": false,
-                "types": [],
-                "values": [],
-                "list": "",
-                "inheritance": "ReportingPeriod[]",
-                "abstract": false,
-                "meta": {
-                    "arrayType": "tns:ReportingPeriod[]",
-                    "base": "soap-enc:Array",
-                    "ref": "soap-enc:arrayType"
-                },
-                "name": "ArrayOfReportingPeriod",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             }
         ]

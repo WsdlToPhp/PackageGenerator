@@ -10,10 +10,10 @@ use WsdlToPhp\PackageGenerator\Model\AbstractModel;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\WsdlHandler\AbstractDocument;
 use WsdlToPhp\WsdlHandler\Tag\AbstractTag;
 use WsdlToPhp\WsdlHandler\Tag\AbstractTag as Tag;
 use WsdlToPhp\WsdlHandler\Tag\TagRestriction as Restriction;
-use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
 final class TagRestriction extends AbstractTagParser
 {
@@ -43,13 +43,19 @@ final class TagRestriction extends AbstractTagParser
                 ->parseRestrictionChildren($parentAttribute, $restriction)
             ;
         } else {
-            // if restriction is contained by an union tag, don't create the virtual struct as "union"s
+            // If restriction has a base attribute, it's not necessarily, and probably surely,
+            // not declared as inheriting from the base attribute value.
+            // This is why it's first searched without type in order to complete its information,
+            // otherwise we look for the model already inheriting from the base attribute value.
+            $model = $this->getModel($parent, $restriction->getAttributeBase()) ?? $this->getModel($parent);
+
+            // If restriction is contained by a union tag, don't create the virtual struct as "union"s
             // are wrongly parsed by SoapClient::__getTypes and this creates a duplicated element then
-            $model = $this->getModel($parent, $restriction->getAttributeBase());
-            if (!$restriction->hasUnionParent() && !$model) {
+            if (!$model && !$restriction->hasUnionParent()) {
                 $this->getGenerator()->getStructs()->addVirtualStruct($parent->getAttributeName(), $restriction->getAttributeBase());
                 $model = $this->getModel($parent, $restriction->getAttributeBase());
             }
+
             if ($model instanceof Struct) {
                 $this
                     ->parseRestrictionAttributes($model, $restriction)
@@ -61,6 +67,7 @@ final class TagRestriction extends AbstractTagParser
 
     protected function parseWsdl(Wsdl $wsdl): void
     {
+        /** @var Restriction $tag */
         foreach ($this->getTags() as $tag) {
             if ($tag->isEnumeration()) {
                 continue;
@@ -72,19 +79,21 @@ final class TagRestriction extends AbstractTagParser
 
     protected function parsingTag(): string
     {
-        return WsdlDocument::TAG_RESTRICTION;
+        return AbstractDocument::TAG_RESTRICTION;
     }
 
     protected function parseRestrictionAttributes(AbstractModel $model, Restriction $restriction): self
     {
-        if ($restriction->hasAttributes()) {
-            // ensure inheritance of model is well-defined, SoapClient parser is based on SoapClient::__getTypes which can be false in some case
-            $model->setInheritance($restriction->getAttributeBase());
+        if (!$restriction->hasAttributes()) {
+            return $this;
+        }
 
-            /** @var AbstractAttributeHandler $attribute */
-            foreach ($restriction->getAttributes() as $attribute) {
-                $model->addMeta($attribute->getName(), $attribute->getValue(true));
-            }
+        // ensure inheritance of model is well-defined, SoapClient parser is based on SoapClient::__getTypes which can be false in some case
+        $model->setInheritance($restriction->getAttributeBase());
+
+        /** @var AbstractAttributeHandler $attribute */
+        foreach ($restriction->getAttributes() as $attribute) {
+            $model->addMeta($attribute->getName(), $attribute->getValue(true));
         }
 
         return $this;
@@ -121,6 +130,7 @@ final class TagRestriction extends AbstractTagParser
         if ('arraytype' === mb_strtolower($attribute->getName())) {
             $model->setInheritance($attribute->getValue());
         }
+
         $model->addMeta($attribute->getName(), $attribute->getValue(true));
 
         return $this;
