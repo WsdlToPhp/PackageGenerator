@@ -16,15 +16,6 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 class ApiHouseProfileData extends AbstractStructBase
 {
     /**
-     * The area_total
-     * Meta information extracted from the WSDL
-     * - base: xsd:decimal
-     * - fractionDigits: 2
-     * - totalDigits: 15
-     * @var float|null
-     */
-    protected ?float $area_total = null;
-    /**
      * The area_residential
      * Meta information extracted from the WSDL
      * - base: xsd:decimal
@@ -431,8 +422,16 @@ class ApiHouseProfileData extends AbstractStructBase
      */
     protected ?\StructType\ApiFinance $finance = null;
     /**
+     * The area_total
+     * Meta information extracted from the WSDL
+     * - base: xsd:decimal
+     * - fractionDigits: 2
+     * - totalDigits: 15
+     * @var float|null
+     */
+    protected ?float $area_total = null;
+    /**
      * Constructor method for HouseProfileData
-     * @uses ApiHouseProfileData::setArea_total()
      * @uses ApiHouseProfileData::setArea_residential()
      * @uses ApiHouseProfileData::setArea_non_residential()
      * @uses ApiHouseProfileData::setCadastral_number()
@@ -485,7 +484,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * @uses ApiHouseProfileData::setCold_water_provider()
      * @uses ApiHouseProfileData::setDrainage_provider()
      * @uses ApiHouseProfileData::setFinance()
-     * @param float $area_total
+     * @uses ApiHouseProfileData::setArea_total()
      * @param float $area_residential
      * @param float $area_non_residential
      * @param string $cadastral_number
@@ -538,11 +537,11 @@ class ApiHouseProfileData extends AbstractStructBase
      * @param \StructType\ApiProvider $cold_water_provider
      * @param \StructType\ApiProvider $drainage_provider
      * @param \StructType\ApiFinance $finance
+     * @param float $area_total
      */
-    public function __construct(?float $area_total = null, ?float $area_residential = null, ?float $area_non_residential = null, ?string $cadastral_number = null, ?string $project_type = null, ?string $location_description = null, ?string $individual_name = null, ?string $house_type = null, ?string $exploitation_start_year = null, ?string $wall_material = null, ?string $floor_type = null, ?int $storeys_count = null, ?int $entrance_count = null, ?int $elevators_count = null, ?float $area_private = null, ?float $area_municipal = null, ?float $area_national = null, ?float $area_land = null, ?float $area_territory = null, ?string $inventory_number = null, ?int $flats_count = null, ?int $residents_count = null, ?int $accounts_count = null, ?string $construction_features = null, ?float $thermal_actual_expense = null, ?float $thermal_normative_expense = null, ?string $energy_efficiency = null, ?string $energy_audit_date = null, ?string $privatization_start_date = null, ?float $deterioration_total = null, ?float $deterioration_foundation = null, ?float $deterioration_bearing_walls = null, ?float $deterioration_floor = null, ?\StructType\ApiFacade $facade = null, ?\StructType\ApiRoof $roof = null, ?\StructType\ApiBasement $basement = null, ?\StructType\ApiCommonSpace $common_space = null, ?\StructType\ApiChute $chute = null, ?\StructType\ApiHeatingSystem $heating_system = null, ?\StructType\ApiHotWaterSystem $hot_water_system = null, ?\StructType\ApiColdWaterSystem $cold_water_system = null, ?\StructType\ApiSewerageSystem $sewerage_system = null, ?\StructType\ApiElectricitySystem $electricity_system = null, ?\StructType\ApiGasSystem $gas_system = null, ?array $lifts = null, ?\StructType\ApiManagementContract $management_contract = null, ?\StructType\ApiProvider $heating_provider = null, ?\StructType\ApiProvider $electricity_provider = null, ?\StructType\ApiProvider $gas_provider = null, ?\StructType\ApiProvider $hot_water_provider = null, ?\StructType\ApiProvider $cold_water_provider = null, ?\StructType\ApiProvider $drainage_provider = null, ?\StructType\ApiFinance $finance = null)
+    public function __construct(?float $area_residential = null, ?float $area_non_residential = null, ?string $cadastral_number = null, ?string $project_type = null, ?string $location_description = null, ?string $individual_name = null, ?string $house_type = null, ?string $exploitation_start_year = null, ?string $wall_material = null, ?string $floor_type = null, ?int $storeys_count = null, ?int $entrance_count = null, ?int $elevators_count = null, ?float $area_private = null, ?float $area_municipal = null, ?float $area_national = null, ?float $area_land = null, ?float $area_territory = null, ?string $inventory_number = null, ?int $flats_count = null, ?int $residents_count = null, ?int $accounts_count = null, ?string $construction_features = null, ?float $thermal_actual_expense = null, ?float $thermal_normative_expense = null, ?string $energy_efficiency = null, ?string $energy_audit_date = null, ?string $privatization_start_date = null, ?float $deterioration_total = null, ?float $deterioration_foundation = null, ?float $deterioration_bearing_walls = null, ?float $deterioration_floor = null, ?\StructType\ApiFacade $facade = null, ?\StructType\ApiRoof $roof = null, ?\StructType\ApiBasement $basement = null, ?\StructType\ApiCommonSpace $common_space = null, ?\StructType\ApiChute $chute = null, ?\StructType\ApiHeatingSystem $heating_system = null, ?\StructType\ApiHotWaterSystem $hot_water_system = null, ?\StructType\ApiColdWaterSystem $cold_water_system = null, ?\StructType\ApiSewerageSystem $sewerage_system = null, ?\StructType\ApiElectricitySystem $electricity_system = null, ?\StructType\ApiGasSystem $gas_system = null, ?array $lifts = null, ?\StructType\ApiManagementContract $management_contract = null, ?\StructType\ApiProvider $heating_provider = null, ?\StructType\ApiProvider $electricity_provider = null, ?\StructType\ApiProvider $gas_provider = null, ?\StructType\ApiProvider $hot_water_provider = null, ?\StructType\ApiProvider $cold_water_provider = null, ?\StructType\ApiProvider $drainage_provider = null, ?\StructType\ApiFinance $finance = null, ?float $area_total = null)
     {
         $this
-            ->setArea_total($area_total)
             ->setArea_residential($area_residential)
             ->setArea_non_residential($area_non_residential)
             ->setCadastral_number($cadastral_number)
@@ -594,38 +593,8 @@ class ApiHouseProfileData extends AbstractStructBase
             ->setHot_water_provider($hot_water_provider)
             ->setCold_water_provider($cold_water_provider)
             ->setDrainage_provider($drainage_provider)
-            ->setFinance($finance);
-    }
-    /**
-     * Get area_total value
-     * @return float|null
-     */
-    public function getArea_total(): ?float
-    {
-        return $this->area_total;
-    }
-    /**
-     * Set area_total value
-     * @param float $area_total
-     * @return \StructType\ApiHouseProfileData
-     */
-    public function setArea_total(?float $area_total = null): self
-    {
-        // validation for constraint: float
-        if (!is_null($area_total) && !(is_float($area_total) || is_numeric($area_total))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_total, true), gettype($area_total)), __LINE__);
-        }
-        // validation for constraint: fractionDigits(2)
-        if (!is_null($area_total) && mb_strlen(mb_substr((string) $area_total, false !== mb_strpos((string) $area_total, '.') ? mb_strpos((string) $area_total, '.') + 1 : mb_strlen((string) $area_total))) > 2) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_total, true), mb_strlen(mb_substr((string) $area_total, mb_strpos((string) $area_total, '.') + 1))), __LINE__);
-        }
-        // validation for constraint: totalDigits(15)
-        if (!is_null($area_total) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_total)) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_total, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_total))), __LINE__);
-        }
-        $this->area_total = $area_total;
-        
-        return $this;
+            ->setFinance($finance)
+            ->setArea_total($area_total);
     }
     /**
      * Get area_residential value
@@ -1904,6 +1873,37 @@ class ApiHouseProfileData extends AbstractStructBase
     public function setFinance(?\StructType\ApiFinance $finance = null): self
     {
         $this->finance = $finance;
+        
+        return $this;
+    }
+    /**
+     * Get area_total value
+     * @return float|null
+     */
+    public function getArea_total(): ?float
+    {
+        return $this->area_total;
+    }
+    /**
+     * Set area_total value
+     * @param float $area_total
+     * @return \StructType\ApiHouseProfileData
+     */
+    public function setArea_total(?float $area_total = null): self
+    {
+        // validation for constraint: float
+        if (!is_null($area_total) && !(is_float($area_total) || is_numeric($area_total))) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($area_total, true), gettype($area_total)), __LINE__);
+        }
+        // validation for constraint: fractionDigits(2)
+        if (!is_null($area_total) && mb_strlen(mb_substr((string) $area_total, false !== mb_strpos((string) $area_total, '.') ? mb_strpos((string) $area_total, '.') + 1 : mb_strlen((string) $area_total))) > 2) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must at most contain 2 fraction digits, %d given', var_export($area_total, true), mb_strlen(mb_substr((string) $area_total, mb_strpos((string) $area_total, '.') + 1))), __LINE__);
+        }
+        // validation for constraint: totalDigits(15)
+        if (!is_null($area_total) && mb_strlen(preg_replace('/(\D)/', '', (string) $area_total)) > 15) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must use at most 15 digits, "%d" given', var_export($area_total, true), mb_strlen(preg_replace('/(\D)/', '', (string) $area_total))), __LINE__);
+        }
+        $this->area_total = $area_total;
         
         return $this;
     }
