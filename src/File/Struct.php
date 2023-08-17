@@ -43,10 +43,17 @@ class Struct extends AbstractModelFile
         return parent::getModel();
     }
 
+    protected function addClassElement(): AbstractModelFile
+    {
+        $this->getFile()->addString('#[\AllowDynamicProperties]');
+
+        return parent::addClassElement();
+    }
+
     protected function defineUseStatements(): self
     {
         if ($this->getGenerator()->getOptionValidation()) {
-            $this->getFile()->addUse(\InvalidArgumentException::class, null, false);
+            $this->getFile()->addUse(\InvalidArgumentException::class);
         }
 
         return parent::defineUseStatements();

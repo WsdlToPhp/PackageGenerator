@@ -27,6 +27,11 @@ final class StructEnum extends Struct
         return parent::setModel($model);
     }
 
+    protected function addClassElement(): AbstractModelFile
+    {
+        return AbstractModelFile::addClassElement();
+    }
+
     protected function fillClassConstants(ConstantContainer $constants): void
     {
         /** @var StructModel $model */

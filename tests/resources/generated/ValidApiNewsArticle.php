@@ -13,6 +13,7 @@ use \Std\Opt\StructClass;
  * @subpackage Structs
  * @release 1.1.0
  */
+#[\AllowDynamicProperties]
 class ApiNewsArticle extends StructClass
 {
     /**
