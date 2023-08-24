@@ -35,6 +35,7 @@ final class UtilsTest extends AbstractTestCase
     {
         $this->assertSame('020', Utils::getValueWithinItsType('020', 'string'));
         $this->assertSame('01', Utils::getValueWithinItsType('01', 'string'));
+        $this->assertSame(1, Utils::getValueWithinItsType('1', 'int'));
         $this->assertSame(2.568, Utils::getValueWithinItsType('2.568', 'float'));
         $this->assertSame(true, Utils::getValueWithinItsType('true', 'bool'));
         $this->assertSame(false, Utils::getValueWithinItsType('false', 'bool'));

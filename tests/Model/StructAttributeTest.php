@@ -76,7 +76,7 @@ final class StructAttributeTest extends AbstractTestCase
 
         $this->assertSame('boolean', $structAttribute->getType(true));
         $this->assertSame('Success', $structAttribute->getType());
-        $this->assertFalse($structAttribute->getDefaultValue());
+        $this->assertFalse($structAttribute->getDefaultValue('boolean'));
     }
 
     public function testIsNullableMustReturnFalse(): void

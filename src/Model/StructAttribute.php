@@ -137,7 +137,7 @@ final class StructAttribute extends AbstractModel
     /**
      * @return null|array|bool|float|int|string
      */
-    public function getDefaultValue()
+    public function getDefaultValue(?string $type = null)
     {
         if (($struct = $this->getTypeStruct()) && $struct->isStruct()) {
             return null;
@@ -149,7 +149,7 @@ final class StructAttribute extends AbstractModel
             'DefaultValue',
             'defaultValue',
             'defaultvalue',
-        ]), $this->getType(true));
+        ]), $type);
     }
 
     public function isRequired(): bool

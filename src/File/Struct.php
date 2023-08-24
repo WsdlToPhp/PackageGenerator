@@ -175,7 +175,7 @@ class Struct extends AbstractModelFile
         }
 
         try {
-            $defaultValue = $attribute->getDefaultValue();
+            $defaultValue = $attribute->getDefaultValue($this->getStructAttributeTypeAsPhpType($attribute));
 
             return new PhpFunctionParameter(
                 lcfirst($attribute->getUniqueString($attribute->getCleanName(), 'method')),
