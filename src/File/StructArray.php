@@ -40,6 +40,11 @@ final class StructArray extends Struct
         return $this;
     }
 
+    protected function addClassElement(): AbstractModelFile
+    {
+        return AbstractModelFile::addClassElement();
+    }
+
     public function setModel(AbstractModel $model): self
     {
         if ($model instanceof StructModel && !$model->isArray()) {

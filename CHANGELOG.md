@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.1.9 - 2023-08-25
+- issue #299, pr #301 - Deprecated Warnings for Dynamic Properties
+- issue #300, pr #302 - Incorrect default value for integer attribute
+
 ## 4.1.8 - 2023-04-20
 - issue #285, pr #288 - Type-Error when using regex pattern for decimal restriction
 - issue #292, pr #293 - Wrong type for gYearMonth and gMonthDay

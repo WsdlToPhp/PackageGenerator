@@ -13,6 +13,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * @subpackage Structs
  * @release 1.1.0
  */
+#[\AllowDynamicProperties]
 class ApiShopper extends AbstractStructBase
 {
     /**

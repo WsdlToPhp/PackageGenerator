@@ -104,23 +104,17 @@ final class Utils
     public static function getValueWithinItsType($value, ?string $knownType = null)
     {
         if (is_int($value) || (!is_null($value) && in_array($knownType, [
-            'time',
-            'positiveInteger',
-            'unsignedLong',
-            'unsignedInt',
-            'short',
-            'long',
             'int',
             'integer',
         ], true))) {
-            return intval($value);
+            return (int) $value;
         }
         if (is_float($value) || (!is_null($value) && in_array($knownType, [
             'float',
             'double',
             'decimal',
         ], true))) {
-            return floatval($value);
+            return (float) $value;
         }
         if (is_bool($value) || (!is_null($value) && in_array($knownType, [
             'bool',
