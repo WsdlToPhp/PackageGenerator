@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 4.1.10 - 2023-09-11
+- issue #298, pr #303 - Undefined constant "WsdlToPhp\PackageGenerator\Generator\SOAP_1_1"
+
 ## 4.1.9 - 2023-08-25
 - issue #299, pr #301 - Deprecated Warnings for Dynamic Properties
 - issue #300, pr #302 - Incorrect default value for integer attribute
