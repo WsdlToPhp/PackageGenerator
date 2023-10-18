@@ -91,7 +91,7 @@ final class Composer extends AbstractFile
 
     protected function addComposerSettings(array &$content): Composer
     {
-        $content = array_merge_recursive($content, $this->getGenerator()->getOptionComposerSettings());
+        $content = array_replace_recursive($content, $this->getGenerator()->getOptionComposerSettings());
 
         return $this;
     }
