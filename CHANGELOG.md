@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 4.1.11 - 2023-10-18
+- issue #304, pr #305 - Override required PHP version in composer.json
+
 ## 4.1.10 - 2023-09-11
 - issue #298, pr #303 - Undefined constant "WsdlToPhp\PackageGenerator\Generator\SOAP_1_1"
 
