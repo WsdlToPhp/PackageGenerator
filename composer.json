@@ -89,9 +89,14 @@
             "role": "Contributor"
         },
         {
-            "name": "tbreuss",
-            "email": "thomasbreuss@gmx.ch",
+            "name": "gugglegum",
+            "email": "gugglegum@gmail.com",
             "role": "Contributor"
+        },
+        {
+          "name": "tbreuss",
+          "email": "thomasbreuss@gmx.ch",
+          "role": "Contributor"
         }
     ],
     "support" : {

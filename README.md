@@ -163,6 +163,7 @@ Developers who helped on this project are listed in the [composer.json](composer
 - [Arnaud POINTET](https://github.com/Oipnet)
 - [dypa](https://github.com/dypa)
 - [tbreuss](https://github.com/tbreuss)
+- [Paul Melekhov](https://github.com/gugglegum)
 
 ## FAQ
 
