@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 4.1.12 - 2024-04-13
+- issue #308, pr #309 - Symfony 7 / added support for symfony 7
+
 ## 4.1.11 - 2023-10-18
 - issue #304, pr #305 - Override required PHP version in composer.json
 
