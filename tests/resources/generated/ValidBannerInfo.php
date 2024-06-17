@@ -79,7 +79,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - base: soapenc:Array
      * - nillable: true
      * - ref: soapenc:arrayType
-     * @var \StructType\ApiBannerPhraseInfo[]
+     * @var \StructType\ApiBannerPhraseInfo[]|null
      */
     protected ?array $Phrases = null;
     /**
@@ -89,7 +89,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - base: soapenc:Array
      * - nillable: true
      * - ref: soapenc:arrayType
-     * @var string[]
+     * @var string[]|null
      */
     protected ?array $MinusKeywords = null;
     /**
@@ -155,7 +155,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - base: soapenc:Array
      * - nillable: true
      * - ref: soapenc:arrayType
-     * @var \StructType\ApiSitelink[]
+     * @var \StructType\ApiSitelink[]|null
      */
     protected ?array $Sitelinks = null;
     /**
@@ -165,7 +165,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - base: soapenc:Array
      * - nillable: true
      * - ref: soapenc:arrayType
-     * @var string[]
+     * @var string[]|null
      */
     protected ?array $AdWarnings = null;
     /**
@@ -182,7 +182,7 @@ class ApiBannerInfo extends AbstractStructBase
      * - base: soapenc:Array
      * - nillable: true
      * - ref: soapenc:arrayType
-     * @var \StructType\ApiRejectReason[]
+     * @var \StructType\ApiRejectReason[]|null
      */
     protected ?array $ModerateRejectionReasons = null;
     /**
@@ -520,7 +520,7 @@ class ApiBannerInfo extends AbstractStructBase
     }
     /**
      * Get Phrases value
-     * @return \StructType\ApiBannerPhraseInfo[]
+     * @return \StructType\ApiBannerPhraseInfo[]|null
      */
     public function getPhrases(): ?array
     {
@@ -587,7 +587,7 @@ class ApiBannerInfo extends AbstractStructBase
     }
     /**
      * Get MinusKeywords value
-     * @return string[]
+     * @return string[]|null
      */
     public function getMinusKeywords(): ?array
     {
@@ -838,7 +838,7 @@ class ApiBannerInfo extends AbstractStructBase
     }
     /**
      * Get Sitelinks value
-     * @return \StructType\ApiSitelink[]
+     * @return \StructType\ApiSitelink[]|null
      */
     public function getSitelinks(): ?array
     {
@@ -905,7 +905,7 @@ class ApiBannerInfo extends AbstractStructBase
     }
     /**
      * Get AdWarnings value
-     * @return string[]
+     * @return string[]|null
      */
     public function getAdWarnings(): ?array
     {
@@ -995,7 +995,7 @@ class ApiBannerInfo extends AbstractStructBase
     }
     /**
      * Get ModerateRejectionReasons value
-     * @return \StructType\ApiRejectReason[]
+     * @return \StructType\ApiRejectReason[]|null
      */
     public function getModerateRejectionReasons(): ?array
     {
