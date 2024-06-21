@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 4.1.13 - 2024-06-21
+- issue #312, pr #313 - Invalid getter and annotation for nullable property
+
 ## 4.1.12 - 2024-04-13
 - issue #308, pr #309 - Symfony 7 / added support for symfony 7
 

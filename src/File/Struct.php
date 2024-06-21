@@ -347,17 +347,16 @@ class Struct extends AbstractModelFile
 
     protected function addStructMethodGet(StructAttributeModel $attribute): self
     {
-        switch (true) {
-            // it can either be a string, a DOMDocument or null...
-            case $attribute->isXml():
-                $returnType = '';
-
-                break;
-
-            default:
-                $returnType = (!$attribute->getRemovableFromRequest() && !$attribute->isAChoice() && $attribute->isRequired() ? '' : '?').$this->getStructAttributeTypeAsPhpType($attribute);
-
-                break;
+        // it can either be a string, a DOMDocument or null...
+        if ($attribute->isXml()) {
+            $returnType = '';
+        } else {
+            $returnType = (
+                !$attribute->getRemovableFromRequest()
+                && !$attribute->isAChoice()
+                && $attribute->isRequired()
+                && !$attribute->isNullable() ? '' : '?'
+            ).$this->getStructAttributeTypeAsPhpType($attribute);
         }
 
         $method = new PhpMethod(

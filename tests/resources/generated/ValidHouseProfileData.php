@@ -372,7 +372,7 @@ class ApiHouseProfileData extends AbstractStructBase
      * - base: soap-enc:Array
      * - nillable: true
      * - ref: soap-enc:arrayType
-     * @var \StructType\ApiLift[]
+     * @var \StructType\ApiLift[]|null
      */
     protected ?array $lifts = null;
     /**
@@ -1691,7 +1691,7 @@ class ApiHouseProfileData extends AbstractStructBase
     }
     /**
      * Get lifts value
-     * @return \StructType\ApiLift[]
+     * @return \StructType\ApiLift[]|null
      */
     public function getLifts(): ?array
     {

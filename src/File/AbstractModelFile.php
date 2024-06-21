@@ -400,7 +400,12 @@ abstract class AbstractModelFile extends AbstractFile
             return '\\DOMDocument|string|null';
         }
 
-        return sprintf('%s%s%s', $this->getStructAttributeTypeAsPhpType($attribute, false), $this->useBrackets($attribute, $returnArrayType) ? '[]' : '', !$nullableItemType && ($attribute->isRequired() || $attribute->isArray() || $attribute->isList()) ? '' : '|null');
+        return sprintf(
+            '%s%s%s',
+            $this->getStructAttributeTypeAsPhpType($attribute, false),
+            $this->useBrackets($attribute, $returnArrayType) ? '[]' : '',
+            !$nullableItemType && !$attribute->isNullable() && ($attribute->isRequired() || $attribute->isArray() || $attribute->isList()) ? '' : '|null'
+        );
     }
 
     protected function getStructAttributeTypeSetAnnotation(StructAttributeModel $attribute, bool $returnArrayType = true, bool $itemType = false): string
@@ -413,7 +418,11 @@ abstract class AbstractModelFile extends AbstractFile
             return 'array|string';
         }
 
-        return sprintf('%s%s', $this->getStructAttributeTypeAsPhpType($attribute, $returnArrayType), $this->useBrackets($attribute, !$itemType) ? '[]' : '');
+        return sprintf(
+            '%s%s',
+            $this->getStructAttributeTypeAsPhpType($attribute, $returnArrayType),
+            $this->useBrackets($attribute, !$itemType) ? '[]' : ''
+        );
     }
 
     protected function useBrackets(StructAttributeModel $attribute, bool $returnArrayType = true): bool
