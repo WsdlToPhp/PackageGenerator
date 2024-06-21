@@ -410,8 +410,8 @@ final class Struct extends AbstractModel
         }
 
         array_walk($requiredAttributes, [$attributes, 'add']);
-        array_walk($notRequiredAttributes, [$attributes, 'add']);
         array_walk($nullableNotRequiredAttributes, [$attributes, 'add']);
+        array_walk($notRequiredAttributes, [$attributes, 'add']);
 
         unset($requiredAttributes, $notRequiredAttributes, $nullableNotRequiredAttributes);
 
