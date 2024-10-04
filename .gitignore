@@ -7,3 +7,4 @@ bin
 tests/resources/generated
 coverage
 .phpunit.result.cache
+box.phar
