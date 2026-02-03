@@ -8,6 +8,7 @@ on:
             - release/*
     pull_request:
         types: [ opened, synchronize, reopened ]
+concurrency: sonars
 jobs:
     sonarcloud:
         name: Sonars
@@ -46,7 +47,7 @@ jobs:
                 run: sed -i 's@'$GITHUB_WORKSPACE/'@''@g' coverage.xml report.xml
 
             -   name: SonarCloud Scan
-                uses: SonarSource/sonarcloud-github-action@master
+                uses: SonarSource/sonarqube-scan-action@v7
                 env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

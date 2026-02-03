@@ -29,6 +29,9 @@ use WsdlToPhp\PhpGenerator\Element\PhpProperty;
 
 class Struct extends AbstractModelFile
 {
+    /**
+     * @throws \InvalidArgumentException
+     */
     public function setModel(AbstractModel $model): self
     {
         if (!$model instanceof StructModel) {
@@ -166,6 +169,9 @@ class Struct extends AbstractModelFile
         return $parametersValues;
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     protected function getStructMethodParameter(StructAttributeModel $attribute): PhpFunctionParameter
     {
         switch (true) {

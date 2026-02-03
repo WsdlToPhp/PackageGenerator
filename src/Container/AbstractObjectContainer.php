@@ -39,6 +39,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
      * @param mixed $value
      *
      * @return mixed
+     * @throws \InvalidArgumentException
      */
     #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
@@ -102,6 +103,10 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         return $this;
     }
 
+    /**
+     * @param  mixed                     $value
+     * @throws \InvalidArgumentException
+     */
     public function get($value)
     {
         if (!is_scalar($value)) {
@@ -140,6 +145,9 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
         }
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     protected function getObjectKey(object $object)
     {
         $get = sprintf('get%s', ucfirst($this->objectProperty()));

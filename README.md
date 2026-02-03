@@ -128,15 +128,15 @@ Thanks to the [Docker image](https://hub.docker.com/r/splitbrain/phpfarm) of [ph
 
 First of all, you need to create your container which you can do using [docker-compose](https://docs.docker.com/compose/) by running the below command line from the root directory of the project:
 ```bash
-$ docker-compose up -d --build
+$ make build up
 ```
 
 You then have a container named `package_generator` in which you can run `composer` commands and `php cli` commands such as:
 ```bash
 # install deps in container (using update ensure it does use the composer.lock file if there is any)
-$ docker exec -it package_generator php-7.4 /usr/bin/composer update
+$ make update
 # run tests in container
-$ docker exec -it package_generator php-7.4 -dmemory_limit=-1 vendor/bin/phpunit
+$ make phpunit
 ```
 
 ## Contributing

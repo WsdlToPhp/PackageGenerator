@@ -66,6 +66,9 @@ final class StructValue extends AbstractModel
         return $this->index;
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     public function setIndex(int $index): StructValue
     {
         if (0 > $index) {

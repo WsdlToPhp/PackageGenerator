@@ -10,6 +10,6 @@ abstract class AbstractParser extends AbstractGeneratorAware implements ParserIn
 {
     public function getName(): string
     {
-        return get_called_class();
+        return static::class;
     }
 }

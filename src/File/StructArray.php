@@ -40,6 +40,9 @@ final class StructArray extends Struct
         return $this;
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     public function setModel(AbstractModel $model): self
     {
         if ($model instanceof StructModel && !$model->isArray()) {

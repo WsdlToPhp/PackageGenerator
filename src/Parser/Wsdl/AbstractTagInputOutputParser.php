@@ -35,7 +35,7 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
         }
 
         $parts = $tag->getParts();
-        $multipleParts = count($parts);
+        $multipleParts = count((array) $parts);
         if (is_array($parts) && $multipleParts > 1) {
             $types = [];
             foreach ($parts as $part) {

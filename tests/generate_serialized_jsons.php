@@ -180,8 +180,8 @@ foreach ($jsons as $id => $settings) {
         $generator = new Generator($options);
         $generator->parse();
         $json = json_encode($generator, JSON_PRETTY_PRINT);
-        $json = str_replace(json_encode($settings['origin']), '"__ORIGIN__"', $json);
-        $json = str_replace(json_encode(AbstractTestCase::getTestDirectory()), '"__DESTINATION__"', $json);
+        $json = str_replace(json_encode($settings['origin'], JSON_THROW_ON_ERROR), '"__ORIGIN__"', $json);
+        $json = str_replace(json_encode(AbstractTestCase::getTestDirectory(), JSON_THROW_ON_ERROR), '"__DESTINATION__"', $json);
         file_put_contents(sprintf('%sparsed_%s_%s.json', AbstractTestCase::getTestDirectory(), $id, $gatherMethod), $json);
         fwrite(STDERR, ' -> generated');
     }

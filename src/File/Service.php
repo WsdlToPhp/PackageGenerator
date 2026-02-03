@@ -63,6 +63,9 @@ final class Service extends AbstractModelFile
         return $returnType;
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     public function setModel(AbstractModel $model): self
     {
         if (!$model instanceof ServiceModel) {

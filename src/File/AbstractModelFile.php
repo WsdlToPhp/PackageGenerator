@@ -66,6 +66,9 @@ abstract class AbstractModelFile extends AbstractFile
         );
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     public function writeFile(bool $withSrc = true): void
     {
         if (!$this->getModel()) {
@@ -103,12 +106,12 @@ abstract class AbstractModelFile extends AbstractFile
         return $this->model;
     }
 
-    public function getModelFromStructAttribute(StructAttributeModel $attribute = null): ?StructModel
+    public function getModelFromStructAttribute(?StructAttributeModel $attribute = null): ?StructModel
     {
         return $this->getStructAttribute($attribute)->getTypeStruct();
     }
 
-    public function getRestrictionFromStructAttribute(StructAttributeModel $attribute = null): ?StructModel
+    public function getRestrictionFromStructAttribute(?StructAttributeModel $attribute = null): ?StructModel
     {
         $model = $this->getModelFromStructAttribute($attribute);
         if ($model instanceof StructModel) {
@@ -128,7 +131,10 @@ abstract class AbstractModelFile extends AbstractFile
         return $model;
     }
 
-    public function getStructAttributeType(StructAttributeModel $attribute = null, bool $namespaced = false, bool $returnArrayType = true): string
+    /**
+     * @throws \InvalidArgumentException
+     */
+    public function getStructAttributeType(?StructAttributeModel $attribute = null, bool $namespaced = false, bool $returnArrayType = true): string
     {
         $attribute = $this->getStructAttribute($attribute);
 
@@ -168,7 +174,10 @@ abstract class AbstractModelFile extends AbstractFile
         return $type;
     }
 
-    public function getStructAttributeTypeAsPhpType(StructAttributeModel $fromAttribute = null, bool $returnArrayType = true): string
+    /**
+     * @throws \InvalidArgumentException
+     */
+    public function getStructAttributeTypeAsPhpType(?StructAttributeModel $fromAttribute = null, bool $returnArrayType = true): string
     {
         $attribute = $this->getStructAttribute($fromAttribute);
 
@@ -279,7 +288,7 @@ abstract class AbstractModelFile extends AbstractFile
         return 'This class stands for %s %s';
     }
 
-    protected function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block, AbstractModel $model = null): self
+    protected function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block, ?AbstractModel $model = null): self
     {
         FileUtils::defineModelAnnotationsFromWsdl($block, $model instanceof AbstractModel ? $model : $this->getModel());
 
@@ -382,7 +391,7 @@ abstract class AbstractModelFile extends AbstractFile
 
     abstract protected function getMethodAnnotationBlock(PhpMethod $method): ?PhpAnnotationBlock;
 
-    protected function getStructAttribute(StructAttributeModel $attribute = null): ?StructAttributeModel
+    protected function getStructAttribute(?StructAttributeModel $attribute = null): ?StructAttributeModel
     {
         $struct = $this->getModel();
         if (empty($attribute) && $struct instanceof StructModel && 1 === $struct->getAttributes()->count()) {
@@ -392,12 +401,12 @@ abstract class AbstractModelFile extends AbstractFile
         return $attribute;
     }
 
-    protected function getStructAttributeTypeGetAnnotation(StructAttributeModel $attribute = null, bool $returnArrayType = true, bool $nullableItemType = false): string
+    protected function getStructAttributeTypeGetAnnotation(?StructAttributeModel $attribute = null, bool $returnArrayType = true, bool $nullableItemType = false): string
     {
         $attribute = $this->getStructAttribute($attribute);
 
         if ($attribute->isXml()) {
-            return '\\DOMDocument|string|null';
+            return '\DOMDocument|string|null';
         }
 
         return sprintf(
@@ -411,7 +420,7 @@ abstract class AbstractModelFile extends AbstractFile
     protected function getStructAttributeTypeSetAnnotation(StructAttributeModel $attribute, bool $returnArrayType = true, bool $itemType = false): string
     {
         if ($attribute->isXml()) {
-            return '\\DOMDocument|string|null';
+            return '\DOMDocument|string|null';
         }
 
         if ($attribute->isList()) {

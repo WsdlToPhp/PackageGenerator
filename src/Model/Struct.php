@@ -102,8 +102,7 @@ final class Struct extends AbstractModel
                 )
                 && false !== mb_stripos($this->getName(), 'array')
             )
-            || (!$this->isStruct() && false !== $this->getMetaValueFirstSet(['arraytype', 'arrayType'], false))
-        ;
+            || (!$this->isStruct() && false !== $this->getMetaValueFirstSet(['arraytype', 'arrayType'], false));
     }
 
     public function getAttributes(bool $includeInheritanceAttributes = false, bool $requiredFirst = false): StructAttributeContainer
@@ -165,6 +164,9 @@ final class Struct extends AbstractModel
         return $this;
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     public function addAttribute(string $attributeName, string $attributeType): self
     {
         if (empty($attributeName) || empty($attributeType)) {
@@ -251,7 +253,8 @@ final class Struct extends AbstractModel
             $this
                 ->setStruct(true)
                 ->setRestriction(true)
-                ->getValues()->add(new StructValue($this->getGenerator(), $value, $this->getValues()->count(), $this));
+                ->getValues()->add(new StructValue($this->getGenerator(), $value, $this->getValues()->count(), $this))
+            ;
         }
 
         return $this;

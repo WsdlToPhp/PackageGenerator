@@ -395,7 +395,7 @@ final class GeneratorTest extends AbstractTestCase
             'config.disable-tls:true',
             'config.data-dir:/src/foor/bar',
             'require.wsdltophp/packagebase:dev-master',
-            'autoload.psr-4.Acme\\:src/',
+            'autoload.psr-4.Acme\:src/',
         ]);
 
         $this->assertSame([

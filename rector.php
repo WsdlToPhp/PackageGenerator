@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
-use Rector\CodeQuality\Rector\ClassMethod\ReturnTypeFromStrictScalarReturnExprRector;
 use Rector\Config\RectorConfig;
+use Rector\Php84\Rector\Param\ExplicitNullableParamTypeRector;
 use Rector\Set\ValueObject\LevelSetList;
 use Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNativeCallRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictTypedPropertyRector;
@@ -30,6 +30,6 @@ return static function (RectorConfig $rectorConfig): void {
     // register a single rule
     $rectorConfig->rule(InlineConstructorDefaultToPropertyRector::class);
     $rectorConfig->rule(ReturnTypeFromStrictNativeCallRector::class);
-    $rectorConfig->rule(ReturnTypeFromStrictScalarReturnExprRector::class);
     $rectorConfig->rule(ReturnTypeFromStrictTypedPropertyRector::class);
+    $rectorConfig->rule(ExplicitNullableParamTypeRector::class);
 };

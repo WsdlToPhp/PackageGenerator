@@ -120,7 +120,7 @@ final class Composer extends AbstractFile
         $content = [];
         $composerFilePath = $this->getComposerFilePath();
         if (!empty($composerFilePath)) {
-            $content = json_decode(file_get_contents($composerFilePath), true);
+            $content = json_decode(file_get_contents($composerFilePath), true, 512, JSON_THROW_ON_ERROR);
         }
 
         return $content;

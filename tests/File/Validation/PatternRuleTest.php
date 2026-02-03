@@ -136,10 +136,10 @@ final class PatternRuleTest extends AbstractRule
     {
         $instance = self::getArrayOfGuidInstance();
 
-        static::assertSame($instance, $instance->setString($string = [
+        self::assertSame($instance, $instance->setString($string = [
             '45ec586a-45eb-586b-5DFa-fDF111EeeAFD',
             '45ec586a-5DFa-586b-45eb-fDF111EeeAFD',
         ]));
-        static::assertSame($string, $instance->getString());
+        self::assertSame($string, $instance->getString());
     }
 }

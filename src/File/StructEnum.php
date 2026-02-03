@@ -18,6 +18,9 @@ final class StructEnum extends Struct
     public const METHOD_VALUE_IS_VALID = 'valueIsValid';
     public const METHOD_GET_VALID_VALUES = 'getValidValues';
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     public function setModel(AbstractModel $model): self
     {
         if ($model instanceof StructModel && !$model->isRestriction()) {

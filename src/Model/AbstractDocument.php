@@ -24,6 +24,9 @@ abstract class AbstractDocument extends AbstractModel
 
     abstract protected function contentClass(): string;
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     protected function initContentFromContentString(string $content): AbstractDocument
     {
         $contentClass = $this->contentClass();

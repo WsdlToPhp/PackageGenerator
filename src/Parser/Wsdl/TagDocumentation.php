@@ -58,7 +58,7 @@ final class TagDocumentation extends AbstractTagParser
         // Is it a restriction with enumeration (a real struct) that needs to find the model based on its type ?
         elseif ($parent->hasRestrictionChild() && $parent->getFirstRestrictionChild()->isEnumeration() && $parent->getFirstRestrictionChild()->isTheParent($parent)) {
             $model = $this->getModel($parent, $parent->getFirstRestrictionChild()->getAttributeBase());
-            $model = $model ? $model : $this->getModel($parent);
+            $model = $model ?: $this->getModel($parent);
             if ($model instanceof Struct) {
                 $model->setDocumentation($content);
             }
