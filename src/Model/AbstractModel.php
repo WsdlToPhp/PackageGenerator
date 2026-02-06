@@ -113,7 +113,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
     }
 
     /**
-     * @param  mixed                     $metaValue
+     * @param mixed $metaValue
      * @throws \InvalidArgumentException
      */
     public function addMeta(string $metaName, $metaValue): self
@@ -433,7 +433,7 @@ abstract class AbstractModel extends AbstractGeneratorAware implements \JsonSeri
      * Static method which returns a unique name case sensitively
      * Useful to name methods case sensitively distinct, see http://the-echoplex.net/log/php-case-sensitivity.
      *
-     * @param string $name    the original name
+     * @param string $name the original name
      * @param string $context the context where the name is needed unique
      */
     protected static function uniqueName(string $name, string $context): string

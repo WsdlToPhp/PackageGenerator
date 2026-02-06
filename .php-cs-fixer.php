@@ -11,5 +11,6 @@ return (new PhpCsFixer\Config())
         '@PhpCsFixer' => true,
         'phpdoc_separation' => false,
         'single_line_empty_body' => false,
+        'phpdoc_align' => false,
     ))
     ->setFinder($finder);

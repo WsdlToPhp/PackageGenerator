@@ -101,8 +101,8 @@ class Generator implements \JsonSerializable
     }
 
     /**
-     * @param  mixed                   $name
-     * @param  mixed                   $arguments
+     * @param mixed $name
+     * @param mixed $arguments
      * @throws \BadMethodCallException
      */
     public function __call($name, $arguments)

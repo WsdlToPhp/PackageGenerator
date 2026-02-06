@@ -198,7 +198,7 @@ abstract class AbstractModelFile extends AbstractFile
      * Also see http://www.w3schools.com/schema/schema_dtypes_numeric.asp.
      *
      * @param mixed $type
-     * @param null  $xsdTypesPath
+     * @param null $xsdTypesPath
      * @param mixed $fallback
      *
      * @return mixed
@@ -213,7 +213,7 @@ abstract class AbstractModelFile extends AbstractFile
      * Also see http://www.w3schools.com/schema/schema_dtypes_numeric.asp.
      *
      * @param mixed $type
-     * @param null  $xsdTypesPath
+     * @param null $xsdTypesPath
      * @param mixed $fallback
      *
      * @return mixed

@@ -104,7 +104,7 @@ abstract class AbstractObjectContainer extends AbstractGeneratorAware implements
     }
 
     /**
-     * @param  mixed                     $value
+     * @param mixed $value
      * @throws \InvalidArgumentException
      */
     public function get($value)

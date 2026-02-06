@@ -35,8 +35,13 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
         }
 
         $parts = $tag->getParts();
-        $multipleParts = count((array) $parts);
-        if (is_array($parts) && $multipleParts > 1) {
+
+        if (null === $parts) {
+            return;
+        }
+
+        $multipleParts = count($parts);
+        if (1 < count($parts)) {
             $types = [];
             foreach ($parts as $part) {
                 if (!empty($type = $this->getTypeFromPart($part))) {
@@ -44,7 +49,7 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
                 }
             }
             $this->setKnownType($method, $types);
-        } elseif (is_array($parts) && $multipleParts > 0) {
+        } else {
             $part = array_shift($parts);
             if ($part instanceof TagPart && !empty($type = $this->getTypeFromPart($part))) {
                 $this->setKnownType($method, $type);
