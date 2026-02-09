@@ -31,9 +31,9 @@ final class StructAttributeContainerTest extends AbstractTestCase
     {
         $structAttributeContainer = self::instance();
 
-        self::assertInstanceOf(\WsdlTophp\PackageGenerator\Model\StructAttribute::class, $structAttributeContainer->getStructAttributeByName('foo'));
-        self::assertInstanceOf(\WsdlTophp\PackageGenerator\Model\StructAttribute::class, $structAttributeContainer->getStructAttributeByName('bar'));
-        self::assertInstanceOf(\WsdlTophp\PackageGenerator\Model\StructAttribute::class, $structAttributeContainer->getStructAttributeByName('fooBar'));
+        self::assertInstanceOf(StructAttribute::class, $structAttributeContainer->getStructAttributeByName('foo'));
+        self::assertInstanceOf(StructAttribute::class, $structAttributeContainer->getStructAttributeByName('bar'));
+        self::assertInstanceOf(StructAttribute::class, $structAttributeContainer->getStructAttributeByName('fooBar'));
         self::assertNull($structAttributeContainer->getStructAttributeByName('foobar'));
     }
 }

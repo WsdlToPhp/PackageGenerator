@@ -210,7 +210,7 @@ class ApiSearchRequest extends AbstractStructBase
      * @param \StructType\ApiMobileWebRequest $mobileWeb
      * @param \StructType\ApiTranslationRequest $translation
      */
-    public function __construct(string $query, string $appId, \ArrayType\ApiArrayOfSourceType $sources, \StructType\ApiSearchRequest $parameters, ?string $version = '2.2', ?string $market = null, ?string $uILanguage = null, ?string $adult = null, ?float $latitude = null, ?float $longitude = null, ?float $radius = null, ?\ArrayType\ApiArrayOfSearchOption $options = null, ?\StructType\ApiWebRequest $web = null, ?\StructType\ApiImageRequest $image = null, ?\StructType\ApiPhonebookRequest $phonebook = null, ?\StructType\ApiVideoRequest $video = null, ?\StructType\ApiNewsRequest $news = null, ?\StructType\ApiMobileWebRequest $mobileWeb = null, ?\StructType\ApiTranslationRequest $translation = null)
+    public function __construct(string $query, string $appId, \ArrayType\ApiArrayOfSourceType $sources, \StructType\ApiSearchRequest $parameters, string $version = '2.2', ?string $market = null, ?string $uILanguage = null, ?string $adult = null, ?float $latitude = null, ?float $longitude = null, ?float $radius = null, ?\ArrayType\ApiArrayOfSearchOption $options = null, ?\StructType\ApiWebRequest $web = null, ?\StructType\ApiImageRequest $image = null, ?\StructType\ApiPhonebookRequest $phonebook = null, ?\StructType\ApiVideoRequest $video = null, ?\StructType\ApiNewsRequest $news = null, ?\StructType\ApiMobileWebRequest $mobileWeb = null, ?\StructType\ApiTranslationRequest $translation = null)
     {
         $this
             ->setQuery($query)
@@ -330,7 +330,7 @@ class ApiSearchRequest extends AbstractStructBase
      * @param string $version
      * @return \StructType\ApiSearchRequest
      */
-    public function setVersion(?string $version = '2.2'): self
+    public function setVersion(string $version = '2.2'): self
     {
         // validation for constraint: string
         if (!is_null($version) && !is_string($version)) {

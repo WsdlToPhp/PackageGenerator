@@ -25,7 +25,7 @@ phpstan:
 	$(DOCKER_EXEC_CONTAINER) $(PHP_VERSION) vendor/bin/phpstan analyze src --level=2
 
 phpunit:
-	$(DOCKER_EXEC_CONTAINER) $(PHP_VERSION) vendor/bin/phpunit
+	$(DOCKER_EXEC_CONTAINER) $(PHP_VERSION) vendor/bin/phpunit --stop-on-failure --stop-on-error $(ARGS)
 
 rector:
 	$(DOCKER_EXEC_CONTAINER) $(PHP_VERSION) vendor/bin/rector process

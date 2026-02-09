@@ -7,7 +7,6 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Method;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\WsdlHandler\Tag\AbstractTagOperationElement;
-use WsdlToPhp\WsdlHandler\Tag\TagOperation;
 use WsdlToPhp\WsdlHandler\Tag\TagPart;
 
 abstract class AbstractTagInputOutputParser extends AbstractTagParser
@@ -21,7 +20,7 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
         }
 
         $operation = $tag->getParentOperation();
-        if (!$operation instanceof TagOperation) {
+        if (!$operation) {
             return;
         }
 
@@ -40,7 +39,6 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
             return;
         }
 
-        $multipleParts = count($parts);
         if (1 < count($parts)) {
             $types = [];
             foreach ($parts as $part) {
@@ -85,6 +83,6 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
             }
         }
 
-        return (bool) !$isKnown;
+        return !$isKnown;
     }
 }

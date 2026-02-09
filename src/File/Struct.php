@@ -182,7 +182,7 @@ class Struct extends AbstractModelFile
                 break;
 
             default:
-                $type = (($attribute->isRequired() && !$attribute->isNullable()) ? '' : '?').$this->getStructAttributeTypeAsPhpType($attribute);
+                $type = $this->getStructAttributeTypeAsPhpType($attribute);
 
                 break;
         }
@@ -192,7 +192,7 @@ class Struct extends AbstractModelFile
 
             return new PhpFunctionParameter(
                 lcfirst($attribute->getUniqueString($attribute->getCleanName(), 'method')),
-                $attribute->isRequired() && !$attribute->isAChoice() ? AssignedValueElementInterface::NO_VALUE : (str_contains($type ?? '', '?') ? $defaultValue ?? null : $defaultValue),
+                $attribute->isRequired() && !$attribute->isAChoice() ? AssignedValueElementInterface::NO_VALUE : (($attribute->isRequired() && !$attribute->isNullable()) ? $defaultValue ?? null : $defaultValue),
                 $type,
                 $attribute
             );

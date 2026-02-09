@@ -15,7 +15,7 @@ final class ArrayRuleTest extends AbstractRule
 {
     /**
      * The AddressLine
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: When the address is unformatted (FormattedInd="false") these lines will contain free form address details. When the address is formatted and street number and street name must be sent independently, the street number will be sent
      * using StreetNmbr, and the street name will be sent in the first AddressLine occurrence. | Used for Character Strings, length 1 to 255.
      * - maxOccurs: 5
@@ -23,6 +23,7 @@ final class ArrayRuleTest extends AbstractRule
      * - base: xs:string
      * - maxLength: 255
      * - minLength: 1.
+     * @throws \ReflectionException
      */
     public function testSetAddressLineWithNullOnOneItemMustThrowAnException(): void
     {
@@ -42,7 +43,7 @@ final class ArrayRuleTest extends AbstractRule
 
     /**
      * The AddressLine
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - documentation: When the address is unformatted (FormattedInd="false") these lines will contain free form address details. When the address is formatted and street number and street name must be sent independently, the street number will be sent
      * using StreetNmbr, and the street name will be sent in the first AddressLine occurrence. | Used for Character Strings, length 1 to 255.
      * - maxOccurs: 5
@@ -51,6 +52,7 @@ final class ArrayRuleTest extends AbstractRule
      * - maxLength: 255
      * - minLength: 1.
      *
+     * @throws \ReflectionException
      * @var string[]
      */
     public function testSetAddressLineWithStringsMustPass(): void

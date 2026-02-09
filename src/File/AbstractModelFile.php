@@ -114,18 +114,17 @@ abstract class AbstractModelFile extends AbstractFile
     public function getRestrictionFromStructAttribute(?StructAttributeModel $attribute = null): ?StructModel
     {
         $model = $this->getModelFromStructAttribute($attribute);
-        if ($model instanceof StructModel) {
-            // list are mainly scalar values of basic types (string, int, etc.) or of Restriction values
-            if ($model->isList()) {
-                $subModel = $this->getModelByName($model->getList());
-                if ($subModel && $subModel->isRestriction()) {
-                    $model = $subModel;
-                } elseif (!$model->isRestriction()) {
-                    $model = null;
-                }
-            } elseif (!$model->isRestriction()) {
-                $model = null;
-            }
+
+        if (!$model) {
+            return null;
+        }
+
+        // lists are mainly scalar values of basic types (string, int, etc.) or of Restriction values
+        if ($model->isList()) {
+            $subModel = $this->getModelByName($model->getList());
+            $model = $subModel && $subModel->isRestriction() ? $subModel : (!$model->isRestriction() ? null : $model);
+        } elseif (!$model->isRestriction()) {
+            $model = null;
         }
 
         return $model;
@@ -151,16 +150,12 @@ abstract class AbstractModelFile extends AbstractFile
 
         if (!empty($type) && ($struct = $this->getGenerator()->getStructByName($type))) {
             $inheritance = $struct->getTopInheritance();
-            if (!empty($inheritance)) {
-                $type = str_replace('[]', '', $inheritance);
-            } else {
-                $type = $struct->getPackagedName($namespaced);
-            }
+            $type = !empty($inheritance) ? str_replace('[]', '', $inheritance) : $struct->getPackagedName($namespaced);
         }
 
         $model = $this->getModelFromStructAttribute($attribute);
         if ($model instanceof StructModel) {
-            // issue #84: union is considered as string as it would be difficult to have a method that accepts multiple object types.
+            // issue #84: union is considered as string as it would be challenging to have a method that accepts multiple object types.
             // If the property has to be an object of multiple types => new issue...
             if ($model->isRestriction() || $model->isUnion()) {
                 $type = self::TYPE_STRING;
