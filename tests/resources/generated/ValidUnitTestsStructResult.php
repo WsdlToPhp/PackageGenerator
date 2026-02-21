@@ -57,7 +57,7 @@ class ApiResult extends AbstractStructBase
      * @param \StructType\ApiErrors $errors
      * @param \StructType\ApiWarnings $warnings
      */
-    public function __construct(?bool $success = false, ?\StructType\ApiErrors $errors = null, ?\StructType\ApiWarnings $warnings = null)
+    public function __construct(bool $success = false, ?\StructType\ApiErrors $errors = null, ?\StructType\ApiWarnings $warnings = null)
     {
         $this
             ->setSuccess($success)
@@ -109,7 +109,7 @@ class ApiResult extends AbstractStructBase
      * @param bool $success
      * @return \StructType\ApiResult
      */
-    public function setSuccess(?bool $success = false): self
+    public function setSuccess(bool $success = false): self
     {
         // validation for constraint: boolean
         if (!is_null($success) && !is_bool($success)) {

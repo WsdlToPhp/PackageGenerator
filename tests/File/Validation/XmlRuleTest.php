@@ -10,6 +10,9 @@ namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
  */
 final class XmlRuleTest extends AbstractRule
 {
+    /**
+     * @throws \ReflectionException
+     */
     public function testSetAnyWithEmptyStringMustThrowAnException(): void
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -19,6 +22,9 @@ final class XmlRuleTest extends AbstractRule
         $instance->setAny('');
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public function testSetAnyWithInvalidXmlStringMustThrowAnException(): void
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -28,6 +34,9 @@ final class XmlRuleTest extends AbstractRule
         @$instance->setAny('<attribute>1</attribute');
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public function testSetAnyWithValidXmlStringMustPass(): void
     {
         $instance = self::getActonItemInstance();
@@ -37,6 +46,9 @@ final class XmlRuleTest extends AbstractRule
         $this->assertSame($string, $instance->getAny());
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public function testSetAnyWithIntMustThrowAnException(): void
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -46,6 +58,10 @@ final class XmlRuleTest extends AbstractRule
         $instance->setAny(2);
     }
 
+    /**
+     * @throws \DOMException
+     * @throws \ReflectionException
+     */
     public function testSetAnyWithDomDocumentMustPass(): void
     {
         $instance = self::getActonItemInstance();
@@ -57,6 +73,9 @@ final class XmlRuleTest extends AbstractRule
         $this->assertSame('<element>147</element>', $instance->getAny());
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public function testSetAnyWithInvalidObjectMustThrowAnException(): void
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -66,6 +85,9 @@ final class XmlRuleTest extends AbstractRule
         $instance->setAny(new \stdClass());
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public function testSetAnyWithArrayMustThrowAnException(): void
     {
         $this->expectException(\InvalidArgumentException::class);

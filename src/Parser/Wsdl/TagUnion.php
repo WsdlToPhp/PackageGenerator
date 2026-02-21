@@ -29,9 +29,7 @@ final class TagUnion extends AbstractTagParser
             $memberTypes = array_unique(array_merge($memberTypes, $this->getUnionMemberTypesFromChildren($union)));
         }
 
-        $memberTypes = array_filter($memberTypes, function ($memberType) use ($model) {
-            return $model->getName() !== $memberType;
-        });
+        $memberTypes = array_filter($memberTypes, fn ($memberType): bool => $model->getName() !== $memberType);
 
         if (empty($memberTypes)) {
             return;

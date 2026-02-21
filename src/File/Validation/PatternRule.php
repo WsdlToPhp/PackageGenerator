@@ -65,14 +65,14 @@ final class PatternRule extends AbstractRule
         return implode(
             '|',
             array_map(
-                static fn ($value) => addcslashes($value, '\'\\/'),
+                static fn ($value): string => addcslashes($value, '\'\/'),
                 array_map(
-                    static fn ($value) => empty($value) ? '^$' : $value,
+                    static fn ($value): string => empty($value) ? '^$' : $value,
                     array_map(
                         'trim',
                         array_filter(
                             is_array($value) ? $value : [$value],
-                            static fn ($value) => !in_array($value, ['true', 'false', true, false], true)
+                            static fn ($value): bool => !in_array($value, ['true', 'false', true, false], true)
                         )
                     )
                 )

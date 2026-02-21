@@ -130,6 +130,9 @@ final class GeneratorOptions extends AbstractYamlReader implements \JsonSerializ
         $this->parseOptions($filename);
     }
 
+    /**
+     * @throws \BadMethodCallException
+     */
     public function __call(string $name, array $arguments)
     {
         if (0 === strpos($name, 'set') && 1 === count($arguments)) {
@@ -147,6 +150,9 @@ final class GeneratorOptions extends AbstractYamlReader implements \JsonSerializ
         return parent::instance($filename);
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     public function getOptionValue(string $optionName)
     {
         if (!array_key_exists($optionName, $this->options)) {

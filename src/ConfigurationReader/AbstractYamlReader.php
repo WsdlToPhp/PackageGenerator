@@ -16,6 +16,9 @@ abstract class AbstractYamlReader
 
     abstract public static function getDefaultConfigurationPath(): string;
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     public static function instance(?string $filename = null): self
     {
         $loadFilename = empty($filename) ? static::getDefaultConfigurationPath() : $filename;
@@ -46,6 +49,9 @@ abstract class AbstractYamlReader
         return $ymlParser->parse(file_get_contents($filename));
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     protected function parseSimpleArray(string $filename, string $mainKey): array
     {
         $values = $this->loadYaml($filename);

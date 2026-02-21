@@ -69,7 +69,7 @@ abstract class AbstractTagParser extends AbstractParser
         $this->parseWsdl($wsdl);
     }
 
-    protected function parseTagAttributes(Tag $tag, AbstractModel $model = null, StructAttribute $structAttribute = null): void
+    protected function parseTagAttributes(Tag $tag, ?AbstractModel $model = null, ?StructAttribute $structAttribute = null): void
     {
         $model = $model instanceof AbstractModel ? $model : $this->getModel($tag);
         if (!$model) {
@@ -104,7 +104,7 @@ abstract class AbstractTagParser extends AbstractParser
         return null;
     }
 
-    protected function parseTagAttributeType(AttributeHandler $tagAttribute, AbstractModel $model, StructAttribute $structAttribute = null): void
+    protected function parseTagAttributeType(AttributeHandler $tagAttribute, AbstractModel $model, ?StructAttribute $structAttribute = null): void
     {
         if ($structAttribute instanceof StructAttribute) {
             $type = $tagAttribute->getValue();

@@ -17,6 +17,9 @@ abstract class AbstractMinMaxRule extends AbstractRule
      */
     abstract public function symbol(): string;
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     final public function comparisonString(): string
     {
         switch ($this->symbol()) {

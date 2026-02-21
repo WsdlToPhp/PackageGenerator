@@ -94,7 +94,7 @@ abstract class AbstractRule
             ucfirst($this->getAttribute()->getCleanName())
         );
         $method = new PhpMethod($this->getValidationMethodName($parameterName), [
-            new PhpFunctionParameter('values', null, '?array'),
+            new PhpFunctionParameter('values', null, 'array'),
         ], AbstractModelFile::TYPE_STRING, PhpMethod::ACCESS_PUBLIC, false, true);
 
         $method
