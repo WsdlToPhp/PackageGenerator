@@ -181,8 +181,8 @@ final class Utils
      * - \p{N} for any valid number
      * - /u for supporting unicode.
      *
-     * @param string $string                  the string to clean
-     * @param bool   $keepMultipleUnderscores optional, allows to keep the multiple consecutive underscores
+     * @param string $string the string to clean
+     * @param bool $keepMultipleUnderscores optional, allows to keep the multiple consecutive underscores
      */
     public static function cleanString(string $string, bool $keepMultipleUnderscores = true): string
     {

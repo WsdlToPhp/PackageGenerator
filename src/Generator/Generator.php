@@ -100,6 +100,11 @@ class Generator implements \JsonSerializable
         ;
     }
 
+    /**
+     * @param mixed $name
+     * @param mixed $arguments
+     * @throws \BadMethodCallException
+     */
     public function __call($name, $arguments)
     {
         if (($prefix = 'getOption') === substr($name, 0, $length = strlen($prefix)) && empty($arguments)) {
@@ -235,6 +240,9 @@ class Generator implements \JsonSerializable
         return $destination;
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     public function setOptionDestination(string $optionDestination): self
     {
         if (!empty($optionDestination)) {
@@ -257,6 +265,9 @@ class Generator implements \JsonSerializable
         return $this;
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     public function setOptionComposerName(string $optionComposerName): self
     {
         if (!empty($optionComposerName)) {
@@ -327,6 +338,9 @@ class Generator implements \JsonSerializable
         ];
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     public static function instanceFromSerializedJson(string $json): Generator
     {
         $decodedJson = json_decode($json, true);
@@ -400,6 +414,9 @@ class Generator implements \JsonSerializable
         return $this;
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     protected function initDirectory(): self
     {
         Utils::createDirectory($this->getOptions()->getDestination());
@@ -417,6 +434,9 @@ class Generator implements \JsonSerializable
         return $this;
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     protected function doSanityChecks(): self
     {
         $destination = $this->getOptionDestination();

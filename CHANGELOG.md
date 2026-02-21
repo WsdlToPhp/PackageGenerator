@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 4.1.14 - 2026-02-21
+- issue #332, pr #333 - PHP 8.4: Implicitly nullable parameter deprecated in generator code
+
 ## 4.1.13 - 2024-06-21
 - issue #312, pr #313 - Invalid getter and annotation for nullable property
 

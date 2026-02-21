@@ -11,7 +11,7 @@ final class PhpFunctionParameter extends PhpFunctionParameterBase
 {
     protected ?AbstractModel $model;
 
-    public function __construct(string $name, $value = null, $type = null, AbstractModel $model = null)
+    public function __construct(string $name, $value = null, $type = null, ?AbstractModel $model = null)
     {
         parent::__construct($name, $value, $type);
         $this->model = $model;

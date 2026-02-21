@@ -18,7 +18,7 @@ final class TagEnumeration extends AbstractTagParser
         // issue #177: first time, the enumeration struct is unknown,
         // it'll be created when addValue is called on the existing struct which is not an enum
         $struct = $this->getModel($tag, $enumeration->getRestrictionParentType());
-        $struct = $struct ? $struct : $this->getModel($tag);
+        $struct = $struct ?: $this->getModel($tag);
         if (!$struct instanceof Struct) {
             return;
         }

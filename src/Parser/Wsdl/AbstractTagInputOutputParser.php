@@ -7,7 +7,6 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Method;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
 use WsdlToPhp\WsdlHandler\Tag\AbstractTagOperationElement;
-use WsdlToPhp\WsdlHandler\Tag\TagOperation;
 use WsdlToPhp\WsdlHandler\Tag\TagPart;
 
 abstract class AbstractTagInputOutputParser extends AbstractTagParser
@@ -21,7 +20,7 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
         }
 
         $operation = $tag->getParentOperation();
-        if (!$operation instanceof TagOperation) {
+        if (!$operation) {
             return;
         }
 
@@ -35,8 +34,12 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
         }
 
         $parts = $tag->getParts();
-        $multipleParts = count($parts);
-        if (is_array($parts) && $multipleParts > 1) {
+
+        if (null === $parts) {
+            return;
+        }
+
+        if (1 < count($parts)) {
             $types = [];
             foreach ($parts as $part) {
                 if (!empty($type = $this->getTypeFromPart($part))) {
@@ -44,7 +47,7 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
                 }
             }
             $this->setKnownType($method, $types);
-        } elseif (is_array($parts) && $multipleParts > 0) {
+        } else {
             $part = array_shift($parts);
             if ($part instanceof TagPart && !empty($type = $this->getTypeFromPart($part))) {
                 $this->setKnownType($method, $type);
@@ -80,6 +83,6 @@ abstract class AbstractTagInputOutputParser extends AbstractTagParser
             }
         }
 
-        return (bool) !$isKnown;
+        return !$isKnown;
     }
 }

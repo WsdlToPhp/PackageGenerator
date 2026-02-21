@@ -63,6 +63,9 @@ final class Service extends AbstractModelFile
         return $returnType;
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     public function setModel(AbstractModel $model): self
     {
         if (!$model instanceof ServiceModel) {
@@ -172,7 +175,7 @@ final class Service extends AbstractModelFile
                 $firstParameter = new PhpFunctionParameter(lcfirst($soapHeaderName), PhpFunctionParameterBase::NO_VALUE, $this->getTypeFromName($soapHeaderType)),
                 new PhpFunctionParameterBase(self::PARAM_SET_HEADER_NAMESPACE, $soapHeaderNamespace, self::TYPE_STRING),
                 new PhpFunctionParameterBase(self::PARAM_SET_HEADER_MUSTUNDERSTAND, false, self::TYPE_BOOL),
-                new PhpFunctionParameterBase(self::PARAM_SET_HEADER_ACTOR, null, '?'.self::TYPE_STRING),
+                new PhpFunctionParameterBase(self::PARAM_SET_HEADER_ACTOR, null, self::TYPE_STRING),
             ], self::TYPE_SELF);
 
             $model = $this->getModelByName($soapHeaderType);

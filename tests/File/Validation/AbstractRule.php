@@ -19,16 +19,25 @@ abstract class AbstractRule extends AbstractTestCase
 {
     private static array $generators = [];
 
+    /**
+     * @throws \ReflectionException
+     */
     public static function getActonItemInstance(bool $reset = false)
     {
         return self::getClassInstance('actonGeneratorInstance', 'Item', $reset);
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public static function getWhlAddressTypeInstance(bool $reset = false)
     {
         return self::getClassInstance('whlInstance', 'AddressType', $reset);
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public static function getWhlBookingChannelInstance(bool $reset = false)
     {
         return self::getClassInstance('whlInstance', 'BookingChannel', $reset);
@@ -159,6 +168,12 @@ abstract class AbstractRule extends AbstractTestCase
         @unlink($structFile->getFileName());
     }
 
+    /**
+     * @param mixed $instanceMethod
+     * @param mixed $structName
+     * @param mixed $reset
+     * @throws \ReflectionException
+     */
     private static function getClassInstance($instanceMethod, $structName, $reset = false)
     {
         $key = implode('_', [

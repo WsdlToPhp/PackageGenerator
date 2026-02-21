@@ -66,6 +66,9 @@ abstract class AbstractModelFile extends AbstractFile
         );
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     public function writeFile(bool $withSrc = true): void
     {
         if (!$this->getModel()) {
@@ -103,32 +106,34 @@ abstract class AbstractModelFile extends AbstractFile
         return $this->model;
     }
 
-    public function getModelFromStructAttribute(StructAttributeModel $attribute = null): ?StructModel
+    public function getModelFromStructAttribute(?StructAttributeModel $attribute = null): ?StructModel
     {
         return $this->getStructAttribute($attribute)->getTypeStruct();
     }
 
-    public function getRestrictionFromStructAttribute(StructAttributeModel $attribute = null): ?StructModel
+    public function getRestrictionFromStructAttribute(?StructAttributeModel $attribute = null): ?StructModel
     {
         $model = $this->getModelFromStructAttribute($attribute);
-        if ($model instanceof StructModel) {
-            // list are mainly scalar values of basic types (string, int, etc.) or of Restriction values
-            if ($model->isList()) {
-                $subModel = $this->getModelByName($model->getList());
-                if ($subModel && $subModel->isRestriction()) {
-                    $model = $subModel;
-                } elseif (!$model->isRestriction()) {
-                    $model = null;
-                }
-            } elseif (!$model->isRestriction()) {
-                $model = null;
-            }
+
+        if (!$model) {
+            return null;
+        }
+
+        // lists are mainly scalar values of basic types (string, int, etc.) or of Restriction values
+        if ($model->isList()) {
+            $subModel = $this->getModelByName($model->getList());
+            $model = $subModel && $subModel->isRestriction() ? $subModel : (!$model->isRestriction() ? null : $model);
+        } elseif (!$model->isRestriction()) {
+            $model = null;
         }
 
         return $model;
     }
 
-    public function getStructAttributeType(StructAttributeModel $attribute = null, bool $namespaced = false, bool $returnArrayType = true): string
+    /**
+     * @throws \InvalidArgumentException
+     */
+    public function getStructAttributeType(?StructAttributeModel $attribute = null, bool $namespaced = false, bool $returnArrayType = true): string
     {
         $attribute = $this->getStructAttribute($attribute);
 
@@ -145,16 +150,12 @@ abstract class AbstractModelFile extends AbstractFile
 
         if (!empty($type) && ($struct = $this->getGenerator()->getStructByName($type))) {
             $inheritance = $struct->getTopInheritance();
-            if (!empty($inheritance)) {
-                $type = str_replace('[]', '', $inheritance);
-            } else {
-                $type = $struct->getPackagedName($namespaced);
-            }
+            $type = !empty($inheritance) ? str_replace('[]', '', $inheritance) : $struct->getPackagedName($namespaced);
         }
 
         $model = $this->getModelFromStructAttribute($attribute);
         if ($model instanceof StructModel) {
-            // issue #84: union is considered as string as it would be difficult to have a method that accepts multiple object types.
+            // issue #84: union is considered as string as it would be challenging to have a method that accepts multiple object types.
             // If the property has to be an object of multiple types => new issue...
             if ($model->isRestriction() || $model->isUnion()) {
                 $type = self::TYPE_STRING;
@@ -168,7 +169,10 @@ abstract class AbstractModelFile extends AbstractFile
         return $type;
     }
 
-    public function getStructAttributeTypeAsPhpType(StructAttributeModel $fromAttribute = null, bool $returnArrayType = true): string
+    /**
+     * @throws \InvalidArgumentException
+     */
+    public function getStructAttributeTypeAsPhpType(?StructAttributeModel $fromAttribute = null, bool $returnArrayType = true): string
     {
         $attribute = $this->getStructAttribute($fromAttribute);
 
@@ -189,7 +193,7 @@ abstract class AbstractModelFile extends AbstractFile
      * Also see http://www.w3schools.com/schema/schema_dtypes_numeric.asp.
      *
      * @param mixed $type
-     * @param null  $xsdTypesPath
+     * @param null $xsdTypesPath
      * @param mixed $fallback
      *
      * @return mixed
@@ -204,7 +208,7 @@ abstract class AbstractModelFile extends AbstractFile
      * Also see http://www.w3schools.com/schema/schema_dtypes_numeric.asp.
      *
      * @param mixed $type
-     * @param null  $xsdTypesPath
+     * @param null $xsdTypesPath
      * @param mixed $fallback
      *
      * @return mixed
@@ -279,7 +283,7 @@ abstract class AbstractModelFile extends AbstractFile
         return 'This class stands for %s %s';
     }
 
-    protected function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block, AbstractModel $model = null): self
+    protected function defineModelAnnotationsFromWsdl(PhpAnnotationBlock $block, ?AbstractModel $model = null): self
     {
         FileUtils::defineModelAnnotationsFromWsdl($block, $model instanceof AbstractModel ? $model : $this->getModel());
 
@@ -382,7 +386,7 @@ abstract class AbstractModelFile extends AbstractFile
 
     abstract protected function getMethodAnnotationBlock(PhpMethod $method): ?PhpAnnotationBlock;
 
-    protected function getStructAttribute(StructAttributeModel $attribute = null): ?StructAttributeModel
+    protected function getStructAttribute(?StructAttributeModel $attribute = null): ?StructAttributeModel
     {
         $struct = $this->getModel();
         if (empty($attribute) && $struct instanceof StructModel && 1 === $struct->getAttributes()->count()) {
@@ -392,12 +396,12 @@ abstract class AbstractModelFile extends AbstractFile
         return $attribute;
     }
 
-    protected function getStructAttributeTypeGetAnnotation(StructAttributeModel $attribute = null, bool $returnArrayType = true, bool $nullableItemType = false): string
+    protected function getStructAttributeTypeGetAnnotation(?StructAttributeModel $attribute = null, bool $returnArrayType = true, bool $nullableItemType = false): string
     {
         $attribute = $this->getStructAttribute($attribute);
 
         if ($attribute->isXml()) {
-            return '\\DOMDocument|string|null';
+            return '\DOMDocument|string|null';
         }
 
         return sprintf(
@@ -411,7 +415,7 @@ abstract class AbstractModelFile extends AbstractFile
     protected function getStructAttributeTypeSetAnnotation(StructAttributeModel $attribute, bool $returnArrayType = true, bool $itemType = false): string
     {
         if ($attribute->isXml()) {
-            return '\\DOMDocument|string|null';
+            return '\DOMDocument|string|null';
         }
 
         if ($attribute->isList()) {

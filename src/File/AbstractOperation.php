@@ -110,6 +110,9 @@ abstract class AbstractOperation
         return lcfirst(AbstractModel::cleanString($name));
     }
 
+    /**
+     * @throws \InvalidArgumentException
+     */
     protected function getMethodParameter(string $name, ?string $type = null): PhpFunctionParameter
     {
         try {

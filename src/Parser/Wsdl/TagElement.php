@@ -18,7 +18,7 @@ final class TagElement extends AbstractAttributesParser
         return WsdlDocument::TAG_ELEMENT;
     }
 
-    protected function parseTagAttributes(Tag $tag, AbstractModel $model = null, StructAttribute $structAttribute = null): void
+    protected function parseTagAttributes(Tag $tag, ?AbstractModel $model = null, ?StructAttribute $structAttribute = null): void
     {
         parent::parseTagAttributes($tag, $model, $structAttribute);
 

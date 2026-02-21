@@ -24,7 +24,7 @@ final class TagChoice extends AbstractTagParser
         if ($parent && count($children) && ($struct = $this->getModel($parent)) instanceof Struct) {
             $unionNames = [];
             foreach ($children as $child) {
-                $unionNames[] = $child->getAttributeName() ? $child->getAttributeName() : $child->getAttributeRef();
+                $unionNames[] = $child->getAttributeName() ?: $child->getAttributeRef();
             }
             foreach ($children as $child) {
                 $this->parseChoiceChild($choice, $unionNames, $child, $struct);
