@@ -20,6 +20,16 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 class ApiPaymentCardType extends AbstractStructBase
 {
     /**
+     * The ShareSynchInd
+     * @var string
+     */
+    protected string $ShareSynchInd;
+    /**
+     * The ShareMarketInd
+     * @var string
+     */
+    protected string $ShareMarketInd;
+    /**
      * The CardHolderName
      * Meta information extracted from the WSDL
      * - documentation: Name of the card holder. | Used for Character Strings, length 1 to 64.
@@ -152,16 +162,6 @@ class ApiPaymentCardType extends AbstractStructBase
      */
     protected ?string $Remark = null;
     /**
-     * The ShareSynchInd
-     * @var string|null
-     */
-    protected ?string $ShareSynchInd = null;
-    /**
-     * The ShareMarketInd
-     * @var string|null
-     */
-    protected ?string $ShareMarketInd = null;
-    /**
      * The EffectiveDate
      * Meta information extracted from the WSDL
      * - documentation: Indicates the starting date. | Month and year information.
@@ -185,6 +185,8 @@ class ApiPaymentCardType extends AbstractStructBase
     protected ?string $ExpireDate = null;
     /**
      * Constructor method for PaymentCardType
+     * @uses ApiPaymentCardType::setShareSynchInd()
+     * @uses ApiPaymentCardType::setShareMarketInd()
      * @uses ApiPaymentCardType::setCardHolderName()
      * @uses ApiPaymentCardType::setCardIssuerName()
      * @uses ApiPaymentCardType::setAddress()
@@ -199,10 +201,10 @@ class ApiPaymentCardType extends AbstractStructBase
      * @uses ApiPaymentCardType::setCardHolderRPH()
      * @uses ApiPaymentCardType::setCountryOfIssue()
      * @uses ApiPaymentCardType::setRemark()
-     * @uses ApiPaymentCardType::setShareSynchInd()
-     * @uses ApiPaymentCardType::setShareMarketInd()
      * @uses ApiPaymentCardType::setEffectiveDate()
      * @uses ApiPaymentCardType::setExpireDate()
+     * @param string $shareSynchInd
+     * @param string $shareMarketInd
      * @param string $cardHolderName
      * @param \StructType\ApiCardIssuerName $cardIssuerName
      * @param \StructType\ApiAddressType $address
@@ -217,14 +219,14 @@ class ApiPaymentCardType extends AbstractStructBase
      * @param string $cardHolderRPH
      * @param string $countryOfIssue
      * @param string $remark
-     * @param string $shareSynchInd
-     * @param string $shareMarketInd
      * @param string $effectiveDate
      * @param string $expireDate
      */
-    public function __construct(?string $cardHolderName = null, ?\StructType\ApiCardIssuerName $cardIssuerName = null, ?\StructType\ApiAddressType $address = null, ?array $telephone = null, ?array $email = null, ?string $cardType = null, ?string $cardCode = null, ?string $cardName = null, ?string $cardNumber = null, ?string $seriesCode = null, ?string $maskedCardNumber = null, ?string $cardHolderRPH = null, ?string $countryOfIssue = null, ?string $remark = null, ?string $shareSynchInd = null, ?string $shareMarketInd = null, ?string $effectiveDate = null, ?string $expireDate = null)
+    public function __construct(string $shareSynchInd, string $shareMarketInd, ?string $cardHolderName = null, ?\StructType\ApiCardIssuerName $cardIssuerName = null, ?\StructType\ApiAddressType $address = null, ?array $telephone = null, ?array $email = null, ?string $cardType = null, ?string $cardCode = null, ?string $cardName = null, ?string $cardNumber = null, ?string $seriesCode = null, ?string $maskedCardNumber = null, ?string $cardHolderRPH = null, ?string $countryOfIssue = null, ?string $remark = null, ?string $effectiveDate = null, ?string $expireDate = null)
     {
         $this
+            ->setShareSynchInd($shareSynchInd)
+            ->setShareMarketInd($shareMarketInd)
             ->setCardHolderName($cardHolderName)
             ->setCardIssuerName($cardIssuerName)
             ->setAddress($address)
@@ -239,10 +241,54 @@ class ApiPaymentCardType extends AbstractStructBase
             ->setCardHolderRPH($cardHolderRPH)
             ->setCountryOfIssue($countryOfIssue)
             ->setRemark($remark)
-            ->setShareSynchInd($shareSynchInd)
-            ->setShareMarketInd($shareMarketInd)
             ->setEffectiveDate($effectiveDate)
             ->setExpireDate($expireDate);
+    }
+    /**
+     * Get ShareSynchInd value
+     * @return string
+     */
+    public function getShareSynchInd(): string
+    {
+        return $this->ShareSynchInd;
+    }
+    /**
+     * Set ShareSynchInd value
+     * @param string $shareSynchInd
+     * @return \StructType\ApiPaymentCardType
+     */
+    public function setShareSynchInd(string $shareSynchInd): self
+    {
+        // validation for constraint: string
+        if (!is_null($shareSynchInd) && !is_string($shareSynchInd)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shareSynchInd, true), gettype($shareSynchInd)), __LINE__);
+        }
+        $this->ShareSynchInd = $shareSynchInd;
+        
+        return $this;
+    }
+    /**
+     * Get ShareMarketInd value
+     * @return string
+     */
+    public function getShareMarketInd(): string
+    {
+        return $this->ShareMarketInd;
+    }
+    /**
+     * Set ShareMarketInd value
+     * @param string $shareMarketInd
+     * @return \StructType\ApiPaymentCardType
+     */
+    public function setShareMarketInd(string $shareMarketInd): self
+    {
+        // validation for constraint: string
+        if (!is_null($shareMarketInd) && !is_string($shareMarketInd)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shareMarketInd, true), gettype($shareMarketInd)), __LINE__);
+        }
+        $this->ShareMarketInd = $shareMarketInd;
+        
+        return $this;
     }
     /**
      * Get CardHolderName value
@@ -702,52 +748,6 @@ class ApiPaymentCardType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $remark)), __LINE__);
         }
         $this->Remark = $remark;
-        
-        return $this;
-    }
-    /**
-     * Get ShareSynchInd value
-     * @return string|null
-     */
-    public function getShareSynchInd(): ?string
-    {
-        return $this->ShareSynchInd;
-    }
-    /**
-     * Set ShareSynchInd value
-     * @param string $shareSynchInd
-     * @return \StructType\ApiPaymentCardType
-     */
-    public function setShareSynchInd(?string $shareSynchInd = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($shareSynchInd) && !is_string($shareSynchInd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shareSynchInd, true), gettype($shareSynchInd)), __LINE__);
-        }
-        $this->ShareSynchInd = $shareSynchInd;
-        
-        return $this;
-    }
-    /**
-     * Get ShareMarketInd value
-     * @return string|null
-     */
-    public function getShareMarketInd(): ?string
-    {
-        return $this->ShareMarketInd;
-    }
-    /**
-     * Set ShareMarketInd value
-     * @param string $shareMarketInd
-     * @return \StructType\ApiPaymentCardType
-     */
-    public function setShareMarketInd(?string $shareMarketInd = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($shareMarketInd) && !is_string($shareMarketInd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shareMarketInd, true), gettype($shareMarketInd)), __LINE__);
-        }
-        $this->ShareMarketInd = $shareMarketInd;
         
         return $this;
     }
