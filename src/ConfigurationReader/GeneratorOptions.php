@@ -124,6 +124,7 @@ final class GeneratorOptions extends AbstractYamlReader implements \JsonSerializ
     public const XSD_TYPES_PATH = 'xsd_types_path';
 
     protected array $options = [];
+    private bool $calledSetComposerSettings = false;
 
     protected function __construct(string $filename)
     {
