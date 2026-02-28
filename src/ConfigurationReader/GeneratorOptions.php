@@ -172,6 +172,9 @@ final class GeneratorOptions extends AbstractYamlReader implements \JsonSerializ
             ];
         } elseif (!empty($this->options[$optionName]['values']) && !in_array($optionValue, $this->options[$optionName]['values'], true)) {
             throw new \InvalidArgumentException(sprintf('Invalid value "%s" for option "%s", possible values: %s', $optionValue, $optionName, implode(', ', $this->options[$optionName]['values'])), __LINE__);
+        } elseif (self::COMPOSER_SETTINGS === $optionName && is_array($optionValue) && !$this->calledSetComposerSettings) {
+            $this->calledSetComposerSettings = true;
+            $this->setComposerSettings($optionValue);
         } else {
             $this->options[$optionName]['value'] = $optionValue;
         }
