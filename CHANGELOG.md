@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 4.1.16 - 2026-03-12
+- Update contributors
+- issue #337, pr #338 - chore: add Symfony 8 to list of supported versions
+
 ## 4.1.15 - 2026-02-21
 - Fix workflows actions versions
 
