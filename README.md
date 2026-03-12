@@ -166,6 +166,7 @@ Developers who helped on this project are listed in the [composer.json](composer
 - [Paul Melekhov](https://github.com/gugglegum)
 - [Alex Krátký](https://github.com/AlexKratky)
 - [Michel Tomas](https://github.com/superbiche)
+- [Kai Dederichs](https://github.com/KDederichs)
 
 ## FAQ
 
