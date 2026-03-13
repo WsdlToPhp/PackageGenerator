@@ -286,15 +286,18 @@ final class Struct extends AbstractModel
     public function getTopInheritance(): string
     {
         $inheritance = $this->getInheritance();
-        if (!empty($inheritance)) {
-            $struct = $this->getInheritanceStruct();
-            while ($struct instanceof Struct) {
-                $structInheritance = $struct->getInheritance();
-                if (!empty($structInheritance)) {
-                    $inheritance = $structInheritance;
-                }
-                $struct = $struct->getInheritanceStruct();
+
+        if (empty($inheritance)) {
+            return $inheritance;
+        }
+
+        $struct = $this->getInheritanceStruct();
+        while ($struct instanceof Struct) {
+            $structInheritance = $struct->getInheritance();
+            if (!empty($structInheritance)) {
+                $inheritance = $structInheritance;
             }
+            $struct = $struct->getInheritanceStruct();
         }
 
         return $inheritance;

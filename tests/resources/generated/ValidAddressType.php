@@ -19,6 +19,16 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 class ApiAddressType extends AbstractStructBase
 {
     /**
+     * The ShareSynchInd
+     * @var string
+     */
+    protected string $ShareSynchInd;
+    /**
+     * The ShareMarketInd
+     * @var string
+     */
+    protected string $ShareMarketInd;
+    /**
      * The StreetNmbr
      * Meta information extracted from the WSDL
      * - minOccurs: 0
@@ -119,17 +129,9 @@ class ApiAddressType extends AbstractStructBase
      */
     protected ?bool $FormattedInd = null;
     /**
-     * The ShareSynchInd
-     * @var string|null
-     */
-    protected ?string $ShareSynchInd = null;
-    /**
-     * The ShareMarketInd
-     * @var string|null
-     */
-    protected ?string $ShareMarketInd = null;
-    /**
      * Constructor method for AddressType
+     * @uses ApiAddressType::setShareSynchInd()
+     * @uses ApiAddressType::setShareMarketInd()
      * @uses ApiAddressType::setStreetNmbr()
      * @uses ApiAddressType::setAddressLine()
      * @uses ApiAddressType::setCityName()
@@ -140,8 +142,8 @@ class ApiAddressType extends AbstractStructBase
      * @uses ApiAddressType::setType()
      * @uses ApiAddressType::setRemark()
      * @uses ApiAddressType::setFormattedInd()
-     * @uses ApiAddressType::setShareSynchInd()
-     * @uses ApiAddressType::setShareMarketInd()
+     * @param string $shareSynchInd
+     * @param string $shareMarketInd
      * @param \StructType\ApiStreetNmbr $streetNmbr
      * @param string[] $addressLine
      * @param string $cityName
@@ -152,12 +154,12 @@ class ApiAddressType extends AbstractStructBase
      * @param string $type
      * @param string $remark
      * @param bool $formattedInd
-     * @param string $shareSynchInd
-     * @param string $shareMarketInd
      */
-    public function __construct(?\StructType\ApiStreetNmbr $streetNmbr = null, ?array $addressLine = null, ?string $cityName = null, ?string $postalCode = null, ?string $county = null, ?\StructType\ApiStateProvType $stateProv = null, ?\StructType\ApiCountryNameType $countryName = null, ?string $type = null, ?string $remark = null, ?bool $formattedInd = null, ?string $shareSynchInd = null, ?string $shareMarketInd = null)
+    public function __construct(string $shareSynchInd, string $shareMarketInd, ?\StructType\ApiStreetNmbr $streetNmbr = null, ?array $addressLine = null, ?string $cityName = null, ?string $postalCode = null, ?string $county = null, ?\StructType\ApiStateProvType $stateProv = null, ?\StructType\ApiCountryNameType $countryName = null, ?string $type = null, ?string $remark = null, ?bool $formattedInd = null)
     {
         $this
+            ->setShareSynchInd($shareSynchInd)
+            ->setShareMarketInd($shareMarketInd)
             ->setStreetNmbr($streetNmbr)
             ->setAddressLine($addressLine)
             ->setCityName($cityName)
@@ -167,9 +169,53 @@ class ApiAddressType extends AbstractStructBase
             ->setCountryName($countryName)
             ->setType($type)
             ->setRemark($remark)
-            ->setFormattedInd($formattedInd)
-            ->setShareSynchInd($shareSynchInd)
-            ->setShareMarketInd($shareMarketInd);
+            ->setFormattedInd($formattedInd);
+    }
+    /**
+     * Get ShareSynchInd value
+     * @return string
+     */
+    public function getShareSynchInd(): string
+    {
+        return $this->ShareSynchInd;
+    }
+    /**
+     * Set ShareSynchInd value
+     * @param string $shareSynchInd
+     * @return \StructType\ApiAddressType
+     */
+    public function setShareSynchInd(string $shareSynchInd): self
+    {
+        // validation for constraint: string
+        if (!is_null($shareSynchInd) && !is_string($shareSynchInd)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shareSynchInd, true), gettype($shareSynchInd)), __LINE__);
+        }
+        $this->ShareSynchInd = $shareSynchInd;
+        
+        return $this;
+    }
+    /**
+     * Get ShareMarketInd value
+     * @return string
+     */
+    public function getShareMarketInd(): string
+    {
+        return $this->ShareMarketInd;
+    }
+    /**
+     * Set ShareMarketInd value
+     * @param string $shareMarketInd
+     * @return \StructType\ApiAddressType
+     */
+    public function setShareMarketInd(string $shareMarketInd): self
+    {
+        // validation for constraint: string
+        if (!is_null($shareMarketInd) && !is_string($shareMarketInd)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shareMarketInd, true), gettype($shareMarketInd)), __LINE__);
+        }
+        $this->ShareMarketInd = $shareMarketInd;
+        
+        return $this;
     }
     /**
      * Get StreetNmbr value
@@ -538,52 +584,6 @@ class ApiAddressType extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($formattedInd, true), gettype($formattedInd)), __LINE__);
         }
         $this->FormattedInd = $formattedInd;
-        
-        return $this;
-    }
-    /**
-     * Get ShareSynchInd value
-     * @return string|null
-     */
-    public function getShareSynchInd(): ?string
-    {
-        return $this->ShareSynchInd;
-    }
-    /**
-     * Set ShareSynchInd value
-     * @param string $shareSynchInd
-     * @return \StructType\ApiAddressType
-     */
-    public function setShareSynchInd(?string $shareSynchInd = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($shareSynchInd) && !is_string($shareSynchInd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shareSynchInd, true), gettype($shareSynchInd)), __LINE__);
-        }
-        $this->ShareSynchInd = $shareSynchInd;
-        
-        return $this;
-    }
-    /**
-     * Get ShareMarketInd value
-     * @return string|null
-     */
-    public function getShareMarketInd(): ?string
-    {
-        return $this->ShareMarketInd;
-    }
-    /**
-     * Set ShareMarketInd value
-     * @param string $shareMarketInd
-     * @return \StructType\ApiAddressType
-     */
-    public function setShareMarketInd(?string $shareMarketInd = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($shareMarketInd) && !is_string($shareMarketInd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shareMarketInd, true), gettype($shareMarketInd)), __LINE__);
-        }
-        $this->ShareMarketInd = $shareMarketInd;
         
         return $this;
     }

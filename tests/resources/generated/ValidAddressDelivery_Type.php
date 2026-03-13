@@ -23,42 +23,42 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - documentation: First line on delivery address
      * - base: string
-     * @var string|null
+     * @var string
      */
-    protected ?string $Street1 = null;
+    protected string $Street1;
     /**
      * The Street2
      * Meta information extracted from the WSDL
      * - documentation: Second line on delivery address
      * - base: string
-     * @var string|null
+     * @var string
      */
-    protected ?string $Street2 = null;
+    protected string $Street2;
     /**
      * The Street3
      * Meta information extracted from the WSDL
      * - documentation: Third line on delivery address
      * - base: string
-     * @var string|null
+     * @var string
      */
-    protected ?string $Street3 = null;
+    protected string $Street3;
     /**
      * The City
      * Meta information extracted from the WSDL
      * - documentation: The delivery city
      * - base: string
-     * @var string|null
+     * @var string
      */
-    protected ?string $City = null;
+    protected string $City;
     /**
      * The PostalCode
      * Meta information extracted from the WSDL
      * - documentation: Postal code for the city
      * - base: string
      * - length: 4
-     * @var string|null
+     * @var string
      */
-    protected ?string $PostalCode = null;
+    protected string $PostalCode;
     /**
      * Constructor method for AddressDelivery_Type
      * @uses ApiAddressDelivery_Type::setStreet1()
@@ -72,7 +72,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * @param string $city
      * @param string $postalCode
      */
-    public function __construct(?string $street1 = null, ?string $street2 = null, ?string $street3 = null, ?string $city = null, ?string $postalCode = null)
+    public function __construct(string $street1, string $street2, string $street3, string $city, string $postalCode)
     {
         $this
             ->setStreet1($street1)
@@ -83,9 +83,9 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     }
     /**
      * Get Street1 value
-     * @return string|null
+     * @return string
      */
-    public function getStreet1(): ?string
+    public function getStreet1(): string
     {
         return $this->Street1;
     }
@@ -94,7 +94,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * @param string $street1
      * @return \StructType\ApiAddressDelivery_Type
      */
-    public function setStreet1(?string $street1 = null): self
+    public function setStreet1(string $street1): self
     {
         // validation for constraint: string
         if (!is_null($street1) && !is_string($street1)) {
@@ -106,9 +106,9 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     }
     /**
      * Get Street2 value
-     * @return string|null
+     * @return string
      */
-    public function getStreet2(): ?string
+    public function getStreet2(): string
     {
         return $this->Street2;
     }
@@ -117,7 +117,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * @param string $street2
      * @return \StructType\ApiAddressDelivery_Type
      */
-    public function setStreet2(?string $street2 = null): self
+    public function setStreet2(string $street2): self
     {
         // validation for constraint: string
         if (!is_null($street2) && !is_string($street2)) {
@@ -129,9 +129,9 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     }
     /**
      * Get Street3 value
-     * @return string|null
+     * @return string
      */
-    public function getStreet3(): ?string
+    public function getStreet3(): string
     {
         return $this->Street3;
     }
@@ -140,7 +140,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * @param string $street3
      * @return \StructType\ApiAddressDelivery_Type
      */
-    public function setStreet3(?string $street3 = null): self
+    public function setStreet3(string $street3): self
     {
         // validation for constraint: string
         if (!is_null($street3) && !is_string($street3)) {
@@ -152,9 +152,9 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     }
     /**
      * Get City value
-     * @return string|null
+     * @return string
      */
-    public function getCity(): ?string
+    public function getCity(): string
     {
         return $this->City;
     }
@@ -163,7 +163,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * @param string $city
      * @return \StructType\ApiAddressDelivery_Type
      */
-    public function setCity(?string $city = null): self
+    public function setCity(string $city): self
     {
         // validation for constraint: string
         if (!is_null($city) && !is_string($city)) {
@@ -175,9 +175,9 @@ class ApiAddressDelivery_Type extends AbstractStructBase
     }
     /**
      * Get PostalCode value
-     * @return string|null
+     * @return string
      */
-    public function getPostalCode(): ?string
+    public function getPostalCode(): string
     {
         return $this->PostalCode;
     }
@@ -186,7 +186,7 @@ class ApiAddressDelivery_Type extends AbstractStructBase
      * @param string $postalCode
      * @return \StructType\ApiAddressDelivery_Type
      */
-    public function setPostalCode(?string $postalCode = null): self
+    public function setPostalCode(string $postalCode): self
     {
         // validation for constraint: string
         if (!is_null($postalCode) && !is_string($postalCode)) {

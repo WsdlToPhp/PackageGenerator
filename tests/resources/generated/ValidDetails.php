@@ -28,7 +28,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailCalcCostShipping
      * @var \StructType\ApiMutualSettlementDetailCalcCostShipping[]
      */
-    protected ?array $mutualSettlementDetailCalcCostShipping = null;
+    protected array $mutualSettlementDetailCalcCostShipping;
     /**
      * The mutualSettlementDetailCashFlow
      * Meta information extracted from the WSDL
@@ -41,7 +41,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailCashFlow
      * @var \StructType\ApiMutualSettlementDetailCashFlow[]
      */
-    protected ?array $mutualSettlementDetailCashFlow = null;
+    protected array $mutualSettlementDetailCashFlow;
     /**
      * The mutualSettlementDetailClientPayment
      * Meta information extracted from the WSDL
@@ -54,7 +54,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailClientPayment
      * @var \StructType\ApiMutualSettlementDetailClientPayment[]
      */
-    protected ?array $mutualSettlementDetailClientPayment = null;
+    protected array $mutualSettlementDetailClientPayment;
     /**
      * The mutualSettlementDetailPostReturnRegistry
      * Meta information extracted from the WSDL
@@ -67,7 +67,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailPostReturnRegistry
      * @var \StructType\ApiMutualSettlementDetailPostReturnRegistry[]
      */
-    protected ?array $mutualSettlementDetailPostReturnRegistry = null;
+    protected array $mutualSettlementDetailPostReturnRegistry;
     /**
      * The mutualSettlementDetailRouteList
      * Meta information extracted from the WSDL
@@ -80,7 +80,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailRouteList
      * @var \StructType\ApiMutualSettlementDetailRouteList[]
      */
-    protected ?array $mutualSettlementDetailRouteList = null;
+    protected array $mutualSettlementDetailRouteList;
     /**
      * The mutualSettlementDetailTrackNumberPayment
      * Meta information extracted from the WSDL
@@ -93,7 +93,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailTrackNumberPayment
      * @var \StructType\ApiMutualSettlementDetailTrackNumberPayment[]
      */
-    protected ?array $mutualSettlementDetailTrackNumberPayment = null;
+    protected array $mutualSettlementDetailTrackNumberPayment;
     /**
      * The mutualSettlementDetailServiceRegistration
      * Meta information extracted from the WSDL
@@ -106,7 +106,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailServiceRegistration
      * @var \StructType\ApiMutualSettlementDetailServiceRegistration[]
      */
-    protected ?array $mutualSettlementDetailServiceRegistration = null;
+    protected array $mutualSettlementDetailServiceRegistration;
     /**
      * The mutualSettlementDetailAcceptanceRegistry
      * Meta information extracted from the WSDL
@@ -119,7 +119,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailAcceptanceRegistry
      * @var \StructType\ApiMutualSettlementDetailAcceptanceRegistry[]
      */
-    protected ?array $mutualSettlementDetailAcceptanceRegistry = null;
+    protected array $mutualSettlementDetailAcceptanceRegistry;
     /**
      * The mutualSettlementDetailAdditionalChargeFare
      * Meta information extracted from the WSDL
@@ -132,7 +132,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailAdditionalChargeFare
      * @var \StructType\ApiMutualSettlementDetailAdditionalChargeFare[]
      */
-    protected ?array $mutualSettlementDetailAdditionalChargeFare = null;
+    protected array $mutualSettlementDetailAdditionalChargeFare;
     /**
      * The mutualSettlementDetailOutgoingRequestToCarrier
      * Meta information extracted from the WSDL
@@ -145,7 +145,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailOutgoingRequestToCarrier
      * @var \StructType\ApiMutualSettlementDetailOutgoingRequestToCarrier[]
      */
-    protected ?array $mutualSettlementDetailOutgoingRequestToCarrier = null;
+    protected array $mutualSettlementDetailOutgoingRequestToCarrier;
     /**
      * The mutualSettlementDetailSMSInformation
      * Meta information extracted from the WSDL
@@ -158,7 +158,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailSMSInformation
      * @var \StructType\ApiMutualSettlementDetailSMSInformation[]
      */
-    protected ?array $mutualSettlementDetailSMSInformation = null;
+    protected array $mutualSettlementDetailSMSInformation;
     /**
      * The mutualSettlementDetailBuyerGoodsReturn
      * Meta information extracted from the WSDL
@@ -171,7 +171,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailBuyerGoodsReturn
      * @var \StructType\ApiMutualSettlementDetailBuyerGoodsReturn[]
      */
-    protected ?array $mutualSettlementDetailBuyerGoodsReturn = null;
+    protected array $mutualSettlementDetailBuyerGoodsReturn;
     /**
      * The mutualSettlementDetailProductsPackaging
      * Meta information extracted from the WSDL
@@ -184,7 +184,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailProductsPackaging
      * @var \StructType\ApiMutualSettlementDetailProductsPackaging[]
      */
-    protected ?array $mutualSettlementDetailProductsPackaging = null;
+    protected array $mutualSettlementDetailProductsPackaging;
     /**
      * The mutualSettlementDetailAdjustmentWriteRegisters
      * Meta information extracted from the WSDL
@@ -197,7 +197,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailAdjustmentWriteRegisters
      * @var \StructType\ApiMutualSettlementDetailAdjustmentWriteRegisters[]
      */
-    protected ?array $mutualSettlementDetailAdjustmentWriteRegisters = null;
+    protected array $mutualSettlementDetailAdjustmentWriteRegisters;
     /**
      * The mutualSettlementDetailSafeCustody
      * Meta information extracted from the WSDL
@@ -210,7 +210,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailSafeCustody
      * @var \StructType\ApiMutualSettlementDetailSafeCustody[]
      */
-    protected ?array $mutualSettlementDetailSafeCustody = null;
+    protected array $mutualSettlementDetailSafeCustody;
     /**
      * The mutualSettlementDetailSafeCustodyCalculation
      * Meta information extracted from the WSDL
@@ -223,7 +223,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailSafeCustodyCalculation
      * @var \StructType\ApiMutualSettlementDetailSafeCustodyCalculation[]
      */
-    protected ?array $mutualSettlementDetailSafeCustodyCalculation = null;
+    protected array $mutualSettlementDetailSafeCustodyCalculation;
     /**
      * The mutualSettlementDetailRegisterStorage
      * Meta information extracted from the WSDL
@@ -236,7 +236,7 @@ class ApiDetails extends AbstractStructBase
      * - ref: tns:mutualSettlementDetailRegisterStorage
      * @var \StructType\ApiMutualSettlementDetailRegisterStorage[]
      */
-    protected ?array $mutualSettlementDetailRegisterStorage = null;
+    protected array $mutualSettlementDetailRegisterStorage;
     /**
      * Constructor method for details
      * @uses ApiDetails::setMutualSettlementDetailCalcCostShipping()

@@ -17,6 +17,22 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
 {
     /**
+     * The ReturnURL
+     * Meta information extracted from the WSDL
+     * - documentation: URL to which the customer's browser is returned after choosing to pay with PayPal. PayPal recommends that the value of ReturnURL be the final review page on which the customer confirms the order and payment. Required Character length
+     * and limitations: no limit.
+     * @var string
+     */
+    protected string $ReturnURL;
+    /**
+     * The CancelURL
+     * Meta information extracted from the WSDL
+     * - documentation: URL to which the customer is returned if he does not approve the use of PayPal to pay you. PayPal recommends that the value of CancelURL be the original page on which the customer chose to pay with PayPal. Required Character length
+     * and limitations: no limit
+     * @var string
+     */
+    protected string $CancelURL;
+    /**
      * The OrderTotal
      * Meta information extracted from the WSDL
      * - documentation: The total cost of the order to the customer. If shipping cost and tax charges are known, include them in OrderTotal; if not, OrderTotal should be the current sub-total of the order. You must set the currencyID attribute to one of the
@@ -25,22 +41,6 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @var \StructType\ApiBasicAmountType|null
      */
     protected ?\StructType\ApiBasicAmountType $OrderTotal = null;
-    /**
-     * The ReturnURL
-     * Meta information extracted from the WSDL
-     * - documentation: URL to which the customer's browser is returned after choosing to pay with PayPal. PayPal recommends that the value of ReturnURL be the final review page on which the customer confirms the order and payment. Required Character length
-     * and limitations: no limit.
-     * @var string|null
-     */
-    protected ?string $ReturnURL = null;
-    /**
-     * The CancelURL
-     * Meta information extracted from the WSDL
-     * - documentation: URL to which the customer is returned if he does not approve the use of PayPal to pay you. PayPal recommends that the value of CancelURL be the original page on which the customer chose to pay with PayPal. Required Character length
-     * and limitations: no limit
-     * @var string|null
-     */
-    protected ?string $CancelURL = null;
     /**
      * The TrackingImageURL
      * Meta information extracted from the WSDL
@@ -601,9 +601,9 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     protected ?array $CoupledBuckets = null;
     /**
      * Constructor method for SetExpressCheckoutRequestDetailsType
-     * @uses ApiSetExpressCheckoutRequestDetailsType::setOrderTotal()
      * @uses ApiSetExpressCheckoutRequestDetailsType::setReturnURL()
      * @uses ApiSetExpressCheckoutRequestDetailsType::setCancelURL()
+     * @uses ApiSetExpressCheckoutRequestDetailsType::setOrderTotal()
      * @uses ApiSetExpressCheckoutRequestDetailsType::setTrackingImageURL()
      * @uses ApiSetExpressCheckoutRequestDetailsType::setGiropaySuccessURL()
      * @uses ApiSetExpressCheckoutRequestDetailsType::setGiropayCancelURL()
@@ -668,9 +668,9 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @uses ApiSetExpressCheckoutRequestDetailsType::setDisplayControlDetails()
      * @uses ApiSetExpressCheckoutRequestDetailsType::setExternalPartnerTrackingDetails()
      * @uses ApiSetExpressCheckoutRequestDetailsType::setCoupledBuckets()
-     * @param \StructType\ApiBasicAmountType $orderTotal
      * @param string $returnURL
      * @param string $cancelURL
+     * @param \StructType\ApiBasicAmountType $orderTotal
      * @param string $trackingImageURL
      * @param string $giropaySuccessURL
      * @param string $giropayCancelURL
@@ -736,12 +736,12 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
      * @param \StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails
      * @param \StructType\ApiCoupledBucketsType[] $coupledBuckets
      */
-    public function __construct(?\StructType\ApiBasicAmountType $orderTotal = null, ?string $returnURL = null, ?string $cancelURL = null, ?string $trackingImageURL = null, ?string $giropaySuccessURL = null, ?string $giropayCancelURL = null, ?string $banktxnPendingURL = null, ?string $token = null, ?\StructType\ApiBasicAmountType $maxAmount = null, ?string $orderDescription = null, ?string $custom = null, ?string $invoiceID = null, ?string $reqConfirmShipping = null, ?string $reqBillingAddress = null, ?\StructType\ApiAddressType $billingAddress = null, ?string $noShipping = null, ?string $addressOverride = null, ?string $localeCode = null, ?string $pageStyle = null, ?string $cpp_header_image = null, ?string $cpp_header_border_color = null, ?string $cpp_header_back_color = null, ?string $cpp_payflow_color = null, ?string $cpp_cart_border_color = null, ?string $cpp_logo_image = null, ?\StructType\ApiAddressType $address = null, ?string $paymentAction = null, ?string $solutionType = null, ?string $landingPage = null, ?string $buyerEmail = null, ?string $channelType = null, ?array $billingAgreementDetails = null, ?array $promoCodes = null, ?string $payPalCheckOutBtnType = null, ?string $productCategory = null, ?string $shippingMethod = null, ?string $profileAddressChangeDate = null, ?string $allowNote = null, ?\StructType\ApiFundingSourceDetailsType $fundingSourceDetails = null, ?string $brandName = null, ?string $callbackURL = null, ?\StructType\ApiEnhancedCheckoutDataType $enhancedCheckoutData = null, ?array $otherPaymentMethods = null, ?\StructType\ApiBuyerDetailsType $buyerDetails = null, ?array $paymentDetails = null, ?array $flatRateShippingOptions = null, ?string $callbackTimeout = null, ?string $callbackVersion = null, ?string $customerServiceNumber = null, ?string $giftMessageEnable = null, ?string $giftReceiptEnable = null, ?string $giftWrapEnable = null, ?string $giftWrapName = null, ?\StructType\ApiBasicAmountType $giftWrapAmount = null, ?string $buyerEmailOptInEnable = null, ?string $surveyEnable = null, ?string $surveyQuestion = null, ?array $surveyChoice = null, ?string $totalType = null, ?string $noteToBuyer = null, ?array $incentives = null, ?string $reqInstrumentDetails = null, ?\StructType\ApiExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails = null, ?\StructType\ApiFlowControlDetailsType $flowControlDetails = null, ?\StructType\ApiDisplayControlDetailsType $displayControlDetails = null, ?\StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails = null, ?array $coupledBuckets = null)
+    public function __construct(string $returnURL, string $cancelURL, ?\StructType\ApiBasicAmountType $orderTotal = null, ?string $trackingImageURL = null, ?string $giropaySuccessURL = null, ?string $giropayCancelURL = null, ?string $banktxnPendingURL = null, ?string $token = null, ?\StructType\ApiBasicAmountType $maxAmount = null, ?string $orderDescription = null, ?string $custom = null, ?string $invoiceID = null, ?string $reqConfirmShipping = null, ?string $reqBillingAddress = null, ?\StructType\ApiAddressType $billingAddress = null, ?string $noShipping = null, ?string $addressOverride = null, ?string $localeCode = null, ?string $pageStyle = null, ?string $cpp_header_image = null, ?string $cpp_header_border_color = null, ?string $cpp_header_back_color = null, ?string $cpp_payflow_color = null, ?string $cpp_cart_border_color = null, ?string $cpp_logo_image = null, ?\StructType\ApiAddressType $address = null, ?string $paymentAction = null, ?string $solutionType = null, ?string $landingPage = null, ?string $buyerEmail = null, ?string $channelType = null, ?array $billingAgreementDetails = null, ?array $promoCodes = null, ?string $payPalCheckOutBtnType = null, ?string $productCategory = null, ?string $shippingMethod = null, ?string $profileAddressChangeDate = null, ?string $allowNote = null, ?\StructType\ApiFundingSourceDetailsType $fundingSourceDetails = null, ?string $brandName = null, ?string $callbackURL = null, ?\StructType\ApiEnhancedCheckoutDataType $enhancedCheckoutData = null, ?array $otherPaymentMethods = null, ?\StructType\ApiBuyerDetailsType $buyerDetails = null, ?array $paymentDetails = null, ?array $flatRateShippingOptions = null, ?string $callbackTimeout = null, ?string $callbackVersion = null, ?string $customerServiceNumber = null, ?string $giftMessageEnable = null, ?string $giftReceiptEnable = null, ?string $giftWrapEnable = null, ?string $giftWrapName = null, ?\StructType\ApiBasicAmountType $giftWrapAmount = null, ?string $buyerEmailOptInEnable = null, ?string $surveyEnable = null, ?string $surveyQuestion = null, ?array $surveyChoice = null, ?string $totalType = null, ?string $noteToBuyer = null, ?array $incentives = null, ?string $reqInstrumentDetails = null, ?\StructType\ApiExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails = null, ?\StructType\ApiFlowControlDetailsType $flowControlDetails = null, ?\StructType\ApiDisplayControlDetailsType $displayControlDetails = null, ?\StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails = null, ?array $coupledBuckets = null)
     {
         $this
-            ->setOrderTotal($orderTotal)
             ->setReturnURL($returnURL)
             ->setCancelURL($cancelURL)
+            ->setOrderTotal($orderTotal)
             ->setTrackingImageURL($trackingImageURL)
             ->setGiropaySuccessURL($giropaySuccessURL)
             ->setGiropayCancelURL($giropayCancelURL)
@@ -808,6 +808,52 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
             ->setCoupledBuckets($coupledBuckets);
     }
     /**
+     * Get ReturnURL value
+     * @return string
+     */
+    public function getReturnURL(): string
+    {
+        return $this->ReturnURL;
+    }
+    /**
+     * Set ReturnURL value
+     * @param string $returnURL
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
+     */
+    public function setReturnURL(string $returnURL): self
+    {
+        // validation for constraint: string
+        if (!is_null($returnURL) && !is_string($returnURL)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnURL, true), gettype($returnURL)), __LINE__);
+        }
+        $this->ReturnURL = $returnURL;
+        
+        return $this;
+    }
+    /**
+     * Get CancelURL value
+     * @return string
+     */
+    public function getCancelURL(): string
+    {
+        return $this->CancelURL;
+    }
+    /**
+     * Set CancelURL value
+     * @param string $cancelURL
+     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
+     */
+    public function setCancelURL(string $cancelURL): self
+    {
+        // validation for constraint: string
+        if (!is_null($cancelURL) && !is_string($cancelURL)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancelURL, true), gettype($cancelURL)), __LINE__);
+        }
+        $this->CancelURL = $cancelURL;
+        
+        return $this;
+    }
+    /**
      * Get OrderTotal value
      * @return \StructType\ApiBasicAmountType|null
      */
@@ -823,52 +869,6 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     public function setOrderTotal(?\StructType\ApiBasicAmountType $orderTotal = null): self
     {
         $this->OrderTotal = $orderTotal;
-        
-        return $this;
-    }
-    /**
-     * Get ReturnURL value
-     * @return string|null
-     */
-    public function getReturnURL(): ?string
-    {
-        return $this->ReturnURL;
-    }
-    /**
-     * Set ReturnURL value
-     * @param string $returnURL
-     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
-     */
-    public function setReturnURL(?string $returnURL = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($returnURL) && !is_string($returnURL)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnURL, true), gettype($returnURL)), __LINE__);
-        }
-        $this->ReturnURL = $returnURL;
-        
-        return $this;
-    }
-    /**
-     * Get CancelURL value
-     * @return string|null
-     */
-    public function getCancelURL(): ?string
-    {
-        return $this->CancelURL;
-    }
-    /**
-     * Set CancelURL value
-     * @param string $cancelURL
-     * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
-     */
-    public function setCancelURL(?string $cancelURL = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($cancelURL) && !is_string($cancelURL)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancelURL, true), gettype($cancelURL)), __LINE__);
-        }
-        $this->CancelURL = $cancelURL;
         
         return $this;
     }
