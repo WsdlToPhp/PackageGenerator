@@ -73,13 +73,13 @@ final class ComposerTest extends AbstractFile
             ->setOptionPrefix('Api')
             ->setOptionComposerName('wsdltophp/bing')
             ->setOptionComposerSettings([
-                'config.disable-tls:true',
                 'require.wsdltophp/wssecurity:dev-master',
-                'config.sort-packages:true',
                 'require-dev.friendsofphp/php-cs-fixer:^3.0',
                 'require-dev.phpstan/phpstan:^2',
                 'require-dev.phpunit/phpunit:^9',
-                'require-dev.rector/rector:^2'
+                'require-dev.rector/rector:^2',
+                'config.disable-tls:true',
+                'config.sort-packages:true'
             ])
         ;
         $composerFile = new Composer($instance, 'composer');
