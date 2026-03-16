@@ -32,12 +32,27 @@ class ApiFareItinerary extends AbstractStructBase
      */
     protected string $key;
     /**
+     * The resident
+     * @var bool
+     */
+    protected bool $resident;
+    /**
      * The firstSegmentsIds
      * Meta information extracted from the WSDL
      * - use: required
      * @var int[]
      */
     protected array $firstSegmentsIds;
+    /**
+     * The secondSegmentsIds
+     * @var int[]
+     */
+    protected array $secondSegmentsIds;
+    /**
+     * The thirdSegmentsIds
+     * @var int[]
+     */
+    protected array $thirdSegmentsIds;
     /**
      * The clickoutURLParams
      * Meta information extracted from the WSDL
@@ -47,47 +62,32 @@ class ApiFareItinerary extends AbstractStructBase
      */
     protected ?string $clickoutURLParams = null;
     /**
-     * The resident
-     * @var bool|null
-     */
-    protected ?bool $resident = null;
-    /**
-     * The secondSegmentsIds
-     * @var int[]
-     */
-    protected ?array $secondSegmentsIds = null;
-    /**
-     * The thirdSegmentsIds
-     * @var int[]
-     */
-    protected ?array $thirdSegmentsIds = null;
-    /**
      * Constructor method for fareItinerary
      * @uses ApiFareItinerary::setPrice()
      * @uses ApiFareItinerary::setKey()
-     * @uses ApiFareItinerary::setFirstSegmentsIds()
-     * @uses ApiFareItinerary::setClickoutURLParams()
      * @uses ApiFareItinerary::setResident()
+     * @uses ApiFareItinerary::setFirstSegmentsIds()
      * @uses ApiFareItinerary::setSecondSegmentsIds()
      * @uses ApiFareItinerary::setThirdSegmentsIds()
+     * @uses ApiFareItinerary::setClickoutURLParams()
      * @param \StructType\ApiFareItineraryPrice $price
      * @param string $key
-     * @param int[] $firstSegmentsIds
-     * @param string $clickoutURLParams
      * @param bool $resident
+     * @param int[] $firstSegmentsIds
      * @param int[] $secondSegmentsIds
      * @param int[] $thirdSegmentsIds
+     * @param string $clickoutURLParams
      */
-    public function __construct(\StructType\ApiFareItineraryPrice $price, string $key, array $firstSegmentsIds, ?string $clickoutURLParams = null, ?bool $resident = null, ?array $secondSegmentsIds = null, ?array $thirdSegmentsIds = null)
+    public function __construct(\StructType\ApiFareItineraryPrice $price, string $key, bool $resident, array $firstSegmentsIds, array $secondSegmentsIds, array $thirdSegmentsIds, ?string $clickoutURLParams = null)
     {
         $this
             ->setPrice($price)
             ->setKey($key)
-            ->setFirstSegmentsIds($firstSegmentsIds)
-            ->setClickoutURLParams($clickoutURLParams)
             ->setResident($resident)
+            ->setFirstSegmentsIds($firstSegmentsIds)
             ->setSecondSegmentsIds($secondSegmentsIds)
-            ->setThirdSegmentsIds($thirdSegmentsIds);
+            ->setThirdSegmentsIds($thirdSegmentsIds)
+            ->setClickoutURLParams($clickoutURLParams);
     }
     /**
      * Get price value
@@ -128,6 +128,29 @@ class ApiFareItinerary extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
         }
         $this->key = $key;
+        
+        return $this;
+    }
+    /**
+     * Get resident value
+     * @return bool
+     */
+    public function getResident(): bool
+    {
+        return $this->resident;
+    }
+    /**
+     * Set resident value
+     * @param bool $resident
+     * @return \StructType\ApiFareItinerary
+     */
+    public function setResident(bool $resident): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($resident) && !is_bool($resident)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($resident, true), gettype($resident)), __LINE__);
+        }
+        $this->resident = $resident;
         
         return $this;
     }
@@ -199,56 +222,10 @@ class ApiFareItinerary extends AbstractStructBase
         return $this;
     }
     /**
-     * Get clickoutURLParams value
-     * @return string|null
-     */
-    public function getClickoutURLParams(): ?string
-    {
-        return $this->clickoutURLParams;
-    }
-    /**
-     * Set clickoutURLParams value
-     * @param string $clickoutURLParams
-     * @return \StructType\ApiFareItinerary
-     */
-    public function setClickoutURLParams(?string $clickoutURLParams = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($clickoutURLParams) && !is_string($clickoutURLParams)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($clickoutURLParams, true), gettype($clickoutURLParams)), __LINE__);
-        }
-        $this->clickoutURLParams = $clickoutURLParams;
-        
-        return $this;
-    }
-    /**
-     * Get resident value
-     * @return bool|null
-     */
-    public function getResident(): ?bool
-    {
-        return $this->resident;
-    }
-    /**
-     * Set resident value
-     * @param bool $resident
-     * @return \StructType\ApiFareItinerary
-     */
-    public function setResident(?bool $resident = null): self
-    {
-        // validation for constraint: boolean
-        if (!is_null($resident) && !is_bool($resident)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($resident, true), gettype($resident)), __LINE__);
-        }
-        $this->resident = $resident;
-        
-        return $this;
-    }
-    /**
      * Get secondSegmentsIds value
      * @return int[]
      */
-    public function getSecondSegmentsIds(): ?array
+    public function getSecondSegmentsIds(): array
     {
         return $this->secondSegmentsIds;
     }
@@ -285,7 +262,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param int[] $secondSegmentsIds
      * @return \StructType\ApiFareItinerary
      */
-    public function setSecondSegmentsIds(?array $secondSegmentsIds = null): self
+    public function setSecondSegmentsIds(array $secondSegmentsIds): self
     {
         // validation for constraint: array
         if ('' !== ($secondSegmentsIdsArrayErrorMessage = self::validateSecondSegmentsIdsForArrayConstraintFromSetSecondSegmentsIds($secondSegmentsIds))) {
@@ -315,7 +292,7 @@ class ApiFareItinerary extends AbstractStructBase
      * Get thirdSegmentsIds value
      * @return int[]
      */
-    public function getThirdSegmentsIds(): ?array
+    public function getThirdSegmentsIds(): array
     {
         return $this->thirdSegmentsIds;
     }
@@ -352,7 +329,7 @@ class ApiFareItinerary extends AbstractStructBase
      * @param int[] $thirdSegmentsIds
      * @return \StructType\ApiFareItinerary
      */
-    public function setThirdSegmentsIds(?array $thirdSegmentsIds = null): self
+    public function setThirdSegmentsIds(array $thirdSegmentsIds): self
     {
         // validation for constraint: array
         if ('' !== ($thirdSegmentsIdsArrayErrorMessage = self::validateThirdSegmentsIdsForArrayConstraintFromSetThirdSegmentsIds($thirdSegmentsIds))) {
@@ -375,6 +352,29 @@ class ApiFareItinerary extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The thirdSegmentsIds property can only contain items of type int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->thirdSegmentsIds[] = $item;
+        
+        return $this;
+    }
+    /**
+     * Get clickoutURLParams value
+     * @return string|null
+     */
+    public function getClickoutURLParams(): ?string
+    {
+        return $this->clickoutURLParams;
+    }
+    /**
+     * Set clickoutURLParams value
+     * @param string $clickoutURLParams
+     * @return \StructType\ApiFareItinerary
+     */
+    public function setClickoutURLParams(?string $clickoutURLParams = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($clickoutURLParams) && !is_string($clickoutURLParams)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($clickoutURLParams, true), gettype($clickoutURLParams)), __LINE__);
+        }
+        $this->clickoutURLParams = $clickoutURLParams;
         
         return $this;
     }

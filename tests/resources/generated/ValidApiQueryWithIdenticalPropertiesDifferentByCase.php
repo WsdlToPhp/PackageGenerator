@@ -17,6 +17,11 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 class ApiQuery extends AbstractStructBase
 {
     /**
+     * The searchTerms
+     * @var string
+     */
+    protected string $searchTerms;
+    /**
      * The SearchTerms
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
@@ -41,34 +46,52 @@ class ApiQuery extends AbstractStructBase
      */
     protected ?string $AlterationOverrideQuery = null;
     /**
-     * The searchTerms
-     * @var string|null
-     */
-    protected ?string $searchTerms = null;
-    /**
      * Constructor method for Query
      * @uses ApiQuery::setSearchTerms()
+     * @uses ApiQuery::setSearchTerms_1()
      * @uses ApiQuery::setAlteredQuery()
      * @uses ApiQuery::setAlterationOverrideQuery()
-     * @uses ApiQuery::setSearchTerms_1()
+     * @param string $searchTerms
      * @param string $searchTerms
      * @param string $alteredQuery
      * @param string $alterationOverrideQuery
-     * @param string $searchTerms
      */
-    public function __construct(?string $searchTerms = null, ?string $alteredQuery = null, ?string $alterationOverrideQuery = null, ?string $searchTerms_1 = null)
+    public function __construct(string $searchTerms, ?string $searchTerms_1 = null, ?string $alteredQuery = null, ?string $alterationOverrideQuery = null)
     {
         $this
             ->setSearchTerms($searchTerms)
+            ->setSearchTerms_1($searchTerms_1)
             ->setAlteredQuery($alteredQuery)
-            ->setAlterationOverrideQuery($alterationOverrideQuery)
-            ->setSearchTerms_1($searchTerms_1);
+            ->setAlterationOverrideQuery($alterationOverrideQuery);
     }
     /**
      * Get SearchTerms value
      * @return string|null
      */
-    public function getSearchTerms(): ?string
+    public function getSearchTerms(): string
+    {
+        return $this->searchTerms;
+    }
+    /**
+     * Set SearchTerms value
+     * @param string $searchTerms
+     * @return \StructType\ApiQuery
+     */
+    public function setSearchTerms(string $searchTerms): self
+    {
+        // validation for constraint: string
+        if (!is_null($searchTerms) && !is_string($searchTerms)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($searchTerms, true), gettype($searchTerms)), __LINE__);
+        }
+        $this->searchTerms = $searchTerms;
+        
+        return $this;
+    }
+    /**
+     * Get SearchTerms value
+     * @return string|null
+     */
+    public function getSearchTerms_1(): ?string
     {
         return $this->SearchTerms;
     }
@@ -77,13 +100,13 @@ class ApiQuery extends AbstractStructBase
      * @param string $searchTerms
      * @return \StructType\ApiQuery
      */
-    public function setSearchTerms(?string $searchTerms = null): self
+    public function setSearchTerms_1(?string $searchTerms_1 = null): self
     {
         // validation for constraint: string
-        if (!is_null($searchTerms) && !is_string($searchTerms)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($searchTerms, true), gettype($searchTerms)), __LINE__);
+        if (!is_null($searchTerms_1) && !is_string($searchTerms_1)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($searchTerms_1, true), gettype($searchTerms_1)), __LINE__);
         }
-        $this->SearchTerms = $searchTerms;
+        $this->SearchTerms = $searchTerms_1;
         
         return $this;
     }
@@ -130,29 +153,6 @@ class ApiQuery extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($alterationOverrideQuery, true), gettype($alterationOverrideQuery)), __LINE__);
         }
         $this->AlterationOverrideQuery = $alterationOverrideQuery;
-        
-        return $this;
-    }
-    /**
-     * Get SearchTerms value
-     * @return string|null
-     */
-    public function getSearchTerms_1(): ?string
-    {
-        return $this->searchTerms;
-    }
-    /**
-     * Set SearchTerms value
-     * @param string $searchTerms
-     * @return \StructType\ApiQuery
-     */
-    public function setSearchTerms_1(?string $searchTerms_1 = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($searchTerms_1) && !is_string($searchTerms_1)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($searchTerms_1, true), gettype($searchTerms_1)), __LINE__);
-        }
-        $this->searchTerms = $searchTerms_1;
         
         return $this;
     }
