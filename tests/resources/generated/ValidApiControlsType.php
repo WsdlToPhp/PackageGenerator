@@ -21,24 +21,24 @@ class ApiControlsType extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - base: xsd:boolean
      * - pattern: true | false
-     * @var bool|null
+     * @var bool
      */
-    protected ?bool $ProcessByDistributor = null;
+    protected bool $ProcessByDistributor;
     /**
      * Constructor method for ControlsType
      * @uses ApiControlsType::setProcessByDistributor()
      * @param bool $processByDistributor
      */
-    public function __construct(?bool $processByDistributor = null)
+    public function __construct(bool $processByDistributor)
     {
         $this
             ->setProcessByDistributor($processByDistributor);
     }
     /**
      * Get ProcessByDistributor value
-     * @return bool|null
+     * @return bool
      */
-    public function getProcessByDistributor(): ?bool
+    public function getProcessByDistributor(): bool
     {
         return $this->ProcessByDistributor;
     }
@@ -47,7 +47,7 @@ class ApiControlsType extends AbstractStructBase
      * @param bool $processByDistributor
      * @return \StructType\ApiControlsType
      */
-    public function setProcessByDistributor(?bool $processByDistributor = null): self
+    public function setProcessByDistributor(bool $processByDistributor): self
     {
         // validation for constraint: boolean
         if (!is_null($processByDistributor) && !is_bool($processByDistributor)) {

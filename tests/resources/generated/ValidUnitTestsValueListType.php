@@ -24,13 +24,13 @@ class ApiValueListType extends AbstractStructBase
      * - ref: tns:Value
      * @var string[]
      */
-    protected ?array $Value = null;
+    protected array $Value;
     /**
      * Constructor method for ValueListType
      * @uses ApiValueListType::setValue()
      * @param string[] $value
      */
-    public function __construct(?array $value = null)
+    public function __construct(array $value)
     {
         $this
             ->setValue($value);
@@ -39,7 +39,7 @@ class ApiValueListType extends AbstractStructBase
      * Get Value value
      * @return string[]
      */
-    public function getValue(): ?array
+    public function getValue(): array
     {
         return $this->Value;
     }
@@ -100,7 +100,7 @@ class ApiValueListType extends AbstractStructBase
      * @param string[] $value
      * @return \StructType\ApiValueListType
      */
-    public function setValue(?array $value = null): self
+    public function setValue(array $value): self
     {
         // validation for constraint: array
         if ('' !== ($valueArrayErrorMessage = self::validateValueForArrayConstraintFromSetValue($value))) {

@@ -59,16 +59,16 @@ final class StructAttribute extends AbstractModel
 
     public function getType(bool $useTypeStruct = false): string
     {
-        if ($useTypeStruct) {
-            $typeStruct = $this->getTypeStruct();
-            if ($typeStruct instanceof Struct) {
-                $type = $typeStruct->getTopInheritance();
-
-                return $type ?: $this->type;
-            }
+        if (!$useTypeStruct) {
+            return $this->type;
         }
 
-        return $this->type;
+        $typeStruct = $this->getTypeStruct();
+        if (!$typeStruct instanceof Struct) {
+            return $this->type;
+        }
+
+        return $typeStruct->getTopInheritance() ?: $this->type;
     }
 
     public function setType(string $type): StructAttribute
@@ -154,12 +154,17 @@ final class StructAttribute extends AbstractModel
 
     public function isRequired(): bool
     {
-        return 'required' === $this->getMetaValue('use', '') || 0 < $this->getMetaValueFirstSet([
-            'minOccurs',
-            'minoccurs',
-            'MinOccurs',
-            'Minoccurs',
-        ], 0);
+        return 'optional' !== $this->getMetaValue('use', '')
+            && !$this->isNullable()
+            && (
+                'required' === $this->getMetaValue('use', '')
+                || 0 < $this->getMetaValueFirstSet([
+                    'minOccurs',
+                    'minoccurs',
+                    'MinOccurs',
+                    'Minoccurs',
+                ], 1)
+            );
     }
 
     public function isNullable(): bool
