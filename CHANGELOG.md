@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 4.1.17 - 2026-03-12
+- issue #330, pr #335 - Implicit minOccurs=1 ignored
+
 ## 4.1.16 - 2026-03-12
 - Update contributors
 - issue #337, pr #338 - chore: add Symfony 8 to list of supported versions
