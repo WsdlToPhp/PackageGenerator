@@ -124,7 +124,6 @@ final class GeneratorOptions extends AbstractYamlReader implements \JsonSerializ
     public const XSD_TYPES_PATH = 'xsd_types_path';
 
     protected array $options = [];
-    private bool $calledSetComposerSettings = false;
 
     protected function __construct(string $filename)
     {
@@ -163,7 +162,7 @@ final class GeneratorOptions extends AbstractYamlReader implements \JsonSerializ
         return array_key_exists('value', $this->options[$optionName]) ? $this->options[$optionName]['value'] : $this->options[$optionName]['default'];
     }
 
-    public function setOptionValue(string $optionName, $optionValue, array $values = []): self
+    public function setOptionValue(string $optionName, $optionValue, array $values = [], bool $callCustomMethod = true): self
     {
         if (!array_key_exists($optionName, $this->options)) {
             $this->options[$optionName] = [
@@ -172,8 +171,7 @@ final class GeneratorOptions extends AbstractYamlReader implements \JsonSerializ
             ];
         } elseif (!empty($this->options[$optionName]['values']) && !in_array($optionValue, $this->options[$optionName]['values'], true)) {
             throw new \InvalidArgumentException(sprintf('Invalid value "%s" for option "%s", possible values: %s', $optionValue, $optionName, implode(', ', $this->options[$optionName]['values'])), __LINE__);
-        } elseif (self::COMPOSER_SETTINGS === $optionName && is_array($optionValue) && !$this->calledSetComposerSettings) {
-            $this->calledSetComposerSettings = true;
+        } elseif (self::COMPOSER_SETTINGS === $optionName && is_array($optionValue) && $callCustomMethod) {
             $this->setComposerSettings($optionValue);
         } else {
             $this->options[$optionName]['value'] = $optionValue;
@@ -236,7 +234,7 @@ final class GeneratorOptions extends AbstractYamlReader implements \JsonSerializ
             }
         }
 
-        return $this->setOptionValue(self::COMPOSER_SETTINGS, $settings);
+        return $this->setOptionValue(self::COMPOSER_SETTINGS, $settings, [], false);
     }
 
     public function toArray(): array
