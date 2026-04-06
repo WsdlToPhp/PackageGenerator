@@ -545,6 +545,58 @@ final class GeneratorOptionsTest extends AbstractTestCase
         self::optionsInstance()->setGenerateTutorialFile('null');
     }
 
+    public function testSetOptionValueComposerSettingsDotNotation(): void
+    {
+        $newOptionKey = 'composer_settings';
+        $newOptionValue = [
+            'config.disable-tls:true',
+            'autoload.psr-4.WsdlToPhp/PackageGenerator:src',
+        ];
+        $expectedResult = [
+            'config' => ['disable-tls' => true],
+            'autoload' => ['psr-4' => ['WsdlToPhp/PackageGenerator' => 'src']],
+        ];
+
+        $instance = self::optionsInstance();
+        $instance->setOptionValue($newOptionKey, $newOptionValue);
+
+        $this->assertSame(
+            $expectedResult['config'],
+            $instance->getComposerSettings()['config']
+        );
+
+        $this->assertSame(
+            $expectedResult['autoload'],
+            $instance->getComposerSettings()['autoload']
+        );
+    }
+
+    public function testSetOptionValueComposerSettingsPhpArray(): void
+    {
+        $newOptionKey = 'composer_settings';
+        $newOptionValue = [
+            'config' => ['disable-tls' => true],
+            'autoload' => ['psr-4' => ['WsdlToPhp/PackageGenerator' => 'src']],
+        ];
+        $expectedResult = [
+            'config' => ['disable-tls' => true],
+            'autoload' => ['psr-4' => ['WsdlToPhp/PackageGenerator' => 'src']],
+        ];
+
+        $instance = self::optionsInstance();
+        $instance->setOptionValue($newOptionKey, $newOptionValue);
+
+        $this->assertSame(
+            $expectedResult['config'],
+            $instance->getComposerSettings()['config']
+        );
+
+        $this->assertSame(
+            $expectedResult['autoload'],
+            $instance->getComposerSettings()['autoload']
+        );
+    }
+
     public function testGetUnexistingOptionValue(): void
     {
         $this->expectException(\InvalidArgumentException::class);
