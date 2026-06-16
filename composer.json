@@ -98,19 +98,23 @@
           "email": "thomasbreuss@gmx.ch",
           "role": "Contributor"
         },
-      {
-        "name": "Alex Krátký",
-        "role": "Contributor"
-      },
-      {
-        "name": "Michel Tomas",
-        "email": "michel.p.tomas@gmail.com",
-        "role": "Contributor"
-      },
-      {
-        "name": "Kai Dederichs",
-        "role": "Contributor"
-      }
+        {
+          "name": "Alex Krátký",
+          "role": "Contributor"
+        },
+        {
+          "name": "Michel Tomas",
+          "email": "michel.p.tomas@gmail.com",
+          "role": "Contributor"
+        },
+        {
+          "name": "Kai Dederichs",
+          "role": "Contributor"
+        },
+        {
+          "name": "Alden Weddleton",
+          "role": "Contributor"
+        }
     ],
     "support" : {
         "email" : "contact@wsdltophp.com"

@@ -8,7 +8,6 @@ use WsdlToPhp\PackageGenerator\File\Validation\FractionDigitsRule;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class FractionDigitsRuleTest extends AbstractRule
 {

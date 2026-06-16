@@ -6,7 +6,6 @@ namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class IntRuleTest extends AbstractRule
 {

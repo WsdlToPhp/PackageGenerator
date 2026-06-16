@@ -11,7 +11,6 @@ use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class ConstantTest extends AbstractTestCase
 {

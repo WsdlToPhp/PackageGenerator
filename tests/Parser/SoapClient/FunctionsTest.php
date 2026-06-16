@@ -10,7 +10,6 @@ use WsdlToPhp\PackageGenerator\Parser\SoapClient\Functions;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class FunctionsTest extends SoapClientParser
 {

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace WsdlToPhp\PackageGenerator\Tests\File\Validation;
 
+use StructType\SearchStatusResponse;
+
 /**
  * The ItemsChoiceType struct contains a choice (choiceMaxOccurs: 1) whose elements have
  * their own maxOccurs: 5, so each property must accept up to 5 items even though the
@@ -87,5 +89,18 @@ final class ChoiceMaxOccursRuleTest extends AbstractRule
             ->setItemIdentifier([1, 2])
             ->setItemName(['one', 'two'])
         ;
+    }
+
+    /**
+     * @throws \ReflectionException
+     */
+    public function testUnboundedMaxOccursValue(): void
+    {
+        /** @var SearchStatusResponse $instance */
+        $instance = self::getOdigeoSearchStatusResponseInstance();
+
+        $this->expectNotToPerformAssertions();
+
+        $instance->setItineraryResultsPages([]);
     }
 }

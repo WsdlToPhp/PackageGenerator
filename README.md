@@ -167,6 +167,7 @@ Developers who helped on this project are listed in the [composer.json](composer
 - [Alex Krátký](https://github.com/AlexKratky)
 - [Michel Tomas](https://github.com/superbiche)
 - [Kai Dederichs](https://github.com/KDederichs)
+- [Alden Weddleton](https://github.com/aldenw)
 
 ## FAQ
 

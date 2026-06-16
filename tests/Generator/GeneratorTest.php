@@ -18,7 +18,6 @@ use WsdlToPhp\PackageGenerator\Tests\ConfigurationReader\GeneratorOptionsTest;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class GeneratorTest extends AbstractTestCase
 {

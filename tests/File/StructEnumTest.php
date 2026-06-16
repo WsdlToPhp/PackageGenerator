@@ -9,7 +9,6 @@ use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class StructEnumTest extends AbstractFile
 {

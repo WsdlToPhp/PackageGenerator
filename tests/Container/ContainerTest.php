@@ -8,7 +8,6 @@ use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class ContainerTest extends AbstractTestCase
 {

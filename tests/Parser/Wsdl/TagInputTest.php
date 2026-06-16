@@ -8,7 +8,6 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInput;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class TagInputTest extends WsdlParser
 {

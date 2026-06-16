@@ -9,7 +9,6 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagChoice;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class TagChoiceTest extends WsdlParser
 {
