@@ -121,11 +121,14 @@ class ApiTaxType extends AbstractStructBase
     }
     /**
      * Get TaxDescription value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiParagraphType[]
      */
     public function getTaxDescription(): ?array
     {
-        return $this->TaxDescription;
+        return $this->TaxDescription ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setTaxDescription method
@@ -156,6 +159,8 @@ class ApiTaxType extends AbstractStructBase
     }
     /**
      * Set TaxDescription value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param \StructType\ApiParagraphType[] $taxDescription
      * @return \StructType\ApiTaxType
@@ -170,7 +175,11 @@ class ApiTaxType extends AbstractStructBase
         if (is_array($taxDescription) && count($taxDescription) > 5) {
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($taxDescription)), __LINE__);
         }
-        $this->TaxDescription = $taxDescription;
+        if (is_null($taxDescription) || (is_array($taxDescription) && empty($taxDescription))) {
+            unset($this->TaxDescription);
+        } else {
+            $this->TaxDescription = $taxDescription;
+        }
         
         return $this;
     }

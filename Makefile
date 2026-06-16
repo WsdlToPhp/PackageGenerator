@@ -4,7 +4,7 @@ COMPOSER ?= /usr/bin/composer
 DOCKER_COMPOSE ?= docker compose
 DOCKER_EXEC_CONTAINER ?= docker exec -t $(CONTAINER_NAME)
 
-.PHONY: bash build cs-fixer down install phpstan phpunit rector up update
+.PHONY: bash build cs-fixer down install jsons phpstan phpunit rector up update
 
 bash:
 	$(DOCKER_EXEC_CONTAINER) bash
@@ -20,6 +20,9 @@ down:
 
 install:
 	$(DOCKER_EXEC_CONTAINER) $(PHP_VERSION) $(COMPOSER) install
+
+jsons:
+	$(DOCKER_EXEC_CONTAINER) $(PHP_VERSION) tests/generate_serialized_jsons.php
 
 phpstan:
 	$(DOCKER_EXEC_CONTAINER) $(PHP_VERSION) vendor/bin/phpstan analyze src --level=2

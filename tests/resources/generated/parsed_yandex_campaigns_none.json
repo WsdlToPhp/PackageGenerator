@@ -285,7 +285,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -312,7 +312,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -325,7 +325,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -1105,7 +1105,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "LimitOffset",
                         "inheritance": "",
                         "abstract": false,
@@ -1132,7 +1132,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -1187,7 +1187,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1215,7 +1215,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ExceptionNotification",
                         "inheritance": "",
                         "abstract": false,
@@ -1228,7 +1228,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ExceptionNotification",
                         "inheritance": "",
                         "abstract": false,
@@ -1255,7 +1255,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -1282,7 +1282,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -1322,7 +1322,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3199,7 +3199,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -3253,7 +3253,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -3293,7 +3293,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -3334,7 +3334,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -3347,7 +3347,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -3402,7 +3402,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -3457,7 +3457,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
@@ -3470,7 +3470,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -3483,7 +3483,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -3552,7 +3552,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -3607,7 +3607,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
@@ -3620,7 +3620,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
@@ -3647,7 +3647,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyMaximumClicks",
                         "inheritance": "",
                         "abstract": false,
@@ -3660,7 +3660,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyMaximumConversionRate",
                         "inheritance": "",
                         "abstract": false,
@@ -3673,7 +3673,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyAverageCpc",
                         "inheritance": "",
                         "abstract": false,
@@ -3686,7 +3686,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyAverageCpa",
                         "inheritance": "",
                         "abstract": false,
@@ -3699,7 +3699,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyWeeklyClickPackage",
                         "inheritance": "",
                         "abstract": false,
@@ -3712,7 +3712,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyAverageRoi",
                         "inheritance": "",
                         "abstract": false,
@@ -3752,7 +3752,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyNetworkDefault",
                         "inheritance": "",
                         "abstract": false,
@@ -3806,7 +3806,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyMaximumClicks",
                         "inheritance": "",
                         "abstract": false,
@@ -3819,7 +3819,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyMaximumAppInstalls",
                         "inheritance": "",
                         "abstract": false,
@@ -3832,7 +3832,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyAverageCpc",
                         "inheritance": "",
                         "abstract": false,
@@ -3845,7 +3845,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyAverageCpi",
                         "inheritance": "",
                         "abstract": false,
@@ -3858,7 +3858,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyWeeklyClickPackage",
                         "inheritance": "",
                         "abstract": false,
@@ -3925,7 +3925,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyNetworkDefault",
                         "inheritance": "",
                         "abstract": false,
@@ -3952,7 +3952,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyMaximumClicks",
                         "inheritance": "",
                         "abstract": false,
@@ -3965,7 +3965,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyMaximumConversionRate",
                         "inheritance": "",
                         "abstract": false,
@@ -3978,7 +3978,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyAverageCpc",
                         "inheritance": "",
                         "abstract": false,
@@ -3991,7 +3991,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyAverageCpa",
                         "inheritance": "",
                         "abstract": false,
@@ -4004,7 +4004,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyWeeklyClickPackage",
                         "inheritance": "",
                         "abstract": false,
@@ -4017,7 +4017,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyAverageRoi",
                         "inheritance": "",
                         "abstract": false,
@@ -4098,7 +4098,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TextCampaignSearchStrategy",
                         "inheritance": "",
                         "abstract": false,
@@ -4111,7 +4111,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TextCampaignNetworkStrategy",
                         "inheritance": "",
                         "abstract": false,
@@ -4138,7 +4138,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileAppCampaignSearchStrategy",
                         "inheritance": "",
                         "abstract": false,
@@ -4151,7 +4151,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileAppCampaignNetworkStrategy",
                         "inheritance": "",
                         "abstract": false,
@@ -4178,7 +4178,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DynamicTextCampaignSearchStrategy",
                         "inheritance": "",
                         "abstract": false,
@@ -4191,7 +4191,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DynamicTextCampaignNetworkStrategy",
                         "inheritance": "",
                         "abstract": false,
@@ -4231,7 +4231,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -4324,7 +4324,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -4377,7 +4377,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -4390,7 +4390,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -4430,7 +4430,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -4443,7 +4443,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -4509,7 +4509,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -4522,7 +4522,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -4535,7 +4535,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -4575,7 +4575,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -4588,7 +4588,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -4615,7 +4615,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
@@ -4628,7 +4628,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
@@ -4655,7 +4655,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyMaximumClicksAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -4668,7 +4668,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyMaximumConversionRateAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -4681,7 +4681,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyAverageCpcAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -4694,7 +4694,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyAverageCpaAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -4707,7 +4707,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyWeeklyClickPackageAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -4720,7 +4720,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyAverageRoiAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -4760,7 +4760,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyNetworkDefaultAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -4814,7 +4814,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyMaximumClicksAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -4827,7 +4827,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyMaximumAppInstallsAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -4840,7 +4840,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyAverageCpcAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -4853,7 +4853,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyAverageCpiAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -4866,7 +4866,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyWeeklyClickPackageAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -4933,7 +4933,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyNetworkDefaultAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -4960,7 +4960,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyMaximumClicksAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -4973,7 +4973,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyMaximumConversionRateAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -4986,7 +4986,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyAverageCpcAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -4999,7 +4999,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyAverageCpaAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -5012,7 +5012,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyWeeklyClickPackageAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -5025,7 +5025,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StrategyAverageRoiAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -5226,7 +5226,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "SmsSettings",
                         "inheritance": "",
                         "abstract": false,
@@ -5239,7 +5239,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "EmailSettings",
                         "inheritance": "",
                         "abstract": false,
@@ -5266,7 +5266,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "SmsEventsEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -5279,7 +5279,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -5292,7 +5292,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -5319,7 +5319,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -5332,7 +5332,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
@@ -5345,7 +5345,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
@@ -5358,7 +5358,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "YesNoEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -5371,7 +5371,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "YesNoEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -5411,7 +5411,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
@@ -5424,7 +5424,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
@@ -5437,7 +5437,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "int",
                         "inheritance": "",
                         "abstract": false,
@@ -5823,7 +5823,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -5850,7 +5850,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -5863,7 +5863,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -5903,7 +5903,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CampaignFundsParam",
                         "inheritance": "",
                         "abstract": false,
@@ -5916,7 +5916,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "SharedAccountFundsParam",
                         "inheritance": "",
                         "abstract": false,
@@ -5985,7 +5985,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfString",
                         "inheritance": "",
                         "abstract": false,
@@ -6039,7 +6039,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -6052,7 +6052,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Notification",
                         "inheritance": "",
                         "abstract": false,
@@ -6065,7 +6065,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TimeTargeting",
                         "inheritance": "",
                         "abstract": false,
@@ -6078,7 +6078,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -6188,7 +6188,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TextCampaignSetting",
                         "inheritance": "",
                         "abstract": false,
@@ -6228,7 +6228,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileAppCampaignSetting",
                         "inheritance": "",
                         "abstract": false,
@@ -6268,7 +6268,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DynamicTextCampaignSetting",
                         "inheritance": "",
                         "abstract": false,
@@ -6321,7 +6321,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DailyBudget",
                         "inheritance": "",
                         "abstract": false,
@@ -6334,7 +6334,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -6347,7 +6347,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfString",
                         "inheritance": "",
                         "abstract": false,
@@ -6360,7 +6360,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfString",
                         "inheritance": "",
                         "abstract": false,
@@ -6373,7 +6373,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfString",
                         "inheritance": "",
                         "abstract": false,
@@ -6386,7 +6386,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TextCampaignAddItem",
                         "inheritance": "",
                         "abstract": false,
@@ -6399,7 +6399,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileAppCampaignAddItem",
                         "inheritance": "",
                         "abstract": false,
@@ -6412,7 +6412,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DynamicTextCampaignAddItem",
                         "inheritance": "",
                         "abstract": false,
@@ -6439,7 +6439,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TextCampaignStrategy",
                         "inheritance": "",
                         "abstract": false,
@@ -6452,7 +6452,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TextCampaignSetting",
                         "inheritance": "",
                         "abstract": false,
@@ -6479,7 +6479,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileAppCampaignStrategy",
                         "inheritance": "",
                         "abstract": false,
@@ -6492,7 +6492,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileAppCampaignSetting",
                         "inheritance": "",
                         "abstract": false,
@@ -6519,7 +6519,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DynamicTextCampaignStrategy",
                         "inheritance": "",
                         "abstract": false,
@@ -6532,7 +6532,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DynamicTextCampaignSetting",
                         "inheritance": "",
                         "abstract": false,
@@ -6572,7 +6572,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -6585,7 +6585,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -6668,7 +6668,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TextCampaignUpdateItem",
                         "inheritance": "",
                         "abstract": false,
@@ -6681,7 +6681,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileAppCampaignUpdateItem",
                         "inheritance": "",
                         "abstract": false,
@@ -6694,7 +6694,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DynamicTextCampaignUpdateItem",
                         "inheritance": "",
                         "abstract": false,
@@ -6721,7 +6721,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TextCampaignStrategy",
                         "inheritance": "",
                         "abstract": false,
@@ -6734,7 +6734,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TextCampaignSettingGet",
                         "inheritance": "",
                         "abstract": false,
@@ -6761,7 +6761,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileAppCampaignStrategy",
                         "inheritance": "",
                         "abstract": false,
@@ -6774,7 +6774,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileAppCampaignSettingGet",
                         "inheritance": "",
                         "abstract": false,
@@ -6801,7 +6801,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DynamicTextCampaignStrategy",
                         "inheritance": "",
                         "abstract": false,
@@ -6814,7 +6814,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DynamicTextCampaignSettingGet",
                         "inheritance": "",
                         "abstract": false,
@@ -6841,7 +6841,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -6854,7 +6854,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -6867,7 +6867,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -6880,7 +6880,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CampaignTypeGetEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -6893,7 +6893,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CampaignStatusGetEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -6906,7 +6906,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CampaignStateGetEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -6919,7 +6919,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CampaignStatusPaymentEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -6932,7 +6932,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -6959,7 +6959,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Statistics",
                         "inheritance": "",
                         "abstract": false,
@@ -6972,7 +6972,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CurrencyEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -6985,7 +6985,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "FundsParam",
                         "inheritance": "",
                         "abstract": false,
@@ -6998,7 +6998,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CampaignAssistant",
                         "inheritance": "",
                         "abstract": false,
@@ -7081,7 +7081,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TextCampaignGetItem",
                         "inheritance": "",
                         "abstract": false,
@@ -7094,7 +7094,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileAppCampaignGetItem",
                         "inheritance": "",
                         "abstract": false,
@@ -7107,7 +7107,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DynamicTextCampaignGetItem",
                         "inheritance": "",
                         "abstract": false,
@@ -7134,7 +7134,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -7147,7 +7147,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CampaignTypeEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -7160,7 +7160,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CampaignStateEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -7173,7 +7173,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CampaignStatusEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -7186,7 +7186,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CampaignStatusPaymentEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -7239,7 +7239,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TextCampaignFieldEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -7252,7 +7252,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileAppCampaignFieldEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -7265,7 +7265,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DynamicTextCampaignFieldEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -7292,7 +7292,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CampaignGetItem",
                         "inheritance": "",
                         "abstract": false,
@@ -7346,7 +7346,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ActionResult",
                         "inheritance": "",
                         "abstract": false,
@@ -7400,7 +7400,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ActionResult",
                         "inheritance": "",
                         "abstract": false,
@@ -7454,7 +7454,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ActionResult",
                         "inheritance": "",
                         "abstract": false,
@@ -7508,7 +7508,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ActionResult",
                         "inheritance": "",
                         "abstract": false,
@@ -7562,7 +7562,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ActionResult",
                         "inheritance": "",
                         "abstract": false,
@@ -7616,7 +7616,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ActionResult",
                         "inheritance": "",
                         "abstract": false,
@@ -7670,7 +7670,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ActionResult",
                         "inheritance": "",
                         "abstract": false,

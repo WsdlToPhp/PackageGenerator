@@ -197,7 +197,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -224,7 +224,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -237,7 +237,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -1017,7 +1017,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "LimitOffset",
                         "inheritance": "",
                         "abstract": false,
@@ -1044,7 +1044,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -1099,7 +1099,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1127,7 +1127,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ExceptionNotification",
                         "inheritance": "",
                         "abstract": false,
@@ -1140,7 +1140,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ExceptionNotification",
                         "inheritance": "",
                         "abstract": false,
@@ -1167,7 +1167,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -1194,7 +1194,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -1234,7 +1234,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1515,7 +1515,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -1528,7 +1528,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -1541,7 +1541,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "AdGroupTypesEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -1554,7 +1554,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StatusSelectionEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -1567,7 +1567,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -1580,7 +1580,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1593,7 +1593,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StatusSelectionEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -1620,7 +1620,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -1647,7 +1647,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1713,7 +1713,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfString",
                         "inheritance": "",
                         "abstract": false,
@@ -1726,7 +1726,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1739,7 +1739,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileAppAdGroupAdd",
                         "inheritance": "",
                         "abstract": false,
@@ -1752,7 +1752,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DynamicTextAdGroup",
                         "inheritance": "",
                         "abstract": false,
@@ -1779,7 +1779,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -1792,7 +1792,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1805,7 +1805,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "long",
                         "inheritance": "",
                         "abstract": false,
@@ -1818,7 +1818,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StatusEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -1831,7 +1831,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "AdGroupTypesEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -1844,7 +1844,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileAppAdGroupGet",
                         "inheritance": "",
                         "abstract": false,
@@ -1857,7 +1857,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DynamicTextAdGroupGet",
                         "inheritance": "",
                         "abstract": false,
@@ -1982,7 +1982,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1995,7 +1995,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TargetDeviceTypeEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -2008,7 +2008,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TargetCarrierEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -2021,7 +2021,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2048,7 +2048,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileOperatingSystemTypeEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -2061,7 +2061,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "AppAvailabilityStatusEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -2088,7 +2088,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TargetDeviceTypeEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -2101,7 +2101,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TargetCarrierEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -2114,7 +2114,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2234,7 +2234,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2247,7 +2247,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DomainUrlProcessingStatusEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -2287,7 +2287,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2300,7 +2300,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileAppAdGroupUpdate",
                         "inheritance": "",
                         "abstract": false,
@@ -2313,7 +2313,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DynamicTextAdGroup",
                         "inheritance": "",
                         "abstract": false,
@@ -2366,7 +2366,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileAppAdGroupFieldEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -2379,7 +2379,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DynamicTextAdGroupFieldEnum",
                         "inheritance": "",
                         "abstract": false,
@@ -2406,7 +2406,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "AdGroupGetItem",
                         "inheritance": "",
                         "abstract": false,

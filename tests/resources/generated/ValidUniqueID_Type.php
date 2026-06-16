@@ -152,20 +152,29 @@ class ApiUniqueID_Type extends AbstractStructBase
     }
     /**
      * Get CompanyName value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiCompanyNameType|null
      */
     public function getCompanyName(): ?\StructType\ApiCompanyNameType
     {
-        return $this->CompanyName;
+        return $this->CompanyName ?? null;
     }
     /**
      * Set CompanyName value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiCompanyNameType $companyName
      * @return \StructType\ApiUniqueID_Type
      */
     public function setCompanyName(?\StructType\ApiCompanyNameType $companyName = null): self
     {
-        $this->CompanyName = $companyName;
+        if (is_null($companyName) || (is_array($companyName) && empty($companyName))) {
+            unset($this->CompanyName);
+        } else {
+            $this->CompanyName = $companyName;
+        }
         
         return $this;
     }

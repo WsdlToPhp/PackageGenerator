@@ -66,6 +66,9 @@ class ApiResult extends AbstractStructBase
     }
     /**
      * Get Success value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return bool|null
      */
     public function getSuccess(): ?bool
@@ -102,6 +105,8 @@ class ApiResult extends AbstractStructBase
     }
     /**
      * Set Success value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
@@ -129,6 +134,9 @@ class ApiResult extends AbstractStructBase
     }
     /**
      * Get Errors value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiErrors|null
      */
     public function getErrors(): ?\StructType\ApiErrors
@@ -165,6 +173,8 @@ class ApiResult extends AbstractStructBase
     }
     /**
      * Set Errors value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
@@ -188,20 +198,29 @@ class ApiResult extends AbstractStructBase
     }
     /**
      * Get Warnings value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiWarnings|null
      */
     public function getWarnings(): ?\StructType\ApiWarnings
     {
-        return $this->Warnings;
+        return $this->Warnings ?? null;
     }
     /**
      * Set Warnings value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiWarnings $warnings
      * @return \StructType\ApiResult
      */
     public function setWarnings(?\StructType\ApiWarnings $warnings = null): self
     {
-        $this->Warnings = $warnings;
+        if (is_null($warnings) || (is_array($warnings) && empty($warnings))) {
+            unset($this->Warnings);
+        } else {
+            $this->Warnings = $warnings;
+        }
         
         return $this;
     }

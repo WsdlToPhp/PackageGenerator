@@ -280,14 +280,19 @@ class ApiShopper extends AbstractStructBase
     }
     /**
      * Get dateOfBirth value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getDateOfBirth(): ?string
     {
-        return $this->dateOfBirth;
+        return $this->dateOfBirth ?? null;
     }
     /**
      * Set dateOfBirth value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $dateOfBirth
      * @return \StructType\ApiShopper
      */
@@ -305,20 +310,29 @@ class ApiShopper extends AbstractStructBase
         if (!is_null($dateOfBirth) && mb_strlen((string) $dateOfBirth) < 10) {
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 10', mb_strlen((string) $dateOfBirth)), __LINE__);
         }
-        $this->dateOfBirth = $dateOfBirth;
+        if (is_null($dateOfBirth) || (is_array($dateOfBirth) && empty($dateOfBirth))) {
+            unset($this->dateOfBirth);
+        } else {
+            $this->dateOfBirth = $dateOfBirth;
+        }
         
         return $this;
     }
     /**
      * Get phoneNumber value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getPhoneNumber(): ?string
     {
-        return $this->phoneNumber;
+        return $this->phoneNumber ?? null;
     }
     /**
      * Set phoneNumber value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $phoneNumber
      * @return \StructType\ApiShopper
      */
@@ -336,20 +350,29 @@ class ApiShopper extends AbstractStructBase
         if (!is_null($phoneNumber) && mb_strlen((string) $phoneNumber) < 1) {
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $phoneNumber)), __LINE__);
         }
-        $this->phoneNumber = $phoneNumber;
+        if (is_null($phoneNumber) || (is_array($phoneNumber) && empty($phoneNumber))) {
+            unset($this->phoneNumber);
+        } else {
+            $this->phoneNumber = $phoneNumber;
+        }
         
         return $this;
     }
     /**
      * Get mobilePhoneNumber value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getMobilePhoneNumber(): ?string
     {
-        return $this->mobilePhoneNumber;
+        return $this->mobilePhoneNumber ?? null;
     }
     /**
      * Set mobilePhoneNumber value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $mobilePhoneNumber
      * @return \StructType\ApiShopper
      */
@@ -367,20 +390,29 @@ class ApiShopper extends AbstractStructBase
         if (!is_null($mobilePhoneNumber) && mb_strlen((string) $mobilePhoneNumber) < 1) {
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $mobilePhoneNumber)), __LINE__);
         }
-        $this->mobilePhoneNumber = $mobilePhoneNumber;
+        if (is_null($mobilePhoneNumber) || (is_array($mobilePhoneNumber) && empty($mobilePhoneNumber))) {
+            unset($this->mobilePhoneNumber);
+        } else {
+            $this->mobilePhoneNumber = $mobilePhoneNumber;
+        }
         
         return $this;
     }
     /**
      * Get ipAddress value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getIpAddress(): ?string
     {
-        return $this->ipAddress;
+        return $this->ipAddress ?? null;
     }
     /**
      * Set ipAddress value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $ipAddress
      * @return \StructType\ApiShopper
      */
@@ -398,7 +430,11 @@ class ApiShopper extends AbstractStructBase
         if (!is_null($ipAddress) && mb_strlen((string) $ipAddress) < 1) {
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $ipAddress)), __LINE__);
         }
-        $this->ipAddress = $ipAddress;
+        if (is_null($ipAddress) || (is_array($ipAddress) && empty($ipAddress))) {
+            unset($this->ipAddress);
+        } else {
+            $this->ipAddress = $ipAddress;
+        }
         
         return $this;
     }

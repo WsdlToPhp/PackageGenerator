@@ -855,33 +855,47 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get OrderTotal value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiBasicAmountType|null
      */
     public function getOrderTotal(): ?\StructType\ApiBasicAmountType
     {
-        return $this->OrderTotal;
+        return $this->OrderTotal ?? null;
     }
     /**
      * Set OrderTotal value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiBasicAmountType $orderTotal
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setOrderTotal(?\StructType\ApiBasicAmountType $orderTotal = null): self
     {
-        $this->OrderTotal = $orderTotal;
+        if (is_null($orderTotal) || (is_array($orderTotal) && empty($orderTotal))) {
+            unset($this->OrderTotal);
+        } else {
+            $this->OrderTotal = $orderTotal;
+        }
         
         return $this;
     }
     /**
      * Get TrackingImageURL value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getTrackingImageURL(): ?string
     {
-        return $this->TrackingImageURL;
+        return $this->TrackingImageURL ?? null;
     }
     /**
      * Set TrackingImageURL value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $trackingImageURL
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -891,20 +905,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($trackingImageURL) && !is_string($trackingImageURL)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($trackingImageURL, true), gettype($trackingImageURL)), __LINE__);
         }
-        $this->TrackingImageURL = $trackingImageURL;
+        if (is_null($trackingImageURL) || (is_array($trackingImageURL) && empty($trackingImageURL))) {
+            unset($this->TrackingImageURL);
+        } else {
+            $this->TrackingImageURL = $trackingImageURL;
+        }
         
         return $this;
     }
     /**
      * Get giropaySuccessURL value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getGiropaySuccessURL(): ?string
     {
-        return $this->giropaySuccessURL;
+        return $this->giropaySuccessURL ?? null;
     }
     /**
      * Set giropaySuccessURL value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $giropaySuccessURL
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -914,20 +937,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($giropaySuccessURL) && !is_string($giropaySuccessURL)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giropaySuccessURL, true), gettype($giropaySuccessURL)), __LINE__);
         }
-        $this->giropaySuccessURL = $giropaySuccessURL;
+        if (is_null($giropaySuccessURL) || (is_array($giropaySuccessURL) && empty($giropaySuccessURL))) {
+            unset($this->giropaySuccessURL);
+        } else {
+            $this->giropaySuccessURL = $giropaySuccessURL;
+        }
         
         return $this;
     }
     /**
      * Get giropayCancelURL value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getGiropayCancelURL(): ?string
     {
-        return $this->giropayCancelURL;
+        return $this->giropayCancelURL ?? null;
     }
     /**
      * Set giropayCancelURL value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $giropayCancelURL
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -937,20 +969,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($giropayCancelURL) && !is_string($giropayCancelURL)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giropayCancelURL, true), gettype($giropayCancelURL)), __LINE__);
         }
-        $this->giropayCancelURL = $giropayCancelURL;
+        if (is_null($giropayCancelURL) || (is_array($giropayCancelURL) && empty($giropayCancelURL))) {
+            unset($this->giropayCancelURL);
+        } else {
+            $this->giropayCancelURL = $giropayCancelURL;
+        }
         
         return $this;
     }
     /**
      * Get BanktxnPendingURL value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getBanktxnPendingURL(): ?string
     {
-        return $this->BanktxnPendingURL;
+        return $this->BanktxnPendingURL ?? null;
     }
     /**
      * Set BanktxnPendingURL value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $banktxnPendingURL
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -960,20 +1001,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($banktxnPendingURL) && !is_string($banktxnPendingURL)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($banktxnPendingURL, true), gettype($banktxnPendingURL)), __LINE__);
         }
-        $this->BanktxnPendingURL = $banktxnPendingURL;
+        if (is_null($banktxnPendingURL) || (is_array($banktxnPendingURL) && empty($banktxnPendingURL))) {
+            unset($this->BanktxnPendingURL);
+        } else {
+            $this->BanktxnPendingURL = $banktxnPendingURL;
+        }
         
         return $this;
     }
     /**
      * Get Token value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getToken(): ?string
     {
-        return $this->Token;
+        return $this->Token ?? null;
     }
     /**
      * Set Token value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $token
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -983,39 +1033,57 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($token) && !is_string($token)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($token, true), gettype($token)), __LINE__);
         }
-        $this->Token = $token;
+        if (is_null($token) || (is_array($token) && empty($token))) {
+            unset($this->Token);
+        } else {
+            $this->Token = $token;
+        }
         
         return $this;
     }
     /**
      * Get MaxAmount value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiBasicAmountType|null
      */
     public function getMaxAmount(): ?\StructType\ApiBasicAmountType
     {
-        return $this->MaxAmount;
+        return $this->MaxAmount ?? null;
     }
     /**
      * Set MaxAmount value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiBasicAmountType $maxAmount
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setMaxAmount(?\StructType\ApiBasicAmountType $maxAmount = null): self
     {
-        $this->MaxAmount = $maxAmount;
+        if (is_null($maxAmount) || (is_array($maxAmount) && empty($maxAmount))) {
+            unset($this->MaxAmount);
+        } else {
+            $this->MaxAmount = $maxAmount;
+        }
         
         return $this;
     }
     /**
      * Get OrderDescription value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getOrderDescription(): ?string
     {
-        return $this->OrderDescription;
+        return $this->OrderDescription ?? null;
     }
     /**
      * Set OrderDescription value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $orderDescription
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1025,20 +1093,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($orderDescription) && !is_string($orderDescription)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($orderDescription, true), gettype($orderDescription)), __LINE__);
         }
-        $this->OrderDescription = $orderDescription;
+        if (is_null($orderDescription) || (is_array($orderDescription) && empty($orderDescription))) {
+            unset($this->OrderDescription);
+        } else {
+            $this->OrderDescription = $orderDescription;
+        }
         
         return $this;
     }
     /**
      * Get Custom value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getCustom(): ?string
     {
-        return $this->Custom;
+        return $this->Custom ?? null;
     }
     /**
      * Set Custom value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $custom
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1048,20 +1125,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($custom) && !is_string($custom)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($custom, true), gettype($custom)), __LINE__);
         }
-        $this->Custom = $custom;
+        if (is_null($custom) || (is_array($custom) && empty($custom))) {
+            unset($this->Custom);
+        } else {
+            $this->Custom = $custom;
+        }
         
         return $this;
     }
     /**
      * Get InvoiceID value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getInvoiceID(): ?string
     {
-        return $this->InvoiceID;
+        return $this->InvoiceID ?? null;
     }
     /**
      * Set InvoiceID value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $invoiceID
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1071,20 +1157,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($invoiceID) && !is_string($invoiceID)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($invoiceID, true), gettype($invoiceID)), __LINE__);
         }
-        $this->InvoiceID = $invoiceID;
+        if (is_null($invoiceID) || (is_array($invoiceID) && empty($invoiceID))) {
+            unset($this->InvoiceID);
+        } else {
+            $this->InvoiceID = $invoiceID;
+        }
         
         return $this;
     }
     /**
      * Get ReqConfirmShipping value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getReqConfirmShipping(): ?string
     {
-        return $this->ReqConfirmShipping;
+        return $this->ReqConfirmShipping ?? null;
     }
     /**
      * Set ReqConfirmShipping value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $reqConfirmShipping
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1094,20 +1189,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($reqConfirmShipping) && !is_string($reqConfirmShipping)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reqConfirmShipping, true), gettype($reqConfirmShipping)), __LINE__);
         }
-        $this->ReqConfirmShipping = $reqConfirmShipping;
+        if (is_null($reqConfirmShipping) || (is_array($reqConfirmShipping) && empty($reqConfirmShipping))) {
+            unset($this->ReqConfirmShipping);
+        } else {
+            $this->ReqConfirmShipping = $reqConfirmShipping;
+        }
         
         return $this;
     }
     /**
      * Get ReqBillingAddress value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getReqBillingAddress(): ?string
     {
-        return $this->ReqBillingAddress;
+        return $this->ReqBillingAddress ?? null;
     }
     /**
      * Set ReqBillingAddress value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $reqBillingAddress
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1117,39 +1221,57 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($reqBillingAddress) && !is_string($reqBillingAddress)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reqBillingAddress, true), gettype($reqBillingAddress)), __LINE__);
         }
-        $this->ReqBillingAddress = $reqBillingAddress;
+        if (is_null($reqBillingAddress) || (is_array($reqBillingAddress) && empty($reqBillingAddress))) {
+            unset($this->ReqBillingAddress);
+        } else {
+            $this->ReqBillingAddress = $reqBillingAddress;
+        }
         
         return $this;
     }
     /**
      * Get BillingAddress value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiAddressType|null
      */
     public function getBillingAddress(): ?\StructType\ApiAddressType
     {
-        return $this->BillingAddress;
+        return $this->BillingAddress ?? null;
     }
     /**
      * Set BillingAddress value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiAddressType $billingAddress
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setBillingAddress(?\StructType\ApiAddressType $billingAddress = null): self
     {
-        $this->BillingAddress = $billingAddress;
+        if (is_null($billingAddress) || (is_array($billingAddress) && empty($billingAddress))) {
+            unset($this->BillingAddress);
+        } else {
+            $this->BillingAddress = $billingAddress;
+        }
         
         return $this;
     }
     /**
      * Get NoShipping value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getNoShipping(): ?string
     {
-        return $this->NoShipping;
+        return $this->NoShipping ?? null;
     }
     /**
      * Set NoShipping value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $noShipping
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1159,20 +1281,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($noShipping) && !is_string($noShipping)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($noShipping, true), gettype($noShipping)), __LINE__);
         }
-        $this->NoShipping = $noShipping;
+        if (is_null($noShipping) || (is_array($noShipping) && empty($noShipping))) {
+            unset($this->NoShipping);
+        } else {
+            $this->NoShipping = $noShipping;
+        }
         
         return $this;
     }
     /**
      * Get AddressOverride value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getAddressOverride(): ?string
     {
-        return $this->AddressOverride;
+        return $this->AddressOverride ?? null;
     }
     /**
      * Set AddressOverride value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $addressOverride
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1182,20 +1313,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($addressOverride) && !is_string($addressOverride)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($addressOverride, true), gettype($addressOverride)), __LINE__);
         }
-        $this->AddressOverride = $addressOverride;
+        if (is_null($addressOverride) || (is_array($addressOverride) && empty($addressOverride))) {
+            unset($this->AddressOverride);
+        } else {
+            $this->AddressOverride = $addressOverride;
+        }
         
         return $this;
     }
     /**
      * Get LocaleCode value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getLocaleCode(): ?string
     {
-        return $this->LocaleCode;
+        return $this->LocaleCode ?? null;
     }
     /**
      * Set LocaleCode value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $localeCode
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1205,20 +1345,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($localeCode) && !is_string($localeCode)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($localeCode, true), gettype($localeCode)), __LINE__);
         }
-        $this->LocaleCode = $localeCode;
+        if (is_null($localeCode) || (is_array($localeCode) && empty($localeCode))) {
+            unset($this->LocaleCode);
+        } else {
+            $this->LocaleCode = $localeCode;
+        }
         
         return $this;
     }
     /**
      * Get PageStyle value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getPageStyle(): ?string
     {
-        return $this->PageStyle;
+        return $this->PageStyle ?? null;
     }
     /**
      * Set PageStyle value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $pageStyle
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1228,20 +1377,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($pageStyle) && !is_string($pageStyle)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pageStyle, true), gettype($pageStyle)), __LINE__);
         }
-        $this->PageStyle = $pageStyle;
+        if (is_null($pageStyle) || (is_array($pageStyle) && empty($pageStyle))) {
+            unset($this->PageStyle);
+        } else {
+            $this->PageStyle = $pageStyle;
+        }
         
         return $this;
     }
     /**
      * Get cpp_header_image value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getCpp_header_image(): ?string
     {
-        return $this->{'cpp-header-image'};
+        return $this->{'cpp-header-image'} ?? null;
     }
     /**
      * Set cpp_header_image value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $cpp_header_image
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1251,20 +1409,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($cpp_header_image) && !is_string($cpp_header_image)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_header_image, true), gettype($cpp_header_image)), __LINE__);
         }
-        $this->cpp_header_image = $this->{'cpp-header-image'} = $cpp_header_image;
+        if (is_null($cpp_header_image) || (is_array($cpp_header_image) && empty($cpp_header_image))) {
+            unset($this->cpp_header_image, $this->{'cpp-header-image'});
+        } else {
+            $this->cpp_header_image = $this->{'cpp-header-image'} = $cpp_header_image;
+        }
         
         return $this;
     }
     /**
      * Get cpp_header_border_color value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getCpp_header_border_color(): ?string
     {
-        return $this->{'cpp-header-border-color'};
+        return $this->{'cpp-header-border-color'} ?? null;
     }
     /**
      * Set cpp_header_border_color value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $cpp_header_border_color
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1274,20 +1441,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($cpp_header_border_color) && !is_string($cpp_header_border_color)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_header_border_color, true), gettype($cpp_header_border_color)), __LINE__);
         }
-        $this->cpp_header_border_color = $this->{'cpp-header-border-color'} = $cpp_header_border_color;
+        if (is_null($cpp_header_border_color) || (is_array($cpp_header_border_color) && empty($cpp_header_border_color))) {
+            unset($this->cpp_header_border_color, $this->{'cpp-header-border-color'});
+        } else {
+            $this->cpp_header_border_color = $this->{'cpp-header-border-color'} = $cpp_header_border_color;
+        }
         
         return $this;
     }
     /**
      * Get cpp_header_back_color value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getCpp_header_back_color(): ?string
     {
-        return $this->{'cpp-header-back-color'};
+        return $this->{'cpp-header-back-color'} ?? null;
     }
     /**
      * Set cpp_header_back_color value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $cpp_header_back_color
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1297,20 +1473,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($cpp_header_back_color) && !is_string($cpp_header_back_color)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_header_back_color, true), gettype($cpp_header_back_color)), __LINE__);
         }
-        $this->cpp_header_back_color = $this->{'cpp-header-back-color'} = $cpp_header_back_color;
+        if (is_null($cpp_header_back_color) || (is_array($cpp_header_back_color) && empty($cpp_header_back_color))) {
+            unset($this->cpp_header_back_color, $this->{'cpp-header-back-color'});
+        } else {
+            $this->cpp_header_back_color = $this->{'cpp-header-back-color'} = $cpp_header_back_color;
+        }
         
         return $this;
     }
     /**
      * Get cpp_payflow_color value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getCpp_payflow_color(): ?string
     {
-        return $this->{'cpp-payflow-color'};
+        return $this->{'cpp-payflow-color'} ?? null;
     }
     /**
      * Set cpp_payflow_color value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $cpp_payflow_color
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1320,20 +1505,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($cpp_payflow_color) && !is_string($cpp_payflow_color)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_payflow_color, true), gettype($cpp_payflow_color)), __LINE__);
         }
-        $this->cpp_payflow_color = $this->{'cpp-payflow-color'} = $cpp_payflow_color;
+        if (is_null($cpp_payflow_color) || (is_array($cpp_payflow_color) && empty($cpp_payflow_color))) {
+            unset($this->cpp_payflow_color, $this->{'cpp-payflow-color'});
+        } else {
+            $this->cpp_payflow_color = $this->{'cpp-payflow-color'} = $cpp_payflow_color;
+        }
         
         return $this;
     }
     /**
      * Get cpp_cart_border_color value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getCpp_cart_border_color(): ?string
     {
-        return $this->{'cpp-cart-border-color'};
+        return $this->{'cpp-cart-border-color'} ?? null;
     }
     /**
      * Set cpp_cart_border_color value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $cpp_cart_border_color
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1343,20 +1537,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($cpp_cart_border_color) && !is_string($cpp_cart_border_color)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_cart_border_color, true), gettype($cpp_cart_border_color)), __LINE__);
         }
-        $this->cpp_cart_border_color = $this->{'cpp-cart-border-color'} = $cpp_cart_border_color;
+        if (is_null($cpp_cart_border_color) || (is_array($cpp_cart_border_color) && empty($cpp_cart_border_color))) {
+            unset($this->cpp_cart_border_color, $this->{'cpp-cart-border-color'});
+        } else {
+            $this->cpp_cart_border_color = $this->{'cpp-cart-border-color'} = $cpp_cart_border_color;
+        }
         
         return $this;
     }
     /**
      * Get cpp_logo_image value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getCpp_logo_image(): ?string
     {
-        return $this->{'cpp-logo-image'};
+        return $this->{'cpp-logo-image'} ?? null;
     }
     /**
      * Set cpp_logo_image value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $cpp_logo_image
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1366,39 +1569,57 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($cpp_logo_image) && !is_string($cpp_logo_image)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cpp_logo_image, true), gettype($cpp_logo_image)), __LINE__);
         }
-        $this->cpp_logo_image = $this->{'cpp-logo-image'} = $cpp_logo_image;
+        if (is_null($cpp_logo_image) || (is_array($cpp_logo_image) && empty($cpp_logo_image))) {
+            unset($this->cpp_logo_image, $this->{'cpp-logo-image'});
+        } else {
+            $this->cpp_logo_image = $this->{'cpp-logo-image'} = $cpp_logo_image;
+        }
         
         return $this;
     }
     /**
      * Get Address value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiAddressType|null
      */
     public function getAddress(): ?\StructType\ApiAddressType
     {
-        return $this->Address;
+        return $this->Address ?? null;
     }
     /**
      * Set Address value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiAddressType $address
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setAddress(?\StructType\ApiAddressType $address = null): self
     {
-        $this->Address = $address;
+        if (is_null($address) || (is_array($address) && empty($address))) {
+            unset($this->Address);
+        } else {
+            $this->Address = $address;
+        }
         
         return $this;
     }
     /**
      * Get PaymentAction value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getPaymentAction(): ?string
     {
-        return $this->PaymentAction;
+        return $this->PaymentAction ?? null;
     }
     /**
      * Set PaymentAction value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @uses \EnumType\ApiPaymentActionCodeType::valueIsValid()
      * @uses \EnumType\ApiPaymentActionCodeType::getValidValues()
      * @throws InvalidArgumentException
@@ -1411,20 +1632,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!\EnumType\ApiPaymentActionCodeType::valueIsValid($paymentAction)) {
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiPaymentActionCodeType', is_array($paymentAction) ? implode(', ', $paymentAction) : var_export($paymentAction, true), implode(', ', \EnumType\ApiPaymentActionCodeType::getValidValues())), __LINE__);
         }
-        $this->PaymentAction = $paymentAction;
+        if (is_null($paymentAction) || (is_array($paymentAction) && empty($paymentAction))) {
+            unset($this->PaymentAction);
+        } else {
+            $this->PaymentAction = $paymentAction;
+        }
         
         return $this;
     }
     /**
      * Get SolutionType value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getSolutionType(): ?string
     {
-        return $this->SolutionType;
+        return $this->SolutionType ?? null;
     }
     /**
      * Set SolutionType value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @uses \EnumType\ApiSolutionTypeType::valueIsValid()
      * @uses \EnumType\ApiSolutionTypeType::getValidValues()
      * @throws InvalidArgumentException
@@ -1437,20 +1667,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!\EnumType\ApiSolutionTypeType::valueIsValid($solutionType)) {
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiSolutionTypeType', is_array($solutionType) ? implode(', ', $solutionType) : var_export($solutionType, true), implode(', ', \EnumType\ApiSolutionTypeType::getValidValues())), __LINE__);
         }
-        $this->SolutionType = $solutionType;
+        if (is_null($solutionType) || (is_array($solutionType) && empty($solutionType))) {
+            unset($this->SolutionType);
+        } else {
+            $this->SolutionType = $solutionType;
+        }
         
         return $this;
     }
     /**
      * Get LandingPage value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getLandingPage(): ?string
     {
-        return $this->LandingPage;
+        return $this->LandingPage ?? null;
     }
     /**
      * Set LandingPage value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @uses \EnumType\ApiLandingPageType::valueIsValid()
      * @uses \EnumType\ApiLandingPageType::getValidValues()
      * @throws InvalidArgumentException
@@ -1463,20 +1702,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!\EnumType\ApiLandingPageType::valueIsValid($landingPage)) {
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiLandingPageType', is_array($landingPage) ? implode(', ', $landingPage) : var_export($landingPage, true), implode(', ', \EnumType\ApiLandingPageType::getValidValues())), __LINE__);
         }
-        $this->LandingPage = $landingPage;
+        if (is_null($landingPage) || (is_array($landingPage) && empty($landingPage))) {
+            unset($this->LandingPage);
+        } else {
+            $this->LandingPage = $landingPage;
+        }
         
         return $this;
     }
     /**
      * Get BuyerEmail value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getBuyerEmail(): ?string
     {
-        return $this->BuyerEmail;
+        return $this->BuyerEmail ?? null;
     }
     /**
      * Set BuyerEmail value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $buyerEmail
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1486,20 +1734,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($buyerEmail) && !is_string($buyerEmail)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buyerEmail, true), gettype($buyerEmail)), __LINE__);
         }
-        $this->BuyerEmail = $buyerEmail;
+        if (is_null($buyerEmail) || (is_array($buyerEmail) && empty($buyerEmail))) {
+            unset($this->BuyerEmail);
+        } else {
+            $this->BuyerEmail = $buyerEmail;
+        }
         
         return $this;
     }
     /**
      * Get ChannelType value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getChannelType(): ?string
     {
-        return $this->ChannelType;
+        return $this->ChannelType ?? null;
     }
     /**
      * Set ChannelType value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @uses \EnumType\ApiChannelType::valueIsValid()
      * @uses \EnumType\ApiChannelType::getValidValues()
      * @throws InvalidArgumentException
@@ -1512,17 +1769,24 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!\EnumType\ApiChannelType::valueIsValid($channelType)) {
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiChannelType', is_array($channelType) ? implode(', ', $channelType) : var_export($channelType, true), implode(', ', \EnumType\ApiChannelType::getValidValues())), __LINE__);
         }
-        $this->ChannelType = $channelType;
+        if (is_null($channelType) || (is_array($channelType) && empty($channelType))) {
+            unset($this->ChannelType);
+        } else {
+            $this->ChannelType = $channelType;
+        }
         
         return $this;
     }
     /**
      * Get BillingAgreementDetails value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiBillingAgreementDetailsType[]
      */
     public function getBillingAgreementDetails(): ?array
     {
-        return $this->BillingAgreementDetails;
+        return $this->BillingAgreementDetails ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setBillingAgreementDetails method
@@ -1553,6 +1817,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set BillingAgreementDetails value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param \StructType\ApiBillingAgreementDetailsType[] $billingAgreementDetails
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
@@ -1563,7 +1829,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if ('' !== ($billingAgreementDetailsArrayErrorMessage = self::validateBillingAgreementDetailsForArrayConstraintFromSetBillingAgreementDetails($billingAgreementDetails))) {
             throw new InvalidArgumentException($billingAgreementDetailsArrayErrorMessage, __LINE__);
         }
-        $this->BillingAgreementDetails = $billingAgreementDetails;
+        if (is_null($billingAgreementDetails) || (is_array($billingAgreementDetails) && empty($billingAgreementDetails))) {
+            unset($this->BillingAgreementDetails);
+        } else {
+            $this->BillingAgreementDetails = $billingAgreementDetails;
+        }
         
         return $this;
     }
@@ -1585,11 +1855,14 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get PromoCodes value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string[]
      */
     public function getPromoCodes(): ?array
     {
-        return $this->PromoCodes;
+        return $this->PromoCodes ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setPromoCodes method
@@ -1620,6 +1893,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set PromoCodes value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param string[] $promoCodes
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
@@ -1630,7 +1905,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if ('' !== ($promoCodesArrayErrorMessage = self::validatePromoCodesForArrayConstraintFromSetPromoCodes($promoCodes))) {
             throw new InvalidArgumentException($promoCodesArrayErrorMessage, __LINE__);
         }
-        $this->PromoCodes = $promoCodes;
+        if (is_null($promoCodes) || (is_array($promoCodes) && empty($promoCodes))) {
+            unset($this->PromoCodes);
+        } else {
+            $this->PromoCodes = $promoCodes;
+        }
         
         return $this;
     }
@@ -1652,14 +1931,19 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get PayPalCheckOutBtnType value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getPayPalCheckOutBtnType(): ?string
     {
-        return $this->PayPalCheckOutBtnType;
+        return $this->PayPalCheckOutBtnType ?? null;
     }
     /**
      * Set PayPalCheckOutBtnType value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $payPalCheckOutBtnType
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1669,20 +1953,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($payPalCheckOutBtnType) && !is_string($payPalCheckOutBtnType)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payPalCheckOutBtnType, true), gettype($payPalCheckOutBtnType)), __LINE__);
         }
-        $this->PayPalCheckOutBtnType = $payPalCheckOutBtnType;
+        if (is_null($payPalCheckOutBtnType) || (is_array($payPalCheckOutBtnType) && empty($payPalCheckOutBtnType))) {
+            unset($this->PayPalCheckOutBtnType);
+        } else {
+            $this->PayPalCheckOutBtnType = $payPalCheckOutBtnType;
+        }
         
         return $this;
     }
     /**
      * Get ProductCategory value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getProductCategory(): ?string
     {
-        return $this->ProductCategory;
+        return $this->ProductCategory ?? null;
     }
     /**
      * Set ProductCategory value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @uses \EnumType\ApiProductCategoryType::valueIsValid()
      * @uses \EnumType\ApiProductCategoryType::getValidValues()
      * @throws InvalidArgumentException
@@ -1695,20 +1988,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!\EnumType\ApiProductCategoryType::valueIsValid($productCategory)) {
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiProductCategoryType', is_array($productCategory) ? implode(', ', $productCategory) : var_export($productCategory, true), implode(', ', \EnumType\ApiProductCategoryType::getValidValues())), __LINE__);
         }
-        $this->ProductCategory = $productCategory;
+        if (is_null($productCategory) || (is_array($productCategory) && empty($productCategory))) {
+            unset($this->ProductCategory);
+        } else {
+            $this->ProductCategory = $productCategory;
+        }
         
         return $this;
     }
     /**
      * Get ShippingMethod value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getShippingMethod(): ?string
     {
-        return $this->ShippingMethod;
+        return $this->ShippingMethod ?? null;
     }
     /**
      * Set ShippingMethod value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @uses \EnumType\ApiShippingServiceCodeType::valueIsValid()
      * @uses \EnumType\ApiShippingServiceCodeType::getValidValues()
      * @throws InvalidArgumentException
@@ -1721,20 +2023,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!\EnumType\ApiShippingServiceCodeType::valueIsValid($shippingMethod)) {
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiShippingServiceCodeType', is_array($shippingMethod) ? implode(', ', $shippingMethod) : var_export($shippingMethod, true), implode(', ', \EnumType\ApiShippingServiceCodeType::getValidValues())), __LINE__);
         }
-        $this->ShippingMethod = $shippingMethod;
+        if (is_null($shippingMethod) || (is_array($shippingMethod) && empty($shippingMethod))) {
+            unset($this->ShippingMethod);
+        } else {
+            $this->ShippingMethod = $shippingMethod;
+        }
         
         return $this;
     }
     /**
      * Get ProfileAddressChangeDate value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getProfileAddressChangeDate(): ?string
     {
-        return $this->ProfileAddressChangeDate;
+        return $this->ProfileAddressChangeDate ?? null;
     }
     /**
      * Set ProfileAddressChangeDate value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $profileAddressChangeDate
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1744,20 +2055,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($profileAddressChangeDate) && !is_string($profileAddressChangeDate)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileAddressChangeDate, true), gettype($profileAddressChangeDate)), __LINE__);
         }
-        $this->ProfileAddressChangeDate = $profileAddressChangeDate;
+        if (is_null($profileAddressChangeDate) || (is_array($profileAddressChangeDate) && empty($profileAddressChangeDate))) {
+            unset($this->ProfileAddressChangeDate);
+        } else {
+            $this->ProfileAddressChangeDate = $profileAddressChangeDate;
+        }
         
         return $this;
     }
     /**
      * Get AllowNote value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getAllowNote(): ?string
     {
-        return $this->AllowNote;
+        return $this->AllowNote ?? null;
     }
     /**
      * Set AllowNote value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $allowNote
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1767,39 +2087,57 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($allowNote) && !is_string($allowNote)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($allowNote, true), gettype($allowNote)), __LINE__);
         }
-        $this->AllowNote = $allowNote;
+        if (is_null($allowNote) || (is_array($allowNote) && empty($allowNote))) {
+            unset($this->AllowNote);
+        } else {
+            $this->AllowNote = $allowNote;
+        }
         
         return $this;
     }
     /**
      * Get FundingSourceDetails value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiFundingSourceDetailsType|null
      */
     public function getFundingSourceDetails(): ?\StructType\ApiFundingSourceDetailsType
     {
-        return $this->FundingSourceDetails;
+        return $this->FundingSourceDetails ?? null;
     }
     /**
      * Set FundingSourceDetails value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiFundingSourceDetailsType $fundingSourceDetails
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setFundingSourceDetails(?\StructType\ApiFundingSourceDetailsType $fundingSourceDetails = null): self
     {
-        $this->FundingSourceDetails = $fundingSourceDetails;
+        if (is_null($fundingSourceDetails) || (is_array($fundingSourceDetails) && empty($fundingSourceDetails))) {
+            unset($this->FundingSourceDetails);
+        } else {
+            $this->FundingSourceDetails = $fundingSourceDetails;
+        }
         
         return $this;
     }
     /**
      * Get BrandName value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getBrandName(): ?string
     {
-        return $this->BrandName;
+        return $this->BrandName ?? null;
     }
     /**
      * Set BrandName value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $brandName
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1809,20 +2147,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($brandName) && !is_string($brandName)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($brandName, true), gettype($brandName)), __LINE__);
         }
-        $this->BrandName = $brandName;
+        if (is_null($brandName) || (is_array($brandName) && empty($brandName))) {
+            unset($this->BrandName);
+        } else {
+            $this->BrandName = $brandName;
+        }
         
         return $this;
     }
     /**
      * Get CallbackURL value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getCallbackURL(): ?string
     {
-        return $this->CallbackURL;
+        return $this->CallbackURL ?? null;
     }
     /**
      * Set CallbackURL value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $callbackURL
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -1832,36 +2179,52 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($callbackURL) && !is_string($callbackURL)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($callbackURL, true), gettype($callbackURL)), __LINE__);
         }
-        $this->CallbackURL = $callbackURL;
+        if (is_null($callbackURL) || (is_array($callbackURL) && empty($callbackURL))) {
+            unset($this->CallbackURL);
+        } else {
+            $this->CallbackURL = $callbackURL;
+        }
         
         return $this;
     }
     /**
      * Get EnhancedCheckoutData value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiEnhancedCheckoutDataType|null
      */
     public function getEnhancedCheckoutData(): ?\StructType\ApiEnhancedCheckoutDataType
     {
-        return $this->EnhancedCheckoutData;
+        return $this->EnhancedCheckoutData ?? null;
     }
     /**
      * Set EnhancedCheckoutData value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiEnhancedCheckoutDataType $enhancedCheckoutData
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setEnhancedCheckoutData(?\StructType\ApiEnhancedCheckoutDataType $enhancedCheckoutData = null): self
     {
-        $this->EnhancedCheckoutData = $enhancedCheckoutData;
+        if (is_null($enhancedCheckoutData) || (is_array($enhancedCheckoutData) && empty($enhancedCheckoutData))) {
+            unset($this->EnhancedCheckoutData);
+        } else {
+            $this->EnhancedCheckoutData = $enhancedCheckoutData;
+        }
         
         return $this;
     }
     /**
      * Get OtherPaymentMethods value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiOtherPaymentMethodDetailsType[]
      */
     public function getOtherPaymentMethods(): ?array
     {
-        return $this->OtherPaymentMethods;
+        return $this->OtherPaymentMethods ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setOtherPaymentMethods method
@@ -1892,6 +2255,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set OtherPaymentMethods value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param \StructType\ApiOtherPaymentMethodDetailsType[] $otherPaymentMethods
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
@@ -1902,7 +2267,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if ('' !== ($otherPaymentMethodsArrayErrorMessage = self::validateOtherPaymentMethodsForArrayConstraintFromSetOtherPaymentMethods($otherPaymentMethods))) {
             throw new InvalidArgumentException($otherPaymentMethodsArrayErrorMessage, __LINE__);
         }
-        $this->OtherPaymentMethods = $otherPaymentMethods;
+        if (is_null($otherPaymentMethods) || (is_array($otherPaymentMethods) && empty($otherPaymentMethods))) {
+            unset($this->OtherPaymentMethods);
+        } else {
+            $this->OtherPaymentMethods = $otherPaymentMethods;
+        }
         
         return $this;
     }
@@ -1924,30 +2293,42 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get BuyerDetails value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiBuyerDetailsType|null
      */
     public function getBuyerDetails(): ?\StructType\ApiBuyerDetailsType
     {
-        return $this->BuyerDetails;
+        return $this->BuyerDetails ?? null;
     }
     /**
      * Set BuyerDetails value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiBuyerDetailsType $buyerDetails
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setBuyerDetails(?\StructType\ApiBuyerDetailsType $buyerDetails = null): self
     {
-        $this->BuyerDetails = $buyerDetails;
+        if (is_null($buyerDetails) || (is_array($buyerDetails) && empty($buyerDetails))) {
+            unset($this->BuyerDetails);
+        } else {
+            $this->BuyerDetails = $buyerDetails;
+        }
         
         return $this;
     }
     /**
      * Get PaymentDetails value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiPaymentDetailsType[]
      */
     public function getPaymentDetails(): ?array
     {
-        return $this->PaymentDetails;
+        return $this->PaymentDetails ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setPaymentDetails method
@@ -1978,6 +2359,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set PaymentDetails value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param \StructType\ApiPaymentDetailsType[] $paymentDetails
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
@@ -1992,7 +2375,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (is_array($paymentDetails) && count($paymentDetails) > 10) {
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 10', count($paymentDetails)), __LINE__);
         }
-        $this->PaymentDetails = $paymentDetails;
+        if (is_null($paymentDetails) || (is_array($paymentDetails) && empty($paymentDetails))) {
+            unset($this->PaymentDetails);
+        } else {
+            $this->PaymentDetails = $paymentDetails;
+        }
         
         return $this;
     }
@@ -2018,11 +2405,14 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get FlatRateShippingOptions value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiShippingOptionType[]
      */
     public function getFlatRateShippingOptions(): ?array
     {
-        return $this->FlatRateShippingOptions;
+        return $this->FlatRateShippingOptions ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setFlatRateShippingOptions method
@@ -2053,6 +2443,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set FlatRateShippingOptions value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param \StructType\ApiShippingOptionType[] $flatRateShippingOptions
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
@@ -2063,7 +2455,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if ('' !== ($flatRateShippingOptionsArrayErrorMessage = self::validateFlatRateShippingOptionsForArrayConstraintFromSetFlatRateShippingOptions($flatRateShippingOptions))) {
             throw new InvalidArgumentException($flatRateShippingOptionsArrayErrorMessage, __LINE__);
         }
-        $this->FlatRateShippingOptions = $flatRateShippingOptions;
+        if (is_null($flatRateShippingOptions) || (is_array($flatRateShippingOptions) && empty($flatRateShippingOptions))) {
+            unset($this->FlatRateShippingOptions);
+        } else {
+            $this->FlatRateShippingOptions = $flatRateShippingOptions;
+        }
         
         return $this;
     }
@@ -2085,14 +2481,19 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get CallbackTimeout value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getCallbackTimeout(): ?string
     {
-        return $this->CallbackTimeout;
+        return $this->CallbackTimeout ?? null;
     }
     /**
      * Set CallbackTimeout value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $callbackTimeout
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2102,20 +2503,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($callbackTimeout) && !is_string($callbackTimeout)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($callbackTimeout, true), gettype($callbackTimeout)), __LINE__);
         }
-        $this->CallbackTimeout = $callbackTimeout;
+        if (is_null($callbackTimeout) || (is_array($callbackTimeout) && empty($callbackTimeout))) {
+            unset($this->CallbackTimeout);
+        } else {
+            $this->CallbackTimeout = $callbackTimeout;
+        }
         
         return $this;
     }
     /**
      * Get CallbackVersion value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getCallbackVersion(): ?string
     {
-        return $this->CallbackVersion;
+        return $this->CallbackVersion ?? null;
     }
     /**
      * Set CallbackVersion value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $callbackVersion
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2125,20 +2535,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($callbackVersion) && !is_string($callbackVersion)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($callbackVersion, true), gettype($callbackVersion)), __LINE__);
         }
-        $this->CallbackVersion = $callbackVersion;
+        if (is_null($callbackVersion) || (is_array($callbackVersion) && empty($callbackVersion))) {
+            unset($this->CallbackVersion);
+        } else {
+            $this->CallbackVersion = $callbackVersion;
+        }
         
         return $this;
     }
     /**
      * Get CustomerServiceNumber value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getCustomerServiceNumber(): ?string
     {
-        return $this->CustomerServiceNumber;
+        return $this->CustomerServiceNumber ?? null;
     }
     /**
      * Set CustomerServiceNumber value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $customerServiceNumber
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2148,20 +2567,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($customerServiceNumber) && !is_string($customerServiceNumber)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($customerServiceNumber, true), gettype($customerServiceNumber)), __LINE__);
         }
-        $this->CustomerServiceNumber = $customerServiceNumber;
+        if (is_null($customerServiceNumber) || (is_array($customerServiceNumber) && empty($customerServiceNumber))) {
+            unset($this->CustomerServiceNumber);
+        } else {
+            $this->CustomerServiceNumber = $customerServiceNumber;
+        }
         
         return $this;
     }
     /**
      * Get GiftMessageEnable value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getGiftMessageEnable(): ?string
     {
-        return $this->GiftMessageEnable;
+        return $this->GiftMessageEnable ?? null;
     }
     /**
      * Set GiftMessageEnable value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $giftMessageEnable
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2171,20 +2599,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($giftMessageEnable) && !is_string($giftMessageEnable)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftMessageEnable, true), gettype($giftMessageEnable)), __LINE__);
         }
-        $this->GiftMessageEnable = $giftMessageEnable;
+        if (is_null($giftMessageEnable) || (is_array($giftMessageEnable) && empty($giftMessageEnable))) {
+            unset($this->GiftMessageEnable);
+        } else {
+            $this->GiftMessageEnable = $giftMessageEnable;
+        }
         
         return $this;
     }
     /**
      * Get GiftReceiptEnable value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getGiftReceiptEnable(): ?string
     {
-        return $this->GiftReceiptEnable;
+        return $this->GiftReceiptEnable ?? null;
     }
     /**
      * Set GiftReceiptEnable value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $giftReceiptEnable
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2194,20 +2631,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($giftReceiptEnable) && !is_string($giftReceiptEnable)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftReceiptEnable, true), gettype($giftReceiptEnable)), __LINE__);
         }
-        $this->GiftReceiptEnable = $giftReceiptEnable;
+        if (is_null($giftReceiptEnable) || (is_array($giftReceiptEnable) && empty($giftReceiptEnable))) {
+            unset($this->GiftReceiptEnable);
+        } else {
+            $this->GiftReceiptEnable = $giftReceiptEnable;
+        }
         
         return $this;
     }
     /**
      * Get GiftWrapEnable value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getGiftWrapEnable(): ?string
     {
-        return $this->GiftWrapEnable;
+        return $this->GiftWrapEnable ?? null;
     }
     /**
      * Set GiftWrapEnable value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $giftWrapEnable
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2217,20 +2663,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($giftWrapEnable) && !is_string($giftWrapEnable)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftWrapEnable, true), gettype($giftWrapEnable)), __LINE__);
         }
-        $this->GiftWrapEnable = $giftWrapEnable;
+        if (is_null($giftWrapEnable) || (is_array($giftWrapEnable) && empty($giftWrapEnable))) {
+            unset($this->GiftWrapEnable);
+        } else {
+            $this->GiftWrapEnable = $giftWrapEnable;
+        }
         
         return $this;
     }
     /**
      * Get GiftWrapName value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getGiftWrapName(): ?string
     {
-        return $this->GiftWrapName;
+        return $this->GiftWrapName ?? null;
     }
     /**
      * Set GiftWrapName value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $giftWrapName
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2240,39 +2695,57 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($giftWrapName) && !is_string($giftWrapName)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($giftWrapName, true), gettype($giftWrapName)), __LINE__);
         }
-        $this->GiftWrapName = $giftWrapName;
+        if (is_null($giftWrapName) || (is_array($giftWrapName) && empty($giftWrapName))) {
+            unset($this->GiftWrapName);
+        } else {
+            $this->GiftWrapName = $giftWrapName;
+        }
         
         return $this;
     }
     /**
      * Get GiftWrapAmount value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiBasicAmountType|null
      */
     public function getGiftWrapAmount(): ?\StructType\ApiBasicAmountType
     {
-        return $this->GiftWrapAmount;
+        return $this->GiftWrapAmount ?? null;
     }
     /**
      * Set GiftWrapAmount value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiBasicAmountType $giftWrapAmount
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setGiftWrapAmount(?\StructType\ApiBasicAmountType $giftWrapAmount = null): self
     {
-        $this->GiftWrapAmount = $giftWrapAmount;
+        if (is_null($giftWrapAmount) || (is_array($giftWrapAmount) && empty($giftWrapAmount))) {
+            unset($this->GiftWrapAmount);
+        } else {
+            $this->GiftWrapAmount = $giftWrapAmount;
+        }
         
         return $this;
     }
     /**
      * Get BuyerEmailOptInEnable value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getBuyerEmailOptInEnable(): ?string
     {
-        return $this->BuyerEmailOptInEnable;
+        return $this->BuyerEmailOptInEnable ?? null;
     }
     /**
      * Set BuyerEmailOptInEnable value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $buyerEmailOptInEnable
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2282,20 +2755,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($buyerEmailOptInEnable) && !is_string($buyerEmailOptInEnable)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($buyerEmailOptInEnable, true), gettype($buyerEmailOptInEnable)), __LINE__);
         }
-        $this->BuyerEmailOptInEnable = $buyerEmailOptInEnable;
+        if (is_null($buyerEmailOptInEnable) || (is_array($buyerEmailOptInEnable) && empty($buyerEmailOptInEnable))) {
+            unset($this->BuyerEmailOptInEnable);
+        } else {
+            $this->BuyerEmailOptInEnable = $buyerEmailOptInEnable;
+        }
         
         return $this;
     }
     /**
      * Get SurveyEnable value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getSurveyEnable(): ?string
     {
-        return $this->SurveyEnable;
+        return $this->SurveyEnable ?? null;
     }
     /**
      * Set SurveyEnable value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $surveyEnable
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2305,20 +2787,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($surveyEnable) && !is_string($surveyEnable)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($surveyEnable, true), gettype($surveyEnable)), __LINE__);
         }
-        $this->SurveyEnable = $surveyEnable;
+        if (is_null($surveyEnable) || (is_array($surveyEnable) && empty($surveyEnable))) {
+            unset($this->SurveyEnable);
+        } else {
+            $this->SurveyEnable = $surveyEnable;
+        }
         
         return $this;
     }
     /**
      * Get SurveyQuestion value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getSurveyQuestion(): ?string
     {
-        return $this->SurveyQuestion;
+        return $this->SurveyQuestion ?? null;
     }
     /**
      * Set SurveyQuestion value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $surveyQuestion
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2328,17 +2819,24 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($surveyQuestion) && !is_string($surveyQuestion)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($surveyQuestion, true), gettype($surveyQuestion)), __LINE__);
         }
-        $this->SurveyQuestion = $surveyQuestion;
+        if (is_null($surveyQuestion) || (is_array($surveyQuestion) && empty($surveyQuestion))) {
+            unset($this->SurveyQuestion);
+        } else {
+            $this->SurveyQuestion = $surveyQuestion;
+        }
         
         return $this;
     }
     /**
      * Get SurveyChoice value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string[]
      */
     public function getSurveyChoice(): ?array
     {
-        return $this->SurveyChoice;
+        return $this->SurveyChoice ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setSurveyChoice method
@@ -2369,6 +2867,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set SurveyChoice value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param string[] $surveyChoice
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
@@ -2379,7 +2879,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if ('' !== ($surveyChoiceArrayErrorMessage = self::validateSurveyChoiceForArrayConstraintFromSetSurveyChoice($surveyChoice))) {
             throw new InvalidArgumentException($surveyChoiceArrayErrorMessage, __LINE__);
         }
-        $this->SurveyChoice = $surveyChoice;
+        if (is_null($surveyChoice) || (is_array($surveyChoice) && empty($surveyChoice))) {
+            unset($this->SurveyChoice);
+        } else {
+            $this->SurveyChoice = $surveyChoice;
+        }
         
         return $this;
     }
@@ -2401,14 +2905,19 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get TotalType value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getTotalType(): ?string
     {
-        return $this->TotalType;
+        return $this->TotalType ?? null;
     }
     /**
      * Set TotalType value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @uses \EnumType\ApiTotalType::valueIsValid()
      * @uses \EnumType\ApiTotalType::getValidValues()
      * @throws InvalidArgumentException
@@ -2421,20 +2930,29 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!\EnumType\ApiTotalType::valueIsValid($totalType)) {
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiTotalType', is_array($totalType) ? implode(', ', $totalType) : var_export($totalType, true), implode(', ', \EnumType\ApiTotalType::getValidValues())), __LINE__);
         }
-        $this->TotalType = $totalType;
+        if (is_null($totalType) || (is_array($totalType) && empty($totalType))) {
+            unset($this->TotalType);
+        } else {
+            $this->TotalType = $totalType;
+        }
         
         return $this;
     }
     /**
      * Get NoteToBuyer value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getNoteToBuyer(): ?string
     {
-        return $this->NoteToBuyer;
+        return $this->NoteToBuyer ?? null;
     }
     /**
      * Set NoteToBuyer value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $noteToBuyer
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2444,17 +2962,24 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($noteToBuyer) && !is_string($noteToBuyer)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($noteToBuyer, true), gettype($noteToBuyer)), __LINE__);
         }
-        $this->NoteToBuyer = $noteToBuyer;
+        if (is_null($noteToBuyer) || (is_array($noteToBuyer) && empty($noteToBuyer))) {
+            unset($this->NoteToBuyer);
+        } else {
+            $this->NoteToBuyer = $noteToBuyer;
+        }
         
         return $this;
     }
     /**
      * Get Incentives value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiIncentiveInfoType[]
      */
     public function getIncentives(): ?array
     {
-        return $this->Incentives;
+        return $this->Incentives ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setIncentives method
@@ -2485,6 +3010,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set Incentives value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param \StructType\ApiIncentiveInfoType[] $incentives
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
@@ -2495,7 +3022,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if ('' !== ($incentivesArrayErrorMessage = self::validateIncentivesForArrayConstraintFromSetIncentives($incentives))) {
             throw new InvalidArgumentException($incentivesArrayErrorMessage, __LINE__);
         }
-        $this->Incentives = $incentives;
+        if (is_null($incentives) || (is_array($incentives) && empty($incentives))) {
+            unset($this->Incentives);
+        } else {
+            $this->Incentives = $incentives;
+        }
         
         return $this;
     }
@@ -2517,14 +3048,19 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Get ReqInstrumentDetails value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getReqInstrumentDetails(): ?string
     {
-        return $this->ReqInstrumentDetails;
+        return $this->ReqInstrumentDetails ?? null;
     }
     /**
      * Set ReqInstrumentDetails value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $reqInstrumentDetails
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
@@ -2534,93 +3070,136 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (!is_null($reqInstrumentDetails) && !is_string($reqInstrumentDetails)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reqInstrumentDetails, true), gettype($reqInstrumentDetails)), __LINE__);
         }
-        $this->ReqInstrumentDetails = $reqInstrumentDetails;
+        if (is_null($reqInstrumentDetails) || (is_array($reqInstrumentDetails) && empty($reqInstrumentDetails))) {
+            unset($this->ReqInstrumentDetails);
+        } else {
+            $this->ReqInstrumentDetails = $reqInstrumentDetails;
+        }
         
         return $this;
     }
     /**
      * Get ExternalRememberMeOptInDetails value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiExternalRememberMeOptInDetailsType|null
      */
     public function getExternalRememberMeOptInDetails(): ?\StructType\ApiExternalRememberMeOptInDetailsType
     {
-        return $this->ExternalRememberMeOptInDetails;
+        return $this->ExternalRememberMeOptInDetails ?? null;
     }
     /**
      * Set ExternalRememberMeOptInDetails value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setExternalRememberMeOptInDetails(?\StructType\ApiExternalRememberMeOptInDetailsType $externalRememberMeOptInDetails = null): self
     {
-        $this->ExternalRememberMeOptInDetails = $externalRememberMeOptInDetails;
+        if (is_null($externalRememberMeOptInDetails) || (is_array($externalRememberMeOptInDetails) && empty($externalRememberMeOptInDetails))) {
+            unset($this->ExternalRememberMeOptInDetails);
+        } else {
+            $this->ExternalRememberMeOptInDetails = $externalRememberMeOptInDetails;
+        }
         
         return $this;
     }
     /**
      * Get FlowControlDetails value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiFlowControlDetailsType|null
      */
     public function getFlowControlDetails(): ?\StructType\ApiFlowControlDetailsType
     {
-        return $this->FlowControlDetails;
+        return $this->FlowControlDetails ?? null;
     }
     /**
      * Set FlowControlDetails value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiFlowControlDetailsType $flowControlDetails
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setFlowControlDetails(?\StructType\ApiFlowControlDetailsType $flowControlDetails = null): self
     {
-        $this->FlowControlDetails = $flowControlDetails;
+        if (is_null($flowControlDetails) || (is_array($flowControlDetails) && empty($flowControlDetails))) {
+            unset($this->FlowControlDetails);
+        } else {
+            $this->FlowControlDetails = $flowControlDetails;
+        }
         
         return $this;
     }
     /**
      * Get DisplayControlDetails value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiDisplayControlDetailsType|null
      */
     public function getDisplayControlDetails(): ?\StructType\ApiDisplayControlDetailsType
     {
-        return $this->DisplayControlDetails;
+        return $this->DisplayControlDetails ?? null;
     }
     /**
      * Set DisplayControlDetails value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiDisplayControlDetailsType $displayControlDetails
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setDisplayControlDetails(?\StructType\ApiDisplayControlDetailsType $displayControlDetails = null): self
     {
-        $this->DisplayControlDetails = $displayControlDetails;
+        if (is_null($displayControlDetails) || (is_array($displayControlDetails) && empty($displayControlDetails))) {
+            unset($this->DisplayControlDetails);
+        } else {
+            $this->DisplayControlDetails = $displayControlDetails;
+        }
         
         return $this;
     }
     /**
      * Get ExternalPartnerTrackingDetails value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiExternalPartnerTrackingDetailsType|null
      */
     public function getExternalPartnerTrackingDetails(): ?\StructType\ApiExternalPartnerTrackingDetailsType
     {
-        return $this->ExternalPartnerTrackingDetails;
+        return $this->ExternalPartnerTrackingDetails ?? null;
     }
     /**
      * Set ExternalPartnerTrackingDetails value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
      */
     public function setExternalPartnerTrackingDetails(?\StructType\ApiExternalPartnerTrackingDetailsType $externalPartnerTrackingDetails = null): self
     {
-        $this->ExternalPartnerTrackingDetails = $externalPartnerTrackingDetails;
+        if (is_null($externalPartnerTrackingDetails) || (is_array($externalPartnerTrackingDetails) && empty($externalPartnerTrackingDetails))) {
+            unset($this->ExternalPartnerTrackingDetails);
+        } else {
+            $this->ExternalPartnerTrackingDetails = $externalPartnerTrackingDetails;
+        }
         
         return $this;
     }
     /**
      * Get CoupledBuckets value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiCoupledBucketsType[]
      */
     public function getCoupledBuckets(): ?array
     {
-        return $this->CoupledBuckets;
+        return $this->CoupledBuckets ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setCoupledBuckets method
@@ -2651,6 +3230,8 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
     }
     /**
      * Set CoupledBuckets value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param \StructType\ApiCoupledBucketsType[] $coupledBuckets
      * @return \StructType\ApiSetExpressCheckoutRequestDetailsType
@@ -2665,7 +3246,11 @@ class ApiSetExpressCheckoutRequestDetailsType extends AbstractStructBase
         if (is_array($coupledBuckets) && count($coupledBuckets) > 5) {
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($coupledBuckets)), __LINE__);
         }
-        $this->CoupledBuckets = $coupledBuckets;
+        if (is_null($coupledBuckets) || (is_array($coupledBuckets) && empty($coupledBuckets))) {
+            unset($this->CoupledBuckets);
+        } else {
+            $this->CoupledBuckets = $coupledBuckets;
+        }
         
         return $this;
     }

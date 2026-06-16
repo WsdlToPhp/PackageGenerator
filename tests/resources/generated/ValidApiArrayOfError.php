@@ -35,11 +35,14 @@ class ApiArrayOfError extends AbstractStructArrayBase
     }
     /**
      * Get Error value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiError[]
      */
     public function getError(): ?array
     {
-        return $this->Error;
+        return $this->Error ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setError method
@@ -70,6 +73,8 @@ class ApiArrayOfError extends AbstractStructArrayBase
     }
     /**
      * Set Error value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param \StructType\ApiError[] $error
      * @return \ArrayType\ApiArrayOfError
@@ -80,7 +85,11 @@ class ApiArrayOfError extends AbstractStructArrayBase
         if ('' !== ($errorArrayErrorMessage = self::validateErrorForArrayConstraintFromSetError($error))) {
             throw new InvalidArgumentException($errorArrayErrorMessage, __LINE__);
         }
-        $this->Error = $error;
+        if (is_null($error) || (is_array($error) && empty($error))) {
+            unset($this->Error);
+        } else {
+            $this->Error = $error;
+        }
         
         return $this;
     }

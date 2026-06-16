@@ -84,58 +84,85 @@ class ApiHotelReservationType extends AbstractStructBase
     }
     /**
      * Get RoomStays value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiRoomStaysType|null
      */
     public function getRoomStays(): ?\StructType\ApiRoomStaysType
     {
-        return $this->RoomStays;
+        return $this->RoomStays ?? null;
     }
     /**
      * Set RoomStays value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiRoomStaysType $roomStays
      * @return \StructType\ApiHotelReservationType
      */
     public function setRoomStays(?\StructType\ApiRoomStaysType $roomStays = null): self
     {
-        $this->RoomStays = $roomStays;
+        if (is_null($roomStays) || (is_array($roomStays) && empty($roomStays))) {
+            unset($this->RoomStays);
+        } else {
+            $this->RoomStays = $roomStays;
+        }
         
         return $this;
     }
     /**
      * Get ResGuests value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiResGuestsType|null
      */
     public function getResGuests(): ?\StructType\ApiResGuestsType
     {
-        return $this->ResGuests;
+        return $this->ResGuests ?? null;
     }
     /**
      * Set ResGuests value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiResGuestsType $resGuests
      * @return \StructType\ApiHotelReservationType
      */
     public function setResGuests(?\StructType\ApiResGuestsType $resGuests = null): self
     {
-        $this->ResGuests = $resGuests;
+        if (is_null($resGuests) || (is_array($resGuests) && empty($resGuests))) {
+            unset($this->ResGuests);
+        } else {
+            $this->ResGuests = $resGuests;
+        }
         
         return $this;
     }
     /**
      * Get ResGlobalInfo value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiResGlobalInfoType|null
      */
     public function getResGlobalInfo(): ?\StructType\ApiResGlobalInfoType
     {
-        return $this->ResGlobalInfo;
+        return $this->ResGlobalInfo ?? null;
     }
     /**
      * Set ResGlobalInfo value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiResGlobalInfoType $resGlobalInfo
      * @return \StructType\ApiHotelReservationType
      */
     public function setResGlobalInfo(?\StructType\ApiResGlobalInfoType $resGlobalInfo = null): self
     {
-        $this->ResGlobalInfo = $resGlobalInfo;
+        if (is_null($resGlobalInfo) || (is_array($resGlobalInfo) && empty($resGlobalInfo))) {
+            unset($this->ResGlobalInfo);
+        } else {
+            $this->ResGlobalInfo = $resGlobalInfo;
+        }
         
         return $this;
     }

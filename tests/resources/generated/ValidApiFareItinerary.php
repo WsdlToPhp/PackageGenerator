@@ -357,14 +357,19 @@ class ApiFareItinerary extends AbstractStructBase
     }
     /**
      * Get clickoutURLParams value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getClickoutURLParams(): ?string
     {
-        return $this->clickoutURLParams;
+        return $this->clickoutURLParams ?? null;
     }
     /**
      * Set clickoutURLParams value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $clickoutURLParams
      * @return \StructType\ApiFareItinerary
      */
@@ -374,7 +379,11 @@ class ApiFareItinerary extends AbstractStructBase
         if (!is_null($clickoutURLParams) && !is_string($clickoutURLParams)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($clickoutURLParams, true), gettype($clickoutURLParams)), __LINE__);
         }
-        $this->clickoutURLParams = $clickoutURLParams;
+        if (is_null($clickoutURLParams) || (is_array($clickoutURLParams) && empty($clickoutURLParams))) {
+            unset($this->clickoutURLParams);
+        } else {
+            $this->clickoutURLParams = $clickoutURLParams;
+        }
         
         return $this;
     }

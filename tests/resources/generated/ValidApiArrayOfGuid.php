@@ -37,11 +37,14 @@ class ApiArrayOfGuid extends AbstractStructArrayBase
     }
     /**
      * Get string value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string[]
      */
     public function getString(): ?array
     {
-        return $this->string;
+        return $this->string ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setString method
@@ -96,6 +99,8 @@ class ApiArrayOfGuid extends AbstractStructArrayBase
     }
     /**
      * Set string value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param string[] $string
      * @return \ArrayType\ApiArrayOfGuid
@@ -110,7 +115,11 @@ class ApiArrayOfGuid extends AbstractStructArrayBase
         if ('' !== ($stringPatternErrorMessage = self::validateStringForPatternConstraintFromSetString($string))) {
             throw new InvalidArgumentException($stringPatternErrorMessage, __LINE__);
         }
-        $this->string = $string;
+        if (is_null($string) || (is_array($string) && empty($string))) {
+            unset($this->string);
+        } else {
+            $this->string = $string;
+        }
         
         return $this;
     }

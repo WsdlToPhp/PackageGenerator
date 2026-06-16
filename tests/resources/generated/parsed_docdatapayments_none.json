@@ -936,7 +936,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "css",
                         "inheritance": "",
                         "abstract": false,
@@ -1064,7 +1064,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "parameter",
                         "inheritance": "",
                         "abstract": false,
@@ -1185,7 +1185,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -1201,7 +1201,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1233,7 +1233,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1265,7 +1265,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -1341,7 +1341,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1357,7 +1357,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1373,7 +1373,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1389,7 +1389,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1405,7 +1405,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1421,7 +1421,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1437,7 +1437,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1471,7 +1471,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1487,7 +1487,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1503,7 +1503,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1519,7 +1519,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1567,7 +1567,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1583,7 +1583,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -1609,7 +1609,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1716,7 +1716,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "plainDate",
                         "inheritance": "",
                         "abstract": false,
@@ -1732,7 +1732,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "phoneNumber",
                         "inheritance": "",
                         "abstract": false,
@@ -1748,7 +1748,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "phoneNumber",
                         "inheritance": "",
                         "abstract": false,
@@ -1764,7 +1764,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1882,7 +1882,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "exhortation",
                         "inheritance": "",
                         "abstract": false,
@@ -1895,7 +1895,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -1938,7 +1938,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "exhortationPeriod",
                         "inheritance": "",
                         "abstract": false,
@@ -2170,7 +2170,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "additionalRefund",
                         "inheritance": "",
                         "abstract": false,
@@ -2183,7 +2183,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "itemLine",
                         "inheritance": "",
                         "abstract": false,
@@ -2233,7 +2233,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string250",
                         "inheritance": "",
                         "abstract": false,
@@ -2579,7 +2579,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "paymentSuccess",
                         "inheritance": "",
                         "abstract": false,
@@ -2592,7 +2592,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "anyType",
                         "inheritance": "",
                         "abstract": false,
@@ -2605,7 +2605,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "paymentError",
                         "inheritance": "",
                         "abstract": false,
@@ -2713,7 +2713,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "authorizationStatus",
                         "inheritance": "",
                         "abstract": false,
@@ -2726,7 +2726,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "paymentId",
                         "inheritance": "",
                         "abstract": false,
@@ -2828,7 +2828,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string100",
                         "inheritance": "",
                         "abstract": false,
@@ -3103,7 +3103,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string2048",
                         "inheritance": "",
                         "abstract": false,
@@ -3679,7 +3679,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "securityCode",
                         "inheritance": "",
                         "abstract": false,
@@ -3728,7 +3728,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -3741,7 +3741,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "bic",
                         "inheritance": "",
                         "abstract": false,
@@ -3833,7 +3833,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "register",
                         "inheritance": "",
                         "abstract": false,
@@ -3965,7 +3965,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "payment",
                         "inheritance": "",
                         "abstract": false,
@@ -3978,7 +3978,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "consideredSafe",
                         "inheritance": "",
                         "abstract": false,
@@ -4242,7 +4242,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "paymentInfo",
                         "inheritance": "",
                         "abstract": false,
@@ -4279,7 +4279,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "riskCheck",
                         "inheritance": "",
                         "abstract": false,
@@ -5008,7 +5008,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "check",
                         "inheritance": "",
                         "abstract": false,
@@ -5110,7 +5110,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5123,7 +5123,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5136,7 +5136,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string250",
                         "inheritance": "",
                         "abstract": false,
@@ -5149,7 +5149,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5203,7 +5203,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5216,7 +5216,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5229,7 +5229,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string250",
                         "inheritance": "",
                         "abstract": false,
@@ -5242,7 +5242,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5296,7 +5296,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5309,7 +5309,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5322,7 +5322,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string250",
                         "inheritance": "",
                         "abstract": false,
@@ -5335,7 +5335,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5389,7 +5389,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5402,7 +5402,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5415,7 +5415,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string250",
                         "inheritance": "",
                         "abstract": false,
@@ -5469,7 +5469,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5482,7 +5482,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5495,7 +5495,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string250",
                         "inheritance": "",
                         "abstract": false,
@@ -5536,7 +5536,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5549,7 +5549,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -5562,7 +5562,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "shopperBankAccount",
                         "inheritance": "",
                         "abstract": false,
@@ -5603,7 +5603,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5616,7 +5616,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "shopperBankAccount",
                         "inheritance": "",
                         "abstract": false,
@@ -5657,7 +5657,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5670,7 +5670,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5683,7 +5683,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5696,7 +5696,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5709,7 +5709,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -5722,7 +5722,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -5735,7 +5735,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5748,7 +5748,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "bic",
                         "inheritance": "",
                         "abstract": false,
@@ -5761,7 +5761,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "iban",
                         "inheritance": "",
                         "abstract": false,
@@ -5774,7 +5774,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "shopperBankAccount",
                         "inheritance": "",
                         "abstract": false,
@@ -5859,7 +5859,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5872,7 +5872,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5913,7 +5913,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "bic",
                         "inheritance": "",
                         "abstract": false,
@@ -5926,7 +5926,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "iban",
                         "inheritance": "",
                         "abstract": false,
@@ -5952,7 +5952,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -5993,7 +5993,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -6006,7 +6006,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -6019,7 +6019,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "shopperBankAccount",
                         "inheritance": "",
                         "abstract": false,
@@ -6060,7 +6060,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "pointOfSalePaymentReceipt",
                         "inheritance": "",
                         "abstract": false,
@@ -6323,7 +6323,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "shopperBankAccount",
                         "inheritance": "",
                         "abstract": false,
@@ -6364,7 +6364,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "iban",
                         "inheritance": "",
                         "abstract": false,
@@ -6377,7 +6377,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "bic",
                         "inheritance": "",
                         "abstract": false,
@@ -6431,7 +6431,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string250",
                         "inheritance": "",
                         "abstract": false,
@@ -6470,7 +6470,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "capture",
                         "inheritance": "",
                         "abstract": false,
@@ -6483,7 +6483,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "refund",
                         "inheritance": "",
                         "abstract": false,
@@ -6496,7 +6496,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "chargeback",
                         "inheritance": "",
                         "abstract": false,
@@ -6509,7 +6509,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "reversal",
                         "inheritance": "",
                         "abstract": false,
@@ -6546,7 +6546,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -6622,7 +6622,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -6698,7 +6698,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -6964,7 +6964,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "menuPreferences",
                         "inheritance": "",
                         "abstract": false,
@@ -7028,7 +7028,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string255",
                         "inheritance": "",
                         "abstract": false,
@@ -7044,7 +7044,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -7060,7 +7060,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "boolean",
                         "inheritance": "",
                         "abstract": false,
@@ -7077,7 +7077,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "paymentRequest",
                         "inheritance": "",
                         "abstract": false,
@@ -7093,7 +7093,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "invoice",
                         "inheritance": "",
                         "abstract": false,
@@ -7106,7 +7106,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "technicalIntegrationInfo",
                         "inheritance": "",
                         "abstract": false,
@@ -7119,7 +7119,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "salesPerson",
                         "inheritance": "",
                         "abstract": false,
@@ -7282,7 +7282,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "paymentResponse",
                         "inheritance": "",
                         "abstract": false,
@@ -7388,7 +7388,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -7453,7 +7453,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "boolean",
                         "inheritance": "",
                         "abstract": false,
@@ -7469,7 +7469,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "date",
                         "inheritance": "",
                         "abstract": false,
@@ -7485,7 +7485,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "sepaBankAccount",
                         "inheritance": "",
                         "abstract": false,
@@ -7501,7 +7501,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "technicalIntegrationInfo",
                         "inheritance": "",
                         "abstract": false,
@@ -7742,7 +7742,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "technicalIntegrationInfo",
                         "inheritance": "",
                         "abstract": false,
@@ -7992,7 +7992,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "amount",
                         "inheritance": "",
                         "abstract": false,
@@ -8073,7 +8073,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string2048",
                         "inheritance": "",
                         "abstract": false,
@@ -8089,7 +8089,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "shopperInfo",
                         "inheritance": "",
                         "abstract": false,
@@ -8102,7 +8102,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "technicalIntegrationInfo",
                         "inheritance": "",
                         "abstract": false,
@@ -8293,7 +8293,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "paymentRedirect",
                         "inheritance": "",
                         "abstract": false,
@@ -8406,7 +8406,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "technicalIntegrationInfo",
                         "inheritance": "",
                         "abstract": false,
@@ -8653,7 +8653,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -8669,7 +8669,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "amount",
                         "inheritance": "",
                         "abstract": false,
@@ -8685,7 +8685,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -8701,7 +8701,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string250",
                         "inheritance": "",
                         "abstract": false,
@@ -8717,7 +8717,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "boolean",
                         "inheritance": "",
                         "abstract": false,
@@ -8733,7 +8733,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "boolean",
                         "inheritance": "",
                         "abstract": false,
@@ -8749,7 +8749,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "date",
                         "inheritance": "",
                         "abstract": false,
@@ -8765,7 +8765,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "technicalIntegrationInfo",
                         "inheritance": "",
                         "abstract": false,
@@ -8993,7 +8993,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "technicalIntegrationInfo",
                         "inheritance": "",
                         "abstract": false,
@@ -9147,7 +9147,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "technicalIntegrationInfo",
                         "inheritance": "",
                         "abstract": false,
@@ -9587,7 +9587,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string35",
                         "inheritance": "",
                         "abstract": false,
@@ -9670,7 +9670,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string50",
                         "inheritance": "",
                         "abstract": false,
@@ -9707,7 +9707,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "register",
                         "inheritance": "",
                         "abstract": false,

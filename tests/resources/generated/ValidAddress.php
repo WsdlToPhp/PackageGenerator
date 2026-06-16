@@ -96,14 +96,19 @@ class ApiАдресРФ extends ApiСостав
     }
     /**
      * Get СубъектРФ value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getСубъектРФ(): ?string
     {
-        return $this->СубъектРФ;
+        return $this->СубъектРФ ?? null;
     }
     /**
      * Set СубъектРФ value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $СубъектРФ
      * @return \StructType\ApiАдресРФ
      */
@@ -113,39 +118,57 @@ class ApiАдресРФ extends ApiСостав
         if (!is_null($СубъектРФ) && !is_string($СубъектРФ)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($СубъектРФ, true), gettype($СубъектРФ)), __LINE__);
         }
-        $this->СубъектРФ = $СубъектРФ;
+        if (is_null($СубъектРФ) || (is_array($СубъектРФ) && empty($СубъектРФ))) {
+            unset($this->СубъектРФ);
+        } else {
+            $this->СубъектРФ = $СубъектРФ;
+        }
         
         return $this;
     }
     /**
      * Get СвРайМО value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiСвРайМО|null
      */
     public function getСвРайМО(): ?\StructType\ApiСвРайМО
     {
-        return $this->СвРайМО;
+        return $this->СвРайМО ?? null;
     }
     /**
      * Set СвРайМО value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiСвРайМО $СвРайМО
      * @return \StructType\ApiАдресРФ
      */
     public function setСвРайМО(?\StructType\ApiСвРайМО $СвРайМО = null): self
     {
-        $this->СвРайМО = $СвРайМО;
+        if (is_null($СвРайМО) || (is_array($СвРайМО) && empty($СвРайМО))) {
+            unset($this->СвРайМО);
+        } else {
+            $this->СвРайМО = $СвРайМО;
+        }
         
         return $this;
     }
     /**
      * Get Город value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getГород(): ?string
     {
-        return $this->Город;
+        return $this->Город ?? null;
     }
     /**
      * Set Город value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $Город
      * @return \StructType\ApiАдресРФ
      */
@@ -155,20 +178,29 @@ class ApiАдресРФ extends ApiСостав
         if (!is_null($Город) && !is_string($Город)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($Город, true), gettype($Город)), __LINE__);
         }
-        $this->Город = $Город;
+        if (is_null($Город) || (is_array($Город) && empty($Город))) {
+            unset($this->Город);
+        } else {
+            $this->Город = $Город;
+        }
         
         return $this;
     }
     /**
      * Get ВнутригРайон value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getВнутригРайон(): ?string
     {
-        return $this->ВнутригРайон;
+        return $this->ВнутригРайон ?? null;
     }
     /**
      * Set ВнутригРайон value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $ВнутригРайон
      * @return \StructType\ApiАдресРФ
      */
@@ -178,20 +210,29 @@ class ApiАдресРФ extends ApiСостав
         if (!is_null($ВнутригРайон) && !is_string($ВнутригРайон)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ВнутригРайон, true), gettype($ВнутригРайон)), __LINE__);
         }
-        $this->ВнутригРайон = $ВнутригРайон;
+        if (is_null($ВнутригРайон) || (is_array($ВнутригРайон) && empty($ВнутригРайон))) {
+            unset($this->ВнутригРайон);
+        } else {
+            $this->ВнутригРайон = $ВнутригРайон;
+        }
         
         return $this;
     }
     /**
      * Get НаселПункт value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getНаселПункт(): ?string
     {
-        return $this->НаселПункт;
+        return $this->НаселПункт ?? null;
     }
     /**
      * Set НаселПункт value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $НаселПункт
      * @return \StructType\ApiАдресРФ
      */
@@ -201,20 +242,29 @@ class ApiАдресРФ extends ApiСостав
         if (!is_null($НаселПункт) && !is_string($НаселПункт)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($НаселПункт, true), gettype($НаселПункт)), __LINE__);
         }
-        $this->НаселПункт = $НаселПункт;
+        if (is_null($НаселПункт) || (is_array($НаселПункт) && empty($НаселПункт))) {
+            unset($this->НаселПункт);
+        } else {
+            $this->НаселПункт = $НаселПункт;
+        }
         
         return $this;
     }
     /**
      * Get Улица value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getУлица(): ?string
     {
-        return $this->Улица;
+        return $this->Улица ?? null;
     }
     /**
      * Set Улица value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $Улица
      * @return \StructType\ApiАдресРФ
      */
@@ -224,17 +274,24 @@ class ApiАдресРФ extends ApiСостав
         if (!is_null($Улица) && !is_string($Улица)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($Улица, true), gettype($Улица)), __LINE__);
         }
-        $this->Улица = $Улица;
+        if (is_null($Улица) || (is_array($Улица) && empty($Улица))) {
+            unset($this->Улица);
+        } else {
+            $this->Улица = $Улица;
+        }
         
         return $this;
     }
     /**
      * Get ДопАдрЭл value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiДопАдрЭл[]
      */
     public function getДопАдрЭл(): ?array
     {
-        return $this->ДопАдрЭл;
+        return $this->ДопАдрЭл ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setДопАдрЭл method
@@ -265,6 +322,8 @@ class ApiАдресРФ extends ApiСостав
     }
     /**
      * Set ДопАдрЭл value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param \StructType\ApiДопАдрЭл[] $ДопАдрЭл
      * @return \StructType\ApiАдресРФ
@@ -275,7 +334,11 @@ class ApiАдресРФ extends ApiСостав
         if ('' !== ($ДопАдрЭлArrayErrorMessage = self::validateДопАдрЭлForArrayConstraintFromSetДопАдрЭл($ДопАдрЭл))) {
             throw new InvalidArgumentException($ДопАдрЭлArrayErrorMessage, __LINE__);
         }
-        $this->ДопАдрЭл = $ДопАдрЭл;
+        if (is_null($ДопАдрЭл) || (is_array($ДопАдрЭл) && empty($ДопАдрЭл))) {
+            unset($this->ДопАдрЭл);
+        } else {
+            $this->ДопАдрЭл = $ДопАдрЭл;
+        }
         
         return $this;
     }

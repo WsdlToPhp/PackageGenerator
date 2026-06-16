@@ -35,11 +35,14 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     }
     /**
      * Get WebSearchOption value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string[]
      */
     public function getWebSearchOption(): ?array
     {
-        return $this->WebSearchOption;
+        return $this->WebSearchOption ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setWebSearchOption method
@@ -70,6 +73,8 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
     }
     /**
      * Set WebSearchOption value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @uses \EnumType\ApiWebSearchOption::valueIsValid()
      * @uses \EnumType\ApiWebSearchOption::getValidValues()
      * @throws InvalidArgumentException
@@ -82,7 +87,11 @@ class ApiArrayOfWebSearchOption extends AbstractStructArrayBase
         if ('' !== ($webSearchOptionArrayErrorMessage = self::validateWebSearchOptionForArrayConstraintFromSetWebSearchOption($webSearchOption))) {
             throw new InvalidArgumentException($webSearchOptionArrayErrorMessage, __LINE__);
         }
-        $this->WebSearchOption = $webSearchOption;
+        if (is_null($webSearchOption) || (is_array($webSearchOption) && empty($webSearchOption))) {
+            unset($this->WebSearchOption);
+        } else {
+            $this->WebSearchOption = $webSearchOption;
+        }
         
         return $this;
     }

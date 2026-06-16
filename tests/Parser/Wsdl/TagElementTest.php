@@ -48,7 +48,7 @@ final class TagElementTest extends WsdlParser
                 ], $structs->getStructByName('SearchRequest')->getAttribute('Version')->getMeta());
                 $this->assertSame('string', $structs->getStructByName('SearchRequest')->getAttribute('Version')->getType());
                 $this->assertFalse($structs->getStructByName('SearchRequest')->getAttribute('Version')->getContainsElements());
-                $this->assertFalse($structs->getStructByName('SearchRequest')->getAttribute('Version')->getRemovableFromRequest());
+                $this->assertTrue($structs->getStructByName('SearchRequest')->getAttribute('Version')->getRemovableFromRequest());
                 ++$count;
             }
             if ($structs->getStructByName('ArrayOfNewsRelatedSearch') instanceof Struct) {
@@ -58,7 +58,7 @@ final class TagElementTest extends WsdlParser
                 ], $structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getMeta());
                 $this->assertSame('NewsRelatedSearch', $structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getType());
                 $this->assertTrue($structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getContainsElements());
-                $this->assertFalse($structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getRemovableFromRequest());
+                $this->assertTrue($structs->getStructByName('ArrayOfNewsRelatedSearch')->getAttribute('NewsRelatedSearch')->getRemovableFromRequest());
                 ++$count;
             }
         }

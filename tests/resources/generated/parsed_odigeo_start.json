@@ -408,7 +408,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "searchStatusResponse",
                         "inheritance": "",
                         "abstract": false,
@@ -436,7 +436,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "searchResultsPage",
                         "inheritance": "",
                         "abstract": false,
@@ -449,7 +449,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "itinerariesLegend",
                         "inheritance": "",
                         "abstract": false,
@@ -502,7 +502,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "messageResponse",
                         "inheritance": "",
                         "abstract": false,
@@ -529,7 +529,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "messageResponse",
                         "inheritance": "",
                         "abstract": false,
@@ -542,7 +542,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "fareItinerary",
                         "inheritance": "",
                         "abstract": false,
@@ -555,7 +555,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -643,7 +643,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,

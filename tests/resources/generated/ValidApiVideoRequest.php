@@ -69,14 +69,19 @@ class ApiVideoRequest extends AbstractStructBase
     }
     /**
      * Get Offset value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return int|null
      */
     public function getOffset(): ?int
     {
-        return $this->Offset;
+        return $this->Offset ?? null;
     }
     /**
      * Set Offset value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param int $offset
      * @return \StructType\ApiVideoRequest
      */
@@ -86,20 +91,29 @@ class ApiVideoRequest extends AbstractStructBase
         if (!is_null($offset) && !(is_int($offset) || ctype_digit($offset))) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($offset, true), gettype($offset)), __LINE__);
         }
-        $this->Offset = $offset;
+        if (is_null($offset) || (is_array($offset) && empty($offset))) {
+            unset($this->Offset);
+        } else {
+            $this->Offset = $offset;
+        }
         
         return $this;
     }
     /**
      * Get Count value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return int|null
      */
     public function getCount(): ?int
     {
-        return $this->Count;
+        return $this->Count ?? null;
     }
     /**
      * Set Count value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param int $count
      * @return \StructType\ApiVideoRequest
      */
@@ -109,39 +123,57 @@ class ApiVideoRequest extends AbstractStructBase
         if (!is_null($count) && !(is_int($count) || ctype_digit($count))) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($count, true), gettype($count)), __LINE__);
         }
-        $this->Count = $count;
+        if (is_null($count) || (is_array($count) && empty($count))) {
+            unset($this->Count);
+        } else {
+            $this->Count = $count;
+        }
         
         return $this;
     }
     /**
      * Get Filters value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \ArrayType\ApiArrayOfString|null
      */
     public function getFilters(): ?\ArrayType\ApiArrayOfString
     {
-        return $this->Filters;
+        return $this->Filters ?? null;
     }
     /**
      * Set Filters value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \ArrayType\ApiArrayOfString $filters
      * @return \StructType\ApiVideoRequest
      */
     public function setFilters(?\ArrayType\ApiArrayOfString $filters = null): self
     {
-        $this->Filters = $filters;
+        if (is_null($filters) || (is_array($filters) && empty($filters))) {
+            unset($this->Filters);
+        } else {
+            $this->Filters = $filters;
+        }
         
         return $this;
     }
     /**
      * Get SortBy value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getSortBy(): ?string
     {
-        return $this->SortBy;
+        return $this->SortBy ?? null;
     }
     /**
      * Set SortBy value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @uses \EnumType\ApiVideoSortOption::valueIsValid()
      * @uses \EnumType\ApiVideoSortOption::getValidValues()
      * @throws InvalidArgumentException
@@ -154,7 +186,11 @@ class ApiVideoRequest extends AbstractStructBase
         if (!\EnumType\ApiVideoSortOption::valueIsValid($sortBy)) {
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiVideoSortOption', is_array($sortBy) ? implode(', ', $sortBy) : var_export($sortBy, true), implode(', ', \EnumType\ApiVideoSortOption::getValidValues())), __LINE__);
         }
-        $this->SortBy = $sortBy;
+        if (is_null($sortBy) || (is_array($sortBy) && empty($sortBy))) {
+            unset($this->SortBy);
+        } else {
+            $this->SortBy = $sortBy;
+        }
         
         return $this;
     }
