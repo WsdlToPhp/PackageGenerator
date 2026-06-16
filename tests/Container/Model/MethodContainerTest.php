@@ -11,7 +11,6 @@ use WsdlToPhp\PackageGenerator\Tests\Model\ServiceTest;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class MethodContainerTest extends AbstractTestCase
 {

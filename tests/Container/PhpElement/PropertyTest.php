@@ -11,7 +11,6 @@ use WsdlToPhp\PhpGenerator\Element\PhpProperty;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class PropertyTest extends AbstractTestCase
 {

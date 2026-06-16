@@ -12,7 +12,6 @@ use WsdlToPhp\PackageGenerator\Tests\Model\StructTest;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class StructValueContainerTest extends AbstractTestCase
 {

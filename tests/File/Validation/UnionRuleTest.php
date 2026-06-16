@@ -9,7 +9,6 @@ use EnumType\ApiTransactionActionType;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class UnionRuleTest extends AbstractRule
 {

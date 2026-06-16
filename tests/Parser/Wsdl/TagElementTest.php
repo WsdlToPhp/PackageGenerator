@@ -9,7 +9,6 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagElement;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class TagElementTest extends WsdlParser
 {

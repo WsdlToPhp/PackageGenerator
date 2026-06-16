@@ -7,9 +7,9 @@ namespace WsdlToPhp\PackageGenerator\Parser\Wsdl;
 use WsdlToPhp\PackageGenerator\Model\Struct;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
 use WsdlToPhp\PackageGenerator\Model\Wsdl;
+use WsdlToPhp\WsdlHandler\AbstractDocument;
 use WsdlToPhp\WsdlHandler\Tag\AbstractTag;
 use WsdlToPhp\WsdlHandler\Tag\TagChoice as Choice;
-use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
 final class TagChoice extends AbstractTagParser
 {
@@ -42,7 +42,7 @@ final class TagChoice extends AbstractTagParser
 
     protected function parsingTag(): string
     {
-        return WsdlDocument::TAG_CHOICE;
+        return AbstractDocument::TAG_CHOICE;
     }
 
     protected function parseChoiceChild(Choice $choice, array $choiceNames, AbstractTag $child, Struct $struct): void

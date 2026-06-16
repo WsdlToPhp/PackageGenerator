@@ -14,7 +14,6 @@ use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class GeneratePackageCommandTest extends AbstractTestCase
 {

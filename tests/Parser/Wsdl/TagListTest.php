@@ -10,7 +10,6 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagList;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class TagListTest extends WsdlParser
 {

@@ -6,7 +6,6 @@ namespace WsdlToPhp\PackageGenerator\Tests\Container;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class FalseObjectTest
 {

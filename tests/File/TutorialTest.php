@@ -9,7 +9,6 @@ use WsdlToPhp\PackageGenerator\File\Tutorial as TutorialFile;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class TutorialTest extends AbstractFile
 {

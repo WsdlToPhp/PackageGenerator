@@ -12,7 +12,6 @@ use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class InvalidRuleTest extends AbstractRule
 {

@@ -10,7 +10,6 @@ use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class SchemaContainerTest extends AbstractTestCase
 {

@@ -8,7 +8,6 @@ use WsdlToPhp\PackageGenerator\Container\AbstractObjectContainer;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class FalseObjectContainerTest extends AbstractObjectContainer
 {
