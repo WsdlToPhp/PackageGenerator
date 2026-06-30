@@ -42,7 +42,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Success",
                         "inheritance": "boolean",
                         "abstract": false,
@@ -63,7 +63,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Errors",
                         "inheritance": "",
                         "abstract": false,
@@ -82,7 +82,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Warnings",
                         "inheritance": "",
                         "abstract": false,

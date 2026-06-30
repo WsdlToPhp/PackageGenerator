@@ -219,30 +219,42 @@ class ApiAddressType extends AbstractStructBase
     }
     /**
      * Get StreetNmbr value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiStreetNmbr|null
      */
     public function getStreetNmbr(): ?\StructType\ApiStreetNmbr
     {
-        return $this->StreetNmbr;
+        return $this->StreetNmbr ?? null;
     }
     /**
      * Set StreetNmbr value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiStreetNmbr $streetNmbr
      * @return \StructType\ApiAddressType
      */
     public function setStreetNmbr(?\StructType\ApiStreetNmbr $streetNmbr = null): self
     {
-        $this->StreetNmbr = $streetNmbr;
+        if (is_null($streetNmbr) || (is_array($streetNmbr) && empty($streetNmbr))) {
+            unset($this->StreetNmbr);
+        } else {
+            $this->StreetNmbr = $streetNmbr;
+        }
         
         return $this;
     }
     /**
      * Get AddressLine value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string[]
      */
     public function getAddressLine(): ?array
     {
-        return $this->AddressLine;
+        return $this->AddressLine ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setAddressLine method
@@ -321,6 +333,8 @@ class ApiAddressType extends AbstractStructBase
     }
     /**
      * Set AddressLine value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param string[] $addressLine
      * @return \StructType\ApiAddressType
@@ -343,7 +357,11 @@ class ApiAddressType extends AbstractStructBase
         if ('' !== ($addressLineMinLengthErrorMessage = self::validateAddressLineForMinLengthConstraintFromSetAddressLine($addressLine))) {
             throw new InvalidArgumentException($addressLineMinLengthErrorMessage, __LINE__);
         }
-        $this->AddressLine = $addressLine;
+        if (is_null($addressLine) || (is_array($addressLine) && empty($addressLine))) {
+            unset($this->AddressLine);
+        } else {
+            $this->AddressLine = $addressLine;
+        }
         
         return $this;
     }
@@ -377,14 +395,19 @@ class ApiAddressType extends AbstractStructBase
     }
     /**
      * Get CityName value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getCityName(): ?string
     {
-        return $this->CityName;
+        return $this->CityName ?? null;
     }
     /**
      * Set CityName value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $cityName
      * @return \StructType\ApiAddressType
      */
@@ -402,20 +425,29 @@ class ApiAddressType extends AbstractStructBase
         if (!is_null($cityName) && mb_strlen((string) $cityName) < 1) {
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $cityName)), __LINE__);
         }
-        $this->CityName = $cityName;
+        if (is_null($cityName) || (is_array($cityName) && empty($cityName))) {
+            unset($this->CityName);
+        } else {
+            $this->CityName = $cityName;
+        }
         
         return $this;
     }
     /**
      * Get PostalCode value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getPostalCode(): ?string
     {
-        return $this->PostalCode;
+        return $this->PostalCode ?? null;
     }
     /**
      * Set PostalCode value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $postalCode
      * @return \StructType\ApiAddressType
      */
@@ -433,20 +465,29 @@ class ApiAddressType extends AbstractStructBase
         if (!is_null($postalCode) && mb_strlen((string) $postalCode) < 1) {
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $postalCode)), __LINE__);
         }
-        $this->PostalCode = $postalCode;
+        if (is_null($postalCode) || (is_array($postalCode) && empty($postalCode))) {
+            unset($this->PostalCode);
+        } else {
+            $this->PostalCode = $postalCode;
+        }
         
         return $this;
     }
     /**
      * Get County value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getCounty(): ?string
     {
-        return $this->County;
+        return $this->County ?? null;
     }
     /**
      * Set County value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $county
      * @return \StructType\ApiAddressType
      */
@@ -464,45 +505,67 @@ class ApiAddressType extends AbstractStructBase
         if (!is_null($county) && mb_strlen((string) $county) < 1) {
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $county)), __LINE__);
         }
-        $this->County = $county;
+        if (is_null($county) || (is_array($county) && empty($county))) {
+            unset($this->County);
+        } else {
+            $this->County = $county;
+        }
         
         return $this;
     }
     /**
      * Get StateProv value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiStateProvType|null
      */
     public function getStateProv(): ?\StructType\ApiStateProvType
     {
-        return $this->StateProv;
+        return $this->StateProv ?? null;
     }
     /**
      * Set StateProv value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiStateProvType $stateProv
      * @return \StructType\ApiAddressType
      */
     public function setStateProv(?\StructType\ApiStateProvType $stateProv = null): self
     {
-        $this->StateProv = $stateProv;
+        if (is_null($stateProv) || (is_array($stateProv) && empty($stateProv))) {
+            unset($this->StateProv);
+        } else {
+            $this->StateProv = $stateProv;
+        }
         
         return $this;
     }
     /**
      * Get CountryName value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiCountryNameType|null
      */
     public function getCountryName(): ?\StructType\ApiCountryNameType
     {
-        return $this->CountryName;
+        return $this->CountryName ?? null;
     }
     /**
      * Set CountryName value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiCountryNameType $countryName
      * @return \StructType\ApiAddressType
      */
     public function setCountryName(?\StructType\ApiCountryNameType $countryName = null): self
     {
-        $this->CountryName = $countryName;
+        if (is_null($countryName) || (is_array($countryName) && empty($countryName))) {
+            unset($this->CountryName);
+        } else {
+            $this->CountryName = $countryName;
+        }
         
         return $this;
     }

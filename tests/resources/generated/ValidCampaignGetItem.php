@@ -263,7 +263,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Get SourceId value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
-     * removable from the request (nillable=true+minOccurs=0)
+     * removable from the request (minOccurs=0)
      * @return int|null
      */
     public function getSourceId(): ?int
@@ -272,8 +272,8 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set SourceId value
-     * This property is removable from request (nillable=true+minOccurs=0), therefore
-     * if the value assigned to this property is null, it is removed from this object
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param int $sourceId
      * @return \StructType\ApiCampaignGetItem
      */
@@ -291,7 +291,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Get DailyBudget value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
-     * removable from the request (nillable=true+minOccurs=0)
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiDailyBudget|null
      */
     public function getDailyBudget(): ?\StructType\ApiDailyBudget
@@ -300,8 +300,8 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set DailyBudget value
-     * This property is removable from request (nillable=true+minOccurs=0), therefore
-     * if the value assigned to this property is null, it is removed from this object
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiDailyBudget $dailyBudget
      * @return \StructType\ApiCampaignGetItem
      */
@@ -319,7 +319,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Get EndDate value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
-     * removable from the request (nillable=true+minOccurs=0)
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getEndDate(): ?string
@@ -328,8 +328,8 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set EndDate value
-     * This property is removable from request (nillable=true+minOccurs=0), therefore
-     * if the value assigned to this property is null, it is removed from this object
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $endDate
      * @return \StructType\ApiCampaignGetItem
      */
@@ -347,7 +347,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Get NegativeKeywords value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
-     * removable from the request (nillable=true+minOccurs=0)
+     * removable from the request (minOccurs=0)
      * @return \ArrayType\ApiArrayOfString|null
      */
     public function getNegativeKeywords(): ?\ArrayType\ApiArrayOfString
@@ -356,8 +356,8 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set NegativeKeywords value
-     * This property is removable from request (nillable=true+minOccurs=0), therefore
-     * if the value assigned to this property is null, it is removed from this object
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \ArrayType\ApiArrayOfString $negativeKeywords
      * @return \StructType\ApiCampaignGetItem
      */
@@ -375,7 +375,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Get BlockedIps value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
-     * removable from the request (nillable=true+minOccurs=0)
+     * removable from the request (minOccurs=0)
      * @return \ArrayType\ApiArrayOfString|null
      */
     public function getBlockedIps(): ?\ArrayType\ApiArrayOfString
@@ -384,8 +384,8 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set BlockedIps value
-     * This property is removable from request (nillable=true+minOccurs=0), therefore
-     * if the value assigned to this property is null, it is removed from this object
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \ArrayType\ApiArrayOfString $blockedIps
      * @return \StructType\ApiCampaignGetItem
      */
@@ -403,7 +403,7 @@ class ApiCampaignGetItem extends ApiCampaignBase
      * Get ExcludedSites value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
-     * removable from the request (nillable=true+minOccurs=0)
+     * removable from the request (minOccurs=0)
      * @return \ArrayType\ApiArrayOfString|null
      */
     public function getExcludedSites(): ?\ArrayType\ApiArrayOfString
@@ -412,8 +412,8 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Set ExcludedSites value
-     * This property is removable from request (nillable=true+minOccurs=0), therefore
-     * if the value assigned to this property is null, it is removed from this object
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \ArrayType\ApiArrayOfString $excludedSites
      * @return \StructType\ApiCampaignGetItem
      */
@@ -429,286 +429,421 @@ class ApiCampaignGetItem extends ApiCampaignBase
     }
     /**
      * Get Id value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return int|null
      */
     public function getId(): ?int
     {
-        return $this->Id;
+        return $this->Id ?? null;
     }
     /**
      * Set Id value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param int $id
      * @return \StructType\ApiCampaignGetItem
      */
     public function setId(?int $id = null): self
     {
-        $this->Id = $id;
+        if (is_null($id) || (is_array($id) && empty($id))) {
+            unset($this->Id);
+        } else {
+            $this->Id = $id;
+        }
         
         return $this;
     }
     /**
      * Get Name value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getName(): ?string
     {
-        return $this->Name;
+        return $this->Name ?? null;
     }
     /**
      * Set Name value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $name
      * @return \StructType\ApiCampaignGetItem
      */
     public function setName(?string $name = null): self
     {
-        $this->Name = $name;
+        if (is_null($name) || (is_array($name) && empty($name))) {
+            unset($this->Name);
+        } else {
+            $this->Name = $name;
+        }
         
         return $this;
     }
     /**
      * Get StartDate value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getStartDate(): ?string
     {
-        return $this->StartDate;
+        return $this->StartDate ?? null;
     }
     /**
      * Set StartDate value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $startDate
      * @return \StructType\ApiCampaignGetItem
      */
     public function setStartDate(?string $startDate = null): self
     {
-        $this->StartDate = $startDate;
+        if (is_null($startDate) || (is_array($startDate) && empty($startDate))) {
+            unset($this->StartDate);
+        } else {
+            $this->StartDate = $startDate;
+        }
         
         return $this;
     }
     /**
      * Get Type value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getType(): ?string
     {
-        return $this->Type;
+        return $this->Type ?? null;
     }
     /**
      * Set Type value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $type
      * @return \StructType\ApiCampaignGetItem
      */
     public function setType(?string $type = null): self
     {
-        $this->Type = $type;
+        if (is_null($type) || (is_array($type) && empty($type))) {
+            unset($this->Type);
+        } else {
+            $this->Type = $type;
+        }
         
         return $this;
     }
     /**
      * Get Status value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getStatus(): ?string
     {
-        return $this->Status;
+        return $this->Status ?? null;
     }
     /**
      * Set Status value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $status
      * @return \StructType\ApiCampaignGetItem
      */
     public function setStatus(?string $status = null): self
     {
-        $this->Status = $status;
+        if (is_null($status) || (is_array($status) && empty($status))) {
+            unset($this->Status);
+        } else {
+            $this->Status = $status;
+        }
         
         return $this;
     }
     /**
      * Get State value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getState(): ?string
     {
-        return $this->State;
+        return $this->State ?? null;
     }
     /**
      * Set State value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $state
      * @return \StructType\ApiCampaignGetItem
      */
     public function setState(?string $state = null): self
     {
-        $this->State = $state;
+        if (is_null($state) || (is_array($state) && empty($state))) {
+            unset($this->State);
+        } else {
+            $this->State = $state;
+        }
         
         return $this;
     }
     /**
      * Get StatusPayment value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getStatusPayment(): ?string
     {
-        return $this->StatusPayment;
+        return $this->StatusPayment ?? null;
     }
     /**
      * Set StatusPayment value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $statusPayment
      * @return \StructType\ApiCampaignGetItem
      */
     public function setStatusPayment(?string $statusPayment = null): self
     {
-        $this->StatusPayment = $statusPayment;
+        if (is_null($statusPayment) || (is_array($statusPayment) && empty($statusPayment))) {
+            unset($this->StatusPayment);
+        } else {
+            $this->StatusPayment = $statusPayment;
+        }
         
         return $this;
     }
     /**
      * Get StatusClarification value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getStatusClarification(): ?string
     {
-        return $this->StatusClarification;
+        return $this->StatusClarification ?? null;
     }
     /**
      * Set StatusClarification value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $statusClarification
      * @return \StructType\ApiCampaignGetItem
      */
     public function setStatusClarification(?string $statusClarification = null): self
     {
-        $this->StatusClarification = $statusClarification;
+        if (is_null($statusClarification) || (is_array($statusClarification) && empty($statusClarification))) {
+            unset($this->StatusClarification);
+        } else {
+            $this->StatusClarification = $statusClarification;
+        }
         
         return $this;
     }
     /**
      * Get Statistics value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiStatistics|null
      */
     public function getStatistics(): ?\StructType\ApiStatistics
     {
-        return $this->Statistics;
+        return $this->Statistics ?? null;
     }
     /**
      * Set Statistics value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiStatistics $statistics
      * @return \StructType\ApiCampaignGetItem
      */
     public function setStatistics(?\StructType\ApiStatistics $statistics = null): self
     {
-        $this->Statistics = $statistics;
+        if (is_null($statistics) || (is_array($statistics) && empty($statistics))) {
+            unset($this->Statistics);
+        } else {
+            $this->Statistics = $statistics;
+        }
         
         return $this;
     }
     /**
      * Get Currency value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getCurrency(): ?string
     {
-        return $this->Currency;
+        return $this->Currency ?? null;
     }
     /**
      * Set Currency value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $currency
      * @return \StructType\ApiCampaignGetItem
      */
     public function setCurrency(?string $currency = null): self
     {
-        $this->Currency = $currency;
+        if (is_null($currency) || (is_array($currency) && empty($currency))) {
+            unset($this->Currency);
+        } else {
+            $this->Currency = $currency;
+        }
         
         return $this;
     }
     /**
      * Get Funds value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiFundsParam|null
      */
     public function getFunds(): ?\StructType\ApiFundsParam
     {
-        return $this->Funds;
+        return $this->Funds ?? null;
     }
     /**
      * Set Funds value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiFundsParam $funds
      * @return \StructType\ApiCampaignGetItem
      */
     public function setFunds(?\StructType\ApiFundsParam $funds = null): self
     {
-        $this->Funds = $funds;
+        if (is_null($funds) || (is_array($funds) && empty($funds))) {
+            unset($this->Funds);
+        } else {
+            $this->Funds = $funds;
+        }
         
         return $this;
     }
     /**
      * Get RepresentedBy value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiCampaignAssistant|null
      */
     public function getRepresentedBy(): ?\StructType\ApiCampaignAssistant
     {
-        return $this->RepresentedBy;
+        return $this->RepresentedBy ?? null;
     }
     /**
      * Set RepresentedBy value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiCampaignAssistant $representedBy
      * @return \StructType\ApiCampaignGetItem
      */
     public function setRepresentedBy(?\StructType\ApiCampaignAssistant $representedBy = null): self
     {
-        $this->RepresentedBy = $representedBy;
+        if (is_null($representedBy) || (is_array($representedBy) && empty($representedBy))) {
+            unset($this->RepresentedBy);
+        } else {
+            $this->RepresentedBy = $representedBy;
+        }
         
         return $this;
     }
     /**
      * Get TextCampaign value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiTextCampaignGetItem|null
      */
     public function getTextCampaign(): ?\StructType\ApiTextCampaignGetItem
     {
-        return $this->TextCampaign;
+        return $this->TextCampaign ?? null;
     }
     /**
      * Set TextCampaign value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiTextCampaignGetItem $textCampaign
      * @return \StructType\ApiCampaignGetItem
      */
     public function setTextCampaign(?\StructType\ApiTextCampaignGetItem $textCampaign = null): self
     {
-        $this->TextCampaign = $textCampaign;
+        if (is_null($textCampaign) || (is_array($textCampaign) && empty($textCampaign))) {
+            unset($this->TextCampaign);
+        } else {
+            $this->TextCampaign = $textCampaign;
+        }
         
         return $this;
     }
     /**
      * Get MobileAppCampaign value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiMobileAppCampaignGetItem|null
      */
     public function getMobileAppCampaign(): ?\StructType\ApiMobileAppCampaignGetItem
     {
-        return $this->MobileAppCampaign;
+        return $this->MobileAppCampaign ?? null;
     }
     /**
      * Set MobileAppCampaign value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign
      * @return \StructType\ApiCampaignGetItem
      */
     public function setMobileAppCampaign(?\StructType\ApiMobileAppCampaignGetItem $mobileAppCampaign = null): self
     {
-        $this->MobileAppCampaign = $mobileAppCampaign;
+        if (is_null($mobileAppCampaign) || (is_array($mobileAppCampaign) && empty($mobileAppCampaign))) {
+            unset($this->MobileAppCampaign);
+        } else {
+            $this->MobileAppCampaign = $mobileAppCampaign;
+        }
         
         return $this;
     }
     /**
      * Get DynamicTextCampaign value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiDynamicTextCampaignGetItem|null
      */
     public function getDynamicTextCampaign(): ?\StructType\ApiDynamicTextCampaignGetItem
     {
-        return $this->DynamicTextCampaign;
+        return $this->DynamicTextCampaign ?? null;
     }
     /**
      * Set DynamicTextCampaign value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign
      * @return \StructType\ApiCampaignGetItem
      */
     public function setDynamicTextCampaign(?\StructType\ApiDynamicTextCampaignGetItem $dynamicTextCampaign = null): self
     {
-        $this->DynamicTextCampaign = $dynamicTextCampaign;
+        if (is_null($dynamicTextCampaign) || (is_array($dynamicTextCampaign) && empty($dynamicTextCampaign))) {
+            unset($this->DynamicTextCampaign);
+        } else {
+            $this->DynamicTextCampaign = $dynamicTextCampaign;
+        }
         
         return $this;
     }

@@ -29,7 +29,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -43,7 +43,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -56,7 +56,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -95,7 +95,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "AdultOption",
                         "inheritance": "",
                         "abstract": false,
@@ -108,7 +108,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "double",
                         "inheritance": "",
                         "abstract": false,
@@ -121,7 +121,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "double",
                         "inheritance": "",
                         "abstract": false,
@@ -134,7 +134,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "double",
                         "inheritance": "",
                         "abstract": false,
@@ -147,7 +147,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfSearchOption",
                         "inheritance": "",
                         "abstract": false,
@@ -173,7 +173,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "WebRequest",
                         "inheritance": "",
                         "abstract": false,
@@ -186,7 +186,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ImageRequest",
                         "inheritance": "",
                         "abstract": false,
@@ -199,7 +199,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "PhonebookRequest",
                         "inheritance": "",
                         "abstract": false,
@@ -212,7 +212,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "VideoRequest",
                         "inheritance": "",
                         "abstract": false,
@@ -225,7 +225,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "NewsRequest",
                         "inheritance": "",
                         "abstract": false,
@@ -238,7 +238,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileWebRequest",
                         "inheritance": "",
                         "abstract": false,
@@ -251,7 +251,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TranslationRequest",
                         "inheritance": "",
                         "abstract": false,
@@ -329,7 +329,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "SearchOption",
                         "inheritance": "",
                         "abstract": false,
@@ -386,7 +386,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "SourceType",
                         "inheritance": "",
                         "abstract": false,
@@ -547,7 +547,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -560,7 +560,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -573,7 +573,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -586,7 +586,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfWebSearchOption",
                         "inheritance": "",
                         "abstract": false,
@@ -599,7 +599,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfString",
                         "inheritance": "",
                         "abstract": false,
@@ -626,7 +626,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "WebSearchOption",
                         "inheritance": "",
                         "abstract": false,
@@ -699,7 +699,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "guid",
                         "inheritance": "",
                         "abstract": false,
@@ -769,7 +769,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -796,7 +796,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -809,7 +809,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -822,7 +822,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfString",
                         "inheritance": "",
                         "abstract": false,
@@ -849,7 +849,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -862,7 +862,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -875,7 +875,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -888,7 +888,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "PhonebookSortOption",
                         "inheritance": "",
                         "abstract": false,
@@ -901,7 +901,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -914,7 +914,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -979,7 +979,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -992,7 +992,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -1005,7 +1005,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfString",
                         "inheritance": "",
                         "abstract": false,
@@ -1018,7 +1018,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "VideoSortOption",
                         "inheritance": "",
                         "abstract": false,
@@ -1075,7 +1075,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -1088,7 +1088,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -1102,7 +1102,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1115,7 +1115,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1128,7 +1128,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "NewsSortOption",
                         "inheritance": "",
                         "abstract": false,
@@ -1185,7 +1185,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -1198,7 +1198,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -1211,7 +1211,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfMobileWebSearchOption",
                         "inheritance": "",
                         "abstract": false,
@@ -1238,7 +1238,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileWebSearchOption",
                         "inheritance": "",
                         "abstract": false,
@@ -1348,7 +1348,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Query",
                         "inheritance": "",
                         "abstract": false,
@@ -1361,7 +1361,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "SpellResponse",
                         "inheritance": "",
                         "abstract": false,
@@ -1374,7 +1374,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "WebResponse",
                         "inheritance": "",
                         "abstract": false,
@@ -1387,7 +1387,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ImageResponse",
                         "inheritance": "",
                         "abstract": false,
@@ -1400,7 +1400,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "RelatedSearchResponse",
                         "inheritance": "",
                         "abstract": false,
@@ -1413,7 +1413,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "VideoResponse",
                         "inheritance": "",
                         "abstract": false,
@@ -1426,7 +1426,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "InstantAnswerResponse",
                         "inheritance": "",
                         "abstract": false,
@@ -1439,7 +1439,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "NewsResponse",
                         "inheritance": "",
                         "abstract": false,
@@ -1452,7 +1452,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileWebResponse",
                         "inheritance": "",
                         "abstract": false,
@@ -1465,7 +1465,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfError",
                         "inheritance": "",
                         "abstract": false,
@@ -1505,7 +1505,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1518,7 +1518,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1531,7 +1531,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1558,7 +1558,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -1571,7 +1571,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfSpellResult",
                         "inheritance": "",
                         "abstract": false,
@@ -1598,7 +1598,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "SpellResult",
                         "inheritance": "",
                         "abstract": false,
@@ -1625,7 +1625,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1652,7 +1652,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -1665,7 +1665,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -1678,7 +1678,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfWebResult",
                         "inheritance": "",
                         "abstract": false,
@@ -1705,7 +1705,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "WebResult",
                         "inheritance": "",
                         "abstract": false,
@@ -1732,7 +1732,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1745,7 +1745,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1758,7 +1758,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1771,7 +1771,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1784,7 +1784,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1797,7 +1797,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1810,7 +1810,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfWebSearchTag",
                         "inheritance": "",
                         "abstract": false,
@@ -1823,7 +1823,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfDeepLink",
                         "inheritance": "",
                         "abstract": false,
@@ -1850,7 +1850,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "WebSearchTag",
                         "inheritance": "",
                         "abstract": false,
@@ -1877,7 +1877,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1890,7 +1890,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1917,7 +1917,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DeepLink",
                         "inheritance": "",
                         "abstract": false,
@@ -1944,7 +1944,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1957,7 +1957,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -1984,7 +1984,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -1997,7 +1997,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -2010,7 +2010,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfImageResult",
                         "inheritance": "",
                         "abstract": false,
@@ -2037,7 +2037,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ImageResult",
                         "inheritance": "",
                         "abstract": false,
@@ -2064,7 +2064,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2077,7 +2077,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2090,7 +2090,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2103,7 +2103,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2116,7 +2116,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -2129,7 +2129,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -2142,7 +2142,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -2155,7 +2155,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2168,7 +2168,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Thumbnail",
                         "inheritance": "",
                         "abstract": false,
@@ -2195,7 +2195,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2208,7 +2208,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2221,7 +2221,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -2234,7 +2234,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -2247,7 +2247,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -2260,7 +2260,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -2287,7 +2287,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfRelatedSearchResult",
                         "inheritance": "",
                         "abstract": false,
@@ -2314,7 +2314,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "RelatedSearchResult",
                         "inheritance": "",
                         "abstract": false,
@@ -2341,7 +2341,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2354,7 +2354,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2381,7 +2381,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -2394,7 +2394,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -2407,7 +2407,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfVideoResult",
                         "inheritance": "",
                         "abstract": false,
@@ -2434,7 +2434,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "VideoResult",
                         "inheritance": "",
                         "abstract": false,
@@ -2461,7 +2461,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2474,7 +2474,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2487,7 +2487,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2500,7 +2500,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -2513,7 +2513,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2526,7 +2526,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Thumbnail",
                         "inheritance": "",
                         "abstract": false,
@@ -2553,7 +2553,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfInstantAnswerResult",
                         "inheritance": "",
                         "abstract": false,
@@ -2580,7 +2580,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "InstantAnswerResult",
                         "inheritance": "",
                         "abstract": false,
@@ -2607,7 +2607,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2620,7 +2620,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2633,7 +2633,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2646,7 +2646,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2659,7 +2659,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2672,7 +2672,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2699,7 +2699,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -2712,7 +2712,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -2725,7 +2725,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfNewsRelatedSearch",
                         "inheritance": "",
                         "abstract": false,
@@ -2738,7 +2738,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfNewsResult",
                         "inheritance": "",
                         "abstract": false,
@@ -2765,7 +2765,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "NewsRelatedSearch",
                         "inheritance": "",
                         "abstract": false,
@@ -2792,7 +2792,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2805,7 +2805,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2832,7 +2832,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "NewsResult",
                         "inheritance": "",
                         "abstract": false,
@@ -2859,7 +2859,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2872,7 +2872,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2885,7 +2885,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2898,7 +2898,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2911,7 +2911,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -2924,7 +2924,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -2937,7 +2937,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfNewsCollection",
                         "inheritance": "",
                         "abstract": false,
@@ -2964,7 +2964,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "NewsCollection",
                         "inheritance": "",
                         "abstract": false,
@@ -2991,7 +2991,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3004,7 +3004,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfNewsArticle",
                         "inheritance": "",
                         "abstract": false,
@@ -3031,7 +3031,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "NewsArticle",
                         "inheritance": "",
                         "abstract": false,
@@ -3058,7 +3058,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3071,7 +3071,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3084,7 +3084,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3097,7 +3097,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3110,7 +3110,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3137,7 +3137,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -3150,7 +3150,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -3163,7 +3163,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ArrayOfMobileWebResult",
                         "inheritance": "",
                         "abstract": false,
@@ -3190,7 +3190,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MobileWebResult",
                         "inheritance": "",
                         "abstract": false,
@@ -3217,7 +3217,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3230,7 +3230,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3243,7 +3243,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3256,7 +3256,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3269,7 +3269,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3296,7 +3296,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Error",
                         "inheritance": "",
                         "abstract": false,
@@ -3323,7 +3323,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,
@@ -3336,7 +3336,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3349,7 +3349,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3362,7 +3362,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3375,7 +3375,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3388,7 +3388,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -3401,7 +3401,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "unsignedInt",
                         "inheritance": "",
                         "abstract": false,

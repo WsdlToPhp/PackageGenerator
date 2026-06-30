@@ -66,6 +66,9 @@ class ApiQuery extends AbstractStructBase
     }
     /**
      * Get SearchTerms value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getSearchTerms(): string
@@ -74,6 +77,8 @@ class ApiQuery extends AbstractStructBase
     }
     /**
      * Set SearchTerms value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $searchTerms
      * @return \StructType\ApiQuery
      */
@@ -89,14 +94,19 @@ class ApiQuery extends AbstractStructBase
     }
     /**
      * Get SearchTerms value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getSearchTerms_1(): ?string
     {
-        return $this->SearchTerms;
+        return $this->SearchTerms ?? null;
     }
     /**
      * Set SearchTerms value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $searchTerms
      * @return \StructType\ApiQuery
      */
@@ -106,20 +116,29 @@ class ApiQuery extends AbstractStructBase
         if (!is_null($searchTerms_1) && !is_string($searchTerms_1)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($searchTerms_1, true), gettype($searchTerms_1)), __LINE__);
         }
-        $this->SearchTerms = $searchTerms_1;
+        if (is_null($searchTerms_1) || (is_array($searchTerms_1) && empty($searchTerms_1))) {
+            unset($this->SearchTerms);
+        } else {
+            $this->SearchTerms = $searchTerms_1;
+        }
         
         return $this;
     }
     /**
      * Get AlteredQuery value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getAlteredQuery(): ?string
     {
-        return $this->AlteredQuery;
+        return $this->AlteredQuery ?? null;
     }
     /**
      * Set AlteredQuery value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $alteredQuery
      * @return \StructType\ApiQuery
      */
@@ -129,20 +148,29 @@ class ApiQuery extends AbstractStructBase
         if (!is_null($alteredQuery) && !is_string($alteredQuery)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($alteredQuery, true), gettype($alteredQuery)), __LINE__);
         }
-        $this->AlteredQuery = $alteredQuery;
+        if (is_null($alteredQuery) || (is_array($alteredQuery) && empty($alteredQuery))) {
+            unset($this->AlteredQuery);
+        } else {
+            $this->AlteredQuery = $alteredQuery;
+        }
         
         return $this;
     }
     /**
      * Get AlterationOverrideQuery value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getAlterationOverrideQuery(): ?string
     {
-        return $this->AlterationOverrideQuery;
+        return $this->AlterationOverrideQuery ?? null;
     }
     /**
      * Set AlterationOverrideQuery value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $alterationOverrideQuery
      * @return \StructType\ApiQuery
      */
@@ -152,7 +180,11 @@ class ApiQuery extends AbstractStructBase
         if (!is_null($alterationOverrideQuery) && !is_string($alterationOverrideQuery)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($alterationOverrideQuery, true), gettype($alterationOverrideQuery)), __LINE__);
         }
-        $this->AlterationOverrideQuery = $alterationOverrideQuery;
+        if (is_null($alterationOverrideQuery) || (is_array($alterationOverrideQuery) && empty($alterationOverrideQuery))) {
+            unset($this->AlterationOverrideQuery);
+        } else {
+            $this->AlterationOverrideQuery = $alterationOverrideQuery;
+        }
         
         return $this;
     }

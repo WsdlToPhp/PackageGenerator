@@ -35,11 +35,14 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     }
     /**
      * Get NewsRelatedSearch value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiNewsRelatedSearch[]
      */
     public function getNewsRelatedSearch(): ?array
     {
-        return $this->NewsRelatedSearch;
+        return $this->NewsRelatedSearch ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setNewsRelatedSearch method
@@ -70,6 +73,8 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
     }
     /**
      * Set NewsRelatedSearch value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param \StructType\ApiNewsRelatedSearch[] $newsRelatedSearch
      * @return \ArrayType\ApiArrayOfNewsRelatedSearch
@@ -80,7 +85,11 @@ class ApiArrayOfNewsRelatedSearch extends AbstractStructArrayBase
         if ('' !== ($newsRelatedSearchArrayErrorMessage = self::validateNewsRelatedSearchForArrayConstraintFromSetNewsRelatedSearch($newsRelatedSearch))) {
             throw new InvalidArgumentException($newsRelatedSearchArrayErrorMessage, __LINE__);
         }
-        $this->NewsRelatedSearch = $newsRelatedSearch;
+        if (is_null($newsRelatedSearch) || (is_array($newsRelatedSearch) && empty($newsRelatedSearch))) {
+            unset($this->NewsRelatedSearch);
+        } else {
+            $this->NewsRelatedSearch = $newsRelatedSearch;
+        }
         
         return $this;
     }

@@ -292,14 +292,19 @@ class ApiPaymentCardType extends AbstractStructBase
     }
     /**
      * Get CardHolderName value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getCardHolderName(): ?string
     {
-        return $this->CardHolderName;
+        return $this->CardHolderName ?? null;
     }
     /**
      * Set CardHolderName value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $cardHolderName
      * @return \StructType\ApiPaymentCardType
      */
@@ -317,55 +322,80 @@ class ApiPaymentCardType extends AbstractStructBase
         if (!is_null($cardHolderName) && mb_strlen((string) $cardHolderName) < 1) {
             throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $cardHolderName)), __LINE__);
         }
-        $this->CardHolderName = $cardHolderName;
+        if (is_null($cardHolderName) || (is_array($cardHolderName) && empty($cardHolderName))) {
+            unset($this->CardHolderName);
+        } else {
+            $this->CardHolderName = $cardHolderName;
+        }
         
         return $this;
     }
     /**
      * Get CardIssuerName value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiCardIssuerName|null
      */
     public function getCardIssuerName(): ?\StructType\ApiCardIssuerName
     {
-        return $this->CardIssuerName;
+        return $this->CardIssuerName ?? null;
     }
     /**
      * Set CardIssuerName value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiCardIssuerName $cardIssuerName
      * @return \StructType\ApiPaymentCardType
      */
     public function setCardIssuerName(?\StructType\ApiCardIssuerName $cardIssuerName = null): self
     {
-        $this->CardIssuerName = $cardIssuerName;
+        if (is_null($cardIssuerName) || (is_array($cardIssuerName) && empty($cardIssuerName))) {
+            unset($this->CardIssuerName);
+        } else {
+            $this->CardIssuerName = $cardIssuerName;
+        }
         
         return $this;
     }
     /**
      * Get Address value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiAddressType|null
      */
     public function getAddress(): ?\StructType\ApiAddressType
     {
-        return $this->Address;
+        return $this->Address ?? null;
     }
     /**
      * Set Address value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiAddressType $address
      * @return \StructType\ApiPaymentCardType
      */
     public function setAddress(?\StructType\ApiAddressType $address = null): self
     {
-        $this->Address = $address;
+        if (is_null($address) || (is_array($address) && empty($address))) {
+            unset($this->Address);
+        } else {
+            $this->Address = $address;
+        }
         
         return $this;
     }
     /**
      * Get Telephone value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiTelephone[]
      */
     public function getTelephone(): ?array
     {
-        return $this->Telephone;
+        return $this->Telephone ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setTelephone method
@@ -396,6 +426,8 @@ class ApiPaymentCardType extends AbstractStructBase
     }
     /**
      * Set Telephone value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param \StructType\ApiTelephone[] $telephone
      * @return \StructType\ApiPaymentCardType
@@ -410,7 +442,11 @@ class ApiPaymentCardType extends AbstractStructBase
         if (is_array($telephone) && count($telephone) > 5) {
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($telephone)), __LINE__);
         }
-        $this->Telephone = $telephone;
+        if (is_null($telephone) || (is_array($telephone) && empty($telephone))) {
+            unset($this->Telephone);
+        } else {
+            $this->Telephone = $telephone;
+        }
         
         return $this;
     }
@@ -436,11 +472,14 @@ class ApiPaymentCardType extends AbstractStructBase
     }
     /**
      * Get Email value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiEmailType[]
      */
     public function getEmail(): ?array
     {
-        return $this->Email;
+        return $this->Email ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setEmail method
@@ -471,6 +510,8 @@ class ApiPaymentCardType extends AbstractStructBase
     }
     /**
      * Set Email value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param \StructType\ApiEmailType[] $email
      * @return \StructType\ApiPaymentCardType
@@ -485,7 +526,11 @@ class ApiPaymentCardType extends AbstractStructBase
         if (is_array($email) && count($email) > 3) {
             throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 3', count($email)), __LINE__);
         }
-        $this->Email = $email;
+        if (is_null($email) || (is_array($email) && empty($email))) {
+            unset($this->Email);
+        } else {
+            $this->Email = $email;
+        }
         
         return $this;
     }

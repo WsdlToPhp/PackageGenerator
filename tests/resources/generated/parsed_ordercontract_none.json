@@ -221,7 +221,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ReferenceParametersType",
                         "inheritance": "",
                         "abstract": false,
@@ -234,7 +234,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MetadataType",
                         "inheritance": "",
                         "abstract": false,
@@ -608,7 +608,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "AttributedURIType",
                         "inheritance": "",
                         "abstract": false,
@@ -621,7 +621,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "anyURI",
                         "inheritance": "",
                         "abstract": false,
@@ -826,7 +826,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "OrderID",
                         "inheritance": "string",
                         "abstract": false,
@@ -841,7 +841,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "OrderActionID",
                         "inheritance": "string",
                         "abstract": false,
@@ -856,7 +856,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ServiceType",
                         "inheritance": "string",
                         "abstract": false,
@@ -871,7 +871,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ServiceID",
                         "inheritance": "string",
                         "abstract": false,
@@ -886,7 +886,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "InstallationAddressID",
                         "inheritance": "string",
                         "abstract": false,
@@ -901,7 +901,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -944,7 +944,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "OrderActionStatus",
                         "inheritance": "string",
                         "abstract": false,
@@ -973,7 +973,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "anyType",
                         "inheritance": "",
                         "abstract": false,
@@ -1131,7 +1131,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Payload",
                         "inheritance": "",
                         "abstract": false,
@@ -1171,7 +1171,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ISPName",
                         "inheritance": "string",
                         "abstract": false,
@@ -4128,7 +4128,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ResultMsgCode",
                         "inheritance": "string",
                         "abstract": false,
@@ -4143,7 +4143,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ResultMsg",
                         "inheritance": "string",
                         "abstract": false,

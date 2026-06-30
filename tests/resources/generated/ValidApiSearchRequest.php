@@ -319,14 +319,19 @@ class ApiSearchRequest extends AbstractStructBase
     }
     /**
      * Get Version value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getVersion(): ?string
     {
-        return $this->Version;
+        return $this->Version ?? null;
     }
     /**
      * Set Version value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $version
      * @return \StructType\ApiSearchRequest
      */
@@ -336,20 +341,29 @@ class ApiSearchRequest extends AbstractStructBase
         if (!is_null($version) && !is_string($version)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($version, true), gettype($version)), __LINE__);
         }
-        $this->Version = $version;
+        if (is_null($version) || (is_array($version) && empty($version))) {
+            unset($this->Version);
+        } else {
+            $this->Version = $version;
+        }
         
         return $this;
     }
     /**
      * Get Market value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getMarket(): ?string
     {
-        return $this->Market;
+        return $this->Market ?? null;
     }
     /**
      * Set Market value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $market
      * @return \StructType\ApiSearchRequest
      */
@@ -359,20 +373,29 @@ class ApiSearchRequest extends AbstractStructBase
         if (!is_null($market) && !is_string($market)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($market, true), gettype($market)), __LINE__);
         }
-        $this->Market = $market;
+        if (is_null($market) || (is_array($market) && empty($market))) {
+            unset($this->Market);
+        } else {
+            $this->Market = $market;
+        }
         
         return $this;
     }
     /**
      * Get UILanguage value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getUILanguage(): ?string
     {
-        return $this->UILanguage;
+        return $this->UILanguage ?? null;
     }
     /**
      * Set UILanguage value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $uILanguage
      * @return \StructType\ApiSearchRequest
      */
@@ -382,20 +405,29 @@ class ApiSearchRequest extends AbstractStructBase
         if (!is_null($uILanguage) && !is_string($uILanguage)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($uILanguage, true), gettype($uILanguage)), __LINE__);
         }
-        $this->UILanguage = $uILanguage;
+        if (is_null($uILanguage) || (is_array($uILanguage) && empty($uILanguage))) {
+            unset($this->UILanguage);
+        } else {
+            $this->UILanguage = $uILanguage;
+        }
         
         return $this;
     }
     /**
      * Get Adult value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getAdult(): ?string
     {
-        return $this->Adult;
+        return $this->Adult ?? null;
     }
     /**
      * Set Adult value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @uses \EnumType\ApiAdultOption::valueIsValid()
      * @uses \EnumType\ApiAdultOption::getValidValues()
      * @throws InvalidArgumentException
@@ -408,20 +440,29 @@ class ApiSearchRequest extends AbstractStructBase
         if (!\EnumType\ApiAdultOption::valueIsValid($adult)) {
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \EnumType\ApiAdultOption', is_array($adult) ? implode(', ', $adult) : var_export($adult, true), implode(', ', \EnumType\ApiAdultOption::getValidValues())), __LINE__);
         }
-        $this->Adult = $adult;
+        if (is_null($adult) || (is_array($adult) && empty($adult))) {
+            unset($this->Adult);
+        } else {
+            $this->Adult = $adult;
+        }
         
         return $this;
     }
     /**
      * Get Latitude value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return float|null
      */
     public function getLatitude(): ?float
     {
-        return $this->Latitude;
+        return $this->Latitude ?? null;
     }
     /**
      * Set Latitude value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param float $latitude
      * @return \StructType\ApiSearchRequest
      */
@@ -431,20 +472,29 @@ class ApiSearchRequest extends AbstractStructBase
         if (!is_null($latitude) && !(is_float($latitude) || is_numeric($latitude))) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($latitude, true), gettype($latitude)), __LINE__);
         }
-        $this->Latitude = $latitude;
+        if (is_null($latitude) || (is_array($latitude) && empty($latitude))) {
+            unset($this->Latitude);
+        } else {
+            $this->Latitude = $latitude;
+        }
         
         return $this;
     }
     /**
      * Get Longitude value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return float|null
      */
     public function getLongitude(): ?float
     {
-        return $this->Longitude;
+        return $this->Longitude ?? null;
     }
     /**
      * Set Longitude value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param float $longitude
      * @return \StructType\ApiSearchRequest
      */
@@ -454,20 +504,29 @@ class ApiSearchRequest extends AbstractStructBase
         if (!is_null($longitude) && !(is_float($longitude) || is_numeric($longitude))) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($longitude, true), gettype($longitude)), __LINE__);
         }
-        $this->Longitude = $longitude;
+        if (is_null($longitude) || (is_array($longitude) && empty($longitude))) {
+            unset($this->Longitude);
+        } else {
+            $this->Longitude = $longitude;
+        }
         
         return $this;
     }
     /**
      * Get Radius value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return float|null
      */
     public function getRadius(): ?float
     {
-        return $this->Radius;
+        return $this->Radius ?? null;
     }
     /**
      * Set Radius value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param float $radius
      * @return \StructType\ApiSearchRequest
      */
@@ -477,159 +536,235 @@ class ApiSearchRequest extends AbstractStructBase
         if (!is_null($radius) && !(is_float($radius) || is_numeric($radius))) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($radius, true), gettype($radius)), __LINE__);
         }
-        $this->Radius = $radius;
+        if (is_null($radius) || (is_array($radius) && empty($radius))) {
+            unset($this->Radius);
+        } else {
+            $this->Radius = $radius;
+        }
         
         return $this;
     }
     /**
      * Get Options value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \ArrayType\ApiArrayOfSearchOption|null
      */
     public function getOptions(): ?\ArrayType\ApiArrayOfSearchOption
     {
-        return $this->Options;
+        return $this->Options ?? null;
     }
     /**
      * Set Options value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \ArrayType\ApiArrayOfSearchOption $options
      * @return \StructType\ApiSearchRequest
      */
     public function setOptions(?\ArrayType\ApiArrayOfSearchOption $options = null): self
     {
-        $this->Options = $options;
+        if (is_null($options) || (is_array($options) && empty($options))) {
+            unset($this->Options);
+        } else {
+            $this->Options = $options;
+        }
         
         return $this;
     }
     /**
      * Get Web value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiWebRequest|null
      */
     public function getWeb(): ?\StructType\ApiWebRequest
     {
-        return $this->Web;
+        return $this->Web ?? null;
     }
     /**
      * Set Web value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiWebRequest $web
      * @return \StructType\ApiSearchRequest
      */
     public function setWeb(?\StructType\ApiWebRequest $web = null): self
     {
-        $this->Web = $web;
+        if (is_null($web) || (is_array($web) && empty($web))) {
+            unset($this->Web);
+        } else {
+            $this->Web = $web;
+        }
         
         return $this;
     }
     /**
      * Get Image value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiImageRequest|null
      */
     public function getImage(): ?\StructType\ApiImageRequest
     {
-        return $this->Image;
+        return $this->Image ?? null;
     }
     /**
      * Set Image value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiImageRequest $image
      * @return \StructType\ApiSearchRequest
      */
     public function setImage(?\StructType\ApiImageRequest $image = null): self
     {
-        $this->Image = $image;
+        if (is_null($image) || (is_array($image) && empty($image))) {
+            unset($this->Image);
+        } else {
+            $this->Image = $image;
+        }
         
         return $this;
     }
     /**
      * Get Phonebook value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiPhonebookRequest|null
      */
     public function getPhonebook(): ?\StructType\ApiPhonebookRequest
     {
-        return $this->Phonebook;
+        return $this->Phonebook ?? null;
     }
     /**
      * Set Phonebook value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiPhonebookRequest $phonebook
      * @return \StructType\ApiSearchRequest
      */
     public function setPhonebook(?\StructType\ApiPhonebookRequest $phonebook = null): self
     {
-        $this->Phonebook = $phonebook;
+        if (is_null($phonebook) || (is_array($phonebook) && empty($phonebook))) {
+            unset($this->Phonebook);
+        } else {
+            $this->Phonebook = $phonebook;
+        }
         
         return $this;
     }
     /**
      * Get Video value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiVideoRequest|null
      */
     public function getVideo(): ?\StructType\ApiVideoRequest
     {
-        return $this->Video;
+        return $this->Video ?? null;
     }
     /**
      * Set Video value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiVideoRequest $video
      * @return \StructType\ApiSearchRequest
      */
     public function setVideo(?\StructType\ApiVideoRequest $video = null): self
     {
-        $this->Video = $video;
+        if (is_null($video) || (is_array($video) && empty($video))) {
+            unset($this->Video);
+        } else {
+            $this->Video = $video;
+        }
         
         return $this;
     }
     /**
      * Get News value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiNewsRequest|null
      */
     public function getNews(): ?\StructType\ApiNewsRequest
     {
-        return $this->News;
+        return $this->News ?? null;
     }
     /**
      * Set News value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiNewsRequest $news
      * @return \StructType\ApiSearchRequest
      */
     public function setNews(?\StructType\ApiNewsRequest $news = null): self
     {
-        $this->News = $news;
+        if (is_null($news) || (is_array($news) && empty($news))) {
+            unset($this->News);
+        } else {
+            $this->News = $news;
+        }
         
         return $this;
     }
     /**
      * Get MobileWeb value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiMobileWebRequest|null
      */
     public function getMobileWeb(): ?\StructType\ApiMobileWebRequest
     {
-        return $this->MobileWeb;
+        return $this->MobileWeb ?? null;
     }
     /**
      * Set MobileWeb value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiMobileWebRequest $mobileWeb
      * @return \StructType\ApiSearchRequest
      */
     public function setMobileWeb(?\StructType\ApiMobileWebRequest $mobileWeb = null): self
     {
-        $this->MobileWeb = $mobileWeb;
+        if (is_null($mobileWeb) || (is_array($mobileWeb) && empty($mobileWeb))) {
+            unset($this->MobileWeb);
+        } else {
+            $this->MobileWeb = $mobileWeb;
+        }
         
         return $this;
     }
     /**
      * Get Translation value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiTranslationRequest|null
      */
     public function getTranslation(): ?\StructType\ApiTranslationRequest
     {
-        return $this->Translation;
+        return $this->Translation ?? null;
     }
     /**
      * Set Translation value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiTranslationRequest $translation
      * @return \StructType\ApiSearchRequest
      */
     public function setTranslation(?\StructType\ApiTranslationRequest $translation = null): self
     {
-        $this->Translation = $translation;
+        if (is_null($translation) || (is_array($translation) && empty($translation))) {
+            unset($this->Translation);
+        } else {
+            $this->Translation = $translation;
+        }
         
         return $this;
     }

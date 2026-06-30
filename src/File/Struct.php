@@ -482,7 +482,7 @@ class Struct extends AbstractModelFile
         switch ($setOrGet) {
             case 'set':
                 if ($attribute->getRemovableFromRequest()) {
-                    $annotationBlock->addChild('This property is removable from request (nillable=true+minOccurs=0), therefore if the value assigned to this property is null, it is removed from this object');
+                    $annotationBlock->addChild('This property is removable from request (minOccurs=0), therefore if the value assigned to this property is null, it is removed from this object');
                 }
                 if ($attribute->isAChoice()) {
                     $annotationBlock->addChild('This property belongs to a choice that allows only one property to exist. It is therefore removable from the request, consequently if the value assigned to this property is null, the property is removed from this object');
@@ -514,7 +514,7 @@ class Struct extends AbstractModelFile
 
             case 'get':
                 if ($attribute->getRemovableFromRequest()) {
-                    $annotationBlock->addChild('An additional test has been added (isset) before returning the property value as this property may have been unset before, due to the fact that this property is removable from the request (nillable=true+minOccurs=0)');
+                    $annotationBlock->addChild('An additional test has been added (isset) before returning the property value as this property may have been unset before, due to the fact that this property is removable from the request (minOccurs=0)');
                 }
                 $this
                     ->addStructMethodsGetAnnotationBlockFromXmlAttribute($annotationBlock, $attribute)

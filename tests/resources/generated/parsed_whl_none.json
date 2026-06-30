@@ -2313,7 +2313,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CompanyNameType",
                         "inheritance": "",
                         "abstract": false,
@@ -2424,7 +2424,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "WarningsType",
                         "inheritance": "",
                         "abstract": false,
@@ -2458,7 +2458,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "UniqueID_Type",
                         "inheritance": "",
                         "abstract": false,
@@ -2599,7 +2599,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "RequestorID",
                         "inheritance": "",
                         "abstract": false,
@@ -2611,7 +2611,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "BookingChannel",
                         "inheritance": "",
                         "abstract": false,
@@ -2689,7 +2689,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CompanyNameType",
                         "inheritance": "",
                         "abstract": false,
@@ -3165,7 +3165,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TaxType",
                         "inheritance": "",
                         "abstract": false,
@@ -3216,7 +3216,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ParagraphType",
                         "inheritance": "",
                         "abstract": false,
@@ -3532,7 +3532,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StringLength1to64",
                         "inheritance": "",
                         "abstract": false,
@@ -3547,7 +3547,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CardIssuerName",
                         "inheritance": "",
                         "abstract": false,
@@ -3559,7 +3559,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "AddressType",
                         "inheritance": "",
                         "abstract": false,
@@ -3574,7 +3574,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Telephone",
                         "inheritance": "",
                         "abstract": false,
@@ -3587,7 +3587,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "EmailType",
                         "inheritance": "",
                         "abstract": false,
@@ -4068,7 +4068,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StreetNmbr",
                         "inheritance": "",
                         "abstract": false,
@@ -4080,7 +4080,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StringLength1to255",
                         "inheritance": "",
                         "abstract": false,
@@ -4096,7 +4096,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StringLength1to64",
                         "inheritance": "",
                         "abstract": false,
@@ -4111,7 +4111,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StringLength1to16",
                         "inheritance": "",
                         "abstract": false,
@@ -4126,7 +4126,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StringLength1to32",
                         "inheritance": "",
                         "abstract": false,
@@ -4141,7 +4141,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StateProvType",
                         "inheritance": "",
                         "abstract": false,
@@ -4156,7 +4156,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CountryNameType",
                         "inheritance": "",
                         "abstract": false,
@@ -4468,7 +4468,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StringLength1to64",
                         "inheritance": "",
                         "abstract": false,
@@ -4597,7 +4597,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CompanyName",
                         "inheritance": "",
                         "abstract": false,
@@ -4609,7 +4609,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "AddressInfoType",
                         "inheritance": "",
                         "abstract": false,
@@ -4624,7 +4624,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "EmailType",
                         "inheritance": "",
                         "abstract": false,
@@ -4639,7 +4639,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Telephone",
                         "inheritance": "",
                         "abstract": false,
@@ -4846,7 +4846,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TaxesType",
                         "inheritance": "",
                         "abstract": false,
@@ -4861,7 +4861,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ParagraphType",
                         "inheritance": "",
                         "abstract": false,
@@ -5149,7 +5149,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StringLength1to16",
                         "inheritance": "",
                         "abstract": false,
@@ -5165,7 +5165,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StringLength1to64",
                         "inheritance": "",
                         "abstract": false,
@@ -5181,7 +5181,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StringLength1to64",
                         "inheritance": "",
                         "abstract": false,
@@ -5197,7 +5197,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StringLength1to16",
                         "inheritance": "",
                         "abstract": false,
@@ -5226,7 +5226,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StringLength1to16",
                         "inheritance": "",
                         "abstract": false,
@@ -5242,7 +5242,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StringLength1to16",
                         "inheritance": "",
                         "abstract": false,
@@ -5426,7 +5426,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "VideoItemsType",
                         "inheritance": "",
                         "abstract": false,
@@ -5448,7 +5448,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ImageItemsType",
                         "inheritance": "",
                         "abstract": false,
@@ -5470,7 +5470,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TextItemsType",
                         "inheritance": "",
                         "abstract": false,
@@ -5630,7 +5630,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "VideoFormat",
                         "inheritance": "",
                         "abstract": false,
@@ -5777,7 +5777,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "anyURI",
                         "inheritance": "",
                         "abstract": false,
@@ -6015,7 +6015,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ImageFormat",
                         "inheritance": "",
                         "abstract": false,
@@ -6028,7 +6028,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Description",
                         "inheritance": "",
                         "abstract": false,
@@ -6292,7 +6292,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "anyURI",
                         "inheritance": "",
                         "abstract": false,
@@ -6370,7 +6370,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "anyURI",
                         "inheritance": "",
                         "abstract": false,
@@ -6391,7 +6391,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Description",
                         "inheritance": "",
                         "abstract": false,
@@ -6666,7 +6666,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TaxesType",
                         "inheritance": "",
                         "abstract": false,
@@ -6855,7 +6855,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "InventoryType",
                         "inheritance": "",
                         "abstract": false,
@@ -6980,7 +6980,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "RoomDetailType",
                         "inheritance": "",
                         "abstract": false,
@@ -7007,7 +7007,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "BookingType",
                         "inheritance": "",
                         "abstract": false,
@@ -7185,7 +7185,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ExServiceType",
                         "inheritance": "",
                         "abstract": false,
@@ -7212,7 +7212,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "GuestDetailType",
                         "inheritance": "",
                         "abstract": false,
@@ -7625,7 +7625,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "PersonNameType",
                         "inheritance": "",
                         "abstract": false,
@@ -7641,7 +7641,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Telephone",
                         "inheritance": "",
                         "abstract": false,
@@ -7654,7 +7654,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Email",
                         "inheritance": "",
                         "abstract": false,
@@ -7667,7 +7667,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Address",
                         "inheritance": "",
                         "abstract": false,
@@ -7680,7 +7680,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "URL",
                         "inheritance": "",
                         "abstract": false,
@@ -7693,7 +7693,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CitizenCountryName",
                         "inheritance": "",
                         "abstract": false,
@@ -7831,7 +7831,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CompanyNameType",
                         "inheritance": "",
                         "abstract": false,
@@ -7846,7 +7846,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "PersonNameType",
                         "inheritance": "",
                         "abstract": false,
@@ -8104,7 +8104,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CustomerType",
                         "inheritance": "",
                         "abstract": false,
@@ -8353,7 +8353,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "SegmentCategory",
                         "inheritance": "",
                         "abstract": false,
@@ -8366,7 +8366,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "HotelCategory",
                         "inheritance": "",
                         "abstract": false,
@@ -8497,7 +8497,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "HotelName",
                         "inheritance": "",
                         "abstract": false,
@@ -8509,7 +8509,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CategoryCodesType",
                         "inheritance": "",
                         "abstract": false,
@@ -8524,7 +8524,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Descriptions",
                         "inheritance": "",
                         "abstract": false,
@@ -8536,7 +8536,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Position",
                         "inheritance": "",
                         "abstract": false,
@@ -8548,7 +8548,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Services",
                         "inheritance": "",
                         "abstract": false,
@@ -8560,7 +8560,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "LanguagesType",
                         "inheritance": "",
                         "abstract": false,
@@ -8575,7 +8575,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Money",
                         "inheritance": "",
                         "abstract": false,
@@ -8604,7 +8604,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "FacilityInfoType",
                         "inheritance": "",
                         "abstract": false,
@@ -8619,7 +8619,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "HostInfo",
                         "inheritance": "",
                         "abstract": false,
@@ -8631,7 +8631,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CaringForDestination",
                         "inheritance": "",
                         "abstract": false,
@@ -8763,7 +8763,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -8778,7 +8778,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -8793,7 +8793,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -8808,7 +8808,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -8823,7 +8823,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -8838,7 +8838,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -8853,7 +8853,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -8868,7 +8868,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -8883,7 +8883,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -8898,7 +8898,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -9059,7 +9059,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -9074,7 +9074,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -9107,7 +9107,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -9122,7 +9122,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -9183,7 +9183,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Deadline",
                         "inheritance": "",
                         "abstract": false,
@@ -9195,7 +9195,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ParagraphType",
                         "inheritance": "",
                         "abstract": false,
@@ -9290,7 +9290,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TaxesType",
                         "inheritance": "",
                         "abstract": false,
@@ -9400,7 +9400,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "AcceptedPaymentsType",
                         "inheritance": "",
                         "abstract": false,
@@ -9415,7 +9415,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "AmountPercent",
                         "inheritance": "",
                         "abstract": false,
@@ -9517,7 +9517,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CancelPenaltiesType",
                         "inheritance": "",
                         "abstract": false,
@@ -9532,7 +9532,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "GuaranteePaymentPolicy",
                         "inheritance": "",
                         "abstract": false,
@@ -9544,7 +9544,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CheckoutCharges",
                         "inheritance": "",
                         "abstract": false,
@@ -9556,7 +9556,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "PolicyInfo",
                         "inheritance": "",
                         "abstract": false,
@@ -9568,7 +9568,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TaxPolicies",
                         "inheritance": "",
                         "abstract": false,
@@ -9580,7 +9580,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CommissionPolicy",
                         "inheritance": "",
                         "abstract": false,
@@ -9592,7 +9592,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "FeePolicies",
                         "inheritance": "",
                         "abstract": false,
@@ -9665,7 +9665,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ParagraphType",
                         "inheritance": "",
                         "abstract": false,
@@ -9717,7 +9717,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ParagraphType",
                         "inheritance": "",
                         "abstract": false,
@@ -9776,7 +9776,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TaxPolicy",
                         "inheritance": "",
                         "abstract": false,
@@ -9907,7 +9907,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "HotelInfoType",
                         "inheritance": "",
                         "abstract": false,
@@ -9922,7 +9922,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "FacilityInfoType",
                         "inheritance": "",
                         "abstract": false,
@@ -9937,7 +9937,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Policies",
                         "inheritance": "",
                         "abstract": false,
@@ -9949,7 +9949,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "AreaInfoType",
                         "inheritance": "",
                         "abstract": false,
@@ -9964,7 +9964,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "MultimediaDescriptionsType",
                         "inheritance": "",
                         "abstract": false,
@@ -9979,7 +9979,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ContactInfosType",
                         "inheritance": "",
                         "abstract": false,
@@ -10076,7 +10076,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ContactInfoRootType",
                         "inheritance": "",
                         "abstract": false,
@@ -10173,7 +10173,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ContactsType",
                         "inheritance": "",
                         "abstract": false,
@@ -10188,7 +10188,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "AddressesType",
                         "inheritance": "",
                         "abstract": false,
@@ -10203,7 +10203,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "PhonesType",
                         "inheritance": "",
                         "abstract": false,
@@ -10218,7 +10218,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "EmailsType",
                         "inheritance": "",
                         "abstract": false,
@@ -10233,7 +10233,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "URLsType",
                         "inheritance": "",
                         "abstract": false,
@@ -10248,7 +10248,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CompanyName",
                         "inheritance": "",
                         "abstract": false,
@@ -10323,7 +10323,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "JobTitle",
                         "inheritance": "",
                         "abstract": false,
@@ -10789,7 +10789,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Attractions",
                         "inheritance": "",
                         "abstract": false,
@@ -10801,7 +10801,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Recreations",
                         "inheritance": "",
                         "abstract": false,
@@ -10861,7 +10861,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -11113,7 +11113,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "GuestRooms",
                         "inheritance": "",
                         "abstract": false,
@@ -11143,7 +11143,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "GuestRoom",
                         "inheritance": "",
                         "abstract": false,
@@ -11174,7 +11174,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TypeRoom",
                         "inheritance": "",
                         "abstract": false,
@@ -11187,7 +11187,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Amenities",
                         "inheritance": "",
                         "abstract": false,
@@ -11199,7 +11199,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -11214,7 +11214,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "string",
                         "inheritance": "",
                         "abstract": false,
@@ -11499,7 +11499,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CancelPenaltyType",
                         "inheritance": "",
                         "abstract": false,
@@ -11548,7 +11548,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "HotelInfo",
                         "inheritance": "",
                         "abstract": false,
@@ -11612,7 +11612,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "GuestCountType",
                         "inheritance": "",
                         "abstract": false,
@@ -11768,7 +11768,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DateTimeSpanType",
                         "inheritance": "",
                         "abstract": false,
@@ -11783,7 +11783,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "RoomStayCandidates",
                         "inheritance": "",
                         "abstract": false,
@@ -11795,7 +11795,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "HotelSearchCriteria",
                         "inheritance": "",
                         "abstract": false,
@@ -11953,7 +11953,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "HotelRef",
                         "inheritance": "",
                         "abstract": false,
@@ -12052,7 +12052,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "RoomTypes",
                         "inheritance": "",
                         "abstract": false,
@@ -12064,7 +12064,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "RoomRates",
                         "inheritance": "",
                         "abstract": false,
@@ -12076,7 +12076,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "GuestCountType",
                         "inheritance": "",
                         "abstract": false,
@@ -12091,7 +12091,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "DateTimeSpanType",
                         "inheritance": "",
                         "abstract": false,
@@ -12106,7 +12106,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TotalType",
                         "inheritance": "",
                         "abstract": false,
@@ -12121,7 +12121,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "BasicPropertyInfoType",
                         "inheritance": "",
                         "abstract": false,
@@ -12229,7 +12229,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "RateType",
                         "inheritance": "",
                         "abstract": false,
@@ -12244,7 +12244,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ParagraphType",
                         "inheritance": "",
                         "abstract": false,
@@ -12260,7 +12260,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TotalType",
                         "inheritance": "",
                         "abstract": false,
@@ -12275,7 +12275,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "BasicPropertyInfoType",
                         "inheritance": "",
                         "abstract": false,
@@ -12416,7 +12416,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TotalType",
                         "inheritance": "",
                         "abstract": false,
@@ -12431,7 +12431,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Discount",
                         "inheritance": "",
                         "abstract": false,
@@ -12444,7 +12444,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TotalType",
                         "inheritance": "",
                         "abstract": false,
@@ -12459,7 +12459,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ParagraphType",
                         "inheritance": "",
                         "abstract": false,
@@ -12474,7 +12474,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "HotelAdditionalChargesType",
                         "inheritance": "",
                         "abstract": false,
@@ -12731,7 +12731,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TotalType",
                         "inheritance": "",
                         "abstract": false,
@@ -12814,7 +12814,7 @@
                 "attributes": [
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "LengthOfStay",
                         "inheritance": "",
                         "abstract": false,
@@ -13063,7 +13063,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "StatusApplicationControlType",
                         "inheritance": "",
                         "abstract": false,
@@ -13078,7 +13078,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "LengthsOfStayType",
                         "inheritance": "",
                         "abstract": false,
@@ -13093,7 +13093,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "UniqueID_Type",
                         "inheritance": "",
                         "abstract": false,
@@ -13108,7 +13108,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "RestrictionStatus",
                         "inheritance": "",
                         "abstract": false,
@@ -13200,7 +13200,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "WarningsType",
                         "inheritance": "",
                         "abstract": false,
@@ -13212,7 +13212,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "HotelReservationsType",
                         "inheritance": "",
                         "abstract": false,
@@ -13452,7 +13452,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "FeesType",
                         "inheritance": "",
                         "abstract": false,
@@ -13467,7 +13467,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "TotalType",
                         "inheritance": "",
                         "abstract": false,
@@ -13500,7 +13500,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "HotelReservationIDsType",
                         "inheritance": "",
                         "abstract": false,
@@ -13530,7 +13530,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ProfilesType",
                         "inheritance": "",
                         "abstract": false,
@@ -13732,7 +13732,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "SpecialRequestType",
                         "inheritance": "",
                         "abstract": false,
@@ -13783,7 +13783,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "RoomStaysType",
                         "inheritance": "",
                         "abstract": false,
@@ -13798,7 +13798,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ResGuestsType",
                         "inheritance": "",
                         "abstract": false,
@@ -13813,7 +13813,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "ResGlobalInfoType",
                         "inheritance": "",
                         "abstract": false,
@@ -13909,7 +13909,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "POS_Type",
                         "inheritance": "",
                         "abstract": false,
@@ -13924,7 +13924,7 @@
                     },
                     {
                         "containsElements": true,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "UniqueID_Type",
                         "inheritance": "",
                         "abstract": false,
@@ -13937,7 +13937,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "HotelReservationsType",
                         "inheritance": "",
                         "abstract": false,
@@ -14059,7 +14059,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "POS_Type",
                         "inheritance": "",
                         "abstract": false,
@@ -14181,7 +14181,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "WarningsType",
                         "inheritance": "",
                         "abstract": false,
@@ -14196,7 +14196,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CountriesType",
                         "inheritance": "",
                         "abstract": false,
@@ -14323,7 +14323,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "POS_Type",
                         "inheritance": "",
                         "abstract": false,
@@ -14445,7 +14445,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "WarningsType",
                         "inheritance": "",
                         "abstract": false,
@@ -14460,7 +14460,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "CountriesType",
                         "inheritance": "",
                         "abstract": false,
@@ -14587,7 +14587,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "POS_Type",
                         "inheritance": "",
                         "abstract": false,
@@ -14602,7 +14602,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "UpdateAllotmentType",
                         "inheritance": "",
                         "abstract": false,
@@ -14723,7 +14723,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "WarningsType",
                         "inheritance": "",
                         "abstract": false,
@@ -14850,7 +14850,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "POS_Type",
                         "inheritance": "",
                         "abstract": false,
@@ -14981,7 +14981,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "WarningsType",
                         "inheritance": "",
                         "abstract": false,
@@ -15118,7 +15118,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "POS_Type",
                         "inheritance": "",
                         "abstract": false,
@@ -15133,7 +15133,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "integer",
                         "inheritance": "",
                         "abstract": false,
@@ -15256,7 +15256,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "WarningsType",
                         "inheritance": "",
                         "abstract": false,
@@ -15271,7 +15271,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "Destinations",
                         "inheritance": "",
                         "abstract": false,
@@ -15533,7 +15533,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "WarningsType",
                         "inheritance": "",
                         "abstract": false,
@@ -15548,7 +15548,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "HotelsType",
                         "inheritance": "",
                         "abstract": false,
@@ -15675,7 +15675,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "POS_Type",
                         "inheritance": "",
                         "abstract": false,
@@ -15853,7 +15853,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "WarningsType",
                         "inheritance": "",
                         "abstract": false,
@@ -15868,7 +15868,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "HotelDescriptiveContents",
                         "inheritance": "",
                         "abstract": false,
@@ -16073,7 +16073,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "POS_Type",
                         "inheritance": "",
                         "abstract": false,
@@ -16221,7 +16221,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "WarningsType",
                         "inheritance": "",
                         "abstract": false,
@@ -16236,7 +16236,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "RoomStays",
                         "inheritance": "",
                         "abstract": false,
@@ -16390,7 +16390,7 @@
                 "attributes": [
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "POS_Type",
                         "inheritance": "",
                         "abstract": false,
@@ -16405,7 +16405,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "UniqueID_Type",
                         "inheritance": "",
                         "abstract": false,
@@ -16420,7 +16420,7 @@
                     },
                     {
                         "containsElements": false,
-                        "removableFromRequest": false,
+                        "removableFromRequest": true,
                         "type": "AvailStatusMessages",
                         "inheritance": "",
                         "abstract": false,

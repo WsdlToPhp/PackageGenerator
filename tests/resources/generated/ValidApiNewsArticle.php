@@ -80,14 +80,19 @@ class ApiNewsArticle extends StructClass
     }
     /**
      * Get Title value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getTitle(): ?string
     {
-        return $this->Title;
+        return $this->Title ?? null;
     }
     /**
      * Set Title value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $title
      * @return \StructType\ApiNewsArticle
      */
@@ -97,20 +102,29 @@ class ApiNewsArticle extends StructClass
         if (!is_null($title) && !is_string($title)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($title, true), gettype($title)), __LINE__);
         }
-        $this->Title = $title;
+        if (is_null($title) || (is_array($title) && empty($title))) {
+            unset($this->Title);
+        } else {
+            $this->Title = $title;
+        }
         
         return $this;
     }
     /**
      * Get Url value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getUrl(): ?string
     {
-        return $this->Url;
+        return $this->Url ?? null;
     }
     /**
      * Set Url value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $url
      * @return \StructType\ApiNewsArticle
      */
@@ -120,20 +134,29 @@ class ApiNewsArticle extends StructClass
         if (!is_null($url) && !is_string($url)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($url, true), gettype($url)), __LINE__);
         }
-        $this->Url = $url;
+        if (is_null($url) || (is_array($url) && empty($url))) {
+            unset($this->Url);
+        } else {
+            $this->Url = $url;
+        }
         
         return $this;
     }
     /**
      * Get Source value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getSource(): ?string
     {
-        return $this->Source;
+        return $this->Source ?? null;
     }
     /**
      * Set Source value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $source
      * @return \StructType\ApiNewsArticle
      */
@@ -143,20 +166,29 @@ class ApiNewsArticle extends StructClass
         if (!is_null($source) && !is_string($source)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($source, true), gettype($source)), __LINE__);
         }
-        $this->Source = $source;
+        if (is_null($source) || (is_array($source) && empty($source))) {
+            unset($this->Source);
+        } else {
+            $this->Source = $source;
+        }
         
         return $this;
     }
     /**
      * Get Snippet value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getSnippet(): ?string
     {
-        return $this->Snippet;
+        return $this->Snippet ?? null;
     }
     /**
      * Set Snippet value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $snippet
      * @return \StructType\ApiNewsArticle
      */
@@ -166,20 +198,29 @@ class ApiNewsArticle extends StructClass
         if (!is_null($snippet) && !is_string($snippet)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($snippet, true), gettype($snippet)), __LINE__);
         }
-        $this->Snippet = $snippet;
+        if (is_null($snippet) || (is_array($snippet) && empty($snippet))) {
+            unset($this->Snippet);
+        } else {
+            $this->Snippet = $snippet;
+        }
         
         return $this;
     }
     /**
      * Get Date value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getDate(): ?string
     {
-        return $this->Date;
+        return $this->Date ?? null;
     }
     /**
      * Set Date value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $date
      * @return \StructType\ApiNewsArticle
      */
@@ -189,7 +230,11 @@ class ApiNewsArticle extends StructClass
         if (!is_null($date) && !is_string($date)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
         }
-        $this->Date = $date;
+        if (is_null($date) || (is_array($date) && empty($date))) {
+            unset($this->Date);
+        } else {
+            $this->Date = $date;
+        }
         
         return $this;
     }

@@ -102,11 +102,14 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Get CampaignIds value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return int[]
      */
     public function getCampaignIds(): ?array
     {
-        return $this->CampaignIds;
+        return $this->CampaignIds ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setCampaignIds method
@@ -137,6 +140,8 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Set CampaignIds value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param int[] $campaignIds
      * @return \StructType\ApiAdGroupsSelectionCriteria
@@ -147,7 +152,11 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         if ('' !== ($campaignIdsArrayErrorMessage = self::validateCampaignIdsForArrayConstraintFromSetCampaignIds($campaignIds))) {
             throw new InvalidArgumentException($campaignIdsArrayErrorMessage, __LINE__);
         }
-        $this->CampaignIds = $campaignIds;
+        if (is_null($campaignIds) || (is_array($campaignIds) && empty($campaignIds))) {
+            unset($this->CampaignIds);
+        } else {
+            $this->CampaignIds = $campaignIds;
+        }
         
         return $this;
     }
@@ -169,11 +178,14 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Get Ids value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return int[]
      */
     public function getIds(): ?array
     {
-        return $this->Ids;
+        return $this->Ids ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setIds method
@@ -204,6 +216,8 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Set Ids value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param int[] $ids
      * @return \StructType\ApiAdGroupsSelectionCriteria
@@ -214,7 +228,11 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         if ('' !== ($idsArrayErrorMessage = self::validateIdsForArrayConstraintFromSetIds($ids))) {
             throw new InvalidArgumentException($idsArrayErrorMessage, __LINE__);
         }
-        $this->Ids = $ids;
+        if (is_null($ids) || (is_array($ids) && empty($ids))) {
+            unset($this->Ids);
+        } else {
+            $this->Ids = $ids;
+        }
         
         return $this;
     }
@@ -236,11 +254,14 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Get Types value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string[]
      */
     public function getTypes(): ?array
     {
-        return $this->Types;
+        return $this->Types ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setTypes method
@@ -271,6 +292,8 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Set Types value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @uses \EnumType\ApiAdGroupTypesEnum::valueIsValid()
      * @uses \EnumType\ApiAdGroupTypesEnum::getValidValues()
      * @throws InvalidArgumentException
@@ -283,7 +306,11 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         if ('' !== ($typesArrayErrorMessage = self::validateTypesForArrayConstraintFromSetTypes($types))) {
             throw new InvalidArgumentException($typesArrayErrorMessage, __LINE__);
         }
-        $this->Types = $types;
+        if (is_null($types) || (is_array($types) && empty($types))) {
+            unset($this->Types);
+        } else {
+            $this->Types = $types;
+        }
         
         return $this;
     }
@@ -307,11 +334,14 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Get Statuses value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string[]
      */
     public function getStatuses(): ?array
     {
-        return $this->Statuses;
+        return $this->Statuses ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setStatuses method
@@ -342,6 +372,8 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Set Statuses value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @uses \EnumType\ApiStatusSelectionEnum::valueIsValid()
      * @uses \EnumType\ApiStatusSelectionEnum::getValidValues()
      * @throws InvalidArgumentException
@@ -354,7 +386,11 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         if ('' !== ($statusesArrayErrorMessage = self::validateStatusesForArrayConstraintFromSetStatuses($statuses))) {
             throw new InvalidArgumentException($statusesArrayErrorMessage, __LINE__);
         }
-        $this->Statuses = $statuses;
+        if (is_null($statuses) || (is_array($statuses) && empty($statuses))) {
+            unset($this->Statuses);
+        } else {
+            $this->Statuses = $statuses;
+        }
         
         return $this;
     }
@@ -378,11 +414,14 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Get TagIds value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return int[]
      */
     public function getTagIds(): ?array
     {
-        return $this->TagIds;
+        return $this->TagIds ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setTagIds method
@@ -413,6 +452,8 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Set TagIds value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param int[] $tagIds
      * @return \StructType\ApiAdGroupsSelectionCriteria
@@ -423,7 +464,11 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         if ('' !== ($tagIdsArrayErrorMessage = self::validateTagIdsForArrayConstraintFromSetTagIds($tagIds))) {
             throw new InvalidArgumentException($tagIdsArrayErrorMessage, __LINE__);
         }
-        $this->TagIds = $tagIds;
+        if (is_null($tagIds) || (is_array($tagIds) && empty($tagIds))) {
+            unset($this->TagIds);
+        } else {
+            $this->TagIds = $tagIds;
+        }
         
         return $this;
     }
@@ -445,11 +490,14 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Get Tags value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string[]
      */
     public function getTags(): ?array
     {
-        return $this->Tags;
+        return $this->Tags ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setTags method
@@ -480,6 +528,8 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Set Tags value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @throws InvalidArgumentException
      * @param string[] $tags
      * @return \StructType\ApiAdGroupsSelectionCriteria
@@ -490,7 +540,11 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         if ('' !== ($tagsArrayErrorMessage = self::validateTagsForArrayConstraintFromSetTags($tags))) {
             throw new InvalidArgumentException($tagsArrayErrorMessage, __LINE__);
         }
-        $this->Tags = $tags;
+        if (is_null($tags) || (is_array($tags) && empty($tags))) {
+            unset($this->Tags);
+        } else {
+            $this->Tags = $tags;
+        }
         
         return $this;
     }
@@ -512,11 +566,14 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Get AppIconStatuses value
+     * An additional test has been added (isset) before returning the property value as
+     * this property may have been unset before, due to the fact that this property is
+     * removable from the request (minOccurs=0)
      * @return string[]
      */
     public function getAppIconStatuses(): ?array
     {
-        return $this->AppIconStatuses;
+        return $this->AppIconStatuses ?? null;
     }
     /**
      * This method is responsible for validating the value(s) passed to the setAppIconStatuses method
@@ -547,6 +604,8 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
     }
     /**
      * Set AppIconStatuses value
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @uses \EnumType\ApiStatusSelectionEnum::valueIsValid()
      * @uses \EnumType\ApiStatusSelectionEnum::getValidValues()
      * @throws InvalidArgumentException
@@ -559,7 +618,11 @@ class ApiAdGroupsSelectionCriteria extends AbstractStructBase
         if ('' !== ($appIconStatusesArrayErrorMessage = self::validateAppIconStatusesForArrayConstraintFromSetAppIconStatuses($appIconStatuses))) {
             throw new InvalidArgumentException($appIconStatusesArrayErrorMessage, __LINE__);
         }
-        $this->AppIconStatuses = $appIconStatuses;
+        if (is_null($appIconStatuses) || (is_array($appIconStatuses) && empty($appIconStatuses))) {
+            unset($this->AppIconStatuses);
+        } else {
+            $this->AppIconStatuses = $appIconStatuses;
+        }
         
         return $this;
     }

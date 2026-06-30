@@ -598,6 +598,10 @@ final class GeneratorTest extends AbstractTestCase
         $generator = self::getBingGeneratorInstance(true);
         $generator->setOptionStandalone(false);
         $generator->parse();
+
+        // uncomment the next line to easily regenerate file :)
+        // file_put_contents(sprintf('%sjson_serialized.json', self::getTestDirectory()), trim(json_encode($generator, JSON_PRETTY_PRINT)));
+
         $jsonContent = file_get_contents(sprintf('%sjson_serialized.json', self::getTestDirectory()));
         $jsonContent = str_replace([
             '"__ORIGIN__"',
@@ -606,6 +610,7 @@ final class GeneratorTest extends AbstractTestCase
             json_encode(self::wsdlBingPath(), JSON_THROW_ON_ERROR),
             json_encode($generator->getOptionDestination(), JSON_THROW_ON_ERROR),
         ], $jsonContent);
+
         $this->assertSame(trim($jsonContent), trim(json_encode($generator, JSON_PRETTY_PRINT)));
     }
 

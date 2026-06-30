@@ -52,7 +52,7 @@ class ApiOffer extends ApiOrder
      * Get offerClassMember value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
-     * removable from the request (nillable=true+minOccurs=0)
+     * removable from the request (minOccurs=0)
      * @return string|null
      */
     public function getOfferClassMember(): ?string
@@ -61,8 +61,8 @@ class ApiOffer extends ApiOrder
     }
     /**
      * Set offerClassMember value
-     * This property is removable from request (nillable=true+minOccurs=0), therefore
-     * if the value assigned to this property is null, it is removed from this object
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param string $offerClassMember
      * @return \StructType\ApiOffer
      */
@@ -84,7 +84,7 @@ class ApiOffer extends ApiOrder
      * Get offer value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
-     * removable from the request (nillable=true+minOccurs=0)
+     * removable from the request (minOccurs=0)
      * @return \StructType\ApiOffer|null
      */
     public function getOffer(): ?\StructType\ApiOffer
@@ -93,8 +93,8 @@ class ApiOffer extends ApiOrder
     }
     /**
      * Set offer value
-     * This property is removable from request (nillable=true+minOccurs=0), therefore
-     * if the value assigned to this property is null, it is removed from this object
+     * This property is removable from request (minOccurs=0), therefore if the value
+     * assigned to this property is null, it is removed from this object
      * @param \StructType\ApiOffer $offer
      * @return \StructType\ApiOffer
      */
