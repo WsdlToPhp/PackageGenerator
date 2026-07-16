@@ -10,7 +10,6 @@ use WsdlToPhp\PackageGenerator\Model\Struct as StructModel;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class StructTest extends AbstractFile
 {
@@ -155,6 +154,21 @@ final class StructTest extends AbstractFile
                 ->write()
             ;
             $this->assertSameFileContent('ValidApiFareItinerary', $struct);
+        } else {
+            $this->fail('Unable to find fareItinerary struct for file generation');
+        }
+    }
+
+    public function testWriteOdigeoStructSearchStatusResponse(): void
+    {
+        $generator = self::odigeoGeneratorInstance();
+        if (($model = $generator->getStructByName('searchStatusResponse')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write()
+            ;
+            $this->assertSameFileContent('ValidApiSearchStatusResponse', $struct);
         } else {
             $this->fail('Unable to find fareItinerary struct for file generation');
         }

@@ -11,7 +11,6 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagEnumeration;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class TagEnumerationTest extends WsdlParser
 {

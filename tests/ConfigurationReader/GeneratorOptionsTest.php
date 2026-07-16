@@ -13,7 +13,6 @@ use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class GeneratorOptionsTest extends AbstractTestCase
 {

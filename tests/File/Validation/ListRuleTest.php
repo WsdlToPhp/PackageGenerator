@@ -8,7 +8,6 @@ use EnumType\ApiDayOfWeekType;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class ListRuleTest extends AbstractRule
 {

@@ -7,6 +7,7 @@ namespace WsdlToPhp\PackageGenerator\File\Validation;
 use WsdlToPhp\PackageGenerator\File\AbstractModelFile;
 use WsdlToPhp\PackageGenerator\File\Element\PhpFunctionParameter;
 use WsdlToPhp\PackageGenerator\Model\StructAttribute;
+use WsdlToPhp\PhpGenerator\Element\AssignedValueElementInterface;
 use WsdlToPhp\PhpGenerator\Element\PhpMethod;
 
 final class ChoiceRule extends AbstractRule
@@ -51,7 +52,7 @@ final class ChoiceRule extends AbstractRule
         }
 
         $method = new PhpMethod($this->getValidationMethodName($parameterName), [
-            new PhpFunctionParameter('value', PhpFunctionParameter::NO_VALUE),
+            new PhpFunctionParameter('value', AssignedValueElementInterface::NO_VALUE),
         ], AbstractModelFile::TYPE_STRING);
 
         $method

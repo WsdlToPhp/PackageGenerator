@@ -8,7 +8,6 @@ use WsdlToPhp\PackageGenerator\File\Composer;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class ComposerTest extends AbstractFile
 {
@@ -79,7 +78,7 @@ final class ComposerTest extends AbstractFile
                 'require-dev.phpunit/phpunit:^9',
                 'require-dev.rector/rector:^2',
                 'config.disable-tls:true',
-                'config.sort-packages:true'
+                'config.sort-packages:true',
             ])
         ;
         $composerFile = new Composer($instance, 'composer');

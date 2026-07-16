@@ -9,7 +9,6 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagUnion;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class TagUnionTest extends WsdlParser
 {

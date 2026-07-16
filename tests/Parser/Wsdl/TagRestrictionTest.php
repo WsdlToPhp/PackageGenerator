@@ -9,7 +9,6 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagRestriction;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class TagRestrictionTest extends WsdlParser
 {

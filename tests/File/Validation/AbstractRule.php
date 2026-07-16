@@ -43,6 +43,9 @@ abstract class AbstractRule extends AbstractTestCase
         return self::getClassInstance('whlInstance', 'BookingChannel', $reset);
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public static function getWhlHotelReservationTypeInstance(bool $reset = false)
     {
         // required for validating enumeration values
@@ -52,6 +55,9 @@ abstract class AbstractRule extends AbstractTestCase
         return self::getClassInstance('whlInstance', 'HotelReservationType', $reset);
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public static function getWhlPaymentCardTypeInstance(bool $reset = false)
     {
         // required for validating enumeration values
@@ -60,6 +66,9 @@ abstract class AbstractRule extends AbstractTestCase
         return self::getClassInstance('whlInstance', 'PaymentCardType', $reset);
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public static function getWhlTaxTypeInstance(bool $reset = false)
     {
         // required for validating enumeration values
@@ -70,16 +79,25 @@ abstract class AbstractRule extends AbstractTestCase
         return self::getClassInstance('whlInstance', 'TaxType', $reset);
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public static function getArrayOfGuidInstance(bool $reset = false)
     {
         return self::getClassInstance('bingGeneratorInstance', 'ArrayOfGuid', $reset);
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public static function getQueueMessageAttributeValueInstance(bool $reset = false)
     {
         return self::getClassInstance('queueGeneratorInstance', 'MessageAttributeValue', $reset);
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public static function getBingSearchRequestInstance(bool $reset = false)
     {
         // required for validating enumeration values
@@ -88,21 +106,45 @@ abstract class AbstractRule extends AbstractTestCase
         return self::getClassInstance('bingGeneratorInstance', 'SearchRequest', $reset);
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public static function getBingNewsArticleInstance(bool $reset = false)
     {
         return self::getClassInstance('bingGeneratorInstance', 'NewsArticle', $reset);
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public static function getOdigeoFareItineraryInstance(bool $reset = false)
     {
         return self::getClassInstance('odigeoGeneratorInstance', 'fareItinerary', $reset);
     }
 
+    /**
+     * @throws \ReflectionException
+     */
+    public static function getOdigeoSearchStatusResponseInstance(bool $reset = false)
+    {
+        // required from loaded class
+        self::getClassInstance('odigeoGeneratorInstance', 'baseResponse');
+        self::getClassInstance('odigeoGeneratorInstance', 'preferencesAwareResponse');
+
+        return self::getClassInstance('odigeoGeneratorInstance', 'searchStatusResponse', $reset);
+    }
+
+    /**
+     * @throws \ReflectionException
+     */
     public static function getOrderContractAddressDeliveryTypeInstance(bool $reset = false)
     {
         return self::getClassInstance('orderContractInstance', 'AddressDelivery_Type', $reset);
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public static function getEwsWorkingPeriodInstance(bool $reset = false)
     {
         // required for validating enumeration values
@@ -111,6 +153,9 @@ abstract class AbstractRule extends AbstractTestCase
         return self::getClassInstance('ewsInstance', 'WorkingPeriod', $reset);
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public static function getDocDataPaymentsShoppperInstance(bool $reset = false)
     {
         // required for validating enumeration values
@@ -119,6 +164,9 @@ abstract class AbstractRule extends AbstractTestCase
         return self::getClassInstance('docDataPaymentsGeneratorInstance', 'shopper', $reset);
     }
 
+    /**
+     * @throws \ReflectionException
+     */
     public static function getReformaHouseProfileDataInstance(bool $reset = false)
     {
         // required for validating enumeration values

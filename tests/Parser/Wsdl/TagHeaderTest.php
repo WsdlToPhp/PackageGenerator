@@ -8,7 +8,6 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagHeader;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class TagHeaderTest extends WsdlParser
 {

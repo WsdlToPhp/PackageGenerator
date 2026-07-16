@@ -8,7 +8,6 @@ use WsdlToPhp\PackageGenerator\File\Validation\MinExclusiveRule;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class MinExclusiveRuleTest extends AbstractRule
 {

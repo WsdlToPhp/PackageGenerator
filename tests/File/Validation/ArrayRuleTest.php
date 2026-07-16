@@ -9,7 +9,6 @@ use StructType\ApiTaxType;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class ArrayRuleTest extends AbstractRule
 {

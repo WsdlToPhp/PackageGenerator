@@ -11,7 +11,6 @@ use WsdlToPhp\PackageGenerator\Parser\Wsdl\TagInclude;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class TagIncludeTest extends WsdlParser
 {

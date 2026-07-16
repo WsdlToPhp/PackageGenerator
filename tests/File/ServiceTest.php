@@ -12,7 +12,6 @@ use WsdlToPhp\PackageGenerator\Model\Service as ServiceModel;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class ServiceTest extends AbstractFile
 {

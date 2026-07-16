@@ -15,7 +15,6 @@ use WsdlToPhp\WsdlHandler\Wsdl as WsdlDocument;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class TagImportTest extends WsdlParser
 {
