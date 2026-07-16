@@ -510,6 +510,27 @@ final class StructTest extends AbstractFile
         }
     }
 
+    /**
+     * The choice elements have their own maxOccurs="5", the choice's maxOccurs (1) must
+     * not be applied to the elements' items count.
+     *
+     * @see https://github.com/WsdlToPhp/PackageGenerator/issues/340
+     */
+    public function testStructItemsChoiceTypeFromUnitTests(): void
+    {
+        $generator = self::unitTestsInstance();
+        if (($model = $generator->getStructByName('ItemsChoiceType')) instanceof StructModel) {
+            $struct = new StructFile($generator, $model->getName());
+            $struct
+                ->setModel($model)
+                ->write()
+            ;
+            $this->assertSameFileContent('ValidUnitTestsStructItemsChoiceType', $struct);
+        } else {
+            $this->fail('Unable to find ItemsChoiceType struct for file generation');
+        }
+    }
+
     public function testWriteDeliveryDetails(): void
     {
         $generator = self::deliveryServiceInstance();
