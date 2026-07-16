@@ -283,6 +283,60 @@
                 },
                 "name": "UserType",
                 "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
+            },
+            {
+                "attributes": [
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "int",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "choice": [
+                                "ItemIdentifier",
+                                "ItemName"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "maxOccurs": "5",
+                            "minOccurs": "1",
+                            "ref": "tns:ItemIdentifier"
+                        },
+                        "name": "ItemIdentifier",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    },
+                    {
+                        "containsElements": true,
+                        "removableFromRequest": false,
+                        "type": "string",
+                        "inheritance": "",
+                        "abstract": false,
+                        "meta": {
+                            "choice": [
+                                "ItemIdentifier",
+                                "ItemName"
+                            ],
+                            "choiceMaxOccurs": 1,
+                            "choiceMinOccurs": 1,
+                            "maxOccurs": "5",
+                            "minOccurs": "1",
+                            "ref": "tns:ItemName"
+                        },
+                        "name": "ItemName",
+                        "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\StructAttribute"
+                    }
+                ],
+                "restriction": false,
+                "struct": true,
+                "types": [],
+                "values": [],
+                "list": "",
+                "inheritance": "",
+                "abstract": false,
+                "meta": [],
+                "name": "ItemsChoiceType",
+                "__CLASS__": "WsdlToPhp\\PackageGenerator\\Model\\Struct"
             }
         ]
     },
