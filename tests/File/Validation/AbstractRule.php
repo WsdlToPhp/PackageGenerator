@@ -103,6 +103,11 @@ abstract class AbstractRule extends AbstractTestCase
         return self::getClassInstance('orderContractInstance', 'AddressDelivery_Type', $reset);
     }
 
+    public static function getUnitTestsItemsChoiceTypeInstance(bool $reset = false)
+    {
+        return self::getClassInstance('unitTestsInstance', 'ItemsChoiceType', $reset);
+    }
+
     public static function getEwsWorkingPeriodInstance(bool $reset = false)
     {
         // required for validating enumeration values

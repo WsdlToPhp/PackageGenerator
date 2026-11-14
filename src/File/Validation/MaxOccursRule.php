@@ -45,7 +45,7 @@ class MaxOccursRule extends AbstractMinMaxRule
      *
      * @param mixed $value
      */
-    final public function testConditions(string $parameterName, $value, bool $itemType = false): string
+    public function testConditions(string $parameterName, $value, bool $itemType = false): string
     {
         $test = '';
         if ($this->getAttribute()->isArray() && ((is_scalar($value) && 'unbounded' !== $value) || (is_array($value) && !in_array('unbounded', $value)))) {

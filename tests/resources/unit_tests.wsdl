@@ -62,6 +62,16 @@
                     <xsd:maxLength value="10"/>
                 </xsd:restriction>
             </xsd:simpleType>
+            <xsd:complexType name="ItemsChoiceType">
+                <xsd:sequence>
+                    <xsd:choice>
+                        <xsd:element ref="tns:ItemIdentifier" minOccurs="1" maxOccurs="5"/>
+                        <xsd:element ref="tns:ItemName" minOccurs="1" maxOccurs="5"/>
+                    </xsd:choice>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="ItemIdentifier" type="xsd:int"/>
+            <xsd:element name="ItemName" type="xsd:string"/>
         </xsd:schema>
         <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.xmlsoap.org/wsdl/">
             <xsd:element name="Error"></xsd:element>
