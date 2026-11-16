@@ -10,7 +10,6 @@ use WsdlToPhp\PackageGenerator\Model\EmptyModel;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class ClassMapTest extends AbstractFile
 {

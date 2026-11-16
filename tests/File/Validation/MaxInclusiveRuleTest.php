@@ -8,7 +8,6 @@ use WsdlToPhp\PackageGenerator\File\Validation\MaxInclusiveRule;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class MaxInclusiveRuleTest extends AbstractRule
 {

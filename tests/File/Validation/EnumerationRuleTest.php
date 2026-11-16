@@ -8,7 +8,6 @@ use EnumType\ApiAdultOption;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class EnumerationRuleTest extends AbstractRule
 {

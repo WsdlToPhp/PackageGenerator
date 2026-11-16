@@ -9,7 +9,6 @@ use WsdlToPhp\PackageGenerator\Tests\AbstractTestCase;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class XsdTypesTest extends AbstractTestCase
 {

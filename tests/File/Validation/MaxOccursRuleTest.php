@@ -8,7 +8,6 @@ use StructType\ApiParagraphType;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class MaxOccursRuleTest extends AbstractRule
 {

@@ -10,7 +10,6 @@ use WsdlToPhp\PackageGenerator\Parser\SoapClient\Structs;
 
 /**
  * @internal
- * @coversDefaultClass
  */
 final class StructsTest extends SoapClientParser
 {
